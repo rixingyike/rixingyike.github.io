@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://yishulun.com/</id>
+    <title>LIYI</title>
+    <updated>2023-09-21T16:01:09.733Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>LIYI</name>
+        <email>coderliyi@gmail.com</email>
+        <uri>https://yishulun.com</uri>
+    </author>
+    <link rel="alternate" href="https://yishulun.com/"/>
+    <link rel="self" href="https://yishulun.com/feed.atom"/>
+    <subtitle>LIYI' Blog</subtitle>
+    <logo>https://yishulun.com/logo.svg</logo>
+    <icon>https://yishulun.com/logo.svg</icon>
+    <rights>MIT License</rights>
+</feed>

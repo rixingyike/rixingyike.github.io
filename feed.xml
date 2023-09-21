@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>LIYI</title>
+        <link>https://yishulun.com/</link>
+        <description>LIYI' Blog</description>
+        <lastBuildDate>Thu, 21 Sep 2023 16:01:09 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>LIYI</title>
+            <url>https://yishulun.com/logo.svg</url>
+            <link>https://yishulun.com/</link>
+        </image>
+        <copyright>MIT License</copyright>
+        <atom:link href="https://yishulun.com/feed.xml" rel="self" type="application/rss+xml"/>
+    </channel>
+</rss>

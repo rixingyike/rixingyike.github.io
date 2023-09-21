@@ -1,5 +1,2 @@
-
-User-agent:*
-Disallow:
-
-Sitemap: https://yishulun.com/sitemap.xml
+User-agent: *
+Allow: /
