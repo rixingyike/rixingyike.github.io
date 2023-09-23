@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Sat, 23 Sep 2023 05:55:06 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 23 Sep 2023 06:08:02 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -62,6 +62,32 @@ echo `date` &amp;&amp; bun i &amp;&amp; echo `date`
 <p>在执行这一步时，在关掉梯子的情况下，一直卡在某个节点；在打开梯子以后，仍然卡在了某个地点，无法继续了。</p>
 <p>4，bun 耗时 518ms</p>
 <p>bun 的表现确实一骑绝尘，与官方宣称的比较匹配。</p>
+<table>
+<thead>
+<tr>
+<th>包管理工具</th>
+<th>耗时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bun</td>
+<td>0.518s</td>
+</tr>
+<tr>
+<td>pnpm</td>
+<td>8.5s</td>
+</tr>
+<tr>
+<td>yarn</td>
+<td>27.92s</td>
+</tr>
+<tr>
+<td>npm</td>
+<td>∞</td>
+</tr>
+</tbody>
+</table>
 <p>在我的测试中，我只是删除了工程项目下的 node_modules 文件夹及相关的 lock 文件，并没有删除公共的、共享的包管理工具缓存目录。如果严格执行，bun 的表现应该没有这么优秀。500ms 的速度已经比 rm -rf 指令的执行时间还要短，bun 无论是在网络下载还是在文件移动上确实做了足够的优化。</p>
 <p>bun 作为一个包管理工具，它的下载速度是让人满意的。但它不仅仅是一个包管理工具，事实上它作为一个网络基础软件，它还替代了 Node.js，它是在网络基础软件这个层次上，集合了众多成功工具的优点并替掉了它们。Vite 是在业务软件开发这个层面集后与替换的，bun 是在服务器网络基础软件这个层次汇总与替换的。（更多的内容下一篇再说。）</p>
 <h2>如何安装 bun？</h2>
