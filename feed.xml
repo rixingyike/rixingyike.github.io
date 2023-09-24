@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Sun, 24 Sep 2023 00:41:06 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 24 Sep 2023 01:33:24 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -94,6 +94,19 @@ console.log(&lt;Message text=&quot;Hello world!&quot; /&gt;);
 <p>在同一个项目中，可以写 ts 代码，也可以写 jsx 代码，并且不需要额外的配置。bun 靠文件的后缀名决定要启用什么样的加载器，<strong>当我们在文件内使用 jsx 语法时，文件后缀就必须写成 tsx 或 jsx</strong>。</p>
 <p>除此之外，react 与 react-dom 还是要安装的，bun 只是替代了网络基础软件层次的 Node.js，它并没有替代业务软件层次的框架，诸如 Vue、React、Vite 等类库，如果在项目中用到它们了，首先还是需要使用 bun install 指令安装的。</p>
 <p>这一篇就说到这里，主要介绍了 bun 在运行时会占用大量内存，以及如何使用 jsx 语法，下一篇继续介绍 bun。</p>
+]]></content:encoded>
+            <author>coderliyi@gmail.com (LIYI)</author>
+        </item>
+        <item>
+            <title><![CDATA[bun介绍三]]></title>
+            <link>https://yishulun.com/./src/posts/2023/07.html</link>
+            <guid>https://yishulun.com/./src/posts/2023/07.html</guid>
+            <pubDate>Sun, 24 Sep 2023 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>bun介绍三</h1>
+<p>昨天我在<a href="/posts/2023/06.html">上一篇</a>的朋友圈评论区说，bun与Node.js之争，最终就论为内存与CPU之争；bun能否推广起来，就看单用户成本中的CPU成本与内存成本哪个贵。这个是可以计算的，对于使用云主机的厂商，很容易就能计算出来哪个单位用户的成本更高。</p>
+<p>在开始试用的时候，还可以采用A/B版本策略，A版本使用Node.js，B版本使用bun。在部署的时候，安装bun的机器可以把内存分配得高一些，依据昨天我的初步测试数据，B版本的大内存主机，它的内存至少要比以往大4倍以上。然后进行测试，对比A、B版本的单用户服务消耗的主机成本。我的猜测是，大概率是内存更廉价，使用bun将可能节约成本，尤其在有海量用户且交互又频繁的应用上，成本节约会很明显，例如美团、饿了吗、微信等。</p>
+<p>在云主机成本降低的同时，由于响应时间变少了，开发效率提升了，在用户体验和团队开发体验方便也会有适量的改善。</p>
+<p><a href="/posts/2023/06.html">上一篇</a>主要介绍了bun的启动模式及如何使用jsx语法，这一篇..</p>
 ]]></content:encoded>
             <author>coderliyi@gmail.com (LIYI)</author>
         </item>
