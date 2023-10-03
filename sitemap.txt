@@ -6,7 +6,7 @@ https://yishulun.com/docs/claude/3.Claude提示实用编写技巧.html
 https://yishulun.com/docs/claude/4.Claude的具体提示实例.html
 https://yishulun.com/docs/claude/5.Claude提示故障排查.html
 https://yishulun.com/docs/claude/6.创作一篇科幻故事的实践.html
-https://yishulun.com/docs/claude/README.html
+https://yishulun.com/docs/claude/index.html
 https://yishulun.com/docs/index.html
 https://yishulun.com/docs/novel/如何使用Claude AI辅助创作小说.html
 https://yishulun.com/docs/novel/小说创作的最低要求是什么.html
