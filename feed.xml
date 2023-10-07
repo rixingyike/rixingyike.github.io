@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Fri, 06 Oct 2023 13:53:40 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 07 Oct 2023 02:54:35 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -59,11 +59,11 @@
             <author>coderliyi@gmail.com (LIYI)</author>
         </item>
         <item>
-            <title><![CDATA[bun 介绍四：自动安装依赖项]]></title>
+            <title><![CDATA[bun 介绍四：自动安装依赖项，bun 立志要做一个零配置的快速框架]]></title>
             <link>https://yishulun.com/./src/posts/2023/09.html</link>
             <guid>https://yishulun.com/./src/posts/2023/09.html</guid>
             <pubDate>Thu, 28 Sep 2023 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h1>bun 介绍四：自动安装依赖项</h1>
+            <content:encoded><![CDATA[<h1>bun 介绍四：自动安装依赖项，bun 立志要做一个零配置的快速框架</h1>
 <p>在 webpack 工程中，无论是使用 pnpm，还是 yarn，在运行项目之前都需要执行 pnpm i 或 yarn，这是在安装依赖项，将项目代码中引用的类库放在当前项目的 node_modules 目录下。</p>
 <p>一般情况下，对于复杂的项目这个过程耗时会比较久，这是 Node.js 作为基础构架的痛点，也是 bun 着力解决与优化的亮点。在<a href="https://yishulun.com/posts/2023/05.html">第一篇</a>中，我们就已经详细介绍过了，bun 在这方面将其它包管理工具甩开了一个数量级。</p>
 <p>但这远远还不够，bun 做的还更多。</p>
