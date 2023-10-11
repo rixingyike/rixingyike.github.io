@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2023-10-11T16:44:55.302Z</updated>
+    <updated>2023-10-11T17:02:57.379Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -21,10 +21,11 @@
         <link href="https://yishulun.com/./src/posts/2023/11.html"/>
         <updated>2023-10-12T00:00:00.000Z</updated>
         <content type="html"><![CDATA[<h1>使用 <a href="http://acme.sh">acme.sh</a> &amp; <a href="http://freessl.cn">freessl.cn</a> 申请免费 SSL 证书及自动续期</h1>
-<p>域名地址基于 https 协议访问需要 SSL 证书，大多数情况下是一个.cer、一个.key 文件，在服务器端部署 web 站点的时候，在编写 Apache 或 nginx 配置文件时，需要提供这两个文件。</p>
+<p>域名地址基于 https 协议访问需要 SSL 证书，大多数情况下是一个。cer、一个。key 文件，在服务器端部署 web 站点的时候，在编写 Apache 或 nginx 配置文件时，需要提供这两个文件。</p>
 <p><a href="http://freessl.cn">freessl.cn</a> 是一个可以让我们免费申请 SSL 证书的地方。但是免费证书都有一定的时效，如果证书过期了而我们忘记了重新申请并重新在服务器上部署 SSL 证书，便会影响网站的正常运行。</p>
 <p>于是有人开发了一个 <a href="http://acme.sh">acme.sh</a> 工具，这个东西看起来像个域名，其实是一个实现了 ACME 协议的脚本工具。所谓的 ACME 协议，简单理解就是：可以验证域名所有权，在线自动申请一个 SSL 证书并下载到本地。<a href="http://acme.sh">acme.sh</a> 脚本工具在本地创建一个定时任务，定时检查证书是否过期，如果发现要过期了，就自己申请一个，把本地的旧证书替换掉。</p>
 <p>这确实是一个自动化的好工具！</p>
+<h2>如何使用 <a href="http://acme.sh">acme.sh</a>？</h2>
 <p>怎么使用 <a href="http://acme.sh">acme.sh</a> 呢？在哪里使用它呢？</p>
 <p>首先，要明确一点，<a href="http://acme.sh">acme.sh</a> 这个工具是一个 unix shell 环境工具，它是被设计出来在 macOS 或 Linux 上运行的，在 Windows 下并不合用。</p>
 <p>在 macOS 上，安装这个工具：</p>
@@ -33,7 +34,7 @@
 <p>安装以后，脚本工具会放置在~/.acme.sh 目录下。在终端访问 <a href="http://acme.sh">acme.sh</a>，如果访问不了，而还需要设置一个指令别名：</p>
 <pre><code class="language-bash">alias acme.sh=~/.acme.sh/acme.sh
 </code></pre>
-<p>接着，在<a href="https://freessl.cn/%E7%BD%91%E7%AB%99%E4%B8%8A%E7%94%B3%E8%AF%B7%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F%E7%9A%84%E5%B8%A6%E6%9C%89%E9%80%9A%E9%85%8D%E7%AC%A6%E7%9A%84%E5%A4%9A%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6%E3%80%82">https://freessl.cn/网站上申请自动续期的带有通配符的多域名证书。</a></p>
+<p>接着，在 <a href="https://freessl.cn/%E7%BD%91%E7%AB%99%E4%B8%8A%E7%94%B3%E8%AF%B7%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F%E7%9A%84%E5%B8%A6%E6%9C%89%E9%80%9A%E9%85%8D%E7%AC%A6%E7%9A%84%E5%A4%9A%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6%E3%80%82">https://freessl.cn/网站上申请自动续期的带有通配符的多域名证书。</a></p>
 <p>填写域名：</p>
 <p><img src="./assets/image-20231012003243941.png" alt="image-20231012003243941"></p>
 <p>域名填写完成后，便是域名所有权验证：</p>
@@ -46,6 +47,12 @@
 <p>最后，成功执行上面的执行——如果有问题，就将域名分开执行，或重试，我们会发现在~/.acme.sh 目录下会有对应的证书文件。</p>
 <p>当证书过期时，我们只需要手动执行这行脚本，本地证书便会更新。当然我们也可以将这行脚本加入到自动任务的序列中，定时检查与更新证书。</p>
 <p>只需要申请一次，就可以覆盖所有二级域名的证书。这些证书文件我们可以上传到服务器指定的目录下，为多个站点共享使用，这确实省去了证书申请、配置的麻烦。加上自动任务在服务器上自动执行，基本 SSL 证书的事情只需要设置一次就不需要再操心了。</p>
+<h2>名词解释</h2>
+<p>什么是 <a href="http://acme.sh">acme.sh</a>？</p>
+<p><a href="http://acme.sh">acme.sh</a> 是一个用于申请和自动续期 Let's Encrypt 免费 SSL 证书的自动化脚本工具 [5]。您可以通过执行一系列命令来注册 <a href="http://acme.sh">acme.sh</a>，然后配置它以自动续期证书 [2]。该工具使证书管理更加便捷，无需手动干预即可确保您的 SSL 证书始终有效。</p>
+<p>什么是 Let's Encrypt？</p>
+<p>Let's Encrypt 是一个提供免费 SSL/TLS 证书的机构，使网站可以实现 HTTPS 加密连接 [8]。通过 <a href="http://acme.sh">acme.sh</a> 工具，您可以从 Let's Encrypt 获取免费的证书，并且这些证书支持自动续期 [8]。这为网站所有者提供了方便和经济的方式来确保其网站的安全性和可信度。</p>
+<p>总的来说，<a href="http://acme.sh">acme.sh</a> 是一个有用的工具，可帮助您轻松申请和管理 Let's Encrypt 免费 SSL 证书，同时自动续期保持证书的有效性。</p>
 ]]></content>
         <author>
             <name>LIYI</name>
