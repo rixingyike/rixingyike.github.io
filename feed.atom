@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2023-10-16T01:41:27.136Z</updated>
+    <updated>2023-10-16T01:42:59.868Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -16,12 +16,12 @@
     <icon>https://yishulun.com/logo.svg</icon>
     <rights>MIT License</rights>
     <entry>
-        <title type="html"><![CDATA[读二胖《编程路上那些让我效率倍增的方法》，谈新人如何学习编程]]></title>
+        <title type="html"><![CDATA[读二胖《编程路上那些让我效率倍增的方法》，谈新人如何学习编程，只要方法对了人人都可以成为黑客高手]]></title>
         <id>https://yishulun.com/./src/posts/2023/12.html</id>
         <link href="https://yishulun.com/./src/posts/2023/12.html"/>
         <updated>2023-10-15T00:00:00.000Z</updated>
         <content type="html"><![CDATA[<p><img src="assets/640-1697420393520-18.png" alt="图片"></p>
-<h1>读二胖《编程路上那些让我效率倍增的方法》，谈新人如何学习编程</h1>
+<h1>读二胖《编程路上那些让我效率倍增的方法》，谈新人如何学习编程，只要方法对了人人都可以成为黑客高手</h1>
 <p>我在知乎上发现了这篇好文，有 3 万多人点赞，作者是逆袭的二胖，文章地址在此，欢迎翻阅：</p>
 <p><a href="https://zhuanlan.zhihu.com/p/34418394">https://zhuanlan.zhihu.com/p/34418394</a></p>
 <p>正如作者的名字所暗示的那样，二胖是一名大一调剂到计算机专业的学生，主要通过自学的方式，在毕业后拿到了 10 多个 offer，如愿进入了理想的大厂工作，真正完成了属于他的逆袭。</p>
