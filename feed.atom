@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2023-10-21T04:53:21.616Z</updated>
+    <updated>2023-10-21T12:17:40.623Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -15,6 +15,40 @@
     <logo>https://yishulun.com/logo.svg</logo>
     <icon>https://yishulun.com/logo.svg</icon>
     <rights>MIT License</rights>
+    <entry>
+        <title type="html"><![CDATA[使用 querySelector 查询元素时，如何使用正则进行模糊匹配查询？]]></title>
+        <id>https://yishulun.com/./src/posts/2023/13.html</id>
+        <link href="https://yishulun.com/./src/posts/2023/13.html"/>
+        <updated>2023-10-21T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p><img src="assets/pexels-photo-270404.jpeg" alt=""></p>
+<h1>使用 querySelector 查询元素时，如何使用正则进行模糊匹配查询？</h1>
+<p>这要用到元素属性值正则匹配选择器，它包括下面 3 种：</p>
+<ul>
+<li>[attr^=&quot;val&quot;] 前匹配</li>
+<li>[attr$=&quot;val&quot;] 后匹配</li>
+<li>[attr*=&quot;val&quot;] 任意匹配</li>
+</ul>
+<p>其中，尖角符号^、美元符号$ 以及星号*都是正则表达式中的特殊标识符，分别表示前匹配、后匹配和任意匹配。</p>
+<p>由于现代网页源码都是编译过后的产物，发到用户浏览器中的源码经常有这样的元素节点：</p>
+<pre><code class="language-html">&lt;h2 class=&quot;UserInfoBox_textEllipsis_13jj5&quot; f_c=&quot;8&quot;&gt;点击登录&lt;/h2&gt;
+</code></pre>
+<p>其中，13jj5 并不是固定的，它是一串随机字符，是前端框架在编译时为了避免组件样式混淆而故意添加的。每一次产品重新发布，这个 class 样式便会变化一次。</p>
+<p>如果我们在智能化产品中直接这样查询目标元素：</p>
+<pre><code class="language-javascript">document.querySelector('h2.UserInfoBox_textEllipsis_13jj5')
+</code></pre>
+<p>下次产品重发后，代码便不再有效了。这种情况便适合采用属性值正则匹配选择器：</p>
+<pre><code class="language-javascript">document.querySelector('h2[class^=&quot;UserInfoBox_textEllipsis&quot;]');
+</code></pre>
+<p>使用属性值正则匹配选择器，关键记忆点有两个：</p>
+<p>1）使用了中括号，直接用在元素选择器后面。在 JS 中，计算属性也是使用中括号，这种写法是一致的、合理的；</p>
+<p>2）在中括号内，使用 k=v 形式书写，并且在 k 后面可以跟^、$、*三个正则符号，分别表示前匹配、后匹配和任意匹配。</p>
+]]></content>
+        <author>
+            <name>LIYI</name>
+            <email>coderliyi@gmail.com</email>
+            <uri>https://yishulun.com</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[读二胖《编程路上那些让我效率倍增的方法》，谈新人如何学习编程，只要方法对了人人都可以成为黑客高手]]></title>
         <id>https://yishulun.com/./src/posts/2023/12.html</id>
