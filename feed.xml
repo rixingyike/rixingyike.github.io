@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Sat, 21 Oct 2023 13:29:58 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 24 Oct 2023 07:39:25 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -14,6 +14,15 @@
         </image>
         <copyright>MIT License</copyright>
         <atom:link href="https://yishulun.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[在京养犬人文明倡议]]></title>
+            <link>https://yishulun.com/./src/posts/2023/14.html</link>
+            <guid>https://yishulun.com/./src/posts/2023/14.html</guid>
+            <pubDate>Tue, 24 Oct 2023 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>在京养犬人文明倡议</h1>
+]]></content:encoded>
+            <author>coderliyi@gmail.com (LIYI)</author>
+        </item>
         <item>
             <title><![CDATA[使用 querySelector 查询元素时，如何使用正则进行模糊匹配查询？]]></title>
             <link>https://yishulun.com/./src/posts/2023/13.html</link>
@@ -1024,7 +1033,7 @@
             <guid>https://yishulun.com/./src/posts/2023/11.html</guid>
             <pubDate>Thu, 12 Oct 2023 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<h1>使用 <a href="http://acme.sh">acme.sh</a> &amp; <a href="http://freessl.cn">freessl.cn</a> 申请免费 SSL 证书及自动续期</h1>
-<p>域名地址基于 https 协议访问需要 SSL 证书，大多数情况下是一个。cer、一个。key 文件，在服务器端部署 web 站点的时候，在编写 Apache 或 nginx 配置文件时，需要提供这两个文件。</p>
+<p>域名地址基于 https 协议访问需要 SSL 证书，大多数情况下是一个 cer、一个 key 文件，在服务器端部署 web 站点的时候，在编写 Apache 或 nginx 配置文件时，需要提供这两个文件。</p>
 <p><a href="http://freessl.cn">freessl.cn</a> 是一个可以让我们免费申请 SSL 证书的地方。但是免费证书都有一定的时效，如果证书过期了而我们忘记了重新申请并重新在服务器上部署 SSL 证书，便会影响网站的正常运行。</p>
 <p>于是有人开发了一个 <a href="http://acme.sh">acme.sh</a> 工具，这个东西看起来像个域名，其实是一个实现了 ACME 协议的脚本工具。所谓的 ACME 协议，简单理解就是：可以验证域名所有权，在线自动申请一个 SSL 证书并下载到本地。<a href="http://acme.sh">acme.sh</a> 脚本工具在本地创建一个定时任务，定时检查证书是否过期，如果发现要过期了，就自己申请一个，把本地的旧证书替换掉。</p>
 <p>这确实是一个自动化的好工具！</p>
