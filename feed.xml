@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Fri, 27 Oct 2023 04:53:37 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 27 Oct 2023 05:17:28 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -15,12 +15,12 @@
         <copyright>MIT License</copyright>
         <atom:link href="https://yishulun.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[篆刻简易刀法总结]]></title>
+            <title><![CDATA[篆刻简易刀法总结，包括刻印面与刻边款的刀]]></title>
             <link>https://yishulun.com/./src/posts/2023/15.html</link>
             <guid>https://yishulun.com/./src/posts/2023/15.html</guid>
             <pubDate>Fri, 27 Oct 2023 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p><img src="./assets/image-20231027121250938.png" alt="image-20231027121250938"></p>
-<h1>篆刻简易刀法总结</h1>
+            <content:encoded><![CDATA[<p><img src="./assets/image-20231027121250938.png" alt="简易篆刻刀法"></p>
+<h1>篆刻简易刀法总结，包括刻印面与刻边款的刀</h1>
 <blockquote>
 <p>印分朱白，皆是刻一道沟。刀分西种，冲与切，无论是哪一种，皆是刻沟之上边沿。</p>
 </blockquote>
@@ -63,7 +63,7 @@
 <p>可能你已经发现了，边款笔画的刻制方向总是与我们在纸面上书写的方向是相反的，至少是不同的。</p>
 <p>上面讲的点，我们在纸上书写时，一般是自上向下，但在边刻款时，点画却是自上向上冲的。</p>
 <p>横与点类似。横在纸面上书写时是从左向右，在刻边款时，却是自右向左，并且是使用外边角自右向左切刻的。</p>
-<p>短横，切一下即可；长横，切一下可能不够，便自右向左边切、边移动、边按压，大要两三下就能刻出一个较长的笔画。当然这也取决于用的刻画是多少毫米的，10毫米的刻刀全切，切一下不但够，而且可能还多了。</p>
+<p>短横，切一下即可；长横，切一下可能不够，便自右向左边切、边移动、边按压，大要两三下就能刻出一个较长的笔画。当然这也取决于用的刻画是多少毫米的，10 毫米的刻刀全切，切一下不但够，而且可能还多了。</p>
 <p><img src="./assets/F9X1iV8bsAA_DK4.png" alt="横"></p>
 <h3>3）撇的刻制</h3>
 <p>在边款中，撇有两种，第一种其实是提，有短的、有长的。刻的时候，是内刀角入印，从左下向右上方向切压。</p>
