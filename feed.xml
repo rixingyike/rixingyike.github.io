@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Tue, 31 Oct 2023 13:35:29 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 31 Oct 2023 13:47:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -108,12 +108,12 @@
             <author>coderliyi@gmail.com (LIYI)</author>
         </item>
         <item>
-            <title><![CDATA[我们如何使用 ChatGPT？]]></title>
+            <title><![CDATA[我们如何使用 ChatGPT、Claude 和 Google Bard？]]></title>
             <link>https://yishulun.com/./src/posts/2023/19.html</link>
             <guid>https://yishulun.com/./src/posts/2023/19.html</guid>
             <pubDate>Tue, 31 Oct 2023 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p><img src="assets/image-20231031201628678.png" alt="image-20231031201628678"></p>
-<h1>我们如何使用 ChatGPT？</h1>
+<h1>我们如何使用 ChatGPT、Claude 和 Google Bard？</h1>
 <p>你好，今天聊一下如何使用 ChatGPT。</p>
 <p>ChatGPT 很强大，且 ChatGPT 3.5 版本是公开与免费的，但并不是所有地方都可以使用它。有些地方甚至抵制使用。</p>
 <p>2023 年 3 月 31 日，意大利个人数据保护局（Garante per la ProtezionedeiDatiPersonali）发表声明，宣布禁止意大利人使用 ChatGPT，同时限制 OpenAI 收集和处理意大利用户信息。意大利由此成为了第一个官方禁用 ChatGPT 的国家。</p>
