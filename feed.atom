@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2023-10-31T12:11:22.161Z</updated>
+    <updated>2023-10-31T12:17:37.919Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -128,7 +128,7 @@
 <li>不得发布违反法律法规、有害于社会秩序、危害国家安全、损害公共利益的信息；</li>
 <li>不得利用生成式人工智能生成虚假信息、误导公众。</li>
 </ul>
-<p>ChatGPT 是允许使用的。只是ChatGPT 在大陆，如果使用者直接访问它的官网（<a href="https://chat.openai.com">https://chat.openai.com</a>），网站是打不开的。</p>
+<p>ChatGPT 是允许使用的。只是 ChatGPT 在大陆，如果使用者直接访问它的官网（<a href="https://chat.openai.com">https://chat.openai.com</a>），网站是打不开的。</p>
 <p>怎么办？难道我们求学向道的心就此被阻止了吗？</p>
 <p>显然不会，否则探长在这里也没有写这个专栏的意义了。在大陆，不仅有办法访问和使用 ChatGPT 3.5 版本，就是需要付费的 GPT-4 也是可以使用的。</p>
 <h2>如何注册 ChatGPT？</h2>
@@ -165,7 +165,7 @@
 <p>用户在微软与竞争对手的角逐过程中得到了充分的实惠，特别在 2023 年 3 月 22 日谷歌推出了 Google Bard 以后，微软更是加大了免费力度。2023 年 3 月 26 日微软宣布在 Bing App 上提供免费的 GPT-4 功能，且没有次数限制。</p>
 <p>也就是说，用户只要下载承载了必应搜索功能的 Bing App，就可以免费使用 GPT-4 服务了。</p>
 <h2>在 poe 上使用 ChatGPT</h2>
-<p>poe（<a href="https://poe.com/%EF%BC%89%E6%98%AF%E4%B8%80%E4%B8%AAAI%E9%9B%86%E5%90%88%E5%B9%B3%E5%8F%B0%EF%BC%8C%E5%AE%83%E6%8A%8A%E5%B8%B8%E8%A7%81%E7%9A%84AI%E9%83%BD%E9%9B%86%E5%90%88%E5%9C%A8%E4%BA%86%E5%AE%83%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B9%B3%E5%8F%B0%E4%B9%8B%E4%B8%8A%EF%BC%8C%E4%BB%A5%E4%B8%80%E4%B8%AA%E4%BD%8E%E5%BB%89%E7%9A%84%E6%80%BB%E5%8C%85%E4%BB%B7%E6%A0%BC%E2%80%94%E2%80%94%E5%A4%A7%E7%BA%A6">https://poe.com/）是一个AI集合平台，它把常见的AI都集合在了它自己的平台之上，以一个低廉的总包价格——大约</a> 20 美金，让用户一站使用多款著名的AI工具，例如GPT-4、Claude2、Midjourney等。</p>
+<p>poe（<a href="https://poe.com/%EF%BC%89%E6%98%AF%E4%B8%80%E4%B8%AAAI%E9%9B%86%E5%90%88%E5%B9%B3%E5%8F%B0%EF%BC%8C%E5%AE%83%E6%8A%8A%E5%B8%B8%E8%A7%81%E7%9A%84AI%E9%83%BD%E9%9B%86%E5%90%88%E5%9C%A8%E4%BA%86%E5%AE%83%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B9%B3%E5%8F%B0%E4%B9%8B%E4%B8%8A%EF%BC%8C%E4%BB%A5%E4%B8%80%E4%B8%AA%E4%BD%8E%E5%BB%89%E7%9A%84%E6%80%BB%E5%8C%85%E4%BB%B7%E6%A0%BC%E2%80%94%E2%80%94%E5%A4%A7%E7%BA%A6">https://poe.com/）是一个AI集合平台，它把常见的AI都集合在了它自己的平台之上，以一个低廉的总包价格——大约</a> 20 美金，让用户一站使用多款著名的 AI 工具，例如 GPT-4、Claude2、Midjourney 等。</p>
 <p><img src="./assets/image-20231031171243959.png" alt="poe订阅面板"></p>
 <p>**使用 poe 的好处是，在大陆它你可以直接访问与使用它，没有什么限制。**你不需要梯子，也不需要购买云主机。在 poe 上，ChatGPT 3.5 版本是免费的，只有你想使用更为强大的 GPT-4 时，才需要付费。</p>
 <h2>使用 Claude</h2>
@@ -184,7 +184,7 @@
 <p>在实践中我们也发现，OpenAI 的 ChatGPT，即使是 GPT-4 版本，<strong>在处理小说故事创作等创意工作时，总是急于完成工作而让输出结果的结尾显得仓促草率</strong>，这让文字结果的结尾看起来不甚完美甚至糟糕，有一种甘蔗啃到了末梢突然不甜的感觉。而 Claude，尤其是 Claude2，擅长处理大文本、长问题，尤其在创意故事生成这类问题上，它的表现明显优于 GPT-4。</p>
 <p>但我们并不能说 GPT-4 就比 Claude2 弱，就因此要放弃 GPT-4 而改用 Claude2，这也是不合适的。事实上 GPT-4 的 Data Analytics 功能非常强大，<strong>它用生成现实世界中可以真实运行的代码这一形式，规避或减轻了大语言模型 AI 的一个共同缺点————对不甚了解的问题一本正经地胡说八道</strong>。</p>
 <p>出于同一班人马之手的两个强大 AI，它们只是在优化方向上有所不同，属于各有所长，我们各取所长即可，不必厚此薄彼。</p>
-<p>读到这里，你有没有发现我为什么要特意介绍 poe ，虽然它只是一个 AI 集合，并不是一个独立而强大的AI？因为对于 Claude2 Pro 和 GPT-4，分别购买需要 40 美元，在 poe 上购买，20 美qqqq</p>
+<p>读到这里，你有没有发现我为什么要特意介绍 poe ，虽然它只是一个 AI 集合，并不是一个独立而强大的 AI？因为对于 Claude2 Pro 和 GPT-4，分别购买需要 40 美元，在 poe 上购买，20 美 qqqq</p>
 <h2>回顾</h2>
 <p>最后回顾一下。</p>
 <p>我们有如下 4 种方式直接使用出色的大语言模型 AI 服务：</p>
