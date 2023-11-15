@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2023-11-15T07:13:13.232Z</updated>
+    <updated>2023-11-15T07:20:00.221Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -61,7 +61,7 @@
 <p>本地写入 cookies 的代码大概是这样的：</p>
 <pre><code class="language-python">cookies = context.cookies()
 print(page.title())
-f = open('geektime.json', 'w')
+f = open('cookies.json', 'w')
 json.dump(cookies, f)
 </code></pre>
 <p>读取 cookies 以避免重复登录的代码是这样的：</p>
@@ -73,7 +73,7 @@ json.dump(cookies, f)
 
 ...
 context = browser.new_context()
-cookiefiles = ['geektime.json']
+cookiefiles = ['cookies.json']
 for cookiefile in cookiefiles:
   context.add_cookies(loadCookies(cookiefile))
 </code></pre>
