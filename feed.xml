@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Wed, 15 Nov 2023 07:05:54 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 15 Nov 2023 07:13:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -15,13 +15,13 @@
         <copyright>MIT License</copyright>
         <atom:link href="https://yishulun.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[50 行 Python 代码调用自己在 ChatGPT 创建的私有 GPTs]]></title>
+            <title><![CDATA[打开新世界大门，50 行 Python 代码调用自己在 ChatGPT 创建的私有 GPTs]]></title>
             <link>https://yishulun.com/./src/posts/2023/41.html</link>
             <guid>https://yishulun.com/./src/posts/2023/41.html</guid>
             <pubDate>Wed, 15 Nov 2023 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h1>50 行 Python 代码调用自己在 ChatGPT 创建的私有 GPTs</h1>
+            <content:encoded><![CDATA[<h1>打开新世界大门，50 行 Python 代码调用自己在 ChatGPT 创建的私有 GPTs</h1>
 <p>你好，今天聊一下 ChatGPT 的 GPTs。</p>
-<p>11 月 6 日，OpenAI 举办了自己的第一次开发者春晚，并现场推出了新模型 GPT-4 Turebo，及 Plus 会员用户可以基于新模型进行功能自定义的 GPTs。</p>
+<p>11 月 6 日，OpenAI 举办了自己的第一次开发者春晚，并现场推出了新模型 GPT-4 Turbo，及 Plus 会员用户可以基于新模型进行功能自定义的 GPTs。</p>
 <p>GPTs 是什么？</p>
 <p>简单理解，它就是一个充许用户不使用任何编程技术、不需要调用 ChatGPT API 即可完成训练的一个 AI。有人说，我不需要 GPTs，我用 LangChain+Agent+ChatGPT API 或其它大语言模型的 API，也能实现一个自定义的 GPT。</p>
 <p>没错，这么理解是对的！但不是所有人都会编程，也不是所有人都知道 LangChain 如何调用以及 AI Agent 如何开发。ChatGPT 适时推出的 GPTs，它的目标用户群体是广大的不会编程的用户。据 OpenAI 宣称，ChatGPT 周活已经达到了 1 亿，预测不久，几百万个甚至几千万个 GPTs 将出现在 GPT Store上。</p>
