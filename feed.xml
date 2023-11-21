@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Tue, 21 Nov 2023 04:13:50 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 21 Nov 2023 12:03:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -224,6 +224,10 @@ query()
 <p>GPT-4 Turbo 发布后，很多通过第三方壳子应用使用 ChatGPT 服务的用户，怀疑自己用的是假 GPT-4，这时候可以使用上面这条提示问知识库截止日期，正准答案是 2023 年 4 月。</p>
 <h2>由 codegen 反向生成代码</h2>
 <p>示例里面有一个地方的代码，在网页机器人开发中是公认的麻烦。例如，在 query 函数中，第 13 行、第 14 行、第 17 行，这三处的选择器代码并不容易写，尤其是最后一个。</p>
+<pre><code class="language-python">page.query_selector(&quot;#prompt-textarea&quot;).fill(&quot;告诉我，你的知识库截止日期是？&quot;)
+page.wait_for_selector('button[data-testid=&quot;send-button&quot;]').click()
+copy_button_selector = 'button.text-xs.dark\\:hover\\:text-gray-200'
+</code></pre>
 <p>为了解决这类问题，提升生产效率，playwright 提供了一个“由操作生成代码”的功能。以我们访问的 GPTs 网址为例，指令如下：</p>
 <pre><code class="language-bash">playwright codegen --browser firefox https://chat.openai.com/g/g-OitD1zCwT-story-weaver
 </code></pre>
