@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Fri, 24 Nov 2023 12:36:22 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Nov 2023 13:41:26 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -22,7 +22,7 @@
             <content:encoded><![CDATA[<h1>宫斗剧杀青，Sam Altman 又回到了 OpenAI</h1>
 <p>你好，今天继续聊一下 OpenAI 的宫斗剧后续。</p>
 <p><img src="./assets/image-20231123122820471.png" alt="sam back to openai"></p>
-<p>继 Altman 被董事会开除，他与好兄弟 Greg 双双从 OpenAI 离职，同时宣布将加入微信，负责新的高级人工智能项目之后，事情再起涟漪。昨天，也就是 11 月 22 日，Greg 再次宣布，他和 Sam 已经回到了 Open AI。</p>
+<p>继 Altman 被董事会开除，他与好兄弟 Greg 双双从 OpenAI 离职，同时宣布将加入微软，负责新的高级人工智能项目之后，事情再起涟漪。昨天，也就是 11 月 22 日，Greg 再次宣布，他和 Sam 已经回到了 Open AI。</p>
 <p>OpenAI 的官宣是这样的：</p>
 <blockquote>
 <p>我们原则上达成协议，让 Sam Altman 回到 OpenAl 担任首席执行官，由 Bret Taylor（前 salesforce CEO）、Larry Summers（前美国财政部部长）和 Adam D'Angelo（Quora 的联合创始人兼首席执行官，<a href="http://poe.com">poe.com</a> 创始人）组成了新的初始董事会。Sam Altman 没有在董事会里面，据称是为了让这个协议更快达成，可能也是为了防止将来潜在的利益冲突。</p>
@@ -88,7 +88,7 @@
 <p>理念之争的根本问题最终得到解决了吗？没有。我在<a href="https://mp.weixin.qq.com/s/q8QOuvthjVm2gyyPpBJviw">上一篇</a>文章中，还羡慕米国有如此为人类根本利益而思考的文化担当，不承想，72 个小时后就被打脸了。</p>
 <p>这一次 Sam 和 Greg 之所以能够回到 OpenAI，探长个人认为是 OpenAI 员工及其投资者裹挟了舆论的力量，迫使董事会中的反对派妥协了。经此一役，OpenAI 董事会改组了，以后应该不会再有这样的事情发生了，这对 Sam 及 OpenAI 签署联合信的员工或许是对事，但对整个人类而言却未必是好事。</p>
 <p>谁来保证 OpenAI 这艘巨轮在以后的航行中继续保持它的初心不变？</p>
-<p>我也没有答案，我和你一样都只是一个远隔重洋的吃瓜群众。或许像 Anthropic 这样的竞争对手存在，才是促使 OpenAI 大方向不走偏的保证。无论 OpenAI 今后如何发展，我们都认为它首先是安全的，其实才是高效和高能的。</p>
+<p>我也没有答案，我和你一样都只是一个远隔重洋的吃瓜群众。或许像 Anthropic 这样的竞争对手存在，才是促使 OpenAI 大方向不走偏的保证。无论 OpenAI 今后如何发展，我们都认为它首先是安全的，其次才是高效和高能的。</p>
 <p>我想起了Grok（<a href="https://grok.x.ai">https://grok.x.ai</a>），它是马斯克 2018 年被赶出 OpenAI 董事会以后，自己主导研发的 AI。在它刚刚官宣时我就提交了试用申请，很可惜现在都没有通过。</p>
 <p><img src="./assets/image-20231123144703520.png" alt="grok apply"></p>
 <p>在 OpenAI 的董事会改组以后，我希望 Grok 和 Claude（<a href="https://claude.ai">https://claude.ai</a>）可以好好发展。AI 公司不应该一家独大，也不能允许一家独大，即使目前它没有表现出任何恶意行为。</p>
