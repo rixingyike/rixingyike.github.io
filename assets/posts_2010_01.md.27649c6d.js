@@ -2,7 +2,7 @@ import{_ as s,o as a,c as n,Q as l}from"./chunks/framework.25d5caa7.js";const u=
 <span class="line"><span style="color:#E1E4E8;">{</span></span>
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> flash.display.Sprite;</span></span>
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#6A737D;">/**</span></span>
-<span class="line"><span style="color:#6A737D;">   * </span><span style="color:#F97583;">@author</span><span style="color:#6A737D;"> </span><span style="color:#B392F0;">LIYI </span><span style="color:#6A737D;">&lt;</span><span style="color:#79B8FF;">http://yishulun.com/</span><span style="color:#6A737D;">&gt;</span></span>
+<span class="line"><span style="color:#6A737D;">   * </span><span style="color:#F97583;">@author</span><span style="color:#6A737D;"> </span><span style="color:#B392F0;">LIYI </span><span style="color:#6A737D;">&lt;</span><span style="color:#79B8FF;">https://yishulun.com/</span><span style="color:#6A737D;">&gt;</span></span>
 <span class="line"><span style="color:#6A737D;">   * Email: 9830131@qq.com</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
 <span class="line"><span style="color:#E1E4E8;">  public class ProxyTest extends Sprite {</span></span>
@@ -29,7 +29,7 @@ import{_ as s,o as a,c as n,Q as l}from"./chunks/framework.25d5caa7.js";const u=
 <span class="line"><span style="color:#24292E;">{</span></span>
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#D73A49;">import</span><span style="color:#24292E;"> flash.display.Sprite;</span></span>
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#6A737D;">/**</span></span>
-<span class="line"><span style="color:#6A737D;">   * </span><span style="color:#D73A49;">@author</span><span style="color:#6A737D;"> </span><span style="color:#6F42C1;">LIYI </span><span style="color:#6A737D;">&lt;</span><span style="color:#005CC5;">http://yishulun.com/</span><span style="color:#6A737D;">&gt;</span></span>
+<span class="line"><span style="color:#6A737D;">   * </span><span style="color:#D73A49;">@author</span><span style="color:#6A737D;"> </span><span style="color:#6F42C1;">LIYI </span><span style="color:#6A737D;">&lt;</span><span style="color:#005CC5;">https://yishulun.com/</span><span style="color:#6A737D;">&gt;</span></span>
 <span class="line"><span style="color:#6A737D;">   * Email: 9830131@qq.com</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
 <span class="line"><span style="color:#24292E;">  public class ProxyTest extends Sprite {</span></span>

@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Sun, 26 Nov 2023 07:25:53 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 26 Nov 2023 11:25:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -4835,7 +4835,7 @@ echo `date` &amp;&amp; bun i &amp;&amp; echo `date`
 <p>有人说，可以在网站根目录下添加。htaccess 文件：</p>
 <pre><code class="language-bash">RewriteEngine on
 RewriteCond %{http_host}^yishulun.com [NC]
-RewriteRule ^(.*)$http://www.yishulun.com/$1 [L,R=301]
+RewriteRule ^(.*)$https://www.yishulun.com/$1 [L,R=301]
 </code></pre>
 <p>.htaccess 是给 Apache 服务器使用的网站配置文件，如果服务器不是 Apache，这个文件是起不到任何作用的。事实上我的 Github Pages 博客是由 Node.js 驱动的，因此这一招并不好使。</p>
 <p>有人说，在页面上使用脚本实现 301 跳转，页面访问不到，JS 脚本怎么可能执行？或者在 Godaddy DCC 配置面板上，添加 Fowarding 记录，我试了这招，等待了一晚上并不好用——因为那个博主说，Godaddy 配置生效时间长，所以等了这么久。</p>
@@ -7698,8 +7698,8 @@ gitbook@3.2.3 C:\Users\LIYI\AppData\Local\Temp\tmp-19328QAP4WZytuKh5\node_module
       &quot;minTocSize&quot;: 2
     },
     &quot;insert-logo-link&quot;: {
-      &quot;src&quot;: &quot;https://www.yishulun.com/avatar.png&quot;,
-      &quot;url&quot;: &quot;https://www.yishulun.com&quot;,
+      &quot;src&quot;: &quot;https://yishulun.com/avatar.png&quot;,
+      &quot;url&quot;: &quot;https://yishulun.com&quot;,
       &quot;style&quot;: &quot;background: none; max-height: 50px; border-radius: 50%;&quot;
     }
   }
@@ -10289,7 +10289,7 @@ var openid = {openId:'5',session_key:'6'}
 {
   import flash.display.Sprite;
   /**
-   * @author LIYI &lt;http://yishulun.com/&gt;
+   * @author LIYI &lt;https://yishulun.com/&gt;
    * Email: 9830131@qq.com
    */
   public class ProxyTest extends Sprite {

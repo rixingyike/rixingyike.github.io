@@ -104,8 +104,8 @@ import{_ as a,o as n,c as p,a as l,Q as s,k as o}from"./chunks/framework.25d5caa
 <span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#79B8FF;">&quot;minTocSize&quot;</span><span style="color:#E1E4E8;">: </span><span style="color:#79B8FF;">2</span></span>
 <span class="line"><span style="color:#E1E4E8;">    },</span></span>
 <span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#79B8FF;">&quot;insert-logo-link&quot;</span><span style="color:#E1E4E8;">: {</span></span>
-<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#79B8FF;">&quot;src&quot;</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">&quot;https://www.yishulun.com/avatar.png&quot;</span><span style="color:#E1E4E8;">,</span></span>
-<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#79B8FF;">&quot;url&quot;</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">&quot;https://www.yishulun.com&quot;</span><span style="color:#E1E4E8;">,</span></span>
+<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#79B8FF;">&quot;src&quot;</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">&quot;https://yishulun.com/avatar.png&quot;</span><span style="color:#E1E4E8;">,</span></span>
+<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#79B8FF;">&quot;url&quot;</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">&quot;https://yishulun.com&quot;</span><span style="color:#E1E4E8;">,</span></span>
 <span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#79B8FF;">&quot;style&quot;</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">&quot;background: none; max-height: 50px; border-radius: 50%;&quot;</span></span>
 <span class="line"><span style="color:#E1E4E8;">    }</span></span>
 <span class="line"><span style="color:#E1E4E8;">  }</span></span>
@@ -149,8 +149,8 @@ import{_ as a,o as n,c as p,a as l,Q as s,k as o}from"./chunks/framework.25d5caa
 <span class="line"><span style="color:#24292E;">      </span><span style="color:#005CC5;">&quot;minTocSize&quot;</span><span style="color:#24292E;">: </span><span style="color:#005CC5;">2</span></span>
 <span class="line"><span style="color:#24292E;">    },</span></span>
 <span class="line"><span style="color:#24292E;">    </span><span style="color:#005CC5;">&quot;insert-logo-link&quot;</span><span style="color:#24292E;">: {</span></span>
-<span class="line"><span style="color:#24292E;">      </span><span style="color:#005CC5;">&quot;src&quot;</span><span style="color:#24292E;">: </span><span style="color:#032F62;">&quot;https://www.yishulun.com/avatar.png&quot;</span><span style="color:#24292E;">,</span></span>
-<span class="line"><span style="color:#24292E;">      </span><span style="color:#005CC5;">&quot;url&quot;</span><span style="color:#24292E;">: </span><span style="color:#032F62;">&quot;https://www.yishulun.com&quot;</span><span style="color:#24292E;">,</span></span>
+<span class="line"><span style="color:#24292E;">      </span><span style="color:#005CC5;">&quot;src&quot;</span><span style="color:#24292E;">: </span><span style="color:#032F62;">&quot;https://yishulun.com/avatar.png&quot;</span><span style="color:#24292E;">,</span></span>
+<span class="line"><span style="color:#24292E;">      </span><span style="color:#005CC5;">&quot;url&quot;</span><span style="color:#24292E;">: </span><span style="color:#032F62;">&quot;https://yishulun.com&quot;</span><span style="color:#24292E;">,</span></span>
 <span class="line"><span style="color:#24292E;">      </span><span style="color:#005CC5;">&quot;style&quot;</span><span style="color:#24292E;">: </span><span style="color:#032F62;">&quot;background: none; max-height: 50px; border-radius: 50%;&quot;</span></span>
 <span class="line"><span style="color:#24292E;">    }</span></span>
 <span class="line"><span style="color:#24292E;">  }</span></span>
