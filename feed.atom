@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2023-12-22T01:40:02.833Z</updated>
+    <updated>2023-12-23T13:35:30.050Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -6112,7 +6112,28 @@ components:
 <p>划线部分应改为：渲染上下文对象属于哪个画布，就对哪个画布生效。</p>
 <p><img src="./assets/75-p480.jpeg" alt="img"></p>
 <h2>后端篇</h2>
-<p>无</p>
+<h3>3.1 关于lbs域名白名单的设置</h3>
+<p>大概在书上如下图1-10这个位置：</p>
+<p><img src="./assets/image-20231223211956865.png" alt="image-20231223211956865"></p>
+<p>书上提到的一个位于这里（<a href="https://lbs.qq.com/service/webService/webServiceGuide/webServiceGcoder%EF%BC%89%E7%9A%84%E5%9C%A8%E7%BA%BF%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%EF%BC%8C%E7%8E%B0%E5%9C%A8%E6%9C%89%E4%BA%86%E4%BF%AE%E6%94%B9%EF%BC%8C%E4%B8%8D%E5%86%8D%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%A1%AB%E5%86%99key%EF%BC%8C%E6%89%80%E4%BB%A5%E5%8E%9F%E4%B9%A6%E4%B8%8A%E7%9A%84%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E4%B8%80%E4%B8%8B%E3%80%82">https://lbs.qq.com/service/webService/webServiceGuide/webServiceGcoder）的在线测试工具，现在有了修改，不再可以直接填写key，所以原书上的测试方法需要修改一下。</a></p>
+<p>目前在测试开发阶段最简便的设置白名单的方式，是将白名单列表留空：</p>
+<p><img src="./assets/image-20231223212137478.png" alt="image-20231223212137478"></p>
+<p>留空代表不限制调用来源。</p>
+<p>留空以后，可以使用下面两个方法测试API Key的可用性：</p>
+<ul>
+<li>
+<p>1，直接在浏览器中访问：<a href="https://apis.map.qq.com/ws/geocoder/v1?location=28.7033487,115.8660847&amp;key=L5YBZ-BTZHX-FPU42-Z3PUL-VHHG2-AFF4Q&amp;get_poi=1">https://apis.map.qq.com/ws/geocoder/v1?location=28.7033487,115.8660847&amp;key=L5YBZ-BTZHX-FPU42-Z3PUL-VHHG2-AFF4Q&amp;get_poi=1</a></p>
+</li>
+<li>
+<p>2，在终端中访问：curl &quot;<a href="https://apis.map.qq.com/ws/geocoder/v1?location=28.7033487,115.8660847&amp;key=L5YBZ-BTZHX-FPU42-Z3PUL-VHHG2-AFF4Q&amp;get_poi=1">https://apis.map.qq.com/ws/geocoder/v1?location=28.7033487,115.8660847&amp;key=L5YBZ-BTZHX-FPU42-Z3PUL-VHHG2-AFF4Q&amp;get_poi=1</a>&quot;</p>
+</li>
+</ul>
+<p>注意将key替换成自己的key。</p>
+<p>如果不这样设置，或按原方法设置，可能会遇到这样的一个错误：</p>
+<pre><code>&quot;message&quot;: &quot;请求来源未被授权，解决方法见：https://lbs.qq.com/faq/serverFaq/webServiceKey。此次请求无来源信息&quot;
+</code></pre>
+<p>这个错误可能出现在Web请求或curl请求中，没有来源信息也属于来源未被授权的情况之一。</p>
+<p>由于腾讯LBS官方SDK及文档在以后可能存在变化，在设置白名单时，最好当时查看在开发者工具网络面板中出现的域名，并将其设置在腾讯LBS管理后台的白名单中。<a href="http://xn--servicewechat-vd8v3mx81czm1dep7cvk7apdat6j68m1w1cxop.com">被设置的域名可能继续是servicewechat.com</a>，也可能是其它域名。</p>
 <p>京东购买链接：<a href="https://item.jd.com/10070363837259.html">https://item.jd.com/10070363837259.html</a></p>
 ]]></content>
         <author>
