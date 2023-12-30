@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2023-12-28T04:49:38.887Z</updated>
+    <updated>2023-12-30T10:18:31.338Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -129,7 +129,7 @@ class SyncLBSManager {
         this.#updateCity();
     }
     async #updateCity() {
-        const res = await wx.getFuzzyLocation({
+        const res = await promisify(wx.getFuzzyLocation)({
             type: &quot;gcj02&quot;,
             altitude: false
         }).catch(console.log);

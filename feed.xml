@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Thu, 28 Dec 2023 04:49:38 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 30 Dec 2023 10:18:31 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -128,7 +128,7 @@ class SyncLBSManager {
         this.#updateCity();
     }
     async #updateCity() {
-        const res = await wx.getFuzzyLocation({
+        const res = await promisify(wx.getFuzzyLocation)({
             type: &quot;gcj02&quot;,
             altitude: false
         }).catch(console.log);
