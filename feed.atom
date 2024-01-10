@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2024-01-02T02:08:37.452Z</updated>
+    <updated>2024-01-10T02:51:50.660Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -6257,9 +6257,9 @@ components:
 <h2>前端篇</h2>
 <h3>P17</h3>
 <p><img src="https://cdn.jsdelivr.net/gh/rixingyike/images@master/202320230711225054-2023-07-11-22-50-56.png" alt="20230711225054-2023-07-11-22-50-56"></p>
-<p>有读者找不到，在箭头处可以添加一句：具体见后端篇第16课拓展部分。</p>
+<p>有读者找不到对应内容，在箭头处、句号前面可以添加一句：第16课拓展部分。</p>
 <h3>P55</h3>
-<p>如下所示，<code>0+&quot;10&quot;</code>结果是&quot;010&quot;，并不是数值10，红框内应改为：</p>
+<p>如下所示，<code>0+&quot;10&quot;</code>结果是<code>&quot;010&quot;</code>，并不是数值10；如果想将数字字符串转化为数字，直接在前面加符号“+”，不需要数字 0。截图红框内应改为：</p>
 <blockquote>
 <p>使用加号与一个数字拼接：+ &quot;10&quot;，这种方式最简单直接，其实本质上也是隐式转换。</p>
 </blockquote>
@@ -6267,7 +6267,7 @@ components:
 <p>该处由@<strong>MuninnC</strong>指出，感谢勘误。</p>
 <h3>P156(增补)</h3>
 <img src="./assets/image-20230520193735778.png" alt="image-20230520193735778" style="zoom: 67%;" />
-<p>在箭头所示的地方（“..进行改写。”）添加这样一段话：</p>
+<p>在箭头所示的地方（..进行改写。）、句号后面，添加这样一句话：</p>
 <blockquote>
 <p>..进行改写。注意这里的3处事件，指代码清单4-2中的click、mousemove、click三个事件，分别将以touchEnd、touchMove和touchEnd事件改写。</p>
 </blockquote>
@@ -6278,14 +6278,14 @@ components:
 </code></pre>
 <p>第二处，划线部分应改为：</p>
 <p>其中c、b、a位于栈内存，我们是直接操作的；而e、d保存的是引用地址......</p>
-<img src="./assets/image-20230308234139526.png" alt="image-20230308234139526" style="zoom: 25%;" />
+<p><img src="./assets/image-20240110103310614.png" alt="image-20240110103310614"></p>
 <h3>P281</h3>
 <p><img src="./assets/image-20230611150634840.png" alt="image-20230611150634840"></p>
-<p>这里在“第7行...”这一段的后面，可能需要加一段解释内容。内容如下：</p>
-<p>注意第9行这里的代码，让#pos指向defaultPos，为什么也没用？原因是这样的：如果使用第9行、而不是第10～11行的代码，在第一次执行reset时，会把defaultPos这个引用对象赋值给#pos，之后小球在运动过程中，更新的都是#pos——同时也是defaultPos对象，也就是说，defaultPos这个默认值对象被“污染”了，从第二次调用reset开始，它再也不能作为默认值对象被使用了——它里面的x、y值已经不是默认值，而是小球运动最后停止时的位置。这是一处因为引用对象而产生的“陷阱”，JS中引用对象在赋值时不会产生拷贝，可能会因此产生许多问题，这里是一个很好的示例。</p>
+<p>因为有读者对这里理解有疑问，在“第7行...”这一句的后面，需要加一段解释内容。内容如下：</p>
+<p>注意第9行，让#pos指向defaultPos，为什么也没用？原因是这样的：如果使用第9行、而不是第10～11行的代码，在第一次执行reset时，会把defaultPos这个引用对象赋值给#pos，之后小球在运动过程中，更新的都是#pos——同时也是defaultPos对象。也就是说，defaultPos这个默认值对象被“污染”了，从第二次调用reset开始，它再也不能作为默认值对象被使用了——它里面的x、y值已经不是默认值，而是小球运动第一次停止时的位置。这是一处因为JS引用对象而产生的使用“陷阱”，JS中引用对象在赋值时不会产生值拷贝，程序可能会因此产生许多问题，这是一个很好的反例。</p>
 <h3>P480</h3>
-<p>划线部分应改为：渲染上下文对象属于哪个画布，就对哪个画布生效。</p>
-<p><img src="./assets/75-p480.jpeg" alt="img"></p>
+<p>红色划线部分应改为：...渲染上下文对象属于哪个画布，就对哪个画布生效。</p>
+<p><img src="./assets/image-20240110104010105.png" alt="image-20240110104010105"></p>
 <h2>后端篇</h2>
 <h3>3课1小节 关于LBS域名白名单的设置</h3>
 <p>大概在书上如下图1-10这个位置：</p>
