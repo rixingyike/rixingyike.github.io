@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Thu, 11 Jan 2024 12:14:01 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 11 Jan 2024 15:50:37 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -6070,8 +6070,24 @@ components:
 <p>红色划线部分应改为：...渲染上下文对象属于哪个画布，就对哪个画布生效。</p>
 <p><img src="./assets/image-20240110104010105.png" alt="image-20240110104010105"></p>
 <h2>后端篇</h2>
-<h3>3课1小节 关于LBS域名白名单的设置</h3>
-<p>大概在书上如下图1-10这个位置：</p>
+<h3>P57 修改gameTopLayer.init</h3>
+<p>在代码清单 2-14 中，应该添加对gameTopLayer.init方法调用的改动：</p>
+<pre><code class="language-js">init() {
+	...
+  // gameTopLayer.init()
+  gameTopLayer.init({ game: this })
+  ...
+}
+</code></pre>
+<p>前面P53 页只走到了gameTopLayer.init()，这一节应该是有添加gameTopLayer.init({ game: this })这一发动的，但是 在P57 页的代码清单2-17 中没有体现。</p>
+<h3>P44 2.1文件路径标注</h3>
+<p>在第 2 章第 4 课中，代码清单中的路径“JS:第2章\4.1\game.js”都应该是“JS:第2章\2.1\game.js”</p>
+<p><img src="./assets/image-20240111234002702.png" alt="image-20240111234002702"></p>
+<h3>P59 2.2文件路径标注</h3>
+<p>同上一条，第2章第5课中，代码清单中的路径“JS:第2章\4.2\game.js”都应该是“JS:第2章\2.2\game.js”</p>
+<p><img src="./assets/image-20240111234318674.png" alt="image-20240111234318674"></p>
+<h3>P27，关于LBS域名白名单的设置</h3>
+<p>在书上27页，如下图1-10这个位置：</p>
 <p><img src="./assets/image-20231223211956865.png" alt="image-20231223211956865"></p>
 <p>书上提到的一个位于这里（<a href="https://lbs.qq.com/service/webService/webServiceGuide/webServiceGcoder%EF%BC%89%E7%9A%84%E5%9C%A8%E7%BA%BF%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%EF%BC%8C%E7%8E%B0%E5%9C%A8%E6%9C%89%E4%BA%86%E4%BF%AE%E6%94%B9%EF%BC%8C%E4%B8%8D%E5%86%8D%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%A1%AB%E5%86%99key%EF%BC%8C%E6%89%80%E4%BB%A5%E5%8E%9F%E4%B9%A6%E4%B8%8A%E7%9A%84%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E4%B8%80%E4%B8%8B%E3%80%82">https://lbs.qq.com/service/webService/webServiceGuide/webServiceGcoder）的在线测试工具，现在有了修改，不再可以直接填写key，所以原书上的测试方法需要修改一下。</a></p>
 <p>目前在测试开发阶段最简便的设置白名单的方式，是将白名单列表留空：</p>
@@ -6092,9 +6108,10 @@ components:
 </code></pre>
 <p>这个错误可能出现在Web请求或curl请求中，没有来源信息也属于来源未被授权的情况之一。</p>
 <p>由于腾讯LBS官方SDK及文档在以后可能存在变化，在设置白名单时，最好当时查看在开发者工具网络面板中出现的域名，并将其设置在腾讯LBS管理后台的白名单中。<a href="http://xn--servicewechat-vd8v3mx81czm1dep7cvk7apdat6j68m1w1cxop.com">被设置的域名可能继续是servicewechat.com</a>，也可能是其它域名。</p>
-<h3>3课1小节 关于使用wx.getFuzzyLocation代替wx.getLocation的修改</h3>
+<h3>P22，3课1小节 使用wx.getFuzzyLocation代替</h3>
 <p>也在3.1小节，与上面的问题是相关的。由于微信官方对地理位置权限的加强管理，这里有较多变化，具体见：<a href="https://yishulun.com/posts/2023/52.html">如何在微信小游戏/小游戏中获取地理位置信息？</a></p>
-<h3>4课1小节 在线资源地址替换</h3>
+<p>这里有代码清单1-12、1-14、1-15都涉及修改。</p>
+<h3>P32、P33，4课1小节 在线资源地址替换</h3>
 <p>由于原在线存储桶可能存在到期，禁止访问等问题，对于下面的在线资源地址：</p>
 <blockquote>
 <p><a href="https://cloud-1252822131.cos.ap-beijing.myqcloud.com/images/bg.png">https://cloud-1252822131.cos.ap-beijing.myqcloud.com/images/bg.png</a><br>
