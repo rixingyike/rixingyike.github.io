@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Sat, 13 Jan 2024 13:16:50 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Jan 2024 13:22:24 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -202,7 +202,7 @@ export default new SyncLBSManager();
 <p>夜深场散人静，独坐窗下，窗外雪凝冰。<br/><br>
 沉思以往创业路，亦曾风雨峥嵘。<br/><br>
 征程过半，前途未明，谁当愤世憎？<br/><br>
-心中唯愿，抑怒鼓帆再征。<br/></p>
+心中唯愿，抑怒鼓帆再战。<br/></p>
 ]]></content:encoded>
             <author>coderliyi@gmail.com (LIYI)</author>
         </item>

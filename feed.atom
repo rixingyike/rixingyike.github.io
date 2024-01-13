@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2024-01-13T13:16:51.015Z</updated>
+    <updated>2024-01-13T13:22:24.296Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -207,7 +207,7 @@ export default new SyncLBSManager();
 <p>夜深场散人静，独坐窗下，窗外雪凝冰。<br/><br>
 沉思以往创业路，亦曾风雨峥嵘。<br/><br>
 征程过半，前途未明，谁当愤世憎？<br/><br>
-心中唯愿，抑怒鼓帆再征。<br/></p>
+心中唯愿，抑怒鼓帆再战。<br/></p>
 ]]></content>
         <author>
             <name>LIYI</name>
