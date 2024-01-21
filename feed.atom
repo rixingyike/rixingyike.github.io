@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2024-01-21T14:07:20.263Z</updated>
+    <updated>2024-01-21T14:11:19.278Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -16,11 +16,11 @@
     <icon>https://yishulun.com/logo.svg</icon>
     <rights>MIT License</rights>
     <entry>
-        <title type="html"><![CDATA[如何刻画人物？一个简单的人物刻画公式]]></title>
+        <title type="html"><![CDATA[如何刻画人物？一个简单的人物刻画公式和有效的 AI 提示语]]></title>
         <id>https://yishulun.com/./src/posts/2024/4.html</id>
         <link href="https://yishulun.com/./src/posts/2024/4.html"/>
         <updated>2024-01-21T00:00:00.000Z</updated>
-        <content type="html"><![CDATA[<h1>如何刻画人物？一个简单的人物刻画公式</h1>
+        <content type="html"><![CDATA[<h1>如何刻画人物？一个简单的人物刻画公式和有效的 AI 提示语</h1>
 <p>目录</p>
 <p>[TOC]</p>
 <p>刻画人物就是让人物有血有肉，有立体感，吸引读者。刻画人物是有公式的，加上 AI，让 AI 做一些基础协助，刻画好人物并不太难。</p>
