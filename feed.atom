@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2024-01-19T02:20:50.071Z</updated>
+    <updated>2024-01-21T05:03:40.876Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -15,6 +15,36 @@
     <logo>https://yishulun.com/logo.svg</logo>
     <icon>https://yishulun.com/logo.svg</icon>
     <rights>MIT License</rights>
+    <entry>
+        <title type="html"><![CDATA[《批判性思维》读书笔记]]></title>
+        <id>https://yishulun.com/./src/posts/2024/3.html</id>
+        <link href="https://yishulun.com/./src/posts/2024/3.html"/>
+        <updated>2024-01-19T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h1>《批判性思维》读书笔记</h1>
+<p>这是由日本某位大学讲师撰写的一本书，内容不厚，观点很是新颖，翻了几页就被吸引了。我不会因为日本在近代侵略过我们，就不读日本人写的东西。相反，对于我们的敌人，我们更应该了解。相信你看了此书之后，也会对作者产生一丝佩服，日本确实是一个很擅长自省的民族。</p>
+<p>首先，作者提出，优秀的定义，在 AI 诞生后，将会被重新定义。现在，全世界最推崇的能力是：</p>
+<p>解决复杂问题的能力！</p>
+<p>什么是复杂问题？这是与简单问题相对立的，指哪些跨域的、跨学科的、没有出现过的问题。</p>
+<p>人最富贵的能力是什么？</p>
+<p>是提出不一样见解的创造力。</p>
+<p>本书作者撰写的是批判性思维，由这种思维驱动，人可以得出不一样的、合理的、富有创造力的新见解。这是作者撰写本书的目的。</p>
+<p>以下内容共有三部分：</p>
+<p>1，培养独立思考和发现新规则的创造力</p>
+<p>2，解决复杂问题的三步</p>
+<p>3，保持良好的怀疑一切的习惯</p>
+<h2>一、独立思考三步：观察➜思考➜提问</h2>
+<h2>二、如何训练发现新规则的创造力？</h2>
+<h2>三、解决复杂问题第一步：找到问题本质</h2>
+<h2>四、训练批判性思维，第二步：发现无懈可击的依据</h2>
+<h2>五、锤炼语言表达能力，第三步：表达出来</h2>
+<h2>六、保持怀疑常识的习惯</h2>
+]]></content>
+        <author>
+            <name>LIYI</name>
+            <email>coderliyi@gmail.com</email>
+            <uri>https://yishulun.com</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[体验世界单体最大北京城市图书馆，看到桌子的脑残设计，我不禁骂了一句：傻逼！]]></title>
         <id>https://yishulun.com/./src/posts/2024/2.html</id>
@@ -6616,22 +6646,9 @@ components:
 <p>红色划线部分应改为：...渲染上下文对象属于哪个画布，就对哪个画布生效。</p>
 <p><img src="./assets/image-20240110104010105.png" alt="image-20240110104010105"></p>
 <h2>后端篇</h2>
-<h3>P57 修改gameTopLayer.init</h3>
-<p>在代码清单 2-14 中，应该添加对gameTopLayer.init方法调用的改动：</p>
-<pre><code class="language-js">init() {
-	...
-  // gameTopLayer.init()
-  gameTopLayer.init({ game: this })
-  ...
-}
-</code></pre>
-<p>前面P53 页只走到了gameTopLayer.init()，这一节应该是有添加gameTopLayer.init({ game: this })这一发动的，但是 在P57 页的代码清单2-17 中没有体现。</p>
-<h3>P44 2.1文件路径标注</h3>
-<p>在第 2 章第 4 课中，代码清单中的路径“JS:第2章\4.1\game.js”都应该是“JS:第2章\2.1\game.js”</p>
-<p><img src="./assets/image-20240111234002702.png" alt="image-20240111234002702"></p>
-<h3>P59 2.2文件路径标注</h3>
-<p>同上一条，第2章第5课中，代码清单中的路径“JS:第2章\4.2\game.js”都应该是“JS:第2章\2.2\game.js”</p>
-<p><img src="./assets/image-20240111234318674.png" alt="image-20240111234318674"></p>
+<h3>P22，3课1小节 使用wx.getFuzzyLocation代替</h3>
+<p>也在3.1小节，与上面的问题是相关的。由于微信官方对地理位置权限的加强管理，这里有较多变化，具体见：<a href="https://yishulun.com/posts/2023/52.html">如何在微信小游戏/小游戏中获取地理位置信息？</a></p>
+<p>这里有代码清单1-12、1-14、1-15都涉及修改。</p>
 <h3>P27，关于LBS域名白名单的设置</h3>
 <p>在书上27页，如下图1-10这个位置：</p>
 <p><img src="./assets/image-20231223211956865.png" alt="image-20231223211956865"></p>
@@ -6654,9 +6671,6 @@ components:
 </code></pre>
 <p>这个错误可能出现在Web请求或curl请求中，没有来源信息也属于来源未被授权的情况之一。</p>
 <p>由于腾讯LBS官方SDK及文档在以后可能存在变化，在设置白名单时，最好当时查看在开发者工具网络面板中出现的域名，并将其设置在腾讯LBS管理后台的白名单中。<a href="http://xn--servicewechat-vd8v3mx81czm1dep7cvk7apdat6j68m1w1cxop.com">被设置的域名可能继续是servicewechat.com</a>，也可能是其它域名。</p>
-<h3>P22，3课1小节 使用wx.getFuzzyLocation代替</h3>
-<p>也在3.1小节，与上面的问题是相关的。由于微信官方对地理位置权限的加强管理，这里有较多变化，具体见：<a href="https://yishulun.com/posts/2023/52.html">如何在微信小游戏/小游戏中获取地理位置信息？</a></p>
-<p>这里有代码清单1-12、1-14、1-15都涉及修改。</p>
 <h3>P32、P33，4课1小节 在线资源地址替换</h3>
 <p>由于原在线存储桶可能存在到期，禁止访问等问题，对于下面的在线资源地址：</p>
 <blockquote>
@@ -6668,6 +6682,26 @@ components:
 <p><a href="https://yishulun.com/wegame_ap/images/bg.png">https://yishulun.com/wegame_ap/images/bg.png</a></p>
 </blockquote>
 <p>如果原地址可用当用，不可用时，可换用替换后的地址。</p>
+<h3>P44 2.1文件路径标注</h3>
+<p>在第 2 章第 4 课中，代码清单中的路径“JS:第2章\4.1\game.js”都应该是“JS:第2章\2.1\game.js”</p>
+<p><img src="./assets/image-20240111234002702.png" alt="image-20240111234002702"></p>
+<h3>P57 修改gameTopLayer.init</h3>
+<p>在代码清单 2-14 中，应该添加对gameTopLayer.init方法调用的改动：</p>
+<pre><code class="language-js">init() {
+	...
+  // gameTopLayer.init()
+  gameTopLayer.init({ game: this })
+  ...
+}
+</code></pre>
+<p>前面P53 页只走到了gameTopLayer.init()，这一节应该是有添加gameTopLayer.init({ game: this })这一发动的，但是 在P57 页的代码清单2-17 中没有体现。</p>
+<h3>P59 2.2文件路径标注</h3>
+<p>同上一条，第2章第5课中，代码清单中的路径“JS:第2章\4.2\game.js”都应该是“JS:第2章\2.2\game.js”</p>
+<p><img src="./assets/image-20240111234318674.png" alt="image-20240111234318674"></p>
+<h3>P72（排行榜设置位置）</h3>
+<p>原游戏礼包配置、游戏圈功能、活动运营配置、基础运营素材和排行榜设置已迁移到“游戏运营工具箱”，目前在：功能→游戏运营工具箱→排行榜设置。</p>
+<p>图示划线部分应修改为：功能→游戏运营工具箱→排行榜设置。</p>
+<p><img src="./assets/image-20240121130022050.png" alt="image-20240121130022050"></p>
 <p>京东购买链接：<a href="https://item.jd.com/10070363837259.html">https://item.jd.com/10070363837259.html</a></p>
 ]]></content>
         <author>
