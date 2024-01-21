@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Sun, 21 Jan 2024 05:04:32 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 21 Jan 2024 05:44:02 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -6476,6 +6476,12 @@ components:
 <p>位置：</p>
 <p><img src="./assets/image-20240121130309985.png" alt="image-20240121130309985"></p>
 <p>京东购买链接：<a href="https://item.jd.com/10070363837259.html">https://item.jd.com/10070363837259.html</a></p>
+<h3>P75（needUpdate修改默认值）</h3>
+<p>如果排行榜没有完成配置，可能会引发一个画布的渲染效果，这是由排行榜拉取不到数据引起的，在排行榜正确设置以后，可以恢复。</p>
+<p>另外，为了增加代码的鲁棒性，可以修改 open_data/index.js 文件中的下列划线代码：</p>
+<p><img src="./assets/image-20240121134030456.png" alt="image-20240121134030456"></p>
+<p>原来此函数中，needUpdate默认为 true，现修改为 false，并且只在新分数（newRankValue.wxgame.score）大于旧分数（rankValue.wxgame.score）时，才变成true。</p>
+<p>修改后，即使排行榜没有准备好，代码也能避免报错。</p>
 ]]></content:encoded>
             <author>coderliyi@gmail.com (LIYI)</author>
         </item>
