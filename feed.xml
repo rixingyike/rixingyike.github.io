@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Sat, 17 Feb 2024 12:01:36 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 20 Feb 2024 11:50:11 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -6641,6 +6641,23 @@ components:
 <p><img src="./assets/image-20240121134030456.png" alt="image-20240121134030456"></p>
 <p>原来此函数中，needUpdate默认为 true，现修改为 false，并且只在新分数（newRankValue.wxgame.score）大于旧分数（rankValue.wxgame.score）时，才变成true。</p>
 <p>修改后，即使排行榜没有准备好，代码也能避免报错。</p>
+<h3>P149 处理 npm i 安装类库的证书错误</h3>
+<p><img src="./assets/image-20240220194411562.png" alt="image-20240220194411562"></p>
+<p>在 P149 页时，执行 npm i 或 npm run dev 时，可能会遇到这样的错误：</p>
+<pre><code class="language-shell">npm ERR! code CERT_HAS_EXPIRED
+npm ERR! errno CERT_HAS_EXPIRED
+npm ERR! request to https://registry.npm.taobao.org/ylru/download/ylru-1.2.1.tgz failed, reason: certificate has expired
+</code></pre>
+<p>这个错误缘于社区类库更新规则的更改，及淘宝仓库网站证书的过期。</p>
+<p><img src="./assets/image-20240220194542465.png" alt="image-20240220194542465"></p>
+<p>npm不再支持自签名证书，而淘宝仓库网站恰好又使用了自定义证书。当我们使用 npm i 安装某些类库时，例如类库地址为 <a href="https://registry.npm.taobao.org/ylru/download/ylru-1.2.1.tgz%EF%BC%8C%E6%AD%A4%E6%97%B6npm%E6%97%A0%E6%B3%95%E9%AA%8C%E8%AF%81%E6%9D%A5%E6%BA%90%EF%BC%8C%E6%8A%9B%E5%87%BA%E4%BA%86">https://registry.npm.taobao.org/ylru/download/ylru-1.2.1.tgz，此时npm无法验证来源，抛出了</a> CERT_HAS_EXPIRED 错误。</p>
+<p>解决办法：</p>
+<p>关闭 SSL 验证</p>
+<pre><code>npm config set strict-ssl false
+</code></pre>
+<p>将软件源改回官网（更新安装类库时需要梯子）</p>
+<pre><code>npm config set registry https://registry.npmjs.org/
+</code></pre>
 ]]></content:encoded>
             <author>coderliyi@gmail.com (LIYI)</author>
         </item>
