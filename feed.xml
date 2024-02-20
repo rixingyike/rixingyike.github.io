@@ -4,7 +4,7 @@
         <title>LIYI</title>
         <link>https://yishulun.com/</link>
         <description>LIYI' Blog</description>
-        <lastBuildDate>Tue, 20 Feb 2024 11:50:11 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 20 Feb 2024 12:13:20 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -6655,9 +6655,10 @@ npm ERR! request to https://registry.npm.taobao.org/ylru/download/ylru-1.2.1.tgz
 <p>关闭 SSL 验证</p>
 <pre><code>npm config set strict-ssl false
 </code></pre>
-<p>将软件源改回官网（更新安装类库时需要梯子）</p>
+<p>修改软件源，例如将软件源地址改回官网：</p>
 <pre><code>npm config set registry https://registry.npmjs.org/
 </code></pre>
+<p>这个更改的副作用是，更新或安装类库时需要梯子，如果有梯子则无妨。</p>
 ]]></content:encoded>
             <author>coderliyi@gmail.com (LIYI)</author>
         </item>

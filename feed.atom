@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yishulun.com/</id>
     <title>LIYI</title>
-    <updated>2024-02-20T11:50:11.031Z</updated>
+    <updated>2024-02-20T12:13:20.030Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>LIYI</name>
@@ -6888,9 +6888,10 @@ npm ERR! request to https://registry.npm.taobao.org/ylru/download/ylru-1.2.1.tgz
 <p>关闭 SSL 验证</p>
 <pre><code>npm config set strict-ssl false
 </code></pre>
-<p>将软件源改回官网（更新安装类库时需要梯子）</p>
+<p>修改软件源，例如将软件源地址改回官网：</p>
 <pre><code>npm config set registry https://registry.npmjs.org/
 </code></pre>
+<p>这个更改的副作用是，更新或安装类库时需要梯子，如果有梯子则无妨。</p>
 ]]></content>
         <author>
             <name>LIYI</name>
