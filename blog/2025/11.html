@@ -1,270 +1,957 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="generator" content="VuePress 2.0.0-rc.19" /><meta name="theme" content="VuePress Theme Plume " /><script id="check-mac-os">document.documentElement.classList.toggle('mac', /Mac|iPhone|iPod|iPad/i.test(navigator.platform))</script><script id="check-dark-mode">;(function () {const um= localStorage.getItem('vuepress-theme-appearance') || 'dark';const sm = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = um === 'dark' || (um !== 'light' && sm);document.documentElement.dataset.theme = isDark ? 'dark' : 'light';})();</script><link rel="icon" type="image/png" href="/favicon.ico"><meta name="og:author" content="一树论"><meta property="og:description" content="一花一世界，一树一菩提"><script defer crossorigin="anonymous" src="//www.googletagmanager.com/gtag/js?id=G-8N64Q25EK9"></script><script>window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-8N64Q25EK9');</script><script defer crossorigin="anonymous" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2139303336591479"></script><title>Rust学习笔记4：智能指针、引用和并发 | 一树论</title><meta name="description" content="一花一世界，一树一菩提"><link rel="preload" href="/assets/style.DM3z6du7.css" as="style"><link rel="stylesheet" href="/assets/style.DM3z6du7.css"><link rel="modulepreload" href="/assets/app-BxiebszO.js"><link rel="modulepreload" href="/assets/11.html-ifvQm_ea.js"></head><body><div id="app"><!--[--><!--[--><div class="theme-plume vp-layout" vp-container data-v-d6552e9a><!--[--><!--[--><!--]--><!--[--><span tabindex="-1" data-v-12a31158></span><a href="#VPContent" class="vp-skip-link visually-hidden" data-v-12a31158> Skip to content </a><!--]--><!----><header class="vp-nav" data-v-d6552e9a data-v-96eccaba><div class="vp-navbar" vp-navbar data-v-96eccaba data-v-bdd47ae4><div class="wrapper" data-v-bdd47ae4><div class="container" data-v-bdd47ae4><div class="title" data-v-bdd47ae4><div class="vp-navbar-title" data-v-bdd47ae4 data-v-3b06fbfc><a class="vp-link no-icon link title" href="/" data-v-3b06fbfc data-v-f069b6fd><!--[--><!--[--><!--]--><!--[--><!--[--><!--[--><img class="vp-image dark logo" src="/logo.png" alt data-v-ad922d12><!--]--><!--[--><img class="vp-image light logo" src="/logo.png" alt data-v-ad922d12><!--]--><!--]--><!--]--><span data-v-3b06fbfc>一树论</span><!--[--><!--]--><!--]--><!----></a></div></div><div class="content" data-v-bdd47ae4><div class="content-body" data-v-bdd47ae4><!--[--><!--]--><div class="vp-navbar-search search" data-v-bdd47ae4><div class="search-wrapper" data-v-10feaed3><!----><div id="local-search" data-v-10feaed3><button type="button" class="mini-search mini-search-button" aria-label="搜索文档" data-v-10feaed3><span class="mini-search-button-container"><span class="mini-search-search-icon vpi-mini-search" aria-label="search icon"></span><span class="mini-search-button-placeholder">搜索文档</span></span><span class="mini-search-button-keys"><kbd class="mini-search-button-key"></kbd><kbd class="mini-search-button-key">K</kbd></span></button></div></div></div><nav aria-labelledby="main-nav-aria-label" class="vp-navbar-menu menu" data-v-bdd47ae4 data-v-6460476e><span id="main-nav-aria-label" class="visually-hidden" data-v-6460476e>Main Navigation</span><!--[--><!--[--><a class="vp-link no-icon link navbar-menu-link" href="/" tabindex="0" data-v-6460476e data-v-85aa99a3 data-v-f069b6fd><!--[--><!----><span data-v-85aa99a3>首页</span><!--]--><!----></a><!--]--><!--[--><a class="vp-link no-icon link navbar-menu-link" href="/notes/" tabindex="0" data-v-6460476e data-v-85aa99a3 data-v-f069b6fd><!--[--><!----><span data-v-85aa99a3>电子书</span><!--]--><!----></a><!--]--><!--[--><div class="vp-flyout vp-navbar-menu-group" data-v-6460476e data-v-e5ac9fc4><button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-e5ac9fc4><span class="text" data-v-e5ac9fc4><!----><!----><span data-v-e5ac9fc4>博客</span><span class="vpi-chevron-down text-icon" data-v-e5ac9fc4></span></span></button><div class="menu" data-v-e5ac9fc4><div class="vp-menu" data-v-e5ac9fc4 data-v-32f9ab84><div class="items" data-v-32f9ab84><!--[--><!--[--><div class="vp-menu-link" data-v-32f9ab84 data-v-ec192cee><a class="vp-link no-icon link" href="/blog/" data-v-ec192cee data-v-f069b6fd><!--[--><!----> 最新文章<!--]--><!----></a></div><!--]--><!--[--><div class="vp-menu-link" data-v-32f9ab84 data-v-ec192cee><a class="vp-link no-icon link" href="/categories.html" data-v-ec192cee data-v-f069b6fd><!--[--><!----> 分类<!--]--><!----></a></div><!--]--><!--[--><div class="vp-menu-link" data-v-32f9ab84 data-v-ec192cee><a class="vp-link no-icon link" href="/tags.html" data-v-ec192cee data-v-f069b6fd><!--[--><!----> 标签<!--]--><!----></a></div><!--]--><!--[--><div class="vp-menu-link" data-v-32f9ab84 data-v-ec192cee><a class="vp-link no-icon link" href="/archives.html" data-v-ec192cee data-v-f069b6fd><!--[--><!----> 归档<!--]--><!----></a></div><!--]--><!--[--><div class="vp-menu-link" data-v-32f9ab84 data-v-ec192cee><a class="vp-link no-icon link" href="/friends.html" data-v-ec192cee data-v-f069b6fd><!--[--><!----> 友链<!--]--><!----></a></div><!--]--><!--]--></div><!--[--><!--]--></div></div></div><!--]--><!--[--><a class="vp-link no-icon link navbar-menu-link" href="/about.html" tabindex="0" data-v-6460476e data-v-85aa99a3 data-v-f069b6fd><!--[--><!----><span data-v-85aa99a3>联系作者</span><!--]--><!----></a><!--]--><!--]--></nav><!----><div class="vp-navbar-appearance appearance" data-v-bdd47ae4 data-v-6fd3cbf0><button class="vp-switch vp-switch-appearance" type="button" role="switch" title aria-checked="false" data-v-6fd3cbf0 data-v-8ed16a8a data-v-aa684cf9><span class="check" data-v-aa684cf9><span class="icon" data-v-aa684cf9><!--[--><span class="vpi-sun sun" data-v-8ed16a8a></span><span class="vpi-moon moon" data-v-8ed16a8a></span><!--]--></span></span></button></div><div class="vp-social-links vp-navbar-social-links social-links" data-v-bdd47ae4 data-v-71df4a5c data-v-a628bdb3><!--[--><a class="vp-social-link no-icon" href="https://github.com/rixingyike" aria-label="github" target="_blank" rel="noopener" data-v-a628bdb3 data-v-0df5fecc><span class="vpi-social-github" /></a><!--]--></div><div class="vp-flyout vp-navbar-extra extra" data-v-bdd47ae4 data-v-08d67204 data-v-e5ac9fc4><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-e5ac9fc4><span class="vpi-more-horizontal icon" data-v-e5ac9fc4></span></button><div class="menu" data-v-e5ac9fc4><div class="vp-menu" data-v-e5ac9fc4 data-v-32f9ab84><!----><!--[--><!--[--><!----><div class="group" data-v-08d67204><div class="item appearance" data-v-08d67204><p class="label" data-v-08d67204>外观</p><div class="appearance-action" data-v-08d67204><button class="vp-switch vp-switch-appearance" type="button" role="switch" title aria-checked="false" data-v-08d67204 data-v-8ed16a8a data-v-aa684cf9><span class="check" data-v-aa684cf9><span class="icon" data-v-aa684cf9><!--[--><span class="vpi-sun sun" data-v-8ed16a8a></span><span class="vpi-moon moon" data-v-8ed16a8a></span><!--]--></span></span></button></div></div></div><div class="group" data-v-08d67204><div class="item social-links" data-v-08d67204><div class="vp-social-links social-links-list" data-v-08d67204 data-v-a628bdb3><!--[--><a class="vp-social-link no-icon" href="https://github.com/rixingyike" aria-label="github" target="_blank" rel="noopener" data-v-a628bdb3 data-v-0df5fecc><span class="vpi-social-github" /></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="vp-navbar-hamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="nav-screen" data-v-bdd47ae4 data-v-b1daf74e><span class="container" data-v-b1daf74e><span class="top" data-v-b1daf74e></span><span class="middle" data-v-b1daf74e></span><span class="bottom" data-v-b1daf74e></span></span></button></div></div></div></div><div class="divider" data-v-bdd47ae4><div class="divider-line" data-v-bdd47ae4></div></div></div><!----></header><!----><!----><!--[--><div id="VPContent" vp-content class="vp-content" data-v-d6552e9a data-v-7dd46bb2><div class="vp-doc-container has-aside" data-v-7dd46bb2 data-v-f507f9f3><!--[--><!--]--><div class="container" data-v-f507f9f3><div class="aside" vp-outline data-v-f507f9f3><div class="aside-curtain" data-v-f507f9f3></div><div class="aside-container" data-v-f507f9f3><div class="aside-content" data-v-f507f9f3><div class="vp-doc-aside" data-v-f507f9f3 data-v-91bafd84><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="vp-doc-aside-outline" role="navigation" data-v-91bafd84 data-v-443efc0e><div class="content" data-v-443efc0e><div class="outline-marker" data-v-443efc0e></div><div id="doc-outline-aria-label" aria-level="2" class="outline-title" role="heading" data-v-443efc0e><span data-v-443efc0e>此页内容</span><span class="vpi-print icon" data-v-443efc0e></span></div><ul class="root" data-v-443efc0e data-v-d6ddddee><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-91bafd84></div><!--[--><!--]--></div></div></div></div><div class="content" data-v-f507f9f3><div class="content-container" data-v-f507f9f3><!--[--><!--]--><main class="main" data-v-f507f9f3><!----><!--[--><h1 class="vp-doc-title page-title" data-v-e39d4e9c>Rust学习笔记4：智能指针、引用和并发 <!----></h1><div class="vp-doc-meta" data-v-e39d4e9c><p class="reading-time" data-v-e39d4e9c><span class="vpi-books icon" data-v-e39d4e9c></span><span data-v-e39d4e9c>约 3073 字</span><span data-v-e39d4e9c>大约 10 分钟</span></p><p data-v-e39d4e9c><span class="vpi-tag icon" data-v-e39d4e9c></span><!--[--><span class="vp-link no-icon tag vp-tag-pg7g" href="/" data-v-e39d4e9c data-v-f069b6fd><!--[-->Rust<!--]--><!----></span><!--]--></p><p class="create-time" data-v-e39d4e9c><span class="vpi-clock icon" data-v-e39d4e9c></span><span data-v-e39d4e9c>2025-03-11</span></p></div><!--]--><div class="_blog_2025_11 external-link-icon-enabled vp-doc plume-content" vp-content data-v-f507f9f3><div data-v-f507f9f3><h2 id="drop特征" tabindex="-1"><a class="header-anchor" href="#drop特征"><span>Drop特征</span></a></h2><p>使用drop方法可以回收所有权，释放内存。drop方法不需要程序员手动调用，编译器会为我们自动插入drop代码并在变量退出作用域时调用之。调用顺序是：</p><ul><li>先声明的后调用，后声明的先调用；</li><li>在结构体内，结构体的drop先调用，继而按照字段的定义顺序调用字段的drop方法。</li></ul><p>对于下面这个示例：</p><div class="language-rust line-numbers-mode" data-ext="rust" data-title="rust"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">// 定义一个简单的结构体</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">struct</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Resource</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    name</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> String</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">// 为 Resource 实现 Drop trait</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">impl</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Drop</span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;"> for</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Resource</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">    fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> drop</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;mut</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;"> self</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">        println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Dropping resource: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;"> self</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">name</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> main</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 创建两个 Resource 实例</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> resource1</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Resource</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">        name</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;"> &quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Resource 1</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">to_string</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(),</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    };</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> resource2</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Resource</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">        name</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;"> &quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Resource 2</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">to_string</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(),</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    };</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 创建一个作用域</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    {</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">        let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> resource3</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Resource</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">            name</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;"> &quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Resource 3</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">to_string</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(),</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">        };</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">        println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Resource 3 is in scope</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;"> // resource3 离开作用域，drop 方法被调用</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">End of main function</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // resource1 和 resource2 离开作用域，drop 方法被调用</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出顺序为：</p><blockquote><p>Resource 3 is in scope Dropping resource: Resource 3 End of main function Dropping resource: Resource 2 Dropping resource: Resource 1</p></blockquote><p>这个顺序验证了上面所讲的drop次序。</p><h2 id="引用计数智能指针rc与arc" tabindex="-1"><a class="header-anchor" href="#引用计数智能指针rc与arc"><span>引用计数智能指针Rc与Arc</span></a></h2><p>Rc是reference counting的缩写，是引用计数的意思，当我们使用它时，Rust会自动统计、管理引用记数，并在记数为0的时候自动将对象回收。我们可以通用Rc::clone复制对象——复制的仅仅是引用，同时让引用记数加1；可以通过Rc::string_count随时查看引用计数。</p><p>无论是Rc还是Arc，都是不可变记数引用，都不能对数据进行修改。两者在使用上没有区别，唯一的区别在于前者用于单线程内，后者用于多线程内。下面看一个Rc的示例：</p><div class="language-rust line-numbers-mode" data-ext="rust" data-title="rust"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">use</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> std</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Rc</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> main</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 创建一个 Rc 实例，引用计数为 1</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">42</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 克隆 Rc，引用计数增加</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> _data_clone1</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">clone</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> _data_clone2</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">clone</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 打印引用计数</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Reference count after cloning: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">strong_count</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">));</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 离开作用域，引用计数减少</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    {</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">        let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> _data_clone3</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">clone</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">        println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Reference count inside inner scope: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">strong_count</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">));</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 离开作用域后，引用计数恢复</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Reference count after inner scope: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">strong_count</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">));</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 离开 main 函数，引用计数降为零，数据被清理</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在这个示例中，第17行，当离开一个作用域时，引用自动减少了。记数为零时，对象即被清理。</p><p>输出结果为：</p><blockquote><p>Reference count after cloning: 3 Reference count inside inner scope: 4 Reference count after inner scope: 3</p></blockquote><p>再看一个Arc示例：</p><div class="language-rust line-numbers-mode" data-ext="rust" data-title="rust"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">use</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> std</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">sync</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Arc</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">;</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">use</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> std</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">thread</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> main</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 创建一个 Arc 实例，引用计数为 1</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Arc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">42</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 克隆 Arc，引用计数增加</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data_clone1</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Arc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">clone</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data_clone2</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Arc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">clone</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 打印引用计数</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Reference count after cloning: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Arc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">strong_count</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">));</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 创建线程</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> handle1</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> thread</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">spawn</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">move</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> ||</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">        println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Thread 1: Data = </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data_clone1</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    });</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> handle2</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> thread</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">spawn</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">move</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> ||</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">        println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Thread 2: Data = </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data_clone2</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    });</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 等待线程完成</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    handle1</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">join</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">unwrap</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">();</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    handle2</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">join</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">unwrap</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">();</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 打印引用计数</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Reference count after threads: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Arc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">strong_count</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">));</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 离开 main 函数，引用计数降为零，数据被清理</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Arc智能指针允许移动对象进入线程内，多个线程的引用消耗会自动同步。</p><h2 id="cell与refcell" tabindex="-1"><a class="header-anchor" href="#cell与refcell"><span>Cell与RefCell</span></a></h2><p>Cell充许在获取值的同时，还对值进行修改，这跳过了Rust的所有权规则。不过Cell仅针对实现了Copy的数据类型。示例：</p><div class="language-rust line-numbers-mode" data-ext="rust" data-title="rust"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">use</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> std</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">cell</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Cell</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> main</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 创建一个 Cell，存储一个整数</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Cell</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">42</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 获取 Cell 中的值（通过复制）</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Initial value: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">get</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">());</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 修改 Cell 中的值</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">set</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">100</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 再次获取 Cell 中的值</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Updated value: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">get</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">());</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 通过 `get` 和 `set` 方法修改值</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> old_value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">replace</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">200</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Replaced value: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">, Old value: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">get</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(),</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> old_value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 使用 `into_inner` 获取 Cell 中的值（消耗 Cell）</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> final_value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">into_inner</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">();</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Final value: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> final_value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这个示例会让Rust初学者感到疑惑，怎么，所有权规则不起作用了吗，一个值同时既可以获取又可以修改吗？但这种Cell仅针对实现了Copy特征的基本类型，例如上面的i32，实际上像i32这样的简单类型一般是没有必要使用Cell的。</p><p>输出为：</p><blockquote><p>Initial value: 42 Updated value: 100 Replaced value: 200, Old value: 100 Final value: 200</p></blockquote><p>Cell像一个世外桃园盒子，可以往里面存数据，也可以取数据，貌似还不受Rust所有权规则的约束。</p><p>RefCell用于没有实现Copy特征的，在它内部没有发生Copy，内存还是那一块内存，它只是将Rust编译器在编译时的警告延后了，如果在运行时违反了Rust规则，仍然会有panic异常。示例：</p><div class="language-rust line-numbers-mode" data-ext="rust" data-title="rust"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">use</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> std</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">cell</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">RefCell</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> main</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 创建一个 RefCell，存储一个 String</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> message</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> RefCell</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">String</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">from</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Hello</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">));</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 获取 RefCell 中的不可变引用</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    {</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">        let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> msg</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> message</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">borrow</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">();</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">        println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Initial message: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> *</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">msg</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;"> // 不可变引用离开作用域，释放借用</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 获取 RefCell 中的可变引用并修改值</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    {</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">        let</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> mut</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> msg</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> message</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">borrow_mut</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">();</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">        msg</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">push_str</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">, world!</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;"> // 可变引用离开作用域，释放借用</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 再次获取 RefCell 中的不可变引用</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> msg</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> message</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">borrow</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">();</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Updated message: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> *</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">msg</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 尝试违反借用规则（会导致 panic）</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // let mut invalid_borrow = message.borrow_mut();</span><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;"> // 这里会 panic，因为已经有一个不可变引用</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>第24行，因为在第20行已经有一个不可变引用，所以这里不能再有一个可变引用，但这个错误不会在编译期报出来，只会在运行时报出来。第15行有一个可变借用，没有关系，因为到第17行它就释放了。这是使用RefCell的好处，可以跳过编译期严格的检查。</p><p>最终输出为：</p><blockquote><p>Initial message: Hello Updated message: Hello, world!</p></blockquote><p>RefCell可以方便地实现内部可变性，当我们不方便修改第三方特征签名的时候，用RefCell的borrow_mut方法，这样可以修改数据。</p><p>Rc+RefCell可以结合起来，实现多个变量都能获得可变引用，并进行数据修改的代码。示例：</p><div class="language-rust line-numbers-mode" data-ext="rust" data-title="rust"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">use</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> std</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Rc</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">;</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">use</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> std</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">cell</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">RefCell</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> main</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 创建一个 Rc&lt;RefCell&lt;String&gt;&gt;，存储一个 String</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">RefCell</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">String</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">from</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Hello</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)));</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 克隆 Rc，增加引用计数</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data_clone1</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">clone</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data_clone2</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">clone</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 修改 data_clone1 中的数据</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    {</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">        let</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> mut</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> borrowed_data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data_clone1</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">borrow_mut</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">();</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">        borrowed_data</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">push_str</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">, world!</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;"> // 可变引用离开作用域，释放借用</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 修改 data_clone2 中的数据</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    {</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">        let</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> mut</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> borrowed_data</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data_clone2</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">borrow_mut</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">();</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">        borrowed_data</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">push_str</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;"> How are you?</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;"> // 可变引用离开作用域，释放借用</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 打印最终的数据</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Final data: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> data</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">borrow</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">());</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Rust为了实现内存安全，在各个方向上围堵程序员的错误可能性，在实在没有办法的场景，仍然开放了像C++那样信任程序员的方法，给予了程序员自由。</p><h2 id="weak弱引用" tabindex="-1"><a class="header-anchor" href="#weak弱引用"><span>Weak弱引用</span></a></h2><p><code>Rc&lt;T&gt;</code>中的T仍然受记数约束，只要记数不为0，它就不能被回收。<code>Weak&lt;T&gt;</code>不同，它不影响回收，它只是被动地使用，这种弱化的引用特别适合用于结构体中的自引用。对于<code>Rc&lt;T&gt;</code>，调用downgrade，可以得到一个<code>Weak&lt;T&gt;</code>，在<code>Weak&lt;T&gt;</code>上面调用upgrade方法，又可以得到一个<code>Option&lt;Rc&lt;T&gt;&gt;</code>，它可能是一个<code>Rc&lt;T&gt;</code>，也可以是None。</p><p>下面是一个使用了Weak弱引用的例子：</p><div class="language-rust line-numbers-mode" data-ext="rust" data-title="rust"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">use</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> std</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Rc</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">;</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">use</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> std</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Weak</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">;</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">use</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> std</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">cell</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">RefCell</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">// 学生</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">struct</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Student</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    name</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> String</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    friends</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> RefCell</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">&lt;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Vec</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">&lt;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Weak</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">&lt;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Student</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">&gt;&gt;&gt;,</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">impl</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Student</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">    fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">name</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> &amp;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">str</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> -&gt;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Rc</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">&lt;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Student</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">&gt;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">        Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Student</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">            name</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> name</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">to_string</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(),</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">            friends</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> RefCell</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">Vec</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()),</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">        })</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">    fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> add_friend</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">self</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> friend</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> &amp;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Rc</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">&lt;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Student</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">&gt;)</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> -&gt;</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> &amp;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Student</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">        self</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">friends</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">borrow_mut</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">push</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">Rc</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">downgrade</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">friend</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">));</span></span>
-<span class="line"><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">        self</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> main</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 创建三个学生</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> xiaoli</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> &amp;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Student</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">小李</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> xiaowang</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> &amp;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Student</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">小王</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> xiaoming</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> &amp;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">Student</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">小明</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 建立朋友关系</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    xiaoli</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">add_friend</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">xiaoming</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">add_friend</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">xiaowang</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    xiaowang</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">add_friend</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">xiaoli</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">add_friend</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">xiaoming</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    xiaoming</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">add_friend</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">xiaoli</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">add_friend</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">xiaowang</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 打印每个学生的朋友</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> students</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> [</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">xiaoli</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> xiaowang</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> xiaoming</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">];</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">    for</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> student</span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;"> in</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> students</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">iter</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">        println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;"> 的朋友有:</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> student</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">name</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">        for</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> friend_opt</span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;"> in</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> student</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">friends</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">borrow</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">iter</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">            if</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> let</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> Some</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">friend</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> friend_opt</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">upgrade</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">                println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">  - </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> friend</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">name</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">            }</span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;"> else</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">                println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">  - &lt;已删除的朋友&gt;</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">            }</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">        }</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 在 main 函数的最后，xiaoli, xiaowang, xiaoming 都会被销毁</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">    // 由于使用了 Weak&lt;T&gt;，避免了循环引用问题</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>第20行通过downgrade拿到了<code>Weak&lt;Studnet&gt;</code>。</p><p>最终输出为：</p><div class="language- line-numbers-mode" data-ext="" data-title=""><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span>小李 的朋友有:</span></span>
-<span class="line"><span>  - 小明</span></span>
-<span class="line"><span>  - 小王</span></span>
-<span class="line"><span>小王 的朋友有:</span></span>
-<span class="line"><span>  - 小李</span></span>
-<span class="line"><span>  - 小明</span></span>
-<span class="line"><span>小明 的朋友有:</span></span>
-<span class="line"><span>  - 小李</span></span>
-<span class="line"><span>  - 小王</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="用裸指针实现结构体的自引用" tabindex="-1"><a class="header-anchor" href="#用裸指针实现结构体的自引用"><span>用裸指针实现结构体的自引用</span></a></h2><p>下面是一个简单的示例，但却无法通过编译：</p><div class="language-rust line-numbers-mode" data-ext="rust" data-title="rust"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">struct</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> SelfRef</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">&lt;&#39;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">a</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">&gt;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> String</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    pointer_to_value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> &amp;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">&#39;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">a</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> str</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> main</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> String</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">from</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Hello, world!</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> self_ref</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> SelfRef</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">        value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">        pointer_to_value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> &amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">[</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">0</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">..</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">5</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">],</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    };</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">value: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> self_ref</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">pointer_to_value: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> self_ref</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">pointer_to_value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>第9行，我们将value的所有权转移到了结构体SelfRef内，第10行，我们又企图用引用的方法划取value中的一部分，既有转移，又有引用，这在其他语言中是很平常的事情，在Rust中无法通过编译。</p><p>怎么解决？最简单的方法是在第9行上，给value加一个clone的尾巴。但今天我们不要这样做，示例：</p><div class="language-rust line-numbers-mode" data-ext="rust" data-title="rust"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">struct</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> SelfRef</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> String</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    pointer_to_value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> *const</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;"> String</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">impl</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> SelfRef</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">    fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">:</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> String</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> -&gt;</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;"> Self</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">        let</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> pointer_to_value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> &amp;</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">value</span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;"> as</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> *const</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;"> String</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">;</span></span>
-<span class="line"><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">        Self</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">            value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">            pointer_to_value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">        }</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">    fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> get_pointer_to_value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">&amp;</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">self</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> -&gt;</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> &amp;</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;">str</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">        unsafe</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">            &amp;*</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">self</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">pointer_to_value</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">        }</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">    }</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">fn</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> main</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> {</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">    let</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> mut</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> self_ref</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#2E8F82;--shiki-dark:#5DA994;"> SelfRef</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">::</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">new</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">Hello,</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">to_string</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">());</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">value: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> self_ref</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">pointer_to_value: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> self_ref</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">get_pointer_to_value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">());</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">    self_ref</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">value</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">push_str</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">World!</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">value: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> self_ref</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">);</span></span>
-<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">    println!</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">pointer_to_value: </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">{}</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;"> self_ref</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">.</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">get_pointer_to_value</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">());</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">}</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>第8行，pointer_to_value是一个裸指针。第17行，使用unsafe修饰符将它指向的字符串返回。</p><p>输出：</p><blockquote><p>value: Hello, pointer_to_value: Hello, value: Hello,World! pointer_to_value: Hello,</p></blockquote><p>使用裸指针是实现有自引用字段的结构体的最简单、最优雅了方法了。</p><h2 id="并发与并行的区别" tabindex="-1"><a class="header-anchor" href="#并发与并行的区别"><span>并发与并行的区别</span></a></h2><p><img src="/assets/image-20250312212736497.BdUdFgf9.png" alt="image-20250312212736497"></p><p>如果将计算机的CPU比做咖啡的话，并发是计算机任务排成两个队或多个队，每个队轮流喝咖啡。而并行是排成两个队还多个队，每个队同时喝咖啡。</p><p>这是两个相似的概念，很容易搞混，英语单词也有所不同，并发是Concurrent，并行是 Parallel。</p><h2 id="操作系统中的并发与并行" tabindex="-1"><a class="header-anchor" href="#操作系统中的并发与并行"><span>操作系统中的并发与并行</span></a></h2><p>如果允许多个任务同时并发存在，那么这个系统就是并发系统；如果允许多个任务并行执行，那么这个系统就是并行系统。现代计算机往往有多个核心，同时现代操作系统也基本都允许多线程并发，线程与操作系统的核心构成了<code>M:N</code>的关系，表面上无论有多少M个任务在并发，实际上，在每一时刻，真正并行的只有N个。</p><h2 id="运行时大小与三种并发模型" tabindex="-1"><a class="header-anchor" href="#运行时大小与三种并发模型"><span>运行时大小与三种并发模型</span></a></h2><p>除了汇编语言，每种语言在编译成二进制文件的时候都有运行时，只是或大或小的问题。即使是Rust语言，它也有自己的运行时。运行时比较大的像Go语言，因为它本身实现了协程和GC，所以它的运行时比其它高级语言还更大一些。我们即使用Go语言实现一个只有<code>Hello Word</code>打印这样很小一个功能的程序，它发布的二进制包也不会很小。</p><p>高级语言在实现线程并发的方案上大致分为三种：</p><p>第一种像Rust，是一比一的实现，Rust里边的线程对应的就是操作系统里边的线程，是一比一的关系。</p><p>第二种是<code>M:N</code>的关系。代表语言是Go语言，这里的M要比N大，这是一种在语言层面实现的多线程，或者是称之为协程，或绿色线程。它的目的是为了用更小的系统资源实现更多的线程并发。</p><p>第三种是用Actor实现多线程，线程之间用信息同步。代表语言是Erlang。</p><p>Go语言采用协程的方式实现线程，是为了方便开发者。快速实现县城并发。并且是高效的实现。Ru没有采用，那是因为right的他想以更小的代价。恩，最小的占用运行时的这样一种方式。去实现多线程。并且像够远的那种。携程的实现方式在ru里面也有第三方库五实现了啊，叫Tokyo，开发者呢，其实是可以自行选择和使用的。包括类似于long around a模型啊，也是可以选择和使用的。</p><p>2025年03月11日</p></div><!----><!----><div class="vp-doc-copyright" data-v-f507f9f3><h2 id="doc-copyright" tabindex="-1" class="vp-doc-header" data-v-7174c683><a href="#doc-copyright" class="header-anchor" data-v-7174c683><span data-v-7174c683><!--[-->版权所有<!--]--></span></a></h2><div class="hint-container tip copyright-container" data-v-453fd625><!----><p data-v-453fd625><span data-v-453fd625>本文链接：</span><a class="vp-link no-icon link" href="/blog/2025/11.html" data-allow-mismatch data-v-453fd625 data-v-f069b6fd><!--[-->/blog/2025/11.html<!--]--><!----></a></p><p data-v-453fd625><span data-v-453fd625>许可证：</span><a class="vp-link no-icon link" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noreferrer" data-v-453fd625 data-v-f069b6fd><!--[-->署名-非商业性 4.0 国际 (CC-BY-NC-4.0)<!--]--><!----></a><!--[--><span class="vpi-license-cc" data-v-453fd625></span><span class="vpi-license-by" data-v-453fd625></span><span class="vpi-license-nc" data-v-453fd625></span><!--]--></p></div></div></div></main><footer class="vp-doc-footer" data-v-f507f9f3 data-v-83836b2c><!--[--><!--]--><div class="edit-info" data-v-83836b2c><div class="edit-link" data-v-83836b2c><a class="vp-link no-icon link edit-link-button" href="https://github.com/rixingyike/yishulun_blog_mdandcode/edit/main/src/blog/2025/11.md" target="_blank" rel="noreferrer" data-v-83836b2c data-v-f069b6fd><!--[--><span class="vpi-square-pen edit-link-icon" aria-label="edit icon" data-v-83836b2c></span> 编辑此页<!--]--><!----></a></div><!----></div><!----><!----></footer><div id="comment" class="giscus-wrapper input-top vp-comment" vp-comment style="display:block;" data-v-f507f9f3><div style="display: flex;
-align-items: center;
-justify-content: center;
-height: 96px"><span style="--loading-icon: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; preserveAspectRatio=&#39;xMidYMid&#39; viewBox=&#39;25 25 50 50&#39;%3E%3CanimateTransform attributeName=&#39;transform&#39; type=&#39;rotate&#39; dur=&#39;2s&#39; keyTimes=&#39;0;1&#39; repeatCount=&#39;indefinite&#39; values=&#39;0;360&#39;%3E%3C/animateTransform%3E%3Ccircle cx=&#39;50&#39; cy=&#39;50&#39; r=&#39;20&#39; fill=&#39;none&#39; stroke=&#39;currentColor&#39; stroke-width=&#39;4&#39; stroke-linecap=&#39;round&#39;%3E%3Canimate attributeName=&#39;stroke-dasharray&#39; dur=&#39;1.5s&#39; keyTimes=&#39;0;0.5;1&#39; repeatCount=&#39;indefinite&#39; values=&#39;1,200;90,200;1,200&#39;%3E%3C/animate%3E%3Canimate attributeName=&#39;stroke-dashoffset&#39; dur=&#39;1.5s&#39; keyTimes=&#39;0;0.5;1&#39; repeatCount=&#39;indefinite&#39; values=&#39;0;-35px;-125px&#39;%3E%3C/animate%3E%3C/circle%3E%3C/svg%3E&quot;);
---icon-size: 48px;
-display: inline-block;
-width: var(--icon-size);
-height: var(--icon-size);
-background-color: currentcolor;
--webkit-mask-image: var(--loading-icon);
-mask-image: var(--loading-icon);
-"></span></div></div><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><!--]--><button style="display:none;" type="button" class="vp-back-to-top" aria-label="back to top" data-v-d6552e9a data-v-2f18de44><span class="percent" data-allow-mismatch data-v-2f18de44>0%</span><span class="show icon vpi-back-to-top" data-v-2f18de44></span><svg aria-hidden="true" data-v-2f18de44><circle cx="50%" cy="50%" data-allow-mismatch style="stroke-dasharray:calc(0% - 12.566370614359172px) calc(314.1592653589793% - 12.566370614359172px);" data-v-2f18de44></circle></svg></button><footer class="vp-footer" vp-footer data-v-d6552e9a data-v-242f3e18><!--[--><div class="container" data-v-242f3e18><p class="message" data-v-242f3e18>Power by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> & <a target="_blank" href="https://theme-plume.vuejs.press">Plume</a> | <a href="/sitemap.xml">Sitemap</a></p><p class="copyright" data-v-242f3e18>&copy 2002-2025 一树论 <a target="_blank" href="https://beian.miit.gov.cn">京ICP备14007000号-8</a></p></div><!--]--></footer><!--[--><!--]--><!--]--></div><!----><!--]--><!--[--><!--]--><!--]--></div><script type="module" src="/assets/app-BxiebszO.js" defer></script></body></html>
+<!DOCTYPE html>
+<!-- 基础布局模板 -->
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一树论</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- Alpine.js 库 -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Lunr.js 搜索库 -->
+    <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans" x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    <!-- 顶部导航栏 -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo 和站点名称 -->
+                <div class="flex items-center space-x-3">
+                    <img src="/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
+                    <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
+                        一树论
+                    </a>
+                </div>
+                
+                <!-- 搜索框 - 桌面版 -->
+                <div class="hidden md:flex flex-1 max-w-xs mx-8">
+                    <form action="/search.html" method="get" class="relative w-full">
+                        <input type="text" 
+                               name="q"
+                               class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500" 
+                               placeholder="搜索文章..." 
+                               id="search-input">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <button type="submit" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- 导航菜单 - 桌面版 -->
+                <div class="hidden md:flex items-center space-x-1">
+                    
+                        
+                        <a href="&#x2F;" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')) }">首页</a>
+                        
+                        <a href="&#x2F;archives.html" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">归档</a>
+                        
+                        <a href="&#x2F;categories.html" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">分类</a>
+                        
+                        <a href="&#x2F;tags.html" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
+                        
+                        <a href="&#x2F;friends.html" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
+                        
+                        <a href="&#x2F;about.html" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">关于</a>
+                        
+                    
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+    <button class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" 
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            :aria-expanded="mobileMenuOpen">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div class="md:hidden" 
+             x-show="mobileMenuOpen" 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 transform -translate-y-2"
+             x-transition:enter-end="opacity-100 transform translate-y-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 transform translate-y-0"
+             x-transition:leave-end="opacity-0 transform -translate-y-2">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+                <!-- 移动端搜索框 -->
+                <div class="px-3 py-2">
+                    <form action="/search.html" method="get" class="relative">
+                        <input type="text" 
+                               name="q"
+                               class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500" 
+                               placeholder="搜索文章..." 
+                               id="mobile-search-input">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <button type="submit" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <!-- 移动端导航链接 -->
+                
+                    
+                    <a href="&#x2F;" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">首页</a>
+                    
+                    <a href="&#x2F;archives.html" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">归档</a>
+                    
+                    <a href="&#x2F;categories.html" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">分类</a>
+                    
+                    <a href="&#x2F;tags.html" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                    
+                    <a href="&#x2F;friends.html" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
+                    
+                    <a href="&#x2F;about.html" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">关于</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <main class="min-h-screen py-8">
+            
+<div class="max-w-4xl mx-auto relative">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- 主要内容 -->
+        <div class="flex-1">
+            <article x-data="{ copiedLink: false, copiedCode: {} }">
+                <!-- 分类面包屑 -->
+                
+                <nav class="mb-6 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                        <span class="mx-2">›</span>
+                        <a href="/blog/" class="hover:text-primary-600">blog</a>
+                    
+                        <span class="mx-2">›</span>
+                        <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
+                    
+                </nav>
+                
+                
+                <!-- 文章头部 -->
+                <header class="mb-8 pb-8 border-b border-gray-200">
+                    <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-6 leading-tight">
+                        Rust学习笔记4：智能指针、引用和并发
+                    </h1>
+                    
+                    <div class="article-meta mb-6">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            2025-03-11
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <!-- 标签 -->
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/Rust/" 
+                           class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                            </svg>
+                            Rust
+                        </a>
+                        
+                    </div>
+                    
+                </header>
+    
+    <!-- 文章内容 -->
+    <div class="article-content prose prose-lg max-w-none" 
+         x-init="$nextTick(() => {
+             // 为代码块添加复制按钮
+             document.querySelectorAll('pre code').forEach((codeBlock, index) => {
+                 const pre = codeBlock.parentElement;
+                 if (!pre.querySelector('.copy-code-btn')) {
+                     const button = document.createElement('button');
+                     button.className = 'copy-code-btn';
+                     button.textContent = '复制';
+                     button.setAttribute('x-data', `{ copied: false }`);
+                     button.setAttribute('@click', `navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent).then(() => { this.copied = true; setTimeout(() => this.copied = false, 2000) })`);
+                     button.setAttribute(':class', `{ 'bg-green-600': copied }`);
+                     button.setAttribute('x-text', `copied ? '已复制' : '复制'`);
+                     
+                     pre.style.position = 'relative';
+                     pre.appendChild(button);
+                 }
+             });
+         })">
+        <h1>Rust学习笔记4：智能指针、引用和并发</h1>
+<h2>Drop特征</h2>
+<p>使用drop方法可以回收所有权，释放内存。drop方法不需要程序员手动调用，编译器会为我们自动插入drop代码并在变量退出作用域时调用之。调用顺序是：</p>
+<ul>
+<li>先声明的后调用，后声明的先调用；</li>
+<li>在结构体内，结构体的drop先调用，继而按照字段的定义顺序调用字段的drop方法。</li>
+</ul>
+<p>对于下面这个示例：</p>
+<pre><code class="language-rust">// 定义一个简单的结构体
+struct Resource {
+    name: String,
+}
+
+// 为 Resource 实现 Drop trait
+impl Drop for Resource {
+    fn drop(&amp;mut self) {
+        println!(&quot;Dropping resource: {}&quot;, self.name);
+    }
+}
+
+fn main() {
+    // 创建两个 Resource 实例
+    let resource1 = Resource {
+        name: &quot;Resource 1&quot;.to_string(),
+    };
+    let resource2 = Resource {
+        name: &quot;Resource 2&quot;.to_string(),
+    };
+
+    // 创建一个作用域
+    {
+        let resource3 = Resource {
+            name: &quot;Resource 3&quot;.to_string(),
+        };
+        println!(&quot;Resource 3 is in scope&quot;);
+    } // resource3 离开作用域，drop 方法被调用
+
+    println!(&quot;End of main function&quot;);
+    // resource1 和 resource2 离开作用域，drop 方法被调用
+}
+</code></pre>
+<p>输出顺序为：</p>
+<blockquote>
+<p>Resource 3 is in scope
+Dropping resource: Resource 3
+End of main function
+Dropping resource: Resource 2
+Dropping resource: Resource 1</p>
+</blockquote>
+<p>这个顺序验证了上面所讲的drop次序。</p>
+<h2>引用计数智能指针Rc与Arc</h2>
+<p>Rc是reference counting的缩写，是引用计数的意思，当我们使用它时，Rust会自动统计、管理引用记数，并在记数为0的时候自动将对象回收。我们可以通用Rc::clone复制对象——复制的仅仅是引用，同时让引用记数加1；可以通过Rc::string_count随时查看引用计数。</p>
+<p>无论是Rc还是Arc，都是不可变记数引用，都不能对数据进行修改。两者在使用上没有区别，唯一的区别在于前者用于单线程内，后者用于多线程内。下面看一个Rc的示例：</p>
+<pre><code class="language-rust">use std::rc::Rc;
+
+fn main() {
+    // 创建一个 Rc 实例，引用计数为 1
+    let data = Rc::new(42);
+
+    // 克隆 Rc，引用计数增加
+    let _data_clone1 = Rc::clone(&amp;data);
+    let _data_clone2 = Rc::clone(&amp;data);
+
+    // 打印引用计数
+    println!(&quot;Reference count after cloning: {}&quot;, Rc::strong_count(&amp;data));
+
+    // 离开作用域，引用计数减少
+    {
+        let _data_clone3 = Rc::clone(&amp;data);
+        println!(&quot;Reference count inside inner scope: {}&quot;, Rc::strong_count(&amp;data));
+    }
+
+    // 离开作用域后，引用计数恢复
+    println!(&quot;Reference count after inner scope: {}&quot;, Rc::strong_count(&amp;data));
+
+    // 离开 main 函数，引用计数降为零，数据被清理
+}
+</code></pre>
+<p>在这个示例中，第17行，当离开一个作用域时，引用自动减少了。记数为零时，对象即被清理。</p>
+<p>输出结果为：</p>
+<blockquote>
+<p>Reference count after cloning: 3
+Reference count inside inner scope: 4
+Reference count after inner scope: 3 </p>
+</blockquote>
+<p>再看一个Arc示例：</p>
+<pre><code class="language-rust">use std::sync::Arc;
+use std::thread;
+
+fn main() {
+    // 创建一个 Arc 实例，引用计数为 1
+    let data = Arc::new(42);
+
+    // 克隆 Arc，引用计数增加
+    let data_clone1 = Arc::clone(&amp;data);
+    let data_clone2 = Arc::clone(&amp;data);
+
+    // 打印引用计数
+    println!(&quot;Reference count after cloning: {}&quot;, Arc::strong_count(&amp;data));
+
+    // 创建线程
+    let handle1 = thread::spawn(move || {
+        println!(&quot;Thread 1: Data = {}&quot;, data_clone1);
+    });
+
+    let handle2 = thread::spawn(move || {
+        println!(&quot;Thread 2: Data = {}&quot;, data_clone2);
+    });
+
+    // 等待线程完成
+    handle1.join().unwrap();
+    handle2.join().unwrap();
+
+    // 打印引用计数
+    println!(&quot;Reference count after threads: {}&quot;, Arc::strong_count(&amp;data));
+
+    // 离开 main 函数，引用计数降为零，数据被清理
+}
+</code></pre>
+<p>Arc智能指针允许移动对象进入线程内，多个线程的引用消耗会自动同步。</p>
+<h2>Cell与RefCell</h2>
+<p>Cell充许在获取值的同时，还对值进行修改，这跳过了Rust的所有权规则。不过Cell仅针对实现了Copy的数据类型。示例：</p>
+<pre><code class="language-rust">use std::cell::Cell;
+
+fn main() {
+    // 创建一个 Cell，存储一个整数
+    let value = Cell::new(42);
+
+    // 获取 Cell 中的值（通过复制）
+    println!(&quot;Initial value: {}&quot;, value.get());
+
+    // 修改 Cell 中的值
+    value.set(100);
+
+    // 再次获取 Cell 中的值
+    println!(&quot;Updated value: {}&quot;, value.get());
+
+    // 通过 `get` 和 `set` 方法修改值
+    let old_value = value.replace(200);
+    println!(&quot;Replaced value: {}, Old value: {}&quot;, value.get(), old_value);
+
+    // 使用 `into_inner` 获取 Cell 中的值（消耗 Cell）
+    let final_value = value.into_inner();
+    println!(&quot;Final value: {}&quot;, final_value);
+}
+</code></pre>
+<p>这个示例会让Rust初学者感到疑惑，怎么，所有权规则不起作用了吗，一个值同时既可以获取又可以修改吗？但这种Cell仅针对实现了Copy特征的基本类型，例如上面的i32，实际上像i32这样的简单类型一般是没有必要使用Cell的。</p>
+<p>输出为：</p>
+<blockquote>
+<p>Initial value: 42
+Updated value: 100
+Replaced value: 200, Old value: 100
+Final value: 200</p>
+</blockquote>
+<p>Cell像一个世外桃园盒子，可以往里面存数据，也可以取数据，貌似还不受Rust所有权规则的约束。</p>
+<p>RefCell用于没有实现Copy特征的，在它内部没有发生Copy，内存还是那一块内存，它只是将Rust编译器在编译时的警告延后了，如果在运行时违反了Rust规则，仍然会有panic异常。示例：</p>
+<pre><code class="language-rust">use std::cell::RefCell;
+
+fn main() {
+    // 创建一个 RefCell，存储一个 String
+    let message = RefCell::new(String::from(&quot;Hello&quot;));
+
+    // 获取 RefCell 中的不可变引用
+    {
+        let msg = message.borrow();
+        println!(&quot;Initial message: {}&quot;, *msg);
+    } // 不可变引用离开作用域，释放借用
+
+    // 获取 RefCell 中的可变引用并修改值
+    {
+        let mut msg = message.borrow_mut();
+        msg.push_str(&quot;, world!&quot;);
+    } // 可变引用离开作用域，释放借用
+
+    // 再次获取 RefCell 中的不可变引用
+    let msg = message.borrow();
+    println!(&quot;Updated message: {}&quot;, *msg);
+
+    // 尝试违反借用规则（会导致 panic）
+    // let mut invalid_borrow = message.borrow_mut(); // 这里会 panic，因为已经有一个不可变引用
+}
+</code></pre>
+<p>第24行，因为在第20行已经有一个不可变引用，所以这里不能再有一个可变引用，但这个错误不会在编译期报出来，只会在运行时报出来。第15行有一个可变借用，没有关系，因为到第17行它就释放了。这是使用RefCell的好处，可以跳过编译期严格的检查。</p>
+<p>最终输出为：</p>
+<blockquote>
+<p>Initial message: Hello
+Updated message: Hello, world!</p>
+</blockquote>
+<p>RefCell可以方便地实现内部可变性，当我们不方便修改第三方特征签名的时候，用RefCell的borrow_mut方法，这样可以修改数据。</p>
+<p>Rc+RefCell可以结合起来，实现多个变量都能获得可变引用，并进行数据修改的代码。示例：</p>
+<pre><code class="language-rust">use std::rc::Rc;
+use std::cell::RefCell;
+
+fn main() {
+    // 创建一个 Rc&lt;RefCell&lt;String&gt;&gt;，存储一个 String
+    let data = Rc::new(RefCell::new(String::from(&quot;Hello&quot;)));
+
+    // 克隆 Rc，增加引用计数
+    let data_clone1 = Rc::clone(&amp;data);
+    let data_clone2 = Rc::clone(&amp;data);
+
+    // 修改 data_clone1 中的数据
+    {
+        let mut borrowed_data = data_clone1.borrow_mut();
+        borrowed_data.push_str(&quot;, world!&quot;);
+    } // 可变引用离开作用域，释放借用
+
+    // 修改 data_clone2 中的数据
+    {
+        let mut borrowed_data = data_clone2.borrow_mut();
+        borrowed_data.push_str(&quot; How are you?&quot;);
+    } // 可变引用离开作用域，释放借用
+
+    // 打印最终的数据
+    println!(&quot;Final data: {}&quot;, data.borrow());
+}
+</code></pre>
+<p>Rust为了实现内存安全，在各个方向上围堵程序员的错误可能性，在实在没有办法的场景，仍然开放了像C++那样信任程序员的方法，给予了程序员自由。</p>
+<h2>Weak弱引用</h2>
+<p><code>Rc&lt;T&gt;</code>中的T仍然受记数约束，只要记数不为0，它就不能被回收。<code>Weak&lt;T&gt;</code>不同，它不影响回收，它只是被动地使用，这种弱化的引用特别适合用于结构体中的自引用。对于<code>Rc&lt;T&gt;</code>，调用downgrade，可以得到一个<code>Weak&lt;T&gt;</code>，在<code>Weak&lt;T&gt;</code>上面调用upgrade方法，又可以得到一个<code>Option&lt;Rc&lt;T&gt;&gt;</code>，它可能是一个<code>Rc&lt;T&gt;</code>，也可以是None。</p>
+<p>下面是一个使用了Weak弱引用的例子：</p>
+<pre><code class="language-rust">use std::rc::Rc;
+use std::rc::Weak;
+use std::cell::RefCell;
+
+// 学生
+struct Student {
+    name: String,
+    friends: RefCell&lt;Vec&lt;Weak&lt;Student&gt;&gt;&gt;,
+}
+
+impl Student {
+    fn new(name: &amp;str) -&gt; Rc&lt;Student&gt; {
+        Rc::new(Student {
+            name: name.to_string(),
+            friends: RefCell::new(Vec::new()),
+        })
+    }
+
+    fn add_friend(&amp;self, friend: &amp;Rc&lt;Student&gt;) -&gt; &amp;Student {
+        self.friends.borrow_mut().push(Rc::downgrade(friend));
+        self
+    }
+}
+
+fn main() {
+    // 创建三个学生
+    let xiaoli = &amp;Student::new(&quot;小李&quot;);
+    let xiaowang = &amp;Student::new(&quot;小王&quot;);
+    let xiaoming = &amp;Student::new(&quot;小明&quot;);
+
+    // 建立朋友关系
+    xiaoli.add_friend(xiaoming).add_friend(xiaowang);
+    xiaowang.add_friend(xiaoli).add_friend(xiaoming);
+    xiaoming.add_friend(xiaoli).add_friend(xiaowang);
+
+    // 打印每个学生的朋友
+    let students = [xiaoli, xiaowang, xiaoming];
+    for student in students.iter() {
+        println!(&quot;{} 的朋友有:&quot;, student.name);
+        for friend_opt in student.friends.borrow().iter() {
+            if let Some(friend) = friend_opt.upgrade() {
+                println!(&quot;  - {}&quot;, friend.name);
+            } else {
+                println!(&quot;  - &lt;已删除的朋友&gt;&quot;);
+            }
+        }
+    }
+
+    // 在 main 函数的最后，xiaoli, xiaowang, xiaoming 都会被销毁
+    // 由于使用了 Weak&lt;T&gt;，避免了循环引用问题
+}
+</code></pre>
+<p>第20行通过downgrade拿到了<code>Weak&lt;Studnet&gt;</code>。</p>
+<p>最终输出为：</p>
+<pre><code>小李 的朋友有:
+  - 小明
+  - 小王
+小王 的朋友有:
+  - 小李
+  - 小明
+小明 的朋友有:
+  - 小李
+  - 小王
+</code></pre>
+<h2>用裸指针实现结构体的自引用</h2>
+<p>下面是一个简单的示例，但却无法通过编译：</p>
+<pre><code class="language-rust">struct SelfRef&lt;'a&gt; {
+    value: String,
+    pointer_to_value: &amp;'a str,
+}
+
+fn main() {
+    let value = String::from(&quot;Hello, world!&quot;);
+    let self_ref = SelfRef {
+        value: value,
+        pointer_to_value: &amp;value[0..5],
+    };
+    println!(&quot;value: {}&quot;, self_ref.value);
+    println!(&quot;pointer_to_value: {}&quot;, self_ref.pointer_to_value);
+}
+</code></pre>
+<p>第9行，我们将value的所有权转移到了结构体SelfRef内，第10行，我们又企图用引用的方法划取value中的一部分，既有转移，又有引用，这在其他语言中是很平常的事情，在Rust中无法通过编译。</p>
+<p>怎么解决？最简单的方法是在第9行上，给value加一个clone的尾巴。但今天我们不要这样做，示例：</p>
+<pre><code class="language-rust">struct SelfRef {
+    value: String,
+    pointer_to_value: *const String,
+}
+
+impl SelfRef {
+    fn new(value: String) -&gt; Self {
+        let pointer_to_value = &amp;value as *const String;
+        Self {
+            value,
+            pointer_to_value,
+        }
+    }
+
+    fn get_pointer_to_value(&amp;self) -&gt; &amp;str {
+        unsafe {
+            &amp;*self.pointer_to_value
+        }
+    }
+}
+
+fn main() {
+    let mut self_ref = SelfRef::new(&quot;Hello,&quot;.to_string());
+    println!(&quot;value: {}&quot;, self_ref.value);
+    println!(&quot;pointer_to_value: {}&quot;, self_ref.get_pointer_to_value());
+    self_ref.value.push_str(&quot;World!&quot;);
+    println!(&quot;value: {}&quot;, self_ref.value);
+    println!(&quot;pointer_to_value: {}&quot;, self_ref.get_pointer_to_value());
+}
+</code></pre>
+<p>第8行，pointer_to_value是一个裸指针。第17行，使用unsafe修饰符将它指向的字符串返回。</p>
+<p>输出：</p>
+<blockquote>
+<p>value: Hello,
+pointer_to_value: Hello,
+value: Hello,World!
+pointer_to_value: Hello,</p>
+</blockquote>
+<p>使用裸指针是实现有自引用字段的结构体的最简单、最优雅了方法了。</p>
+<h2>并发与并行的区别</h2>
+<p><img src="assets/image-20250312212736497.png" alt="image-20250312212736497" /></p>
+<p>如果将计算机的CPU比做咖啡的话，并发是计算机任务排成两个队或多个队，每个队轮流喝咖啡。而并行是排成两个队还多个队，每个队同时喝咖啡。</p>
+<p>这是两个相似的概念，很容易搞混，英语单词也有所不同，并发是Concurrent，并行是 Parallel。</p>
+<h2>操作系统中的并发与并行</h2>
+<p>如果允许多个任务同时并发存在，那么这个系统就是并发系统；如果允许多个任务并行执行，那么这个系统就是并行系统。现代计算机往往有多个核心，同时现代操作系统也基本都允许多线程并发，线程与操作系统的核心构成了<code>M:N</code>的关系，表面上无论有多少M个任务在并发，实际上，在每一时刻，真正并行的只有N个。</p>
+<h2>运行时大小与三种并发模型</h2>
+<p>除了汇编语言，每种语言在编译成二进制文件的时候都有运行时，只是或大或小的问题。即使是Rust语言，它也有自己的运行时。运行时比较大的像Go语言，因为它本身实现了协程和GC，所以它的运行时比其它高级语言还更大一些。我们即使用Go语言实现一个只有<code>Hello Word</code>打印这样很小一个功能的程序，它发布的二进制包也不会很小。</p>
+<p>高级语言在实现线程并发的方案上大致分为三种：</p>
+<p>第一种像Rust，是一比一的实现，Rust里边的线程对应的就是操作系统里边的线程，是一比一的关系。</p>
+<p>第二种是<code>M:N</code>的关系。代表语言是Go语言，这里的M要比N大，这是一种在语言层面实现的多线程，或者是称之为协程，或绿色线程。它的目的是为了用更小的系统资源实现更多的线程并发。</p>
+<p>第三种是用Actor实现多线程，线程之间用信息同步。代表语言是Erlang。</p>
+<p>Go语言采用协程的方式实现线程，是为了方便开发者。快速实现县城并发。并且是高效的实现。Ru没有采用，那是因为right的他想以更小的代价。恩，最小的占用运行时的这样一种方式。去实现多线程。并且像够远的那种。携程的实现方式在ru里面也有第三方库五实现了啊，叫Tokyo，开发者呢，其实是可以自行选择和使用的。包括类似于long around a模型啊，也是可以选择和使用的。</p>
+<p>2025年03月11日</p>
+
+    </div>
+
+    <!-- 版权信息 -->
+    <div class="mt-10 bg-gray-50 rounded-lg border border-gray-200 p-4" x-data="{domain: 'https:&#x2F;&#x2F;yishulun.com', link: 'https:&#x2F;&#x2F;yishulun.com' + window.location.pathname}">
+        <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
+        <p class="text-sm text-gray-700">
+            本文链接：
+            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+        </p>
+        <p class="text-sm text-gray-700 mt-2">
+            许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
+            <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener" class="text-primary-600 hover:underline">查看许可说明</a>
+        </p>
+    </div>
+
+    <!-- 分享功能 -->
+    <div class="mt-12 bg-gray-50 rounded-lg">
+        <h4 class="text-lg font-semibold mb-4 text-gray-900 p-4 pb-0">分享这篇文章</h4>
+        <div class="flex flex-wrap gap-3 p-4">
+            <button onclick="shareToTwitter()" 
+                    class="btn-outline inline-flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+                Twitter
+            </button>
+            <button @click="navigator.clipboard.writeText(window.location.href).then(() => { copiedLink = true; setTimeout(() => copiedLink = false, 2000) })" 
+                    class="btn-outline inline-flex items-center"
+                    :class="{ 'bg-green-100 text-green-800 border-green-300': copiedLink }">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                <span x-text="copiedLink ? '已复制' : '复制链接'"></span>
+            </button>
+        </div>
+    </div>
+
+    
+    <!-- 评论区域（Giscus，懒加载） -->
+    <div id="comments" class="mt-12">
+        <h4 class="text-lg font-semibold mb-4 text-gray-900">评论</h4>
+        <div id="giscus-container"></div>
+    </div>
+    <script>
+    (function(){
+        var loadGiscus = function(){
+            var s = document.createElement('script');
+            s.src = 'https://giscus.app/client.js';
+            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
+            s.setAttribute('data-category', 'General');
+            s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');
+            s.setAttribute('data-mapping', 'pathname');
+            s.setAttribute('data-strict', '1');
+            s.setAttribute('data-reactions-enabled', '1');
+            s.setAttribute('data-emit-metadata', '0');
+            s.setAttribute('data-input-position', 'top');
+            s.setAttribute('data-loading', 'lazy');
+            s.setAttribute('data-theme', 'preferred_color_scheme');
+            s.setAttribute('data-lang', 'zh-CN');
+            s.setAttribute('crossorigin', 'anonymous');
+            s.async = true;
+            (document.getElementById('giscus-container') || document.body).appendChild(s);
+        };
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGiscus);
+        } else {
+            window.addEventListener('load', function(){ setTimeout(loadGiscus, 1200); });
+        }
+    })();
+    </script>
+    
+    
+                <!-- 返回顶部 -->
+                <div class="text-center mt-8">
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                            class="btn-secondary inline-flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                        </svg>
+                        返回顶部
+                    </button>
+                </div>
+            </article>
+        </div>
+        
+        
+            <!-- 目录组件 -->
+<div class="toc-container fixed right-4 top-20 z-40 hidden xl:block" 
+     x-data="{ 
+         tocOpen: true, 
+         activeId: '',
+         headings: [],
+         init() {
+             this.generateToc();
+             this.observeHeadings();
+         },
+         generateToc() {
+             const content = document.querySelector('.prose, .card-body');
+             if (!content) return;
+             
+             const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+             this.headings = Array.from(headings).map((heading, index) => {
+                 const id = heading.id || `heading-${index}`;
+                 heading.id = id;
+                 return {
+                     id: id,
+                     text: heading.textContent.trim(),
+                     level: parseInt(heading.tagName.charAt(1)),
+                     element: heading
+                 };
+             });
+         },
+         observeHeadings() {
+             if (this.headings.length === 0) return;
+             
+             const observer = new IntersectionObserver((entries) => {
+                 entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                         this.activeId = entry.target.id;
+                     }
+                 });
+             }, {
+                 rootMargin: '-20% 0px -80% 0px'
+             });
+             
+             this.headings.forEach(heading => {
+                 observer.observe(heading.element);
+             });
+         },
+         scrollToHeading(id) {
+             const element = document.getElementById(id);
+             if (element) {
+                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+             }
+         }
+     }"
+     x-init="init()">
+    
+    <!-- 目录切换按钮 -->
+    <button @click="tocOpen = !tocOpen" 
+            class="mb-2 p-2 bg-white rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-200"
+            title="目录">
+        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+    
+    <!-- 目录内容 -->
+    <div x-show="tocOpen" 
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 transform scale-95"
+         x-transition:enter-end="opacity-100 transform scale-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 transform scale-100"
+         x-transition:leave-end="opacity-0 transform scale-95"
+         class="bg-white rounded-lg shadow-xl border border-gray-200 p-4 max-w-xs w-64 max-h-96 overflow-y-auto">
+        
+        <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-gray-900">目录</h3>
+            <button @click="tocOpen = false" class="text-gray-400 hover:text-gray-600">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="space-y-1">
+            <template x-for="heading in headings" :key="heading.id">
+                <a @click.prevent="scrollToHeading(heading.id)" 
+                   :class="{
+                       'text-primary-600 bg-primary-50 border-l-2 border-primary-600': activeId === heading.id,
+                       'text-gray-600 hover:text-gray-900 hover:bg-gray-50': activeId !== heading.id,
+                       'pl-2': heading.level === 1,
+                       'pl-4': heading.level === 2,
+                       'pl-6': heading.level === 3,
+                       'pl-8': heading.level === 4,
+                       'pl-10': heading.level === 5,
+                       'pl-12': heading.level === 6
+                   }"
+                   class="block py-1 px-2 text-sm cursor-pointer rounded transition-colors duration-150"
+                   x-text="heading.text">
+                </a>
+            </template>
+        </nav>
+        
+        <div x-show="headings.length === 0" class="text-sm text-gray-500 text-center py-4">
+            暂无目录
+        </div>
+    </div>
+</div>
+
+<style>
+/* 移动端隐藏目录 */
+@media (max-width: 1279px) {
+    .toc-container {
+        display: none !important;
+    }
+}
+
+/* 目录滚动条样式 */
+.toc-container .max-h-96::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+</style>
+
+        
+    </div>
+</div>
+
+<script>
+function shareToTwitter() {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(document.title);
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+}
+</script>
+ 
+        </main>
+    </div>
+    
+    <!-- 广告位1：底部广告（版权区上方） -->
+    
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="flex flex-col items-center p-4 text-center">
+                    <!-- 广告图片 -->
+                    <div class="mb-3">
+                        <img src="&#x2F;images&#x2F;book-wegame.png" 
+                              alt="微信小游戏开发" 
+                              class="w-48 h-60 object-cover rounded-md mx-auto"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMTkyIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiBmaWxsPSIjREJFRkZGIi8+Cjx0ZXh0IHg9Ijk2IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMzc2RkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7kuLvpopjlpLTlg488L3R4dD4KPC9zdmc+'">
+                    </div>
+                    
+                    <!-- 广告信息 -->
+                    <div class="max-w-sm">
+                        <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+                            微信小游戏开发
+                        </h2>
+                        
+                        <p class="text-gray-700 text-sm mb-3">学习微信小游戏开发技术，掌握游戏开发全流程</p>
+                        
+                        
+                        <!-- 查看详情按钮 -->
+                        <div class="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow-sm transition-colors text-sm">
+                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                            </svg>
+                            查看详情
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    
+    
+    <!-- 页脚 -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center space-y-2">
+                <p class="text-gray-600">
+                    &copy; 2002-2025 
+                    
+                        
+                        <a href="https:&#x2F;&#x2F;yishulun.com" target="_blank" rel="noopener" class="text-gray-700 hover:text-primary-600">LIYI</a>
+                        
+                    
+                    
+                        &nbsp;|&nbsp;
+                        <a href="https://beian.miit.gov.cn/" 
+                           target="_blank" 
+                           rel="noopener" 
+                           class="text-gray-500 hover:text-gray-700 text-sm">
+                            京ICP备14007000号-8
+                        </a>
+                    
+                </p>
+                <p class="text-gray-500 text-sm">
+                    由 <a href="https://github.com/rixingyike/rustpress" 
+                          target="_blank" 
+                          rel="noopener" 
+                          class="text-primary-600 hover:text-primary-700">RustPress</a> 提供支持
+                </p>
+                <p class="text-gray-500 text-sm">
+                    <a href="/rss.xml" class="hover:text-primary-600">RSS</a>
+                    &nbsp;·&nbsp;
+                    <a href="/sitemap.xml" class="hover:text-primary-600">Sitemap</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 搜索结果容器 -->
+    <div class="fixed inset-x-0 top-16 z-40 hidden" id="search-results">
+        <div class="bg-white shadow-lg border border-gray-200 rounded-lg mx-4 mt-2 max-h-96 overflow-y-auto">
+            <!-- 搜索结果将在这里显示 -->
+        </div>
+    </div>
+
+    <!-- jQuery 库 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- 搜索功能脚本 -->
+    <script src="/js/search.js"></script>
+
+    
+    <!-- Google Analytics 懒加载 -->
+    <script>
+    (function(){
+        var gid = "G-8N64Q25EK9";
+        var loadGA = function(){
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = "https://www.googletagmanager.com/gtag/js?id=" + gid;
+            s.onload = function(){
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);} // eslint-disable-line
+                gtag('js', new Date());
+                gtag('config', gid);
+            };
+            document.head.appendChild(s);
+        };
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGA);
+        } else {
+            window.addEventListener('load', function(){ setTimeout(loadGA, 1500); });
+        }
+    })();
+    </script>
+    
+
+    
+    <!-- Google Ads 懒加载 -->
+    <script>
+    (function(){
+        var clientId = "ca-pub-2139303336591479";
+        var loadAds = function(){
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + clientId;
+            s.crossOrigin = "anonymous";
+            document.head.appendChild(s);
+        };
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadAds);
+        } else {
+            window.addEventListener('load', function(){ setTimeout(loadAds, 1500); });
+        }
+    })();
+    </script>
+    
+</body>
+</html>

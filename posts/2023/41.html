@@ -1,74 +1,763 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="generator" content="VuePress 2.0.0-rc.19" /><meta name="theme" content="VuePress Theme Plume " /><script id="check-mac-os">document.documentElement.classList.toggle('mac', /Mac|iPhone|iPod|iPad/i.test(navigator.platform))</script><script id="check-dark-mode">;(function () {const um= localStorage.getItem('vuepress-theme-appearance') || 'dark';const sm = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = um === 'dark' || (um !== 'light' && sm);document.documentElement.dataset.theme = isDark ? 'dark' : 'light';})();</script><link rel="icon" type="image/png" href="/favicon.ico"><meta name="og:author" content="一树论"><meta property="og:description" content="一花一世界，一树一菩提"><script defer crossorigin="anonymous" src="//www.googletagmanager.com/gtag/js?id=G-8N64Q25EK9"></script><script>window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-8N64Q25EK9');</script><script defer crossorigin="anonymous" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2139303336591479"></script><title>50 行 Python 代码调用私有 GPTs | 一树论</title><meta name="description" content="一花一世界，一树一菩提"><link rel="preload" href="/assets/style.DM3z6du7.css" as="style"><link rel="stylesheet" href="/assets/style.DM3z6du7.css"><link rel="modulepreload" href="/assets/app-BxiebszO.js"><link rel="modulepreload" href="/assets/41.html-gWxNx8k8.js"></head><body><div id="app"><!--[--><!--[--><div class="theme-plume vp-layout" vp-container data-v-d6552e9a><!--[--><!--[--><!--]--><!--[--><span tabindex="-1" data-v-12a31158></span><a href="#VPContent" class="vp-skip-link visually-hidden" data-v-12a31158> Skip to content </a><!--]--><!----><header class="vp-nav" data-v-d6552e9a data-v-96eccaba><div class="vp-navbar" vp-navbar data-v-96eccaba data-v-bdd47ae4><div class="wrapper" data-v-bdd47ae4><div class="container" data-v-bdd47ae4><div class="title" data-v-bdd47ae4><div class="vp-navbar-title" data-v-bdd47ae4 data-v-3b06fbfc><a class="vp-link no-icon link title" href="/" data-v-3b06fbfc data-v-f069b6fd><!--[--><!--[--><!--]--><!--[--><!--[--><!--[--><img class="vp-image dark logo" src="/logo.png" alt data-v-ad922d12><!--]--><!--[--><img class="vp-image light logo" src="/logo.png" alt data-v-ad922d12><!--]--><!--]--><!--]--><span data-v-3b06fbfc>一树论</span><!--[--><!--]--><!--]--><!----></a></div></div><div class="content" data-v-bdd47ae4><div class="content-body" data-v-bdd47ae4><!--[--><!--]--><div class="vp-navbar-search search" data-v-bdd47ae4><div class="search-wrapper" data-v-10feaed3><!----><div id="local-search" data-v-10feaed3><button type="button" class="mini-search mini-search-button" aria-label="搜索文档" data-v-10feaed3><span class="mini-search-button-container"><span class="mini-search-search-icon vpi-mini-search" aria-label="search icon"></span><span class="mini-search-button-placeholder">搜索文档</span></span><span class="mini-search-button-keys"><kbd class="mini-search-button-key"></kbd><kbd class="mini-search-button-key">K</kbd></span></button></div></div></div><nav aria-labelledby="main-nav-aria-label" class="vp-navbar-menu menu" data-v-bdd47ae4 data-v-6460476e><span id="main-nav-aria-label" class="visually-hidden" data-v-6460476e>Main Navigation</span><!--[--><!--[--><a class="vp-link no-icon link navbar-menu-link" href="/" tabindex="0" data-v-6460476e data-v-85aa99a3 data-v-f069b6fd><!--[--><!----><span data-v-85aa99a3>首页</span><!--]--><!----></a><!--]--><!--[--><a class="vp-link no-icon link navbar-menu-link" href="/notes/" tabindex="0" data-v-6460476e data-v-85aa99a3 data-v-f069b6fd><!--[--><!----><span data-v-85aa99a3>电子书</span><!--]--><!----></a><!--]--><!--[--><div class="vp-flyout vp-navbar-menu-group" data-v-6460476e data-v-e5ac9fc4><button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-e5ac9fc4><span class="text" data-v-e5ac9fc4><!----><!----><span data-v-e5ac9fc4>博客</span><span class="vpi-chevron-down text-icon" data-v-e5ac9fc4></span></span></button><div class="menu" data-v-e5ac9fc4><div class="vp-menu" data-v-e5ac9fc4 data-v-32f9ab84><div class="items" data-v-32f9ab84><!--[--><!--[--><div class="vp-menu-link" data-v-32f9ab84 data-v-ec192cee><a class="vp-link no-icon link" href="/blog/" data-v-ec192cee data-v-f069b6fd><!--[--><!----> 最新文章<!--]--><!----></a></div><!--]--><!--[--><div class="vp-menu-link" data-v-32f9ab84 data-v-ec192cee><a class="vp-link no-icon link" href="/categories.html" data-v-ec192cee data-v-f069b6fd><!--[--><!----> 分类<!--]--><!----></a></div><!--]--><!--[--><div class="vp-menu-link" data-v-32f9ab84 data-v-ec192cee><a class="vp-link no-icon link" href="/tags.html" data-v-ec192cee data-v-f069b6fd><!--[--><!----> 标签<!--]--><!----></a></div><!--]--><!--[--><div class="vp-menu-link" data-v-32f9ab84 data-v-ec192cee><a class="vp-link no-icon link" href="/archives.html" data-v-ec192cee data-v-f069b6fd><!--[--><!----> 归档<!--]--><!----></a></div><!--]--><!--[--><div class="vp-menu-link" data-v-32f9ab84 data-v-ec192cee><a class="vp-link no-icon link" href="/friends.html" data-v-ec192cee data-v-f069b6fd><!--[--><!----> 友链<!--]--><!----></a></div><!--]--><!--]--></div><!--[--><!--]--></div></div></div><!--]--><!--[--><a class="vp-link no-icon link navbar-menu-link" href="/about.html" tabindex="0" data-v-6460476e data-v-85aa99a3 data-v-f069b6fd><!--[--><!----><span data-v-85aa99a3>联系作者</span><!--]--><!----></a><!--]--><!--]--></nav><!----><div class="vp-navbar-appearance appearance" data-v-bdd47ae4 data-v-6fd3cbf0><button class="vp-switch vp-switch-appearance" type="button" role="switch" title aria-checked="false" data-v-6fd3cbf0 data-v-8ed16a8a data-v-aa684cf9><span class="check" data-v-aa684cf9><span class="icon" data-v-aa684cf9><!--[--><span class="vpi-sun sun" data-v-8ed16a8a></span><span class="vpi-moon moon" data-v-8ed16a8a></span><!--]--></span></span></button></div><div class="vp-social-links vp-navbar-social-links social-links" data-v-bdd47ae4 data-v-71df4a5c data-v-a628bdb3><!--[--><a class="vp-social-link no-icon" href="https://github.com/rixingyike" aria-label="github" target="_blank" rel="noopener" data-v-a628bdb3 data-v-0df5fecc><span class="vpi-social-github" /></a><!--]--></div><div class="vp-flyout vp-navbar-extra extra" data-v-bdd47ae4 data-v-08d67204 data-v-e5ac9fc4><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-e5ac9fc4><span class="vpi-more-horizontal icon" data-v-e5ac9fc4></span></button><div class="menu" data-v-e5ac9fc4><div class="vp-menu" data-v-e5ac9fc4 data-v-32f9ab84><!----><!--[--><!--[--><!----><div class="group" data-v-08d67204><div class="item appearance" data-v-08d67204><p class="label" data-v-08d67204>外观</p><div class="appearance-action" data-v-08d67204><button class="vp-switch vp-switch-appearance" type="button" role="switch" title aria-checked="false" data-v-08d67204 data-v-8ed16a8a data-v-aa684cf9><span class="check" data-v-aa684cf9><span class="icon" data-v-aa684cf9><!--[--><span class="vpi-sun sun" data-v-8ed16a8a></span><span class="vpi-moon moon" data-v-8ed16a8a></span><!--]--></span></span></button></div></div></div><div class="group" data-v-08d67204><div class="item social-links" data-v-08d67204><div class="vp-social-links social-links-list" data-v-08d67204 data-v-a628bdb3><!--[--><a class="vp-social-link no-icon" href="https://github.com/rixingyike" aria-label="github" target="_blank" rel="noopener" data-v-a628bdb3 data-v-0df5fecc><span class="vpi-social-github" /></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="vp-navbar-hamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="nav-screen" data-v-bdd47ae4 data-v-b1daf74e><span class="container" data-v-b1daf74e><span class="top" data-v-b1daf74e></span><span class="middle" data-v-b1daf74e></span><span class="bottom" data-v-b1daf74e></span></span></button></div></div></div></div><div class="divider" data-v-bdd47ae4><div class="divider-line" data-v-bdd47ae4></div></div></div><!----></header><div class="vp-local-nav fixed reached-top is-blog" data-v-d6552e9a data-v-255cd326><button class="hidden menu" disabled aria-expanded="false" aria-controls="SidebarNav" data-v-255cd326><span class="vpi-align-left menu-icon" data-v-255cd326></span><span class="menu-text" data-v-255cd326>Menu</span></button><div class="vp-local-nav-outline-dropdown" style="--vp-vh:0px;" data-v-255cd326 data-v-9593ca6e><button data-v-9593ca6e>返回顶部</button><!----></div></div><!----><!--[--><div id="VPContent" vp-content class="vp-content" data-v-d6552e9a data-v-7dd46bb2><div class="vp-doc-container is-blog" data-v-7dd46bb2 data-v-f507f9f3><!--[--><!--]--><div class="container" data-v-f507f9f3><!----><div class="content" data-v-f507f9f3><div class="content-container" data-v-f507f9f3><!--[--><!--]--><main class="main" data-v-f507f9f3><nav class="vp-breadcrumb" data-v-f507f9f3 data-v-84e18d0c><ol vocab="https://schema.org/" typeof="BreadcrumbList" data-v-84e18d0c><!--[--><li property="itemListElement" typeof="ListItem" data-v-84e18d0c><a class="vp-link no-icon link breadcrumb" href="/" property="item" typeof="WebPage" data-v-84e18d0c data-v-f069b6fd><!--[-->首页<!--]--><!----></a><span class="vpi-chevron-right" data-v-84e18d0c></span><meta property="name" content="首页" data-v-84e18d0c><meta property="position" content="1" data-v-84e18d0c></li><li property="itemListElement" typeof="ListItem" data-v-84e18d0c><a class="vp-link no-icon link breadcrumb" href="/blog/" property="item" typeof="WebPage" data-v-84e18d0c data-v-f069b6fd><!--[-->博客<!--]--><!----></a><span class="vpi-chevron-right" data-v-84e18d0c></span><meta property="name" content="博客" data-v-84e18d0c><meta property="position" content="2" data-v-84e18d0c></li><li property="itemListElement" typeof="ListItem" data-v-84e18d0c><a class="vp-link no-icon link breadcrumb" href="/categories.html?id=18958e" property="item" typeof="WebPage" data-v-84e18d0c data-v-f069b6fd><!--[-->posts<!--]--><!----></a><span class="vpi-chevron-right" data-v-84e18d0c></span><meta property="name" content="posts" data-v-84e18d0c><meta property="position" content="3" data-v-84e18d0c></li><li property="itemListElement" typeof="ListItem" data-v-84e18d0c><a class="vp-link no-icon link breadcrumb" href="/categories.html?id=ac244c" property="item" typeof="WebPage" data-v-84e18d0c data-v-f069b6fd><!--[-->2023<!--]--><!----></a><span class="vpi-chevron-right" data-v-84e18d0c></span><meta property="name" content="2023" data-v-84e18d0c><meta property="position" content="4" data-v-84e18d0c></li><li property="itemListElement" typeof="ListItem" data-v-84e18d0c><a class="vp-link no-icon link breadcrumb current" href="/posts/2023/41.html" property="item" typeof="WebPage" data-v-84e18d0c data-v-f069b6fd><!--[-->50 行 Python 代码调用私有 GPTs<!--]--><!----></a><!----><meta property="name" content="50 行 Python 代码调用私有 GPTs" data-v-84e18d0c><meta property="position" content="5" data-v-84e18d0c></li><!--]--></ol></nav><!--[--><h1 class="vp-doc-title page-title" data-v-e39d4e9c>50 行 Python 代码调用私有 GPTs <!----></h1><div class="vp-doc-meta" data-v-e39d4e9c><p class="reading-time" data-v-e39d4e9c><span class="vpi-books icon" data-v-e39d4e9c></span><span data-v-e39d4e9c>约 4048 字</span><span data-v-e39d4e9c>大约 13 分钟</span></p><p data-v-e39d4e9c><span class="vpi-tag icon" data-v-e39d4e9c></span><!--[--><a class="vp-link no-icon link tag vp-tag-8i7b" href="/tags.html?tag=ChatGPT" data-v-e39d4e9c data-v-f069b6fd><!--[-->ChatGPT<!--]--><!----></a><!--]--></p><p class="create-time" data-v-e39d4e9c><span class="vpi-clock icon" data-v-e39d4e9c></span><span data-v-e39d4e9c>2023-11-15</span></p></div><!--]--><div class="_posts_2023_41 external-link-icon-enabled vp-doc plume-content" vp-content data-v-f507f9f3><div data-v-f507f9f3><h1 id="_50-行-python-代码调用私有-gpts" tabindex="-1"><a class="header-anchor" href="#_50-行-python-代码调用私有-gpts"><span>50 行 Python 代码调用私有 GPTs</span></a></h1><p>今天聊一下 ChatGPT 的 GPTs。</p><p>以下内容首发于<a href="https://mp.weixin.qq.com/s?__biz=MzI2NDU4OTExOQ==&amp;mid=2247664217&amp;idx=1&amp;sn=4a7be69442f72ca0d64f367e7a43c72b&amp;scene=21#wechat_redirect" target="_blank" rel="noopener noreferrer">腾讯云开发者</a>，是一篇应邀写的约稿，大概前后用了半个小时，仓促之下代码示例及行文措词都非常朴素。现实中真实的项目是绝不会如此简单的，但越简单的示例，越容易让读者抓住重点，这是我一直坚持的教程撰写风格。</p><p>我通过这个小示例想表达的是，通过 playwright + GPTs，我们可以做出许多有意思的应用，且成本低、安全、可塑性性强，就像打开了一道新世界的大门。在腾讯云开发者推送以后，我查看评论区，有一位读者说：</p><p>“我想开发一个依据需求（自然语言讲述）生成定制化GPT的GPT应用。”</p><p>看到这个评论，我就知道他已经打开属于他的新世界大门了。</p><p>通过以下示例，既可以调用 GPTs，也可以创建 GPTs，原理是一样的。甚至，如果有10个人要创建自己的GPTs，都没有必要购买10个 ChatGPT Plus 会员帐号，只需要一个帐号，就可以给10个人使用，且每个人的 GPTs 都是独立的、隔离的（因为GPTs是私有发布）。你明白了吗？</p><p>如果你不想花美金购买会员帐号，也不想学习编程，只想拥有这样一个免费的私人 GPTs，在【艺述论】公众号回复【10008】，扫码入群等待，马上发车。</p><hr><p>11 月 6 日，OpenAI 举办了自己的第一次开发者春晚，并现场推出了新模型 GPT-4 Turbo，及 Plus 会员用户可以基于新模型进行功能自定义的 GPTs。</p><p>GPTs 是什么？</p><p>简单理解，它就是一个充许用户不使用任何编程技术、不需要调用 ChatGPT API 即可完成训练的一个 AI。有人说，我不需要 GPTs，我用 LangChain+Agent+ChatGPT API 或其它大语言模型的 API，也能实现一个自定义的 GPT。</p><p>没错，这么理解是对的！但不是所有人都会编程，也不是所有人都知道 LangChain 如何调用以及 AI Agent 如何开发。ChatGPT 适时推出的 GPTs，它的目标用户群体是广大的不会编程的用户。据 OpenAI 宣称，ChatGPT 周活已经达到了 1 亿，预测不久，几百万个甚至几千万个 GPTs 将出现在 GPT Store上。</p><p>笔者在这篇文章“<a href="https://mp.weixin.qq.com/s/VlNvziKjGsIWYxef9w3Xig" target="_blank" rel="noopener noreferrer">不用编码，也不用会写严格的提示，创建自己的第一个 GPT</a>”中已经详细介绍过徒手创建 GPTs 的方法，很简单，整个过程只需要七步，简单设置一下，再上传一些文件，大功即可告成。在发布的时候，还可以选择私有、分享可用及完全公开。</p><p>如下所示，这是笔者创建的 GPTs————Story Weaver，它是一个私有的GPTs。</p><p><img src="/assets/image-20231115141948319.BuKK7c5X.png" alt="Story Weaver"></p><p>对于我们不想让别人看到的，只想让我们自己或团队成员使用的模型，我们肯定要发布为私有。对于私有的 GPTs，如果我们还想实现在本地自如地调用、并且是程序自动化调用，我们应该怎么做呢？</p><p>有人可能会想：“我们可以使用 OpenAI 官方提供的 API。”</p><p>很抱歉，目前 OpenAI 还没有公布这样的接口；即使以后有，它极有可能也是需要付费的。我们购买 Plus 会员已经花了钱，在调用自己创建的 GPTs 的时候，为什么还要花钱？</p><p>本篇笔者就用银河系最通俗易用的编程语言————Python，用不到 50 行的总代码，带你打开新世界大门。不需要额外付费，也不需要调用任何 API，更不需要设置什么 API Token，就可以自动化调用我们自己创建的 GPTs。</p><p>在创建 GPTs 的时候，数据文件是我们提供的，消费代码也是在我们本地运行的，这就相当于我们在本地借用了 ChatGPT 强大的大语言模型能力，且成本低廉、方法又简单。</p><h2 id="准备工作" tabindex="-1"><a class="header-anchor" href="#准备工作"><span>准备工作</span></a></h2><p>如果你想顺利运行稍后笔者提供的 Python 示例，你需要准备以下这些条件：</p><ul><li>一个附带 Plus 会员的 ChatGPT 帐号</li><li>本地电脑已经安装了 Python 3.7 或以上的版本</li></ul><p>有人可能说：“访问 ChatGPT 需要翻墙，我不想翻墙！”</p><p>没问题，购买一台腾讯云美区云主机，选择 Windows 系统，在上面进行项目操作就可以了。不需要翻墙，速度还是杠杠的。</p><h2 id="安装类库" tabindex="-1"><a class="header-anchor" href="#安装类库"><span>安装类库</span></a></h2><p>稍后我们需要用到两个类库：pyperclip 与 playwright，我们需要在终端环境里依次安装它们：</p><blockquote><p>pip install pyperclip</p><p>pip install playwright &amp;&amp; playwright install</p></blockquote><p>注意：在安装完 playwright 以后，别忘记运行 playwright install，这一步是安装 playwright 运行时需要的浏览器组件。即使是我们本地已经安装了相关的浏览器，这一步也必不可少。</p><p>简单介绍一下这两个类库。pyperclip 是处理剪切板数据的，允许我们访问本地剪切板并将数据导出，这个类库没什么好说的，许多开发网页智能机器人的工程师们都使用过。</p><p>playwright 是大大鼎鼎的自动化测试框架，它由 Microsoft 开发，提供了一套简单而强大的 API，可以自动化运行基于 Chromium、Firefox 和 WebKit 浏览器的测试程序。与 playwright 齐名的另一个类似框架是 selenium，前者与后者相比，前者拥有更加现代化的 API、更快的响应速度和更强大的功能，所以笔者选择了前者。</p><p>一个自动化测试框架跟我们要做的事情有什么关系呢？我们为什么要安装它？</p><p>当然有关系！很多基于浏览器的自动化智能机器人，例如智能网页爬虫，都是 playwright 实现的。你明白了吗，playwright 不仅可以用于测试、代替测试工程师做一些重复性高的测试工作，还可以代替人做一些相对复杂的普通网页操作。</p><p>稍后我们在浏览器上打开自定义 GPTs 的网址、输入 Prompt、获取查询结果，这些操作都可以由 playwright 代替我们实现。本地程序的自动化是借由 playwright 实现的。</p><h2 id="持久化登录" tabindex="-1"><a class="header-anchor" href="#持久化登录"><span>持久化登录</span></a></h2><p>使用 playwright 开发智能网页机器人应用，有一个问题是无法避免的，这个问题就是用户验证。一般有以下两个解决思路：</p><p>1）第一个思路，自动监测网页状态并登录。</p><p>当未登录时，使用本地预先记录的帐号跳转到登录页面实现自动登录，并在本地缓存登录后的 cookies。</p><p>本地写入 cookies 的代码大概是这样的：</p><div class="language-python line-numbers-mode" data-ext="python" data-title="python"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">cookies </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> context</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">cookies</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span></span>
-<span class="line"><span style="--shiki-light:#998418;--shiki-dark:#B8A965;">print</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">page</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">title</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">())</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">f </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#998418;--shiki-dark:#B8A965;"> open</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">cookies.json</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;"> &#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">w</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">json</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">dump</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">cookies</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> f</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>读取 cookies 以避免重复登录的代码是这样的：</p><div class="language-python line-numbers-mode" data-ext="python" data-title="python"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">def</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> loadCookies</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">cookief</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">):</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">    cookiefile </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#998418;--shiki-dark:#B8A965;"> open</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">cookief</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;"> &#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">r</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">    cookie_list </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> json</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">load</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">cookiefile</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">  # json读取cookies</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">    cookiefile</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">close</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">    return</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> cookie_list</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">...</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">context </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> browser</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">new_context</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">cookiefiles </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> [</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">cookies.json</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">]</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">for</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> cookiefile </span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">in</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> cookiefiles</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">:</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">  context</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">add_cookies</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">loadCookies</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">cookiefile</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">))</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这两段代码今天我们并不打算使用，你了解一下就好。这种方式还需要处理网页验证码，以及在 cookies 过期后还需要重新登录，比较复杂，除非迫不得已，我们不采用这种思路。</p><p>2）第二个思路是持久化登录。</p><p>简单讲，就是专门在硬盘上辟出一个空间给当前的网页机器人程序使用，运行期间产生的 cookies、图片等数据全部缓存在该目录下，由于 cookies 是缓存的，便不需要频繁登录。我们采用这种方法。</p><p>首先创建一个项目目录，例如 browser_ai，在该目录下再创建一个 gpts_firefox_dir 目录，用作浏览器的持久化缓存目录。</p><p>现在祭出我们的第一部分 Python 代码，query_gpts.py 文件第一部分：</p><div class="language-python line-numbers-mode" data-ext="python" data-title="python"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">import</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> time</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">import</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> pyperclip</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">from</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> playwright</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">sync_api </span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">import</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> sync_playwright</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">def</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> login</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">():</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">    with</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> sync_playwright</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;"> as</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> p</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">:</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        context </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> p</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">firefox</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">launch_persistent_context</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span></span>
-<span class="line"><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">              &#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">./gpts_firefox_dir</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">              headless</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">False</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">              slow_mo</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">500</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">            )</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        page </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> context</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">pages</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">[</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">0</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">]</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        page</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">goto</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">https://chat.openai.com/</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">login</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>简单解释一下这段 Python 代码：</p><ul><li>前 3 行是类库引用。time 是内置的，不需要安装，可以直接引用。pyperclip 与 playwright 我们已经安装过了，可以直接引用，playwright.sync_api 是 playwright 的同步模块，使用同步模式，在编写网页机器人时可以让我们轻松许多。</li><li>第 5 行～第 13 行定义了函数 login，这个函数我们主要是为了在本地持久化目录下缓存 cookies 信息的。第 7 行，firefox 代表使用 Firefox 浏览器组件，这个地方还可以选择 chromium 或 webkit，相信我，不要选择 chromium，虽然它是大名鼎鼎的谷歌开源的浏览器项目，但它早被黑客们玩坏了，开发网页机器人就使用 firefox 吧，这个选项能让你节省许多时间。不要谢我，我是活雷锋。</li><li>还是第 7 行，launch_persistent_context 代表从本地持久化目录启动浏览器。第 8 行，第一个参数 gpts_firefox_dir 便是我们先前创建的目录，在这里用上了。</li><li>第 9 行，headless 等于 False，我们才可以在运行时看到浏览器的 UI。如果想让浏览器组件在后台静默运行，将此处设置为 True 即可。测试阶段，最好设置为 True。不要问我为什么，如果你调试过网页智能机器人程序中的元素选择，就明白我在说什么了。</li><li>第 12 行，是取到浏览器的第一个打开的标签页。第 13 行，是打开一个网址。</li></ul><p>其它代码没有什么好讲的，使用<code>python query_gpts.py</code>指令启动，在打开的浏览器中登录自己的 ChatGPT 会员帐号，然后关闭程序。login 函数的使命就已经完成了。</p><h2 id="调用-gpts" tabindex="-1"><a class="header-anchor" href="#调用-gpts"><span>调用 GPTs</span></a></h2><p>下面真正的代码来了，query_gpts.py 文件第二部分：</p><div class="language-python line-numbers-mode" data-ext="python" data-title="python"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">...</span></span>
-<span class="line"><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">def</span><span style="--shiki-light:#59873A;--shiki-dark:#80A665;"> query</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">():</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">    with</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> sync_playwright</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;"> as</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> p</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">:</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        browser </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> p</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">firefox</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">launch_persistent_context</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span></span>
-<span class="line"><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">              &#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">./gpts_firefox_dir</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">              headless</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">False</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">,</span></span>
-<span class="line"><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A;">              slow_mo</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">500</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">            )</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        page </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> browser</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">pages</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">[</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">0</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">]</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">        # 这是私有的，要替换成你自己的GPTs URL</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        page</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">goto</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">https://chat.openai.com/g/g-OitD1zCwT-story-weaver</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        time</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">sleep</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">2</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        page</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">query_selector</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">#prompt-textarea</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">).</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">fill</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">告诉我，你的知识库截止日期是？</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        page</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">wait_for_selector</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">button[data-testid=&quot;send-button&quot;]</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">).</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">click</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        time</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">sleep</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">10</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        copy_button_selector </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;"> &#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">button.text-xs.dark</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">\\</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">:hover</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">\\</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">:text-gray-200</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        copy_buttons </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> page</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">query_selector_all</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">copy_button_selector</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span>
-<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666;">        (</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">copy_buttons</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">[</span><span style="--shiki-light:#998418;--shiki-dark:#B8A965;">len</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">copy_buttons</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;">-</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">1</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">]).</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">click</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        time</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">sleep</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91;">1</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        clipboard_content </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;"> pyperclip</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">paste</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span></span>
-<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">        # 打印剪贴板内容</span></span>
-<span class="line"><span style="--shiki-light:#998418;--shiki-dark:#B8A965;">        print</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">clipboard_content</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#998418;--shiki-dark:#B8A965;">        str</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;"> &#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">y</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span></span>
-<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375;">        while</span><span style="--shiki-light:#998418;--shiki-dark:#B8A965;"> str</span><span style="--shiki-light:#AB5959;--shiki-dark:#CB7676;"> ==</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;"> &#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">y</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">:</span></span>
-<span class="line"><span style="--shiki-light:#998418;--shiki-dark:#B8A965;">            str</span><span style="--shiki-light:#999999;--shiki-dark:#666666;"> =</span><span style="--shiki-light:#998418;--shiki-dark:#B8A965;"> input</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">等待中，是否继续等待？y/n。</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">\n\n</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">请输入：</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD;">  # 控制休眠时间</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        page</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">close</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">        browser</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">close</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">query</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这部分代码都干了啥？稍微解释一下吧：</p><ul><li>第 4 行～第 8 行，前面介绍过了。</li><li>第 11 行，打开自定义 GPTs 的网址，注意，示例里是我自己的网址，并且是私有的，你是访问不到的。你需要在 ChatGPT 上先创建自己的 GPTs，然后将此处换成自己的地址。关于如何创建自己的 GPTs，看这里：<a href="https://mp.weixin.qq.com/s/VlNvziKjGsIWYxef9w3Xig" target="_blank" rel="noopener noreferrer">不用编码，也不用会写严格的提示，创建自己的第一个 GPT</a>。</li><li>第 12 行，这里有一个 sleep 操作，为什么要 sleep？我们引用的是 playwright 同步模块，第 11 行代码执行完，代表网址已经打开了，为什么还要 sleep？是报复老板让我 996 故意消耗老板的电费吗？当然不是！网址成功打开并不代表页面元素全部加载完成，在开发网页智能机器人时尤其要注意这一点，否则，你可能找不到你要查询的页面元素，因为你要的元素还在内存里，还没有渲染出来呢。打个比方，好比今天你去教官结婚，但是你的新娘还在她妈妈的肚子里。</li><li>第 13 行，query_selector 用于选择页面上的一个元素，它的参数是 CSS 选择器，参数要求与 document.querySelector 相似。fill 是填写文本，写的是我们想问的问题，这里为了使程序简单，我将问题写死了，事实上这个问题可以来自于数据库，也可以来自于用户输入，它的来源是灵活可控的。</li><li>第 14 行，wait_for_selector 也是选择元素，它与 query_selector 不同的是，它会等待网页出现这个元素————如果这个元素暂时没有的话。wait_for_selector 相比 query_selector 是有优势的，使用它不用显式等待，你看我在这行代码前面就没有使用 sleep。那么为什么在第 12 行使用呢，为什么第 13 行不使用 wait_for_selector 呢？不为什么，为了演示，为了告诉你这两个方法之间的区别。</li><li>第 14 行，是单击了页面中的“发送”按钮，ChatGPT 背后的大语言模型开始工作了。第 15 行，这里要 sleep 一下，ChatGPT 的反应需要时间。</li><li>第 17 行～第 19 行，这里是为了查询页面上出现的“拷贝”按钮，并单击它。由于多次互动后，这类按钮会出现多个，所以取了最后一个。</li><li>第 21 行，这是从剪切板获取数据，我们提前安装的 pyperclip 终于发挥使用了。</li></ul><p>程序完成后，使用<code>python query_gpts.py</code>指令运行，效果如下：</p><p><img src="/assets/image-20231115142807051.v-KbYQPW.png" alt="运行效果"></p><p>最后一步，程序中关于y的那部分while循环，是为了控制程序不退出。因为程序退出后，浏览器就关闭了，我们也没有办法进一步查看和操作界面了。</p><p>如果参数 headless 等于 Flase，能看到浏览器界面，运行效果是这样的：</p><p><img src="/assets/image-20231115142916204.C2s-HM-7.png" alt="story Weaver的互动效果"></p><p>GPT-4 Turbo 发布后，很多通过第三方壳子应用使用 ChatGPT 服务的用户，怀疑自己用的是假 GPT-4，这时候可以使用上面这条提示问知识库截止日期，正准答案是 2023 年 4 月。</p><h2 id="由-codegen-反向生成代码" tabindex="-1"><a class="header-anchor" href="#由-codegen-反向生成代码"><span>由 codegen 反向生成代码</span></a></h2><p>示例里面有一个地方的代码，在网页机器人开发中是公认的麻烦。例如，在 query 函数中，第 13 行、第 14 行、第 17 行，这三处的选择器代码并不容易写，尤其是最后一个。</p><div class="language-python line-numbers-mode" data-ext="python" data-title="python"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">page</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">query_selector</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">#prompt-textarea</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">).</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">fill</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">告诉我，你的知识库截止日期是？</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&quot;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">)</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">page</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">wait_for_selector</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">(</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">button[data-testid=&quot;send-button&quot;]</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">).</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">click</span><span style="--shiki-light:#999999;--shiki-dark:#666666;">()</span></span>
-<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE;">copy_button_selector </span><span style="--shiki-light:#999999;--shiki-dark:#666666;">=</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;"> &#39;</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">button.text-xs.dark</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">\\</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">:hover</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;">\\</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;">:text-gray-200</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77;">&#39;</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>为了解决这类问题，提升生产效率，playwright 提供了一个“由操作生成代码”的功能。以我们访问的 GPTs 网址为例，指令如下：</p><div class="language-bash line-numbers-mode" data-ext="bash" data-title="bash"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665;">playwright</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;"> codegen</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076;"> --browser</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;"> firefox</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D;"> https://chat.openai.com/g/g-OitD1zCwT-story-weaver</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><p>codegen 这个子程序可以帮助我们生成带有大量选择器的代码。参数 browser 是指定浏览器组件类型，这个参数其实无所谓，指不指定并不会影响目标页面上的元素。</p><p>codegen 指令会打开一个浏览器，我们在上面操作一番，在小窗口中便能看到生成的代码，如下所示：</p><p><img src="/assets/image-20231115141033734.Bk4Vv5uM.png" alt="codegen生成的代码"></p><p>生成的代码很粗犷，一般情况下并不能直接使用，但它可以帮助我们定位元素，获取元素的选择器写法。这是 codegen 指令存在的作用。</p><h2 id="回顾" tabindex="-1"><a class="header-anchor" href="#回顾"><span>回顾</span></a></h2><p>最后总结一下。</p><p>这个示例很简单，没有输入，也没有输出————输出就是简单的打印，将 ChatGPT 返回的内容直接在终端中打印了一下。对于登录，我们也采用了最简单的方法————手动登录。在实际项目中，这些问题都需要细化。</p><p>通过 playwright，我们实现了在本地调用远程私有 GPTs 的目的，数据是我们的，程序也是我们的，我们只是借用了 ChatGPT 的大语言模型能力。并且也不需要额外花费 API 调用费用，这是很划算的。基于本文示例，你还有哪些想法，想开发什么样的智能应用呢？欢迎留言讨论。</p><p>最后说一下示例代码，完整的示例可以在公众号“艺述论”回复 10008 下载。</p></div><!----><!----><div class="vp-doc-copyright" data-v-f507f9f3><h2 id="doc-copyright" tabindex="-1" class="vp-doc-header" data-v-7174c683><a href="#doc-copyright" class="header-anchor" data-v-7174c683><span data-v-7174c683><!--[-->版权所有<!--]--></span></a></h2><div class="hint-container tip copyright-container" data-v-453fd625><!----><p data-v-453fd625><span data-v-453fd625>本文链接：</span><a class="vp-link no-icon link" href="/posts/2023/41.html" data-allow-mismatch data-v-453fd625 data-v-f069b6fd><!--[-->/posts/2023/41.html<!--]--><!----></a></p><p data-v-453fd625><span data-v-453fd625>许可证：</span><a class="vp-link no-icon link" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noreferrer" data-v-453fd625 data-v-f069b6fd><!--[-->署名-非商业性 4.0 国际 (CC-BY-NC-4.0)<!--]--><!----></a><!--[--><span class="vpi-license-cc" data-v-453fd625></span><span class="vpi-license-by" data-v-453fd625></span><span class="vpi-license-nc" data-v-453fd625></span><!--]--></p></div></div></div></main><footer class="vp-doc-footer" data-v-f507f9f3 data-v-83836b2c><!--[--><!--]--><div class="edit-info" data-v-83836b2c><div class="edit-link" data-v-83836b2c><a class="vp-link no-icon link edit-link-button" href="https://github.com/rixingyike/yishulun_blog_mdandcode/edit/main/src/posts/2023/41.md" target="_blank" rel="noreferrer" data-v-83836b2c data-v-f069b6fd><!--[--><span class="vpi-square-pen edit-link-icon" aria-label="edit icon" data-v-83836b2c></span> 编辑此页<!--]--><!----></a></div><!----></div><!----><nav class="prev-next" data-v-83836b2c><div class="pager" data-v-83836b2c><a class="vp-link no-icon link pager-link prev" href="/posts/2023/42.html" data-v-83836b2c data-v-f069b6fd><!--[--><span class="desc" data-v-83836b2c>上一页</span><span class="title" data-v-83836b2c>是被对手间谍策反，还是强大的 AI 操纵了人类意识，OpenAI 掌门 Sam Altman 被自己的公司扫地出门了</span><!--]--><!----></a></div><div class="pager" data-v-83836b2c><a class="vp-link no-icon link pager-link next" href="/posts/2023/43.html" data-v-83836b2c data-v-f069b6fd><!--[--><span class="desc" data-v-83836b2c>下一页</span><span class="title" data-v-83836b2c>悬念题材小说中的心理活动</span><!--]--><!----></a></div></nav></footer><div id="comment" class="giscus-wrapper input-top vp-comment" vp-comment style="display:block;" data-v-f507f9f3><div style="display: flex;
-align-items: center;
-justify-content: center;
-height: 96px"><span style="--loading-icon: url(&quot;data:image/svg+xml;utf8,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; preserveAspectRatio=&#39;xMidYMid&#39; viewBox=&#39;25 25 50 50&#39;%3E%3CanimateTransform attributeName=&#39;transform&#39; type=&#39;rotate&#39; dur=&#39;2s&#39; keyTimes=&#39;0;1&#39; repeatCount=&#39;indefinite&#39; values=&#39;0;360&#39;%3E%3C/animateTransform%3E%3Ccircle cx=&#39;50&#39; cy=&#39;50&#39; r=&#39;20&#39; fill=&#39;none&#39; stroke=&#39;currentColor&#39; stroke-width=&#39;4&#39; stroke-linecap=&#39;round&#39;%3E%3Canimate attributeName=&#39;stroke-dasharray&#39; dur=&#39;1.5s&#39; keyTimes=&#39;0;0.5;1&#39; repeatCount=&#39;indefinite&#39; values=&#39;1,200;90,200;1,200&#39;%3E%3C/animate%3E%3Canimate attributeName=&#39;stroke-dashoffset&#39; dur=&#39;1.5s&#39; keyTimes=&#39;0;0.5;1&#39; repeatCount=&#39;indefinite&#39; values=&#39;0;-35px;-125px&#39;%3E%3C/animate%3E%3C/circle%3E%3C/svg%3E&quot;);
---icon-size: 48px;
-display: inline-block;
-width: var(--icon-size);
-height: var(--icon-size);
-background-color: currentcolor;
--webkit-mask-image: var(--loading-icon);
-mask-image: var(--loading-icon);
-"></span></div></div><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><!--]--><button style="display:none;" type="button" class="vp-back-to-top" aria-label="back to top" data-v-d6552e9a data-v-2f18de44><span class="percent" data-allow-mismatch data-v-2f18de44>0%</span><span class="show icon vpi-back-to-top" data-v-2f18de44></span><svg aria-hidden="true" data-v-2f18de44><circle cx="50%" cy="50%" data-allow-mismatch style="stroke-dasharray:calc(0% - 12.566370614359172px) calc(314.1592653589793% - 12.566370614359172px);" data-v-2f18de44></circle></svg></button><footer class="vp-footer" vp-footer data-v-d6552e9a data-v-242f3e18><!--[--><div class="container" data-v-242f3e18><p class="message" data-v-242f3e18>Power by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> & <a target="_blank" href="https://theme-plume.vuejs.press">Plume</a> | <a href="/sitemap.xml">Sitemap</a></p><p class="copyright" data-v-242f3e18>&copy 2002-2025 一树论 <a target="_blank" href="https://beian.miit.gov.cn">京ICP备14007000号-8</a></p></div><!--]--></footer><!--[--><!--]--><!--]--></div><!----><!--]--><!--[--><!--]--><!--]--></div><script type="module" src="/assets/app-BxiebszO.js" defer></script></body></html>
+<!DOCTYPE html>
+<!-- 基础布局模板 -->
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一树论</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- Alpine.js 库 -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Lunr.js 搜索库 -->
+    <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans" x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    <!-- 顶部导航栏 -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo 和站点名称 -->
+                <div class="flex items-center space-x-3">
+                    <img src="/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
+                    <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
+                        一树论
+                    </a>
+                </div>
+                
+                <!-- 搜索框 - 桌面版 -->
+                <div class="hidden md:flex flex-1 max-w-xs mx-8">
+                    <form action="/search.html" method="get" class="relative w-full">
+                        <input type="text" 
+                               name="q"
+                               class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500" 
+                               placeholder="搜索文章..." 
+                               id="search-input">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <button type="submit" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- 导航菜单 - 桌面版 -->
+                <div class="hidden md:flex items-center space-x-1">
+                    
+                        
+                        <a href="&#x2F;" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')) }">首页</a>
+                        
+                        <a href="&#x2F;archives.html" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">归档</a>
+                        
+                        <a href="&#x2F;categories.html" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">分类</a>
+                        
+                        <a href="&#x2F;tags.html" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
+                        
+                        <a href="&#x2F;friends.html" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
+                        
+                        <a href="&#x2F;about.html" 
+                           class="nav-link" 
+                           :class="{ 'nav-link-active': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">关于</a>
+                        
+                    
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+    <button class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" 
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            :aria-expanded="mobileMenuOpen">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div class="md:hidden" 
+             x-show="mobileMenuOpen" 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 transform -translate-y-2"
+             x-transition:enter-end="opacity-100 transform translate-y-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 transform translate-y-0"
+             x-transition:leave-end="opacity-0 transform -translate-y-2">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+                <!-- 移动端搜索框 -->
+                <div class="px-3 py-2">
+                    <form action="/search.html" method="get" class="relative">
+                        <input type="text" 
+                               name="q"
+                               class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500" 
+                               placeholder="搜索文章..." 
+                               id="mobile-search-input">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <button type="submit" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <!-- 移动端导航链接 -->
+                
+                    
+                    <a href="&#x2F;" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">首页</a>
+                    
+                    <a href="&#x2F;archives.html" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">归档</a>
+                    
+                    <a href="&#x2F;categories.html" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">分类</a>
+                    
+                    <a href="&#x2F;tags.html" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                    
+                    <a href="&#x2F;friends.html" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
+                    
+                    <a href="&#x2F;about.html" 
+                       class="block px-3 py-2 text-base font-medium rounded-md" 
+                       :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">关于</a>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <main class="min-h-screen py-8">
+            
+<div class="max-w-4xl mx-auto relative">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- 主要内容 -->
+        <div class="flex-1">
+            <article x-data="{ copiedLink: false, copiedCode: {} }">
+                <!-- 分类面包屑 -->
+                
+                <nav class="mb-6 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                        <span class="mx-2">›</span>
+                        <a href="/posts/" class="hover:text-primary-600">posts</a>
+                    
+                        <span class="mx-2">›</span>
+                        <a href="/posts&#x2F;2023/" class="hover:text-primary-600">2023</a>
+                    
+                </nav>
+                
+                
+                <!-- 文章头部 -->
+                <header class="mb-8 pb-8 border-b border-gray-200">
+                    <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-6 leading-tight">
+                        50 行 Python 代码调用私有 GPTs
+                    </h1>
+                    
+                    <div class="article-meta mb-6">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            2023-11-15
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <!-- 标签 -->
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/ChatGPT/" 
+                           class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                            </svg>
+                            ChatGPT
+                        </a>
+                        
+                    </div>
+                    
+                </header>
+    
+    <!-- 文章内容 -->
+    <div class="article-content prose prose-lg max-w-none" 
+         x-init="$nextTick(() => {
+             // 为代码块添加复制按钮
+             document.querySelectorAll('pre code').forEach((codeBlock, index) => {
+                 const pre = codeBlock.parentElement;
+                 if (!pre.querySelector('.copy-code-btn')) {
+                     const button = document.createElement('button');
+                     button.className = 'copy-code-btn';
+                     button.textContent = '复制';
+                     button.setAttribute('x-data', `{ copied: false }`);
+                     button.setAttribute('@click', `navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent).then(() => { this.copied = true; setTimeout(() => this.copied = false, 2000) })`);
+                     button.setAttribute(':class', `{ 'bg-green-600': copied }`);
+                     button.setAttribute('x-text', `copied ? '已复制' : '复制'`);
+                     
+                     pre.style.position = 'relative';
+                     pre.appendChild(button);
+                 }
+             });
+         })">
+        <h1>50 行 Python 代码调用私有 GPTs</h1>
+<p>今天聊一下 ChatGPT 的 GPTs。</p>
+<p>以下内容首发于<a href="https://mp.weixin.qq.com/s?__biz=MzI2NDU4OTExOQ==&amp;mid=2247664217&amp;idx=1&amp;sn=4a7be69442f72ca0d64f367e7a43c72b&amp;scene=21#wechat_redirect">腾讯云开发者</a>，是一篇应邀写的约稿，大概前后用了半个小时，仓促之下代码示例及行文措词都非常朴素。现实中真实的项目是绝不会如此简单的，但越简单的示例，越容易让读者抓住重点，这是我一直坚持的教程撰写风格。</p>
+<p>我通过这个小示例想表达的是，通过 playwright + GPTs，我们可以做出许多有意思的应用，且成本低、安全、可塑性性强，就像打开了一道新世界的大门。在腾讯云开发者推送以后，我查看评论区，有一位读者说：</p>
+<p>“我想开发一个依据需求（自然语言讲述）生成定制化GPT的GPT应用。”</p>
+<p>看到这个评论，我就知道他已经打开属于他的新世界大门了。</p>
+<p>通过以下示例，既可以调用 GPTs，也可以创建 GPTs，原理是一样的。甚至，如果有10个人要创建自己的GPTs，都没有必要购买10个 ChatGPT Plus 会员帐号，只需要一个帐号，就可以给10个人使用，且每个人的 GPTs 都是独立的、隔离的（因为GPTs是私有发布）。你明白了吗？</p>
+<p>如果你不想花美金购买会员帐号，也不想学习编程，只想拥有这样一个免费的私人 GPTs，在【艺述论】公众号回复【10008】，扫码入群等待，马上发车。</p>
+<hr />
+<p>11 月 6 日，OpenAI 举办了自己的第一次开发者春晚，并现场推出了新模型 GPT-4 Turbo，及 Plus 会员用户可以基于新模型进行功能自定义的 GPTs。</p>
+<p>GPTs 是什么？</p>
+<p>简单理解，它就是一个充许用户不使用任何编程技术、不需要调用 ChatGPT API 即可完成训练的一个 AI。有人说，我不需要 GPTs，我用 LangChain+Agent+ChatGPT API 或其它大语言模型的 API，也能实现一个自定义的 GPT。</p>
+<p>没错，这么理解是对的！但不是所有人都会编程，也不是所有人都知道 LangChain 如何调用以及 AI Agent 如何开发。ChatGPT 适时推出的 GPTs，它的目标用户群体是广大的不会编程的用户。据 OpenAI 宣称，ChatGPT 周活已经达到了 1 亿，预测不久，几百万个甚至几千万个 GPTs 将出现在 GPT Store上。</p>
+<p>笔者在这篇文章“<a href="https://mp.weixin.qq.com/s/VlNvziKjGsIWYxef9w3Xig">不用编码，也不用会写严格的提示，创建自己的第一个 GPT</a>”中已经详细介绍过徒手创建 GPTs 的方法，很简单，整个过程只需要七步，简单设置一下，再上传一些文件，大功即可告成。在发布的时候，还可以选择私有、分享可用及完全公开。</p>
+<p>如下所示，这是笔者创建的 GPTs————Story Weaver，它是一个私有的GPTs。</p>
+<p><img src="assets/image-20231115141948319.png" alt="Story Weaver" /></p>
+<p>对于我们不想让别人看到的，只想让我们自己或团队成员使用的模型，我们肯定要发布为私有。对于私有的 GPTs，如果我们还想实现在本地自如地调用、并且是程序自动化调用，我们应该怎么做呢？</p>
+<p>有人可能会想：“我们可以使用 OpenAI 官方提供的 API。”</p>
+<p>很抱歉，目前 OpenAI 还没有公布这样的接口；即使以后有，它极有可能也是需要付费的。我们购买 Plus 会员已经花了钱，在调用自己创建的 GPTs 的时候，为什么还要花钱？</p>
+<p>本篇笔者就用银河系最通俗易用的编程语言————Python，用不到 50 行的总代码，带你打开新世界大门。不需要额外付费，也不需要调用任何 API，更不需要设置什么 API Token，就可以自动化调用我们自己创建的 GPTs。</p>
+<p>在创建 GPTs 的时候，数据文件是我们提供的，消费代码也是在我们本地运行的，这就相当于我们在本地借用了 ChatGPT 强大的大语言模型能力，且成本低廉、方法又简单。</p>
+<h2>准备工作</h2>
+<p>如果你想顺利运行稍后笔者提供的 Python 示例，你需要准备以下这些条件：</p>
+<ul>
+<li>一个附带 Plus 会员的 ChatGPT 帐号</li>
+<li>本地电脑已经安装了 Python 3.7 或以上的版本</li>
+</ul>
+<p>有人可能说：“访问 ChatGPT 需要翻墙，我不想翻墙！”</p>
+<p>没问题，购买一台腾讯云美区云主机，选择 Windows 系统，在上面进行项目操作就可以了。不需要翻墙，速度还是杠杠的。</p>
+<h2>安装类库</h2>
+<p>稍后我们需要用到两个类库：pyperclip 与 playwright，我们需要在终端环境里依次安装它们：</p>
+<blockquote>
+<p>pip install pyperclip</p>
+<p>pip install playwright &amp;&amp; playwright install</p>
+</blockquote>
+<p>注意：在安装完 playwright 以后，别忘记运行 playwright install，这一步是安装 playwright 运行时需要的浏览器组件。即使是我们本地已经安装了相关的浏览器，这一步也必不可少。</p>
+<p>简单介绍一下这两个类库。pyperclip 是处理剪切板数据的，允许我们访问本地剪切板并将数据导出，这个类库没什么好说的，许多开发网页智能机器人的工程师们都使用过。</p>
+<p>playwright 是大大鼎鼎的自动化测试框架，它由 Microsoft 开发，提供了一套简单而强大的 API，可以自动化运行基于 Chromium、Firefox 和 WebKit 浏览器的测试程序。与 playwright 齐名的另一个类似框架是 selenium，前者与后者相比，前者拥有更加现代化的 API、更快的响应速度和更强大的功能，所以笔者选择了前者。</p>
+<p>一个自动化测试框架跟我们要做的事情有什么关系呢？我们为什么要安装它？</p>
+<p>当然有关系！很多基于浏览器的自动化智能机器人，例如智能网页爬虫，都是 playwright 实现的。你明白了吗，playwright 不仅可以用于测试、代替测试工程师做一些重复性高的测试工作，还可以代替人做一些相对复杂的普通网页操作。</p>
+<p>稍后我们在浏览器上打开自定义 GPTs 的网址、输入 Prompt、获取查询结果，这些操作都可以由 playwright 代替我们实现。本地程序的自动化是借由 playwright 实现的。</p>
+<h2>持久化登录</h2>
+<p>使用 playwright 开发智能网页机器人应用，有一个问题是无法避免的，这个问题就是用户验证。一般有以下两个解决思路：</p>
+<p>1）第一个思路，自动监测网页状态并登录。</p>
+<p>当未登录时，使用本地预先记录的帐号跳转到登录页面实现自动登录，并在本地缓存登录后的 cookies。</p>
+<p>本地写入 cookies 的代码大概是这样的：</p>
+<pre><code class="language-python">cookies = context.cookies()
+print(page.title())
+f = open('cookies.json', 'w')
+json.dump(cookies, f)
+</code></pre>
+<p>读取 cookies 以避免重复登录的代码是这样的：</p>
+<pre><code class="language-python">def loadCookies(cookief):
+    cookiefile = open(cookief, 'r')
+    cookie_list = json.load(cookiefile)  # json读取cookies
+    cookiefile.close()
+    return cookie_list
+
+...
+context = browser.new_context()
+cookiefiles = ['cookies.json']
+for cookiefile in cookiefiles:
+  context.add_cookies(loadCookies(cookiefile))
+</code></pre>
+<p>这两段代码今天我们并不打算使用，你了解一下就好。这种方式还需要处理网页验证码，以及在 cookies 过期后还需要重新登录，比较复杂，除非迫不得已，我们不采用这种思路。</p>
+<p>2）第二个思路是持久化登录。</p>
+<p>简单讲，就是专门在硬盘上辟出一个空间给当前的网页机器人程序使用，运行期间产生的 cookies、图片等数据全部缓存在该目录下，由于 cookies 是缓存的，便不需要频繁登录。我们采用这种方法。</p>
+<p>首先创建一个项目目录，例如 browser_ai，在该目录下再创建一个 gpts_firefox_dir 目录，用作浏览器的持久化缓存目录。</p>
+<p>现在祭出我们的第一部分 Python 代码，query_gpts.py 文件第一部分：</p>
+<pre><code class="language-python">import time
+import pyperclip
+from playwright.sync_api import sync_playwright
+
+def login():
+    with sync_playwright() as p:
+        context = p.firefox.launch_persistent_context(
+              './gpts_firefox_dir',
+              headless=False,
+              slow_mo=500
+            )
+        page = context.pages[0]
+        page.goto('https://chat.openai.com/')
+
+login()
+</code></pre>
+<p>简单解释一下这段 Python 代码：</p>
+<ul>
+<li>前 3 行是类库引用。time 是内置的，不需要安装，可以直接引用。pyperclip 与 playwright 我们已经安装过了，可以直接引用，playwright.sync_api 是 playwright 的同步模块，使用同步模式，在编写网页机器人时可以让我们轻松许多。</li>
+<li>第 5 行～第 13 行定义了函数 login，这个函数我们主要是为了在本地持久化目录下缓存 cookies 信息的。第 7 行，firefox 代表使用 Firefox 浏览器组件，这个地方还可以选择 chromium 或 webkit，相信我，不要选择 chromium，虽然它是大名鼎鼎的谷歌开源的浏览器项目，但它早被黑客们玩坏了，开发网页机器人就使用 firefox 吧，这个选项能让你节省许多时间。不要谢我，我是活雷锋。</li>
+<li>还是第 7 行，launch_persistent_context 代表从本地持久化目录启动浏览器。第 8 行，第一个参数 gpts_firefox_dir 便是我们先前创建的目录，在这里用上了。</li>
+<li>第 9 行，headless 等于 False，我们才可以在运行时看到浏览器的 UI。如果想让浏览器组件在后台静默运行，将此处设置为 True 即可。测试阶段，最好设置为 True。不要问我为什么，如果你调试过网页智能机器人程序中的元素选择，就明白我在说什么了。</li>
+<li>第 12 行，是取到浏览器的第一个打开的标签页。第 13 行，是打开一个网址。</li>
+</ul>
+<p>其它代码没有什么好讲的，使用<code>python query_gpts.py</code>指令启动，在打开的浏览器中登录自己的 ChatGPT 会员帐号，然后关闭程序。login 函数的使命就已经完成了。</p>
+<h2>调用 GPTs</h2>
+<p>下面真正的代码来了，query_gpts.py 文件第二部分：</p>
+<pre><code class="language-python">...
+def query():
+    with sync_playwright() as p:
+        browser = p.firefox.launch_persistent_context(
+              './gpts_firefox_dir',
+              headless=False,
+              slow_mo=500
+            )
+        page = browser.pages[0]
+        # 这是私有的，要替换成你自己的GPTs URL
+        page.goto('https://chat.openai.com/g/g-OitD1zCwT-story-weaver')
+        time.sleep(2)
+        page.query_selector(&quot;#prompt-textarea&quot;).fill(&quot;告诉我，你的知识库截止日期是？&quot;)
+        page.wait_for_selector('button[data-testid=&quot;send-button&quot;]').click()
+        time.sleep(10)
+
+        copy_button_selector = 'button.text-xs.dark\\:hover\\:text-gray-200'
+        copy_buttons = page.query_selector_all(copy_button_selector)
+        (copy_buttons[len(copy_buttons)-1]).click()
+        time.sleep(1)
+        clipboard_content = pyperclip.paste()
+        # 打印剪贴板内容
+        print(clipboard_content)
+
+        str = 'y'
+        while str == 'y':
+            str = input('等待中，是否继续等待？y/n。\n\n请输入：')  # 控制休眠时间
+        page.close()
+        browser.close()
+
+query()
+</code></pre>
+<p>这部分代码都干了啥？稍微解释一下吧：</p>
+<ul>
+<li>第 4 行～第 8 行，前面介绍过了。</li>
+<li>第 11 行，打开自定义 GPTs 的网址，注意，示例里是我自己的网址，并且是私有的，你是访问不到的。你需要在 ChatGPT 上先创建自己的 GPTs，然后将此处换成自己的地址。关于如何创建自己的 GPTs，看这里：<a href="https://mp.weixin.qq.com/s/VlNvziKjGsIWYxef9w3Xig">不用编码，也不用会写严格的提示，创建自己的第一个 GPT</a>。</li>
+<li>第 12 行，这里有一个 sleep 操作，为什么要 sleep？我们引用的是 playwright 同步模块，第 11 行代码执行完，代表网址已经打开了，为什么还要 sleep？是报复老板让我 996 故意消耗老板的电费吗？当然不是！网址成功打开并不代表页面元素全部加载完成，在开发网页智能机器人时尤其要注意这一点，否则，你可能找不到你要查询的页面元素，因为你要的元素还在内存里，还没有渲染出来呢。打个比方，好比今天你去教官结婚，但是你的新娘还在她妈妈的肚子里。</li>
+<li>第 13 行，query_selector 用于选择页面上的一个元素，它的参数是 CSS 选择器，参数要求与 document.querySelector 相似。fill 是填写文本，写的是我们想问的问题，这里为了使程序简单，我将问题写死了，事实上这个问题可以来自于数据库，也可以来自于用户输入，它的来源是灵活可控的。</li>
+<li>第 14 行，wait_for_selector 也是选择元素，它与 query_selector 不同的是，它会等待网页出现这个元素————如果这个元素暂时没有的话。wait_for_selector 相比 query_selector 是有优势的，使用它不用显式等待，你看我在这行代码前面就没有使用 sleep。那么为什么在第 12 行使用呢，为什么第 13 行不使用 wait_for_selector 呢？不为什么，为了演示，为了告诉你这两个方法之间的区别。</li>
+<li>第 14 行，是单击了页面中的“发送”按钮，ChatGPT 背后的大语言模型开始工作了。第 15 行，这里要 sleep 一下，ChatGPT 的反应需要时间。</li>
+<li>第 17 行～第 19 行，这里是为了查询页面上出现的“拷贝”按钮，并单击它。由于多次互动后，这类按钮会出现多个，所以取了最后一个。</li>
+<li>第 21 行，这是从剪切板获取数据，我们提前安装的 pyperclip 终于发挥使用了。</li>
+</ul>
+<p>程序完成后，使用<code>python query_gpts.py</code>指令运行，效果如下：</p>
+<p><img src="assets/image-20231115142807051.png" alt="运行效果" /></p>
+<p>最后一步，程序中关于y的那部分while循环，是为了控制程序不退出。因为程序退出后，浏览器就关闭了，我们也没有办法进一步查看和操作界面了。</p>
+<p>如果参数 headless 等于 Flase，能看到浏览器界面，运行效果是这样的：</p>
+<p><img src="assets/image-20231115142916204.png" alt="story Weaver的互动效果" /></p>
+<p>GPT-4 Turbo 发布后，很多通过第三方壳子应用使用 ChatGPT 服务的用户，怀疑自己用的是假 GPT-4，这时候可以使用上面这条提示问知识库截止日期，正准答案是 2023 年 4 月。</p>
+<h2>由 codegen 反向生成代码</h2>
+<p>示例里面有一个地方的代码，在网页机器人开发中是公认的麻烦。例如，在 query 函数中，第 13 行、第 14 行、第 17 行，这三处的选择器代码并不容易写，尤其是最后一个。</p>
+<pre><code class="language-python">page.query_selector(&quot;#prompt-textarea&quot;).fill(&quot;告诉我，你的知识库截止日期是？&quot;)
+page.wait_for_selector('button[data-testid=&quot;send-button&quot;]').click()
+copy_button_selector = 'button.text-xs.dark\\:hover\\:text-gray-200'
+</code></pre>
+<p>为了解决这类问题，提升生产效率，playwright 提供了一个“由操作生成代码”的功能。以我们访问的 GPTs 网址为例，指令如下：</p>
+<pre><code class="language-bash">playwright codegen --browser firefox https://chat.openai.com/g/g-OitD1zCwT-story-weaver
+</code></pre>
+<p>codegen 这个子程序可以帮助我们生成带有大量选择器的代码。参数 browser 是指定浏览器组件类型，这个参数其实无所谓，指不指定并不会影响目标页面上的元素。</p>
+<p>codegen 指令会打开一个浏览器，我们在上面操作一番，在小窗口中便能看到生成的代码，如下所示：</p>
+<p><img src="assets/image-20231115141033734.png" alt="codegen生成的代码" /></p>
+<p>生成的代码很粗犷，一般情况下并不能直接使用，但它可以帮助我们定位元素，获取元素的选择器写法。这是 codegen 指令存在的作用。</p>
+<h2>回顾</h2>
+<p>最后总结一下。</p>
+<p>这个示例很简单，没有输入，也没有输出————输出就是简单的打印，将 ChatGPT 返回的内容直接在终端中打印了一下。对于登录，我们也采用了最简单的方法————手动登录。在实际项目中，这些问题都需要细化。</p>
+<p>通过 playwright，我们实现了在本地调用远程私有 GPTs 的目的，数据是我们的，程序也是我们的，我们只是借用了 ChatGPT 的大语言模型能力。并且也不需要额外花费 API 调用费用，这是很划算的。基于本文示例，你还有哪些想法，想开发什么样的智能应用呢？欢迎留言讨论。</p>
+<p>最后说一下示例代码，完整的示例可以在公众号“艺述论”回复 10008 下载。</p>
+
+    </div>
+
+    <!-- 版权信息 -->
+    <div class="mt-10 bg-gray-50 rounded-lg border border-gray-200 p-4" x-data="{domain: 'https:&#x2F;&#x2F;yishulun.com', link: 'https:&#x2F;&#x2F;yishulun.com' + window.location.pathname}">
+        <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
+        <p class="text-sm text-gray-700">
+            本文链接：
+            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+        </p>
+        <p class="text-sm text-gray-700 mt-2">
+            许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
+            <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener" class="text-primary-600 hover:underline">查看许可说明</a>
+        </p>
+    </div>
+
+    <!-- 分享功能 -->
+    <div class="mt-12 bg-gray-50 rounded-lg">
+        <h4 class="text-lg font-semibold mb-4 text-gray-900 p-4 pb-0">分享这篇文章</h4>
+        <div class="flex flex-wrap gap-3 p-4">
+            <button onclick="shareToTwitter()" 
+                    class="btn-outline inline-flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+                Twitter
+            </button>
+            <button @click="navigator.clipboard.writeText(window.location.href).then(() => { copiedLink = true; setTimeout(() => copiedLink = false, 2000) })" 
+                    class="btn-outline inline-flex items-center"
+                    :class="{ 'bg-green-100 text-green-800 border-green-300': copiedLink }">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                <span x-text="copiedLink ? '已复制' : '复制链接'"></span>
+            </button>
+        </div>
+    </div>
+
+    
+    <!-- 评论区域（Giscus，懒加载） -->
+    <div id="comments" class="mt-12">
+        <h4 class="text-lg font-semibold mb-4 text-gray-900">评论</h4>
+        <div id="giscus-container"></div>
+    </div>
+    <script>
+    (function(){
+        var loadGiscus = function(){
+            var s = document.createElement('script');
+            s.src = 'https://giscus.app/client.js';
+            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
+            s.setAttribute('data-category', 'General');
+            s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');
+            s.setAttribute('data-mapping', 'pathname');
+            s.setAttribute('data-strict', '1');
+            s.setAttribute('data-reactions-enabled', '1');
+            s.setAttribute('data-emit-metadata', '0');
+            s.setAttribute('data-input-position', 'top');
+            s.setAttribute('data-loading', 'lazy');
+            s.setAttribute('data-theme', 'preferred_color_scheme');
+            s.setAttribute('data-lang', 'zh-CN');
+            s.setAttribute('crossorigin', 'anonymous');
+            s.async = true;
+            (document.getElementById('giscus-container') || document.body).appendChild(s);
+        };
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGiscus);
+        } else {
+            window.addEventListener('load', function(){ setTimeout(loadGiscus, 1200); });
+        }
+    })();
+    </script>
+    
+    
+                <!-- 返回顶部 -->
+                <div class="text-center mt-8">
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                            class="btn-secondary inline-flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                        </svg>
+                        返回顶部
+                    </button>
+                </div>
+            </article>
+        </div>
+        
+        
+            <!-- 目录组件 -->
+<div class="toc-container fixed right-4 top-20 z-40 hidden xl:block" 
+     x-data="{ 
+         tocOpen: true, 
+         activeId: '',
+         headings: [],
+         init() {
+             this.generateToc();
+             this.observeHeadings();
+         },
+         generateToc() {
+             const content = document.querySelector('.prose, .card-body');
+             if (!content) return;
+             
+             const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+             this.headings = Array.from(headings).map((heading, index) => {
+                 const id = heading.id || `heading-${index}`;
+                 heading.id = id;
+                 return {
+                     id: id,
+                     text: heading.textContent.trim(),
+                     level: parseInt(heading.tagName.charAt(1)),
+                     element: heading
+                 };
+             });
+         },
+         observeHeadings() {
+             if (this.headings.length === 0) return;
+             
+             const observer = new IntersectionObserver((entries) => {
+                 entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                         this.activeId = entry.target.id;
+                     }
+                 });
+             }, {
+                 rootMargin: '-20% 0px -80% 0px'
+             });
+             
+             this.headings.forEach(heading => {
+                 observer.observe(heading.element);
+             });
+         },
+         scrollToHeading(id) {
+             const element = document.getElementById(id);
+             if (element) {
+                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+             }
+         }
+     }"
+     x-init="init()">
+    
+    <!-- 目录切换按钮 -->
+    <button @click="tocOpen = !tocOpen" 
+            class="mb-2 p-2 bg-white rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-200"
+            title="目录">
+        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+    
+    <!-- 目录内容 -->
+    <div x-show="tocOpen" 
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 transform scale-95"
+         x-transition:enter-end="opacity-100 transform scale-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 transform scale-100"
+         x-transition:leave-end="opacity-0 transform scale-95"
+         class="bg-white rounded-lg shadow-xl border border-gray-200 p-4 max-w-xs w-64 max-h-96 overflow-y-auto">
+        
+        <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-gray-900">目录</h3>
+            <button @click="tocOpen = false" class="text-gray-400 hover:text-gray-600">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="space-y-1">
+            <template x-for="heading in headings" :key="heading.id">
+                <a @click.prevent="scrollToHeading(heading.id)" 
+                   :class="{
+                       'text-primary-600 bg-primary-50 border-l-2 border-primary-600': activeId === heading.id,
+                       'text-gray-600 hover:text-gray-900 hover:bg-gray-50': activeId !== heading.id,
+                       'pl-2': heading.level === 1,
+                       'pl-4': heading.level === 2,
+                       'pl-6': heading.level === 3,
+                       'pl-8': heading.level === 4,
+                       'pl-10': heading.level === 5,
+                       'pl-12': heading.level === 6
+                   }"
+                   class="block py-1 px-2 text-sm cursor-pointer rounded transition-colors duration-150"
+                   x-text="heading.text">
+                </a>
+            </template>
+        </nav>
+        
+        <div x-show="headings.length === 0" class="text-sm text-gray-500 text-center py-4">
+            暂无目录
+        </div>
+    </div>
+</div>
+
+<style>
+/* 移动端隐藏目录 */
+@media (max-width: 1279px) {
+    .toc-container {
+        display: none !important;
+    }
+}
+
+/* 目录滚动条样式 */
+.toc-container .max-h-96::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+</style>
+
+        
+    </div>
+</div>
+
+<script>
+function shareToTwitter() {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(document.title);
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+}
+</script>
+ 
+        </main>
+    </div>
+    
+    <!-- 广告位1：底部广告（版权区上方） -->
+    
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="flex flex-col items-center p-4 text-center">
+                    <!-- 广告图片 -->
+                    <div class="mb-3">
+                        <img src="&#x2F;images&#x2F;book-wegame.png" 
+                              alt="微信小游戏开发" 
+                              class="w-48 h-60 object-cover rounded-md mx-auto"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMTkyIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiBmaWxsPSIjREJFRkZGIi8+Cjx0ZXh0IHg9Ijk2IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMzc2RkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7kuLvpopjlpLTlg488L3R4dD4KPC9zdmc+'">
+                    </div>
+                    
+                    <!-- 广告信息 -->
+                    <div class="max-w-sm">
+                        <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+                            微信小游戏开发
+                        </h2>
+                        
+                        <p class="text-gray-700 text-sm mb-3">学习微信小游戏开发技术，掌握游戏开发全流程</p>
+                        
+                        
+                        <!-- 查看详情按钮 -->
+                        <div class="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow-sm transition-colors text-sm">
+                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                            </svg>
+                            查看详情
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    
+    
+    <!-- 页脚 -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center space-y-2">
+                <p class="text-gray-600">
+                    &copy; 2002-2025 
+                    
+                        
+                        <a href="https:&#x2F;&#x2F;yishulun.com" target="_blank" rel="noopener" class="text-gray-700 hover:text-primary-600">LIYI</a>
+                        
+                    
+                    
+                        &nbsp;|&nbsp;
+                        <a href="https://beian.miit.gov.cn/" 
+                           target="_blank" 
+                           rel="noopener" 
+                           class="text-gray-500 hover:text-gray-700 text-sm">
+                            京ICP备14007000号-8
+                        </a>
+                    
+                </p>
+                <p class="text-gray-500 text-sm">
+                    由 <a href="https://github.com/rixingyike/rustpress" 
+                          target="_blank" 
+                          rel="noopener" 
+                          class="text-primary-600 hover:text-primary-700">RustPress</a> 提供支持
+                </p>
+                <p class="text-gray-500 text-sm">
+                    <a href="/rss.xml" class="hover:text-primary-600">RSS</a>
+                    &nbsp;·&nbsp;
+                    <a href="/sitemap.xml" class="hover:text-primary-600">Sitemap</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 搜索结果容器 -->
+    <div class="fixed inset-x-0 top-16 z-40 hidden" id="search-results">
+        <div class="bg-white shadow-lg border border-gray-200 rounded-lg mx-4 mt-2 max-h-96 overflow-y-auto">
+            <!-- 搜索结果将在这里显示 -->
+        </div>
+    </div>
+
+    <!-- jQuery 库 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- 搜索功能脚本 -->
+    <script src="/js/search.js"></script>
+
+    
+    <!-- Google Analytics 懒加载 -->
+    <script>
+    (function(){
+        var gid = "G-8N64Q25EK9";
+        var loadGA = function(){
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = "https://www.googletagmanager.com/gtag/js?id=" + gid;
+            s.onload = function(){
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);} // eslint-disable-line
+                gtag('js', new Date());
+                gtag('config', gid);
+            };
+            document.head.appendChild(s);
+        };
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGA);
+        } else {
+            window.addEventListener('load', function(){ setTimeout(loadGA, 1500); });
+        }
+    })();
+    </script>
+    
+
+    
+    <!-- Google Ads 懒加载 -->
+    <script>
+    (function(){
+        var clientId = "ca-pub-2139303336591479";
+        var loadAds = function(){
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + clientId;
+            s.crossOrigin = "anonymous";
+            document.head.appendChild(s);
+        };
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadAds);
+        } else {
+            window.addEventListener('load', function(){ setTimeout(loadAds, 1500); });
+        }
+    })();
+    </script>
+    
+</body>
+</html>
