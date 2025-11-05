@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>一树论</title>
+    <title>我的博客</title>
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
     <link rel="stylesheet" href="/static/css/main.css">
     <!-- Alpine.js 库 -->
@@ -19,9 +19,9 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
+                    <img src="/static/images/logo.png" alt="我的博客 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
-                        一树论
+                        我的博客
                     </a>
                 </div>
                 
@@ -288,7 +288,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference</p>
     </div>
 
     <!-- 版权信息 -->
-    <div class="mt-10 bg-gray-50 rounded-lg border border-gray-200 p-4" x-data="{domain: 'https:&#x2F;&#x2F;yishulun.com', link: 'https:&#x2F;&#x2F;yishulun.com' + window.location.pathname}">
+    <div class="mt-10 bg-gray-50 rounded-lg border border-gray-200 p-4" x-data="{domain: 'https:&#x2F;&#x2F;example.com', link: 'https:&#x2F;&#x2F;example.com' + window.location.pathname}">
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
@@ -322,40 +322,6 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference</p>
         </div>
     </div>
 
-    
-    <!-- 评论区域（Giscus，懒加载） -->
-    <div id="comments" class="mt-12">
-        <h4 class="text-lg font-semibold mb-4 text-gray-900">评论</h4>
-        <div id="giscus-container"></div>
-    </div>
-    <script>
-    (function(){
-        var loadGiscus = function(){
-            var s = document.createElement('script');
-            s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
-            s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
-            s.setAttribute('data-category', 'General');
-            s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');
-            s.setAttribute('data-mapping', 'pathname');
-            s.setAttribute('data-strict', '1');
-            s.setAttribute('data-reactions-enabled', '1');
-            s.setAttribute('data-emit-metadata', '0');
-            s.setAttribute('data-input-position', 'top');
-            s.setAttribute('data-loading', 'lazy');
-            s.setAttribute('data-theme', 'preferred_color_scheme');
-            s.setAttribute('data-lang', 'zh-CN');
-            s.setAttribute('crossorigin', 'anonymous');
-            s.async = true;
-            (document.getElementById('giscus-container') || document.body).appendChild(s);
-        };
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadGiscus);
-        } else {
-            window.addEventListener('load', function(){ setTimeout(loadGiscus, 1200); });
-        }
-    })();
-    </script>
     
     
                 <!-- 返回顶部 -->
@@ -524,13 +490,13 @@ function shareToTwitter() {
     
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
+        <a href="https:&#x2F;&#x2F;example.com&#x2F;ad1" target="_blank" rel="noopener" class="block">
             <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                 <div class="flex flex-col items-center p-4 text-center">
                     <!-- 广告图片 -->
                     <div class="mb-3">
-                        <img src="&#x2F;images&#x2F;book-wegame.png" 
-                              alt="微信小游戏开发" 
+                        <img src="&#x2F;static&#x2F;images&#x2F;ad1.png" 
+                              alt="广告位1" 
                               class="w-48 h-60 object-cover rounded-md mx-auto"
                              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMTkyIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiBmaWxsPSIjREJFRkZGIi8+Cjx0ZXh0IHg9Ijk2IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMzc2RkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7kuLvpopjlpLTlg488L3R4dD4KPC9zdmc+'">
                     </div>
@@ -538,10 +504,10 @@ function shareToTwitter() {
                     <!-- 广告信息 -->
                     <div class="max-w-sm">
                         <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">
-                            微信小游戏开发
+                            广告位1
                         </h2>
                         
-                        <p class="text-gray-700 text-sm mb-3">学习微信小游戏开发技术，掌握游戏开发全流程</p>
+                        <p class="text-gray-700 text-sm mb-3">这里是广告位1描述</p>
                         
                         
                         <!-- 查看详情按钮 -->
@@ -564,20 +530,12 @@ function shareToTwitter() {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="text-center space-y-2">
                 <p class="text-gray-600">
-                    &copy; 2002-2025 
+                    &copy; 2024-2025 
                     
                         
-                        <a href="https:&#x2F;&#x2F;yishulun.com" target="_blank" rel="noopener" class="text-gray-700 hover:text-primary-600">LIYI</a>
+                        <a href="https:&#x2F;&#x2F;example.com" target="_blank" rel="noopener" class="text-gray-700 hover:text-primary-600">作者名</a>
                         
                     
-                    
-                        &nbsp;|&nbsp;
-                        <a href="https://beian.miit.gov.cn/" 
-                           target="_blank" 
-                           rel="noopener" 
-                           class="text-gray-500 hover:text-gray-700 text-sm">
-                            京ICP备14007000号-8
-                        </a>
                     
                 </p>
                 <p class="text-gray-500 text-sm">
@@ -612,7 +570,7 @@ function shareToTwitter() {
     <!-- Google Analytics 懒加载 -->
     <script>
     (function(){
-        var gid = "G-8N64Q25EK9";
+        var gid = "G-XXXXXXXXXX";
         var loadGA = function(){
             var s = document.createElement('script');
             s.async = true;
@@ -638,7 +596,7 @@ function shareToTwitter() {
     <!-- Google Ads 懒加载 -->
     <script>
     (function(){
-        var clientId = "ca-pub-2139303336591479";
+        var clientId = "ca-pub-XXXXXXXXXXXXXXXX";
         var loadAds = function(){
             var s = document.createElement('script');
             s.async = true;
