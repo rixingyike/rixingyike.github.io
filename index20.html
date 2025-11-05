@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一树论</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/main.css">
     <!-- Alpine.js 库 -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
@@ -18,7 +19,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
+                    <img src="/static/images/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树论
                     </a>
@@ -180,7 +181,7 @@
             
             <!-- CTA 按钮 -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="/#articles" 
+                <a href="#articles" 
                    class="inline-flex items-center px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors shadow-lg">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path>
@@ -188,7 +189,7 @@
                     浏览文章
                 </a>
                 <a href="/about.html" 
-                   class="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors">
+                   class="inline-flex items-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-lg bg-white/10 backdrop-blur-sm shadow-lg hover:bg-white hover:text-blue-600 transition-colors">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                     </svg>
@@ -208,8 +209,7 @@
 
 
 
-
-<!-- 主要内容区域 - 圣杯布局 -->
+<!-- 主要内容区域 - 圣杯布局，与 index.html 一致 -->
 <div class="flex flex-col lg:flex-row gap-8 mt-8">
     <!-- 主内容区域 -->
     <main class="flex-1 lg:w-2/3">
@@ -218,7 +218,6 @@
             
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -231,68 +230,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="docs&#x2F;claude/4.Claude的具体提示实例.html" 
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                4.Claude的具体提示实例
-                            </a>
-                            
-                        </h2>
-                        
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2025-02-19
-                            </span>
-                            
-                            
-                        </div>
-                        
-                        
-                        <div class="text-gray-600 leading-relaxed mb-4">
-                            4.Claude 的具体提示实例
-即使是简单的提示，例如“请给我写一首关于树的诗”，Claude 也可以生成可用的内容。你可以要求Claude以特定的风格或针对特定的受众进行写作。例如，你可以要求非常详细或更简洁。你还可以要求 Claude 生成大概的单词数、段落数或列表项数。
-1，重写文本
-在此示例中，我们希望 Claude 以特定样式重写一些现有文本。我们给它两个输入，要重写的文本以及有关如何…
-                        </div>
-                        
-                        
-                        <!-- 标签 -->
-                        
-                    </div>
-                </article>
-                
-                <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
-                    
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/docs/" class="hover:text-primary-600">docs</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/docs&#x2F;claude/" class="hover:text-primary-600">claude</a>
-                        
-                    </nav>
-                    
-                    
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="docs&#x2F;claude/1.Claude简介.html" 
+                            <a href="docs&#x2F;claude/1.Claude简介.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 1.Claude简介
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -304,7 +250,6 @@
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             1.Claude 简介
@@ -314,13 +259,10 @@ AI 有多大能力，完全取决于使用它的人。再强大的 AI 工具，�
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -333,17 +275,15 @@ AI 有多大能力，完全取决于使用它的人。再强大的 AI 工具，�
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="docs&#x2F;claude/6.创作一篇科幻故事的实践.html" 
+                            <a href="docs&#x2F;claude/6.创作一篇科幻故事的实践.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 6.创作一篇科幻故事的实践
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -355,7 +295,6 @@ AI 有多大能力，完全取决于使用它的人。再强大的 AI 工具，�
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             6.创作一篇科幻故事的实践
@@ -373,13 +312,10 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -392,17 +328,15 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="docs&#x2F;claude/5.Claude提示故障排查.html" 
+                            <a href="docs&#x2F;claude/5.Claude提示故障排查.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 5.Claude提示故障排查
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -414,7 +348,6 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             5.Claude 提示故障排查规则
@@ -428,13 +361,10 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -447,17 +377,15 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="docs&#x2F;向GPT高效提问/4.高效提示的5个方式.html" 
+                            <a href="docs&#x2F;向GPT高效提问/4.高效提示的5个方式.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 4.高效提示的5个方式
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -469,7 +397,6 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             4. 高效提示的 5 个方式
@@ -481,13 +408,10 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -500,17 +424,15 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="docs&#x2F;向GPT高效提问/1.认识GPT.html" 
+                            <a href="docs&#x2F;向GPT高效提问/1.认识GPT.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 1.认识GPT
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -522,7 +444,6 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             1.认识GPT
@@ -532,13 +453,10 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -551,17 +469,15 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="docs&#x2F;向GPT高效提问/3.GPT能够做什么.html" 
+                            <a href="docs&#x2F;向GPT高效提问/3.GPT能够做什么.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 3.GPT能够做什么
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -573,7 +489,6 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             3.GPT 能够做什么？
@@ -587,13 +502,10 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -606,17 +518,15 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="docs&#x2F;向GPT高效提问/2.GPT是如何运转的.html" 
+                            <a href="docs&#x2F;向GPT高效提问/2.GPT是如何运转的.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 2.GPT是如何运转的
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -629,7 +539,6 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             2.GPT 是如何运转的？
 当我们向 GPT 提问：“光合作用是什么？”
@@ -639,12 +548,54 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         </div>
                         
                         
-                        <!-- 标签 -->
+                    </div>
+                </article>
+                
+                <article class="card hover:shadow-lg transition-shadow duration-300">
+                    
+                    <nav class="px-6 pt-4 text-sm text-gray-600">
+                        <a href="/" class="hover:text-primary-600">首页</a>
+                        
+                            <span class="mx-2">›</span>
+                            <a href="/docs/" class="hover:text-primary-600">docs</a>
+                        
+                            <span class="mx-2">›</span>
+                            <a href="/docs&#x2F;novel/" class="hover:text-primary-600">novel</a>
+                        
+                    </nav>
+                    
+                    <div class="card-body">
+                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                            
+                            <a href="docs&#x2F;novel/如何使用Claude AI辅助创作小说.html"
+                               class="text-gray-900 hover:text-primary-600 transition-colors">
+                                如何使用Claude AI辅助创作小说
+                            </a>
+                            
+                        </h2>
+                        <div class="article-meta mb-4">
+                            
+                            <span class="inline-flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                2025-02-19
+                            </span>
+                            
+                            
+                        </div>
+                        
+                        <div class="text-gray-600 leading-relaxed mb-4">
+                            我如何使用 GPT4 与 Claude 辅助创作小说，及两个 AI 的辅助表现
+
+我研究了一下如何使用 Claude 辅助创作小说，总体感觉 Claude 的表现优于 GPT。GPT4 最大的缺点是急于完成指令，人类很难让它放缓节奏以增加渲染的厚度。Claude 辅助人类创建一个个片断，然后由人类自己组合，就像一张网，Claude 允许人类控制网上的节点。进一步探索与使用 Claude 是有必要的…
+                        </div>
+                        
                         
                     </div>
                 </article>
                 
-                
+
                 <!-- 列表范围显示 -->
                 <div class="flex justify-center mt-6">
                     <p class="text-sm text-gray-600">第 <span class="font-medium">153</span> 到 <span class="font-medium">160</span> 条</p>
@@ -670,6 +621,7 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                 
             
         </div>
+
     </main>
 
     <!-- 侧边栏 -->
@@ -1169,34 +1121,126 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
     </div>
 </div>
 
-<!-- 快速导航 -->
+<!-- home.md 注入内容（全宽显示）：位于底部导航块之前 -->
+
+<div class="card mt-12 w-full">
+    <div class="card-body prose max-w-none">
+        <h1>欢迎使用RustPress</h1>
+<p>这是从 <code>home.md</code> 注入到首页的内容区块。你可以在这里写欢迎词、公告、推荐内容或放置任意 Markdown 文案。上方是最新文章列表与分页，下方是 6 个导航卡片。</p>
+<h2>可用字段（front matter）</h2>
+<ul>
+<li><code>home_navs</code>: 一个数组，支持字段 <code>title</code>、<code>description</code>、<code>url</code>、<code>emoji</code>（或 <code>icon</code>）、<code>new_tab</code>、<code>cta</code>。</li>
+<li><code>title</code>/<code>subtitle</code>: 可选的页面标题信息（模板暂未直接使用，可用于扩展）。</li>
+</ul>
+<blockquote>
+<p>提示：如不提供 <code>home_navs</code>，模板会使用默认的 6 张卡片。</p>
+</blockquote>
+
+    </div>
+</div>
+
+
+<!-- 底部 6 个导航块：来自 home.md 的 front matter，缺省回退到默认卡片 -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">📂</div>
-            <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
-            <p class="text-gray-600 mb-4">按主题分类查看文章</p>
-            <a href="/categories.html" class="btn-primary">查看分类</a>
-        </div>
-    </div>
     
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">🏷️</div>
-            <h3 class="text-lg font-semibold mb-2">标签云</h3>
-            <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
-            <a href="/tags.html" class="btn-primary">查看标签</a>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">�</div>
+                <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
+                
+                <p class="text-gray-600 mb-4">按主题分类查看文章</p>
+                
+                
+                <a href="&#x2F;categories.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
         </div>
-    </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🏷️</div>
+                <h3 class="text-lg font-semibold mb-2">标签云</h3>
+                
+                <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
+                
+                
+                <a href="&#x2F;tags.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">📚</div>
+                <h3 class="text-lg font-semibold mb-2">文章归档</h3>
+                
+                <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
+                
+                
+                <a href="&#x2F;archives.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-lg font-semibold mb-2">友链</h3>
+                
+                <p class="text-gray-600 mb-4">提交你的站点，加入友链列表</p>
+                
+                
+                <a href="&#x2F;friends.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">📬</div>
+                <h3 class="text-lg font-semibold mb-2">关于作者</h3>
+                
+                <p class="text-gray-600 mb-4">查看关于页面，联系作者沟通</p>
+                
+                
+                <a href="&#x2F;about.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🚀</div>
+                <h3 class="text-lg font-semibold mb-2">RustPress</h3>
+                
+                <p class="text-gray-600 mb-4">增量编译倒分页无后端 Rust 纯静态博客程序</p>
+                
+                
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;rixingyike&#x2F;rustpress" class="btn-primary"
+                   target="_blank" rel="noopener noreferrer">
+                   获取 RustPress
+                </a>
+                
+            </div>
+        </div>
+        
     
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">📚</div>
-            <h3 class="text-lg font-semibold mb-2">文章归档</h3>
-            <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
-            <a href="/archives.html" class="btn-primary">查看归档</a>
-        </div>
-    </div>
 </div>
  
         </main>
@@ -1288,7 +1332,7 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <!-- 搜索功能脚本 -->
-    <script src="/js/search.js"></script>
+    <script src="/static/js/search.js"></script>
 
     
     <!-- Google Analytics 懒加载 -->

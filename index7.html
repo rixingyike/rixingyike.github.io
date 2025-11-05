@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一树论</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/main.css">
     <!-- Alpine.js 库 -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
@@ -18,7 +19,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
+                    <img src="/static/images/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树论
                     </a>
@@ -180,7 +181,7 @@
             
             <!-- CTA 按钮 -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="/#articles" 
+                <a href="#articles" 
                    class="inline-flex items-center px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors shadow-lg">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path>
@@ -188,7 +189,7 @@
                     浏览文章
                 </a>
                 <a href="/about.html" 
-                   class="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors">
+                   class="inline-flex items-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-lg bg-white/10 backdrop-blur-sm shadow-lg hover:bg-white hover:text-blue-600 transition-colors">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                     </svg>
@@ -208,8 +209,7 @@
 
 
 
-
-<!-- 主要内容区域 - 圣杯布局 -->
+<!-- 主要内容区域 - 圣杯布局，与 index.html 一致 -->
 <div class="flex flex-col lg:flex-row gap-8 mt-8">
     <!-- 主内容区域 -->
     <main class="flex-1 lg:w-2/3">
@@ -218,7 +218,6 @@
             
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -231,83 +230,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2022/0908.html" 
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                从金庸小说和齐白石国画，看网文如何加快节奏？
-                            </a>
-                            
-                        </h2>
-                        
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2022-09-08
-                            </span>
-                            
-                            
-                        </div>
-                        
-                        
-                        <div class="text-gray-600 leading-relaxed mb-4">
-                            从金庸小说和齐白石国画，看网文如何加快节奏？
-我很早就注意到了这种现象，今天分享出来与朋友们探讨，并且这种艺术处理技巧，不止可以应用在武侠小说的创作中，在计算机技术图书的写作中，应该也是可用的。本质上，都是用最精简的文字，表达最丰富的内涵。我们的古代文字都比较简洁，惜字如金，甚至标点都要略去，这除了节省竹简的考虑，应该还有艺术表达上的简洁需要。
-
-武侠小说中文字的疏与密
-先看武侠小说中文字的疏密，…
-                        </div>
-                        
-                        
-                        <!-- 标签 -->
-                        
-                        <div class="flex flex-wrap gap-2">
-                            
-                            <a href="/tags/小说/" 
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                小说
-                            </a>
-                            
-                            <a href="/tags/国画/" 
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                国画
-                            </a>
-                            
-                        </div>
-                        
-                    </div>
-                </article>
-                
-                <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
-                    
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/posts/" class="hover:text-primary-600">posts</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/posts&#x2F;2022/" class="hover:text-primary-600">2022</a>
-                        
-                    </nav>
-                    
-                    
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="posts&#x2F;2022/0908-2.html" 
+                            <a href="posts&#x2F;2022/0908-2.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 03《坠落》观后感
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -319,7 +250,6 @@
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             03《坠落》观后感
@@ -344,13 +274,10 @@
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -363,17 +290,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2022/0906.html" 
+                            <a href="posts&#x2F;2022/0906.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 Github Gist是什么？
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -386,7 +311,6 @@
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             Github Gist是什么？
 Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，可以在线分享比较小的代码片段，同样的代码如果用传统创建仓库的方式分享可能就显得笨重了。Gist就是一个精简版的Repository。下面是我用《微信小游戏开发》3.2.2示例代码做的实验，及实验感受。
@@ -398,11 +322,9 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/Github/" 
+                            <a href="/tags/Github/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 Github
                             </a>
@@ -413,7 +335,6 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -426,17 +347,15 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2021/23.html" 
+                            <a href="posts&#x2F;2021/23.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 《微信小程序全栈开发实战》常见问题
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -448,7 +367,6 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             《微信小程序全栈开发实战》常见问题
@@ -464,13 +382,10 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -483,17 +398,15 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2021/22.html" 
+                            <a href="posts&#x2F;2021/22.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 《小程序从0到1》常见问题
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -505,7 +418,6 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             《小程序从0到1》常见问题
@@ -526,13 +438,10 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -545,17 +454,15 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2021/20.html" 
+                            <a href="posts&#x2F;2021/20.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 幽默逻辑学浅窥
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -567,7 +474,6 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             幽默逻辑学浅窥
@@ -580,13 +486,10 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -599,17 +502,15 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2021/19.html" 
+                            <a href="posts&#x2F;2021/19.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 Gitbook简易上手教程
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -621,7 +522,6 @@ Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             Gitbook简易上手教程
@@ -641,13 +541,10 @@ vim summary.md
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -660,17 +557,15 @@ vim summary.md
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2021/10.html" 
+                            <a href="posts&#x2F;2021/10.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 关于近期微信小程序登陆鉴权机制修改的小说明
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -683,7 +578,6 @@ vim summary.md
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             关于近期微信小程序登陆鉴权机制修改的小说明
 最近微信小程序的登录鉴权机制又修改了，这是历史上第三次变动了，这次变动添加了新接口wx.getUserProfile，可以在用户任意单击事件后获取用户信息，并且每次都有弹窗提示。原open-type等于getUserInfo的button单击获取准备废弃了。
@@ -692,12 +586,54 @@ vim summary.md
                         </div>
                         
                         
-                        <!-- 标签 -->
+                    </div>
+                </article>
+                
+                <article class="card hover:shadow-lg transition-shadow duration-300">
+                    
+                    <nav class="px-6 pt-4 text-sm text-gray-600">
+                        <a href="/" class="hover:text-primary-600">首页</a>
+                        
+                            <span class="mx-2">›</span>
+                            <a href="/posts/" class="hover:text-primary-600">posts</a>
+                        
+                            <span class="mx-2">›</span>
+                            <a href="/posts&#x2F;2021/" class="hover:text-primary-600">2021</a>
+                        
+                    </nav>
+                    
+                    <div class="card-body">
+                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                            
+                            <a href="posts&#x2F;2021/17.html"
+                               class="text-gray-900 hover:text-primary-600 transition-colors">
+                                Go更了解程序员
+                            </a>
+                            
+                        </h2>
+                        <div class="article-meta mb-4">
+                            
+                            <span class="inline-flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                2021-04-18
+                            </span>
+                            
+                            
+                        </div>
+                        
+                        <div class="text-gray-600 leading-relaxed mb-4">
+                            Go更了解程序员
+程序员喜欢Go语言，是因为Go简单、易于上手、高效吗？不，是因为Go更了解程序员，它知道程序员喜欢什么，不喜欢什么。程序员口中的简单、易于上手，高效，那是对它的赞美。实际上如果你不是程序员，从零入门Go编程仍然是不太容易的。
+而且更有可能出现的一种情况是，因为Go语言的极致简洁，反而让初学者觉得这太难了；而真正对编程感兴趣的人，会一下子喜欢上它，觉得太棒了。Go是一门语言，也是一…
+                        </div>
+                        
                         
                     </div>
                 </article>
                 
-                
+
                 <!-- 列表范围显示 -->
                 <div class="flex justify-center mt-6">
                     <p class="text-sm text-gray-600">第 <span class="font-medium">49</span> 到 <span class="font-medium">56</span> 条</p>
@@ -723,6 +659,7 @@ vim summary.md
                 
             
         </div>
+
     </main>
 
     <!-- 侧边栏 -->
@@ -1222,34 +1159,126 @@ vim summary.md
     </div>
 </div>
 
-<!-- 快速导航 -->
+<!-- home.md 注入内容（全宽显示）：位于底部导航块之前 -->
+
+<div class="card mt-12 w-full">
+    <div class="card-body prose max-w-none">
+        <h1>欢迎使用RustPress</h1>
+<p>这是从 <code>home.md</code> 注入到首页的内容区块。你可以在这里写欢迎词、公告、推荐内容或放置任意 Markdown 文案。上方是最新文章列表与分页，下方是 6 个导航卡片。</p>
+<h2>可用字段（front matter）</h2>
+<ul>
+<li><code>home_navs</code>: 一个数组，支持字段 <code>title</code>、<code>description</code>、<code>url</code>、<code>emoji</code>（或 <code>icon</code>）、<code>new_tab</code>、<code>cta</code>。</li>
+<li><code>title</code>/<code>subtitle</code>: 可选的页面标题信息（模板暂未直接使用，可用于扩展）。</li>
+</ul>
+<blockquote>
+<p>提示：如不提供 <code>home_navs</code>，模板会使用默认的 6 张卡片。</p>
+</blockquote>
+
+    </div>
+</div>
+
+
+<!-- 底部 6 个导航块：来自 home.md 的 front matter，缺省回退到默认卡片 -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">📂</div>
-            <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
-            <p class="text-gray-600 mb-4">按主题分类查看文章</p>
-            <a href="/categories.html" class="btn-primary">查看分类</a>
-        </div>
-    </div>
     
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">🏷️</div>
-            <h3 class="text-lg font-semibold mb-2">标签云</h3>
-            <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
-            <a href="/tags.html" class="btn-primary">查看标签</a>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">�</div>
+                <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
+                
+                <p class="text-gray-600 mb-4">按主题分类查看文章</p>
+                
+                
+                <a href="&#x2F;categories.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
         </div>
-    </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🏷️</div>
+                <h3 class="text-lg font-semibold mb-2">标签云</h3>
+                
+                <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
+                
+                
+                <a href="&#x2F;tags.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">📚</div>
+                <h3 class="text-lg font-semibold mb-2">文章归档</h3>
+                
+                <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
+                
+                
+                <a href="&#x2F;archives.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-lg font-semibold mb-2">友链</h3>
+                
+                <p class="text-gray-600 mb-4">提交你的站点，加入友链列表</p>
+                
+                
+                <a href="&#x2F;friends.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">📬</div>
+                <h3 class="text-lg font-semibold mb-2">关于作者</h3>
+                
+                <p class="text-gray-600 mb-4">查看关于页面，联系作者沟通</p>
+                
+                
+                <a href="&#x2F;about.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🚀</div>
+                <h3 class="text-lg font-semibold mb-2">RustPress</h3>
+                
+                <p class="text-gray-600 mb-4">增量编译倒分页无后端 Rust 纯静态博客程序</p>
+                
+                
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;rixingyike&#x2F;rustpress" class="btn-primary"
+                   target="_blank" rel="noopener noreferrer">
+                   获取 RustPress
+                </a>
+                
+            </div>
+        </div>
+        
     
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">📚</div>
-            <h3 class="text-lg font-semibold mb-2">文章归档</h3>
-            <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
-            <a href="/archives.html" class="btn-primary">查看归档</a>
-        </div>
-    </div>
 </div>
  
         </main>
@@ -1341,7 +1370,7 @@ vim summary.md
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <!-- 搜索功能脚本 -->
-    <script src="/js/search.js"></script>
+    <script src="/static/js/search.js"></script>
 
     
     <!-- Google Analytics 懒加载 -->

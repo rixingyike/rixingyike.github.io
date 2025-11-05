@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一树论</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/main.css">
     <!-- Alpine.js 库 -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
@@ -18,7 +19,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
+                    <img src="/static/images/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树论
                     </a>
@@ -180,7 +181,7 @@
             
             <!-- CTA 按钮 -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="/#articles" 
+                <a href="#articles" 
                    class="inline-flex items-center px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors shadow-lg">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path>
@@ -188,7 +189,7 @@
                     浏览文章
                 </a>
                 <a href="/about.html" 
-                   class="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors">
+                   class="inline-flex items-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-lg bg-white/10 backdrop-blur-sm shadow-lg hover:bg-white hover:text-blue-600 transition-colors">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                     </svg>
@@ -208,8 +209,7 @@
 
 
 
-
-<!-- 主要内容区域 - 圣杯布局 -->
+<!-- 主要内容区域 - 圣杯布局，与 index.html 一致 -->
 <div class="flex flex-col lg:flex-row gap-8 mt-8">
     <!-- 主内容区域 -->
     <main class="flex-1 lg:w-2/3">
@@ -218,7 +218,6 @@
             
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -231,75 +230,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="blog&#x2F;2025/37.html" 
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                冷切与喝酒
-                            </a>
-                            
-                        </h2>
-                        
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2025-09-10
-                            </span>
-                            
-                            
-                        </div>
-                        
-                        
-                        <div class="text-gray-600 leading-relaxed mb-4">
-                            冷切与喝酒
-这两天吃了一道特殊的菜，想起了小时候的一桩旧事。这道菜我给它起名字叫葱段羊肉——有一道热菜叫葱爆羊肉，不是那个。新鲜的羊腿肉用凉水洗一洗，不用焯水，加五香料包，加盐，加清水炖。炖好后在冰箱里放凉，吃的时候拿出来放在盘子里，将剥了皮的大葱切成一段一段也放在盘子里，用小刀切一块羊肉送进嘴里，再送一段大葱，就这样吃。有的羊肉块比较肥，上面附有很多白油，没关系，照吃不误——貌似没有脂肪就不香了…
-                        </div>
-                        
-                        
-                        <!-- 标签 -->
-                        
-                        <div class="flex flex-wrap gap-2">
-                            
-                            <a href="/tags/Default/" 
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                Default
-                            </a>
-                            
-                        </div>
-                        
-                    </div>
-                </article>
-                
-                <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
-                    
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog/" class="hover:text-primary-600">blog</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
-                        
-                    </nav>
-                    
-                    
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="blog&#x2F;2025/36.html" 
+                            <a href="blog&#x2F;2025/36.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 能搞大故事策划，但不一定能把小故事写好
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -311,7 +250,6 @@
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             能搞大故事策划，但不一定能把小故事写好
@@ -320,11 +258,9 @@
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/Default/" 
+                            <a href="/tags/Default/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 Default
                             </a>
@@ -335,7 +271,6 @@
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -348,17 +283,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="blog&#x2F;2025/34.html" 
+                            <a href="blog&#x2F;2025/34.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 如何记读书笔记？
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -370,7 +303,6 @@
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             如何记读书笔记？
@@ -380,11 +312,9 @@
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/Default/" 
+                            <a href="/tags/Default/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 Default
                             </a>
@@ -395,7 +325,6 @@
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -408,17 +337,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="blog&#x2F;2025/35.html" 
+                            <a href="blog&#x2F;2025/35.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 我喜欢这个时代
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -431,7 +358,6 @@
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             我喜欢这个时代
 这是程序员最好的时代，也是最差的时代。由于就业低迷，程序员职业貌似已经不像五年前那样炙手可热了，但我还是喜欢这个时代。有了 AI，我只需要有一个想法，AI 就可以自动帮我完成。我有一台电脑，就相当于拥有一名员工，有十台，就相当于有十名员工。我其实也不需要在家里摆十台电脑，我只需要在云厂商哪里购买十台云主机，在我散步或骑车的时候，都可以让它们为我劳动。
@@ -440,11 +366,9 @@
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/Default/" 
+                            <a href="/tags/Default/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 Default
                             </a>
@@ -455,7 +379,6 @@
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -468,17 +391,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="blog&#x2F;2025/33.html" 
+                            <a href="blog&#x2F;2025/33.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 女权主义不利于提高婚育率
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -491,7 +412,6 @@
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             女权主义不利于提高婚育率
 最近读了一本书，书名叫《完美婚姻，女人说了算》，是一本英文翻译书，作者劳拉·道尔是一位美国女性。这算是一本从实践出发，总结优秀经验而写成的书。很有指导意义，经验之谈的图书总是值得阅读。书的内容总的来讲，在告诫女性读者在家庭中不要企图拿控一切、评论一切，要学会示弱，学会尊重、赞美和感激丈夫，要多看开一些、少一点较真，只有这样才能建立一个和谐、亲密和充满激情的婚姻关系。
@@ -499,11 +419,9 @@
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/Default/" 
+                            <a href="/tags/Default/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 Default
                             </a>
@@ -514,7 +432,6 @@
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -527,17 +444,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="blog&#x2F;2025/32.html" 
+                            <a href="blog&#x2F;2025/32.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 nu、nong，这两个拼音有很么不同，如何分辨，各有什么汉字？
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -549,7 +464,6 @@
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             nu、nong，这两个拼音有很么不同，如何分辨，各有什么汉字？
@@ -570,11 +484,9 @@ nong：声母 n + 复合韵母 ong（发音为&#x2F;ʊŋ&#x2F;），带有后鼻
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/Default/" 
+                            <a href="/tags/Default/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 Default
                             </a>
@@ -585,7 +497,6 @@ nong：声母 n + 复合韵母 ong（发音为&#x2F;ʊŋ&#x2F;），带有后鼻
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -598,17 +509,15 @@ nong：声母 n + 复合韵母 ong（发音为&#x2F;ʊŋ&#x2F;），带有后鼻
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="blog&#x2F;2025/31.html" 
+                            <a href="blog&#x2F;2025/31.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 人的情绪是怎么产生的？
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -621,7 +530,6 @@ nong：声母 n + 复合韵母 ong（发音为&#x2F;ʊŋ&#x2F;），带有后鼻
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             人的情绪是怎么产生的？
 上火了，鼻子下面起了一个水泡，昨天抹了一点曲霉素，今天还没有好。上火是因为动气，人的愤怒的情绪就怎么产生的呢？
@@ -629,11 +537,9 @@ nong：声母 n + 复合韵母 ong（发音为&#x2F;ʊŋ&#x2F;），带有后鼻
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/Default/" 
+                            <a href="/tags/Default/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 Default
                             </a>
@@ -644,7 +550,6 @@ nong：声母 n + 复合韵母 ong（发音为&#x2F;ʊŋ&#x2F;），带有后鼻
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -657,17 +562,15 @@ nong：声母 n + 复合韵母 ong（发音为&#x2F;ʊŋ&#x2F;），带有后鼻
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="blog&#x2F;2025/30.html" 
+                            <a href="blog&#x2F;2025/30.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 发现一个好工具！
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -680,7 +583,6 @@ nong：声母 n + 复合韵母 ong（发音为&#x2F;ʊŋ&#x2F;），带有后鼻
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             发现一个好工具！
 https:&#x2F;&#x2F;app.xunjieshipin.com&#x2F;video-to-text&#x2F;
@@ -689,11 +591,9 @@ https:&#x2F;&#x2F;app.xunjieshipin.com&#x2F;video-to-text&#x2F;
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/Default/" 
+                            <a href="/tags/Default/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 Default
                             </a>
@@ -703,7 +603,61 @@ https:&#x2F;&#x2F;app.xunjieshipin.com&#x2F;video-to-text&#x2F;
                     </div>
                 </article>
                 
+                <article class="card hover:shadow-lg transition-shadow duration-300">
+                    
+                    <nav class="px-6 pt-4 text-sm text-gray-600">
+                        <a href="/" class="hover:text-primary-600">首页</a>
+                        
+                            <span class="mx-2">›</span>
+                            <a href="/blog/" class="hover:text-primary-600">blog</a>
+                        
+                            <span class="mx-2">›</span>
+                            <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
+                        
+                    </nav>
+                    
+                    <div class="card-body">
+                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                            
+                            <a href="blog&#x2F;2025/29.html"
+                               class="text-gray-900 hover:text-primary-600 transition-colors">
+                                坐功
+                            </a>
+                            
+                        </h2>
+                        <div class="article-meta mb-4">
+                            
+                            <span class="inline-flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                2025-08-12
+                            </span>
+                            
+                            
+                        </div>
+                        
+                        <div class="text-gray-600 leading-relaxed mb-4">
+                            坐功
+古人讲，做学问要坐得住板凳，我没啥学问做，但我的“坐功”应该是不错的，甚至可以称之为惊人。且这份功力与我的年龄无关。
+我二十多岁的时候，在一家厂子做程序员，办公室里用的都是转椅，有一天，可能我的屁股坐得太靠前了，转椅的竖轴被我坐断了，砰，我一下跌在了地上。领导没有怪我损害公物，他可能觉得是椅子的质量不好，但同事们坐的都是一样的椅子，为什么我的断了，这很难解释。我只是觉得好笑。
+20年后，今年…
+                        </div>
+                        
+                        
+                        <div class="flex flex-wrap gap-2">
+                            
+                            <a href="/tags/Default/"
+                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                                Default
+                            </a>
+                            
+                        </div>
+                        
+                    </div>
+                </article>
                 
+
                 <!-- 列表范围显示 -->
                 <div class="flex justify-center mt-6">
                     <p class="text-sm text-gray-600">第 <span class="font-medium">193</span> 到 <span class="font-medium">200</span> 条</p>
@@ -729,6 +683,7 @@ https:&#x2F;&#x2F;app.xunjieshipin.com&#x2F;video-to-text&#x2F;
                 
             
         </div>
+
     </main>
 
     <!-- 侧边栏 -->
@@ -1228,34 +1183,126 @@ https:&#x2F;&#x2F;app.xunjieshipin.com&#x2F;video-to-text&#x2F;
     </div>
 </div>
 
-<!-- 快速导航 -->
+<!-- home.md 注入内容（全宽显示）：位于底部导航块之前 -->
+
+<div class="card mt-12 w-full">
+    <div class="card-body prose max-w-none">
+        <h1>欢迎使用RustPress</h1>
+<p>这是从 <code>home.md</code> 注入到首页的内容区块。你可以在这里写欢迎词、公告、推荐内容或放置任意 Markdown 文案。上方是最新文章列表与分页，下方是 6 个导航卡片。</p>
+<h2>可用字段（front matter）</h2>
+<ul>
+<li><code>home_navs</code>: 一个数组，支持字段 <code>title</code>、<code>description</code>、<code>url</code>、<code>emoji</code>（或 <code>icon</code>）、<code>new_tab</code>、<code>cta</code>。</li>
+<li><code>title</code>/<code>subtitle</code>: 可选的页面标题信息（模板暂未直接使用，可用于扩展）。</li>
+</ul>
+<blockquote>
+<p>提示：如不提供 <code>home_navs</code>，模板会使用默认的 6 张卡片。</p>
+</blockquote>
+
+    </div>
+</div>
+
+
+<!-- 底部 6 个导航块：来自 home.md 的 front matter，缺省回退到默认卡片 -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">📂</div>
-            <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
-            <p class="text-gray-600 mb-4">按主题分类查看文章</p>
-            <a href="/categories.html" class="btn-primary">查看分类</a>
-        </div>
-    </div>
     
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">🏷️</div>
-            <h3 class="text-lg font-semibold mb-2">标签云</h3>
-            <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
-            <a href="/tags.html" class="btn-primary">查看标签</a>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">�</div>
+                <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
+                
+                <p class="text-gray-600 mb-4">按主题分类查看文章</p>
+                
+                
+                <a href="&#x2F;categories.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
         </div>
-    </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🏷️</div>
+                <h3 class="text-lg font-semibold mb-2">标签云</h3>
+                
+                <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
+                
+                
+                <a href="&#x2F;tags.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">📚</div>
+                <h3 class="text-lg font-semibold mb-2">文章归档</h3>
+                
+                <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
+                
+                
+                <a href="&#x2F;archives.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-lg font-semibold mb-2">友链</h3>
+                
+                <p class="text-gray-600 mb-4">提交你的站点，加入友链列表</p>
+                
+                
+                <a href="&#x2F;friends.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">📬</div>
+                <h3 class="text-lg font-semibold mb-2">关于作者</h3>
+                
+                <p class="text-gray-600 mb-4">查看关于页面，联系作者沟通</p>
+                
+                
+                <a href="&#x2F;about.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🚀</div>
+                <h3 class="text-lg font-semibold mb-2">RustPress</h3>
+                
+                <p class="text-gray-600 mb-4">增量编译倒分页无后端 Rust 纯静态博客程序</p>
+                
+                
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;rixingyike&#x2F;rustpress" class="btn-primary"
+                   target="_blank" rel="noopener noreferrer">
+                   获取 RustPress
+                </a>
+                
+            </div>
+        </div>
+        
     
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">📚</div>
-            <h3 class="text-lg font-semibold mb-2">文章归档</h3>
-            <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
-            <a href="/archives.html" class="btn-primary">查看归档</a>
-        </div>
-    </div>
 </div>
  
         </main>
@@ -1347,7 +1394,7 @@ https:&#x2F;&#x2F;app.xunjieshipin.com&#x2F;video-to-text&#x2F;
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <!-- 搜索功能脚本 -->
-    <script src="/js/search.js"></script>
+    <script src="/static/js/search.js"></script>
 
     
     <!-- Google Analytics 懒加载 -->

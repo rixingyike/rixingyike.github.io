@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一树论</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/main.css">
     <!-- Alpine.js 库 -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
@@ -18,7 +19,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
+                    <img src="/static/images/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树论
                     </a>
@@ -180,7 +181,7 @@
             
             <!-- CTA 按钮 -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="/#articles" 
+                <a href="#articles" 
                    class="inline-flex items-center px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors shadow-lg">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path>
@@ -188,7 +189,7 @@
                     浏览文章
                 </a>
                 <a href="/about.html" 
-                   class="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors">
+                   class="inline-flex items-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-lg bg-white/10 backdrop-blur-sm shadow-lg hover:bg-white hover:text-blue-600 transition-colors">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                     </svg>
@@ -208,8 +209,7 @@
 
 
 
-
-<!-- 主要内容区域 - 圣杯布局 -->
+<!-- 主要内容区域 - 圣杯布局，与 index.html 一致 -->
 <div class="flex flex-col lg:flex-row gap-8 mt-8">
     <!-- 主内容区域 -->
     <main class="flex-1 lg:w-2/3">
@@ -218,7 +218,6 @@
             
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -231,72 +230,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2022/10013.html" 
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                阿里P10带多少人？阿里p10是什么级别？
-                            </a>
-                            
-                        </h2>
-                        
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2022-10-01
-                            </span>
-                            
-                            
-                        </div>
-                        
-                        
-                        <div class="text-gray-600 leading-relaxed mb-4">
-                            阿里P10带多少人？阿里p10是什么级别？
-P10 带多少人？
-一般来说，在阿里 P 是技术系，M 是管理系。但 P 也是带人的，例如阿里 P10 毕玄在访谈中透露，他在淘系曾带 600 人。我查了一下，其他等级例如 P9 大概带 50~100 人，P8 带 2~30 人。P7 是技术专家&#x2F;架构师，应该是不带人的。
-
-各个技术等级是这样的：
-等级职称
-P5高级工程师校招起点
-P6资深工程师社招起点…
-                        </div>
-                        
-                        
-                        <!-- 标签 -->
-                        
-                    </div>
-                </article>
-                
-                <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
-                    
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/posts/" class="hover:text-primary-600">posts</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/posts&#x2F;2022/" class="hover:text-primary-600">2022</a>
-                        
-                    </nav>
-                    
-                    
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="posts&#x2F;2022/10012.html" 
+                            <a href="posts&#x2F;2022/10012.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 程序员的三个阶段与产品开发的两种哲学
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -308,7 +250,6 @@ P6资深工程师社招起点…
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             程序员的三个阶段与产品开发的两种哲学
@@ -324,13 +265,10 @@ P6资深工程师社招起点…
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -343,17 +281,15 @@ P6资深工程师社招起点…
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2022/1001.html" 
+                            <a href="posts&#x2F;2022/1001.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 写博客对个人找工作有什么帮助？
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -366,7 +302,6 @@ P6资深工程师社招起点…
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             写博客对个人找工作有什么帮助？
 今天听阿里P10大佬毕玄讲找工作的经历，发现作为一名非计算机专业的生物系学生，写博客数次给他找工作带来了直接帮助。
@@ -377,13 +312,10 @@ P6资深工程师社招起点…
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -396,17 +328,15 @@ P6资深工程师社招起点…
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2022/0930.html" 
+                            <a href="posts&#x2F;2022/0930.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 为什么编程里习惯使用 i、j、k 等作为循环变量?
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -419,7 +349,6 @@ P6资深工程师社招起点…
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             为什么编程里习惯使用 i、j、k 等作为循环变量?
 i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 的简写，这个有点牵强。早期教材中的示例都是以 i、k、j 作为循环变量，后来这样使用成为了一种习惯。
@@ -429,13 +358,10 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -448,17 +374,15 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2022/0926.html" 
+                            <a href="posts&#x2F;2022/0926.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 为什么程序员对 Python 有这么多仇恨？
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -471,7 +395,6 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             为什么程序员对 Python 有这么多仇恨？
 并不是所有有经验的程序员都讨厌 Python，促使人们产生这种厌恶情绪的原因可能有三个：
@@ -479,13 +402,10 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -498,17 +418,15 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2022/0913.html" 
+                            <a href="posts&#x2F;2022/0913.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 二极管工作原理
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -520,7 +438,6 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             二极管工作原理
@@ -535,11 +452,9 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/计算机原理/" 
+                            <a href="/tags/计算机原理/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 计算机原理
                             </a>
@@ -550,7 +465,6 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -563,17 +477,15 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2022/0910.html" 
+                            <a href="posts&#x2F;2022/0910.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 节日填词一首：⽔调歌头・2022中秋数字化展望
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -585,7 +497,6 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             节日填词一首：⽔调歌头・2022中秋数字化展望
@@ -599,26 +510,24 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/诗词/" 
+                            <a href="/tags/诗词/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 诗词
                             </a>
                             
-                            <a href="/tags/数字化/" 
+                            <a href="/tags/数字化/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 数字化
                             </a>
                             
-                            <a href="/tags/TVP/" 
+                            <a href="/tags/TVP/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 TVP
                             </a>
                             
-                            <a href="/tags/极客时间/" 
+                            <a href="/tags/极客时间/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 极客时间
                             </a>
@@ -629,7 +538,6 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -642,17 +550,15 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2022/0909.html" 
+                            <a href="posts&#x2F;2022/0909.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 基尔代尔是如何错失操作系统市场的？
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -665,7 +571,6 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             基尔代尔是如何错失操作系统市场的？
 基尔代尔果然是一位学者企业家。他有企业家的敏锐嗅觉和欲望，但同时又保留了学者的锐意创新和儒雅。他一只脚踏在了商业领域，另一只脚踏在了学者领域，只有他这样的人，才能开发出符合市场需要的CP&#x2F;M，肯·汤普逊和比尔·盖茨都不可以。
@@ -674,11 +579,9 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/商业/" 
+                            <a href="/tags/商业/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 商业
                             </a>
@@ -688,7 +591,67 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                     </div>
                 </article>
                 
+                <article class="card hover:shadow-lg transition-shadow duration-300">
+                    
+                    <nav class="px-6 pt-4 text-sm text-gray-600">
+                        <a href="/" class="hover:text-primary-600">首页</a>
+                        
+                            <span class="mx-2">›</span>
+                            <a href="/posts/" class="hover:text-primary-600">posts</a>
+                        
+                            <span class="mx-2">›</span>
+                            <a href="/posts&#x2F;2022/" class="hover:text-primary-600">2022</a>
+                        
+                    </nav>
+                    
+                    <div class="card-body">
+                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                            
+                            <a href="posts&#x2F;2022/0908.html"
+                               class="text-gray-900 hover:text-primary-600 transition-colors">
+                                从金庸小说和齐白石国画，看网文如何加快节奏？
+                            </a>
+                            
+                        </h2>
+                        <div class="article-meta mb-4">
+                            
+                            <span class="inline-flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                2022-09-08
+                            </span>
+                            
+                            
+                        </div>
+                        
+                        <div class="text-gray-600 leading-relaxed mb-4">
+                            从金庸小说和齐白石国画，看网文如何加快节奏？
+我很早就注意到了这种现象，今天分享出来与朋友们探讨，并且这种艺术处理技巧，不止可以应用在武侠小说的创作中，在计算机技术图书的写作中，应该也是可用的。本质上，都是用最精简的文字，表达最丰富的内涵。我们的古代文字都比较简洁，惜字如金，甚至标点都要略去，这除了节省竹简的考虑，应该还有艺术表达上的简洁需要。
+
+武侠小说中文字的疏与密
+先看武侠小说中文字的疏密，…
+                        </div>
+                        
+                        
+                        <div class="flex flex-wrap gap-2">
+                            
+                            <a href="/tags/小说/"
+                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                                小说
+                            </a>
+                            
+                            <a href="/tags/国画/"
+                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                                国画
+                            </a>
+                            
+                        </div>
+                        
+                    </div>
+                </article>
                 
+
                 <!-- 列表范围显示 -->
                 <div class="flex justify-center mt-6">
                     <p class="text-sm text-gray-600">第 <span class="font-medium">57</span> 到 <span class="font-medium">64</span> 条</p>
@@ -714,6 +677,7 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                 
             
         </div>
+
     </main>
 
     <!-- 侧边栏 -->
@@ -1213,34 +1177,126 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
     </div>
 </div>
 
-<!-- 快速导航 -->
+<!-- home.md 注入内容（全宽显示）：位于底部导航块之前 -->
+
+<div class="card mt-12 w-full">
+    <div class="card-body prose max-w-none">
+        <h1>欢迎使用RustPress</h1>
+<p>这是从 <code>home.md</code> 注入到首页的内容区块。你可以在这里写欢迎词、公告、推荐内容或放置任意 Markdown 文案。上方是最新文章列表与分页，下方是 6 个导航卡片。</p>
+<h2>可用字段（front matter）</h2>
+<ul>
+<li><code>home_navs</code>: 一个数组，支持字段 <code>title</code>、<code>description</code>、<code>url</code>、<code>emoji</code>（或 <code>icon</code>）、<code>new_tab</code>、<code>cta</code>。</li>
+<li><code>title</code>/<code>subtitle</code>: 可选的页面标题信息（模板暂未直接使用，可用于扩展）。</li>
+</ul>
+<blockquote>
+<p>提示：如不提供 <code>home_navs</code>，模板会使用默认的 6 张卡片。</p>
+</blockquote>
+
+    </div>
+</div>
+
+
+<!-- 底部 6 个导航块：来自 home.md 的 front matter，缺省回退到默认卡片 -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">📂</div>
-            <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
-            <p class="text-gray-600 mb-4">按主题分类查看文章</p>
-            <a href="/categories.html" class="btn-primary">查看分类</a>
-        </div>
-    </div>
     
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">🏷️</div>
-            <h3 class="text-lg font-semibold mb-2">标签云</h3>
-            <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
-            <a href="/tags.html" class="btn-primary">查看标签</a>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">�</div>
+                <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
+                
+                <p class="text-gray-600 mb-4">按主题分类查看文章</p>
+                
+                
+                <a href="&#x2F;categories.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
         </div>
-    </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🏷️</div>
+                <h3 class="text-lg font-semibold mb-2">标签云</h3>
+                
+                <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
+                
+                
+                <a href="&#x2F;tags.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">📚</div>
+                <h3 class="text-lg font-semibold mb-2">文章归档</h3>
+                
+                <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
+                
+                
+                <a href="&#x2F;archives.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-lg font-semibold mb-2">友链</h3>
+                
+                <p class="text-gray-600 mb-4">提交你的站点，加入友链列表</p>
+                
+                
+                <a href="&#x2F;friends.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">📬</div>
+                <h3 class="text-lg font-semibold mb-2">关于作者</h3>
+                
+                <p class="text-gray-600 mb-4">查看关于页面，联系作者沟通</p>
+                
+                
+                <a href="&#x2F;about.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🚀</div>
+                <h3 class="text-lg font-semibold mb-2">RustPress</h3>
+                
+                <p class="text-gray-600 mb-4">增量编译倒分页无后端 Rust 纯静态博客程序</p>
+                
+                
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;rixingyike&#x2F;rustpress" class="btn-primary"
+                   target="_blank" rel="noopener noreferrer">
+                   获取 RustPress
+                </a>
+                
+            </div>
+        </div>
+        
     
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">📚</div>
-            <h3 class="text-lg font-semibold mb-2">文章归档</h3>
-            <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
-            <a href="/archives.html" class="btn-primary">查看归档</a>
-        </div>
-    </div>
 </div>
  
         </main>
@@ -1332,7 +1388,7 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <!-- 搜索功能脚本 -->
-    <script src="/js/search.js"></script>
+    <script src="/static/js/search.js"></script>
 
     
     <!-- Google Analytics 懒加载 -->

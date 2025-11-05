@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一树论</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/main.css">
     <!-- Alpine.js 库 -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
@@ -18,7 +19,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
+                    <img src="/static/images/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树论
                     </a>
@@ -180,7 +181,7 @@
             
             <!-- CTA 按钮 -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="/#articles" 
+                <a href="#articles" 
                    class="inline-flex items-center px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors shadow-lg">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path>
@@ -188,7 +189,7 @@
                     浏览文章
                 </a>
                 <a href="/about.html" 
-                   class="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors">
+                   class="inline-flex items-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-lg bg-white/10 backdrop-blur-sm shadow-lg hover:bg-white hover:text-blue-600 transition-colors">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                     </svg>
@@ -208,8 +209,7 @@
 
 
 
-
-<!-- 主要内容区域 - 圣杯布局 -->
+<!-- 主要内容区域 - 圣杯布局，与 index.html 一致 -->
 <div class="flex flex-col lg:flex-row gap-8 mt-8">
     <!-- 主内容区域 -->
     <main class="flex-1 lg:w-2/3">
@@ -218,67 +218,6 @@
             
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
-                    
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/docs/" class="hover:text-primary-600">docs</a>
-                        
-                    </nav>
-                    
-                    
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="docs/ChatGPT.html" 
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                ChatGPT 从0到1，人类全能工程师自修宝典
-                            </a>
-                            
-                        </h2>
-                        
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2023-10-31
-                            </span>
-                            
-                            
-                        </div>
-                        
-                        
-                        <div class="text-gray-600 leading-relaxed mb-4">
-                            ChatGPT 从0到1，人类全能工程师自修宝典
-
-我们为什么选择 ChatGPT？
-我们如何使用 ChatGPT？
-人工智能的发展历程和当前状态，全面认识大语言模型的发展之路
-
-
-                        </div>
-                        
-                        
-                        <!-- 标签 -->
-                        
-                        <div class="flex flex-wrap gap-2">
-                            
-                            <a href="/tags/ChatGPT/" 
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                ChatGPT
-                            </a>
-                            
-                        </div>
-                        
-                    </div>
-                </article>
-                
-                <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -291,17 +230,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2023/17.html" 
+                            <a href="posts&#x2F;2023/17.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 篆刻刻刀如何选择？不要选择哪些刻刀？
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -314,7 +251,6 @@
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             篆刻刻刀如何选择？不要选择哪些刻刀？
 篆刻刻刀都是平刃刀，没有选择尖角或斜角的，因为篆刻是用 90 度的刀角刻印的，并不是用刀尖刻印的。
@@ -324,11 +260,9 @@
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/篆刻/" 
+                            <a href="/tags/篆刻/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 篆刻
                             </a>
@@ -339,7 +273,6 @@
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -352,17 +285,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2023/16.html" 
+                            <a href="posts&#x2F;2023/16.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 他的生平，及什么是克强经济学与克强指数等
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -374,7 +305,6 @@
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             他的生平，及什么是克强经济学与克强指数等
@@ -386,13 +316,10 @@
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -405,17 +332,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2023/15.html" 
+                            <a href="posts&#x2F;2023/15.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 篆刻简易刀法总结，包括刻印面与刻边款的刀
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -427,7 +352,6 @@
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             
@@ -441,11 +365,9 @@
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                         <div class="flex flex-wrap gap-2">
                             
-                            <a href="/tags/篆刻/" 
+                            <a href="/tags/篆刻/"
                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                                 篆刻
                             </a>
@@ -456,7 +378,6 @@
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -469,17 +390,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2023/14.html" 
+                            <a href="posts&#x2F;2023/14.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 有感于四川崇州 2 岁小女孩被狗咬，伤重住院，以后再碰到不文明养犬的马上举报，让其付出被罚 2000 元的代价
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -492,7 +411,6 @@
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             有感于四川崇州 2 岁小女孩被狗咬，伤重住院，以后再碰到不文明养犬的马上举报，让其付出被罚 2000 元的代价
 你好，今天聊一下安全文明养犬的事。
@@ -503,13 +421,10 @@
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -522,17 +437,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2023/13.html" 
+                            <a href="posts&#x2F;2023/13.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 使用 querySelector 查询元素时，如何使用正则进行模糊匹配查询？
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -544,7 +457,6 @@
                             
                             
                         </div>
-                        
                         
                         <div class="text-gray-600 leading-relaxed mb-4">
                             
@@ -559,13 +471,10 @@
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -578,17 +487,15 @@
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2023/12.html" 
+                            <a href="posts&#x2F;2023/12.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 读二胖《编程路上那些让我效率倍增的方法》，谈新人如何学习编程，只要方法对了人人都可以成为黑客高手
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -601,7 +508,6 @@
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             
 读二胖《编程路上那些让我效率倍增的方法》，谈新人如何学习编程，只要方法对了人人都可以成为黑客高手
@@ -611,13 +517,10 @@ https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;34418394
                         </div>
                         
                         
-                        <!-- 标签 -->
-                        
                     </div>
                 </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
-                    <!-- 分类面包屑 -->
                     
                     <nav class="px-6 pt-4 text-sm text-gray-600">
                         <a href="/" class="hover:text-primary-600">首页</a>
@@ -630,17 +533,15 @@ https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;34418394
                         
                     </nav>
                     
-                    
                     <div class="card-body">
                         <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                             
-                            <a href="posts&#x2F;2023/11.html" 
+                            <a href="posts&#x2F;2023/11.html"
                                class="text-gray-900 hover:text-primary-600 transition-colors">
                                 使用 acme.sh &amp; freessl.cn 申请免费 SSL 证书及自动续期
                             </a>
                             
                         </h2>
-                        
                         <div class="article-meta mb-4">
                             
                             <span class="inline-flex items-center">
@@ -653,7 +554,6 @@ https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;34418394
                             
                         </div>
                         
-                        
                         <div class="text-gray-600 leading-relaxed mb-4">
                             使用 acme.sh &amp;amp; freessl.cn 申请免费 SSL 证书及自动续期
 域名地址基于 https 协议访问需要 SSL 证书，大多数情况下是一个 cer、一个 key 文件，在服务器端部署 web 站点的时候，在编写 Apache 或 nginx 配置文件时，需要提供这两个文件。
@@ -661,12 +561,61 @@ freessl.cn 是一个可以让我们免费申请 SSL 证书的地方。但是免�
                         </div>
                         
                         
-                        <!-- 标签 -->
+                    </div>
+                </article>
+                
+                <article class="card hover:shadow-lg transition-shadow duration-300">
+                    
+                    <nav class="px-6 pt-4 text-sm text-gray-600">
+                        <a href="/" class="hover:text-primary-600">首页</a>
+                        
+                            <span class="mx-2">›</span>
+                            <a href="/docs/" class="hover:text-primary-600">docs</a>
+                        
+                    </nav>
+                    
+                    <div class="card-body">
+                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                            
+                            <a href="docs/indiehacker-handbook.html"
+                               class="text-gray-900 hover:text-primary-600 transition-colors">
+                                独立黑客成长手册
+                            </a>
+                            
+                        </h2>
+                        <div class="article-meta mb-4">
+                            
+                            <span class="inline-flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                2023-10-09
+                            </span>
+                            
+                            
+                        </div>
+                        
+                        <div class="text-gray-600 leading-relaxed mb-4">
+                            独立黑客成长手册
+以下内容由作者@coderliyi的帖子内容生成，你也可以访问原地址：
+https:&#x2F;&#x2F;twitter.com&#x2F;coderliyi&#x2F;thread&#x2F;1707997856534007813
+通过对这些内容的阅读和学习，相信你和我一样，也能全面理解独立黑客，并知悉如何做为一名独立黑客开发独立产品。有许多个性崇尚自由的工程师，他们靠发布独立产品，轻松实现了每月上万美刀的睡后收入。希望你从…
+                        </div>
+                        
+                        
+                        <div class="flex flex-wrap gap-2">
+                            
+                            <a href="/tags/IndieHacker/"
+                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                                IndieHacker
+                            </a>
+                            
+                        </div>
                         
                     </div>
                 </article>
                 
-                
+
                 <!-- 列表范围显示 -->
                 <div class="flex justify-center mt-6">
                     <p class="text-sm text-gray-600">第 <span class="font-medium">105</span> 到 <span class="font-medium">112</span> 条</p>
@@ -692,6 +641,7 @@ freessl.cn 是一个可以让我们免费申请 SSL 证书的地方。但是免�
                 
             
         </div>
+
     </main>
 
     <!-- 侧边栏 -->
@@ -1191,34 +1141,126 @@ freessl.cn 是一个可以让我们免费申请 SSL 证书的地方。但是免�
     </div>
 </div>
 
-<!-- 快速导航 -->
+<!-- home.md 注入内容（全宽显示）：位于底部导航块之前 -->
+
+<div class="card mt-12 w-full">
+    <div class="card-body prose max-w-none">
+        <h1>欢迎使用RustPress</h1>
+<p>这是从 <code>home.md</code> 注入到首页的内容区块。你可以在这里写欢迎词、公告、推荐内容或放置任意 Markdown 文案。上方是最新文章列表与分页，下方是 6 个导航卡片。</p>
+<h2>可用字段（front matter）</h2>
+<ul>
+<li><code>home_navs</code>: 一个数组，支持字段 <code>title</code>、<code>description</code>、<code>url</code>、<code>emoji</code>（或 <code>icon</code>）、<code>new_tab</code>、<code>cta</code>。</li>
+<li><code>title</code>/<code>subtitle</code>: 可选的页面标题信息（模板暂未直接使用，可用于扩展）。</li>
+</ul>
+<blockquote>
+<p>提示：如不提供 <code>home_navs</code>，模板会使用默认的 6 张卡片。</p>
+</blockquote>
+
+    </div>
+</div>
+
+
+<!-- 底部 6 个导航块：来自 home.md 的 front matter，缺省回退到默认卡片 -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">📂</div>
-            <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
-            <p class="text-gray-600 mb-4">按主题分类查看文章</p>
-            <a href="/categories.html" class="btn-primary">查看分类</a>
-        </div>
-    </div>
     
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">🏷️</div>
-            <h3 class="text-lg font-semibold mb-2">标签云</h3>
-            <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
-            <a href="/tags.html" class="btn-primary">查看标签</a>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">�</div>
+                <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
+                
+                <p class="text-gray-600 mb-4">按主题分类查看文章</p>
+                
+                
+                <a href="&#x2F;categories.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
         </div>
-    </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🏷️</div>
+                <h3 class="text-lg font-semibold mb-2">标签云</h3>
+                
+                <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
+                
+                
+                <a href="&#x2F;tags.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">📚</div>
+                <h3 class="text-lg font-semibold mb-2">文章归档</h3>
+                
+                <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
+                
+                
+                <a href="&#x2F;archives.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-lg font-semibold mb-2">友链</h3>
+                
+                <p class="text-gray-600 mb-4">提交你的站点，加入友链列表</p>
+                
+                
+                <a href="&#x2F;friends.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">📬</div>
+                <h3 class="text-lg font-semibold mb-2">关于作者</h3>
+                
+                <p class="text-gray-600 mb-4">查看关于页面，联系作者沟通</p>
+                
+                
+                <a href="&#x2F;about.html" class="btn-primary"
+                   >
+                   前往
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="card-body">
+                <div class="text-4xl mb-4">🚀</div>
+                <h3 class="text-lg font-semibold mb-2">RustPress</h3>
+                
+                <p class="text-gray-600 mb-4">增量编译倒分页无后端 Rust 纯静态博客程序</p>
+                
+                
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;rixingyike&#x2F;rustpress" class="btn-primary"
+                   target="_blank" rel="noopener noreferrer">
+                   获取 RustPress
+                </a>
+                
+            </div>
+        </div>
+        
     
-    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-        <div class="card-body">
-            <div class="text-4xl mb-4">📚</div>
-            <h3 class="text-lg font-semibold mb-2">文章归档</h3>
-            <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
-            <a href="/archives.html" class="btn-primary">查看归档</a>
-        </div>
-    </div>
 </div>
  
         </main>
@@ -1310,7 +1352,7 @@ freessl.cn 是一个可以让我们免费申请 SSL 证书的地方。但是免�
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <!-- 搜索功能脚本 -->
-    <script src="/js/search.js"></script>
+    <script src="/static/js/search.js"></script>
 
     
     <!-- Google Analytics 懒加载 -->
