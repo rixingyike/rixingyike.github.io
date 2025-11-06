@@ -234,7 +234,7 @@
 <p>我在网上查找座杆，没有找到尺寸适合的替换零件，后来我改变思路，买了一包低温焊条，加一个3.5cm边长的钢铁方块。方块正好能塞进管内，外面有裂缝的地方再用焊条焊一下，15块钱不到问题就解决了，完美。</p>
 <p>唯一不完美的地方，是焊痕不美观。这种焊条只要用打火机就能焊东西，在使用一次之后，我现在也有经验了，应该像使用蜡烛一样使用它，让融化的金属液体滴在裂缝处。等放凉了，硬度就增加了。</p>
 <p><img src="assets/GyIheeGaYAAYXrk.jpeg" alt="图像" /></p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -242,7 +242,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -283,7 +283,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

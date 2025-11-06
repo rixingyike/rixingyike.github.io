@@ -263,7 +263,7 @@
 <p>呵呵，那个时候应该还可以更快，3 分钟就可以发布一个版本，因为根本没有用户嘛，什么问题都不会显现。联网软件，用户在 1000 个、1 万个、10 万个、100 万个、1000 万个的时候面临的问题是不一样的。所有的资源都是有限的，只有资源消耗大的时候，一些问题才会暴露出来。</p>
 <p>当作者在写书时，也没有必要纠结应该选择定位哪一类读者。开发者都是会成长的，今天他们要求快，明天可能就求稳，如果明天他们还活着的话。</p>
 <p>在任何时候，考虑任何问题，都应该把当下处境考虑进去，这是辩证法的基本原则。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -271,7 +271,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -312,7 +312,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

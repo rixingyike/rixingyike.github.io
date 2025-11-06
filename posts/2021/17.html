@@ -218,7 +218,7 @@
         <h1>Go更了解程序员</h1>
 <p>程序员喜欢Go语言，是因为Go简单、易于上手、高效吗？不，是因为Go更了解程序员，它知道程序员喜欢什么，不喜欢什么。程序员口中的简单、易于上手，高效，那是对它的赞美。实际上如果你不是程序员，从零入门Go编程仍然是不太容易的。</p>
 <p>而且更有可能出现的一种情况是，因为Go语言的极致简洁，反而让初学者觉得这太难了；而真正对编程感兴趣的人，会一下子喜欢上它，觉得太棒了。Go是一门语言，也是一面镜子，你适不适合做程序员，学习一下Go就知道了。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -226,7 +226,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -267,7 +267,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

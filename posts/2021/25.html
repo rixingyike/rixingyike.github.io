@@ -244,7 +244,7 @@
 <p>例如，本文版权声明：自由转载-非商用-非衍生-保持署名（<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">创意共享3.0许可证</a>），这样就可以了。至于别人遵守不遵守，先抱着别人不遵守的打算去创作。</p>
 <p>2021年1月18日</p>
 <p>图片转自阮一峰的博客，见：https://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -252,7 +252,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -293,7 +293,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

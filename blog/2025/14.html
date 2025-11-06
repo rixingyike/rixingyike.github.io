@@ -249,7 +249,7 @@
 <p>啊，原来神造人、仙女和人是不能通婚的，我还以为前面历史中这都是允许的呢，看来人类发展的慢是有原因的。居木武吾遭到拒绝没有气馁，他带了蛇和蜜蜂去见天神的女儿，用毒蛇咬伤了天神的脚，用蜜蜂刺肿了天神女儿的脸。咦，天神怎么被区区毒蛇咬伤？可能由于蛇属于雪子十二支其中的一支吧。天神没有办法，开始松动，最终是居木武吾治好了他的脚和他女儿的脸，他终于同意女儿嫁给居木武吾。</p>
 <p>居木武吾与天仙妻子生了三个儿子，一人从昆仑山向西去藏区发展出了藏族，一人向东来到中原发展出了汉族，一人向南来到今天的云贵川发展出了彝族。</p>
 <p>2025年4月21日</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -257,7 +257,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -298,7 +298,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

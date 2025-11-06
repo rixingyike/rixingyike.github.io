@@ -324,7 +324,7 @@
 <h2>5，追问与澄清</h2>
 <p>大多数情况下，我们的提问并不详细，得到的结果也并不完备，使用 GPT 的过程是一个互动完善的过程，对于不清楚的问题，我们可以追求。例如：“对于某某概念，我不是很了解，能否结合实例用通俗的语言详细解释一下？”</p>
 <p>最后总结一下高效提问 5 大技巧：提问时明确需求，提供详细上下文信息，使用清晰且具体的词语，遵循先宏观、再微观的提问方式，以及以问题为导向，切分大小范围进行提问。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -332,7 +332,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -373,7 +373,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

@@ -305,7 +305,7 @@ const ENV_ID = 'using-ai-toolkit-2f3kcq395dbd3a6';
 <p>有人可能感觉，目前的AI就像大学老师带着学生做项目，明明知道学生做错了，还不能代替他做，还要以言语循循善诱，努力让他做对。这种方式效率反而低下。但如果用的好，一个有经验的程序员完全可以身兼数职，像在屋里摆开N台电脑，一个电脑就相当于过去一个员工，而自己就是指挥整个电脑团队一起工作的指挥官。AI效率如何，最终还取决于使用的人。</p>
 <p>我实践后的源码仓库是：https://github.com/rixingyike/web-cloudbase-vue-template。你可以在官方模板项目上体验，也可以在我的项目基础上体验。</p>
 <p>2025年7月13日</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -313,7 +313,7 @@ const ENV_ID = 'using-ai-toolkit-2f3kcq395dbd3a6';
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -354,7 +354,7 @@ const ENV_ID = 'using-ai-toolkit-2f3kcq395dbd3a6';
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

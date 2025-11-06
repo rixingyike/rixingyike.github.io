@@ -243,7 +243,7 @@
 <p>从国家层面讲，什么叫核心价值观？就是渗透到、体现在制度里面的价值观念，并不是流于表面的标语、文件和宣传。要推行和贯彻核心价值观，就要内外统一，首先要从社会上的各项规定入手，要体现核心价值观，要从人民的角度出发，要从为人民服务的角度去施行。否则，人民只会养成两面性，表面一个样子，心里一个样子，表面一套，心里一套。</p>
 <p>从个人层面讲，为人眼界不要太高，人格也不要太公平、太无私，时时事事从自私的角度去想去做，人生便会更加舒服顺利许多。你时时要求自己，要做一个诚信、有担当、有爱心的人，你也是这么去实践的，你帮助了许多人，从不求回报，但是，当社会回报你自私的时候，一而再，再而三回报你的时候，你的情绪就上来了。</p>
 <p>人的情绪就是这么上来的。脾气再好的人，经过三次打击铺垫，也会火冒三丈。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -251,7 +251,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -292,7 +292,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

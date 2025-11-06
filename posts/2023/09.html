@@ -280,7 +280,7 @@ registry = &quot;http://registry.npm.taobao.org&quot;
 <h2>4、最佳实践</h2>
 <p>最后说一下最佳实践。</p>
 <p>既然 bun 有自动安装的功能，就要用起来，不要再让项目目录动辄就有几百上千 MB 的大小，团队里第一个创建项目的人，使用 bun add 指令创建好 bun.lockb 文件并随项目源码分享给他人。同事只需拿到 bun.lockb 文件就可以了，本地的 package.json 与 node_modules 都不需要有。但是这里有一个问题需要注意，这个 bun.lockb 是二进制格式的，这意味着如果团队中有两个以上的人同时维护了该文件，那么文件冲突便没有办法解决了，所以最好这个 bun.lockb 文件由项目的 owner 负责维护，其它人仅负责拉取就可以了。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -288,7 +288,7 @@ registry = &quot;http://registry.npm.taobao.org&quot;
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -329,7 +329,7 @@ registry = &quot;http://registry.npm.taobao.org&quot;
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

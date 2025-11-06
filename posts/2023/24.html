@@ -398,7 +398,7 @@
 <p>最后回顾一下。</p>
 <p>不知道你看了卖报的专访有什么感受，每个人的成功都不是偶然的，都是天赋+汗水，十年如一日耕耘的结果。当然，在网文创作这条路上，还需要不断思考与反省，要学习别人成功的经验。</p>
 <p>我认为卖报的创作修炼非常值得借鉴，如果你喜欢传统文学，也想成为一名优秀的网文作者，请回头看一下探长总结的那 4 个等级及修炼建议，把卖报走过的路重新走一下，或许你也可以成功。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -406,7 +406,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -447,7 +447,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

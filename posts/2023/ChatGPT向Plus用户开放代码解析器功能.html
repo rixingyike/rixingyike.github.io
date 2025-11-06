@@ -288,7 +288,7 @@ https://chat.openai.com/share/b1659250-a557-4ae1-b275-0a0ed3636910</p>
 <p>“怎么还不用？赶紧让员工用起来！”
 老板们自己都​卷了起来。现在是程序员不用、设计师不用、产品经理不用，为什么不用？因为隐隐约约感觉这好像是一个砸他们​饭碗的东西。原来新软件新工具都是由员工提出来，向老板申请资金购买，现在是老板主动要求员工​购买与使用。</p>
 <p>关于我们如何面对 AI，还是那句话：​你不能驾驭它，那么未来你将被能驾驭的人淘汰。 </p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -296,7 +296,7 @@ https://chat.openai.com/share/b1659250-a557-4ae1-b275-0a0ed3636910</p>
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -337,7 +337,7 @@ https://chat.openai.com/share/b1659250-a557-4ae1-b275-0a0ed3636910</p>
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

@@ -237,7 +237,7 @@
 <p>这时候除了安慰自己，还可以动手记一些笔记，将理解和实践的东西一一记下来。不必在意自己有没有牢牢记住，持续坚持学习，相信有一天，大概在三四个月以后，便开始能马上理解学习的内容了，甚至还能预测课程中的内容。这时候有些东西已经发生了变化，这可能意味着自己已经跨过了某些障碍，一些零散的知识点也开始在脑海中结成网络。</p>
 <p>这是一个从量变到质变的过程。从非程序员，到程序员，这绝对是一个质变，这样的质变绝不是一朝一夕可以完成的，初学者花费三四个月，甚至半年的时间是合理的。</p>
 <p><strong>要注重理解和实践，而非死记硬背</strong>，还有，就是放平心态，给自己足够的蜕变的时间。这便是来自这位国外程序员的学习经验，我觉得它至少会对一部分人有效，分享给你。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -245,7 +245,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -286,7 +286,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

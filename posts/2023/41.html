@@ -390,7 +390,7 @@ copy_button_selector = 'button.text-xs.dark\\:hover\\:text-gray-200'
 <p>这个示例很简单，没有输入，也没有输出————输出就是简单的打印，将 ChatGPT 返回的内容直接在终端中打印了一下。对于登录，我们也采用了最简单的方法————手动登录。在实际项目中，这些问题都需要细化。</p>
 <p>通过 playwright，我们实现了在本地调用远程私有 GPTs 的目的，数据是我们的，程序也是我们的，我们只是借用了 ChatGPT 的大语言模型能力。并且也不需要额外花费 API 调用费用，这是很划算的。基于本文示例，你还有哪些想法，想开发什么样的智能应用呢？欢迎留言讨论。</p>
 <p>最后说一下示例代码，完整的示例可以在公众号“艺述论”回复 10008 下载。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -398,7 +398,7 @@ copy_button_selector = 'button.text-xs.dark\\:hover\\:text-gray-200'
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -439,7 +439,7 @@ copy_button_selector = 'button.text-xs.dark\\:hover\\:text-gray-200'
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

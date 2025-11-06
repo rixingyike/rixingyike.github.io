@@ -375,7 +375,7 @@
 <p>编程大多数时间都是一个人做事情，微信小程序这门技术本身是相对独立的、语法简单的，更重要的是它还是个前端技术，它有丰富的表现力，一个按钮、一个图像、一段文本，这些都能给读者带来最直观的感受。而我们人类的大脑就需要这样接地气的反馈。如果学习一门语言，只能在终端里看到文本结果，有时候还只是黑白的，这会大大降低学员对反馈的满足感。</p>
 <p>欢迎留言提问。</p>
 <p>（2021年2月23日）</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -383,7 +383,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -424,7 +424,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

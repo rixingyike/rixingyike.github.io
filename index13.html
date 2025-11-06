@@ -784,6 +784,7 @@ Node.js 在 2009 的发布可谓石破天惊，天才程序员 Ryan Dahl 基于�
         </div>
     </div>
 
+    
     <!-- 微信公众号二维码浮动层 -->
     <div x-show="wechatModalOpen" 
          style="display: none;"
@@ -815,6 +816,7 @@ Node.js 在 2009 的发布可谓石破天惊，天才程序员 Ryan Dahl 基于�
             </div>
         </div>
     </div>
+    
 
 
 
@@ -859,7 +861,7 @@ Node.js 在 2009 的发布可谓石破天惊，天才程序员 Ryan Dahl 基于�
 
     <!-- 相关文章 -->
     
-    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
+    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -870,70 +872,70 @@ Node.js 在 2009 的发布可谓石破天惊，天才程序员 Ryan Dahl 基于�
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/40.html"
+                        <a href="posts&#x2F;2023/10.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            腾讯云 CDN回源 HOST 是设置自己的域名还是 github 的二级域名？
+                            普通人如何无需运气而致富？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-10-30</p>
+                    <p class="text-xs text-gray-500">2023-10-01</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/39.html"
+                        <a href="posts&#x2F;2023/09.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            五个吃饭好习惯保持好身材
+                            bun 介绍四：自动安装依赖项，bun 立志要做一个零配置的快速框架
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-10-09</p>
+                    <p class="text-xs text-gray-500">2023-09-28</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/38.html"
+                        <a href="posts&#x2F;2023/08.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            观《陈情令》
+                            Python脚本：如何一键登陆或开机自动登录公共区域的 WIFI？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-09-22</p>
+                    <p class="text-xs text-gray-500">2023-09-27</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/37.html"
+                        <a href="posts&#x2F;2023/06.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            冷切与喝酒
+                            Bun 介绍：bun 到底会吃掉多少内存？为何一个不大的博客程序就能吃掉700+MB内存?（二）
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-09-10</p>
+                    <p class="text-xs text-gray-500">2023-09-24</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/36.html"
+                        <a href="posts&#x2F;2023/07.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            能搞大故事策划，但不一定能把小故事写好
+                            bun 介绍三：dotenv 与 nodemon 都不再需要了
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-09-10</p>
+                    <p class="text-xs text-gray-500">2023-09-24</p>
                     
                 </div>
                 
@@ -1086,14 +1088,6 @@ Node.js 在 2009 的发布可谓石破天惊，天才程序员 Ryan Dahl 基于�
             <div class="divide-y divide-gray-200">
                 
                 <div class="p-3">
-                    <a href="/posts/"
-                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
-                        <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
-                    </a>
-                </div>
-                
-                <div class="p-3">
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
@@ -1114,6 +1108,14 @@ Node.js 在 2009 的发布可谓石破天惊，天才程序员 Ryan Dahl 基于�
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">notes</span>
                         <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">1</span>
+                    </a>
+                </div>
+                
+                <div class="p-3">
+                    <a href="/posts/"
+                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
+                        <span class="text-sm font-medium">posts</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
                     </a>
                 </div>
                 
@@ -1169,6 +1171,8 @@ Node.js 在 2009 的发布可谓石破天惊，天才程序员 Ryan Dahl 基于�
     <div class="card-body prose max-w-none">
         <h1>欢迎使用RustPress</h1>
 <p>这是从 <code>home.md</code> 注入到首页的内容区块。你可以在这里写欢迎词、公告、推荐内容或放置任意 Markdown 文案。上方是最新文章列表与分页，下方是 6 个导航卡片。</p>
+<p>仓库：https://github.com/rixingyike/rustpress
+包：https://crates.io/crates/rustpress</p>
 <h2>可用字段（front matter）</h2>
 <ul>
 <li><code>home_navs</code>: 一个数组，支持字段 <code>title</code>、<code>description</code>、<code>url</code>、<code>emoji</code>（或 <code>icon</code>）、<code>new_tab</code>、<code>cta</code>。</li>

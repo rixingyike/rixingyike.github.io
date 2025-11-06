@@ -307,7 +307,7 @@
 <p>@左耳朵耗子 还在世的时候，知名博主 @tinyfool 对他进行过一次采访，也是两个人，面对面交流。交流的内容中，部分是敏感的，以至于 @左耳朵耗子 生前视频都没有发出。后来 @左耳朵耗子 去世后，老友将这段专访拿了出来，以此纪念他。</p>
 <p>在视频中，@左耳朵耗子 问 @tinyfool：你为什么想做这样的采访？</p>
 <p>我感觉 @tinyfool 想做的就是 Lex Fridman 式的采访，是深入的交流与思考，所谈论的问题都是当下人类非常值得关注和思考的问题。但中外文化有差异，这样的播客目前在大陆应该很难开展起来。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -315,7 +315,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -356,7 +356,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

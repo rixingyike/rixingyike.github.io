@@ -354,7 +354,7 @@
 <p>目前在市场销售的，以浙江青田石、浙江萧山红、老挝红花石最为流行，其中青田石、老挝石还不乏精品出现。这三种章料是篆刻爱好者在当下最好的选择。不要选择一些质地不均甚至含有砂丁，质地软糯或质地太硬的石头，例如内蒙巴林石、东北辽宁及青海、甘肃的冻石、四川雅安绿（质地太硬）等章料。</p>
 <p>在青田石、萧山红、老挝石的选择上，也不要选择太便宜的石头，太便宜的石头因为质地不均匀所以走刀，偶尔有砂丁的还容易将刻刀崩坏。2.5cm 见方，单枚价格在10元以上的青田石一般都可以选用，15元以上的是稍好的。</p>
 <p>至于印钮，没有必要选择，附加额外工艺的章料必定有所加价。对于青田石，圆顶素章，打磨光滑精细就是很不错的选择。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -362,7 +362,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -403,7 +403,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

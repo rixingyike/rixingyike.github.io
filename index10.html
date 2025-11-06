@@ -815,6 +815,7 @@ API 网关模式。负载均衡、服务发现、数据过滤、权限验证等�
         </div>
     </div>
 
+    
     <!-- 微信公众号二维码浮动层 -->
     <div x-show="wechatModalOpen" 
          style="display: none;"
@@ -846,6 +847,7 @@ API 网关模式。负载均衡、服务发现、数据过滤、权限验证等�
             </div>
         </div>
     </div>
+    
 
 
 
@@ -890,7 +892,7 @@ API 网关模式。负载均衡、服务发现、数据过滤、权限验证等�
 
     <!-- 相关文章 -->
     
-    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
+    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -901,70 +903,70 @@ API 网关模式。负载均衡、服务发现、数据过滤、权限验证等�
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/40.html"
+                        <a href="posts&#x2F;2022/1013.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            腾讯云 CDN回源 HOST 是设置自己的域名还是 github 的二级域名？
+                            JavaScript到底是不是面向对象语言？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-10-30</p>
+                    <p class="text-xs text-gray-500">2022-10-13</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/39.html"
+                        <a href="posts&#x2F;2022/1012.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            五个吃饭好习惯保持好身材
+                            目前国内前端哪个UI类库用的人最多？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-10-09</p>
+                    <p class="text-xs text-gray-500">2022-10-12</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/38.html"
+                        <a href="posts&#x2F;2022/1011.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            观《陈情令》
+                            程序员大牛是如何编写程序的？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-09-22</p>
+                    <p class="text-xs text-gray-500">2022-10-11</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/37.html"
+                        <a href="posts&#x2F;2022/1010.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            冷切与喝酒
+                            编写干净、清晰代码的9个小技巧
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-09-10</p>
+                    <p class="text-xs text-gray-500">2022-10-10</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/36.html"
+                        <a href="posts&#x2F;2022/1009.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            能搞大故事策划，但不一定能把小故事写好
+                            Linux会因为开源而失败吗？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-09-10</p>
+                    <p class="text-xs text-gray-500">2022-10-09</p>
                     
                 </div>
                 
@@ -1117,14 +1119,6 @@ API 网关模式。负载均衡、服务发现、数据过滤、权限验证等�
             <div class="divide-y divide-gray-200">
                 
                 <div class="p-3">
-                    <a href="/posts/"
-                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
-                        <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
-                    </a>
-                </div>
-                
-                <div class="p-3">
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
@@ -1145,6 +1139,14 @@ API 网关模式。负载均衡、服务发现、数据过滤、权限验证等�
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">notes</span>
                         <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">1</span>
+                    </a>
+                </div>
+                
+                <div class="p-3">
+                    <a href="/posts/"
+                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
+                        <span class="text-sm font-medium">posts</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
                     </a>
                 </div>
                 
@@ -1200,6 +1202,8 @@ API 网关模式。负载均衡、服务发现、数据过滤、权限验证等�
     <div class="card-body prose max-w-none">
         <h1>欢迎使用RustPress</h1>
 <p>这是从 <code>home.md</code> 注入到首页的内容区块。你可以在这里写欢迎词、公告、推荐内容或放置任意 Markdown 文案。上方是最新文章列表与分页，下方是 6 个导航卡片。</p>
+<p>仓库：https://github.com/rixingyike/rustpress
+包：https://crates.io/crates/rustpress</p>
 <h2>可用字段（front matter）</h2>
 <ul>
 <li><code>home_navs</code>: 一个数组，支持字段 <code>title</code>、<code>description</code>、<code>url</code>、<code>emoji</code>（或 <code>icon</code>）、<code>new_tab</code>、<code>cta</code>。</li>

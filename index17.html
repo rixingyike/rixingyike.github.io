@@ -801,6 +801,7 @@
         </div>
     </div>
 
+    
     <!-- 微信公众号二维码浮动层 -->
     <div x-show="wechatModalOpen" 
          style="display: none;"
@@ -832,6 +833,7 @@
             </div>
         </div>
     </div>
+    
 
 
 
@@ -876,7 +878,7 @@
 
     <!-- 相关文章 -->
     
-    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
+    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -887,70 +889,70 @@
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/40.html"
+                        <a href="posts&#x2F;2023/41.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            腾讯云 CDN回源 HOST 是设置自己的域名还是 github 的二级域名？
+                            50 行 Python 代码调用私有 GPTs
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-10-30</p>
+                    <p class="text-xs text-gray-500">2023-11-15</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/39.html"
+                        <a href="posts&#x2F;2023/43.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            五个吃饭好习惯保持好身材
+                            悬念题材小说中的心理活动
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-10-09</p>
+                    <p class="text-xs text-gray-500">2023-11-12</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/38.html"
+                        <a href="posts&#x2F;2023/40.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            观《陈情令》
+                            警惕潜伏在生活环境中的假酒，谈日常如何选择安全又便宜的粮食酒？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-09-22</p>
+                    <p class="text-xs text-gray-500">2023-11-12</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/37.html"
+                        <a href="posts&#x2F;2023/38.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            冷切与喝酒
+                            一个成人网文语言风格：隐晦春光笔触
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-09-10</p>
+                    <p class="text-xs text-gray-500">2023-11-11</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/36.html"
+                        <a href="posts&#x2F;2023/39.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            能搞大故事策划，但不一定能把小故事写好
+                            我的 GPTs 训练提示
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-09-10</p>
+                    <p class="text-xs text-gray-500">2023-11-11</p>
                     
                 </div>
                 
@@ -1103,14 +1105,6 @@
             <div class="divide-y divide-gray-200">
                 
                 <div class="p-3">
-                    <a href="/posts/"
-                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
-                        <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
-                    </a>
-                </div>
-                
-                <div class="p-3">
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
@@ -1131,6 +1125,14 @@
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">notes</span>
                         <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">1</span>
+                    </a>
+                </div>
+                
+                <div class="p-3">
+                    <a href="/posts/"
+                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
+                        <span class="text-sm font-medium">posts</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
                     </a>
                 </div>
                 
@@ -1186,6 +1188,8 @@
     <div class="card-body prose max-w-none">
         <h1>欢迎使用RustPress</h1>
 <p>这是从 <code>home.md</code> 注入到首页的内容区块。你可以在这里写欢迎词、公告、推荐内容或放置任意 Markdown 文案。上方是最新文章列表与分页，下方是 6 个导航卡片。</p>
+<p>仓库：https://github.com/rixingyike/rustpress
+包：https://crates.io/crates/rustpress</p>
 <h2>可用字段（front matter）</h2>
 <ul>
 <li><code>home_navs</code>: 一个数组，支持字段 <code>title</code>、<code>description</code>、<code>url</code>、<code>emoji</code>（或 <code>icon</code>）、<code>new_tab</code>、<code>cta</code>。</li>

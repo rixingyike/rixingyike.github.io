@@ -288,7 +288,7 @@ func main() {
 <p>Go 语言关于接口的实现，就是一种「鸭子测试」的判定，只要一个结构体实现了某个接口的所有方法，就认为该结构体实现了该接口。这种做法简直太方便了！</p>
 <p>我 10 年前第一次在公司项目中使用这种语言，用了一次就爱不释手了，那时候我就想，不出十年，Go 语言就会被大多数程序员接受。果然，今天 Go 语言已经被称为互联网时代的 C 语言，在腾讯内部提交的代码中，据统计 Go 语言已经超过 C++ 成为第一热门语言。国内外有越来越多的程序员，还有公司，无论大厂小厂，都选择学习并在生产环境中应用了 Go 语言。</p>
 <p>最后，留一个问题给你：玩具大黄鸭经过「鸭子测试」的判定，被当成了鸭子，但其实它不是鸭子，如果有一天有人要给它喂食，还要它下蛋，怎么办？在 Go 语言中，还以本文中的示例为例，假设未来某一天接口 IGreeting 因为需求扩展添加了一位新成员 walk，但是 Duck 没有实现 walk 啊，这时候编译软件肯定会报错啊。如果项目中像 Duck 一样的结构体少还好办，如果很多且分散于项目各处，这种情况应当怎么办呢？</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -296,7 +296,7 @@ func main() {
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -337,7 +337,7 @@ func main() {
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

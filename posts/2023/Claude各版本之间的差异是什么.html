@@ -281,7 +281,7 @@
 <p>![1689985266063](image/Claude 各版本之间的差异是什么/1689985266063.png)</p>
 <p>至此，差异基本已经明白了。在 poe 内，如果你使用的 poe 是免费版本，可以使用受限的 Claude-instant 版本及次数受限的高级版本；如果使用的是付费版本，互动没有限制，特别在进行小说创意工作时，适合使用 Claude-instant-100k，它即强大，又能处理长文本，是真正可以与 GPT4 一较高下的模型。</p>
 <p>2023 年 7 月 21 日</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -289,7 +289,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -330,7 +330,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

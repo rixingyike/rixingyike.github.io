@@ -236,7 +236,7 @@
 <p>对于这三个缺点我们也不要太埋怨 GPT，我们人类有时候不也是这样吗？离下班还有 10 分钟在办公室里就已经坐立不安了；如果没有经过刻意练习大多数人的口算能力远远不如计算器，哪怕是一个最基础的计算器；对于我们不了解的领域，有时候我们也能振振有词地口若悬河，特别在面试一个重要岗位的时候。</p>
 <p>远古人在学会用火以后，开始食用熟肉，脑容量大增，神经元数量及连接大量增加，目前人类的生物学与计算机科学没有论文可以表明，人类大脑思考的过程就是大语言模型的 token 推演过程或类似，但它们确实很像。或许大语言模型仅是在某一个层面上模拟了人脑的运作方式，它确定还有进一步进化的空间，但在目前阶段，我们了解它的运行机制，了解它的原理和缺点，对于我们高效编写提示是很有必要的。</p>
 <p>2023 年 8 月 8 日</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -244,7 +244,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -285,7 +285,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

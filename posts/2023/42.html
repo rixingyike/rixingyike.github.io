@@ -284,7 +284,7 @@
 <p>在国内，一般认为董事会是为董事长服务的，因为他们的既得利益及将来的利益都仰仗于董事长，所以很难出现董事会罢免老板的情况出现。探长风闻有一家公司，事业做大之后老板也学别人成立了一个董事会，他自命董事长，把大太太、二太太、三太太都立为了董事，并赠与了相应的公司股权。一家人只有大太太与老板是合法夫妻，但其它人对此却毫无异义，相处得其乐融融——至少表面上如此，或者老板活着的时候如此。</p>
 <p>这样的公司能出现董事会署名董事长的情况吗？</p>
 <p>特别是那种，为了某一个初心或信念，而驱动的理念之争。我不知道 Sam Altman 是不是应该离开 OpenAI，也不知道多少年之后他会不会像乔布斯当年那样回归 OpenAI，但我对这种可以驱逐老板的文化与机制很赞赏！</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -292,7 +292,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -333,7 +333,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

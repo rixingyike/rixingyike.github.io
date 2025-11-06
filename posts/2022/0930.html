@@ -234,7 +234,7 @@
 <p>一般情况下，我们都会保持这种语言中哲学的纯粹，但有时候我发现我们开发者又很矛盾，例如 JS，它本来是弱类型的脚本语言，当我们在享受它简洁方便的语言特性时，又搞了一个 TypeScript 出来，希望它也像 Java 那样具有强类型的严谨。</p>
 <p>就像一个姑娘，有时候希望她泼辣，有时候又希望她文静。</p>
 <p>有一个语言，因为诞生的晚，吸收了众多现代语言的优点，既有强类型语言的优点，又有弱类型语言的优点，它就是 Go 语言。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -242,7 +242,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -283,7 +283,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

@@ -237,7 +237,7 @@
 <p>这真是真实一次痛彻心扉的难忘的经历。</p>
 <p>说一下我对产品经理的看法吧。三等产品经理是能画画图、写写文档，设计产品功能——当然有的甚至文档都不会写，这就很过分了。二等产品经理能从整体上考虑产品的健康性、合理性，譬如上面godaddy的问题，就是简简单单分别设计了用户权限控制和二次验证这两个功能，根本没有考虑到，如何用户收不到6位验证码，无法完成二次验证怎么办？为什么不提供用邮箱验证、用微信验证的次选方式呢？这就是没有产品的整体思维，只看到大象的腿和耳朵，并不知道自己在创造一头大象。一等产品经理，不但有整体思维，还能与市场连接，理解用户的真实需要，并能组织人才将需求实现之，打造创新产品并不断迭代之。</p>
 <p>当然，我只是有感而发，我并没有嘲笑很多国产产品经理只是三级水准的意思，我自己只是一名程序员，也达不到二级、一级的水平。在我心中，乔布斯是一级产品经理。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -245,7 +245,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -286,7 +286,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

@@ -239,7 +239,7 @@
 <p>但要减肥的话，还需要有能量缺口，在三餐之间，特别在晚上，要感觉胃是空的，有一点饥饿感。有时间再干点体力活，或者骑个车什么的，大概时间长了就能瘦。有饥饿感，是脂肪开始燃烧的信号。</p>
 <p>中年人检测午饭是不是符合以上五个习惯，是否吃得健康，只需要看自己的状态就可以了：看是否犯困。如果犯困，说明血糖已经大幅升高了，胰岛素大量生成并且进入大脑导致褪黑素的形成。褪黑素是促进睡眠的，褪黑素多了自然就犯困。有人说饭后血液去肠道消化食物了，所以大脑犯困，这个认知后来研究论断，科学家发现是不对的。饭吃好了，饭后是不犯困的，无论是不是中老年。</p>
 <p>10 月 9 日周四</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -247,7 +247,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -288,7 +288,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

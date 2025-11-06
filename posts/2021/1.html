@@ -220,7 +220,7 @@
 <p>时髦，这个词的含义在法国的字典里就是外国人来到巴黎学习怎么穿衣服。这个定义太过分了。</p>
 <p>这个巨变是怎么产生的呢？每年很多人去巴黎旅游的，如果只是在百货商场打个卡，在博物馆打个卡，而不了解巴黎这座城市成长历史的话，根本就不会知道林荫大道、孚日广场、塞纳河老桥？圣路易岛，还有五苏老马车的魅力。</p>
 <p>这个转变，在我看来在于两个字：连接。打造公共场所，让人与人之间的连接更加频繁；推倒城市的城墙，和人际之间看不见的城墙，让人与人之间的链接没有阻碍。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -228,7 +228,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -269,7 +269,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

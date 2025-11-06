@@ -460,7 +460,7 @@ components:
 <h2>小结</h2>
 <p>1946年电子计算机被发明出来的时候，当时没有多少人意识到它将发挥多大作用，我们现在知道的信息革命其实是我们后来总结的。今天开始的智能革命，其实具有同样的特征，如果说ChatGPT的发布还不能让你感到震撼的话，那么今天它发布的ChatGPT Plugins，应该能够引起你足够的重视了。一个联网的智能机器人，无穷的数据+无穷的算力，谁也不知道将产生怎样的结果。<strong>智能革命</strong>已经到来，AI或许不会取代的人，但会使用AI的人，一定会把不会使用AI的人取代。</p>
 <p>你对ChatGPT了解多少，开始试用了吗？如果你是一名程序员，开始研究它的API文档了吗？</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -468,7 +468,7 @@ components:
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -509,7 +509,7 @@ components:
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

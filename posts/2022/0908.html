@@ -276,7 +276,7 @@
 <p>为了讲好故事，有些话可以略写，甚至不写。这种错落有致的写法，才让读者觉得小说的「节奏」快。其实「节奏」只是一个读者主观的阅读体验罢了，加快叙事进度，不说多余的话，快点把故事讲完，在读者这边的感受结果就是三个字——节奏快。</p>
 <p>反过来，如何小说通篇内容都是情节大纲式的略写，抑或是事无巨细式的详写，读者的阅读感受要么是索然无味，要么是审美疲劳，读个几章内容就读下去了，这种情况在网文小说中很常见。有人说现在网文节奏变快了，金庸小说过时了。其实不是的，很多网文作者都没有什么写作经验，靠在小说中塞几个黄段子飞起，仅是金庸武侠小说中疏与密这一个技巧，就值得他们好好学习。</p>
 <p>2022年9月8日于北京</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -284,7 +284,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -325,7 +325,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

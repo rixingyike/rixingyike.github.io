@@ -234,7 +234,7 @@
 <p>出发点在职场中很重要。公司中总是充满各种矛盾，如果下属与上级之间一直没有分歧与争执，这多半是有问题的，这只是意味着矛盾被忽略或隐瞒了，没有被真正对待和解决。</p>
 <p>下属与上级对话，一个很重要的原则是：出发点始终站在公司这边。你可以站在所在团队的立场，与上司谈要求，这种情况有时候能成有时候不能成；你也可以站在事业部或分公司，站在你的上司所在的单位谈，这种情况下也并不能保证 100% 成功；你还可以站在整个公司、整个集团的角度谈，从这个角度可能也不能如愿，但一般不会失败。</p>
 <p>程序员个人做事，与在公司里做事的立场是完全不同的。个人开一个开源项目，出发点可以是藉由项目实践完善自己的技术体系，也可以是实现自己的一个技术设想，或者为社会上的一部分人带去实用价值。在公司里做事不是这样的，只有将出发点放在公司这边，才能一直顺风顺水；如果在公司里做事，仍然坚持个人做事的出发点，是早晚会出问题的，很多程序员因为太痴迷于技术，往往无意间忽略了这一点。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -242,7 +242,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -283,7 +283,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

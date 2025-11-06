@@ -274,7 +274,7 @@
 <p>该视频还介绍小程序与公众号之间的异同，还有小程序的发布流程等，大致了解一下就可以了。在目前来说，微信已经放弃原来的企业服务号，改由小程序肩负起提供企业服务的责任了。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/rixingyike/images/202120210325181026.png" alt="image-20210325181024653" /></p>
 <p>现在公众号是企业进行品牌宣传的窗口，视频号是企业在短视频时代攫取流量红利的手段，小程序才是企业为用户提供服务的场地。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -282,7 +282,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -323,7 +323,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

@@ -267,7 +267,7 @@
 <p>第三步是面向对象的架构与设计，这一步要落实在项目与具体的代码上了。第四步与第五步不再赘述。</p>
 <p>通过这种结合的软件开发方式，可以最大化发挥面向对象和面向过程开发思想的优点。前两步都是结构化面向过程的分析与设计，如果系统足够复杂，对这些前期工作都可以将需求拆开来，分给不同的开发者去调研。只有到了第三步，所有东西都已经确定了，这个时候才可以制定和施行严格的项目开发计划。</p>
 <p>还有，经过了第二步以后，第三步在进行架构设计时，也能产出更好的系统设计。而如果没有第二步，什么都不清楚呢，直接进入第三步，则可能有重新调整架构、返工、延时等项目风险出现。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -275,7 +275,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -316,7 +316,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

@@ -243,7 +243,7 @@
 <p>最近看了一个视频，说是韩国政府为了改善低迷的结婚率和生育率，在城市里为女性大大提供便利措施，提高女性居民的生活体验。结果搞了几年，结婚率和生育率反而更低了。原因也简单：改善女性居民生活、工作体验，是在助长女权主义，女权主义普遍了，婚姻满意率和生育率自然就下降了。</p>
 <p>我不是对女权主义有意见，实则这本书里的六原则也需要女性朋友学习下。如果能够独立，还能掌握这六原则的精髓，婚姻则更容易幸福。还有，这六原则体现的思想不仅可以应用在家庭中，还可以应用在职场中，甚至男性也可以学习和运用。它本质是一种以退为进的女性生存智慧。</p>
 <p><img src="assets/image-20250902150253107.png" alt="image-20250902150253107" /></p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -251,7 +251,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -292,7 +292,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

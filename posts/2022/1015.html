@@ -238,7 +238,7 @@
 <p>下面聊一下写长篇网文与编程范式的关系。</p>
 <p>在编程中，面向过程与面向对象的区别是，前者是在分析需求后，先定义好数据和一系列函数，依次线性地调用这些函数以完成需求；后者则是在分析后，先定义一系列对象，在对象中集成属性（数据）和方法，然后开始调用一个对象的方法，这个对象的方法又会自动调用另一个对象的方法，就这样一直调用下去，直到最后把需求完成。</p>
 <p>写短篇小说就像使用面向过程的方法开发软件，而写长篇小说，尤其写长篇网文小说，就像以面向对象的编程范式在开发软件。在长篇写作中，先定义好一个个有矛盾关系的势力、团队和个体，然后找到一个切入点，开始启动，这个动作就相当于面向对象开发中对第一个对象方法的调用，整部作品一旦启动，故事便可能会一直发展下去，直到结束。这是一种理想情况，这种方法说起来简单，真要做起来尚不知有什么困难。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -246,7 +246,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -287,7 +287,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

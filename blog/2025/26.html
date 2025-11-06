@@ -235,7 +235,7 @@
 <p>除了执行提示，Cursor在帮我提交代码的时候，写的message也更加动人（如图所示），彻底彰显了大语言模型的总结实力。不过，Cursor这两点做得好的地方我也不觉得先进，我相信CodeBuddy很快就能追上来，腾讯更新软件的速度一直都不慢。</p>
 <p>最后总结一下，如何使用AI IDE呢？应该像在公司给新人安排功能一样，给出清晰的任务，给出建议参考的文档、代码，给出编码喜好或规定——例如使用pnpm不是用npm这些，这些都清楚地给了，才能不被气死。</p>
 <p>2025年8月11日</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -243,7 +243,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -284,7 +284,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

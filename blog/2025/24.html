@@ -237,7 +237,7 @@
 <p>在讲到写段子就是不好好讲故事时，作者还举了一个例子，我印象很深刻。说有一个胖妹子到马场骑马，看到马场里有一头骆驼，就问场主，这里怎么有一头骆驼，场主说：“它哪里是骆驼——它是你昨天骑过的那匹马！”哈哈！所谓写段子就是要颠倒一下，先误导一下读者。如果这个段子这样讲：说一个妹子到马场骑马，看见一匹马像骆驼，问场主怎么回事，场主说是被你骑的，压弯了，这样讲是故事，不是段子。段子是两段式，前面要有误导，后面笑点要突然放出来，要简短扼要。</p>
 <p>在语言方面，作者洛宾作为一名段子手在书中也有直接的幽默应用，例如在讲到记录灵感时，他说每个人都要随时记录一闪而过的灵感，哪怕用传统的纸笔也可以，还说他以前曾经有一天就突然想到了一个绝佳的段子，因为没有及时记录下来，现在这个段子怎么也想不起来了——其实这个段子是不存在的，这一段文字本身就是一个段子。</p>
 <p>2025年8月8日</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -245,7 +245,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -286,7 +286,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

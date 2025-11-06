@@ -241,7 +241,7 @@
 <p>事实上那个姑父家我 11 岁去过一次，如今 40 多岁了再也没有去过第二次。那个年代还没有手机和网络，人与人之间见上一面，感觉都可能是这辈子最后一次。正如我当时吃到的那个五花肉冷切，是我吃过最好吃的，也可能是唯一吃到了。</p>
 <p>如果时光倒流，在那天晚上，我不会对叔喝酒再持反对态度。人生苦短，相逢时难别亦难，我会默默地为两位大人把酒斟满。</p>
 <p>喝吧！人生得意须尽欢，莫使他年空悲切。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -249,7 +249,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -290,7 +290,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

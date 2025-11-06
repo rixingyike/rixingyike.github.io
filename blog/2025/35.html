@@ -234,7 +234,7 @@
 <p>上周，和一个朋友聊天，她现在的公司竟然还有架构师、前端、后端、测试这样的分工。我不明白为什么还要有这样的分工，是活不够分，一分工要像印度阿三那样，要拆开分给几个人一起干吗？中国的私企老板什么时候这么慈善了？明明一个人+五台电脑就可以搞定的事，为什么要多雇五个碳基生物？</p>
 <p><img src="assets/G0F2Hg1bAAAmvDA.jpeg" alt="图像" /></p>
 <p>匪夷所思，不可思议。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -242,7 +242,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -283,7 +283,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

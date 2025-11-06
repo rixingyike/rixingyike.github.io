@@ -221,7 +221,7 @@
 <p>2，Py 被指是一种「石头汤」，像一个众人贡献的大杂烩，没有计划，没有规划，像是野蛮生长而成的。这是由它的生存哲学所决定的，Py 没有「我执」，开发者需要什么，它就添加什么；社区贡献什么优良的类库，它就吸纳什么。正是这种「海纳百川，不舍涓流」的精神，让 Py 存在了这么多年，为这么多人所使用。</p>
 <p>3，Py 没有严格的静态类型。但这是它的缺点，同时也是它的优点。是灵活？还是严谨？对于脚本语言，取灵活就好了，否则还不失去了脚本语言的本色？至于严谨，是后端编译类语言应该考虑的事情。</p>
 <p>结论：Py 是一门非常值得学习的脚本编程语言。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -229,7 +229,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -270,7 +270,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

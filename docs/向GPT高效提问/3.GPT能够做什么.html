@@ -237,7 +237,7 @@
 <p>GPT 基本上可以在任何行业、任何岗位上为人类提供有价值的专业建议，但有一点很重要，对于 GPT 提供的“专业建议”，要持==批判性吸收态度==。GPT 是无关真实的，无论我们觉得它回答的内容如何，它都不知道自己回答的内容是真是假。它只是按照人类的提示，努力从它的“大脑”中为人类搜寻可用的内容罢了。在它不擅长的领域，它经常会“幻想”，这便是被一些人诟病的“一本正经地胡说八道”。</p>
 <p>在团队中使用 GPT，团队中最好有一位该行业的专业坐镇，例如团队使用 GPT 辅助开发软件，必须有人对所使用的编程技术十分了解，在 GPT 胡说八道的时候知道它错了，并且能够对 GPT 提供的技术方案可以作出科学的评估。个人使用 GPT，看用在哪些行业，用在哪个行业，先要把该行业的理论研究学习一下，避免被 GPT 带到沟里去。</p>
 <p>2023 年 8 月 9 日星期三</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -245,7 +245,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -286,7 +286,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

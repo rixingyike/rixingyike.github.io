@@ -276,7 +276,7 @@
 <p>在使用体验上，我的感受是，==它们是辅助程序员编码的工具，但不是代替程序员思考的工具==；个别风马牛不相及的奇怪Bug，它们仍然是无力的，还需要老程序员的经验保驾护航；在软件的业务架构这个层面，仍然需要架构师领航，不能完全由它自主，不然你可能被它领到茄地里去了。</p>
 <p>所有Copilot工具都还只是工具，但它们确实可以提高程序员的工作效率，这是真的。它们值得用，不用纠结用哪个，只要有一个顺手、合用，用就是了。还有一点，除了学习如何使用之外，对编程语言和相关技术的思想，还是要学习和掌握的。</p>
 <p>2025年02月21日</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -284,7 +284,7 @@
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -325,7 +325,7 @@
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');

@@ -313,7 +313,7 @@ private var author :String = &quot;sban&quot;;
 <p>这两个作用域链均包括author变量，所以onMouseClick1与onMouseClick均不会输出undefined。</p>
 <p>2008年5日</p>
 <p>2021更新：AS3与js同属于ECMAScript语言，按理说在闭包概念上也应该是一致的。但从上文来说，AS3的闭包概念更宏大一些，貌似把类、方法、匿名函数都包括进去了。在js中，所谓闭包就是一个函数+不属于这个函数但被这个函数用到的上下文环境变量，两者绑在一起，闭合在一起，可以在程序中像一个独立的包裹一样传来传去。这篇小文是以前写AS3代码写的，关于三个闭包的分类叫法，并非我独创的，我记得当时Adobe文档或社区里也有这么分类的。</p>
-
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
     <!-- 版权信息 -->
@@ -321,7 +321,7 @@ private var author :String = &quot;sban&quot;;
         <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
         <p class="text-sm text-gray-700">
             本文链接：
-            <a :href="link" class="text-primary-600 hover:underline" x-text="link" target="_blank" rel="noopener"></a>
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
         <p class="text-sm text-gray-700 mt-2">
             许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
@@ -362,7 +362,7 @@ private var author :String = &quot;sban&quot;;
         var loadGiscus = function(){
             var s = document.createElement('script');
             s.src = 'https://giscus.app/client.js';
-            s.setAttribute('data-repo', 'rixingyike&#x2F;yishulun.com_discus');
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
             s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
             s.setAttribute('data-category', 'General');
             s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');
