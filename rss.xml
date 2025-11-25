@@ -5,6 +5,20 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>满江红·码夜</title>
+    <link>https://yishulun.com/blog/2025/50.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/50.html</guid>
+    <description>满江红·码夜 冷语闲言，都付与、北风卷叶。 凝神处、键盘声响，孤灯明灭。 指下生风驱倦意，屏前筑梦连星月。 待回眸、代码已成山，心欢悦。 烟蒂满，茶冷冽。 寒夜咏，窗凝雪。 纵千番调试，未凉心血。 三载云烟遮望眼，今朝意气冲云野。 看天边、破晓正来时，霞如血。 11 月 25 日</description>
+    <pubDate>2025-11-25</pubDate>
+  </item>
+  <item>
+    <title>浏览器插件开发经验分享二：如何处理日期控件</title>
+    <link>https://yishulun.com/blog/2025/51.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/51.html</guid>
+    <description>浏览器插件开发经验分享二：如何处理日期控件 今天搞定了小插件的“定时新章节”功能，我的浏览器小插件又有了小小更新。 定时新章节页面里用到了 Arco Picker 组件，处理这个组件 AI 一开始也是一头雾水。由于浏览器插件开发是将 js 注入到别人的 html 页面之内，所以我们不能引用类库、用常规的前端方法去设置日期/时间控件的值。 怎么办？ 直接设置是行不通的，设置完之后还会恢复成默认值。 像这样的情况，我在一篇文章分享中提过了，这是属于 AI 不熟悉的业务逻辑。当然现在我熟悉了，我指导 AI 完成了正确的开发，这是因为我懂前端开发，我懂 html/js/css 及浏览器插件接口这些东西。如果我不懂呢？我知道什么提示语能让 AI 做出正确的行动吗？我可以，并不代表别人也可以。如果我不共享我的项目数据、不提供给 AI 作为训练资料，别人遇到类似情况也要像我一样从头摸索。 今天我在 X</description>
+    <pubDate>2025-11-25</pubDate>
+  </item>
+  <item>
     <title>没用的软件又搞了一个！</title>
     <link>https://yishulun.com/blog/2025/48.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/48.html</guid>
