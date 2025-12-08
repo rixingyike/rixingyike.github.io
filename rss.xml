@@ -5,6 +5,13 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>如何在 Cursor 中使用 Agent？—— 不要随便重启会话</title>
+    <link>https://yishulun.com/blog/2025/57.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/57.html</guid>
+    <description>如何在 Cursor 中使用 Agent？—— 不要随便重启会话 Cursor 中最最重要的东西就是 Agent，我刚拿到这个软件的时候和使用其他 IDE 一样，是不查看使用说明的。好的产品应该让用户无师自通不是吗？但是不对，我们使用的是 AI IDE，我们在浏览器聊天窗口中使用 AI 还需要学习 Prompt 的写法呢，为什么使用一个更高级的 AI IDE 就有自信能充分使用其全部功能呢？ 事实上我是对的，我是学习一遍后，发现确实值得学习。 首先明确，什么是 Agent？ Agent 是能自主感知、思考、决策、行动的智能体。它不仅能自动感知，还能自行决策和行动，它就如小说中的角色，有性格，有主观能动性。 Agent 的工作原理、机制是什么？ Agent 是一个可以自主行动，取得反馈并自我纠正、自我完善进化的智能体。它的核心运行机制有六个节点：感知 -&amp;gt; 判断 -&amp;gt; 计划 -&amp;</description>
+    <pubDate>2025-12-08</pubDate>
+  </item>
+  <item>
     <title>记与姥爷的两三事</title>
     <link>https://yishulun.com/blog/2025/56.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/56.html</guid>
