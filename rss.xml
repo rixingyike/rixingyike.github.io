@@ -5,6 +5,13 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>如何在 Cursor 中自定义智能体（Agent）？</title>
+    <link>https://yishulun.com/blog/2025/58.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/58.html</guid>
+    <description>如何在 Cursor 中自定义智能体（Agent）？ 我想在 Cursor 中像其他软件那样自定义 Agent 和使用，但很遗憾，没有找到。查了一下，网上有关于自定义的方法，但在最新版本的 Cursor 软件里就是找不到相关操作路径。 进一步查找，我在 Cursor 官方论坛里看到一帮用户在骂 Cursor：“你们竟敢擅自移除了 agent 自定义功能，告诉你们，这使我非常愤怒，我将把这个消息告诉我团队里的每一个人！” 我仔细翻了一下，论坛里骂得最凶的其实不是程序员，而是产品经理或设计人员。只有一位老哥说了他的实际感受：“我觉得斜杠命令并不错，它代替了原来的自定义智能体。” 原来自定义 agent 这个功能已经被 Cursor 拿掉了。 Cursor 工程师对此的回复是：“将自定义模式迁移至斜杠命令里，已经被广泛接受并认可。我们发现原来许多用户在自定义模式时，并不会添加工具，有的还会移除工</description>
+    <pubDate>2025-12-08</pubDate>
+  </item>
+  <item>
     <title>如何在 Cursor 中使用 Agent？—— 不要随便重启会话</title>
     <link>https://yishulun.com/blog/2025/57.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/57.html</guid>
