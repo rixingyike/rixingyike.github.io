@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blog - 一树论</title>
+    <title>一树论</title>
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
     <link rel="stylesheet" href="/static/css/main.css">
     <!-- Alpine.js 库 -->
@@ -154,355 +154,352 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <main class="min-h-screen py-8">
             
-<div class="max-w-4xl mx-auto">
-    <!-- 页面头部 -->
-    <header class="text-center mb-12">
-        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">blog</h1>
-        <p class="text-lg text-gray-600">该分类下的所有文章 (8)</p>
-    </header>
+<div class="max-w-4xl mx-auto relative">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- 主要内容 -->
+        <div class="flex-1">
+            <article x-data="{ copiedLink: false, copiedCode: {} }">
+                <!-- 分类面包屑 -->
+                
+                <nav class="mb-6 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                        <span class="mx-2">›</span>
+                        <a href="/blog/" class="hover:text-primary-600">blog</a>
+                    
+                        <span class="mx-2">›</span>
+                        <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
+                    
+                </nav>
+                
+                
+                <!-- 文章头部 -->
+                <header class="mb-8 pb-8 border-b border-gray-200">
+                    <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-6 leading-tight">
+                        墨问互动脚本添加新功能：修改广告链接和统计撰写用时
+                    </h1>
+                    
+                    <div class="article-meta mb-6">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            2025-12-11
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <!-- 标签 -->
+                    
+                </header>
     
-    <!-- 文章列表 -->
-    <div class="space-y-6">
-        
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                <!-- 分类面包屑 -->
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog/" class="hover:text-primary-600">blog</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
-                    
-                </nav>
-                
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2025/61.html" 
-                           class="text-gray-900 hover:text-primary-600 transition-colors">
-                            看到有人说，不会有新的编程语言了，我有不同看法。
-                        </a>
-                    </h2>
-                    
-                    <p class="text-gray-600 mb-4"></p>
-                    
-                    <div class="flex flex-wrap items-center text-sm text-gray-500">
-                        
-                        <time datetime="2025-12-11" class="mr-4">2025-12-11</time>
-                        
-                        
-                        
-                    </div>
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                <!-- 分类面包屑 -->
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog/" class="hover:text-primary-600">blog</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
-                    
-                </nav>
-                
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2025/63.html" 
-                           class="text-gray-900 hover:text-primary-600 transition-colors">
-                            墨问互动脚本添加新功能：修改广告链接和统计撰写用时
-                        </a>
-                    </h2>
-                    
-                    <p class="text-gray-600 mb-4"></p>
-                    
-                    <div class="flex flex-wrap items-center text-sm text-gray-500">
-                        
-                        <time datetime="2025-12-11" class="mr-4">2025-12-11</time>
-                        
-                        
-                        
-                    </div>
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                <!-- 分类面包屑 -->
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog/" class="hover:text-primary-600">blog</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
-                    
-                </nav>
-                
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2025/62.html" 
-                           class="text-gray-900 hover:text-primary-600 transition-colors">
-                            Cursor 发布 Debug 新模式，我试用了一下，太赞了！
-                        </a>
-                    </h2>
-                    
-                    <p class="text-gray-600 mb-4"></p>
-                    
-                    <div class="flex flex-wrap items-center text-sm text-gray-500">
-                        
-                        <time datetime="2025-12-11" class="mr-4">2025-12-11</time>
-                        
-                        
-                        
-                    </div>
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                <!-- 分类面包屑 -->
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog/" class="hover:text-primary-600">blog</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
-                    
-                </nav>
-                
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2025/59.html" 
-                           class="text-gray-900 hover:text-primary-600 transition-colors">
-                            君子论心不论迹，偶有失蹄仍不失坦荡
-                        </a>
-                    </h2>
-                    
-                    <p class="text-gray-600 mb-4"></p>
-                    
-                    <div class="flex flex-wrap items-center text-sm text-gray-500">
-                        
-                        <time datetime="2025-12-10" class="mr-4">2025-12-10</time>
-                        
-                        
-                        
-                        <div class="flex flex-wrap items-center">
-                            <span class="mr-2">标签:</span>
-                            
-                                <a href="/tags/电影/" class="tag mr-2">电影</a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                <!-- 分类面包屑 -->
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog/" class="hover:text-primary-600">blog</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
-                    
-                </nav>
-                
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2025/60.html" 
-                           class="text-gray-900 hover:text-primary-600 transition-colors">
-                            谷歌 Agent 白皮书
-                        </a>
-                    </h2>
-                    
-                    <p class="text-gray-600 mb-4"></p>
-                    
-                    <div class="flex flex-wrap items-center text-sm text-gray-500">
-                        
-                        <time datetime="2025-12-10" class="mr-4">2025-12-10</time>
-                        
-                        
-                        
-                        <div class="flex flex-wrap items-center">
-                            <span class="mr-2">标签:</span>
-                            
-                                <a href="/tags/Agent/" class="tag mr-2">Agent</a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                <!-- 分类面包屑 -->
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog/" class="hover:text-primary-600">blog</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
-                    
-                </nav>
-                
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2025/58.html" 
-                           class="text-gray-900 hover:text-primary-600 transition-colors">
-                            如何在 Cursor 中自定义智能体（Agent）？
-                        </a>
-                    </h2>
-                    
-                    <p class="text-gray-600 mb-4"></p>
-                    
-                    <div class="flex flex-wrap items-center text-sm text-gray-500">
-                        
-                        <time datetime="2025-12-08" class="mr-4">2025-12-08</time>
-                        
-                        
-                        
-                        <div class="flex flex-wrap items-center">
-                            <span class="mr-2">标签:</span>
-                            
-                                <a href="/tags/Cursor/" class="tag mr-2">Cursor</a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                <!-- 分类面包屑 -->
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog/" class="hover:text-primary-600">blog</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
-                    
-                </nav>
-                
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2025/57.html" 
-                           class="text-gray-900 hover:text-primary-600 transition-colors">
-                            如何在 Cursor 中使用 Agent？—— 不要随便重启会话
-                        </a>
-                    </h2>
-                    
-                    <p class="text-gray-600 mb-4"></p>
-                    
-                    <div class="flex flex-wrap items-center text-sm text-gray-500">
-                        
-                        <time datetime="2025-12-08" class="mr-4">2025-12-08</time>
-                        
-                        
-                        
-                        <div class="flex flex-wrap items-center">
-                            <span class="mr-2">标签:</span>
-                            
-                                <a href="/tags/AI/" class="tag mr-2">AI</a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                <!-- 分类面包屑 -->
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog/" class="hover:text-primary-600">blog</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
-                    
-                </nav>
-                
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2025/56.html" 
-                           class="text-gray-900 hover:text-primary-600 transition-colors">
-                            记与姥爷的两三事
-                        </a>
-                    </h2>
-                    
-                    <p class="text-gray-600 mb-4"></p>
-                    
-                    <div class="flex flex-wrap items-center text-sm text-gray-500">
-                        
-                        <time datetime="2025-12-07" class="mr-4">2025-12-07</time>
-                        
-                        
-                        
-                    </div>
-                </div>
-            </article>
-            
-        
+    <!-- 文章内容 -->
+    <div class="article-content prose prose-lg max-w-none" 
+         x-init="$nextTick(() => {
+             // 为代码块添加复制按钮
+             document.querySelectorAll('pre code').forEach((codeBlock, index) => {
+                 const pre = codeBlock.parentElement;
+                 if (!pre.querySelector('.copy-code-btn')) {
+                     const button = document.createElement('button');
+                     button.className = 'copy-code-btn';
+                     button.textContent = '复制';
+                     button.setAttribute('x-data', `{ copied: false }`);
+                     button.setAttribute('@click', `navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent).then(() => { this.copied = true; setTimeout(() => this.copied = false, 2000) })`);
+                     button.setAttribute(':class', `{ 'bg-green-600': copied }`);
+                     button.setAttribute('x-text', `copied ? '已复制' : '复制'`);
+                     
+                     pre.style.position = 'relative';
+                     pre.appendChild(button);
+                 }
+             });
+         })">
+        <h1>墨问互动脚本添加新功能：修改广告链接和统计撰写用时</h1>
+<p><a href="https://note.mowen.cn/detail/fpZDPns55rVUIN8FjfT3c">https://note.mowen.cn/detail/fpZDPns55rVUIN8FjfT3c</a></p>
+<p>墨问互动笔记发布后，我每天都在用，用得不亦乐乎！为了方便墨友使用，今天又添加了两项小的功能：</p>
+<pre><code>
+1. 底部邀请码原来写的是我的链接，现在你只需要在脚本中找到如图所示的地址，就可以修改为自己的地址。
+
+2. 在最后添加了撰写耗时，统计从敲下第一个字到最后发布占用了您多少宝贵时间。
+
+</code></pre>
+<p>bye，就写这么多，欢迎试用。</p>
+<p>📅 2025 年 12 月 11 日周四</p>
+<p><img src="assets/image_1765423963.jpg" alt="图片" /></p>
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
-    
-    
-    <div class="mt-12">
-        <p class="text-sm text-gray-700 text-center">
-            第 <span class="font-medium">1</span> 到 <span class="font-medium">8</span> 条
+    <!-- 版权信息 -->
+    <div class="mt-10 bg-gray-50 rounded-lg border border-gray-200 p-4" x-data="{domain: 'https:&#x2F;&#x2F;yishulun.com', link: 'https:&#x2F;&#x2F;yishulun.com' + window.location.pathname}">
+        <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
+        <p class="text-sm text-gray-700">
+            本文链接：
+            <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)" target="_blank" rel="noopener"></a>
         </p>
-        <nav class="mt-4 flex justify-center gap-3" aria-label="Pagination">
-            
-            <a href="&#x2F;blog&#x2F;index2.html" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                上一页
-            </a>
-            
-
-            
-            <span class="inline-flex items-center px-4 py-2 border border-gray-200 text-sm font-medium rounded-md text-gray-300 bg-gray-100 cursor-not-allowed">
-                下一页
-            </span>
-            
-        </nav>
+        <p class="text-sm text-gray-700 mt-2">
+            许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
+            <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener" class="text-primary-600 hover:underline">查看许可说明</a>
+        </p>
     </div>
+
+    <!-- 分享功能 -->
+    <div class="mt-12 bg-gray-50 rounded-lg">
+        <h4 class="text-lg font-semibold mb-4 text-gray-900 p-4 pb-0">分享这篇文章</h4>
+        <div class="flex flex-wrap gap-3 p-4">
+            <button onclick="shareToTwitter()" 
+                    class="btn-outline inline-flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+                Twitter
+            </button>
+            <button @click="navigator.clipboard.writeText(window.location.href).then(() => { copiedLink = true; setTimeout(() => copiedLink = false, 2000) })" 
+                    class="btn-outline inline-flex items-center"
+                    :class="{ 'bg-green-100 text-green-800 border-green-300': copiedLink }">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                <span x-text="copiedLink ? '已复制' : '复制链接'"></span>
+            </button>
+        </div>
+    </div>
+
     
+    <!-- 评论区域（Giscus，懒加载） -->
+    <div id="comments" class="mt-12">
+        <h4 class="text-lg font-semibold mb-4 text-gray-900">评论</h4>
+        <div id="giscus-container"></div>
+    </div>
+    <script>
+    (function(){
+        var loadGiscus = function(){
+            var s = document.createElement('script');
+            s.src = 'https://giscus.app/client.js';
+            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
+            s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
+            s.setAttribute('data-category', 'General');
+            s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');
+            s.setAttribute('data-mapping', 'pathname');
+            s.setAttribute('data-strict', '1');
+            s.setAttribute('data-reactions-enabled', '1');
+            s.setAttribute('data-emit-metadata', '0');
+            s.setAttribute('data-input-position', 'top');
+            s.setAttribute('data-loading', 'lazy');
+            s.setAttribute('data-theme', 'preferred_color_scheme');
+            s.setAttribute('data-lang', 'zh-CN');
+            s.setAttribute('crossorigin', 'anonymous');
+            s.async = true;
+            (document.getElementById('giscus-container') || document.body).appendChild(s);
+        };
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGiscus);
+        } else {
+            window.addEventListener('load', function(){ setTimeout(loadGiscus, 1200); });
+        }
+    })();
+    </script>
+    
+    
+                <!-- 返回顶部 -->
+                <div class="text-center mt-8">
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                            class="btn-secondary inline-flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                        </svg>
+                        返回顶部
+                    </button>
+                </div>
+            </article>
+        </div>
+        
+        
+            <!-- 目录组件 -->
+<div class="toc-container fixed right-4 top-20 z-40 hidden xl:block" 
+     x-data="{ 
+         tocOpen: true, 
+         activeId: '',
+         headings: [],
+         init() {
+             this.generateToc();
+             this.observeHeadings();
+         },
+         generateToc() {
+             const content = document.querySelector('.prose, .card-body');
+             if (!content) return;
+             
+             const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+             this.headings = Array.from(headings).map((heading, index) => {
+                 const id = heading.id || `heading-${index}`;
+                 heading.id = id;
+                 return {
+                     id: id,
+                     text: heading.textContent.trim(),
+                     level: parseInt(heading.tagName.charAt(1)),
+                     element: heading
+                 };
+             });
+         },
+         observeHeadings() {
+             if (this.headings.length === 0) return;
+             
+             const observer = new IntersectionObserver((entries) => {
+                 entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                         this.activeId = entry.target.id;
+                     }
+                 });
+             }, {
+                 rootMargin: '-20% 0px -80% 0px'
+             });
+             
+             this.headings.forEach(heading => {
+                 observer.observe(heading.element);
+             });
+         },
+         scrollToHeading(id) {
+             const element = document.getElementById(id);
+             if (element) {
+                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+             }
+         }
+     }"
+     x-init="init()">
+    
+    <!-- 目录切换按钮 -->
+    <button @click="tocOpen = !tocOpen" 
+            class="mb-2 p-2 bg-white rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-200"
+            title="目录">
+        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+    
+    <!-- 目录内容 -->
+    <div x-show="tocOpen" 
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 transform scale-95"
+         x-transition:enter-end="opacity-100 transform scale-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 transform scale-100"
+         x-transition:leave-end="opacity-0 transform scale-95"
+         class="bg-white rounded-lg shadow-xl border border-gray-200 p-4 max-w-xs w-64 max-h-96 overflow-y-auto">
+        
+        <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-gray-900">目录</h3>
+            <button @click="tocOpen = false" class="text-gray-400 hover:text-gray-600">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="space-y-1">
+            <template x-for="heading in headings" :key="heading.id">
+                <a @click.prevent="scrollToHeading(heading.id)" 
+                   :class="{
+                       'text-primary-600 bg-primary-50 border-l-2 border-primary-600': activeId === heading.id,
+                       'text-gray-600 hover:text-gray-900 hover:bg-gray-50': activeId !== heading.id,
+                       'pl-2': heading.level === 1,
+                       'pl-4': heading.level === 2,
+                       'pl-6': heading.level === 3,
+                       'pl-8': heading.level === 4,
+                       'pl-10': heading.level === 5,
+                       'pl-12': heading.level === 6
+                   }"
+                   class="block py-1 px-2 text-sm cursor-pointer rounded transition-colors duration-150"
+                   x-text="heading.text">
+                </a>
+            </template>
+        </nav>
+        
+        <div x-show="headings.length === 0" class="text-sm text-gray-500 text-center py-4">
+            暂无目录
+        </div>
+    </div>
 </div>
+
+<style>
+/* 移动端隐藏目录 */
+@media (max-width: 1279px) {
+    .toc-container {
+        display: none !important;
+    }
+}
+
+/* 目录滚动条样式 */
+.toc-container .max-h-96::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+</style>
+
+        
+    </div>
+</div>
+
+<script>
+function shareToTwitter() {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(document.title);
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+}
+</script>
  
         </main>
     </div>
     
     <!-- 广告位1：底部广告（版权区上方） -->
+    
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="flex flex-col items-center p-4 text-center">
+                    <!-- 广告图片 -->
+                    <div class="mb-3">
+                        <img src="&#x2F;static&#x2F;images&#x2F;book-wegame.png" 
+                              alt="微信小游戏开发" 
+                              class="w-48 h-60 object-cover rounded-md mx-auto"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMTkyIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiBmaWxsPSIjREJFRkZGIi8+Cjx0ZXh0IHg9Ijk2IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMzc2RkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7kuLvpopjlpLTlg488L3R4dD4KPC9zdmc+'">
+                    </div>
+                    
+                    <!-- 广告信息 -->
+                    <div class="max-w-sm">
+                        <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+                            微信小游戏开发
+                        </h2>
+                        
+                        <p class="text-gray-700 text-sm mb-3">学习微信小游戏开发技术，掌握游戏开发全流程</p>
+                        
+                        
+                        <!-- 查看详情按钮 -->
+                        <div class="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow-sm transition-colors text-sm">
+                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                            </svg>
+                            查看详情
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    
     
     
     <!-- 页脚 -->

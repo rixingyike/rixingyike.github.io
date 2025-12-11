@@ -5,6 +5,41 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>看到有人说，不会有新的编程语言了，我有不同看法。</title>
+    <link>https://yishulun.com/blog/2025/61.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/61.html</guid>
+    <description>看到有人说，不会有新的编程语言了，我有不同看法。 他说，新发明的编程语言在推广过程中都将遇到一个障碍：缺少训练数据，AI 不会写。所以这个世界上可能不会再出现新的主流编程语言了。 我有不同看法，且有相反的直觉，我觉得新编程语言会层出不穷。理由有三： 大模型现在不依靠预训练就能写出正确代码，只要有文档和示例，Agent 就能写出新语言的正确代码。 随着 AI 的爆发，编程生产力已经开始大幅提高，人类在量子计算、类脑运算、星际导航等许多新领域会诞生新的编程需求，正如过去 C 语言要解决系统与硬件之间的兼容问题，Python 要解决马上编写脚本下一秒就出结果的快速需求问题，新领域也会召唤新语言出现。当旧语言不能很好满足需求的时候，新语言就会被发明出来。 我觉得最重要的，在已有编程语言可以满足需求的领域，很多公司为了树立自己的护城河也会发明创造一门新编程语言，然后把示例、文档藏在自己手里。这门语言</description>
+    <pubDate>2025-12-11</pubDate>
+  </item>
+  <item>
+    <title>墨问互动脚本添加新功能：修改广告链接和统计撰写用时</title>
+    <link>https://yishulun.com/blog/2025/63.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/63.html</guid>
+    <description>墨问互动脚本添加新功能：修改广告链接和统计撰写用时 https://note.mowen.cn/detail/fpZDPns55rVUIN8FjfT3c 墨问互动笔记发布后，我每天都在用，用得不亦乐乎！为了方便墨友使用，今天又添加了两项小的功能： 1. 底部邀请码原来写的是我的链接，现在你只需要在脚本中找到如图所示的地址，就可以修改为自己的地址。 2. 在最后添加了撰写耗时，统计从敲下第一个字到最后发布占用了您多少宝贵时间。 bye，就写这么多，欢迎试用。 📅 2025 年 12 月 11 日周四</description>
+    <pubDate>2025-12-11</pubDate>
+  </item>
+  <item>
+    <title>Cursor 发布 Debug 新模式，我试用了一下，太赞了！</title>
+    <link>https://yishulun.com/blog/2025/62.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/62.html</guid>
+    <description>Cursor 发布 Debug 新模式，我试用了一下，太赞了！ 原来 Cursor 有三种 Agent 模式：Agent、Plan 和 Chat，Debug 是新添加的第四种模式。我没有看文档，看到后直接用，验证了那句话：好的产品设计，就是不需要新手引导和文档说明。 在之前，对于复杂的 Bug，就是那种涉及链条足够长，有好几个函数可能有关，解决这类 Bug 我的方法是这样的：步步为营，告诉 AI 把所有涉及的函数按照调用顺序列出来，一个一个给我检查、调试、解决。当然了，它不会测试，测试环节由我代劳，我判定后，告诉它结果，它再接着处理下一个函数。 现在 —— 我不确定 Cursor 是不是在暗处偷偷观察我，就在我用步步为营的妙法高效解决了那么几个 Bug 之后，Cursor 于今天（12 月 11 日）早上突然发布更新，将我的步步为营大法内化了，推出了 Debug 模式。 如图所示，启用该模</description>
+    <pubDate>2025-12-11</pubDate>
+  </item>
+  <item>
+    <title>君子论心不论迹，偶有失蹄仍不失坦荡</title>
+    <link>https://yishulun.com/blog/2025/59.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/59.html</guid>
+    <description>君子论心不论迹，偶有失蹄仍不失坦荡 “论迹不论心，论心世上无完人。” 这句话出自清代《围炉夜话》。我看完《控方证人》有了相反的感悟，我觉得，君子论心不论迹，偶有失蹄，仍不失坦荡。 我这个想法在律师身上是绝对不能有的，律师讲究一个确定性，为客户提供稳定性的意见和建议。最近国内有一档律师都市剧《即刻上场》在热播，这部剧里面就强调这种冰冷的专业性。我在看了最近复活的电影《控方证人》之后，对比发现，剧里的威尔弗里德爵士，他是伦敦著名律师，与《即刻上场》里的律师有着天壤之别。我说君子论心不论迹，偶有失蹄仍不失坦荡，指的是《控方证人》里的女主角克里斯汀，也是该片片名所指。 这部电影正片只有 8 分钟，主要剧情用四个反转就可以讲明白： 1，克里斯汀愿意为丈夫伦纳德提供不在场证明，证明其无罪。 2，第一次反转，克里斯汀见过威尔弗里德爵士之后，改变了主意，由辩方证人改做控方证人，证明伦纳德有罪。 3，第二次</description>
+    <pubDate>2025-12-10</pubDate>
+  </item>
+  <item>
+    <title>谷歌 Agent 白皮书</title>
+    <link>https://yishulun.com/blog/2025/60.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/60.html</guid>
+    <description>谷歌 Agent 白皮书 今年 Agent 绝对是一个热词，今天我看到一位咖啡店老板学习了谷歌 Agent 白皮书，还撰写了专栏。我好奇作者申老板眼中的 Agent 是什么样子，要知道他并不是技术人员，他现在也在开一家咖啡店，可以说是一位咖啡师。以下是我对其专栏的学习和对谷歌 Agent 白皮书的研究。 前言：AI 为什么必须变成 Agent？ 前言主要讲了 AI 调用工具扩展自己的能力是发展必然。作者用咖啡店补货，说明实体店需要的是能自主识别、规划、（调用工具）行动的 AI，即 Agent。AI 开始是自己玩，提供在线聊天互动 -&amp;gt; 接着是通过 MCP 协议可以调用其它在线系统，可以调用的被统称为工具，例如浏览器、文件读取、终端（Grep）、数据库存取等 -&amp;gt; 接着是有了感官，开始接触现实世界，直接从现实中获取信息，不过这恐怕要等到 2032 年 Optimus 发布。 第二</description>
+    <pubDate>2025-12-10</pubDate>
+  </item>
+  <item>
     <title>如何在 Cursor 中自定义智能体（Agent）？</title>
     <link>https://yishulun.com/blog/2025/58.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/58.html</guid>
