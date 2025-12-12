@@ -29,8 +29,11 @@
   <url><loc>https://yishulun.com/index26.html</loc></url>
   <url><loc>https://yishulun.com/index27.html</loc></url>
   <url><loc>https://yishulun.com/index28.html</loc></url>
+  <url><loc>https://yishulun.com/index29.html</loc></url>
   <url><loc>https://yishulun.com/blog/2025/66.html</loc></url>
   <url><loc>https://yishulun.com/blog/2025/65.html</loc></url>
+  <url><loc>https://yishulun.com/blog/2025/69.html</loc></url>
+  <url><loc>https://yishulun.com/blog/2025/68.html</loc></url>
   <url><loc>https://yishulun.com/blog/2025/67.html</loc></url>
   <url><loc>https://yishulun.com/blog/2025/64.html</loc></url>
   <url><loc>https://yishulun.com/blog/2025/61.html</loc></url>
@@ -260,126 +263,85 @@
   <url><loc>https://yishulun.com/docs/向GPT高效提问/README.html</loc></url>
   <url><loc>https://yishulun.com/home.html</loc></url>
   <url><loc>https://yishulun.com/notes/README.html</loc></url>
-  <url><loc>https://yishulun.com/tags/Agent/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/Linux/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/Github/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/短剧/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/测试/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/自由控件/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/自由软件/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/IndieHacker/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/美食/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/技术工具/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/计算机原理/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/国画/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/MCP/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/影视/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/极客时间/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/ChatGPT/index1.html</loc></url>
-  <url><loc>https://yishulun.com/tags/ChatGPT/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/小说/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/编码规范/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/类库/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/人工智能/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/AI IDE/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/笔记工具/index.html</loc></url>
   <url><loc>https://yishulun.com/tags/AI/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/电影/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/bun/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/Linux/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/python/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/管理/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/烹饪技巧/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/技术工具/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/Cursor/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/软件更新/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/开发者工具/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/科幻/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/IndieHacker/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/极客时间/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/小程序从0到1/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/诗歌/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/软件开发/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/TVP/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/商业/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/个人效率/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/测试/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/Github/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/AI总结/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/编程工具/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/创新/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/重大事件/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/AS3 Expert/index1.html</loc></url>
+  <url><loc>https://yishulun.com/tags/AS3 Expert/index.html</loc></url>
   <url><loc>https://yishulun.com/tags/网文创作/index1.html</loc></url>
   <url><loc>https://yishulun.com/tags/网文创作/index2.html</loc></url>
   <url><loc>https://yishulun.com/tags/网文创作/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/诗歌/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/小程序从0到1/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/笔记/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/编程/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/Cursor/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/架构/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/软件开发/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/价值观/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/诗词/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/学习/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/TVP/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/读书笔记/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/Grok/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/美食实验/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/小说/index.html</loc></url>
   <url><loc>https://yishulun.com/tags/Default/index1.html</loc></url>
   <url><loc>https://yishulun.com/tags/Default/index2.html</loc></url>
   <url><loc>https://yishulun.com/tags/Default/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/bun/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/技术分享/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/微信开发/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/重大事件/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/个人效率/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/科幻/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/AI笔记软件/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/语言/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/人工智能/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/软件更新/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/AI总结/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/笔记工具/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/国画/index.html</loc></url>
   <url><loc>https://yishulun.com/tags/马斯克/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/编程工具/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/Copilot/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/开发者工具/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/创新/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/终端脚本/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/家常菜/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/面向对象/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/AS3 Expert/index1.html</loc></url>
-  <url><loc>https://yishulun.com/tags/AS3 Expert/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/Grok/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/面向过程/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/python/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/电影/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/管理/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/Rust/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/AI IDE/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/类库/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/编码规范/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/数字化/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/微信开发/index.html</loc></url>
   <url><loc>https://yishulun.com/tags/篆刻/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/词/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/商业/index.html</loc></url>
-  <url><loc>https://yishulun.com/tags/微服务/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/面向对象/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/计算机原理/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/学习/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/诗词/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/自由控件/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/Rust/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/影视/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/价值观/index.html</loc></url>
   <url><loc>https://yishulun.com/tags/DeepSeek/index.html</loc></url>
-  <url><loc>https://yishulun.com/docs/novel/index.html</loc></url>
-  <url><loc>https://yishulun.com/docs/index1.html</loc></url>
-  <url><loc>https://yishulun.com/docs/index2.html</loc></url>
-  <url><loc>https://yishulun.com/docs/index.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2009/index.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2023/index1.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2023/index2.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2023/index3.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2023/index4.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2023/index5.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2023/index6.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2023/index.html</loc></url>
-  <url><loc>https://yishulun.com/blog/2025/index1.html</loc></url>
-  <url><loc>https://yishulun.com/blog/2025/index2.html</loc></url>
-  <url><loc>https://yishulun.com/blog/2025/index3.html</loc></url>
-  <url><loc>https://yishulun.com/blog/2025/index4.html</loc></url>
-  <url><loc>https://yishulun.com/blog/2025/index5.html</loc></url>
-  <url><loc>https://yishulun.com/blog/2025/index6.html</loc></url>
-  <url><loc>https://yishulun.com/blog/2025/index7.html</loc></url>
-  <url><loc>https://yishulun.com/blog/2025/index8.html</loc></url>
-  <url><loc>https://yishulun.com/blog/2025/index.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2021/index1.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2021/index2.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2021/index3.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2021/index.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2020/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/笔记/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/Copilot/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/家常菜/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/架构/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/短剧/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/自由软件/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/MCP/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/技术分享/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/豆腐/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/编程/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/词/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/语言/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/终端脚本/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/美食/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/ChatGPT/index1.html</loc></url>
+  <url><loc>https://yishulun.com/tags/ChatGPT/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/面向过程/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/微服务/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/数字化/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/Agent/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/AI笔记软件/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/读书笔记/index.html</loc></url>
+  <url><loc>https://yishulun.com/tags/煮粥/index.html</loc></url>
   <url><loc>https://yishulun.com/docs/claude/index.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2019/index.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2022/index1.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2022/index2.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2022/index3.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2022/index4.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2022/index.html</loc></url>
-  <url><loc>https://yishulun.com/docs/向GPT高效提问/index.html</loc></url>
-  <url><loc>https://yishulun.com/docs/rust/index.html</loc></url>
-  <url><loc>https://yishulun.com/notes/index.html</loc></url>
-  <url><loc>https://yishulun.com/blog/index1.html</loc></url>
-  <url><loc>https://yishulun.com/blog/index2.html</loc></url>
-  <url><loc>https://yishulun.com/blog/index3.html</loc></url>
-  <url><loc>https://yishulun.com/blog/index4.html</loc></url>
-  <url><loc>https://yishulun.com/blog/index5.html</loc></url>
-  <url><loc>https://yishulun.com/blog/index6.html</loc></url>
-  <url><loc>https://yishulun.com/blog/index7.html</loc></url>
-  <url><loc>https://yishulun.com/blog/index8.html</loc></url>
-  <url><loc>https://yishulun.com/blog/index.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2024/index.html</loc></url>
   <url><loc>https://yishulun.com/posts/index1.html</loc></url>
   <url><loc>https://yishulun.com/posts/index2.html</loc></url>
   <url><loc>https://yishulun.com/posts/index3.html</loc></url>
@@ -398,19 +360,64 @@
   <url><loc>https://yishulun.com/posts/index16.html</loc></url>
   <url><loc>https://yishulun.com/posts/index17.html</loc></url>
   <url><loc>https://yishulun.com/posts/index.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2018/index.html</loc></url>
-  <url><loc>https://yishulun.com/posts/2008/index.html</loc></url>
+  <url><loc>https://yishulun.com/docs/index1.html</loc></url>
+  <url><loc>https://yishulun.com/docs/index2.html</loc></url>
+  <url><loc>https://yishulun.com/docs/index.html</loc></url>
+  <url><loc>https://yishulun.com/docs/向GPT高效提问/index.html</loc></url>
+  <url><loc>https://yishulun.com/notes/index.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2022/index1.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2022/index2.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2022/index3.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2022/index4.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2022/index.html</loc></url>
   <url><loc>https://yishulun.com/posts/2010/index.html</loc></url>
-  <url><loc>https://yishulun.com/archives/2021.html</loc></url>
-  <url><loc>https://yishulun.com/archives/2018.html</loc></url>
-  <url><loc>https://yishulun.com/archives/2024.html</loc></url>
+  <url><loc>https://yishulun.com/blog/index1.html</loc></url>
+  <url><loc>https://yishulun.com/blog/index2.html</loc></url>
+  <url><loc>https://yishulun.com/blog/index3.html</loc></url>
+  <url><loc>https://yishulun.com/blog/index4.html</loc></url>
+  <url><loc>https://yishulun.com/blog/index5.html</loc></url>
+  <url><loc>https://yishulun.com/blog/index6.html</loc></url>
+  <url><loc>https://yishulun.com/blog/index7.html</loc></url>
+  <url><loc>https://yishulun.com/blog/index8.html</loc></url>
+  <url><loc>https://yishulun.com/blog/index.html</loc></url>
+  <url><loc>https://yishulun.com/docs/novel/index.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2021/index1.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2021/index2.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2021/index3.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2021/index.html</loc></url>
+  <url><loc>https://yishulun.com/blog/2025/index1.html</loc></url>
+  <url><loc>https://yishulun.com/blog/2025/index2.html</loc></url>
+  <url><loc>https://yishulun.com/blog/2025/index3.html</loc></url>
+  <url><loc>https://yishulun.com/blog/2025/index4.html</loc></url>
+  <url><loc>https://yishulun.com/blog/2025/index5.html</loc></url>
+  <url><loc>https://yishulun.com/blog/2025/index6.html</loc></url>
+  <url><loc>https://yishulun.com/blog/2025/index7.html</loc></url>
+  <url><loc>https://yishulun.com/blog/2025/index8.html</loc></url>
+  <url><loc>https://yishulun.com/blog/2025/index.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2018/index.html</loc></url>
+  <url><loc>https://yishulun.com/docs/rust/index.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2009/index.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2019/index.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2023/index1.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2023/index2.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2023/index3.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2023/index4.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2023/index5.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2023/index6.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2023/index.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2020/index.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2024/index.html</loc></url>
+  <url><loc>https://yishulun.com/posts/2008/index.html</loc></url>
   <url><loc>https://yishulun.com/archives/2023.html</loc></url>
-  <url><loc>https://yishulun.com/archives/2008.html</loc></url>
-  <url><loc>https://yishulun.com/archives/2020.html</loc></url>
-  <url><loc>https://yishulun.com/archives/2019.html</loc></url>
-  <url><loc>https://yishulun.com/archives/2010.html</loc></url>
+  <url><loc>https://yishulun.com/archives/2021.html</loc></url>
   <url><loc>https://yishulun.com/archives/2025.html</loc></url>
+  <url><loc>https://yishulun.com/archives/2019.html</loc></url>
+  <url><loc>https://yishulun.com/archives/2018.html</loc></url>
+  <url><loc>https://yishulun.com/archives/2020.html</loc></url>
+  <url><loc>https://yishulun.com/archives/2008.html</loc></url>
+  <url><loc>https://yishulun.com/archives/2010.html</loc></url>
   <url><loc>https://yishulun.com/archives/2022.html</loc></url>
+  <url><loc>https://yishulun.com/archives/2024.html</loc></url>
   <url><loc>https://yishulun.com/tags.html</loc></url>
   <url><loc>https://yishulun.com/categories.html</loc></url>
   <url><loc>https://yishulun.com/archives.html</loc></url>
