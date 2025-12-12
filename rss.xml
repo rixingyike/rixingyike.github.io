@@ -12,6 +12,13 @@
     <pubDate>2025-12-13</pubDate>
   </item>
   <item>
+    <title>我感觉现在我无比强大</title>
+    <link>https://yishulun.com/blog/2025/70.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/70.html</guid>
+    <description>我感觉现在我无比强大 接上一篇，接着聊 Cursor。我感叹国内没有一款可以平替 Cursor 的 AI IDE，最好是 token 免费的，至少我不用背着梯子使用，可以畅快淋漓地使用。 自从我阅读了 Google Agent 白皮书，我明白了 Agent 是怎么回事。Cursor 每次推出的新功能我都能搞懂，噢，它是这个意思。就说最近 Cursor 更新的 Debug 模式吧，在它更新之前，我自己实际上就在用 “Debug 模式” 修改我的 Bug，Cursor 的更新，只是把我摸索到的修复 Bug 的方法给固化了下来。当然，咱也不能说 Cursor 是抄我的，天下英雄所见略同，只能说，Cursor 工程师和我想到一块去了。 今天上午，大概由于 Design Visually 新功能更新，Cursor 卡得要死，我调用 free auto 模式的速度非常非常慢！我郁闷死了！当时我就意识到</description>
+    <pubDate>2025-12-13</pubDate>
+  </item>
+  <item>
     <title>Cursor 支持 Design Visually 了。</title>
     <link>https://yishulun.com/blog/2025/66.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/66.html</guid>
