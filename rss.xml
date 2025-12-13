@@ -5,6 +5,13 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>墨问终端脚本再添新功能，自动分发至博客园、自搭博客</title>
+    <link>https://yishulun.com/blog/2025/69.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/69.html</guid>
+    <description>墨问终端脚本再添新功能，自动分发至博客园、自搭博客 博客园支持 MetaWeblog API，只需要在终端环境里设置： # 博客园配置（从环境变量获取） CNBLOG_BLOG=&amp;quot;${CNBLOG_BLOG_NAME:-}&amp;quot; ACCOUNT=&amp;quot;${CNBLOG_BLOG_ACCOUNT:-}&amp;quot; PASSWD=&amp;quot;${CNBLOG_BLOG_PASSWD:-}&amp;quot; 就可以自动同步至博客园社区。该社区是老牌技术社区，站长杜勇还得过盖茨赠予的 Windows 3.1 系统盘。该社区的优势是 PR 值高，估计在 7 甚至更高，同样的内容，同一个作者所写，博客园的链接在搜索引擎排名中会靠前。 除了支持博客园发布，还支持自建博客发布。我的博客是用 rustpress 搭建的。我为什么知道 rustpress 博客支持同步？因为这个 Rust 程序</description>
+    <pubDate>2025-12-13</pubDate>
+  </item>
+  <item>
     <title>Cursor 支持 Design Visually 了。</title>
     <link>https://yishulun.com/blog/2025/66.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/66.html</guid>
