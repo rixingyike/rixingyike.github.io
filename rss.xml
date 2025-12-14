@@ -8,7 +8,7 @@
     <title>从 Vibe Coding 向 Vibe Engineering 已是发展必然</title>
     <link>https://yishulun.com/blog/2025/73.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/73.html</guid>
-    <description>从 Vibe Coding 向 Vibe Engineering 已是发展必然 https://note.mowen.cn/detail/6gMtxCP_NhLJyOZnK6AQ_ 董事长发了一篇译自 OpenAI 论坛的视频贴，我大致看了下，又去翻了下原论坛网址，一个小时时长，算球，太长了，我将视频链接塞进 NotebookLM 又学习了一下，理解了 Vibe Engineering。 播主做了一个实验，用 Rust 语言重写一个 Kotlin 项目，这里面有一个巨大的坑，一般读者没有注意到：翻写这类需求对 AI 来说，属于没有难度的抄袭！我严重怀疑如果换一个创新性项目，CodeX 根本干不了这么漂亮。视频中，codex 连续工作 12 个小时，完成了规划、架构、测试编写、编译、上架、文档撰写等一切任务，第二天程序员点亮屏幕的时候，发现 codex 已经把活干完。还干得很漂亮！ 据此，O</description>
+    <description>从 Vibe Coding 向 Vibe Engineering 已是发展必然 https://note.mowen.cn/detail/6gMtxCP_NhLJyOZnK6AQ_ 董事长发了一篇译自 OpenAI 论坛的视频贴，我大致看了下，又去翻了下原论坛网址（见下面），一个小时时长，算球，太长了，我将视频链接塞进 NotebookLM 又学习了一下，理解了 Vibe Engineering。 https://forum.openai.com/public/events/virtual-event-vibe-engineering-with-openais-codex-hsk0tsy23m 播主做了一个实验，用 Rust 语言重写一个 Kotlin 项目，这里面有一个巨大的坑，一般读者没有注意到：翻写这类需求对 AI 来说，属于没有难度的抄袭！我严重怀疑如果换一个创新性项目，CodeX</description>
     <pubDate>2025-12-14</pubDate>
   </item>
   <item>
@@ -16,6 +16,13 @@
     <link>https://yishulun.com/blog/2025/72.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/72.html</guid>
     <description>开源软件开发如何定价，开源、赚钱、引流，这三者并不矛盾 不要以为开源软件可以获得社区荣誉，就将辛苦开发的软件免费贡献出去。事实上，即使是开源软件，既可以获得社区荣誉，也可以赚钱。除了 MIT 协议，最适合开源软件的协议还有 Apache 2.0。这个协议不限制其他人免费使用软件源码、自行编译和部署，只要求使用者保留协议声明。开发者也无需提供客服、部署、咨询等服务，甚至连文档，使用者也不能要求开发者提供。提供免费版本的同时，开发者还可以提供收费版，通过一份 SLA《商业服务协议》向付费用户提供额外服务，例如许诺故障响应时间（24 小时），许诺服务范围（故障诊断、新功能配置指导、安全补丁及时响应）等。所有额外服务都是有时效的，在商业客户那里，时间就是信誉，时间就是客户，时间就是市场，客户付钱购买时效是非常常见的商业行为。 以上是如何给自己开发的开源软件选择协议，简而言之就是 Apache 2.</description>
+    <pubDate>2025-12-14</pubDate>
+  </item>
+  <item>
+    <title>我终于可以用 Google Antigravity 了。</title>
+    <link>https://yishulun.com/blog/2025/74.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/74.html</guid>
+    <description>我终于可以用 Google Antigravity 了。 非我崇洋媚外，在 Antigravity 刚发布的时候，看到网友纷纷晒图晒体验，说如何如何，心里就十分痒痒。师夷长技以制夷嘛，看到好的东西无法师之，自然不舒服。 今天有一位好心人回复我，说要使用 TUN 模式。该模式是增强模式，相当于在系统里创建一张虚拟网卡，所有流量 —— 系统上所有 APP 的流量都走这张网卡。我马上下载 ClashX Pro，开启 Enhanced Mode，即 TUN 模式，果然，在谷歌帐号登录这一步，跳转过来了。原来一直卡在最后一步，明明在网页上已经登录成功了，跳转回 Antigravity 界面的时候就是没有反应。现在好了，可以用了。 现在有一个利好消息，第一个月订阅 Pro 会员，免费！这个羊毛还能赶上薅一把。薅资本主义的羊毛必须不客气。 bye，希望你也用起来。 📅 2025 年 12 月 14 日周</description>
     <pubDate>2025-12-14</pubDate>
   </item>
   <item>
