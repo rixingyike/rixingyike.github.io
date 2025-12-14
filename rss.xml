@@ -5,6 +5,13 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>软件开发如何定价</title>
+    <link>https://yishulun.com/blog/2025/72.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/72.html</guid>
+    <description>软件开发如何定价 不要以为开源软件可以获得社区荣誉，就将辛苦开发的软件免费贡献出去。事实上，即使是开源软件，既可以获得社区荣誉，也可以赚钱。除了 MIT 协议，最适合开源软件的协议还有 Apache 2.0。这个协议不限制其他人免费使用软件源码、自行编译和部署，只要求使用者保留协议声明。开发者也无需提供客服、部署、咨询等服务，甚至连文档，使用者也不能要求开发者提供。提供免费版本的同时，开发者还可以提供收费版，通过一份 SLA《商业服务协议》向付费用户提供额外服务，例如许诺故障响应时间（24 小时），许诺服务范围（故障诊断、新功能配置指导、安全补丁及时响应）等。所有额外服务都是有时效的，在商业客户那里，时间就是信誉，时间就是客户，时间就是市场，客户付钱购买时效是非常常见的商业行为。 以上是如何给自己开发的开源软件选择协议，简而言之就是 Apache 2.0。对于平时向他人提供软件咨询或软件开</description>
+    <pubDate>2025-12-14</pubDate>
+  </item>
+  <item>
     <title>墨问终端脚本再添新功能，自动分发至博客园、自搭博客</title>
     <link>https://yishulun.com/blog/2025/69.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/69.html</guid>
