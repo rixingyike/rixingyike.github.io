@@ -5,6 +5,13 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>AI 富有四海，但却没有品味</title>
+    <link>https://yishulun.com/blog/2025/85.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/85.html</guid>
+    <description>AI 富有四海，但却没有品味 如图所示，是 drill 的系统栏托盘图标。默认的托管图标，只能通过 tray.set_title 设置一个 title，只有一行，要显示两行，没有这个接口。 但 ClashX 明明实现了两行网速展示，它是怎么实现的？ 本质上，ClashX 是在不停地重绘托盘图标，它的图标是动态生成的。 既然 ClashX 可以这么干，我也可以，没有理由我用了 Rust 语言开发，对系统的控制能力就短一截。很快，实现了，但是，图是糊的，为什么？ 怎么看也不清晰，还有，图标存在跳动。这又为什么？ 图标跳动是因为宽度不固定，当网速文本不同的时候，就会跳动。当我把宽度固定的时候，还是跳动？为什么？因为字体不是等宽的，我把字体换成等宽字体，不抖了，但狭小的空间又不紧凑了。怎么办？还得改回非等宽字体，但要通过！format 把绘制区域的宽度给固定下来。这个问题终于解决了，在对比字体的时</description>
+    <pubDate>2025-12-19</pubDate>
+  </item>
+  <item>
     <title>一个关于 RAG 的小商机，赚个几百万应该没有问题</title>
     <link>https://yishulun.com/blog/2025/82.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/82.html</guid>
