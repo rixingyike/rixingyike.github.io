@@ -168,7 +168,7 @@
                         <a href="/blog/" class="hover:text-primary-600">blog</a>
                     
                         <span class="mx-2">›</span>
-                        <a href="/blog&#x2F;2025/" class="hover:text-primary-600">2025</a>
+                        <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
@@ -176,7 +176,7 @@
                 <!-- 文章头部 -->
                 <header class="mb-8 pb-8 border-b border-gray-200">
                     <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-6 leading-tight">
-                        Rust学习笔记4：智能指针、引用和并发
+                        成为三剑客很难，手持两股剑倒有可能
                     </h1>
                     
                     <div class="article-meta mb-6">
@@ -185,7 +185,7 @@
                             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                             </svg>
-                            2025-03-11
+                            2026-01-03
                         </span>
                         
                         
@@ -195,12 +195,44 @@
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/Rust/" 
+                        <a href="/tags/AI编程/" 
                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
                             <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
                             </svg>
-                            Rust
+                            AI编程
+                        </a>
+                        
+                        <a href="/tags/IDE/" 
+                           class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                            </svg>
+                            IDE
+                        </a>
+                        
+                        <a href="/tags/Claude Code/" 
+                           class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                            </svg>
+                            Claude Code
+                        </a>
+                        
+                        <a href="/tags/Cursor/" 
+                           class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                            </svg>
+                            Cursor
+                        </a>
+                        
+                        <a href="/tags/并发/" 
+                           class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                            </svg>
+                            并发
                         </a>
                         
                     </div>
@@ -227,363 +259,24 @@
                  }
              });
          })">
-        <h1>Rust学习笔记4：智能指针、引用和并发</h1>
-<h2>Drop特征</h2>
-<p>使用drop方法可以回收所有权，释放内存。drop方法不需要程序员手动调用，编译器会为我们自动插入drop代码并在变量退出作用域时调用之。调用顺序是：</p>
-<ul>
-<li>先声明的后调用，后声明的先调用；</li>
-<li>在结构体内，结构体的drop先调用，继而按照字段的定义顺序调用字段的drop方法。</li>
-</ul>
-<p>对于下面这个示例：</p>
-<pre><code class="language-rust">// 定义一个简单的结构体
-struct Resource {
-    name: String,
-}
-
-// 为 Resource 实现 Drop trait
-impl Drop for Resource {
-    fn drop(&amp;mut self) {
-        println!(&quot;Dropping resource: {}&quot;, self.name);
-    }
-}
-
-fn main() {
-    // 创建两个 Resource 实例
-    let resource1 = Resource {
-        name: &quot;Resource 1&quot;.to_string(),
-    };
-    let resource2 = Resource {
-        name: &quot;Resource 2&quot;.to_string(),
-    };
-
-    // 创建一个作用域
-    {
-        let resource3 = Resource {
-            name: &quot;Resource 3&quot;.to_string(),
-        };
-        println!(&quot;Resource 3 is in scope&quot;);
-    } // resource3 离开作用域，drop 方法被调用
-
-    println!(&quot;End of main function&quot;);
-    // resource1 和 resource2 离开作用域，drop 方法被调用
-}
-</code></pre>
-<p>输出顺序为：</p>
-<blockquote>
-<p>Resource 3 is in scope
-Dropping resource: Resource 3
-End of main function
-Dropping resource: Resource 2
-Dropping resource: Resource 1</p>
-</blockquote>
-<p>这个顺序验证了上面所讲的drop次序。</p>
-<h2>引用计数智能指针Rc与Arc</h2>
-<p>Rc是reference counting的缩写，是引用计数的意思，当我们使用它时，Rust会自动统计、管理引用记数，并在记数为0的时候自动将对象回收。我们可以通用Rc::clone复制对象——复制的仅仅是引用，同时让引用记数加1；可以通过Rc::string_count随时查看引用计数。</p>
-<p>无论是Rc还是Arc，都是不可变记数引用，都不能对数据进行修改。两者在使用上没有区别，唯一的区别在于前者用于单线程内，后者用于多线程内。下面看一个Rc的示例：</p>
-<pre><code class="language-rust">use std::rc::Rc;
-
-fn main() {
-    // 创建一个 Rc 实例，引用计数为 1
-    let data = Rc::new(42);
-
-    // 克隆 Rc，引用计数增加
-    let _data_clone1 = Rc::clone(&amp;data);
-    let _data_clone2 = Rc::clone(&amp;data);
-
-    // 打印引用计数
-    println!(&quot;Reference count after cloning: {}&quot;, Rc::strong_count(&amp;data));
-
-    // 离开作用域，引用计数减少
-    {
-        let _data_clone3 = Rc::clone(&amp;data);
-        println!(&quot;Reference count inside inner scope: {}&quot;, Rc::strong_count(&amp;data));
-    }
-
-    // 离开作用域后，引用计数恢复
-    println!(&quot;Reference count after inner scope: {}&quot;, Rc::strong_count(&amp;data));
-
-    // 离开 main 函数，引用计数降为零，数据被清理
-}
-</code></pre>
-<p>在这个示例中，第17行，当离开一个作用域时，引用自动减少了。记数为零时，对象即被清理。</p>
-<p>输出结果为：</p>
-<blockquote>
-<p>Reference count after cloning: 3
-Reference count inside inner scope: 4
-Reference count after inner scope: 3 </p>
-</blockquote>
-<p>再看一个Arc示例：</p>
-<pre><code class="language-rust">use std::sync::Arc;
-use std::thread;
-
-fn main() {
-    // 创建一个 Arc 实例，引用计数为 1
-    let data = Arc::new(42);
-
-    // 克隆 Arc，引用计数增加
-    let data_clone1 = Arc::clone(&amp;data);
-    let data_clone2 = Arc::clone(&amp;data);
-
-    // 打印引用计数
-    println!(&quot;Reference count after cloning: {}&quot;, Arc::strong_count(&amp;data));
-
-    // 创建线程
-    let handle1 = thread::spawn(move || {
-        println!(&quot;Thread 1: Data = {}&quot;, data_clone1);
-    });
-
-    let handle2 = thread::spawn(move || {
-        println!(&quot;Thread 2: Data = {}&quot;, data_clone2);
-    });
-
-    // 等待线程完成
-    handle1.join().unwrap();
-    handle2.join().unwrap();
-
-    // 打印引用计数
-    println!(&quot;Reference count after threads: {}&quot;, Arc::strong_count(&amp;data));
-
-    // 离开 main 函数，引用计数降为零，数据被清理
-}
-</code></pre>
-<p>Arc智能指针允许移动对象进入线程内，多个线程的引用消耗会自动同步。</p>
-<h2>Cell与RefCell</h2>
-<p>Cell充许在获取值的同时，还对值进行修改，这跳过了Rust的所有权规则。不过Cell仅针对实现了Copy的数据类型。示例：</p>
-<pre><code class="language-rust">use std::cell::Cell;
-
-fn main() {
-    // 创建一个 Cell，存储一个整数
-    let value = Cell::new(42);
-
-    // 获取 Cell 中的值（通过复制）
-    println!(&quot;Initial value: {}&quot;, value.get());
-
-    // 修改 Cell 中的值
-    value.set(100);
-
-    // 再次获取 Cell 中的值
-    println!(&quot;Updated value: {}&quot;, value.get());
-
-    // 通过 `get` 和 `set` 方法修改值
-    let old_value = value.replace(200);
-    println!(&quot;Replaced value: {}, Old value: {}&quot;, value.get(), old_value);
-
-    // 使用 `into_inner` 获取 Cell 中的值（消耗 Cell）
-    let final_value = value.into_inner();
-    println!(&quot;Final value: {}&quot;, final_value);
-}
-</code></pre>
-<p>这个示例会让Rust初学者感到疑惑，怎么，所有权规则不起作用了吗，一个值同时既可以获取又可以修改吗？但这种Cell仅针对实现了Copy特征的基本类型，例如上面的i32，实际上像i32这样的简单类型一般是没有必要使用Cell的。</p>
-<p>输出为：</p>
-<blockquote>
-<p>Initial value: 42
-Updated value: 100
-Replaced value: 200, Old value: 100
-Final value: 200</p>
-</blockquote>
-<p>Cell像一个世外桃园盒子，可以往里面存数据，也可以取数据，貌似还不受Rust所有权规则的约束。</p>
-<p>RefCell用于没有实现Copy特征的，在它内部没有发生Copy，内存还是那一块内存，它只是将Rust编译器在编译时的警告延后了，如果在运行时违反了Rust规则，仍然会有panic异常。示例：</p>
-<pre><code class="language-rust">use std::cell::RefCell;
-
-fn main() {
-    // 创建一个 RefCell，存储一个 String
-    let message = RefCell::new(String::from(&quot;Hello&quot;));
-
-    // 获取 RefCell 中的不可变引用
-    {
-        let msg = message.borrow();
-        println!(&quot;Initial message: {}&quot;, *msg);
-    } // 不可变引用离开作用域，释放借用
-
-    // 获取 RefCell 中的可变引用并修改值
-    {
-        let mut msg = message.borrow_mut();
-        msg.push_str(&quot;, world!&quot;);
-    } // 可变引用离开作用域，释放借用
-
-    // 再次获取 RefCell 中的不可变引用
-    let msg = message.borrow();
-    println!(&quot;Updated message: {}&quot;, *msg);
-
-    // 尝试违反借用规则（会导致 panic）
-    // let mut invalid_borrow = message.borrow_mut(); // 这里会 panic，因为已经有一个不可变引用
-}
-</code></pre>
-<p>第24行，因为在第20行已经有一个不可变引用，所以这里不能再有一个可变引用，但这个错误不会在编译期报出来，只会在运行时报出来。第15行有一个可变借用，没有关系，因为到第17行它就释放了。这是使用RefCell的好处，可以跳过编译期严格的检查。</p>
-<p>最终输出为：</p>
-<blockquote>
-<p>Initial message: Hello
-Updated message: Hello, world!</p>
-</blockquote>
-<p>RefCell可以方便地实现内部可变性，当我们不方便修改第三方特征签名的时候，用RefCell的borrow_mut方法，这样可以修改数据。</p>
-<p>Rc+RefCell可以结合起来，实现多个变量都能获得可变引用，并进行数据修改的代码。示例：</p>
-<pre><code class="language-rust">use std::rc::Rc;
-use std::cell::RefCell;
-
-fn main() {
-    // 创建一个 Rc&lt;RefCell&lt;String&gt;&gt;，存储一个 String
-    let data = Rc::new(RefCell::new(String::from(&quot;Hello&quot;)));
-
-    // 克隆 Rc，增加引用计数
-    let data_clone1 = Rc::clone(&amp;data);
-    let data_clone2 = Rc::clone(&amp;data);
-
-    // 修改 data_clone1 中的数据
-    {
-        let mut borrowed_data = data_clone1.borrow_mut();
-        borrowed_data.push_str(&quot;, world!&quot;);
-    } // 可变引用离开作用域，释放借用
-
-    // 修改 data_clone2 中的数据
-    {
-        let mut borrowed_data = data_clone2.borrow_mut();
-        borrowed_data.push_str(&quot; How are you?&quot;);
-    } // 可变引用离开作用域，释放借用
-
-    // 打印最终的数据
-    println!(&quot;Final data: {}&quot;, data.borrow());
-}
-</code></pre>
-<p>Rust为了实现内存安全，在各个方向上围堵程序员的错误可能性，在实在没有办法的场景，仍然开放了像C++那样信任程序员的方法，给予了程序员自由。</p>
-<h2>Weak弱引用</h2>
-<p><code>Rc&lt;T&gt;</code>中的T仍然受记数约束，只要记数不为0，它就不能被回收。<code>Weak&lt;T&gt;</code>不同，它不影响回收，它只是被动地使用，这种弱化的引用特别适合用于结构体中的自引用。对于<code>Rc&lt;T&gt;</code>，调用downgrade，可以得到一个<code>Weak&lt;T&gt;</code>，在<code>Weak&lt;T&gt;</code>上面调用upgrade方法，又可以得到一个<code>Option&lt;Rc&lt;T&gt;&gt;</code>，它可能是一个<code>Rc&lt;T&gt;</code>，也可以是None。</p>
-<p>下面是一个使用了Weak弱引用的例子：</p>
-<pre><code class="language-rust">use std::rc::Rc;
-use std::rc::Weak;
-use std::cell::RefCell;
-
-// 学生
-struct Student {
-    name: String,
-    friends: RefCell&lt;Vec&lt;Weak&lt;Student&gt;&gt;&gt;,
-}
-
-impl Student {
-    fn new(name: &amp;str) -&gt; Rc&lt;Student&gt; {
-        Rc::new(Student {
-            name: name.to_string(),
-            friends: RefCell::new(Vec::new()),
-        })
-    }
-
-    fn add_friend(&amp;self, friend: &amp;Rc&lt;Student&gt;) -&gt; &amp;Student {
-        self.friends.borrow_mut().push(Rc::downgrade(friend));
-        self
-    }
-}
-
-fn main() {
-    // 创建三个学生
-    let xiaoli = &amp;Student::new(&quot;小李&quot;);
-    let xiaowang = &amp;Student::new(&quot;小王&quot;);
-    let xiaoming = &amp;Student::new(&quot;小明&quot;);
-
-    // 建立朋友关系
-    xiaoli.add_friend(xiaoming).add_friend(xiaowang);
-    xiaowang.add_friend(xiaoli).add_friend(xiaoming);
-    xiaoming.add_friend(xiaoli).add_friend(xiaowang);
-
-    // 打印每个学生的朋友
-    let students = [xiaoli, xiaowang, xiaoming];
-    for student in students.iter() {
-        println!(&quot;{} 的朋友有:&quot;, student.name);
-        for friend_opt in student.friends.borrow().iter() {
-            if let Some(friend) = friend_opt.upgrade() {
-                println!(&quot;  - {}&quot;, friend.name);
-            } else {
-                println!(&quot;  - &lt;已删除的朋友&gt;&quot;);
-            }
-        }
-    }
-
-    // 在 main 函数的最后，xiaoli, xiaowang, xiaoming 都会被销毁
-    // 由于使用了 Weak&lt;T&gt;，避免了循环引用问题
-}
-</code></pre>
-<p>第20行通过downgrade拿到了<code>Weak&lt;Studnet&gt;</code>。</p>
-<p>最终输出为：</p>
-<pre><code>小李 的朋友有:
-  - 小明
-  - 小王
-小王 的朋友有:
-  - 小李
-  - 小明
-小明 的朋友有:
-  - 小李
-  - 小王
-</code></pre>
-<h2>用裸指针实现结构体的自引用</h2>
-<p>下面是一个简单的示例，但却无法通过编译：</p>
-<pre><code class="language-rust">struct SelfRef&lt;'a&gt; {
-    value: String,
-    pointer_to_value: &amp;'a str,
-}
-
-fn main() {
-    let value = String::from(&quot;Hello, world!&quot;);
-    let self_ref = SelfRef {
-        value: value,
-        pointer_to_value: &amp;value[0..5],
-    };
-    println!(&quot;value: {}&quot;, self_ref.value);
-    println!(&quot;pointer_to_value: {}&quot;, self_ref.pointer_to_value);
-}
-</code></pre>
-<p>第9行，我们将value的所有权转移到了结构体SelfRef内，第10行，我们又企图用引用的方法划取value中的一部分，既有转移，又有引用，这在其他语言中是很平常的事情，在Rust中无法通过编译。</p>
-<p>怎么解决？最简单的方法是在第9行上，给value加一个clone的尾巴。但今天我们不要这样做，示例：</p>
-<pre><code class="language-rust">struct SelfRef {
-    value: String,
-    pointer_to_value: *const String,
-}
-
-impl SelfRef {
-    fn new(value: String) -&gt; Self {
-        let pointer_to_value = &amp;value as *const String;
-        Self {
-            value,
-            pointer_to_value,
-        }
-    }
-
-    fn get_pointer_to_value(&amp;self) -&gt; &amp;str {
-        unsafe {
-            &amp;*self.pointer_to_value
-        }
-    }
-}
-
-fn main() {
-    let mut self_ref = SelfRef::new(&quot;Hello,&quot;.to_string());
-    println!(&quot;value: {}&quot;, self_ref.value);
-    println!(&quot;pointer_to_value: {}&quot;, self_ref.get_pointer_to_value());
-    self_ref.value.push_str(&quot;World!&quot;);
-    println!(&quot;value: {}&quot;, self_ref.value);
-    println!(&quot;pointer_to_value: {}&quot;, self_ref.get_pointer_to_value());
-}
-</code></pre>
-<p>第8行，pointer_to_value是一个裸指针。第17行，使用unsafe修饰符将它指向的字符串返回。</p>
-<p>输出：</p>
-<blockquote>
-<p>value: Hello,
-pointer_to_value: Hello,
-value: Hello,World!
-pointer_to_value: Hello,</p>
-</blockquote>
-<p>使用裸指针是实现有自引用字段的结构体的最简单、最优雅了方法了。</p>
-<h2>并发与并行的区别</h2>
-<p><img src="assets/image-20250312212736497.png" alt="image-20250312212736497" /></p>
-<p>如果将计算机的CPU比做咖啡的话，并发是计算机任务排成两个队或多个队，每个队轮流喝咖啡。而并行是排成两个队还多个队，每个队同时喝咖啡。</p>
-<p>这是两个相似的概念，很容易搞混，英语单词也有所不同，并发是Concurrent，并行是 Parallel。</p>
-<h2>操作系统中的并发与并行</h2>
-<p>如果允许多个任务同时并发存在，那么这个系统就是并发系统；如果允许多个任务并行执行，那么这个系统就是并行系统。现代计算机往往有多个核心，同时现代操作系统也基本都允许多线程并发，线程与操作系统的核心构成了<code>M:N</code>的关系，表面上无论有多少M个任务在并发，实际上，在每一时刻，真正并行的只有N个。</p>
-<h2>运行时大小与三种并发模型</h2>
-<p>除了汇编语言，每种语言在编译成二进制文件的时候都有运行时，只是或大或小的问题。即使是Rust语言，它也有自己的运行时。运行时比较大的像Go语言，因为它本身实现了协程和GC，所以它的运行时比其它高级语言还更大一些。我们即使用Go语言实现一个只有<code>Hello Word</code>打印这样很小一个功能的程序，它发布的二进制包也不会很小。</p>
-<p>高级语言在实现线程并发的方案上大致分为三种：</p>
-<p>第一种像Rust，是一比一的实现，Rust里边的线程对应的就是操作系统里边的线程，是一比一的关系。</p>
-<p>第二种是<code>M:N</code>的关系。代表语言是Go语言，这里的M要比N大，这是一种在语言层面实现的多线程，或者是称之为协程，或绿色线程。它的目的是为了用更小的系统资源实现更多的线程并发。</p>
-<p>第三种是用Actor实现多线程，线程之间用信息同步。代表语言是Erlang。</p>
-<p>Go语言采用协程的方式实现线程，是为了方便开发者。快速实现县城并发。并且是高效的实现。Ru没有采用，那是因为right的他想以更小的代价。恩，最小的占用运行时的这样一种方式。去实现多线程。并且像够远的那种。携程的实现方式在ru里面也有第三方库五实现了啊，叫Tokyo，开发者呢，其实是可以自行选择和使用的。包括类似于long around a模型啊，也是可以选择和使用的。</p>
-<p>2025年03月11日</p>
+        <h1>成为三剑客很难，手持两股剑倒有可能</h1>
+<p>自从我领悟要 Lead AI，而不仅仅是 Debug AI 之后（我也不知道有几个人真正懂了我的意思），我一直在想如何提升并发数字。一个 IDE 开多个实例，貌似也不是不可以；特别是 Claude Code，它是终端实例窗口，多打几个窗口不就是多实例了吗？但我恐怕实例之间打架。事实上一个 AI IDE 就像一个人，本质上一个人是没有办法运行多线程的。</p>
+<p>我想到的提升并发的想法，就是同时用多种出色的 AI IDE，比如，我可以同时用 Anti+Cursor+Claude Code。经过实践，Anti 本身就能用，不需要讲了；Cursor 可以通过一个自动刷 auto 模式的工具，一直用，且连接的就是官方服务器，不降智不缩水，没问题；所难者是 Claude Code，这个终端 IDE 貌似就不想让我快乐地使用。</p>
+<p>为了使用 cc，我在闲鱼上尝试购买了两个账号。这一下让我发现了，原来国内从事 AI 套壳生意的人这么多。有一个供货商提供的 key 不好使，我将我的终端环境变量配置发给他，他还怕我配置错了，一再给我讲解 export 如何使用，bash 与 zsh 的区别，macOS 与 Windows 系统不同等等，这位供货商确实对电脑知识了解得比较多，但也仅是比常人多一点，其实还远远没有达到可以教育我的程度。</p>
+<p>另一家，标价是 4.99 元 100 次请求，但是收货后，他的教程上又注明，除了最低级的套餐，往上价格高的都是拍一发三！高明啊！我一下学到了！在明面上大家是竞争关系，标价都是 4.99，但进来的人，给你拍一发三，一下就把你的心抓住了；你用得可以，就会一直续费。到这时我还是高兴的，但马上就不高兴了。我买的是一个 4.99 的套餐，有 100 次的请求，结果我感觉只请求了十来次，套餐就耗光了！why？为什么？我找老板，老板说，要看文档，要看文档，文档上都有，但老板还是给我查了，我的请求次数确实用完了。老板给我免费加了 100 次，我又请求了一次，然后查看剩余次数，好家伙，我顿时明白了，剩余 90 次，原来是以一当十啊，用户每请求一次，就消耗 10 个次数。哼！商人！就骗不懂行的小朋友呢！</p>
+<p>这是在次数上耍心机。有的是在能力上缩水，例如调用的是 A 模型，其实人家给你调的是 A-模型，因为 A-模型便宜。你要问他怎么控制的，他怎么不能控制，这位套壳网站都要求我们设置 ANTHROPIC_BASE_URL 等于它的服务器地址，所有提示语都要走他的服务器，用什么模型不用什么模型，他完全可以修改。</p>
+<p>所以，如果要体验真正的 Claude Code 能力，万不可图便宜用国内的套壳网站服务。但那个 Cursor 除外，一，那个是利用了一种帐号刷新技术，自动切换账号，让你可以一直用免费的 auto 模式；二，这也是 Cursor 本身它自研了一个 Composer1 模型，大大降低了成本，对于新用户或才订阅用户，在 token 用完后，它愿意让用户继续使用 Composer1 模型，这是 Cursor 对广大开发者的一种福利。且，Composer1 这种模型的威力确实也好，能处理大多数编程问题，效果并不弱于 Gemini 3 和 Claude Sonnet 4.5 等。所以，Cursor 是可以使用的。</p>
+<p>好了，Claude Code 既然不方便使用，那就只能暂时以一种经济的方式同时使用 Anti 和 Cursor 了。这算是从三剑客（索隆）变成两股剑客（刘备）了。</p>
+<p>不过，我还有一种办法。不是觉得 Anti 好用吗？成本也不高。那就用远程桌面，一个服务器上开一个，开多少个服务器，就能运行多少个 Anti。并且，由于服务器开在海外，在使用上地域也完全不受约束，网速嘎嘎得快。这样一来，不要说三剑客，多剑客也可以。能同时驾驭多少台服务器，完全取决于自己的 CPU 并发能力。在 macOS 系统上，远程服务器也十分方便，一个窗口就是一个服务器，使用多个服务器，就是在不同窗口时左右划拉。</p>
+<p>以后，当你在咖啡馆或茶馆看到一个人他的手不停在桌面上左右划拉，时不时还敲几个字，甚至语音输入一句话，这个人很有可能是一个多线程 Lead AI 的大师级 Super Architect。</p>
+<p><img src="assets/clip_20260103-215340.png" alt="image" /></p>
+<p>这是 Claude Code。</p>
+<p><img src="assets/clip_20260103-215411.png" alt="image" /></p>
+<p>这是 Anti。</p>
+<p><img src="assets/clip_20260103-215427.png" alt="image" /></p>
+<p>这是 Cursor。</p>
+<p>今天，我勉强当了一回三剑客索隆。</p>
+<p>📅 2026/01/03 周六 21:55</p>
 <p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
     </div>
 
@@ -864,7 +557,7 @@ function shareToTwitter() {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="text-center space-y-2">
                 <p class="text-gray-600">
-                    &copy; 2002-2025 
+                    &copy; 2002-2026 
                     
                         
                         <a href="https:&#x2F;&#x2F;yishulun.com" target="_blank" rel="noopener" class="text-gray-700 hover:text-primary-600">LIYI</a>

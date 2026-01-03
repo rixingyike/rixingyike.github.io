@@ -5,6 +5,41 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>手机和相机的区别是什么？</title>
+    <link>https://yishulun.com/blog/2026/2.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/2.html</guid>
+    <description>手机和相机的区别是什么？ 是手机拍摄需要解释，而相机拍摄无须解释。 这个豆汁我 20 年前第一次喝的时候，就感觉它会进化，进化出大众宜喝口感。果然有了。 下面都是今天遛弯拍摄的街角照片，实现了之前说节假日到胡同里逛逛的想法。 我说的就是这张照片，我拍了一张，师傅问：你干啥？我解释说：我不修东西，只是拍个照。师傅：噢。也没说什么。你看，我如果是举着长枪短炮拍摄的，师傅都不会多此一问。 这次拍的不多，下次多拍一些。 📅 2026/01/03 周六 00:54</description>
+    <pubDate>2026-01-03</pubDate>
+  </item>
+  <item>
+    <title>成为三剑客很难，手持两股剑倒有可能</title>
+    <link>https://yishulun.com/blog/2026/3.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/3.html</guid>
+    <description>成为三剑客很难，手持两股剑倒有可能 自从我领悟要 Lead AI，而不仅仅是 Debug AI 之后（我也不知道有几个人真正懂了我的意思），我一直在想如何提升并发数字。一个 IDE 开多个实例，貌似也不是不可以；特别是 Claude Code，它是终端实例窗口，多打几个窗口不就是多实例了吗？但我恐怕实例之间打架。事实上一个 AI IDE 就像一个人，本质上一个人是没有办法运行多线程的。 我想到的提升并发的想法，就是同时用多种出色的 AI IDE，比如，我可以同时用 Anti+Cursor+Claude Code。经过实践，Anti 本身就能用，不需要讲了；Cursor 可以通过一个自动刷 auto 模式的工具，一直用，且连接的就是官方服务器，不降智不缩水，没问题；所难者是 Claude Code，这个终端 IDE 貌似就不想让我快乐地使用。 为了使用 cc，我在闲鱼上尝试购买了两个账号。这</description>
+    <pubDate>2026-01-03</pubDate>
+  </item>
+  <item>
+    <title>酒取阅自己，香水取阅他人</title>
+    <link>https://yishulun.com/blog/2026/1.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/1.html</guid>
+    <description>酒取悦自己，香水取悦他人 https://note.mowen.cn/detail/5wP9VD2Zh6hKKpRJJjQ0e 刚读了墨纸儿作家的笔记，突然有了这一句感触： 酒是取悦自己，而香水是取悦他人的。你看，你把香水喷洒在自己身上，自己久居氤氲之中不闻其香，而与他人际遇的那一刻，他人的感官将猛地一震，发出“咦”的一声轻喜。酒则不同，不用管别人，将自己喝得醉醺醺的，自己浑然不知，每个遇见你的人都不禁皱眉头：咦，怎么喝这么多酒？！ 很少有人是一手提酒壶，一手拿香水的，如果真有这样的人，那他一定十分奇特。 📅 2026/01/02 周五 14:34</description>
+    <pubDate>2026-01-02</pubDate>
+  </item>
+  <item>
+    <title>墨问终端脚本发布独立版 2.1，支持多图片上传</title>
+    <link>https://yishulun.com/blog/2025/93.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/93.html</guid>
+    <description>墨问终端脚本发布独立版 2.1，支持多图片上传 我对墨问终端脚本进行了一个小小的重构，现在你在下面这个地址可以下载 2.1 版本的 macOS 程序： https://github.com/rixingyike/setalias/releases/download/v2.1/SetAlias.zip 解压，会看到三个文件： 点 install.sh 进行安装，你将看到： 这是脚本提示你修改 config.sh，所有机密信息，例如 MOWEN_API_KEY 都在这个文件中，修改之后，按回车继续。 恭喜你，你的终端脚本程序安装成功了！现在你可以用 mnew 在终端里写墨问笔记了，还可以 msummary 总结一周的笔记。 既然是一个 App，你在系统的 Applications 里也可以看到它： 所有子指令，你点开这个图标再输入，与直接在 iTerm2 或 Terminal 中直接输入，效果</description>
+    <pubDate>2025-12-25</pubDate>
+  </item>
+  <item>
+    <title>吹🐂🍺是刚需</title>
+    <link>https://yishulun.com/blog/2025/92.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2025/92.html</guid>
+    <description>吹🐂🍺是刚需 前天我在一个休闲馆，旁边是一对男女，不是同学，不像朋友，更不是夫妻，他们坐下来就一直聊，从天明聊到天黑。聊什么呢？相对论、边缘政治、玛雅文化等等，都是很有逼格的话题。以相对论为例，男的说：相对论刚发布时全世界就只有两个能看懂。谁？一个肯定是爱因斯坦本人，另一个远在天边近在眼前。 厉害啊大哥，这么会吹🐂🍺。我默默向大哥投去了一瞥，大哥貌似树哥（不是我，是王宝强演的那个），眼神深邃，脸上布满了岁月划过的痕迹。 而对面，四十多的少女大妈双手托腮，望着大哥，一脸崇拜。 什么时候，谈资，吹🐂🍺的材料，都是人类顶尖稀缺资源。 我将这件事在朋友圈公开了，朋友都说大哥🐂🍺吹得假，说这都有人信？表示怀疑。 其实那位女士是保险销售，她是一位三岁孩子的妈妈。她那天下午成功让大哥签了保单！ 这其实是一个略带伤感的小故事。我不是故意要听的，只因为离得近，耳朵被迫灌入了声波。我也没办法将耳朵关上。 大哥</description>
+    <pubDate>2025-12-24</pubDate>
+  </item>
+  <item>
     <title># 君子不立危墙之下，别让代码成为呈堂证供</title>
     <link>https://yishulun.com/blog/2025/90.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/90.html</guid>
@@ -12,10 +47,10 @@
     <pubDate>2025-12-23</pubDate>
   </item>
   <item>
-    <title>满足！** 豆角鸡蛋西红柿捞面 **</title>
+    <title>满足！豆角鸡蛋西红柿捞面</title>
     <link>https://yishulun.com/blog/2025/91.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/91.html</guid>
-    <description>满足！** 豆角鸡蛋西红柿捞面 ** ** 原料 ** 手擀面、豆角、西红柿、鸡蛋、螺丝椒、大蒜、葱花 ** 调料 ** 菜籽油、盐、味精 ** 步骤 ** 豆角洗净切段焯水；西红柿切碎，螺丝椒斜切块，鸡蛋打散；大蒜捣成蒜泥备用。 锅中倒入菜籽油，油热后下入蛋液，炒至定型后盛出。 锅内留底油，下葱花爆香，再放入焯好的豆角和西红柿翻炒。 炒至西红柿出沙但仍保留部分块状时，加入螺丝椒和炒好的鸡蛋，翻炒两下，加盐和味精调味，菜卤做好。 平底锅烧水煮手擀面，期间点两次凉水（水开一次加一次水），煮熟后捞出过一遍凉水。 将面条捞入碗中，浇上炒好的菜卤，最后盖上一勺捣好的蒜泥即可。 下午突然想吃捞面了。 https://note.mowen.cn/detail/0PuLLBlS9QoMmU-WRPmJf 晚上去超市，买了食材，就做了起来。味道相当赞，只有我的西红柿有点放少了，不够红艳，别的没毛病。 📅</description>
+    <description>满足！ 豆角鸡蛋西红柿捞面 原料 手擀面、豆角、西红柿、鸡蛋、螺丝椒、大蒜、葱花 调料 菜籽油、盐、味精 步骤 豆角洗净切段焯水；西红柿切碎，螺丝椒斜切块，鸡蛋打散；大蒜捣成蒜泥备用。 锅中倒入菜籽油，油热后下入蛋液，炒至定型后盛出。 锅内留底油，下葱花爆香，再放入焯好的豆角和西红柿翻炒。 炒至西红柿出沙但仍保留部分块状时，加入螺丝椒和炒好的鸡蛋，翻炒两下，加盐和味精调味，菜卤做好。 平底锅烧水煮手擀面，期间点两次凉水（水开一次加一次水），煮熟后捞出过一遍凉水。 将面条捞入碗中，浇上炒好的菜卤，最后盖上一勺捣好的蒜泥即可。 下午突然想吃捞面了。 https://note.mowen.cn/detail/0PuLLBlS9QoMmU-WRPmJf 晚上去超市，买了食材，就做了起来。味道相当赞，只有我的西红柿有点放少了，不够红艳，别的没毛病。 📅 2025 年 12 月 23 日周二</description>
     <pubDate>2025-12-23</pubDate>
   </item>
   <item>
@@ -383,13 +418,6 @@
     <pubDate>2025-09-22</pubDate>
   </item>
   <item>
-    <title>冷切与喝酒</title>
-    <link>https://yishulun.com/blog/2025/37.html</link>
-    <guid isPermaLink="true">https://yishulun.com/blog/2025/37.html</guid>
-    <description>冷切与喝酒 这两天吃了一道特殊的菜，想起了小时候的一桩旧事。这道菜我给它起名字叫葱段羊肉——有一道热菜叫葱爆羊肉，不是那个。新鲜的羊腿肉用凉水洗一洗，不用焯水，加五香料包，加盐，加清水炖。炖好后在冰箱里放凉，吃的时候拿出来放在盘子里，将剥了皮的大葱切成一段一段也放在盘子里，用小刀切一块羊肉送进嘴里，再送一段大葱，就这样吃。有的羊肉块比较肥，上面附有很多白油，没关系，照吃不误——貌似没有脂肪就不香了似的。这个吃法辛辣油腻，全国怕是没有几人喜欢——我猜的，我觉得又凉、又油、又辣，没有人会喜欢。 旧事与肉有关，且也是比较肥的，不然也想不起它。 1994 年，我大概 11 岁，过新年，我和一个小伙伴随村里的一个叔去很远的外县拜年。我们三人骑自行车去，到的时候就吃午饭了。吃了饭就走，还没有回到家，天就已经黑了。可见这个地有多远。 在路过一个村庄的时候，叔想起了这个村里有一个亲戚，就拐了进去。我推测应</description>
-    <pubDate>2025-09-10</pubDate>
-  </item>
-  <item>
     <title>能搞大故事策划，但不一定能把小故事写好</title>
     <link>https://yishulun.com/blog/2025/36.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/36.html</guid>
@@ -416,13 +444,6 @@
     <guid isPermaLink="true">https://yishulun.com/blog/2025/33.html</guid>
     <description>女权主义不利于提高婚育率 最近读了一本书，书名叫《完美婚姻，女人说了算》，是一本英文翻译书，作者劳拉·道尔是一位美国女性。这算是一本从实践出发，总结优秀经验而写成的书。很有指导意义，经验之谈的图书总是值得阅读。书的内容总的来讲，在告诫女性读者在家庭中不要企图拿控一切、评论一切，要学会示弱，学会尊重、赞美和感激丈夫，要多看开一些、少一点较真，只有这样才能建立一个和谐、亲密和充满激情的婚姻关系。 具体讲是六原则： 1，学会爱自己，每天做一件让自己放松的事情。 2，男人需要的是尊重，请给他们。 3，对丈夫少一点控制，多一点亲密。 4，坦然接受来自丈夫的好意。 5，示弱，让妻子更具女人味。 6，感激是最有力的亲密技巧之一，请多使用。 女权独立主义讲究思想独立、经济独立、情感独立，仔细对比上面的亲密关系六原则，发现女权主义与这些让婚姻幸福的技巧竟然是相悖的。怪不得经济越发达，离婚率越高。这不是经济发</description>
     <pubDate>2025-09-02</pubDate>
-  </item>
-  <item>
-    <title>nu、nong，这两个拼音有很么不同，如何分辨，各有什么汉字？</title>
-    <link>https://yishulun.com/blog/2025/32.html</link>
-    <guid isPermaLink="true">https://yishulun.com/blog/2025/32.html</guid>
-    <description>nu、nong，这两个拼音有很么不同，如何分辨，各有什么汉字？ 一、拼音本身的区别 音节结构不同 nu ：声母 n + 单韵母 u （发音为/u/），属于开口度较小的音节 。 nong ：声母 n + 复合韵母 ong （发音为/ʊŋ/），带有后鼻音韵尾，发音时口腔需张开更大 。 方言与变体 部分方言（如越南Nùng语）中可能出现 nong 写作 nung 的情况 。 二、对应汉字的差异 （一） 拼音 nong 的汉字 常见字 ：农（nóng）、弄（nòng）、浓（nóng）、脓（nóng）、侬（nóng）等 。 完整列表（共28字）： 农、弄、浓、脓、哝、侬、秾、挊、挵、儂、噥、濃、癑、穠、襛、辳、醲、蕽、燶、檂、禯、膿、譨、欁、鬞、齈、䵜、䢉。 注：部分生僻字如&amp;quot;齈&amp;quot;（鼻病）、&amp;quot;鬞&amp;quot;（毛发乱）等较少使用 。 （二） 拼音 nu 的汉字 按声调分类</description>
-    <pubDate>2025-08-26</pubDate>
   </item>
   <item>
     <title>人的情绪是怎么产生的？</title>
@@ -569,13 +590,6 @@
     <link>https://yishulun.com/blog/2025/10.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2025/10.html</guid>
     <description>Rust学习笔记3：类型、智能指针 空类型或称永远不返回类型 感叹号写在返回值的地方，返回该函数“永远不返回类型”，在函数内部，panic可以“返回”此类型。 fn main() { let i = clac(5); println!(&amp;quot;i = {}&amp;quot;, i); // i = 1 } fn clac(n:i32) -&amp;gt; i32 { match n { 0..=10 =&amp;gt; 1, _ =&amp;gt; panic!(&amp;quot;不合规定的值:{}&amp;quot;, n) } } 永远不返回类型也是任何类型，第9行，这里期待返回一个i32类型，但使用panic也能通过编译。这个类型与JS中的void类型相似。 Sized特征与定长类型、不定长类型 出人意料的是，很多可以动态改变大小的类型，例如矢量（Vec）、字符串（String）、切片引用（&amp;amp;[T]）、哈希字典（H</description>
-    <pubDate>2025-03-11</pubDate>
-  </item>
-  <item>
-    <title>Rust学习笔记4：智能指针、引用和并发</title>
-    <link>https://yishulun.com/blog/2025/11.html</link>
-    <guid isPermaLink="true">https://yishulun.com/blog/2025/11.html</guid>
-    <description>Rust学习笔记4：智能指针、引用和并发 Drop特征 使用drop方法可以回收所有权，释放内存。drop方法不需要程序员手动调用，编译器会为我们自动插入drop代码并在变量退出作用域时调用之。调用顺序是： 先声明的后调用，后声明的先调用； 在结构体内，结构体的drop先调用，继而按照字段的定义顺序调用字段的drop方法。 对于下面这个示例： // 定义一个简单的结构体 struct Resource { name: String, } // 为 Resource 实现 Drop trait impl Drop for Resource { fn drop(&amp;amp;mut self) { println!(&amp;quot;Dropping resource: {}&amp;quot;, self.name); } } fn main() { // 创建两个 Resource 实例 let resou</description>
     <pubDate>2025-03-11</pubDate>
   </item>
   <item>
