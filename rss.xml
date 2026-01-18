@@ -5,6 +5,34 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>人间美味——胡萝卜炒包菜粉丝</title>
+    <link>https://yishulun.com/blog/2026/8.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/8.html</guid>
+    <description>人间美味——胡萝卜炒包菜粉丝 做法极其简单，包菜切丝，胡萝卜切丝，葱切丝，白粉丝泡上。起锅烧油，炒素菜，加一点大油，下葱丝，下两辣椒段，下包菜丝。包菜稍软，下胡萝卜丝、粉丝。翻炒一会，加盐、酱油、味精调味，出锅装盘。 包菜是甜口的，胡萝卜也是，包菜出点水，正好被粉丝吸收。有红有绿，颜色也好看。好吃极了！真乃人间素菜第一美味也！ #生活·随笔·减肥 📅 2026/01/18 周日 13:47</description>
+    <pubDate>2026-01-18</pubDate>
+  </item>
+  <item>
+    <title>Paypal 如何收款</title>
+    <link>https://yishulun.com/blog/2026/7.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/7.html</guid>
+    <description>Paypal 如何收款 上一篇笔记提到 Paypal.cn 支持个人在海外收款了。那么如何收款呢？ 我查了一下，典型流程是这样的： 1，客户端发起支付请求 2，服务器端调用 Paypal API 创建订单 3，返回 Approval URL 给前端让用户支付 4，用户完成支付 5，服务器端调用 Paypal API 验证支付，并执行 Capture 6，支付订单完成 这是一个典型的 B/S 架构软件的支付流程。为了配合开发者完成这个流程，Paypal 提供了尽可能多的 SDK。 除了以上这些写好的 SDK，还有 REST API，可以用任何语言自由调用。 为了方便开发者收款，Paypal 还提供了收款码、收款按钮，开发者可以直接使用。对于直接的收款，服务器端还没有创建支付订单呢，如何获取状态呢？别担心，有 IPN。 IPN 是 Instant Payment Notification 的缩</description>
+    <pubDate>2026-01-18</pubDate>
+  </item>
+  <item>
+    <title>有一种疼叫妈妈说有点疼，孩子是全校短跑冠军，却被妈妈逼成了“瘸子”</title>
+    <link>https://yishulun.com/blog/2026/6.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/6.html</guid>
+    <description>有一种疼叫妈妈说有点疼，孩子是全校短跑冠军，却被妈妈逼成了“瘸子” 我们常说：“不能让孩子输在起跑线上。”可有时候，恰恰是父母亲手把孩子拦在了起跑线上，甚至是为了区区一千块钱，把孩子变成了“瘸子”。 今天要讲的，又是一个真实发生在我身边的故事，仍然是一个非常典型且令人痛心的“家庭教育反面教材”。为了保护当事人，文中学生皆为化名。 01 “豆腐做的”学生与“隐性伤害” 事情的起因小得不能再小。 九月份的一次课间，小明在下楼过程中，被同学小王不小心踩到了脚。 小王当时就道了歉，小明也接受了，俩孩子本来都没当回事。 但第二天，风波来了。小明妈妈气势汹汹地来到了学校，声称小明脚疼，要求小王家长给予赔偿。 小王家长是个通情达理的人，虽然觉得对方小题大做，但还是抱歉地说：“那去医院检查一下吧，如果真伤着了，挂号费、医疗费、营养费我们全出。” 检查结果出来了，医生的话很干脆： 没事，孩子没伤着，无碍。</description>
+    <pubDate>2026-01-12</pubDate>
+  </item>
+  <item>
+    <title>那个举了一整天奖状的“坏孩子”，一句话让老师沉默了</title>
+    <link>https://yishulun.com/blog/2026/5.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/5.html</guid>
+    <description>那个举了一整天奖状的“坏孩子”，一句话让老师沉默了 以下是一个真实发生的故事，是真实发生的，不是我杜撰的！为了保护当事人我给小朋友用了化名，同时我化身一名小学老师讲述这个故事。 在学校里，我们常说“没有教不好的学生，只有不会教的老师”。但有时候，当我们剥开一个所谓“问题学生”的层层表象，看到的却是一个血淋淋的家庭问题。很多时候是小学生在学校上课，但更需要接受教育的却是家长。 最近，学校二年级转来了一个学生，我们叫他小明。 在很多老师眼里，他是个标准的“麻烦制造者”。但最近发生的一连串事情，让我重新看懂了这个孩子。 01 疯狂渴望被看见的“举牌人” 故事的开始，其实很美好。 那天，小明在校园里捡到了一个电子手表，他没有私吞，而是乖乖交到了大队部。为此，他得到了一张“拾金不昧”的奖状。 接着发生了让我印象极深的场景：**他一直举着这个奖状，从早举到晚。**每个来班里上课的老师都看到了，都表扬了</description>
+    <pubDate>2026-01-10</pubDate>
+  </item>
+  <item>
     <title>🚀 Ubuntu Server 云端开发环境搭建与网络调优全记录（在云上并发使用 Antigravity）</title>
     <link>https://yishulun.com/blog/2026/4.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/4.html</guid>

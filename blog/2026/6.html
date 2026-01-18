@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<!-- 基础布局模板 -->
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一树论</title>
+
+    
+<meta name="description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有一种疼叫妈妈说有点疼，孩子是全校短跑冠军，却被妈妈逼成了“瘸子”">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="一树论">
+
+<link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;blog&#x2F;2026&#x2F;6.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;yishulun.com&#x2F;blog&#x2F;2026&#x2F;6.html">
+
+
+
+<meta property="article:published_time" content="2026-01-12">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "有一种疼叫妈妈说有点疼，孩子是全校短跑冠军，却被妈妈逼成了“瘸子”",
+  "image": [
+    "https:&#x2F;&#x2F;yishulun.com/static/images/logo.png"
+   ],
+  "datePublished": "2026-01-12",
+  "author": [{
+      "@type": "Person",
+      "name": "LIYI",
+      "url": "https:&#x2F;&#x2F;yishulun.com"
+    }]
+}
+</script>
+
+
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!-- Alpine.js 库 -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Lunr.js 搜索库 -->
+    <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans"
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    <!-- 顶部导航栏 -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo 和站点名称 -->
+                <div class="flex items-center space-x-3">
+                    <img src="/static/images/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
+                    <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
+                        一树论
+                    </a>
+                </div>
+
+                <!-- 搜索框 - 桌面版 -->
+                <div class="hidden md:flex flex-1 max-w-xs mx-8">
+                    <form action="/search.html" method="get" class="relative w-full">
+                        <input type="text" name="q"
+                            class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
+                            placeholder="搜索文章..." id="search-input">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <button type="submit"
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- 导航菜单 - 桌面版 -->
+                <div class="hidden md:flex items-center space-x-1">
+                    
+                    
+                    <a href="&#x2F;" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')) }">首页</a>
+                    
+                    <a href="&#x2F;archives.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">归档</a>
+                    
+                    <a href="&#x2F;categories.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">分类</a>
+                    
+                    <a href="&#x2F;tags.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
+                    
+                    <a href="&#x2F;friends.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
+                    
+                    <a href="&#x2F;about.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">关于</a>
+                    
+                    
+                </div>
+
+                <!-- 移动端菜单按钮 -->
+                <button
+                    class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 移动端菜单 -->
+        <div class="md:hidden" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform -translate-y-2"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform translate-y-0"
+            x-transition:leave-end="opacity-0 transform -translate-y-2">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+                <!-- 移动端搜索框 -->
+                <div class="px-3 py-2">
+                    <form action="/search.html" method="get" class="relative">
+                        <input type="text" name="q"
+                            class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
+                            placeholder="搜索文章..." id="mobile-search-input">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <button type="submit"
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <!-- 移动端导航链接 -->
+                
+                
+                <a href="&#x2F;" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">首页</a>
+                
+                <a href="&#x2F;archives.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">归档</a>
+                
+                <a href="&#x2F;categories.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">分类</a>
+                
+                <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                
+                <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
+                
+                <a href="&#x2F;about.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">关于</a>
+                
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <main class="min-h-screen py-8">
+            
+<div class="max-w-4xl mx-auto relative">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- 主要内容 -->
+        <div class="flex-1">
+            <article x-data="{ copiedLink: false, copiedCode: {} }">
+                <!-- 分类面包屑 -->
+                
+                <nav class="mb-6 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+
+                <!-- 文章头部 -->
+                <header class="mb-8 pb-8 border-b border-gray-200">
+                    <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-6 leading-tight">
+                        有一种疼叫妈妈说有点疼，孩子是全校短跑冠军，却被妈妈逼成了“瘸子”
+                    </h1>
+
+                    <div class="article-meta mb-6">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-01-12
+                        </span>
+                        
+                        
+                    </div>
+
+                    <!-- 标签 -->
+                    
+                </header>
+
+                <!-- 文章内容 -->
+                <div class="article-content prose prose-lg max-w-none" x-init="$nextTick(() => {
+             // 为代码块添加复制按钮
+             document.querySelectorAll('pre code').forEach((codeBlock, index) => {
+                 const pre = codeBlock.parentElement;
+                 if (!pre.querySelector('.copy-code-btn')) {
+                     const button = document.createElement('button');
+                     button.className = 'copy-code-btn';
+                     button.textContent = '复制';
+                     button.setAttribute('x-data', `{ copied: false }`);
+                     button.setAttribute('@click', `navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent).then(() => { this.copied = true; setTimeout(() => this.copied = false, 2000) })`);
+                     button.setAttribute(':class', `{ 'bg-green-600': copied }`);
+                     button.setAttribute('x-text', `copied ? '已复制' : '复制'`);
+                     
+                     pre.style.position = 'relative';
+                     pre.appendChild(button);
+                 }
+             });
+         })">
+                    <h1>有一种疼叫妈妈说有点疼，孩子是全校短跑冠军，却被妈妈逼成了“瘸子”</h1>
+<p><img src="assets/0de2f2c57a3d76524477509c61829393.png" alt="0de2f2c57a3d76524477509c61829393" /></p>
+<p>我们常说：“不能让孩子输在起跑线上。”可有时候，恰恰是父母亲手把孩子拦在了起跑线上，甚至是为了区区一千块钱，把孩子变成了“瘸子”。</p>
+<p>今天要讲的，又是一个真实发生在我身边的故事，仍然是一个非常典型且令人痛心的“家庭教育反面教材”。为了保护当事人，文中学生皆为化名。</p>
+<h3>01 <strong>“豆腐做的”学生与“隐性伤害”</strong></h3>
+<p>事情的起因小得不能再小。</p>
+<p>九月份的一次课间，小明在下楼过程中，被同学小王不小心踩到了脚。</p>
+<p>小王当时就道了歉，小明也接受了，俩孩子本来都没当回事。</p>
+<p>但第二天，风波来了。小明妈妈气势汹汹地来到了学校，声称小明脚疼，要求小王家长给予赔偿。</p>
+<p>小王家长是个通情达理的人，虽然觉得对方小题大做，但还是抱歉地说：“那去医院检查一下吧，如果真伤着了，挂号费、医疗费、营养费我们全出。”</p>
+<p>检查结果出来了，医生的话很干脆：<strong>没事，孩子没伤着，无碍。</strong></p>
+<p>其实不用医生看，我都能做出诊断。咱们小时候和同学摔跤、假打，你推倒我，我推倒你，那是家常便饭，怎么可能踩一下脚就“重伤”了？</p>
+<p>如果真踩一下就能伤筋动骨，那这学生恐怕是豆腐做的了。 这种体质也不适合在学校上学了，建议直接回家自修吧。</p>
+<p>但小明妈妈看着诊断结果，仍然不认可。她抛出了一套“隐性伤害理论”：“现在没事，将来如果有事呢？很多伤害都是隐性的，医疗器械也有检查不准的时候。”</p>
+<p>她坚持认为小明受了内伤，坚持索赔。</p>
+<p>小王家长无奈，问：“那您觉得赔多少合适？”</p>
+<p>小明妈妈伸出一根手指：“一千。”</p>
+<p>听到这个数，我心里松了一口气。我还以为她要狮子大开口要几万呢，看来只是为了占点小便宜。</p>
+<p>小王家长为了息事宁人，不想为了这点钱纠缠，当场转了一千块钱。</p>
+<p>事情到这，本该画上句号。</p>
+<h3>02 <strong>“碰瓷”上瘾与无奈的校长</strong></h3>
+<p>过了一个月，十月份，小明妈妈又来学校了。</p>
+<p>她再次把小王家长叫到学校，理由如出一辙：小明的脚又疼了，对方必须再赔一千块！</p>
+<p>这事到这就有点可笑甚至荒唐了。</p>
+<p>小王家长虽然好说话，愿意以和为贵，顾及孩子在学校和同学的关系，但人家不是傻子。</p>
+<p>这一次，小王家长冷着脸，回绝得很干脆：“小明妈妈，你作为一名家庭主妇成天没事干是吗？这件事我认为上次已经翻篇了，如果你认为还有赔偿必要，请出具医院的伤残等级报告，或者去法院告我。法院判我赔，我才赔。”</p>
+<p>末了，她补了一句：“我平时工作很忙，不要再因为这事找我。如果还是这件事，我的答复和今天一样。”</p>
+<p>这条路走不通，小明妈妈又找到了校长，逼着校长“命令”对方赔钱。</p>
+<p>校长也很无奈：“赔偿是民事纠纷，需要家长达成一致，学校无权命令家长。”</p>
+<p>就这样，第二次索赔无疾而终。</p>
+<p>可到了十一月份，小明妈妈第三次来到了学校。诉求依然没变：孩子脚疼，要对方赔钱。</p>
+<p>此时的小王家长已经完全不理她了，校长也没办法，只能把皮球踢回去让她自己协商。</p>
+<h3>03 <strong>一个全校短跑冠军的“陨落”</strong></h3>
+<p>事后，校长都纳闷了：同学间踩了一下脚，怎么能疼三个月？难道真有什么连医生都查不出的“隐性伤害”？</p>
+<p>带着疑问，校长找到了小明的班主任——也就是我，询问小明的身体情况。</p>
+<p>我的一句话，让校长愣在原地：</p>
+<p>“校长，小明是班里的体育健将。就在上个月十月份的学校运动会上，他还拿了 400 米短跑第一名！”</p>
+<p>听到我的话，校长放心了，脚肯定没问题。</p>
+<p>但这背后的逻辑，却让人细思极恐。</p>
+<p>自从小明拿了短跑第一后，我观察到一个极其反常的现象：</p>
+<p>每次体育课，或者有班级拔河比赛，曾经生龙活虎的小明，现在总是躲在班里不下楼。</p>
+<p>我问他：“小明，你想参加活动吗？你想为班级争取荣誉吗？”</p>
+<p>小明眼神闪烁，小声说：“想。”</p>
+<p>但到了操场，体育老师却把他拦下了：“小明不能参加。”</p>
+<p>“为什么？”</p>
+<p>体育老师说：“他的脚还疼，不能参加体育活动。”</p>
+<p>回到班里，我再次问小明：“你的脚真的还疼吗？”</p>
+<p>小明低着头，嗫嚅道：“妈妈说有点疼。”</p>
+<p>“妈妈说有点疼。”</p>
+<p>这句话，如同一记重锤敲在我的心上。</p>
+<p>真相大白了。为了让孩子继续“装病”，为了创造向校长、向对方家长索赔一千块钱的“有利条件”，这位妈妈已经禁止孩子参加正常的体育活动了。</p>
+<h3>04 <strong>这不仅是诈骗，更是教育自杀</strong></h3>
+<p>说实话，看着小明，我真的很痛心。</p>
+<p>这个孩子非常棒，学习成绩全班第一，体育也是全校顶尖，他是真正的“别人家的孩子”。</p>
+<p>但他此刻，正在被他最信任的妈妈，亲手毁掉。</p>
+<ol>
+<li>价值观的崩塌：孩子的诚实真的不如一千块吗？</li>
+</ol>
+<p>父母是孩子的第一任老师。当妈妈教孩子撒谎、装病去讹诈别人时，她在孩子心里种下了什么种子？</p>
+<p>她在告诉孩子：“诚实不重要，尊严不重要，搞到钱才重要。”</p>
+<p>为了区区一千块钱（而且还没要到），让孩子在全校师生面前演戏，这笔账，真的划算吗？</p>
+<ol start="2">
+<li>认知失调：我是健康的，还是残疾的？</li>
+</ol>
+<p>小明明明能跑能跳，拿了冠军，体验到了竞技的快乐。但妈妈却不断给他洗脑“你还有病”、“你的脚还疼”。</p>
+<p>这种**“煤气灯效应”**会让孩子产生严重的自我怀疑：我到底是强壮的，还是脆弱的？</p>
+<p>长此以往，孩子可能会真的出现心理暗示下的躯体疼痛，甚至变成一个遇事就装病逃避的懦夫。</p>
+<ol start="3">
+<li>得不偿失的“爱”</li>
+</ol>
+<p>小明妈妈以为自己在为孩子争取利益。</p>
+<p>实际上，她剥夺了孩子的健康（不能体育锻炼）、剥夺了孩子的社交（因为讹诈，同学可能会疏远他）、剥夺了孩子的荣誉感。</p>
+<p>她捡起了一千块钱的芝麻，却丢掉了孩子人格健全的西瓜。</p>
+<h3>05 <strong>写在最后</strong></h3>
+<p>有人问：<strong>“父母是孩子的第一任老师，可如果父母都需要教育，那孩子的正规教育靠谁保证呢？”</strong></p>
+<p>这确实是一个无解的难题。</p>
+<p>作为老师，我们可以教给孩子知识，甚至想法设法教给他们做人的道理。但我们无法时刻对抗家庭灌输给他们的“毒素”。</p>
+<p>对于小明，我只能在学校里尽量告诉他：<strong>“孩子，你是健康的，你还是短跑冠军，你不需要为了任何理由装病。”</strong></p>
+<p>我时常鼓励小明：“小明，老师觉得你是健康的，只要你想跑想参加运动，老师支持你。”</p>
+<p>我也想对所有家长说：</p>
+<p>请珍惜那个像白纸一样的孩子。不要把社会的市侩、成人的贪婪，涂抹在他们干净的心灵上。</p>
+<p>孩子的三观，真的比你们眼中的一千块钱，贵重一万倍。社会主义核心价值观，刻满了整个城市，大人或许不以为意，但对孩子确实非常重要。</p>
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
+                </div>
+
+                <!-- 版权信息 -->
+                <div class="mt-10 bg-gray-50 rounded-lg border border-gray-200 p-4"
+                    x-data="{domain: 'https:&#x2F;&#x2F;yishulun.com', link: 'https:&#x2F;&#x2F;yishulun.com' + window.location.pathname}">
+                    <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
+                    <p class="text-sm text-gray-700">
+                        本文链接：
+                        <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)"
+                            target="_blank" rel="noopener"></a>
+                    </p>
+                    <p class="text-sm text-gray-700 mt-2">
+                        许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
+                        <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener"
+                            class="text-primary-600 hover:underline">查看许可说明</a>
+                    </p>
+                </div>
+
+                <!-- 分享功能 -->
+                <div class="mt-12 bg-gray-50 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900 p-4 pb-0">分享这篇文章</h4>
+                    <div class="flex flex-wrap gap-3 p-4">
+                        <button onclick="shareToTwitter()" class="btn-outline inline-flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                            Twitter
+                        </button>
+                        <button
+                            @click="navigator.clipboard.writeText(window.location.href).then(() => { copiedLink = true; setTimeout(() => copiedLink = false, 2000) })"
+                            class="btn-outline inline-flex items-center"
+                            :class="{ 'bg-green-100 text-green-800 border-green-300': copiedLink }">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            <span x-text="copiedLink ? '已复制' : '复制链接'"></span>
+                        </button>
+                    </div>
+                </div>
+
+                
+                <!-- 评论区域（Giscus，懒加载） -->
+                <div id="comments" class="mt-12">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">评论</h4>
+                    <div id="giscus-container"></div>
+                </div>
+                <script>
+                    (function () {
+                        var loadGiscus = function () {
+                            var s = document.createElement('script');
+                            s.src = 'https://giscus.app/client.js';
+                            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
+                            s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
+                            s.setAttribute('data-category', 'General');
+                            s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');
+                            s.setAttribute('data-mapping', 'pathname');
+                            s.setAttribute('data-strict', '1');
+                            s.setAttribute('data-reactions-enabled', '1');
+                            s.setAttribute('data-emit-metadata', '0');
+                            s.setAttribute('data-input-position', 'top');
+                            s.setAttribute('data-loading', 'lazy');
+                            s.setAttribute('data-theme', 'preferred_color_scheme');
+                            s.setAttribute('data-lang', 'zh-CN');
+                            s.setAttribute('crossorigin', 'anonymous');
+                            s.async = true;
+                            (document.getElementById('giscus-container') || document.body).appendChild(s);
+                        };
+                        if ('requestIdleCallback' in window) {
+                            requestIdleCallback(loadGiscus);
+                        } else {
+                            window.addEventListener('load', function () { setTimeout(loadGiscus, 1200); });
+                        }
+                    })();
+                </script>
+                
+
+                <!-- 返回顶部 -->
+                <div class="text-center mt-8">
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                        class="btn-secondary inline-flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                        </svg>
+                        返回顶部
+                    </button>
+                </div>
+            </article>
+        </div>
+
+        
+        <!-- 目录组件 -->
+<div class="toc-container fixed right-4 top-20 z-40 hidden xl:block" 
+     x-data="{ 
+         tocOpen: true, 
+         activeId: '',
+         headings: [],
+         init() {
+             this.generateToc();
+             this.observeHeadings();
+         },
+         generateToc() {
+             const content = document.querySelector('.prose, .card-body');
+             if (!content) return;
+             
+             const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+             this.headings = Array.from(headings).map((heading, index) => {
+                 const id = heading.id || `heading-${index}`;
+                 heading.id = id;
+                 return {
+                     id: id,
+                     text: heading.textContent.trim(),
+                     level: parseInt(heading.tagName.charAt(1)),
+                     element: heading
+                 };
+             });
+         },
+         observeHeadings() {
+             if (this.headings.length === 0) return;
+             
+             const observer = new IntersectionObserver((entries) => {
+                 entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                         this.activeId = entry.target.id;
+                     }
+                 });
+             }, {
+                 rootMargin: '-20% 0px -80% 0px'
+             });
+             
+             this.headings.forEach(heading => {
+                 observer.observe(heading.element);
+             });
+         },
+         scrollToHeading(id) {
+             const element = document.getElementById(id);
+             if (element) {
+                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+             }
+         }
+     }"
+     x-init="init()">
+    
+    <!-- 目录切换按钮 -->
+    <button @click="tocOpen = !tocOpen" 
+            class="mb-2 p-2 bg-white rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-200"
+            title="目录">
+        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+    
+    <!-- 目录内容 -->
+    <div x-show="tocOpen" 
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 transform scale-95"
+         x-transition:enter-end="opacity-100 transform scale-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 transform scale-100"
+         x-transition:leave-end="opacity-0 transform scale-95"
+         class="bg-white rounded-lg shadow-xl border border-gray-200 p-4 max-w-xs w-64 max-h-96 overflow-y-auto">
+        
+        <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-gray-900">目录</h3>
+            <button @click="tocOpen = false" class="text-gray-400 hover:text-gray-600">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="space-y-1">
+            <template x-for="heading in headings" :key="heading.id">
+                <a @click.prevent="scrollToHeading(heading.id)" 
+                   :class="{
+                       'text-primary-600 bg-primary-50 border-l-2 border-primary-600': activeId === heading.id,
+                       'text-gray-600 hover:text-gray-900 hover:bg-gray-50': activeId !== heading.id,
+                       'pl-2': heading.level === 1,
+                       'pl-4': heading.level === 2,
+                       'pl-6': heading.level === 3,
+                       'pl-8': heading.level === 4,
+                       'pl-10': heading.level === 5,
+                       'pl-12': heading.level === 6
+                   }"
+                   class="block py-1 px-2 text-sm cursor-pointer rounded transition-colors duration-150"
+                   x-text="heading.text">
+                </a>
+            </template>
+        </nav>
+        
+        <div x-show="headings.length === 0" class="text-sm text-gray-500 text-center py-4">
+            暂无目录
+        </div>
+    </div>
+</div>
+
+<style>
+/* 移动端隐藏目录 */
+@media (max-width: 1279px) {
+    .toc-container {
+        display: none !important;
+    }
+}
+
+/* 目录滚动条样式 */
+.toc-container .max-h-96::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+</style>
+
+        
+    </div>
+</div>
+
+<script>
+    function shareToTwitter() {
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent(document.title);
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+    }
+</script>
+
+        </main>
+    </div>
+
+    <!-- 广告位1：底部广告（版权区上方） -->
+    
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
+            <div
+                class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="flex flex-col items-center p-4 text-center">
+                    <!-- 广告图片 -->
+                    <div class="mb-3">
+                        <img src="&#x2F;static&#x2F;images&#x2F;book-wegame.png" alt="微信小游戏开发"
+                            class="w-48 h-60 object-cover rounded-md mx-auto"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMTkyIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiBmaWxsPSIjREJFRkZGIi8+Cjx0ZXh0IHg9Ijk2IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMzc2RkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7kuLvpopjlpLTlg488L3R4dD4KPC9zdmc+'">
+                    </div>
+
+                    <!-- 广告信息 -->
+                    <div class="max-w-sm">
+                        <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+                            微信小游戏开发
+                        </h2>
+                        
+                        <p class="text-gray-700 text-sm mb-3">学习微信小游戏开发技术，掌握游戏开发全流程</p>
+                        
+
+                        <!-- 查看详情按钮 -->
+                        <div
+                            class="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow-sm transition-colors text-sm">
+                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                            </svg>
+                            查看详情
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    
+
+    <!-- 页脚 -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center space-y-2">
+                <p class="text-gray-600">
+                    &copy; 2002-2026
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;yishulun.com" target="_blank" rel="noopener"
+                        class="text-gray-700 hover:text-primary-600">LIYI</a>
+                    
+                    
+                    
+                    &nbsp;|&nbsp;
+                    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"
+                        class="text-gray-500 hover:text-gray-700 text-sm">
+                        京ICP备14007000号-8
+                    </a>
+                    
+                </p>
+                <p class="text-gray-500 text-sm">
+                    由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener"
+                        class="text-primary-600 hover:text-primary-700">RustPress</a> 提供支持
+                </p>
+                <p class="text-gray-500 text-sm">
+                    <a href="/rss.xml" class="hover:text-primary-600">RSS</a>
+                    &nbsp;·&nbsp;
+                    <a href="/sitemap.xml" class="hover:text-primary-600">Sitemap</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 搜索结果容器 -->
+    <div class="fixed inset-x-0 top-16 z-40 hidden" id="search-results">
+        <div class="bg-white shadow-lg border border-gray-200 rounded-lg mx-4 mt-2 max-h-96 overflow-y-auto">
+            <!-- 搜索结果将在这里显示 -->
+        </div>
+    </div>
+
+
+
+    <!-- 搜索功能脚本 -->
+    <script src="/static/js/search.js"></script>
+
+    
+    <!-- Google Analytics 懒加载 -->
+    <script>
+        (function () {
+            var gid = "G-8N64Q25EK9";
+            var loadGA = function () {
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = "https://www.googletagmanager.com/gtag/js?id=" + gid;
+                s.onload = function () {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); } // eslint-disable-line
+                    gtag('js', new Date());
+                    gtag('config', gid);
+                };
+                document.head.appendChild(s);
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadGA);
+            } else {
+                window.addEventListener('load', function () { setTimeout(loadGA, 1500); });
+            }
+        })();
+    </script>
+    
+
+    
+    <!-- Google Ads 懒加载 -->
+    <script>
+        (function () {
+            var clientId = "ca-pub-2139303336591479";
+            var loadAds = function () {
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + clientId;
+                s.crossOrigin = "anonymous";
+                document.head.appendChild(s);
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadAds);
+            } else {
+                window.addEventListener('load', function () { setTimeout(loadAds, 1500); });
+            }
+        })();
+    </script>
+    
+</body>
+
+</html>
