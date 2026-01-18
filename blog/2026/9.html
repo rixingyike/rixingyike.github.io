@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<!-- 基础布局模板 -->
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一树论</title>
+
+    
+<meta name="description" content="Anthropic 推出 Cowork，将 Claude Code 能力扩展到非编程领域，帮助用户处理文件、发票、账务等繁琐工作。本文介绍 Cowork 的功能、工作原理、安全注意事项及如何申请试用，适合关注 AI 办公工具的用户。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="继 Claude Code 之后，Anthropic 又推出了 Cowork，为非程序员服务">
+<meta property="og:description" content="Anthropic 推出 Cowork，将 Claude Code 能力扩展到非编程领域，帮助用户处理文件、发票、账务等繁琐工作。本文介绍 Cowork 的功能、工作原理、安全注意事项及如何申请试用，适合关注 AI 办公工具的用户。">
+<meta property="og:site_name" content="一树论">
+
+<link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;blog&#x2F;2026&#x2F;9.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;yishulun.com&#x2F;blog&#x2F;2026&#x2F;9.html">
+
+
+
+<meta property="article:published_time" content="2026-01-18">
+
+
+
+<meta property="article:tag" content="Anthropic Cowork">
+
+<meta property="article:tag" content="Claude AI 非程序员工具">
+
+<meta property="article:tag" content="AI 文件管理安全">
+
+<meta property="article:tag" content="Cowork 试用申请">
+
+<meta property="article:tag" content="AI 办公效率提升">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "继 Claude Code 之后，Anthropic 又推出了 Cowork，为非程序员服务",
+  "image": [
+    "https:&#x2F;&#x2F;yishulun.com/static/images/logo.png"
+   ],
+  "datePublished": "2026-01-18",
+  "author": [{
+      "@type": "Person",
+      "name": "LIYI",
+      "url": "https:&#x2F;&#x2F;yishulun.com"
+    }]
+}
+</script>
+
+
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!-- Alpine.js 库 -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Lunr.js 搜索库 -->
+    <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans"
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    <!-- 顶部导航栏 -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo 和站点名称 -->
+                <div class="flex items-center space-x-3">
+                    <img src="/static/images/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
+                    <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
+                        一树论
+                    </a>
+                </div>
+
+                <!-- 搜索框 - 桌面版 -->
+                <div class="hidden md:flex flex-1 max-w-xs mx-8">
+                    <form action="/search.html" method="get" class="relative w-full">
+                        <input type="text" name="q"
+                            class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
+                            placeholder="搜索文章..." id="search-input">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <button type="submit"
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- 导航菜单 - 桌面版 -->
+                <div class="hidden md:flex items-center space-x-1">
+                    
+                    
+                    <a href="&#x2F;" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')) }">首页</a>
+                    
+                    <a href="&#x2F;archives.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">归档</a>
+                    
+                    <a href="&#x2F;categories.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">分类</a>
+                    
+                    <a href="&#x2F;tags.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
+                    
+                    <a href="&#x2F;friends.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
+                    
+                    <a href="&#x2F;about.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">关于</a>
+                    
+                    
+                </div>
+
+                <!-- 移动端菜单按钮 -->
+                <button
+                    class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 移动端菜单 -->
+        <div class="md:hidden" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform -translate-y-2"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform translate-y-0"
+            x-transition:leave-end="opacity-0 transform -translate-y-2">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+                <!-- 移动端搜索框 -->
+                <div class="px-3 py-2">
+                    <form action="/search.html" method="get" class="relative">
+                        <input type="text" name="q"
+                            class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
+                            placeholder="搜索文章..." id="mobile-search-input">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <button type="submit"
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <!-- 移动端导航链接 -->
+                
+                
+                <a href="&#x2F;" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">首页</a>
+                
+                <a href="&#x2F;archives.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">归档</a>
+                
+                <a href="&#x2F;categories.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">分类</a>
+                
+                <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                
+                <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
+                
+                <a href="&#x2F;about.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">关于</a>
+                
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <main class="min-h-screen py-8">
+            
+<div class="max-w-4xl mx-auto relative">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- 主要内容 -->
+        <div class="flex-1">
+            <article x-data="{ copiedLink: false, copiedCode: {} }">
+                <!-- 分类面包屑 -->
+                
+                <nav class="mb-6 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+
+                <!-- 文章头部 -->
+                <header class="mb-8 pb-8 border-b border-gray-200">
+                    <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-6 leading-tight">
+                        继 Claude Code 之后，Anthropic 又推出了 Cowork，为非程序员服务
+                    </h1>
+
+                    <div class="article-meta mb-6">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-01-18
+                        </span>
+                        
+                        
+                    </div>
+
+                    <!-- 标签 -->
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/Anthropic Cowork/"
+                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                </path>
+                            </svg>
+                            Anthropic Cowork
+                        </a>
+                        
+                        <a href="/tags/Claude AI 非程序员工具/"
+                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                </path>
+                            </svg>
+                            Claude AI 非程序员工具
+                        </a>
+                        
+                        <a href="/tags/AI 文件管理安全/"
+                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                </path>
+                            </svg>
+                            AI 文件管理安全
+                        </a>
+                        
+                        <a href="/tags/Cowork 试用申请/"
+                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                </path>
+                            </svg>
+                            Cowork 试用申请
+                        </a>
+                        
+                        <a href="/tags/AI 办公效率提升/"
+                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                </path>
+                            </svg>
+                            AI 办公效率提升
+                        </a>
+                        
+                    </div>
+                    
+                </header>
+
+                <!-- 文章内容 -->
+                <div class="article-content prose prose-lg max-w-none" x-init="$nextTick(() => {
+             // 为代码块添加复制按钮
+             document.querySelectorAll('pre code').forEach((codeBlock, index) => {
+                 const pre = codeBlock.parentElement;
+                 if (!pre.querySelector('.copy-code-btn')) {
+                     const button = document.createElement('button');
+                     button.className = 'copy-code-btn';
+                     button.textContent = '复制';
+                     button.setAttribute('x-data', `{ copied: false }`);
+                     button.setAttribute('@click', `navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent).then(() => { this.copied = true; setTimeout(() => this.copied = false, 2000) })`);
+                     button.setAttribute(':class', `{ 'bg-green-600': copied }`);
+                     button.setAttribute('x-text', `copied ? '已复制' : '复制'`);
+                     
+                     pre.style.position = 'relative';
+                     pre.appendChild(button);
+                 }
+             });
+         })">
+                    <h1>继 Claude Code 之后，Anthropic 又推出了 Cowork，为非程序员服务</h1>
+<p>这个软件功能在 macOS 版本的 Claude 软件中提供，大概 1 月 13 日发布，已经有 4000 多万人使用或知道这个消息了。</p>
+<p>它的主要作用，是将 Claude Code 的能力由编程领域扩展到了非编程领域，Anthropic 公司想让非程序员也能享受程序员的高效和快乐。（换句话说，Anthropic 也想让非 IT 领域也经历裁员大风暴。效率提升之后，自然不需要那么多员工了，裁员也成了必然了。）</p>
+<p>它是怎么工作的呢？</p>
+<p>其实很简单。在原来的 Claude Web 及 Claude Code 中，早已经有对文档、PPT 等文件处理的能力，现在通过 Cowork，只要我们允许 Cowork 访问我们电脑上的某个目录，然后它就能协助我们进行：文件的创建、阅读、修改、保存，甚至包括删除在内的所有操作。像原来琐碎的整理文件夹，整理报销票据，不理账务记录等，都可以交给 Cowork，让它帮助我们生成文档或 Excel。基于一些图片和一些只言片语的灵感，生成一篇文章或生成一个演讲稿，也都不在话下。</p>
+<p>除了上面提到的 IO 能力，Cowork 还与浏览器插件版本的 Claude 联手，具有打开网页搜索世界的能力，它还可以与 Claude Code 联手写代码编写软件的能力，甚至在终端中安装、运行软件的能力。后面这两项能力在官方博客中并没有提到，但它绝对做得到，目前是 Anthropic 公司愿不愿意做的问题。</p>
+<p>让 AI 操纵我们电脑里的文件，最大的问题就是安全。如果 AI 抽疯或被人控制，突然执行了一行 sudo rm -rf *怎么办？所以，在使用 Cowork 时，我们给它添加的第一条规则应该就是：不允许直接删除任何一个文件，删除之前都需要我的确认。</p>
+<p>当然只限制删除也不行，有一种破坏叫“响应不及时”破坏，也应该同时限制 Cowork：不要创建任何大文件，在存储我的电脑不能存储的文件时，一定要经由我同意。</p>
+<p>最后这两条都是我臆想的，对于大多数普通工作者，让 AI 帮助我们处理一些发票、账务、文字等繁琐的工作，一定是非常受欢迎的。诸君所虑者，无非就是安全、安全、安全。大不了在交给 Cowork 之前，我自己留一个备份就可以了；还有，严格限制 Cowork 只在某一个文件夹下活动，这样不就安全了？</p>
+<p>目前这项功能只提供给 Max 订阅用户使用，对于 Pro 或免费用户，现在想试用的话需要申请：</p>
+<p><a href="https://forms.gle/mtoJrd8kfYny29jQ9">https://forms.gle/mtoJrd8kfYny29jQ9</a></p>
+<p><img src="assets/clip_20260118-223219.png" alt="image" /></p>
+<p>我已经申请了，如果我获得了试用权限，到时候体验了再写试用报告。bye。</p>
+<p>📅 2026/01/18 周日 22:32</p>
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
+                </div>
+
+                <!-- 版权信息 -->
+                <div class="mt-10 bg-gray-50 rounded-lg border border-gray-200 p-4"
+                    x-data="{domain: 'https:&#x2F;&#x2F;yishulun.com', link: 'https:&#x2F;&#x2F;yishulun.com' + window.location.pathname}">
+                    <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
+                    <p class="text-sm text-gray-700">
+                        本文链接：
+                        <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)"
+                            target="_blank" rel="noopener"></a>
+                    </p>
+                    <p class="text-sm text-gray-700 mt-2">
+                        许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
+                        <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener"
+                            class="text-primary-600 hover:underline">查看许可说明</a>
+                    </p>
+                </div>
+
+                <!-- 分享功能 -->
+                <div class="mt-12 bg-gray-50 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900 p-4 pb-0">分享这篇文章</h4>
+                    <div class="flex flex-wrap gap-3 p-4">
+                        <button onclick="shareToTwitter()" class="btn-outline inline-flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                            Twitter
+                        </button>
+                        <button
+                            @click="navigator.clipboard.writeText(window.location.href).then(() => { copiedLink = true; setTimeout(() => copiedLink = false, 2000) })"
+                            class="btn-outline inline-flex items-center"
+                            :class="{ 'bg-green-100 text-green-800 border-green-300': copiedLink }">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            <span x-text="copiedLink ? '已复制' : '复制链接'"></span>
+                        </button>
+                    </div>
+                </div>
+
+                
+                <!-- 评论区域（Giscus，懒加载） -->
+                <div id="comments" class="mt-12">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">评论</h4>
+                    <div id="giscus-container"></div>
+                </div>
+                <script>
+                    (function () {
+                        var loadGiscus = function () {
+                            var s = document.createElement('script');
+                            s.src = 'https://giscus.app/client.js';
+                            s.setAttribute('data-repo', 'rixingyike/yishulun.com_discus');
+                            s.setAttribute('data-repo-id', 'R_kgDOKRUETQ');
+                            s.setAttribute('data-category', 'General');
+                            s.setAttribute('data-category-id', 'DIC_kwDOKRUETc4CZMWK');
+                            s.setAttribute('data-mapping', 'pathname');
+                            s.setAttribute('data-strict', '1');
+                            s.setAttribute('data-reactions-enabled', '1');
+                            s.setAttribute('data-emit-metadata', '0');
+                            s.setAttribute('data-input-position', 'top');
+                            s.setAttribute('data-loading', 'lazy');
+                            s.setAttribute('data-theme', 'preferred_color_scheme');
+                            s.setAttribute('data-lang', 'zh-CN');
+                            s.setAttribute('crossorigin', 'anonymous');
+                            s.async = true;
+                            (document.getElementById('giscus-container') || document.body).appendChild(s);
+                        };
+                        if ('requestIdleCallback' in window) {
+                            requestIdleCallback(loadGiscus);
+                        } else {
+                            window.addEventListener('load', function () { setTimeout(loadGiscus, 1200); });
+                        }
+                    })();
+                </script>
+                
+
+                <!-- 返回顶部 -->
+                <div class="text-center mt-8">
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                        class="btn-secondary inline-flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                        </svg>
+                        返回顶部
+                    </button>
+                </div>
+            </article>
+        </div>
+
+        
+        <!-- 目录组件 -->
+<div class="toc-container fixed right-4 top-20 z-40 hidden xl:block" 
+     x-data="{ 
+         tocOpen: true, 
+         activeId: '',
+         headings: [],
+         init() {
+             this.generateToc();
+             this.observeHeadings();
+         },
+         generateToc() {
+             const content = document.querySelector('.prose, .card-body');
+             if (!content) return;
+             
+             const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+             this.headings = Array.from(headings).map((heading, index) => {
+                 const id = heading.id || `heading-${index}`;
+                 heading.id = id;
+                 return {
+                     id: id,
+                     text: heading.textContent.trim(),
+                     level: parseInt(heading.tagName.charAt(1)),
+                     element: heading
+                 };
+             });
+         },
+         observeHeadings() {
+             if (this.headings.length === 0) return;
+             
+             const observer = new IntersectionObserver((entries) => {
+                 entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                         this.activeId = entry.target.id;
+                     }
+                 });
+             }, {
+                 rootMargin: '-20% 0px -80% 0px'
+             });
+             
+             this.headings.forEach(heading => {
+                 observer.observe(heading.element);
+             });
+         },
+         scrollToHeading(id) {
+             const element = document.getElementById(id);
+             if (element) {
+                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+             }
+         }
+     }"
+     x-init="init()">
+    
+    <!-- 目录切换按钮 -->
+    <button @click="tocOpen = !tocOpen" 
+            class="mb-2 p-2 bg-white rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-200"
+            title="目录">
+        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+    
+    <!-- 目录内容 -->
+    <div x-show="tocOpen" 
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 transform scale-95"
+         x-transition:enter-end="opacity-100 transform scale-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 transform scale-100"
+         x-transition:leave-end="opacity-0 transform scale-95"
+         class="bg-white rounded-lg shadow-xl border border-gray-200 p-4 max-w-xs w-64 max-h-96 overflow-y-auto">
+        
+        <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-gray-900">目录</h3>
+            <button @click="tocOpen = false" class="text-gray-400 hover:text-gray-600">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="space-y-1">
+            <template x-for="heading in headings" :key="heading.id">
+                <a @click.prevent="scrollToHeading(heading.id)" 
+                   :class="{
+                       'text-primary-600 bg-primary-50 border-l-2 border-primary-600': activeId === heading.id,
+                       'text-gray-600 hover:text-gray-900 hover:bg-gray-50': activeId !== heading.id,
+                       'pl-2': heading.level === 1,
+                       'pl-4': heading.level === 2,
+                       'pl-6': heading.level === 3,
+                       'pl-8': heading.level === 4,
+                       'pl-10': heading.level === 5,
+                       'pl-12': heading.level === 6
+                   }"
+                   class="block py-1 px-2 text-sm cursor-pointer rounded transition-colors duration-150"
+                   x-text="heading.text">
+                </a>
+            </template>
+        </nav>
+        
+        <div x-show="headings.length === 0" class="text-sm text-gray-500 text-center py-4">
+            暂无目录
+        </div>
+    </div>
+</div>
+
+<style>
+/* 移动端隐藏目录 */
+@media (max-width: 1279px) {
+    .toc-container {
+        display: none !important;
+    }
+}
+
+/* 目录滚动条样式 */
+.toc-container .max-h-96::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+</style>
+
+        
+    </div>
+</div>
+
+<script>
+    function shareToTwitter() {
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent(document.title);
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+    }
+</script>
+
+        </main>
+    </div>
+
+    <!-- 广告位1：底部广告（版权区上方） -->
+    
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
+            <div
+                class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="flex flex-col items-center p-4 text-center">
+                    <!-- 广告图片 -->
+                    <div class="mb-3">
+                        <img src="&#x2F;static&#x2F;images&#x2F;book-wegame.png" alt="微信小游戏开发"
+                            class="w-48 h-60 object-cover rounded-md mx-auto"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMTkyIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiBmaWxsPSIjREJFRkZGIi8+Cjx0ZXh0IHg9Ijk2IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMzc2RkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7kuLvpopjlpLTlg488L3R4dD4KPC9zdmc+'">
+                    </div>
+
+                    <!-- 广告信息 -->
+                    <div class="max-w-sm">
+                        <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+                            微信小游戏开发
+                        </h2>
+                        
+                        <p class="text-gray-700 text-sm mb-3">学习微信小游戏开发技术，掌握游戏开发全流程</p>
+                        
+
+                        <!-- 查看详情按钮 -->
+                        <div
+                            class="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow-sm transition-colors text-sm">
+                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                            </svg>
+                            查看详情
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    
+
+    <!-- 页脚 -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center space-y-2">
+                <p class="text-gray-600">
+                    &copy; 2002-2026
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;yishulun.com" target="_blank" rel="noopener"
+                        class="text-gray-700 hover:text-primary-600">LIYI</a>
+                    
+                    
+                    
+                    &nbsp;|&nbsp;
+                    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"
+                        class="text-gray-500 hover:text-gray-700 text-sm">
+                        京ICP备14007000号-8
+                    </a>
+                    
+                </p>
+                <p class="text-gray-500 text-sm">
+                    由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener"
+                        class="text-primary-600 hover:text-primary-700">RustPress</a> 提供支持
+                </p>
+                <p class="text-gray-500 text-sm">
+                    <a href="/rss.xml" class="hover:text-primary-600">RSS</a>
+                    &nbsp;·&nbsp;
+                    <a href="/sitemap.xml" class="hover:text-primary-600">Sitemap</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 搜索结果容器 -->
+    <div class="fixed inset-x-0 top-16 z-40 hidden" id="search-results">
+        <div class="bg-white shadow-lg border border-gray-200 rounded-lg mx-4 mt-2 max-h-96 overflow-y-auto">
+            <!-- 搜索结果将在这里显示 -->
+        </div>
+    </div>
+
+
+
+    <!-- 搜索功能脚本 -->
+    <script src="/static/js/search.js"></script>
+
+    
+    <!-- Google Analytics 懒加载 -->
+    <script>
+        (function () {
+            var gid = "G-8N64Q25EK9";
+            var loadGA = function () {
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = "https://www.googletagmanager.com/gtag/js?id=" + gid;
+                s.onload = function () {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); } // eslint-disable-line
+                    gtag('js', new Date());
+                    gtag('config', gid);
+                };
+                document.head.appendChild(s);
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadGA);
+            } else {
+                window.addEventListener('load', function () { setTimeout(loadGA, 1500); });
+            }
+        })();
+    </script>
+    
+
+    
+    <!-- Google Ads 懒加载 -->
+    <script>
+        (function () {
+            var clientId = "ca-pub-2139303336591479";
+            var loadAds = function () {
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + clientId;
+                s.crossOrigin = "anonymous";
+                document.head.appendChild(s);
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadAds);
+            } else {
+                window.addEventListener('load', function () { setTimeout(loadAds, 1500); });
+            }
+        })();
+    </script>
+    
+</body>
+
+</html>
