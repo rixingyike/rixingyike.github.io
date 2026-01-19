@@ -5,6 +5,13 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>社区终端软件支持 brew 安装了</title>
+    <link>https://yishulun.com/blog/2026/11.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/11.html</guid>
+    <description>社区终端软件支持 brew 安装了 现在有两种安装方式，老方法去 GitHub 下载： https://github.com/rixingyike/homebrew-setalias/releases 新方法就是使用 brew 指令： brew tap rixingyike/setalias brew install setalias 除了安装方式上的更新，本次更新还把 Python3 依赖项在 install 时整合在了一起，让用户一键拷贝安装。 下一步，我准备加一个 UI 界面，将环境变量的设置放在界面上。是不是有了界面感觉会容易一些？另外，准备支持 Windows、Linux。本来就是一个跨平台的脚本软件，支持这两个系统是应该的。还有，如果可以，我想精简一下依赖项。像有一些依赖，比如 OpenAI，去掉也可以，只用了里面的某个代码片段，自己重写也可以。 另外，从长远来看，我觉得未来</description>
+    <pubDate>2026-01-20</pubDate>
+  </item>
+  <item>
     <title>社区终端发布新版，进一步去掉枷锁，让使用更简单</title>
     <link>https://yishulun.com/blog/2026/10.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/10.html</guid>
