@@ -5,6 +5,13 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>无敌脚本批量删除私有笔记</title>
+    <link>https://yishulun.com/blog/2026/12.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/12.html</guid>
+    <description>无敌脚本批量删除私有笔记 因为测试软件的关系我上传过一些测试笔记，有一些是我上传的，有一些是脚本上传的。留着怕占用社长的服务器存储空间，准备删掉。于是写了一个无敌脚本： // 删除一个item并确认 async function deleteOneItem() { const noteOps = document.querySelectorAll([class*=&amp;quot;note-operation&amp;quot;]); if (noteOps.length === 0) { console.log(&amp;quot;没有items了&amp;quot;); return false; } const firstNoteOp = noteOps[0]; const parent = firstNoteOp.parentElement; const grandParent = parent?.parent</description>
+    <pubDate>2026-01-20</pubDate>
+  </item>
+  <item>
     <title>社区终端软件支持 brew 安装了</title>
     <link>https://yishulun.com/blog/2026/11.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/11.html</guid>
