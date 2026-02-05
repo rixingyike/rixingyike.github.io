@@ -5,6 +5,13 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>我的第一个 openclaw 机器人</title>
+    <link>https://yishulun.com/blog/2026/15.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/15.html</guid>
+    <description>我的第一个 openclaw 机器人 几天前我整了一台服务器，出门在外，我就使用手机操作它，结果努力了几天也没有搞定。哈哈🤣。 失败的原因我现在也知道了，是因为网络。我使用的是厂商国内云服务器，为了开发者方便，聪明的厂商管理员把系统里的 npm 源由国外源切换成了本地厂源，但是，从 github 拉源码是需要外网的，而厂商源却不是全球的，这意味着，如果能拉 github 代码，就用不了厂商源拉依赖，于是又改源，一番折腾。当然，在此之前，要发现这个因聪明产生的问题，也需要时间。 今天回到了家里，我到电脑上操作。先把服务器重装了一下，重装检查软件源，把 apt-get 的源先修改了，又修改了其他配置。最后按照官方 openclaw.ai 教程，三五下就搞定了。当我在 TUI 终端里发出 hi 的时候，openclaw 回敬我的不再是 idle 与 no output，而是一段文字。我激动坏了！</description>
+    <pubDate>2026-02-05</pubDate>
+  </item>
+  <item>
     <title>国宴级陈氏红烧黄河鲤鱼</title>
     <link>https://yishulun.com/blog/2026/14.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/14.html</guid>
