@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-  <title>一树论</title>
+  <title>一树仑</title>
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
+  <item>
+    <title>恩言 - 大字有声圣经</title>
+    <link>https://yishulun.com/enyan.html</link>
+    <guid isPermaLink="true">https://yishulun.com/enyan.html</guid>
+    <description>功能特性 📖 新约旧约全书 — 涵盖圣经全部 66 卷书，繁体中文和合本 🔤 大字显示 — 专为阅读优化的大字排版，清晰易读 🔊 有声朗读 — 内置离线语音引擎，支持逐章逐节朗读 🎯 逐节跟读 — 播放时自动高亮当前朗读的经节 📴 完全离线 — 全部内容与语音离线可用，无需网络 📱 多平台支持 — 同时支持 macOS 和 Android 平台 技术架构 本应用使用 Flutter 作为跨平台 UI 框架， Rust 处理核心 TTS 引擎： TTS 语音引擎基于 Rust 实现，通过 FFI 桥接 Flutter 语音资源包支持按需下载，首次使用自动解压 支持 6kHz 与 8kHz 两种语音质量可选 资源包说明 应用内置默认内容可直接使用。在有网络的情况下，App 会自动引导下载以下可选资源包以获得更佳体验： 资源包 说明 繁体中文语言包 繁体中文经文显示 6kHz 语音包 基础语音朗</description>
+    <pubDate>2026-02-19</pubDate>
+  </item>
   <item>
     <title>板栗是人是狗？</title>
     <link>https://yishulun.com/blog/2026/23.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/23.html</guid>
-    <description>板栗是人是狗？ 很久没有写东西了，写点小情绪吧。在我看来，能写的无非就是两种：大内容与小情绪。大内容是经过深思熟虑，认为自成体系了，拿出来示人；小情绪就是心里突然有了写的冲动，抒发为人的平时感慨。 板栗不是坚果，是一条狗，因为它的颜色是栗色，所以取了这个名字。板栗是有人送给小舅子的，小舅子又转送给了老丈人，近期丈母娘生病住院，我随领导去了老丈人家，与板栗也才有了密切接触。 一件值得写的事，是板栗遛我。平常都是老丈人负责遛它，有一天老丈人赶早去医院了，这一天遛板栗的任务就落在了我身上。板栗很讲卫生，每天早上要定时出去排泄，它从不在家里或院里大小便。这天大概八九点钟，它等得不耐烦了，一直用前爪划拉窗户。我给孩子们做完早餐，就立马带它出去。把绳子给它套上。板栗的绳子像马鞍一样是套在肚子上的，不像小时候我家的田园犬是套在脖子上的。它过于热情，可能是觉察到我要带它出去玩了，左跳右跳一直动个不停，害我</description>
+    <description>板栗是人是狗？ 很久没有写东西了，写点小情绪吧。在我看来，能写的无非就是两种：大内容与小情绪。大内容是经过深思熟虑，认为自成体系了，拿出来示人；小情绪就是心里突然有了写的冲动，抒发为人的平时感慨。 板栗不是坚果，是一条狗，因为它的颜色是栗色，所以取了这个名字。板栗是有人送给小舅子的，小舅子又转送给了老丈人，近期丈母娘生病住院，我随领导去了老丈人家，与板栗也才有了密切接触。 第一件值得写的事，是板栗遛我。平常都是老丈人负责遛它，有一天老丈人赶早去医院了，这一天遛板栗的任务就落在了我身上。板栗很讲卫生，每天早上要定时出去排泄，它从不在家里或院里大小便。这天大概八九点钟，它等得不耐烦了，一直用前爪划拉窗户。我给孩子们做完早餐，就立马带它出去。把绳子给它套上。板栗的绳子像马鞍一样是套在肚子上的，不像小时候我家的田园犬是套在脖子上的。它过于热情，可能是觉察到我要带它出去玩了，左跳右跳一直动个不停，害</description>
     <pubDate>2026-02-18</pubDate>
   </item>
   <item>
@@ -1907,6 +1914,13 @@
     <guid isPermaLink="true">https://yishulun.com/posts/2009/01.html</guid>
     <description>AS3事件机制概述 目录 [TOC] 事件机制是AS3的核心功能之一，没有充分掌握事件机制的方方面面，就不能算是精通AS3语言。 1，AS3事件机制的主要成员 IEventDispatcher：事件派发对象接口，定义了添加、派发、移除、是否监听指定事件、是否触发指定事件接口 EventDispatcher：事件派发对象接口的实现者，用户无法撇开EventDispatcher而自行实现IEventDispatcher接口，无法直接继承 EventDispatcher时，必须把EventDispatcher作为实例变量。 Event：事件基类，所有事件类均基于此类实现 2，观察者模式 AS3事件机制实现的是观察者模式。 IEventDispatcher充当了Subject角色，EventDispatcher相当于ConcreteSubject对象，Event相当于Observer，Concre</description>
     <pubDate>2008-05-01</pubDate>
+  </item>
+  <item>
+    <title>项目展示</title>
+    <link>https://yishulun.com/projects.html</link>
+    <guid isPermaLink="true">https://yishulun.com/projects.html</guid>
+    <description></description>
+    <pubDate></pubDate>
   </item>
   <item>
     <title>博客</title>

@@ -5,13 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>一树论</title>
+    <title>一树仑</title>
 
     
     <meta name="description" content="一花一世界，一树一菩提。">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="一树论">
-    <meta property="og:title" content="一树论">
+    <meta property="og:site_name" content="一树仑">
+    <meta property="og:title" content="一树仑">
     <meta property="og:description" content="一花一世界，一树一菩提。">
     
     <link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;home.html">
@@ -35,9 +35,9 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/logo.png" alt="一树论 Logo" class="h-8 w-8 rounded-full">
+                    <img src="/static/images/logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
-                        一树论
+                        一树仑
                     </a>
                 </div>
 
@@ -81,6 +81,9 @@
                     
                     <a href="&#x2F;friends.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
+                    
+                    <a href="&#x2F;projects.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;projects.html' || ('&#x2F;projects.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">项目</a>
                     
                     <a href="&#x2F;about.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">关于</a>
@@ -147,6 +150,9 @@
                 <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
                 
+                <a href="&#x2F;projects.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;projects.html' || ('&#x2F;projects.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;projects.html' || ('&#x2F;projects.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">项目</a>
+                
                 <a href="&#x2F;about.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">关于</a>
                 
@@ -178,10 +184,10 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div class="text-center">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                欢迎来到一树论
+                欢迎来到这里
             </h1>
             <p class="text-xl sm:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                稻盛和夫：成长不是和别人比，而是和自己的昨天比。
+                一花一世界，一树一菩提。
             </p>
             
             <!-- CTA 按钮 -->
@@ -221,60 +227,6 @@
         <!-- 文章列表 -->
         <div id="articles" class="space-y-6">
             
-                
-                <article class="card hover:shadow-lg transition-shadow duration-300">
-                    
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/posts/" class="hover:text-primary-600">posts</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/posts&#x2F;2008/" class="hover:text-primary-600">2008</a>
-                        
-                    </nav>
-                    
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="posts&#x2F;2008/06.html"
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                Flash Player的垃圾内存回收机制：能否强制回收？
-                            </a>
-                            
-                        </h2>
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2008-05-01
-                            </span>
-                            
-                            
-                        </div>
-                        
-                        <div class="text-gray-600 leading-relaxed mb-4">
-                            Flash Player的垃圾内存回收机制：能否强制回收？
-在Adobe Flash Player 10中，AS3的内部垃圾回收机制是怎样的？程序员可以强制FP回收内存吗？答案是否定的，但有方法。 
-1. 毛主席请猫吃辣椒的故事
-建国初期，国家正在对资本主义工商业进行社会主义改造，毛泽东问周恩来、刘少奇等，如何才能让猫吃辣椒？刘少奇说，把猫逮住，用筷子捅下去。周总理说，先把猫饿上三天，然后把辣椒裹…
-                        </div>
-                        
-                        
-                        <div class="flex flex-wrap gap-2">
-                            
-                            <a href="/tags/AS3 Expert/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                AS3 Expert
-                            </a>
-                            
-                        </div>
-                        
-                    </div>
-                </article>
                 
                 <article class="card hover:shadow-lg transition-shadow duration-300">
                     
@@ -386,6 +338,26 @@ EventDispatcher：事件派发对象接口的实现者，用户无法撇开Event
                             </a>
                             
                         </div>
+                        
+                    </div>
+                </article>
+                
+                <article class="card hover:shadow-lg transition-shadow duration-300">
+                    
+                    <div class="card-body">
+                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                            
+                            <a href="projects.html"
+                               class="text-gray-900 hover:text-primary-600 transition-colors">
+                                项目展示
+                            </a>
+                            
+                        </h2>
+                        <div class="article-meta mb-4">
+                            
+                            
+                        </div>
+                        
                         
                     </div>
                 </article>
@@ -615,7 +587,7 @@ h…
             <!-- 作者头像 -->
             
             <div class="mb-4">
-                <img src="&#x2F;static&#x2F;images&#x2F;avatar.png" alt="LIYI"
+                <img src="&#x2F;static&#x2F;images&#x2F;avatar.png" alt="金石碼农"
                     class="w-20 h-20 rounded-full mx-auto object-cover border-2 border-gray-200 hover:border-primary-400 transition-all duration-300"
                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDAiIGN5PSI0MCIgcj0iNDAiIGZpbGw9IiNGM0Y0RjYiLz4KPHN2ZyB4PSIyMCIgeT0iMjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM5Q0EzQUYiIHN0cm9rZS13aWR0aD0iMiI+CjxwYXRoIGQ9Im0yMCAyMS0xNi0xNm0wIDEzaDEzbTAtMTNMMjEgMjEiLz4KPHN2Zz4KPC9zdmc+Cg=='">
             </div>
@@ -623,13 +595,13 @@ h…
 
             <!-- 作者姓名 -->
             <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                LIYI
+                金石碼农
             </h3>
 
             <!-- 作者简介 -->
             
             <p class="text-gray-600 text-sm mb-3 leading-relaxed">
-                读书使人进步，著书亦使人进步。
+                读书使人进步
             </p>
             
 
@@ -811,20 +783,6 @@ h…
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2008/06.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            Flash Player的垃圾内存回收机制：能否强制回收？
-                        </a>
-                        
-                    </h4>
-                    
-                    <p class="text-xs text-gray-500">2008-05-01</p>
-                    
-                </div>
-                
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <h4 class="text-sm font-medium mb-1">
-                        
                         <a href="posts&#x2F;2008/01.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
                             动态语言的基石之函数闭包
@@ -847,6 +805,18 @@ h…
                     </h4>
                     
                     <p class="text-xs text-gray-500">2008-05-01</p>
+                    
+                </div>
+                
+                <div class="p-4 hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-medium mb-1">
+                        
+                        <a href="projects.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
+                            项目展示
+                        </a>
+                        
+                    </h4>
                     
                 </div>
                 
@@ -1277,7 +1247,7 @@ h…
                     
                     
                     <a href="https:&#x2F;&#x2F;yishulun.com" target="_blank" rel="noopener"
-                        class="text-gray-700 hover:text-primary-600">LIYI</a>
+                        class="text-gray-700 hover:text-primary-600">金石碼农</a>
                     
                     
                     
