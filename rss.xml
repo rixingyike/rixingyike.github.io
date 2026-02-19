@@ -12,6 +12,13 @@
     <pubDate>2026-02-19</pubDate>
   </item>
   <item>
+    <title>RustPress - 纯静态博客引擎</title>
+    <link>https://yishulun.com/rustpress.html</link>
+    <guid isPermaLink="true">https://yishulun.com/rustpress.html</guid>
+    <description>功能特性 🚀 纯静态生成 — 零后端依赖，生成纯 HTML/CSS/JS 静态站点 ⚡ 增量编译 — 仅重新编译变更文件，毫秒级构建 📄 Markdown 写作 — 完整的 Markdown + frontmatter 支持 🔄 倒分页 — 独创倒序分页方案，新文章永远在首页 🎨 主题系统 — Tailwind CSS 主题，支持自定义模板 🔌 插件系统 — 基于 linkme 自动注册的插件架构 🔥 热更新 — 开发模式下文件变更自动重新构建 💬 评论系统 — 基于 GitHub Issues 的无后端评论 🔍 全文搜索 — 基于 Lunr.js 的客户端全文搜索 📡 RSS &amp;amp; Sitemap — 自动生成订阅源和站点地图 快速开始 # 安装 cargo install rustpress # 创建新博客 mkdir my-blog &amp;amp;&amp;amp; cd my-blog</description>
+    <pubDate>2026-02-19</pubDate>
+  </item>
+  <item>
     <title>板栗是人是狗？</title>
     <link>https://yishulun.com/blog/2026/23.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/23.html</guid>

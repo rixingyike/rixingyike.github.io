@@ -5,10 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>项目 - 一树仑</title>
+    <title>一树仑</title>
 
     
-<meta name="description" content="项目展示 - 一树仑">
+<meta name="description" content="增量编译、倒分页、无后端的 Rust 纯静态博客程序。支持 Markdown 写作、主题定制、插件系统和热更新开发模式。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RustPress - 纯静态博客引擎">
+<meta property="og:description" content="增量编译、倒分页、无后端的 Rust 纯静态博客程序。支持 Markdown 写作、主题定制、插件系统和热更新开发模式。">
+<meta property="og:site_name" content="一树仑">
+
+<link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;rustpress.html">
+
+
+<meta property="og:image" content="&#x2F;assets&#x2F;rustpress_logo.png">
+
 
 
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -158,98 +168,235 @@
         <main class="min-h-screen py-8">
             
 <div class="max-w-5xl mx-auto">
-    <!-- 页面标题 -->
-    <div class="text-center mb-12">
-        <h1 class="text-3xl font-bold text-gray-900 mb-3">📦 项目展示</h1>
-        <p class="text-gray-500 text-lg">开源作品与应用</p>
+
+    <!-- Hero 区域 -->
+    <div class="relative overflow-hidden rounded-2xl mb-10"
+        style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 30%, #4338ca 60%, #6366f1 100%);">
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 40%);">
+        </div>
+        <div class="relative px-8 py-12 sm:px-12 sm:py-16 flex flex-col sm:flex-row items-center gap-8">
+            
+            <div class="flex-shrink-0">
+                <img src="&#x2F;assets&#x2F;rustpress_logo.png" alt="RustPress - 纯静态博客引擎"
+                    class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl shadow-2xl border-2 border-white/20"
+                    style="backdrop-filter: blur(10px);">
+            </div>
+            
+            <div class="text-center sm:text-left flex-1">
+                <div class="flex flex-wrap items-center gap-3 justify-center sm:justify-start mb-3">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-white">
+                        RustPress - 纯静态博客引擎
+                    </h1>
+                    
+                    <span
+                        class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-white/15 text-indigo-100 border border-white/20"
+                        style="backdrop-filter: blur(8px);">
+                        v0.1.21
+                    </span>
+                    
+                </div>
+                
+                <p class="text-lg text-indigo-200 leading-relaxed max-w-2xl">
+                    增量编译、倒分页、无后端的 Rust 纯静态博客程序。支持 Markdown 写作、主题定制、插件系统和热更新开发模式。
+                </p>
+                
+                
+                <div class="flex flex-wrap gap-2 mt-4 justify-center sm:justify-start">
+                    
+                    <a href="/tags/rust/"
+                        class="px-2.5 py-0.5 rounded-md text-xs font-medium bg-white/10 text-indigo-200 hover:bg-white/20 transition-colors border border-white/10">
+                        #rust
+                    </a>
+                    
+                    <a href="/tags/blog/"
+                        class="px-2.5 py-0.5 rounded-md text-xs font-medium bg-white/10 text-indigo-200 hover:bg-white/20 transition-colors border border-white/10">
+                        #blog
+                    </a>
+                    
+                    <a href="/tags/static-site/"
+                        class="px-2.5 py-0.5 rounded-md text-xs font-medium bg-white/10 text-indigo-200 hover:bg-white/20 transition-colors border border-white/10">
+                        #static-site
+                    </a>
+                    
+                    <a href="/tags/ssg/"
+                        class="px-2.5 py-0.5 rounded-md text-xs font-medium bg-white/10 text-indigo-200 hover:bg-white/20 transition-colors border border-white/10">
+                        #ssg
+                    </a>
+                    
+                    <a href="/tags/开源/"
+                        class="px-2.5 py-0.5 rounded-md text-xs font-medium bg-white/10 text-indigo-200 hover:bg-white/20 transition-colors border border-white/10">
+                        #开源
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
     </div>
 
-    <!-- 项目卡片网格 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <a href="/enyan.html"
-            class="group block bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-primary-300 transition-all duration-300">
-            <!-- 项目头部 -->
-            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 text-white">
-                <div class="flex items-center space-x-4">
+    <!-- 截图区域 -->
+    
+
+    <!-- 下载区域 -->
+    
+    <div class="mb-10">
+        <h2 class="text-xl font-bold text-gray-900 mb-5 flex items-center gap-2">
+            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            下载安装
+            
+            <span class="text-sm font-normal text-gray-500">（v0.1.21）</span>
+            
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;rixingyike&#x2F;rustpress" target="_blank" rel="noopener"
+                class="group flex items-center gap-4 p-4 rounded-xl border border-gray-200 bg-white hover:border-indigo-300 hover:shadow-md transition-all">
+                <!-- 平台图标 -->
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center
+                    bg-indigo-50 text-indigo-600">
                     
-                    <img src="&#x2F;assets&#x2F;enyan&#x2F;icon.png" alt="恩言 - 大字有声圣经"
-                        class="w-16 h-16 rounded-xl shadow-lg bg-white/10 p-1 object-cover">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
                     
-                    <div>
-                        <h2 class="text-xl font-bold group-hover:underline">恩言 - 大字有声圣经</h2>
-                        
-                        <span class="inline-block mt-1 px-2 py-0.5 text-xs font-medium bg-white/20 rounded-full">v1.0.0</span>
-                        
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="font-semibold text-gray-900 text-sm group-hover:text-indigo-600 transition-colors">
+                        Cargo 安装
                     </div>
-                </div>
-            </div>
-            <!-- 项目信息 -->
-            <div class="p-6">
-                
-                <p class="text-gray-600 text-sm leading-relaxed mb-4">一款大字有声圣经朗读应用，支持新约旧约全书、繁体中文显示、离线语音朗读，适配 macOS 与 Android 多平台。</p>
-                
-                <!-- 标签 -->
-                
-                <div class="flex flex-wrap gap-2">
                     
-                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#app</span>
-                    
-                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#flutter</span>
-                    
-                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#rust</span>
-                    
-                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#tts</span>
-                    
-                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#圣经</span>
+                    <div class="text-xs text-gray-500">cargo install rustpress</div>
                     
                 </div>
-                
-            </div>
-        </a>
-        
-        <a href="/rustpress.html"
-            class="group block bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-primary-300 transition-all duration-300">
-            <!-- 项目头部 -->
-            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 text-white">
-                <div class="flex items-center space-x-4">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-indigo-500 transition-colors flex-shrink-0"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;rixingyike&#x2F;rustpress" target="_blank" rel="noopener"
+                class="group flex items-center gap-4 p-4 rounded-xl border border-gray-200 bg-white hover:border-indigo-300 hover:shadow-md transition-all">
+                <!-- 平台图标 -->
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center
+                    bg-indigo-50 text-indigo-600">
                     
-                    <img src="&#x2F;assets&#x2F;rustpress_logo.png" alt="RustPress - 纯静态博客引擎"
-                        class="w-16 h-16 rounded-xl shadow-lg bg-white/10 p-1 object-cover">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
                     
-                    <div>
-                        <h2 class="text-xl font-bold group-hover:underline">RustPress - 纯静态博客引擎</h2>
-                        
-                        <span class="inline-block mt-1 px-2 py-0.5 text-xs font-medium bg-white/20 rounded-full">v0.1.21</span>
-                        
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="font-semibold text-gray-900 text-sm group-hover:text-indigo-600 transition-colors">
+                        源码 (GitHub)
                     </div>
-                </div>
-            </div>
-            <!-- 项目信息 -->
-            <div class="p-6">
-                
-                <p class="text-gray-600 text-sm leading-relaxed mb-4">增量编译、倒分页、无后端的 Rust 纯静态博客程序。支持 Markdown 写作、主题定制、插件系统和热更新开发模式。</p>
-                
-                <!-- 标签 -->
-                
-                <div class="flex flex-wrap gap-2">
                     
-                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#rust</span>
-                    
-                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#blog</span>
-                    
-                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#static-site</span>
-                    
-                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#ssg</span>
-                    
-                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#开源</span>
+                    <div class="text-xs text-gray-500">git clone</div>
                     
                 </div>
-                
-            </div>
-        </a>
-        
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-indigo-500 transition-colors flex-shrink-0"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+            </a>
+            
+        </div>
     </div>
+    
+
+    <!-- 正文内容 -->
+    
+    <div class="bg-white rounded-xl border border-gray-200 p-6 sm:p-8 mb-10">
+        <div class="article-content prose prose-lg max-w-none" x-data x-init="$nextTick(() => {
+            document.querySelectorAll('#project-content pre code').forEach((codeBlock) => {
+                const pre = codeBlock.parentElement;
+                if (!pre.querySelector('.copy-code-btn')) {
+                    const button = document.createElement('button');
+                    button.className = 'copy-code-btn';
+                    button.textContent = '复制';
+                    button.setAttribute('x-data', `{ copied: false }`);
+                    button.setAttribute('@click', `navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent).then(() => { this.copied = true; setTimeout(() => this.copied = false, 2000) })`);
+                    button.setAttribute(':class', `{ 'bg-green-600': copied }`);
+                    button.setAttribute('x-text', `copied ? '已复制' : '复制'`);
+                    pre.style.position = 'relative';
+                    pre.appendChild(button);
+                }
+            });
+        })" id="project-content">
+            <h2>功能特性</h2>
+<ul>
+<li>🚀 <strong>纯静态生成</strong> — 零后端依赖，生成纯 HTML/CSS/JS 静态站点</li>
+<li>⚡ <strong>增量编译</strong> — 仅重新编译变更文件，毫秒级构建</li>
+<li>📄 <strong>Markdown 写作</strong> — 完整的 Markdown + frontmatter 支持</li>
+<li>🔄 <strong>倒分页</strong> — 独创倒序分页方案，新文章永远在首页</li>
+<li>🎨 <strong>主题系统</strong> — Tailwind CSS 主题，支持自定义模板</li>
+<li>🔌 <strong>插件系统</strong> — 基于 linkme 自动注册的插件架构</li>
+<li>🔥 <strong>热更新</strong> — 开发模式下文件变更自动重新构建</li>
+<li>💬 <strong>评论系统</strong> — 基于 GitHub Issues 的无后端评论</li>
+<li>🔍 <strong>全文搜索</strong> — 基于 Lunr.js 的客户端全文搜索</li>
+<li>📡 <strong>RSS &amp; Sitemap</strong> — 自动生成订阅源和站点地图</li>
+</ul>
+<h2>快速开始</h2>
+<pre><code class="language-bash"># 安装
+cargo install rustpress
+
+# 创建新博客
+mkdir my-blog &amp;&amp; cd my-blog
+rustpress init
+
+# 开发模式（热更新）
+rustpress dev --hotreload
+
+# 构建发布
+rustpress build
+</code></pre>
+<h2>技术栈</h2>
+<table><thead><tr><th>组件</th><th>技术</th></tr></thead><tbody>
+<tr><td>核心引擎</td><td>Rust</td></tr>
+<tr><td>模板引擎</td><td>Tera</td></tr>
+<tr><td>Markdown</td><td>pulldown-cmark</td></tr>
+<tr><td>CSS 框架</td><td>Tailwind CSS</td></tr>
+<tr><td>搜索引擎</td><td>Lunr.js</td></tr>
+<tr><td>插件注册</td><td>linkme</td></tr>
+</tbody></table>
+<h2>项目结构</h2>
+<pre><code>my-blog/
+├── source/           # Markdown 文章
+│   ├── config.toml   # 站点配置
+│   └── about.md      # 关于页面
+├── themes/           # 主题目录
+│   └── default/      # 默认主题
+├── public/           # 生成的静态文件
+└── config.toml       # 构建配置
+</code></pre>
+<h2>开源协议</h2>
+<p>Apache License 2.0 — 可自由使用、修改和分发。</p>
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
+        </div>
+    </div>
+    
+
+    <!-- 评论区域（由插件注入） -->
+    
+
+    <!-- 返回顶部 -->
+    <div class="text-center mt-8 mb-12">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="btn-secondary inline-flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18">
+                </path>
+            </svg>
+            返回顶部
+        </button>
+    </div>
+
 </div>
 
         </main>
