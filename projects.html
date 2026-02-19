@@ -5,38 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>一树仑</title>
+    <title>项目 - 一树仑</title>
 
     
-<meta name="description" content="一花一世界，一树一菩提。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="项目展示">
-<meta property="og:description" content="一花一世界，一树一菩提。">
-<meta property="og:site_name" content="一树仑">
-
-<link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;projects.html">
-<meta property="og:url" content="https:&#x2F;&#x2F;yishulun.com&#x2F;projects.html">
-
-
-
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "项目展示",
-  "image": [
-    "https:&#x2F;&#x2F;yishulun.com/static/images/logo.png"
-   ],
-  
-  "author": [{
-      "@type": "Person",
-      "name": "金石碼农",
-      "url": "https:&#x2F;&#x2F;yishulun.com"
-    }]
-}
-</script>
+<meta name="description" content="项目展示 - 一树仑">
 
 
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -185,254 +157,59 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <main class="min-h-screen py-8">
             
-<div class="max-w-4xl mx-auto relative">
-    <div class="flex flex-col lg:flex-row gap-8">
-        <!-- 主要内容 -->
-        <div class="flex-1">
-            <article x-data="{ copiedLink: false, copiedCode: {} }">
-                <!-- 分类面包屑 -->
-                
-
-                <!-- 文章头部 -->
-                <header class="mb-8 pb-8 border-b border-gray-200">
-                    <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-6 leading-tight">
-                        项目展示
-                    </h1>
-
-                    <div class="article-meta mb-6">
-                        
-                        
-                    </div>
-
-                    <!-- 标签 -->
-                    
-                </header>
-
-                <!-- 文章内容 -->
-                <div class="article-content prose prose-lg max-w-none" x-init="$nextTick(() => {
-             // 为代码块添加复制按钮
-             document.querySelectorAll('pre code').forEach((codeBlock, index) => {
-                 const pre = codeBlock.parentElement;
-                 if (!pre.querySelector('.copy-code-btn')) {
-                     const button = document.createElement('button');
-                     button.className = 'copy-code-btn';
-                     button.textContent = '复制';
-                     button.setAttribute('x-data', `{ copied: false }`);
-                     button.setAttribute('@click', `navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent).then(() => { this.copied = true; setTimeout(() => this.copied = false, 2000) })`);
-                     button.setAttribute(':class', `{ 'bg-green-600': copied }`);
-                     button.setAttribute('x-text', `copied ? '已复制' : '复制'`);
-                     
-                     pre.style.position = 'relative';
-                     pre.appendChild(button);
-                 }
-             });
-         })">
-                    
-<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
-                </div>
-
-                <!-- 版权信息 -->
-                <div class="mt-10 bg-gray-50 rounded-lg border border-gray-200 p-4"
-                    x-data="{domain: 'https:&#x2F;&#x2F;yishulun.com', link: 'https:&#x2F;&#x2F;yishulun.com' + window.location.pathname}">
-                    <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
-                    <p class="text-sm text-gray-700">
-                        本文链接：
-                        <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)"
-                            target="_blank" rel="noopener"></a>
-                    </p>
-                    <p class="text-sm text-gray-700 mt-2">
-                        许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
-                        <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener"
-                            class="text-primary-600 hover:underline">查看许可说明</a>
-                    </p>
-                </div>
-
-                <!-- 分享功能 -->
-                <div class="mt-12 bg-gray-50 rounded-lg">
-                    <h4 class="text-lg font-semibold mb-4 text-gray-900 p-4 pb-0">分享这篇文章</h4>
-                    <div class="flex flex-wrap gap-3 p-4">
-                        <button onclick="shareToTwitter()" class="btn-outline inline-flex items-center">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                            </svg>
-                            Twitter
-                        </button>
-                        <button
-                            @click="navigator.clipboard.writeText(window.location.href).then(() => { copiedLink = true; setTimeout(() => copiedLink = false, 2000) })"
-                            class="btn-outline inline-flex items-center"
-                            :class="{ 'bg-green-100 text-green-800 border-green-300': copiedLink }">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            <span x-text="copiedLink ? '已复制' : '复制链接'"></span>
-                        </button>
-                    </div>
-                </div>
-
-                
-
-                <!-- 返回顶部 -->
-                <div class="text-center mt-8">
-                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-                        class="btn-secondary inline-flex items-center">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-                        </svg>
-                        返回顶部
-                    </button>
-                </div>
-            </article>
-        </div>
-
-        
-        <!-- 目录组件 -->
-<div class="toc-container fixed right-4 top-20 z-40 hidden xl:block" 
-     x-data="{ 
-         tocOpen: true, 
-         activeId: '',
-         headings: [],
-         init() {
-             this.generateToc();
-             this.observeHeadings();
-         },
-         generateToc() {
-             const content = document.querySelector('.prose, .card-body');
-             if (!content) return;
-             
-             const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
-             this.headings = Array.from(headings).map((heading, index) => {
-                 const id = heading.id || `heading-${index}`;
-                 heading.id = id;
-                 return {
-                     id: id,
-                     text: heading.textContent.trim(),
-                     level: parseInt(heading.tagName.charAt(1)),
-                     element: heading
-                 };
-             });
-         },
-         observeHeadings() {
-             if (this.headings.length === 0) return;
-             
-             const observer = new IntersectionObserver((entries) => {
-                 entries.forEach(entry => {
-                     if (entry.isIntersecting) {
-                         this.activeId = entry.target.id;
-                     }
-                 });
-             }, {
-                 rootMargin: '-20% 0px -80% 0px'
-             });
-             
-             this.headings.forEach(heading => {
-                 observer.observe(heading.element);
-             });
-         },
-         scrollToHeading(id) {
-             const element = document.getElementById(id);
-             if (element) {
-                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-             }
-         }
-     }"
-     x-init="init()">
-    
-    <!-- 目录切换按钮 -->
-    <button @click="tocOpen = !tocOpen" 
-            class="mb-2 p-2 bg-white rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-200"
-            title="目录">
-        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-    </button>
-    
-    <!-- 目录内容 -->
-    <div x-show="tocOpen" 
-         x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0 transform scale-95"
-         x-transition:enter-end="opacity-100 transform scale-100"
-         x-transition:leave="transition ease-in duration-150"
-         x-transition:leave-start="opacity-100 transform scale-100"
-         x-transition:leave-end="opacity-0 transform scale-95"
-         class="bg-white rounded-lg shadow-xl border border-gray-200 p-4 max-w-xs w-64 max-h-96 overflow-y-auto">
-        
-        <div class="flex items-center justify-between mb-3">
-            <h3 class="text-sm font-semibold text-gray-900">目录</h3>
-            <button @click="tocOpen = false" class="text-gray-400 hover:text-gray-600">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <nav class="space-y-1">
-            <template x-for="heading in headings" :key="heading.id">
-                <a @click.prevent="scrollToHeading(heading.id)" 
-                   :class="{
-                       'text-primary-600 bg-primary-50 border-l-2 border-primary-600': activeId === heading.id,
-                       'text-gray-600 hover:text-gray-900 hover:bg-gray-50': activeId !== heading.id,
-                       'pl-2': heading.level === 1,
-                       'pl-4': heading.level === 2,
-                       'pl-6': heading.level === 3,
-                       'pl-8': heading.level === 4,
-                       'pl-10': heading.level === 5,
-                       'pl-12': heading.level === 6
-                   }"
-                   class="block py-1 px-2 text-sm cursor-pointer rounded transition-colors duration-150"
-                   x-text="heading.text">
-                </a>
-            </template>
-        </nav>
-        
-        <div x-show="headings.length === 0" class="text-sm text-gray-500 text-center py-4">
-            暂无目录
-        </div>
+<div class="max-w-5xl mx-auto">
+    <!-- 页面标题 -->
+    <div class="text-center mb-12">
+        <h1 class="text-3xl font-bold text-gray-900 mb-3">📦 项目展示</h1>
+        <p class="text-gray-500 text-lg">开源作品与应用</p>
     </div>
-</div>
 
-<style>
-/* 移动端隐藏目录 */
-@media (max-width: 1279px) {
-    .toc-container {
-        display: none !important;
-    }
-}
-
-/* 目录滚动条样式 */
-.toc-container .max-h-96::-webkit-scrollbar {
-    width: 4px;
-}
-
-.toc-container .max-h-96::-webkit-scrollbar-track {
-    background: #f1f5f9;
-    border-radius: 2px;
-}
-
-.toc-container .max-h-96::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 2px;
-}
-
-.toc-container .max-h-96::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
-}
-</style>
-
+    <!-- 项目卡片网格 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <a href="/enyan.html"
+            class="group block bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-primary-300 transition-all duration-300">
+            <!-- 项目头部 -->
+            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 text-white">
+                <div class="flex items-center space-x-4">
+                    
+                    <img src="&#x2F;assets&#x2F;enyan&#x2F;icon.png" alt="恩言 - 大字有声圣经"
+                        class="w-16 h-16 rounded-xl shadow-lg bg-white/10 p-1 object-cover">
+                    
+                    <div>
+                        <h2 class="text-xl font-bold group-hover:underline">恩言 - 大字有声圣经</h2>
+                        
+                        <span class="inline-block mt-1 px-2 py-0.5 text-xs font-medium bg-white/20 rounded-full">v1.0.0</span>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- 项目信息 -->
+            <div class="p-6">
+                
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">一款大字有声圣经朗读应用，支持新约旧约全书、繁体中文显示、离线语音朗读，适配 macOS 与 Android 多平台。</p>
+                
+                <!-- 标签 -->
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#app</span>
+                    
+                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#flutter</span>
+                    
+                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#rust</span>
+                    
+                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#tts</span>
+                    
+                    <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">#圣经</span>
+                    
+                </div>
+                
+            </div>
+        </a>
         
     </div>
 </div>
-
-<script>
-    function shareToTwitter() {
-        const url = encodeURIComponent(window.location.href);
-        const text = encodeURIComponent(document.title);
-        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
-    }
-</script>
 
         </main>
     </div>

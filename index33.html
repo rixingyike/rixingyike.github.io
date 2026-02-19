@@ -227,43 +227,47 @@
         <!-- 文章列表 -->
         <div id="articles" class="space-y-6">
             
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <article class="card hover:shadow-lg transition-shadow duration-300">
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
                     
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog/" class="hover:text-primary-600">blog</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
-                        
-                    </nav>
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
                     
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="blog&#x2F;2026/7.html"
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                Paypal 如何收款
-                            </a>
-                            
-                        </h2>
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2026-01-18
-                            </span>
-                            
-                            
-                        </div>
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <div class="text-gray-600 leading-relaxed mb-4">
+                        <a href="blog&#x2F;2026/7.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
                             Paypal 如何收款
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-01-18
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        Paypal 如何收款
 上一篇笔记提到 Paypal.cn 支持个人在海外收款了。那么如何收款呢？
 我查了一下，典型流程是这样的：
 1，客户端发起支付请求
@@ -273,365 +277,389 @@
 5，服务器端调用 Paypal API 验证支付，并执行 Capture
 6，支付订单完成
 这是一个典型的 B&#x2F;S 架构软…
-                        </div>
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
                         
+                        <a href="/tags/Paypal收款流程/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Paypal收款流程
+                        </a>
                         
-                        <div class="flex flex-wrap gap-2">
-                            
-                            <a href="/tags/Paypal收款流程/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                Paypal收款流程
-                            </a>
-                            
-                            <a href="/tags/Paypal API集成/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                Paypal API集成
-                            </a>
-                            
-                            <a href="/tags/IPN通知设置/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                IPN通知设置
-                            </a>
-                            
-                            <a href="/tags/Paypal中国税收/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                Paypal中国税收
-                            </a>
-                            
-                            <a href="/tags/Paypal SDK使用/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                Paypal SDK使用
-                            </a>
-                            
-                        </div>
+                        <a href="/tags/Paypal API集成/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Paypal API集成
+                        </a>
+                        
+                        <a href="/tags/IPN通知设置/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            IPN通知设置
+                        </a>
+                        
+                        <a href="/tags/Paypal中国税收/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Paypal中国税收
+                        </a>
+                        
+                        <a href="/tags/Paypal SDK使用/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Paypal SDK使用
+                        </a>
                         
                     </div>
-                </article>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <article class="card hover:shadow-lg transition-shadow duration-300">
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
                     
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog/" class="hover:text-primary-600">blog</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
-                        
-                    </nav>
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
                     
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="blog&#x2F;2026/8.html"
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                人间美味——胡萝卜炒包菜粉丝
-                            </a>
-                            
-                        </h2>
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2026-01-18
-                            </span>
-                            
-                            
-                        </div>
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <div class="text-gray-600 leading-relaxed mb-4">
+                        <a href="blog&#x2F;2026/8.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
                             人间美味——胡萝卜炒包菜粉丝
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-01-18
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        人间美味——胡萝卜炒包菜粉丝
 
 做法极其简单，包菜切丝，胡萝卜切丝，葱切丝，白粉丝泡上。起锅烧油，炒素菜，加一点大油，下葱丝，下两辣椒段，下包菜丝。包菜稍软，下胡萝卜丝、粉丝。翻炒一会，加盐、酱油、味精调味，出锅装盘。
 包菜是甜口的，胡萝卜也是，包菜出点水，正好被粉丝吸收。有红有绿，颜色也好看。好吃极了！真乃人间素菜第一美味也！
 #生活·随笔·减肥
 📅 2026&#x2F;01&#x2F;18 周日 13:47
 
-                        </div>
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
                         
+                        <a href="/tags/胡萝卜炒包菜粉丝做法/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            胡萝卜炒包菜粉丝做法
+                        </a>
                         
-                        <div class="flex flex-wrap gap-2">
-                            
-                            <a href="/tags/胡萝卜炒包菜粉丝做法/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                胡萝卜炒包菜粉丝做法
-                            </a>
-                            
-                            <a href="/tags/素菜家常菜/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                素菜家常菜
-                            </a>
-                            
-                            <a href="/tags/减肥食谱/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                减肥食谱
-                            </a>
-                            
-                            <a href="/tags/包菜粉丝炒菜/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                包菜粉丝炒菜
-                            </a>
-                            
-                            <a href="/tags/简单快手菜/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                简单快手菜
-                            </a>
-                            
-                        </div>
+                        <a href="/tags/素菜家常菜/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            素菜家常菜
+                        </a>
+                        
+                        <a href="/tags/减肥食谱/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            减肥食谱
+                        </a>
+                        
+                        <a href="/tags/包菜粉丝炒菜/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            包菜粉丝炒菜
+                        </a>
+                        
+                        <a href="/tags/简单快手菜/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            简单快手菜
+                        </a>
                         
                     </div>
-                </article>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <article class="card hover:shadow-lg transition-shadow duration-300">
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
                     
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog/" class="hover:text-primary-600">blog</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
-                        
-                    </nav>
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
                     
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="blog&#x2F;2026/9.html"
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                继 Claude Code 之后，Anthropic 又推出了 Cowork，为非程序员服务
-                            </a>
-                            
-                        </h2>
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2026-01-18
-                            </span>
-                            
-                            
-                        </div>
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <div class="text-gray-600 leading-relaxed mb-4">
+                        <a href="blog&#x2F;2026/9.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
                             继 Claude Code 之后，Anthropic 又推出了 Cowork，为非程序员服务
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-01-18
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        继 Claude Code 之后，Anthropic 又推出了 Cowork，为非程序员服务
 这个软件功能在 macOS 版本的 Claude 软件中提供，大概 1 月 13 日发布，已经有 4000 多万人使用或知道这个消息了。
 它的主要作用，是将 Claude Code 的能力由编程领域扩展到了非编程领域，Anthropic 公司想让非程序员也能享受程序员的高效和快乐。（换句话说，Anthro…
-                        </div>
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
                         
+                        <a href="/tags/Anthropic Cowork/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Anthropic Cowork
+                        </a>
                         
-                        <div class="flex flex-wrap gap-2">
-                            
-                            <a href="/tags/Anthropic Cowork/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                Anthropic Cowork
-                            </a>
-                            
-                            <a href="/tags/Claude AI 非程序员工具/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                Claude AI 非程序员工具
-                            </a>
-                            
-                            <a href="/tags/AI 文件管理安全/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                AI 文件管理安全
-                            </a>
-                            
-                            <a href="/tags/Cowork 试用申请/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                Cowork 试用申请
-                            </a>
-                            
-                            <a href="/tags/AI 办公效率提升/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                AI 办公效率提升
-                            </a>
-                            
-                        </div>
+                        <a href="/tags/Claude AI 非程序员工具/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Claude AI 非程序员工具
+                        </a>
+                        
+                        <a href="/tags/AI 文件管理安全/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            AI 文件管理安全
+                        </a>
+                        
+                        <a href="/tags/Cowork 试用申请/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Cowork 试用申请
+                        </a>
+                        
+                        <a href="/tags/AI 办公效率提升/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            AI 办公效率提升
+                        </a>
                         
                     </div>
-                </article>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <article class="card hover:shadow-lg transition-shadow duration-300">
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
                     
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog/" class="hover:text-primary-600">blog</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
-                        
-                    </nav>
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
                     
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="blog&#x2F;2026/6.html"
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                有一种疼叫妈妈说有点疼，孩子是全校短跑冠军，却被妈妈逼成了“瘸子”
-                            </a>
-                            
-                        </h2>
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2026-01-12
-                            </span>
-                            
-                            
-                        </div>
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <div class="text-gray-600 leading-relaxed mb-4">
+                        <a href="blog&#x2F;2026/6.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
                             有一种疼叫妈妈说有点疼，孩子是全校短跑冠军，却被妈妈逼成了“瘸子”
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-01-12
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        有一种疼叫妈妈说有点疼，孩子是全校短跑冠军，却被妈妈逼成了“瘸子”
 
 我们常说：“不能让孩子输在起跑线上。”可有时候，恰恰是父母亲手把孩子拦在了起跑线上，甚至是为了区区一千块钱，把孩子变成了“瘸子”。
 今天要讲的，又是一个真实发生在我身边的故事，仍然是一个非常典型且令人痛心的“家庭教育反面教材”。为了保护当事人，文中学生皆为化名。
 01 “豆腐做的”学生与“隐性伤害”
 事情的起因小得不能再小。
 九…
-                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2026/5.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            那个举了一整天奖状的“坏孩子”，一句话让老师沉默了
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-01-10
+                        </span>
                         
                         
                     </div>
-                </article>
-                
-                <article class="card hover:shadow-lg transition-shadow duration-300">
                     
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog/" class="hover:text-primary-600">blog</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
-                        
-                    </nav>
-                    
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="blog&#x2F;2026/5.html"
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                那个举了一整天奖状的“坏孩子”，一句话让老师沉默了
-                            </a>
-                            
-                        </h2>
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2026-01-10
-                            </span>
-                            
-                            
-                        </div>
-                        
-                        <div class="text-gray-600 leading-relaxed mb-4">
-                            那个举了一整天奖状的“坏孩子”，一句话让老师沉默了
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        那个举了一整天奖状的“坏孩子”，一句话让老师沉默了
 以下是一个真实发生的故事，是真实发生的，不是我杜撰的！为了保护当事人我给小朋友用了化名，同时我化身一名小学老师讲述这个故事。
 在学校里，我们常说“没有教不好的学生，只有不会教的老师”。但有时候，当我们剥开一个所谓“问题学生”的层层表象，看到的却是一个血淋淋的家庭问题。很多时候是小学生在学校上课，但更需要接受教育的却是家长。
 最近，学校二年级转来了…
-                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2026/4.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            🚀 Ubuntu Server 云端开发环境搭建与网络调优全记录（在云上并发使用 Antigravity）
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-01-06
+                        </span>
                         
                         
                     </div>
-                </article>
-                
-                <article class="card hover:shadow-lg transition-shadow duration-300">
                     
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog/" class="hover:text-primary-600">blog</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
-                        
-                    </nav>
-                    
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="blog&#x2F;2026/4.html"
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                🚀 Ubuntu Server 云端开发环境搭建与网络调优全记录（在云上并发使用 Antigravity）
-                            </a>
-                            
-                        </h2>
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2026-01-06
-                            </span>
-                            
-                            
-                        </div>
-                        
-                        <div class="text-gray-600 leading-relaxed mb-4">
-                            🚀 Ubuntu Server 云端开发环境搭建与网络调优全记录（在云上并发使用 Antigravity）
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        🚀 Ubuntu Server 云端开发环境搭建与网络调优全记录（在云上并发使用 Antigravity）
 为什么要在云上使用，不在本地使用？
 不，本地也在使用，只是同时在云上多使用一份。有多个云服务器，就可以使用多个云上 Antigravity，以此实现 Agent 编程的并发。理解了吗？这是我实现 Lead AI，而非单纯 Debug AI 的一部分。
 远程桌面运行要流畅，要像使用本地软件那样…
-                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2026/2.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            手机和相机的区别是什么？
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-01-03
+                        </span>
                         
                         
                     </div>
-                </article>
-                
-                <article class="card hover:shadow-lg transition-shadow duration-300">
                     
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog/" class="hover:text-primary-600">blog</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
-                        
-                    </nav>
-                    
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="blog&#x2F;2026/2.html"
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                手机和相机的区别是什么？
-                            </a>
-                            
-                        </h2>
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2026-01-03
-                            </span>
-                            
-                            
-                        </div>
-                        
-                        <div class="text-gray-600 leading-relaxed mb-4">
-                            手机和相机的区别是什么？
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        手机和相机的区别是什么？
 是手机拍摄需要解释，而相机拍摄无须解释。
 
 这个豆汁我 20 年前第一次喝的时候，就感觉它会进化，进化出大众宜喝口感。果然有了。
@@ -644,138 +672,153 @@
 
 
 …
-                        </div>
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
                         
+                        <a href="/tags/手机摄影/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            手机摄影
+                        </a>
                         
-                        <div class="flex flex-wrap gap-2">
-                            
-                            <a href="/tags/手机摄影/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                手机摄影
-                            </a>
-                            
-                            <a href="/tags/相机/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                相机
-                            </a>
-                            
-                            <a href="/tags/街头摄影/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                街头摄影
-                            </a>
-                            
-                            <a href="/tags/摄影技巧/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                摄影技巧
-                            </a>
-                            
-                            <a href="/tags/生活记录/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                生活记录
-                            </a>
-                            
-                        </div>
+                        <a href="/tags/相机/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            相机
+                        </a>
+                        
+                        <a href="/tags/街头摄影/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            街头摄影
+                        </a>
+                        
+                        <a href="/tags/摄影技巧/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            摄影技巧
+                        </a>
+                        
+                        <a href="/tags/生活记录/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            生活记录
+                        </a>
                         
                     </div>
-                </article>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <article class="card hover:shadow-lg transition-shadow duration-300">
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
                     
-                    <nav class="px-6 pt-4 text-sm text-gray-600">
-                        <a href="/" class="hover:text-primary-600">首页</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog/" class="hover:text-primary-600">blog</a>
-                        
-                            <span class="mx-2">›</span>
-                            <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
-                        
-                    </nav>
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
                     
-                    <div class="card-body">
-                        <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                            
-                            <a href="blog&#x2F;2026/3.html"
-                               class="text-gray-900 hover:text-primary-600 transition-colors">
-                                成为三剑客很难，手持两股剑倒有可能
-                            </a>
-                            
-                        </h2>
-                        <div class="article-meta mb-4">
-                            
-                            <span class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                2026-01-03
-                            </span>
-                            
-                            
-                        </div>
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <div class="text-gray-600 leading-relaxed mb-4">
+                        <a href="blog&#x2F;2026/3.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
                             成为三剑客很难，手持两股剑倒有可能
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-01-03
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        成为三剑客很难，手持两股剑倒有可能
 自从我领悟要 Lead AI，而不仅仅是 Debug AI 之后（我也不知道有几个人真正懂了我的意思），我一直在想如何提升并发数字。一个 IDE 开多个实例，貌似也不是不可以；特别是 Claude Code，它是终端实例窗口，多打几个窗口不就是多实例了吗？但我恐怕实例之间打架。事实上一个 AI IDE 就像一个人，本质上一个人是没有办法运行多线程的。
 我想到的提…
-                        </div>
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
                         
+                        <a href="/tags/AI编程/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            AI编程
+                        </a>
                         
-                        <div class="flex flex-wrap gap-2">
-                            
-                            <a href="/tags/AI编程/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                AI编程
-                            </a>
-                            
-                            <a href="/tags/IDE/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                IDE
-                            </a>
-                            
-                            <a href="/tags/Claude Code/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                Claude Code
-                            </a>
-                            
-                            <a href="/tags/Cursor/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                Cursor
-                            </a>
-                            
-                            <a href="/tags/并发/"
-                               class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                                并发
-                            </a>
-                            
-                        </div>
+                        <a href="/tags/IDE/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            IDE
+                        </a>
+                        
+                        <a href="/tags/Claude Code/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Claude Code
+                        </a>
+                        
+                        <a href="/tags/Cursor/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Cursor
+                        </a>
+                        
+                        <a href="/tags/并发/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            并发
+                        </a>
                         
                     </div>
-                </article>
-                
+                    
+                </div>
+            </article>
+            
 
-                <!-- 列表范围显示 -->
-                <div class="flex justify-center mt-6">
-                    <p class="text-sm text-gray-600">第 <span class="font-medium">257</span> 到 <span class="font-medium">264</span> 条</p>
+            <!-- 列表范围显示 -->
+            <div class="flex justify-center mt-6">
+                <p class="text-sm text-gray-600">第 <span class="font-medium">257</span> 到 <span
+                        class="font-medium">264</span> 条</p>
+            </div>
+
+            <!-- 分页导航 -->
+            
+            <div class="flex flex-col items-center mt-8 space-y-4">
+                <!-- 页码信息 -->
+                <div class="text-sm text-gray-500">
+                    
+                    第 33 页
+                    
                 </div>
 
-                <!-- 分页导航（仅显示上一页/下一页） -->
-                
-                <div class="flex justify-center mt-4">
-                    <nav class="flex items-center space-x-4">
-                        
-                            
-                            
-                                <a href="/index34.html" class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700">上一页</a>
-                            
-                        
+                <!-- 翻页按钮 -->
+                <nav class="flex items-center space-x-4">
+                    
+                    
+                    
+                    <a href="/index34.html"
+                        class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">上一页</a>
+                    
+                    
 
-                        
-                            
-                            <a href="/index32.html" class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700">下一页</a>
-                        
-                    </nav>
-                </div>
-                
+                    
+                    
+                    <a href="/index32.html"
+                        class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">下一页</a>
+                    
+                </nav>
+            </div>
+            
             
         </div>
 
@@ -1304,103 +1347,98 @@
 <!-- 底部 6 个导航块：来自 home.md 的 front matter，缺省回退到默认卡片 -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
     
-        
-        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-            <div class="card-body">
-                <div class="text-4xl mb-4">📂</div>
-                <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
-                
-                <p class="text-gray-600 mb-4">按主题分类查看文章</p>
-                
-                
-                <a href="&#x2F;categories.html" class="btn-primary"
-                   >
-                   前往
-                </a>
-                
-            </div>
+    
+    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+        <div class="card-body">
+            <div class="text-4xl mb-4">📂</div>
+            <h3 class="text-lg font-semibold mb-2">浏览分类</h3>
+            
+            <p class="text-gray-600 mb-4">按主题分类查看文章</p>
+            
+            
+            <a href="&#x2F;categories.html" class="btn-primary" >
+                前往
+            </a>
+            
         </div>
-        
-        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-            <div class="card-body">
-                <div class="text-4xl mb-4">🏷️</div>
-                <h3 class="text-lg font-semibold mb-2">标签云</h3>
-                
-                <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
-                
-                
-                <a href="&#x2F;tags.html" class="btn-primary"
-                   >
-                   前往
-                </a>
-                
-            </div>
+    </div>
+    
+    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+        <div class="card-body">
+            <div class="text-4xl mb-4">🏷️</div>
+            <h3 class="text-lg font-semibold mb-2">标签云</h3>
+            
+            <p class="text-gray-600 mb-4">通过标签快速找到相关内容</p>
+            
+            
+            <a href="&#x2F;tags.html" class="btn-primary" >
+                前往
+            </a>
+            
         </div>
-        
-        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-            <div class="card-body">
-                <div class="text-4xl mb-4">📚</div>
-                <h3 class="text-lg font-semibold mb-2">文章归档</h3>
-                
-                <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
-                
-                
-                <a href="&#x2F;archives.html" class="btn-primary"
-                   >
-                   前往
-                </a>
-                
-            </div>
+    </div>
+    
+    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+        <div class="card-body">
+            <div class="text-4xl mb-4">📚</div>
+            <h3 class="text-lg font-semibold mb-2">文章归档</h3>
+            
+            <p class="text-gray-600 mb-4">按时间顺序浏览所有文章</p>
+            
+            
+            <a href="&#x2F;archives.html" class="btn-primary" >
+                前往
+            </a>
+            
         </div>
-        
-        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-            <div class="card-body">
-                <div class="text-4xl mb-4">🤝</div>
-                <h3 class="text-lg font-semibold mb-2">友链</h3>
-                
-                <p class="text-gray-600 mb-4">提交你的站点，加入友链列表</p>
-                
-                
-                <a href="&#x2F;friends.html" class="btn-primary"
-                   >
-                   前往
-                </a>
-                
-            </div>
+    </div>
+    
+    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+        <div class="card-body">
+            <div class="text-4xl mb-4">🤝</div>
+            <h3 class="text-lg font-semibold mb-2">友链</h3>
+            
+            <p class="text-gray-600 mb-4">提交你的站点，加入友链列表</p>
+            
+            
+            <a href="&#x2F;friends.html" class="btn-primary" >
+                前往
+            </a>
+            
         </div>
-        
-        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-            <div class="card-body">
-                <div class="text-4xl mb-4">📬</div>
-                <h3 class="text-lg font-semibold mb-2">关于作者</h3>
-                
-                <p class="text-gray-600 mb-4">查看关于页面，联系作者沟通</p>
-                
-                
-                <a href="&#x2F;about.html" class="btn-primary"
-                   >
-                   前往
-                </a>
-                
-            </div>
+    </div>
+    
+    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+        <div class="card-body">
+            <div class="text-4xl mb-4">📬</div>
+            <h3 class="text-lg font-semibold mb-2">关于作者</h3>
+            
+            <p class="text-gray-600 mb-4">查看关于页面，联系作者沟通</p>
+            
+            
+            <a href="&#x2F;about.html" class="btn-primary" >
+                前往
+            </a>
+            
         </div>
-        
-        <div class="card text-center hover:shadow-lg transition-shadow duration-300">
-            <div class="card-body">
-                <div class="text-4xl mb-4">🚀</div>
-                <h3 class="text-lg font-semibold mb-2">RustPress</h3>
-                
-                <p class="text-gray-600 mb-4">增量编译倒分页无后端 Rust 纯静态博客程序</p>
-                
-                
-                <a href="https:&#x2F;&#x2F;github.com&#x2F;rixingyike&#x2F;rustpress" class="btn-primary"
-                   target="_blank" rel="noopener noreferrer">
-                   获取 RustPress
-                </a>
-                
-            </div>
+    </div>
+    
+    <div class="card text-center hover:shadow-lg transition-shadow duration-300">
+        <div class="card-body">
+            <div class="text-4xl mb-4">🚀</div>
+            <h3 class="text-lg font-semibold mb-2">RustPress</h3>
+            
+            <p class="text-gray-600 mb-4">增量编译倒分页无后端 Rust 纯静态博客程序</p>
+            
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;rixingyike&#x2F;rustpress" class="btn-primary" target="_blank" rel="noopener noreferrer"
+                >
+                获取 RustPress
+            </a>
+            
         </div>
-        
+    </div>
+    
     
 </div>
 
