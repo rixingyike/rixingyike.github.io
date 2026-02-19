@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<!-- 基础布局模板 -->
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一树仑</title>
+
+    
+<meta name="description" content="本文分享了一位老程序员使用 AI 编写多个软件后的实战总结，涵盖 Skills 本质、需求界定、模块化设计等核心经验。学习如何扮演 AI 架构师，利用 AI 提升效率，同时避免依赖，打造有竞争力的项目。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我用 AI 写了四五个软件之后的总结">
+<meta property="og:description" content="本文分享了一位老程序员使用 AI 编写多个软件后的实战总结，涵盖 Skills 本质、需求界定、模块化设计等核心经验。学习如何扮演 AI 架构师，利用 AI 提升效率，同时避免依赖，打造有竞争力的项目。">
+<meta property="og:site_name" content="一树仑">
+
+<link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;blog&#x2F;2026&#x2F;26.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;yishulun.com&#x2F;blog&#x2F;2026&#x2F;26.html">
+
+
+
+<meta property="article:published_time" content="2026-02-19">
+
+
+
+<meta property="article:tag" content="AI编程经验">
+
+<meta property="article:tag" content="AI软件架构">
+
+<meta property="article:tag" content="Claude Skills">
+
+<meta property="article:tag" content="AI项目管理">
+
+<meta property="article:tag" content="AI代码生成">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "我用 AI 写了四五个软件之后的总结",
+  "image": [
+    "https:&#x2F;&#x2F;yishulun.com/static/images/logo.png"
+   ],
+  "datePublished": "2026-02-19",
+  "author": [{
+      "@type": "Person",
+      "name": "金石碼农",
+      "url": "https:&#x2F;&#x2F;yishulun.com"
+    }]
+}
+</script>
+
+
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!-- Alpine.js 库 -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Lunr.js 搜索库 -->
+    <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans"
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    <!-- 顶部导航栏 -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo 和站点名称 -->
+                <div class="flex items-center space-x-3">
+                    <img src="/static/images/logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
+                    <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
+                        一树仑
+                    </a>
+                </div>
+
+                <!-- 搜索框 - 桌面版 -->
+                <div class="hidden md:flex flex-1 max-w-xs mx-8">
+                    <form action="/search.html" method="get" class="relative w-full">
+                        <input type="text" name="q"
+                            class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
+                            placeholder="搜索文章..." id="search-input">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <button type="submit"
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- 导航菜单 - 桌面版 -->
+                <div class="hidden md:flex items-center space-x-1">
+                    
+                    
+                    <a href="&#x2F;" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')) }">首页</a>
+                    
+                    <a href="&#x2F;archives.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">归档</a>
+                    
+                    <a href="&#x2F;categories.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">分类</a>
+                    
+                    <a href="&#x2F;tags.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
+                    
+                    <a href="&#x2F;friends.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
+                    
+                    <a href="&#x2F;projects.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;projects.html' || ('&#x2F;projects.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">项目</a>
+                    
+                    <a href="&#x2F;about.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">关于</a>
+                    
+                    
+                </div>
+
+                <!-- 移动端菜单按钮 -->
+                <button
+                    class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 移动端菜单 -->
+        <div class="md:hidden" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform -translate-y-2"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform translate-y-0"
+            x-transition:leave-end="opacity-0 transform -translate-y-2">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+                <!-- 移动端搜索框 -->
+                <div class="px-3 py-2">
+                    <form action="/search.html" method="get" class="relative">
+                        <input type="text" name="q"
+                            class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
+                            placeholder="搜索文章..." id="mobile-search-input">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <button type="submit"
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <!-- 移动端导航链接 -->
+                
+                
+                <a href="&#x2F;" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">首页</a>
+                
+                <a href="&#x2F;archives.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">归档</a>
+                
+                <a href="&#x2F;categories.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">分类</a>
+                
+                <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                
+                <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
+                
+                <a href="&#x2F;projects.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;projects.html' || ('&#x2F;projects.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;projects.html' || ('&#x2F;projects.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">项目</a>
+                
+                <a href="&#x2F;about.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">关于</a>
+                
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <main class="min-h-screen py-8">
+            
+<div class="max-w-4xl mx-auto relative">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- 主要内容 -->
+        <div class="flex-1">
+            <article x-data="{ copiedLink: false, copiedCode: {} }">
+                <!-- 分类面包屑 -->
+                
+                <nav class="mb-6 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+
+                <!-- 文章头部 -->
+                <header class="mb-8 pb-8 border-b border-gray-200">
+                    <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-6 leading-tight">
+                        我用 AI 写了四五个软件之后的总结
+                    </h1>
+
+                    <div class="article-meta mb-6">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-02-19
+                        </span>
+                        
+                        
+                    </div>
+
+                    <!-- 标签 -->
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/AI编程经验/"
+                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                </path>
+                            </svg>
+                            AI编程经验
+                        </a>
+                        
+                        <a href="/tags/AI软件架构/"
+                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                </path>
+                            </svg>
+                            AI软件架构
+                        </a>
+                        
+                        <a href="/tags/Claude Skills/"
+                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                </path>
+                            </svg>
+                            Claude Skills
+                        </a>
+                        
+                        <a href="/tags/AI项目管理/"
+                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                </path>
+                            </svg>
+                            AI项目管理
+                        </a>
+                        
+                        <a href="/tags/AI代码生成/"
+                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                </path>
+                            </svg>
+                            AI代码生成
+                        </a>
+                        
+                    </div>
+                    
+                </header>
+
+                <!-- 文章内容 -->
+                <div class="article-content prose prose-lg max-w-none" x-init="$nextTick(() => {
+             // 为代码块添加复制按钮
+             document.querySelectorAll('pre code').forEach((codeBlock, index) => {
+                 const pre = codeBlock.parentElement;
+                 if (!pre.querySelector('.copy-code-btn')) {
+                     const button = document.createElement('button');
+                     button.className = 'copy-code-btn';
+                     button.textContent = '复制';
+                     button.setAttribute('x-data', `{ copied: false }`);
+                     button.setAttribute('@click', `navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent).then(() => { this.copied = true; setTimeout(() => this.copied = false, 2000) })`);
+                     button.setAttribute(':class', `{ 'bg-green-600': copied }`);
+                     button.setAttribute('x-text', `copied ? '已复制' : '复制'`);
+                     
+                     pre.style.position = 'relative';
+                     pre.appendChild(button);
+                 }
+             });
+         })">
+                    <h1>我用 AI 写了四五个软件之后的总结</h1>
+<p>我是一名老程序员，广泛学习和使用过多种编程语言，编写过许多示例、项目，也出版过计算机相关的图书若干。自去年 2025 年 11 月以来，我狠狠地用 AI 写了一些软件，有时候我睡觉了，AI 还在帮助我检查、修正问题。以下是我总结的使用 AI 的经验，通过这些经验你会发现，我在扮演一名 AI 或多台 AI 的架构师或领导者。</p>
+<h2>经验的解构与重构：Skills 的本质</h2>
+<p>所谓的 Claude Skills 并非简单的操作指南，其实质是高概率成功路径的固化。在外行眼中，它是加持了 AI 的使用技巧；但在内行看来，这些 Skills 是千百次失败总结出的经验。在缺少经验时，Skills 是极佳的引导；但对于有经验的人，它们若不经思考地套用，反而可能成为桎梏。我们应当学习、使用并领悟前人的 Skills，更要追求上下文无关化的复用能力。只有当我们有能力发现其不足、修正并完善它时，才算真正掌握。真正的进阶，是将 Skills 转化为逻辑本身的肌肉记忆，而非对特定 AI 技巧的依赖。</p>
+<h2>定义边界与架构：真实需求与决策</h2>
+<p>准备工作与架构设计是项目的灵魂。首先必须界定清晰的概念与用户群体，没有界定就没有聚焦。其次，要精准识别痛点：好的需求一定是已经存在的，我们不是要创造需求，而是要完善需求的满足方式与效率。在需求确定后，功能也随之固化。面对业界成百上千种方案，有了 AI 的协助，调研工作已从旷日持久缩短至几分钟，但这要求架构师必须具备挑战 AI 均值偏见的能力。例如，在面对 300MB 资源包等极限约束时，我们要引入最小可行性架构（MVA），强迫 AI 在受限条件下给出最优解，而非默认平庸的方案。</p>
+<h2>价值悖论：AI 犯难处的机会</h2>
+<p>功能与方案是目标，交互与实现则是细节。当我们试图实现一个功能，即使最强大的 AI 也感到犯难或反复出错时，这反而是一件好事。AI 感到棘手，说明该领域缺乏现成的代码材料，具有极强的前沿性与先进性。像图书馆或 TODO 管理系统这类被写烂的软件，AI 分分钟即可完成，但其技术壁垒也近乎为零。我们要深思：如果代码生成得太快，我们做的东西是否真的有价值？核心竞争力应当存在于 AI 逻辑推演之外的领域知识中，例如在圣经项目中，对译名的严谨校对，对与长辈阅读习惯的深度理解。</p>
+<h2>模块化钢筋：单一职责与上下文隔离</h2>
+<p>在软件组织上，单一职责原则是对抗 AI 混乱的唯一利器。复杂的软件是由一个个积木搭成的：一个函数只干一件事，一个文件只干一类事，且其体积应短小到足以让 AI 的上下文窗口一次性完美理解。这就是上下文隔离。我们要为每个功能编写测试函数，写完一个，测好一个。不要怕功能多，自动化测试的速度远超想象。我们必须严禁 AI 在没有规则的情况下拆东墙补西墙肆意妄为。在这里，测试函数不仅是逻辑验证，更是为 AI 设立的电子围栏，防止其在迭代中产生不可控的副作用。对于 AI，有效的规则和约束，反而能让它发挥出更大的能量和价值。</p>
+<h2>逻辑锚点：文档作为项目记忆</h2>
+<p>清晰的逻辑远胜华丽的辞藻。AI 本质上是没有长期记忆的，所谓的记忆是我们每次通过 Prompt 帮它完成的虚假唤起。在这种背景下，doc 目录成为了项目的本地记忆核心，其重要性甚至超过 Skills。我们需要按照时间轴记录项目的起因、困难与解决方案，并维护一份 context.md 摘要。它记录了当前任务进度、已解决的坑及尚未实现的决定。这份灵魂摘要能确保我们在切换 AI 会话或面临知识折旧时，始终拥有精准的逻辑锚点。</p>
+<h2>从规则到法律：构建 .agent 核心</h2>
+<p>Skills 固然重要，因为它是经验的真知；但当 Skills 与 Rule 规则结合并沉淀在项目中时，才真正成为了开发者的宝贝。在 Anti 软件中，这个名为 .agent 的目录，其重要性甚至高于项目源码本身。我们要将学到的 Skills 转化为规则，且规则中的负面约束往往比正面鼓励更有效。规则是项目的法律，Skills 是执行的战术。例如，我们可以通过在 .agent 中禁止使用三方库处理 JSON 或 UI，以达到特定目的。</p>
+<h2>预见性防御：架构师的小心翼翼</h2>
+<p>构建大型项目（如跨平台应用）时，必须在一开始就定好规则并打好地基。一个成熟的架构师在选择类库时总是小心翼翼，会采用原型探针策略：在铺开业务代码前，先通过极简项目验证所有可能的核心难点。不要在后期才发现前期架构的欠缺导致推倒重来。真正的架构美学在于过程的无波无澜。</p>
+<h2>进化基石：可验证性与量化反馈</h2>
+<p>项目的可测试性与可验证性是其自动进化的基础。一个函数输入 1+1 必须得到 2，这种确定性是安全的来源。我们要允许测试对环境产生显性副作用，只要副作用是可控的、可接受的。更重要的是，我们要追求数值化与量化反馈：不要只听 AI 说已经优化，而要让它针对内存占用低于特定数值，或首屏加载快于某预设时间等硬指标进行交付。只有当功能随时可以被自动化运行并得到数值化结果时，项目才具备了持续迭代与自我修缮的能力。</p>
+<p>#技术·求真·AI</p>
+<p>📅 2026/02/19 周四 21:13</p>
+<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
+                </div>
+
+                <!-- 版权信息 -->
+                <div class="mt-10 bg-gray-50 rounded-lg border border-gray-200 p-4"
+                    x-data="{domain: 'https:&#x2F;&#x2F;yishulun.com', link: 'https:&#x2F;&#x2F;yishulun.com' + window.location.pathname}">
+                    <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
+                    <p class="text-sm text-gray-700">
+                        本文链接：
+                        <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)"
+                            target="_blank" rel="noopener"></a>
+                    </p>
+                    <p class="text-sm text-gray-700 mt-2">
+                        许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
+                        <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener"
+                            class="text-primary-600 hover:underline">查看许可说明</a>
+                    </p>
+                </div>
+
+                <!-- 分享功能 -->
+                <div class="mt-12 bg-gray-50 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900 p-4 pb-0">分享这篇文章</h4>
+                    <div class="flex flex-wrap gap-3 p-4">
+                        <button onclick="shareToTwitter()" class="btn-outline inline-flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                            Twitter
+                        </button>
+                        <button
+                            @click="navigator.clipboard.writeText(window.location.href).then(() => { copiedLink = true; setTimeout(() => copiedLink = false, 2000) })"
+                            class="btn-outline inline-flex items-center"
+                            :class="{ 'bg-green-100 text-green-800 border-green-300': copiedLink }">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            <span x-text="copiedLink ? '已复制' : '复制链接'"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 评论区域（由插件注入） -->
+                
+                <section id="rp-comments" style="margin-top: 3rem;">
+    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: #111827;">评论</h4>
+
+    <!-- 评论列表 -->
+    <div id="rp-comments-list"></div>
+    <div id="rp-comments-status" style="font-size: 0.875rem; color: #6b7280; padding: 1rem 0; text-align: center;">
+        加载评论中...</div>
+
+    <!-- 评论输入区 -->
+    <div id="rp-comment-form" style="margin-top: 1.5rem; display: none;">
+        <!-- 登录用户信息 -->
+        <div id="rp-user-info"
+            style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 14px; color: #374151;">
+            <img id="rp-user-avatar" src="" alt="" style="width: 28px; height: 28px; border-radius: 50%;">
+            <span id="rp-user-name" style="font-weight: 600;"></span>
+            <a href="#" id="rp-logout-btn"
+                style="margin-left: auto; font-size: 12px; color: #9ca3af; text-decoration: underline;"
+                onclick="rpLogout(); return false;">退出</a>
+        </div>
+        <!-- 输入框 -->
+        <textarea id="rp-comment-input"
+            style="width: 100%; min-height: 100px; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; line-height: 1.6; resize: vertical; font-family: inherit; box-sizing: border-box;"
+            placeholder="写下你的评论（支持 Markdown）..."></textarea>
+        <div style="display: flex; justify-content: flex-end; margin-top: 8px;">
+            <button id="rp-submit-btn" onclick="rpSubmitComment()"
+                style="padding: 8px 20px; font-size: 0.875rem; font-weight: 500; color: #fff; background-color: #2563eb; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.2s;"
+                onmouseover="this.style.backgroundColor='#1d4ed8'" onmouseout="this.style.backgroundColor='#2563eb'">
+                发表评论
+            </button>
+        </div>
+        <div id="rp-submit-status" style="font-size: 13px; color: #6b7280; margin-top: 6px; text-align: right;">
+        </div>
+    </div>
+
+    <!-- 未登录时显示登录按钮 -->
+    <div id="rp-login-section" style="margin-top: 1.5rem; text-align: center; display: none;">
+        <p style="font-size: 14px; color: #6b7280; margin-bottom: 12px;">登录 GitHub 后即可发表评论</p>
+        <a id="rp-login-btn" href="#"
+            style="display: inline-flex; align-items: center; padding: 10px 20px; font-size: 0.875rem; font-weight: 500; color: #fff; background-color: #1f2937; border-radius: 6px; text-decoration: none; transition: background-color 0.2s;"
+            onmouseover="this.style.backgroundColor='#374151'" onmouseout="this.style.backgroundColor='#1f2937'">
+            <svg style="width: 18px; height: 18px; margin-right: 8px;" fill="currentColor" viewBox="0 0 16 16">
+                <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            使用 GitHub 登录
+        </a>
+    </div>
+</section>
+
+<style>
+    .rp-comment {
+        border-bottom: 1px solid #e5e7eb;
+        padding: 16px 0;
+    }
+
+    .rp-comment:last-child {
+        border-bottom: none;
+    }
+
+    .rp-comment-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+
+    .rp-comment-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
+
+    .rp-comment-author {
+        font-weight: 600;
+        color: #111827;
+        font-size: 14px;
+    }
+
+    .rp-comment-date {
+        color: #9ca3af;
+        font-size: 12px;
+    }
+
+    .rp-comment-body {
+        color: #374151;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .rp-comment-body p {
+        margin: 6px 0;
+    }
+
+    .rp-comment-body code {
+        background: #f3f4f6;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-size: 13px;
+    }
+
+    .rp-comment-body pre {
+        background: #1f2937;
+        color: #e5e7eb;
+        padding: 12px;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-size: 13px;
+    }
+
+    .rp-comment-body pre code {
+        background: none;
+        padding: 0;
+        color: inherit;
+    }
+
+    .rp-comment-body blockquote {
+        border-left: 3px solid #d1d5db;
+        padding-left: 12px;
+        color: #6b7280;
+        margin: 8px 0;
+    }
+
+    .rp-comment-body img {
+        max-width: 100%;
+        border-radius: 6px;
+        margin: 8px 0;
+    }
+
+    .rp-comment-body a {
+        color: #2563eb;
+        text-decoration: underline;
+    }
+
+    .rp-no-comments {
+        text-align: center;
+        color: #9ca3af;
+        padding: 24px 0;
+    }
+
+    .rp-comment-count {
+        font-size: 14px;
+        color: #6b7280;
+        margin-bottom: 12px;
+    }
+</style>
+
+<script>
+    // ---- 全局状态 ----
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+    var RP_CLIENT_ID = '0cdfd84658051b0f7de6';
+    var rpCurrentIssueNumber = null;
+
+    // ---- 工具函数 ----
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // ---- Markdown 转 HTML (Simple) ----
+    function rpMd2html(text) {
+        if (!text) return '';
+        var h = text
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            .replace(/```([\s\S]*?)```/g, function (m, c) { return '<pre><code>' + c.trim() + '</code></pre>'; })
+            .replace(/`([^`]+)`/g, '<code>$1</code>')
+            .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img alt="$1" src="$2">')
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.+?)\*/g, '<em>$1</em>')
+            .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+            .replace(/\n/g, '<br>');
+        h = h.replace(/<\/blockquote><br><blockquote>/g, '<br>');
+        return h;
+    }
+
+    function rpFormatDate(dateStr) {
+        var d = new Date(dateStr);
+        return d.getFullYear() + '-' +
+            String(d.getMonth() + 1).padStart(2, '0') + '-' +
+            String(d.getDate()).padStart(2, '0') + ' ' +
+            String(d.getHours()).padStart(2, '0') + ':' +
+            String(d.getMinutes()).padStart(2, '0');
+    }
+
+    // ---- 渲染评论列表 ----
+    function rpRenderComments(comments) {
+        var container = document.getElementById('rp-comments-list');
+        if (comments.length === 0) {
+            container.innerHTML = '<div class="rp-no-comments">暂无评论，成为第一个评论者吧！</div>';
+        } else {
+            container.innerHTML = '<div class="rp-comment-count">共 ' + comments.length + ' 条评论</div>' +
+                comments.map(function (c) {
+                    return '<div class="rp-comment">' +
+                        '<div class="rp-comment-header">' +
+                        '<img class="rp-comment-avatar" src="' + c.user.avatar_url + '" alt="' + c.user.login + '">' +
+                        '<span class="rp-comment-author">' + c.user.login + '</span>' +
+                        '<span class="rp-comment-date">' + rpFormatDate(c.created_at) + '</span>' +
+                        '</div>' +
+                        '<div class="rp-comment-body">' + rpMd2html(c.body) + '</div>' +
+                        '</div>';
+                }).join('');
+        }
+    }
+
+    // ---- 加载评论 ----
+    function rpLoadComments() {
+        var status = document.getElementById('rp-comments-status');
+        var pathname = window.location.pathname;
+
+        var searchUrl = 'https://api.github.com/search/issues?q=' +
+            encodeURIComponent(pathname + ' repo:' + RP_REPO + ' is:issue') +
+            '&sort=created&order=desc&per_page=1';
+
+        fetch(searchUrl, {
+            headers: { 'Accept': 'application/vnd.github.v3+json' }
+        })
+            .then(function (r) {
+                if (r.status === 403) throw new Error('rate_limit');
+                return r.json();
+            })
+            .then(function (data) {
+                if (!data.items || data.items.length === 0) {
+                    rpRenderComments([]);
+                    rpCurrentIssueNumber = null;
+                    status.style.display = 'none';
+                    return;
+                }
+                var issue = data.items[0];
+                rpCurrentIssueNumber = issue.number;
+
+                return fetch(issue.comments_url + '?per_page=100', {
+                    headers: { 'Accept': 'application/vnd.github.v3+json' }
+                })
+                    .then(function (r) { return r.json(); })
+                    .then(function (comments) {
+                        rpRenderComments(comments);
+                        status.style.display = 'none';
+                    });
+            })
+            .catch(function (err) {
+                if (err.message === 'rate_limit') {
+                    status.textContent = 'GitHub API 请求次数超限，请稍后再试';
+                } else {
+                    console.error(err);
+                    status.textContent = '评论加载失败';
+                }
+            });
+    }
+
+    // ---- 检查登录状态 (Static Method) ----
+    function rpCheckLogin() {
+        if (!RP_CLIENT_ID) return;
+
+        // Check for token in URL (from Worker redirect)
+        var urlParams = new URLSearchParams(window.location.search);
+        var tokenFromUrl = urlParams.get('gh_token') || urlParams.get('access_token');
+        if (tokenFromUrl) {
+            document.cookie = "gh_token=" + tokenFromUrl + "; path=/; max-age=2592000"; // 30 days
+            // Clean URL
+            var newUrl = window.location.pathname + window.location.hash;
+            window.history.replaceState({}, document.title, newUrl);
+        }
+
+        var token = getCookie('gh_token');
+        if (token) {
+            // Verify token by fetching user
+            fetch('https://api.github.com/user', {
+                headers: { 'Authorization': 'token ' + token }
+            })
+                .then(r => {
+                    if (r.ok) return r.json();
+                    throw new Error('Invalid token');
+                })
+                .then(data => {
+                    document.getElementById('rp-comment-form').style.display = 'block';
+                    document.getElementById('rp-login-section').style.display = 'none';
+                    document.getElementById('rp-user-avatar').src = data.avatar_url;
+                    document.getElementById('rp-user-name').textContent = data.name || data.login;
+                })
+                .catch(e => {
+                    document.cookie = 'gh_token=; path=/; max-age=0'; // Clear invalid token
+                    rpShowLoginButton();
+                });
+        } else {
+            rpShowLoginButton();
+        }
+    }
+
+    function rpShowLoginButton() {
+        document.getElementById('rp-comment-form').style.display = 'none';
+        document.getElementById('rp-login-section').style.display = 'block';
+
+        // Use Worker as redirect target
+        // The Worker will redirect back to this page (state)
+        // Note: You must updating GitHub App Callback URL to your Worker URL
+        // e.g. https://oauth.yishulun.workers.dev/callback
+
+        // We assume user configured the worker. 
+        // If not, we fallback to direct GitHub flow (which fails on static).
+        // For now we assume the user will configure the GitHub App callback 
+        // to point to the WORKER.
+        // The redirect_uri param here MUST MATCH the one registered in GitHub App.
+        // If user set GitHub App Callback = https://oauth.yishulun.workers.dev/callback
+        // Then we must use that here.
+        // But we don't know the worker URL here!
+
+        // Wait, if we use a Worker, we should link to the Worker's /login endpoint? 
+        // Or simply link to GitHub with redirect_uri = Worker URL?
+
+        // If we link to standard GitHub Authorize, we need to pass redirect_uri.
+        // If we don't pass redirect_uri, GitHub uses the default registered one.
+        // THIS IS THE KEY. We don't need to hardcode the worker URL if it's the default!
+
+        var loginUrl = 'https://github.com/login/oauth/authorize?client_id=' +
+            '&client_id=' + RP_CLIENT_ID +
+            // ⚠️ 警告：
+            // 如果您的 GitHub App 配置了 Authorization callback URL 为 Worker 地址，
+            // 那么这里建议 **不传递** redirect_uri 参数，让 GitHub 使用默认配置。
+            // 
+            // 如果由于某种原因 GitHub 报错，您可以取消下面这行的注释，并填入您的 Worker 地址：
+            // '&redirect_uri=' + encodeURIComponent('https://<您的-worker-名>.<您的-subdomain>.workers.dev/callback') +
+            '&state=' + encodeURIComponent(window.location.pathname) + // Worker uses this to redirect back
+            '&scope=public_repo';
+
+        document.getElementById('rp-login-btn').href = loginUrl;
+    }
+
+    // ---- 提交评论 (Static Method) ----
+    function rpSubmitComment() {
+        var input = document.getElementById('rp-comment-input');
+        var submitBtn = document.getElementById('rp-submit-btn');
+        var submitStatus = document.getElementById('rp-submit-status');
+        var body = input.value.trim();
+        var token = getCookie('gh_token');
+
+        if (!token) {
+            rpCheckLogin();
+            return;
+        }
+
+        if (!body) {
+            submitStatus.textContent = '请输入评论内容';
+            submitStatus.style.color = '#ef4444';
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.6';
+        submitStatus.textContent = '发送中...';
+        submitStatus.style.color = '#6b7280';
+
+        // Helper to post comment
+        function doPostLink(issueNumber) {
+            fetch('https://api.github.com/repos/' + RP_REPO + '/issues/' + issueNumber + '/comments', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'token ' + token,
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/vnd.github.v3+json'
+                },
+                body: JSON.stringify({ body: body })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.id) {
+                        input.value = '';
+                        submitStatus.textContent = '✓ 评论已发表';
+                        submitStatus.style.color = '#16a34a';
+                        setTimeout(function () {
+                            rpLoadCommentsByIssue(issueNumber);
+                        }, 1000);
+                    } else {
+                        throw new Error(data.message || 'Failed');
+                    }
+                })
+                .catch(err => {
+                    submitStatus.textContent = '发送失败: ' + err.message;
+                    submitStatus.style.color = '#ef4444';
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                });
+        }
+
+        // If issue doesn't exist, create it first
+        if (!rpCurrentIssueNumber) {
+            var title = (document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : document.title);
+            fetch('https://api.github.com/repos/' + RP_REPO + '/issues', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'token ' + token,
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/vnd.github.v3+json'
+                },
+                body: JSON.stringify({
+                    title: title + ' | ' + window.location.pathname,
+                    body: 'Comment thread for ' + window.location.pathname + '\n\n' + window.location.href
+                })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.number) {
+                        rpCurrentIssueNumber = data.number;
+                        doPostLink(rpCurrentIssueNumber);
+                    } else {
+                        throw new Error('无法创建 Issue: ' + (data.message || 'Unknown error'));
+                    }
+                })
+                .catch(err => {
+                    submitStatus.textContent = '初始化评论区失败: ' + err.message;
+                    submitStatus.style.color = '#ef4444';
+                    submitBtn.disabled = false;
+                });
+        } else {
+            doPostLink(rpCurrentIssueNumber);
+        }
+    }
+
+    // ---- 通过 Issue 编号直接加载评论 ----
+    function rpLoadCommentsByIssue(issueNumber) {
+        var url = 'https://api.github.com/repos/' + RP_REPO + '/issues/' + issueNumber + '/comments?per_page=100';
+        fetch(url, {
+            headers: { 'Accept': 'application/vnd.github.v3+json' }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (comments) {
+                rpRenderComments(comments);
+            })
+            .catch(function () {
+                rpLoadComments();
+            });
+    }
+
+    // ---- 退出登录 ----
+    function rpLogout() {
+        document.cookie = 'gh_token=; path=/; max-age=0';
+        window.location.reload();
+    }
+
+    // ---- 初始化 ----
+    rpLoadComments();
+    rpCheckLogin();
+</script>
+                
+
+                <!-- 返回顶部 -->
+                <div class="text-center mt-8">
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                        class="btn-secondary inline-flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                        </svg>
+                        返回顶部
+                    </button>
+                </div>
+            </article>
+        </div>
+
+        
+        <!-- 目录组件 -->
+<div class="toc-container fixed right-4 top-20 z-40 hidden xl:block" 
+     x-data="{ 
+         tocOpen: true, 
+         activeId: '',
+         headings: [],
+         init() {
+             this.generateToc();
+             this.observeHeadings();
+         },
+         generateToc() {
+             const content = document.querySelector('.prose, .card-body');
+             if (!content) return;
+             
+             const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+             this.headings = Array.from(headings).map((heading, index) => {
+                 const id = heading.id || `heading-${index}`;
+                 heading.id = id;
+                 return {
+                     id: id,
+                     text: heading.textContent.trim(),
+                     level: parseInt(heading.tagName.charAt(1)),
+                     element: heading
+                 };
+             });
+         },
+         observeHeadings() {
+             if (this.headings.length === 0) return;
+             
+             const observer = new IntersectionObserver((entries) => {
+                 entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                         this.activeId = entry.target.id;
+                     }
+                 });
+             }, {
+                 rootMargin: '-20% 0px -80% 0px'
+             });
+             
+             this.headings.forEach(heading => {
+                 observer.observe(heading.element);
+             });
+         },
+         scrollToHeading(id) {
+             const element = document.getElementById(id);
+             if (element) {
+                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+             }
+         }
+     }"
+     x-init="init()">
+    
+    <!-- 目录切换按钮 -->
+    <button @click="tocOpen = !tocOpen" 
+            class="mb-2 p-2 bg-white rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-200"
+            title="目录">
+        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+    
+    <!-- 目录内容 -->
+    <div x-show="tocOpen" 
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 transform scale-95"
+         x-transition:enter-end="opacity-100 transform scale-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 transform scale-100"
+         x-transition:leave-end="opacity-0 transform scale-95"
+         class="bg-white rounded-lg shadow-xl border border-gray-200 p-4 max-w-xs w-64 max-h-96 overflow-y-auto">
+        
+        <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-gray-900">目录</h3>
+            <button @click="tocOpen = false" class="text-gray-400 hover:text-gray-600">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="space-y-1">
+            <template x-for="heading in headings" :key="heading.id">
+                <a @click.prevent="scrollToHeading(heading.id)" 
+                   :class="{
+                       'text-primary-600 bg-primary-50 border-l-2 border-primary-600': activeId === heading.id,
+                       'text-gray-600 hover:text-gray-900 hover:bg-gray-50': activeId !== heading.id,
+                       'pl-2': heading.level === 1,
+                       'pl-4': heading.level === 2,
+                       'pl-6': heading.level === 3,
+                       'pl-8': heading.level === 4,
+                       'pl-10': heading.level === 5,
+                       'pl-12': heading.level === 6
+                   }"
+                   class="block py-1 px-2 text-sm cursor-pointer rounded transition-colors duration-150"
+                   x-text="heading.text">
+                </a>
+            </template>
+        </nav>
+        
+        <div x-show="headings.length === 0" class="text-sm text-gray-500 text-center py-4">
+            暂无目录
+        </div>
+    </div>
+</div>
+
+<style>
+/* 移动端隐藏目录 */
+@media (max-width: 1279px) {
+    .toc-container {
+        display: none !important;
+    }
+}
+
+/* 目录滚动条样式 */
+.toc-container .max-h-96::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+</style>
+
+        
+    </div>
+</div>
+
+<script>
+    function shareToTwitter() {
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent(document.title);
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+    }
+</script>
+
+        </main>
+    </div>
+
+    <!-- 广告位1：底部广告（版权区上方） -->
+    
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
+            <div
+                class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="flex flex-col items-center p-4 text-center">
+                    <!-- 广告图片 -->
+                    <div class="mb-3">
+                        <img src="&#x2F;static&#x2F;images&#x2F;book-wegame.png" alt="微信小游戏开发"
+                            class="w-48 h-60 object-cover rounded-md mx-auto"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMTkyIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiBmaWxsPSIjREJFRkZGIi8+Cjx0ZXh0IHg9Ijk2IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMzc2RkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7kuLvpopjlpLTlg488L3R4dD4KPC9zdmc+'">
+                    </div>
+
+                    <!-- 广告信息 -->
+                    <div class="max-w-sm">
+                        <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+                            微信小游戏开发
+                        </h2>
+                        
+                        <p class="text-gray-700 text-sm mb-3">学习微信小游戏开发技术，掌握游戏开发全流程</p>
+                        
+
+                        <!-- 查看详情按钮 -->
+                        <div
+                            class="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow-sm transition-colors text-sm">
+                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                            </svg>
+                            查看详情
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    
+
+    <!-- 页脚 -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center space-y-2">
+                <p class="text-gray-600">
+                    &copy; 2002-2026
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;yishulun.com" target="_blank" rel="noopener"
+                        class="text-gray-700 hover:text-primary-600">金石碼农</a>
+                    
+                    
+                    
+                    &nbsp;|&nbsp;
+                    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"
+                        class="text-gray-500 hover:text-gray-700 text-sm">
+                        京ICP备14007000号-8
+                    </a>
+                    
+                </p>
+                <p class="text-gray-500 text-sm">
+                    由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener"
+                        class="text-primary-600 hover:text-primary-700">RustPress</a> 提供支持
+                </p>
+                <p class="text-gray-500 text-sm">
+                    <a href="/rss.xml" class="hover:text-primary-600">RSS</a>
+                    &nbsp;·&nbsp;
+                    <a href="/sitemap.xml" class="hover:text-primary-600">Sitemap</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 搜索结果容器 -->
+    <div class="fixed inset-x-0 top-16 z-40 hidden" id="search-results">
+        <div class="bg-white shadow-lg border border-gray-200 rounded-lg mx-4 mt-2 max-h-96 overflow-y-auto">
+            <!-- 搜索结果将在这里显示 -->
+        </div>
+    </div>
+
+
+
+    <!-- 搜索功能脚本 -->
+    <script src="/static/js/search.js"></script>
+
+    
+    <!-- Google Analytics 懒加载 -->
+    <script>
+        (function () {
+            var gid = "G-8N64Q25EK9";
+            var loadGA = function () {
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = "https://www.googletagmanager.com/gtag/js?id=" + gid;
+                s.onload = function () {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); } // eslint-disable-line
+                    gtag('js', new Date());
+                    gtag('config', gid);
+                };
+                document.head.appendChild(s);
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadGA);
+            } else {
+                window.addEventListener('load', function () { setTimeout(loadGA, 1500); });
+            }
+        })();
+    </script>
+    
+
+    
+    <!-- Google Ads 懒加载 -->
+    <script>
+        (function () {
+            var clientId = "ca-pub-2139303336591479";
+            var loadAds = function () {
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + clientId;
+                s.crossOrigin = "anonymous";
+                document.head.appendChild(s);
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadAds);
+            } else {
+                window.addEventListener('load', function () { setTimeout(loadAds, 1500); });
+            }
+        })();
+    </script>
+    
+</body>
+
+</html>
