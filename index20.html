@@ -246,9 +246,9 @@
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="docs&#x2F;claude/6.创作一篇科幻故事的实践.html"
+                        <a href="docs&#x2F;claude/2.Claude提示的初步编写与优化.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            6.创作一篇科幻故事的实践
+                            2.Claude提示的初步编写与优化
                         </a>
                         
                     </h2>
@@ -267,71 +267,11 @@
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        6.创作一篇科幻故事的实践
-下面使用 Claude 尝试进行一个科幻故事的创作。
-我：
-Claude，我们一起写一个多章节的故事吧。以下是我想用来限制和背景化故事的因素：
-
-- 故事发生在未来的后稀缺环境中。
-- 聚变能源发电已成为现实。
-- 这将为海水淡化、农作物生长用电灯、塑料和金属的回收和再生等用途提供几乎免费的能源。
-
-请创作一个包含主角、对手、高风险的潜在灾难和扣人心弦的高潮的情节。
-
-…
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/docs/"
-                        class="hover:text-primary-600">docs</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/docs&#x2F;claude/"
-                        class="hover:text-primary-600">claude</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="docs&#x2F;claude/5.Claude提示故障排查.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            5.Claude提示故障排查
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2025-02-19
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        5.Claude 提示故障排查规则
-如果提示的初始版本表现不好，可以尝试用以下规则排查与优化。
-1，检查格式
-无论是在 Web 上互动，还是使用 API 调用，标准的格式是这样的：
-\n\nHuman: [HUMAN_TEXT]\n\nAssistant: [ASSISTANT_TEXT]\n\nHuman: [MORE HUMAN TEXT]\n\nAssistant:
-
-
-在每个 nHuman…
+                        2.Claude 提示的初步编写与优化
+下面这些技巧属于基础的 Claude 提示编写技巧。
+初步设计
+和 ChatGPT 类似，指令的质量会对它的输出质量产生很大的影响，特别是对于复杂的任务。
+Claude 模型使用你发送给它的所有文本，以及迄今为止生成的所有文本，来预测下一个最有帮助的标记（Token）。这意味着 Claude 一次按顺序构造一组字符的响应。它在写入后无法返回并编辑其响应，除非…
                     </div>
                     
                     
@@ -559,6 +499,58 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
+                        <a href="docs&#x2F;novel/小说创作的最低要求是什么.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            小说创作的最低要求是什么
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2025-02-19
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        小说创作的最低要求是什么？
+对于程序而言，代码没有异常，可以正常运行，这是最低的要求。软件正常运行以后，才是用户体验上的考虑，考虑如何让用户用得更舒服。
+在长篇小说创作上，达到什么程度，写出的文字算是达到了最低要求呢？
+确保内容流畅和通顺，具体涉及以下这些方面：
+
+语法和拼写无误 ：没有明显的语法错误和拼写错误是使文章流畅的基础。
+文本连贯性 ：从段落到段落，从章节到章节，文本应当流畅且连贯。每个…
+                    </div>
+                    
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/docs/"
+                        class="hover:text-primary-600">docs</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/docs&#x2F;novel/"
+                        class="hover:text-primary-600">novel</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
                         <a href="docs&#x2F;novel/如何使用Claude AI辅助创作小说.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
                             如何使用Claude AI辅助创作小说
@@ -599,17 +591,17 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         class="hover:text-primary-600">docs</a>
                     
                     <span class="mx-2">›</span>
-                    <a href="/docs&#x2F;novel/"
-                        class="hover:text-primary-600">novel</a>
+                    <a href="/docs&#x2F;rust/"
+                        class="hover:text-primary-600">rust</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="docs&#x2F;novel/小说创作的最低要求是什么.html"
+                        <a href="docs&#x2F;rust/rustlings.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            小说创作的最低要求是什么
+                            在Rustlings示例中N天学习Rust
                         </a>
                         
                     </h2>
@@ -628,13 +620,12 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        小说创作的最低要求是什么？
-对于程序而言，代码没有异常，可以正常运行，这是最低的要求。软件正常运行以后，才是用户体验上的考虑，考虑如何让用户用得更舒服。
-在长篇小说创作上，达到什么程度，写出的文字算是达到了最低要求呢？
-确保内容流畅和通顺，具体涉及以下这些方面：
-
-语法和拼写无误 ：没有明显的语法错误和拼写错误是使文章流畅的基础。
-文本连贯性 ：从段落到段落，从章节到章节，文本应当流畅且连贯。每个…
+                        在Rustlings示例中N天学习Rust
+Rustlings 是一个辅助学习者学习Rust语言的学习程序。每写对一个练习，在终端里便会看到这样一条提示：
+🎉 🎉  The code is compiling! 🎉 🎉
+第1天 准备学习环境
+安装Rust运行环境
+在安装rustings学习程序之前，需要先安装Rust语言运行环境，前往https:&#x2F;&#x2F;www.rust-lang.org&#x2F;tools&#x2F;…
                     </div>
                     
                     
@@ -887,23 +878,9 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="docs&#x2F;claude/6.创作一篇科幻故事的实践.html"
+                        <a href="docs&#x2F;claude/2.Claude提示的初步编写与优化.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            6.创作一篇科幻故事的实践
-                        </a>
-                        
-                    </h4>
-                    
-                    <p class="text-xs text-gray-500">2025-02-19</p>
-                    
-                </div>
-                
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <h4 class="text-sm font-medium mb-1">
-                        
-                        <a href="docs&#x2F;claude/5.Claude提示故障排查.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            5.Claude提示故障排查
+                            2.Claude提示的初步编写与优化
                         </a>
                         
                     </h4>
@@ -946,6 +923,20 @@ Claude，我们一起写一个多章节的故事吧。以下是我想用来限�
                         <a href="docs&#x2F;向GPT高效提问/3.GPT能够做什么.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
                             3.GPT能够做什么
+                        </a>
+                        
+                    </h4>
+                    
+                    <p class="text-xs text-gray-500">2025-02-19</p>
+                    
+                </div>
+                
+                <div class="p-4 hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-medium mb-1">
+                        
+                        <a href="docs&#x2F;向GPT高效提问/2.GPT是如何运转的.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
+                            2.GPT是如何运转的
                         </a>
                         
                     </h4>
