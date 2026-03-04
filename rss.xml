@@ -5,6 +5,20 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>Vide Coding 经验总结，核心五点</title>
+    <link>https://yishulun.com/blog/2026/28.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/28.html</guid>
+    <description>Vide Coding 经验总结，核心五点 以下内容都是我进行 Vide Coding 后的亲自经验总结，欢迎批判或补充。相信真正使用过 Vide Coding 的人都会会心一笑或拍掌叫好。真正做到这六点，编码效率将像开火箭一样又快又稳！ 1，目录化。 不依赖于环境，不依赖于系统常量，目录化的代码、配置、资源、类库实现自足，可以实现从一个系统转到另一个系统完全可以在一键 setup 后就可以运行。项目一般有一些配置文件和脚本，例如 config.toml 配置、dev.sh 调试脚本、build.sh 编译脚本。 对于 Agent 而言，它无法像人类一样自己去配置复杂的环境变量或摸索依赖路径。自包含的目录和标准化的启动脚本（如 dev.sh、build.sh）相当于给了 Agent 一个明确的“抓手”和“入口”。当 Agent 迷失或遇到报错时，它可以直接调用这些标准脚本进行一键调试，减少</description>
+    <pubDate>2026-03-04</pubDate>
+  </item>
+  <item>
+    <title>Mise 是一种好软件</title>
+    <link>https://yishulun.com/blog/2026/27.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/27.html</guid>
+    <description>Mise 是一种好软件 Mise 是一个环境管理器，可以在一个地方管理多个编程语言的版本，例如 Node、Python、Rust、Go 等。 例如安装 LTS 版本的 Node.js： mise use --global node@lts 安装最新版本的 Python： mise use --global python@latest 安装 Github GH： mise use --global github-cli 安装 Rust： mise use --global rust@latest 安装 Go： mise use --global go@latest 不必检查每种语言环境的安装方法，统一用 mise use --global 就可以搞定。 除了管理环境安装，mise 还可以管理常量。它可以把常量放在项目的根目录下，进入该目录就生效，离开目录就卸载。这个功能太有效了！它极大简化了</description>
+    <pubDate>2026-02-28</pubDate>
+  </item>
+  <item>
     <title>恩言-大字有声圣经发布了</title>
     <link>https://yishulun.com/blog/2026/25.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/25.html</guid>
