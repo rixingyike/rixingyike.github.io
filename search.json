@@ -76,7 +76,9 @@
     "url": "/blog/2026/26.html"
   },
   {
-    "categories": [],
+    "categories": [
+      "projects"
+    ],
     "content": "功能特性 📖 新约旧约全书 — 涵盖圣经全部 66 卷书，繁体中文和合本 🔤 大字显示 — 专为阅读优化的大字排版，清晰易读 🔊 有声朗读 — 内置离线语音引擎，支持逐章逐节朗读 🎯 逐节跟读 — 播放时自动高亮当前朗读的经节 📴 完全离线 — 全部内容与语音离线可用，无需网络 📱 多平台支持 — 同时支持 macOS 和 Android 平台 技术架构 本应用使用 Flutter 作为跨平台 UI 框架， Rust 处理核心 TTS 引擎： TTS 语音引擎基于 Rust 实现，通过 FFI 桥接 Flutter 语音资源包支持按需下载，首次使用自动解压 支持 6kHz 与 8kHz 两种语音质量可选 资源包说明 应用内置默认内容可直接使用。在有网络的情况下，App 会自动引导下载以下可选资源包以获得更佳体验： 资源包 说明 繁体中文语言包 繁体中文经文显示 6kHz 语音包 基础语音朗读（体积较小） 8kHz 语音包 高质量语音朗读（推荐） 不下载资源包也可正常使用 App 的默认内容。 注意 在手机上下载安装包，如果发现后缀是 zip，将 zip 去掉，保留 apk 直接安装即可。程序安全无毒，相关检测提示可直接忽略。 2026/02/25",
     "date": "2026-02-19",
     "id": 4,
@@ -89,10 +91,12 @@
       "圣经"
     ],
     "title": "恩言 - 大字有声圣经",
-    "url": "/enyan.html"
+    "url": "/projects/enyan.html"
   },
   {
-    "categories": [],
+    "categories": [
+      "projects"
+    ],
     "content": "功能特性 🚀 纯静态生成 — 零后端依赖，生成纯 HTML/CSS/JS 静态站点 ⚡ 增量编译 — 仅重新编译变更文件，毫秒级构建 📄 Markdown 写作 — 完整的 Markdown + frontmatter 支持 🔄 倒分页 — 独创倒序分页方案，新文章永远在首页 🎨 主题系统 — Tailwind CSS 主题，支持自定义模板 🔌 插件系统 — 基于 linkme 自动注册的插件架构 🔥 热更新 — 开发模式下文件变更自动重新构建 💬 评论系统 — 基于 GitHub Issues 的无后端评论 🔍 全文搜索 — 基于 Lunr.js 的客户端全文搜索 📡 RSS &amp; Sitemap — 自动生成订阅源和站点地图 快速开始 # 安装 cargo install rustpress # 创建新博客 mkdir my-blog &amp;&amp; cd my-blog rustpress init # 开发模式（热更新） rustpress dev --hotreload # 构建发布 rustpress build 技术栈 组件 技术 核心引擎 Rust 模板引擎 Tera Markdown pulldown-cmark CSS 框架 Tailwind CSS 搜索引擎 Lunr.js 插件注册 linkme 项目结构 my-blog/ ├── source/ # Markdown 文章 │ ├── config.toml # 站点配置 │ └── about.md # 关于页面 ├── themes/ # 主题目录 │ └── default/ # 默认主题 ├── public/ # 生成的静态文件 └── config.toml # 构建配置 开源协议 Apache License 2.0 — 可自由使用、修改和分发。 2026/02/25",
     "date": "2026-02-19",
     "id": 5,
@@ -105,7 +109,7 @@
       "开源"
     ],
     "title": "RustPress - 纯静态博客引擎",
-    "url": "/rustpress.html"
+    "url": "/projects/rustpress.html"
   },
   {
     "categories": [
@@ -606,7 +610,7 @@
       "科技分析",
       "通信技术"
     ],
-    "title": "# 主播：250 美金特斯拉手机，上网不要我，直接干翻三大运营商？兹是流量收割，别被骗了！",
+    "title": "# 主播:250 美金特斯拉手机，上网不要我，直接干翻三大运营商？兹是流量收割，别被骗了！",
     "url": "/blog/2025/88.html"
   },
   {
@@ -4208,10 +4212,10 @@
     "content": "--",
     "date": "",
     "id": 279,
-    "slug": "README",
+    "slug": "index",
     "tags": [],
     "title": "博客",
-    "url": "/posts/README.html"
+    "url": "/posts/index.html"
   },
   {
     "categories": [
@@ -4221,10 +4225,10 @@
     "content": "1.Claude 简介 2.Claude 提示的初步编写与优化 3.Claude 提示实用编写技巧 4.Claude 的具体提示实例 5.Claude 提示故障排查规则 6.创作一篇科幻故事的实践 --",
     "date": "",
     "id": 280,
-    "slug": "README",
+    "slug": "index",
     "tags": [],
     "title": "Claude使用教程",
-    "url": "/docs/claude/README.html"
+    "url": "/docs/claude/index.html"
   },
   {
     "categories": [
@@ -4234,10 +4238,10 @@
     "content": "1.认识GPT 2.GPT 是如何运转的？ 3.GPT 能够做什么？ 4.高效提示的 5 个方式",
     "date": "",
     "id": 281,
-    "slug": "README",
+    "slug": "index",
     "tags": [],
     "title": "向 GPT 高效提问",
-    "url": "/docs/向GPT高效提问/README.html"
+    "url": "/docs/向GPT高效提问/index.html"
   },
   {
     "categories": [],
@@ -4256,9 +4260,9 @@
     "content": "",
     "date": "",
     "id": 283,
-    "slug": "README",
+    "slug": "index",
     "tags": [],
-    "title": "README",
-    "url": "/notes/README.html"
+    "title": "index",
+    "url": "/notes/index.html"
   }
 ]
