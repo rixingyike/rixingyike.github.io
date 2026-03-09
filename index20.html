@@ -79,6 +79,9 @@
                     <a href="&#x2F;tags.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
                     
+                    <a href="&#x2F;docs.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">文档</a>
+                    
                     <a href="&#x2F;friends.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
                     
@@ -146,6 +149,9 @@
                 
                 <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                
+                <a href="&#x2F;docs.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">文档</a>
                 
                 <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
@@ -227,56 +233,6 @@
         <!-- 文章列表 -->
         <div id="articles" class="space-y-6">
             
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/docs/"
-                        class="hover:text-primary-600">docs</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/docs&#x2F;claude/"
-                        class="hover:text-primary-600">claude</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="docs&#x2F;claude/2.Claude提示的初步编写与优化.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            2.Claude提示的初步编写与优化
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2025-02-19
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        2.Claude 提示的初步编写与优化
-下面这些技巧属于基础的 Claude 提示编写技巧。
-初步设计
-和 ChatGPT 类似，指令的质量会对它的输出质量产生很大的影响，特别是对于复杂的任务。
-Claude 模型使用你发送给它的所有文本，以及迄今为止生成的所有文本，来预测下一个最有帮助的标记（Token）。这意味着 Claude 一次按顺序构造一组字符的响应。它在写入后无法返回并编辑其响应，除非…
-                    </div>
-                    
-                    
-                </div>
-            </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
@@ -632,6 +588,56 @@ Rustlings 是一个辅助学习者学习Rust语言的学习程序。每写对一
                 </div>
             </article>
             
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="friends.html" class="text-gray-900 hover:text-primary-600 transition-colors">
+                            友情链接
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2024-05-12
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        申请友链
+欢迎技术博客和优质网站交换友链，要求简洁直观、内容健康可访问。
+申请要求
+
+网站内容健康，无违法违规信息
+网站可以正常访问，加载速度合理
+有一定的原创内容，更新相对稳定
+优先考虑技术类、学习类网站
+
+申请方式
+请先在你的站点添加本站链接，然后通过邮件申请：
+
+邮箱：9830131@qq.com（请注明“友链申请”）
+
+申请时请提供：
+
+网站名称（name）
+网站地址（link）
+网站描述…
+                    </div>
+                    
+                    
+                </div>
+            </article>
+            
 
             <!-- 列表范围显示 -->
             <div class="flex justify-center mt-6">
@@ -878,20 +884,6 @@ Rustlings 是一个辅助学习者学习Rust语言的学习程序。每写对一
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="docs&#x2F;claude/2.Claude提示的初步编写与优化.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            2.Claude提示的初步编写与优化
-                        </a>
-                        
-                    </h4>
-                    
-                    <p class="text-xs text-gray-500">2025-02-19</p>
-                    
-                </div>
-                
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <h4 class="text-sm font-medium mb-1">
-                        
                         <a href="docs&#x2F;向GPT高效提问/4.高效提示的5个方式.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
                             4.高效提示的5个方式
@@ -937,6 +929,20 @@ Rustlings 是一个辅助学习者学习Rust语言的学习程序。每写对一
                         <a href="docs&#x2F;向GPT高效提问/2.GPT是如何运转的.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
                             2.GPT是如何运转的
+                        </a>
+                        
+                    </h4>
+                    
+                    <p class="text-xs text-gray-500">2025-02-19</p>
+                    
+                </div>
+                
+                <div class="p-4 hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-medium mb-1">
+                        
+                        <a href="docs&#x2F;novel/小说创作的最低要求是什么.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
+                            小说创作的最低要求是什么
                         </a>
                         
                     </h4>

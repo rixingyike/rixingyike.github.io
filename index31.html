@@ -79,6 +79,9 @@
                     <a href="&#x2F;tags.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
                     
+                    <a href="&#x2F;docs.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">文档</a>
+                    
                     <a href="&#x2F;friends.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
                     
@@ -146,6 +149,9 @@
                 
                 <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                
+                <a href="&#x2F;docs.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">文档</a>
                 
                 <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
@@ -227,83 +233,6 @@
         <!-- 文章列表 -->
         <div id="articles" class="space-y-6">
             
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="blog&#x2F;2025/86.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            现在我如何使用 Google Antigravity
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2025-12-19
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        现在我如何使用 Google Antigravity
-废话一箩筐，真传一句话。现在我使用 Anti 就是一句话：建项目时用 Plan 模式，建成后用 Fast 模式！
-为什么？用 Plan 是为了进行全面、宏观建制，随后使用 Fast 是为了精准控制。我让 AI 把要做的事情列出来，然后一个一个功能攻克。在这个过程中，AI 写的每一行代码我都是知道的，每个函数我都是明白干什么用的。只是我没有动手，…
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/Google Antigravity/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            Google Antigravity
-                        </a>
-                        
-                        <a href="/tags/AI编程/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI编程
-                        </a>
-                        
-                        <a href="/tags/项目开发/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            项目开发
-                        </a>
-                        
-                        <a href="/tags/代码生成/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            代码生成
-                        </a>
-                        
-                        <a href="/tags/自动化工具/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            自动化工具
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
@@ -849,6 +778,84 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                 </div>
             </article>
             
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2025/"
+                        class="hover:text-primary-600">2025</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2025/77.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            聊一下董事长和猩爷
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2025-12-15
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        聊一下董事长和猩爷
+我在笔记中看到猩爷自己写的 Profile 竟然是 “幼稚、较真”，较真或许有，但幼稚实在看不出来。这可能是猩爷对他人对他评价的一个警示，没错，就是把他人打出的负面评价贴在主页上以警示自己。我看到后，特别想聊一聊董事长和猩爷这两个人。仅从客观层面评价。因为我阅读这两人的笔记已经足够多，我觉得我有足够的评论材料。
+猩爷
+我认识猩爷是从他幽默风趣的评论中开始的，开始感觉他是一位擅长…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/人物评价/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            人物评价
+                        </a>
+                        
+                        <a href="/tags/职场智慧/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            职场智慧
+                        </a>
+                        
+                        <a href="/tags/幽默风格/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            幽默风格
+                        </a>
+                        
+                        <a href="/tags/领导力/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            领导力
+                        </a>
+                        
+                        <a href="/tags/个人成长/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            个人成长
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
 
             <!-- 列表范围显示 -->
             <div class="flex justify-center mt-6">
@@ -1095,20 +1102,6 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/86.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            现在我如何使用 Google Antigravity
-                        </a>
-                        
-                    </h4>
-                    
-                    <p class="text-xs text-gray-500">2025-12-19</p>
-                    
-                </div>
-                
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <h4 class="text-sm font-medium mb-1">
-                        
                         <a href="blog&#x2F;2025/85.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
                             AI 富有四海，但却没有品味
@@ -1159,6 +1152,20 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                     </h4>
                     
                     <p class="text-xs text-gray-500">2025-12-18</p>
+                    
+                </div>
+                
+                <div class="p-4 hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-medium mb-1">
+                        
+                        <a href="blog&#x2F;2025/79.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
+                            如何突破信息差诅咒
+                        </a>
+                        
+                    </h4>
+                    
+                    <p class="text-xs text-gray-500">2025-12-17</p>
                     
                 </div>
                 

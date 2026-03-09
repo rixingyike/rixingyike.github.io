@@ -4218,13 +4218,23 @@
     "url": "/posts/index.html"
   },
   {
+    "categories": [],
+    "content": "",
+    "date": "",
+    "id": 280,
+    "slug": "docs",
+    "tags": [],
+    "title": "电子文档",
+    "url": "/docs.html"
+  },
+  {
     "categories": [
       "docs",
       "claude"
     ],
     "content": "1.Claude 简介 2.Claude 提示的初步编写与优化 3.Claude 提示实用编写技巧 4.Claude 的具体提示实例 5.Claude 提示故障排查规则 6.创作一篇科幻故事的实践 --",
     "date": "",
-    "id": 280,
+    "id": 281,
     "slug": "index",
     "tags": [],
     "title": "Claude使用教程",
@@ -4237,7 +4247,7 @@
     ],
     "content": "1.认识GPT 2.GPT 是如何运转的？ 3.GPT 能够做什么？ 4.高效提示的 5 个方式",
     "date": "",
-    "id": 281,
+    "id": 282,
     "slug": "index",
     "tags": [],
     "title": "向 GPT 高效提问",
@@ -4247,7 +4257,7 @@
     "categories": [],
     "content": "欢迎使用RustPress 这是从 home.md 注入到首页的内容区块。你可以在这里写欢迎词、公告、推荐内容或放置任意 Markdown 文案。上方是最新文章列表与分页，下方是 6 个导航卡片。 仓库：https://github.com/rixingyike/rustpress 包：https://crates.io/crates/rustpress 可用字段（front matter） home_navs : 一个数组，支持字段 title 、 description 、 url 、 emoji （或 icon ）、 new_tab 、 cta 。 title / subtitle : 可选的页面标题信息（模板暂未直接使用，可用于扩展）。 提示：如不提供 home_navs ，模板会使用默认的 6 张卡片。",
     "date": "",
-    "id": 282,
+    "id": 283,
     "slug": "home",
     "tags": [],
     "title": "首页",
@@ -4259,7 +4269,7 @@
     ],
     "content": "",
     "date": "",
-    "id": 283,
+    "id": 284,
     "slug": "index",
     "tags": [],
     "title": "index",

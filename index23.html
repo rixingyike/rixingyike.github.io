@@ -79,6 +79,9 @@
                     <a href="&#x2F;tags.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
                     
+                    <a href="&#x2F;docs.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">文档</a>
+                    
                     <a href="&#x2F;friends.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
                     
@@ -146,6 +149,9 @@
                 
                 <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                
+                <a href="&#x2F;docs.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">文档</a>
                 
                 <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
@@ -227,65 +233,6 @@
         <!-- 文章列表 -->
         <div id="articles" class="space-y-6">
             
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="blog&#x2F;2025/20.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            穿越古代当家丁
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2025-05-09
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        穿越古代当家丁
-短剧的特点就是节奏快、手法白描、人物综合利用率（奥卡姆剃刀原则）高。
-
-书名：《穿越古代当家丁》
-简介：特种兵王魂穿古代，竟成赵府三等家丁二狗。原以为要在这深宅大院里平凡度日，没成想，他一眼就发现了染坊的困境。皇室专用黄、紫布匹难制，颜色单一?对于精通化学的他，只需一点明矾，难题迎刃而解。此时恰逢大朝动荡，皇帝忧心忡忡，且看这位穿越而来的特种兵，如何凭借现代智慧，在官场披荆斩棘，加…
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/短剧/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            短剧
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
@@ -698,6 +645,67 @@ MCP
                 </div>
             </article>
             
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2025/"
+                        class="hover:text-primary-600">2025</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2025/12.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            Windows Server 开启 ssh 备忘录
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2025-03-19
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        Windows Server 开启 ssh 备忘录
+Windows Server 2022 默认没有开启 ssh 服务，需要手动开启。
+1，先在云服务器控制台，在安全组里确认 TCP 22 端口已经放行。
+2，打开 PowerShell，用以下指令安装 sshd 服务：
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+
+四…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/Default/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Default
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
 
             <!-- 列表范围显示 -->
             <div class="flex justify-center mt-6">
@@ -944,20 +952,6 @@ MCP
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/20.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            穿越古代当家丁
-                        </a>
-                        
-                    </h4>
-                    
-                    <p class="text-xs text-gray-500">2025-05-09</p>
-                    
-                </div>
-                
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <h4 class="text-sm font-medium mb-1">
-                        
                         <a href="blog&#x2F;2025/19.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
                             硬币纸币收藏相关
@@ -1008,6 +1002,20 @@ MCP
                     </h4>
                     
                     <p class="text-xs text-gray-500">2025-04-25</p>
+                    
+                </div>
+                
+                <div class="p-4 hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-medium mb-1">
+                        
+                        <a href="blog&#x2F;2025/15.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
+                            CodeBuddy新版发布，MCP与Craft
+                        </a>
+                        
+                    </h4>
+                    
+                    <p class="text-xs text-gray-500">2025-04-24</p>
                     
                 </div>
                 

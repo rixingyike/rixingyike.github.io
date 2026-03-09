@@ -79,6 +79,9 @@
                     <a href="&#x2F;tags.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
                     
+                    <a href="&#x2F;docs.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">文档</a>
+                    
                     <a href="&#x2F;friends.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
                     
@@ -146,6 +149,9 @@
                 
                 <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                
+                <a href="&#x2F;docs.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">文档</a>
                 
                 <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
@@ -227,57 +233,6 @@
         <!-- 文章列表 -->
         <div id="articles" class="space-y-6">
             
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2022/"
-                        class="hover:text-primary-600">2022</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2022/1001.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            写博客对个人找工作有什么帮助？
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2022-10-01
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        写博客对个人找工作有什么帮助？
-今天听阿里P10大佬毕玄讲找工作的经历，发现作为一名非计算机专业的生物系学生，写博客数次给他找工作带来了直接帮助。
-在他想换工作时，被满江红站长推荐给淘宝。三面下来，面试官问他这个问题，不会，问那个也不会，让他做题，也没有做出来。但最终，他还是被录用了。为啥？
-
-大概有两个原因：
-（一）淘宝当时想做的分布式系统，淘宝人自己也不是很明白，还处于探索中。而毕玄通过撰写 …
-                    </div>
-                    
-                    
-                </div>
-            </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
@@ -703,6 +658,67 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                 </div>
             </article>
             
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/posts&#x2F;2022/"
+                        class="hover:text-primary-600">2022</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2022/0906.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            Github Gist是什么？
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2022-09-06
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        Github Gist是什么？
+Gist，中文要点，&#x2F;dʒɪst&#x2F;，是Github提供的一个子服务，可以在线分享比较小的代码片段，同样的代码如果用传统创建仓库的方式分享可能就显得笨重了。Gist就是一个精简版的Repository。下面是我用《微信小游戏开发》3.2.2示例代码做的实验，及实验感受。
+
+它分享的范围有哪些？
+创建时有两个选项：
+
+第一个选项“Create secret gist”，…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/Github/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Github
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
 
             <!-- 列表范围显示 -->
             <div class="flex justify-center mt-6">
@@ -949,20 +965,6 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2022/1001.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            写博客对个人找工作有什么帮助？
-                        </a>
-                        
-                    </h4>
-                    
-                    <p class="text-xs text-gray-500">2022-10-01</p>
-                    
-                </div>
-                
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <h4 class="text-sm font-medium mb-1">
-                        
                         <a href="posts&#x2F;2022/0930.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
                             为什么编程里习惯使用 i、j、k 等作为循环变量?
@@ -1013,6 +1015,20 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                     </h4>
                     
                     <p class="text-xs text-gray-500">2022-09-10</p>
+                    
+                </div>
+                
+                <div class="p-4 hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-medium mb-1">
+                        
+                        <a href="posts&#x2F;2022/0909.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
+                            基尔代尔是如何错失操作系统市场的？
+                        </a>
+                        
+                    </h4>
+                    
+                    <p class="text-xs text-gray-500">2022-09-09</p>
                     
                 </div>
                 

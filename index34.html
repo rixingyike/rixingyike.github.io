@@ -79,6 +79,9 @@
                     <a href="&#x2F;tags.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
                     
+                    <a href="&#x2F;docs.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">文档</a>
+                    
                     <a href="&#x2F;friends.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
                     
@@ -146,6 +149,9 @@
                 
                 <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                
+                <a href="&#x2F;docs.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">文档</a>
                 
                 <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
@@ -227,87 +233,6 @@
         <!-- 文章列表 -->
         <div id="articles" class="space-y-6">
             
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="blog&#x2F;2026/16.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            openclaw 能干多少事，取决于我们给它多少权限
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2026-02-06
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        openclaw 能干多少事，取决于我们给它多少权限
-
-一台服务器安装一个 openclaw，上面再安装 Anti 和 Cursor，这样，一台服务器就相当于一名 7x24 员工。
-这样的员工能干多少事，取决于我们授予它多少权限，以及我们有多少 AI 架构与领导能力。
-#技术·求真·AI
-📅 2026&#x2F;02&#x2F;06 周五 11:27w
-
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/openclaw 权限管理/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            openclaw 权限管理
-                        </a>
-                        
-                        <a href="/tags/AI 自动化服务器/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI 自动化服务器
-                        </a>
-                        
-                        <a href="/tags/7x24 AI 员工/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            7x24 AI 员工
-                        </a>
-                        
-                        <a href="/tags/AI 架构能力/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI 架构能力
-                        </a>
-                        
-                        <a href="/tags/Anti Cursor 集成/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            Anti Cursor 集成
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
@@ -848,6 +773,90 @@ brew install setalias
                 </div>
             </article>
             
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2026/7.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            Paypal 如何收款
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-01-18
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        Paypal 如何收款
+上一篇笔记提到 Paypal.cn 支持个人在海外收款了。那么如何收款呢？
+我查了一下，典型流程是这样的：
+1，客户端发起支付请求
+2，服务器端调用 Paypal API 创建订单
+3，返回 Approval URL 给前端让用户支付
+4，用户完成支付
+5，服务器端调用 Paypal API 验证支付，并执行 Capture
+6，支付订单完成
+这是一个典型的 B&#x2F;S 架构软…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/Paypal收款流程/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Paypal收款流程
+                        </a>
+                        
+                        <a href="/tags/Paypal API集成/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Paypal API集成
+                        </a>
+                        
+                        <a href="/tags/IPN通知设置/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            IPN通知设置
+                        </a>
+                        
+                        <a href="/tags/Paypal中国税收/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Paypal中国税收
+                        </a>
+                        
+                        <a href="/tags/Paypal SDK使用/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Paypal SDK使用
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
 
             <!-- 列表范围显示 -->
             <div class="flex justify-center mt-6">
@@ -1094,20 +1103,6 @@ brew install setalias
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/16.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            openclaw 能干多少事，取决于我们给它多少权限
-                        </a>
-                        
-                    </h4>
-                    
-                    <p class="text-xs text-gray-500">2026-02-06</p>
-                    
-                </div>
-                
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <h4 class="text-sm font-medium mb-1">
-                        
                         <a href="blog&#x2F;2026/17.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
                             龙骨
@@ -1158,6 +1153,20 @@ brew install setalias
                     </h4>
                     
                     <p class="text-xs text-gray-500">2026-02-05</p>
+                    
+                </div>
+                
+                <div class="p-4 hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-medium mb-1">
+                        
+                        <a href="blog&#x2F;2026/12.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
+                            无敌脚本批量删除私有笔记
+                        </a>
+                        
+                    </h4>
+                    
+                    <p class="text-xs text-gray-500">2026-01-20</p>
                     
                 </div>
                 

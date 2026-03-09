@@ -79,6 +79,9 @@
                     <a href="&#x2F;tags.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
                     
+                    <a href="&#x2F;docs.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">文档</a>
+                    
                     <a href="&#x2F;friends.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
                     
@@ -146,6 +149,9 @@
                 
                 <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                
+                <a href="&#x2F;docs.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">文档</a>
                 
                 <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
@@ -227,68 +233,6 @@
         <!-- 文章列表 -->
         <div id="articles" class="space-y-6">
             
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2023/"
-                        class="hover:text-primary-600">2023</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2023/15.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            篆刻简易刀法总结，包括刻印面与刻边款的刀
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2023-10-27
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        
-篆刻简易刀法总结，包括刻印面与刻边款的刀
-
-印分朱白，皆是刻一道沟。刀分西种，冲与切，无论是哪一种，皆是刻沟之上边沿。
-
-印主要分朱文印、白文印，这一点大家都清楚，即使不是刻字的人也明白这一点。但不论朱文、白文，其实只是我们作为观众的感观不同，对篆刻者，在刻字时，都是在印面上刻上一道道沟，是这些凸凹不平的沟壑表现出了我们看到的朱文与白文。
-始终刻上边沿的简易刀法
-一般常说篆刻有三法：篆法、章法与…
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/篆刻/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            篆刻
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
@@ -651,6 +595,63 @@ https:&#x2F;&#x2F;twitter.com&#x2F;coderliyi&#x2F;thread&#x2F;170799785653400781
                 </div>
             </article>
             
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/posts&#x2F;2023/"
+                        class="hover:text-primary-600">2023</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2023/09.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            bun 介绍四：自动安装依赖项，bun 立志要做一个零配置的快速框架
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2023-09-28
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        bun 介绍四：自动安装依赖项，bun 立志要做一个零配置的快速框架
+在 webpack 工程中，无论是使用 pnpm，还是 yarn，在运行项目之前都需要执行 pnpm i 或 yarn，这是在安装依赖项，将项目代码中引用的类库放在当前项目的 node_modules 目录下。
+一般情况下，对于复杂的项目这个过程耗时会比较久，这是 Node.js 作为基础构架的痛点，也是 bun 着力解决与优化…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/bun/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            bun
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
 
             <!-- 列表范围显示 -->
             <div class="flex justify-center mt-6">
@@ -897,20 +898,6 @@ https:&#x2F;&#x2F;twitter.com&#x2F;coderliyi&#x2F;thread&#x2F;170799785653400781
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2023/15.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            篆刻简易刀法总结，包括刻印面与刻边款的刀
-                        </a>
-                        
-                    </h4>
-                    
-                    <p class="text-xs text-gray-500">2023-10-27</p>
-                    
-                </div>
-                
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <h4 class="text-sm font-medium mb-1">
-                        
                         <a href="posts&#x2F;2023/16.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
                             他的生平，及什么是克强经济学与克强指数等
@@ -961,6 +948,20 @@ https:&#x2F;&#x2F;twitter.com&#x2F;coderliyi&#x2F;thread&#x2F;170799785653400781
                     </h4>
                     
                     <p class="text-xs text-gray-500">2023-10-15</p>
+                    
+                </div>
+                
+                <div class="p-4 hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-medium mb-1">
+                        
+                        <a href="posts&#x2F;2023/11.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
+                            使用 acme.sh &amp; freessl.cn 申请免费 SSL 证书及自动续期
+                        </a>
+                        
+                    </h4>
+                    
+                    <p class="text-xs text-gray-500">2023-10-12</p>
                     
                 </div>
                 

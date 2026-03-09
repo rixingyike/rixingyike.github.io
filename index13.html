@@ -79,6 +79,9 @@
                     <a href="&#x2F;tags.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
                     
+                    <a href="&#x2F;docs.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">文档</a>
+                    
                     <a href="&#x2F;friends.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
                     
@@ -146,6 +149,9 @@
                 
                 <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                
+                <a href="&#x2F;docs.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">文档</a>
                 
                 <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
@@ -227,63 +233,6 @@
         <!-- 文章列表 -->
         <div id="articles" class="space-y-6">
             
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2023/"
-                        class="hover:text-primary-600">2023</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2023/09.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            bun 介绍四：自动安装依赖项，bun 立志要做一个零配置的快速框架
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2023-09-28
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        bun 介绍四：自动安装依赖项，bun 立志要做一个零配置的快速框架
-在 webpack 工程中，无论是使用 pnpm，还是 yarn，在运行项目之前都需要执行 pnpm i 或 yarn，这是在安装依赖项，将项目代码中引用的类库放在当前项目的 node_modules 目录下。
-一般情况下，对于复杂的项目这个过程耗时会比较久，这是 Node.js 作为基础构架的痛点，也是 bun 着力解决与优化…
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/bun/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            bun
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
@@ -676,6 +625,54 @@ Claude-instant、Claude-instant-100k 和 Claude-2-10…
                 </div>
             </article>
             
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/posts&#x2F;2023/"
+                        class="hover:text-primary-600">2023</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2023/Github Pages博客如何绑定根域名.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            Github Pages 博客如何绑定根域名？
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2023-06-13
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        Github Pages 博客如何绑定根域名？
+Godaddy 的域名不需要域名备案，这是它方便的地方，但它不充许在根域名上直接添加 CNAME 记录，换句话说，原来在国内域名商下的域名，转移到 Godaddy 后，在 Github Pages 上绑定的根域名不再有效了。
+以我的博客为例说明一下。原来我可以直接将根域名 yishulun.com 绑定到 rixingyike.github.io，w…
+                    </div>
+                    
+                    
+                </div>
+            </article>
+            
 
             <!-- 列表范围显示 -->
             <div class="flex justify-center mt-6">
@@ -922,20 +919,6 @@ Claude-instant、Claude-instant-100k 和 Claude-2-10…
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2023/09.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            bun 介绍四：自动安装依赖项，bun 立志要做一个零配置的快速框架
-                        </a>
-                        
-                    </h4>
-                    
-                    <p class="text-xs text-gray-500">2023-09-28</p>
-                    
-                </div>
-                
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <h4 class="text-sm font-medium mb-1">
-                        
                         <a href="posts&#x2F;2023/08.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
                             Python脚本：如何一键登陆或开机自动登录公共区域的 WIFI？
@@ -986,6 +969,20 @@ Claude-instant、Claude-instant-100k 和 Claude-2-10…
                     </h4>
                     
                     <p class="text-xs text-gray-500">2023-09-23</p>
+                    
+                </div>
+                
+                <div class="p-4 hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-medium mb-1">
+                        
+                        <a href="posts&#x2F;2023/在手机上向github pages blog 写作.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
+                            在手机上向github pages blog 写作
+                        </a>
+                        
+                    </h4>
+                    
+                    <p class="text-xs text-gray-500">2023-08-11</p>
                     
                 </div>
                 

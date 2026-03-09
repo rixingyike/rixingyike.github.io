@@ -79,6 +79,9 @@
                     <a href="&#x2F;tags.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
                     
+                    <a href="&#x2F;docs.html" class="nav-link"
+                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">文档</a>
+                    
                     <a href="&#x2F;friends.html" class="nav-link"
                         :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
                     
@@ -146,6 +149,9 @@
                 
                 <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
+                
+                <a href="&#x2F;docs.html" class="block px-3 py-2 text-base font-medium rounded-md"
+                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">文档</a>
                 
                 <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
                     :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
@@ -227,59 +233,6 @@
         <!-- 文章列表 -->
         <div id="articles" class="space-y-6">
             
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2021/"
-                        class="hover:text-primary-600">2021</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2021/27.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            关于信念
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2021-01-07
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        关于信念
-
-“疯狂”那是别人的看法，在疯狂的人的眼里，只有“相信”
-
-以下内容是一觉醒来，早上不到五点钟爬起来写的。我一直觉得，人有时候在黑夜睡梦中思考的内容，比在白天正经的思考，更清醒、更有价值，接下来要说的便是。
-
-程序，什么是程序？计算机按照一定指令和顺序，执行预先安排好的脚本，这就是程序。有人说电脑程序难，但程序是这个世界上最方便人类做培训的内容之一。为什么？
-因为只要执行环境一致、输入条…
-                    </div>
-                    
-                    
-                </div>
-            </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
@@ -680,6 +633,69 @@ c)这两个都看…
                 </div>
             </article>
             
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-sm text-gray-600">
+                    <a href="/" class="hover:text-primary-600">首页</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    <span class="mx-2">›</span>
+                    <a href="/posts&#x2F;2018/"
+                        class="hover:text-primary-600">2018</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2018/01.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            小程序从0到1：1月9日群问题集锦
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2018-01-09
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        小程序从0到1：1月9日群问题集锦
+目录
+[TOC]
+1，如体在群内提问？
+可以参考一下在stackoverflow或github上提问的方法，一次把问题讲明白，用文字说明+截图的方式。目前在学习哪一章，遇到了什么问题，把运行截图贴出来。
+2，读者：“我用书上的方法为什么没有找到调试域名”？
+
+可能新版本不好使了，毕竟这本是一个非官方的办法。
+3，读者：“go env 之类没问题，但是go get…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/小程序从0到1/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            小程序从0到1
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
 
             <!-- 列表范围显示 -->
             <div class="flex justify-center mt-6">
@@ -926,20 +942,6 @@ c)这两个都看…
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2021/27.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            关于信念
-                        </a>
-                        
-                    </h4>
-                    
-                    <p class="text-xs text-gray-500">2021-01-07</p>
-                    
-                </div>
-                
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <h4 class="text-sm font-medium mb-1">
-                        
                         <a href="posts&#x2F;2020/02.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
                             声声慢·记 LeaTech 全球 CTO 领导力峰会暨 TVP 二周年庆典
@@ -990,6 +992,20 @@ c)这两个都看…
                     </h4>
                     
                     <p class="text-xs text-gray-500">2018-01-26</p>
+                    
+                </div>
+                
+                <div class="p-4 hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-medium mb-1">
+                        
+                        <a href="posts&#x2F;2018/04.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
+                            小程序从0到1：第一次在windows机器上使用sim.go需要注意的问题总结
+                        </a>
+                        
+                    </h4>
+                    
+                    <p class="text-xs text-gray-500">2018-01-25</p>
                     
                 </div>
                 
