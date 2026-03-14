@@ -4262,17 +4262,5 @@
     "tags": [],
     "title": "首页",
     "url": "/home.html"
-  },
-  {
-    "categories": [
-      "notes"
-    ],
-    "content": "",
-    "date": "",
-    "id": 284,
-    "slug": "index",
-    "tags": [],
-    "title": "index",
-    "url": "/notes/index.html"
   }
 ]
