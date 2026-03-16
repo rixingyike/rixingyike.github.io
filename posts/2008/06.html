@@ -380,7 +380,7 @@
 <p>在小节2中，<a href="https://yishulun.com/">作者</a>问到为什么要手动单击两次“运行垃圾回收器”按钮，这是由于FP垃圾回收机制的<strong>懒惰</strong>性造成的。</p>
 <p>在清楚了FP的内部垃圾回收机制之后，我们便可以回答，为什么创建两次没用的LocalConnection，并且连接并不存在的地址，故意抛出异常然后捕获，可以强制垃圾回收呢？因为，在AS3中LocalConnection是比较占用内存的对象，两次创建该类对象并尝试进行连接的内存开销大小足以请Flash Player重新向操作系统申请内存，而在申请之前，FP会尝试回收。原理即是这么简单，非独使用LocalConnection可以，其它较耗内存的对象也可以。</p>
 <p>2008年5月</p>
-<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
+
                 </div>
 
                 <!-- 版权信息 -->

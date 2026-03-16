@@ -939,7 +939,7 @@
     <title>关于我</title>
     <link>https://yishulun.com/about.html</link>
     <guid isPermaLink="true">https://yishulun.com/about.html</guid>
-    <description>关于我 大学计算机讲师。微信学堂 《小程序性能优化实践》 专题讲师、极客时间 《微信小程序全栈开发实战》 课程讲师，国企一汽大众等企业内训讲师。著有 《微信小游戏开发》 两册、 《小程序从0到1》 等计算机畅销图书。是 腾讯云最具价值专家（TVP） 、腾讯课堂年度最具影响力专家、中移联合智库 ICT 专家级讲师、极客时间荣誉讲师等。 出版著作 2023年02月，在机械工业出版社出版 《微信小游戏开发》 上下两册 2017年12月，在机工出版 《小程序从0到1》 在线课程 2022年04月，在微信学堂上架 《小程序性能优化实践》 视频课程 2020年05月，在极客时间上架 《微信小程序全栈开发实战》 视频课程 奖项与荣誉 2024年04月，被授予「极客时间荣誉讲师」称号 2023年01月，被授予「中移联合智库 ICT 专家级讲师」称号 2021年07月，获腾讯课堂「2021年度最具影响力专家</description>
+    <description>关于作者 大学计算机讲师。微信学堂 《小程序性能优化实践》 专题讲师、极客时间 《微信小程序全栈开发实战》 课程讲师，国企一汽大众等企业内训讲师。著有 《微信小游戏开发》 两册、 《小程序从0到1》 等计算机畅销图书。是 腾讯云最具价值专家（TVP） 、腾讯课堂年度最具影响力专家、中移联合智库 ICT 专家级讲师、极客时间荣誉讲师等。 出版著作 2023年02月，在机械工业出版社出版 《微信小游戏开发》 上下两册 2017年12月，在机工出版 《小程序从0到1》 在线课程 2022年04月，在微信学堂上架 《小程序性能优化实践》 视频课程 2020年05月，在极客时间上架 《微信小程序全栈开发实战》 视频课程 奖项与荣誉 2024年04月，被授予「极客时间荣誉讲师」称号 2023年01月，被授予「中移联合智库 ICT 专家级讲师」称号 2021年07月，获腾讯课堂「2021年度最具影响力专</description>
     <pubDate>2024-05-12</pubDate>
   </item>
   <item>
@@ -1972,6 +1972,41 @@
     <pubDate></pubDate>
   </item>
   <item>
+    <title>1. 安装与配置</title>
+    <link>https://yishulun.com/docs/guide/1.安装与配置.html</link>
+    <guid isPermaLink="true">https://yishulun.com/docs/guide/1.安装与配置.html</guid>
+    <description>这是专栏的第一个章节。</description>
+    <pubDate></pubDate>
+  </item>
+  <item>
+    <title>用户指南</title>
+    <link>https://yishulun.com/docs/guide/index.html</link>
+    <guid isPermaLink="true">https://yishulun.com/docs/guide/index.html</guid>
+    <description>欢迎阅读本专栏手册。</description>
+    <pubDate></pubDate>
+  </item>
+  <item>
+    <title>1.1. 快速开始</title>
+    <link>https://yishulun.com/docs/guide/1.1.快速开始.html</link>
+    <guid isPermaLink="true">https://yishulun.com/docs/guide/1.1.快速开始.html</guid>
+    <description>这是二级章节示例。</description>
+    <pubDate></pubDate>
+  </item>
+  <item>
+    <title>1.2.1. 站点信息配置</title>
+    <link>https://yishulun.com/docs/guide/1.2.1.站点信息配置.html</link>
+    <guid isPermaLink="true">https://yishulun.com/docs/guide/1.2.1.站点信息配置.html</guid>
+    <description>这是三级章节展示缩进。</description>
+    <pubDate></pubDate>
+  </item>
+  <item>
+    <title>1.2. 配置文件说明</title>
+    <link>https://yishulun.com/docs/guide/1.2.配置文件说明.html</link>
+    <guid isPermaLink="true">https://yishulun.com/docs/guide/1.2.配置文件说明.html</guid>
+    <description>详细介绍 config.toml 内容。</description>
+    <pubDate></pubDate>
+  </item>
+  <item>
     <title>Claude使用教程</title>
     <link>https://yishulun.com/docs/claude/index.html</link>
     <guid isPermaLink="true">https://yishulun.com/docs/claude/index.html</guid>
@@ -1983,6 +2018,27 @@
     <link>https://yishulun.com/docs/向GPT高效提问/index.html</link>
     <guid isPermaLink="true">https://yishulun.com/docs/向GPT高效提问/index.html</guid>
     <description>1.认识GPT 2.GPT 是如何运转的？ 3.GPT 能够做什么？ 4.高效提示的 5 个方式</description>
+    <pubDate></pubDate>
+  </item>
+  <item>
+    <title>2. 第二章:星辰</title>
+    <link>https://yishulun.com/docs/novel/2.第二章：星辰.html</link>
+    <guid isPermaLink="true">https://yishulun.com/docs/novel/2.第二章：星辰.html</guid>
+    <description>茫茫宇宙中...</description>
+    <pubDate></pubDate>
+  </item>
+  <item>
+    <title>科幻小说集</title>
+    <link>https://yishulun.com/docs/novel/index.html</link>
+    <guid isPermaLink="true">https://yishulun.com/docs/novel/index.html</guid>
+    <description>这是另一个文档专栏的示例。</description>
+    <pubDate></pubDate>
+  </item>
+  <item>
+    <title>1. 第一章:启程</title>
+    <link>https://yishulun.com/docs/novel/1.第一章：启程.html</link>
+    <guid isPermaLink="true">https://yishulun.com/docs/novel/1.第一章：启程.html</guid>
+    <description>小说开篇内容...</description>
     <pubDate></pubDate>
   </item>
   <item>

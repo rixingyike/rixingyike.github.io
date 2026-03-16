@@ -5,41 +5,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>一树仑</title>
+    <title>如何使用Claude AI辅助创作小说 - 科幻小说集 - 一树仑</title>
 
     
-<meta name="description" content="一花一世界，一树一菩提。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="如何使用Claude AI辅助创作小说">
-<meta property="og:description" content="一花一世界，一树一菩提。">
-<meta property="og:site_name" content="一树仑">
-
-<link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;docs&#x2F;novel&#x2F;如何使用Claude AI辅助创作小说.html">
-<meta property="og:url" content="https:&#x2F;&#x2F;yishulun.com&#x2F;docs&#x2F;novel&#x2F;如何使用Claude AI辅助创作小说.html">
-
-
-
-<meta property="article:published_time" content="2025-02-19">
-
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "如何使用Claude AI辅助创作小说",
-  "image": [
-    "https:&#x2F;&#x2F;yishulun.com/static/images/logo.png"
-   ],
-  "datePublished": "2025-02-19",
-  "author": [{
-      "@type": "Person",
-      "name": "LIYI",
-      "url": "https:&#x2F;&#x2F;yishulun.com"
-    }]
-}
-</script>
-
+    <meta name="description" content="一花一世界，一树一菩提。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="一树仑">
+    <meta property="og:title" content="一树仑">
+    <meta property="og:description" content="一花一世界，一树一菩提。">
+    
+    <link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;docs&#x2F;novel&#x2F;如何使用Claude AI辅助创作小说.html">
+    <meta property="og:url" content="https:&#x2F;&#x2F;yishulun.com&#x2F;docs&#x2F;novel&#x2F;如何使用Claude AI辅助创作小说.html">
+    
+    
 
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
     <link rel="stylesheet" href="/static/css/main.css">
@@ -193,70 +171,76 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <main class="min-h-screen py-8">
             
-<div class="max-w-4xl mx-auto relative">
-    <div class="flex flex-col lg:flex-row gap-8">
-        <!-- 主要内容 -->
-        <div class="flex-1">
-            <article x-data="{ copiedLink: false, copiedCode: {} }">
-                <!-- 分类面包屑 -->
+<div class="flex flex-col md:flex-row min-h-screen -mx-4 sm:-mx-6 lg:-mx-8">
+    <!-- 侧边栏导航 -->
+    <aside
+        class="w-full md:w-64 bg-white border-r border-gray-200 overflow-y-auto sticky top-16 h-[calc(100vh-4rem)] z-30"
+        x-data="{ sidebarOpen: true }" :class="{ 'w-10': !sidebarOpen, 'w-64': sidebarOpen }">
+        <div class="p-4 flex flex-col h-full">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="font-bold text-gray-800 truncate" x-show="sidebarOpen">科幻小说集</h2>
+                <button @click="sidebarOpen = !sidebarOpen" class="p-1 hover:bg-gray-100 rounded">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path x-show="sidebarOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                        <path x-show="!sidebarOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="flex-1 space-y-1" x-show="sidebarOpen">
                 
-                <nav class="mb-6 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/docs/"
-                        class="hover:text-primary-600">docs</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/docs&#x2F;novel/"
-                        class="hover:text-primary-600">novel</a>
-                    
-                </nav>
                 
+                
+                
+                <a href="&#x2F;docs&#x2F;novel&#x2F;1.第一章：启程.html"
+                    class="block px-3 py-2 text-sm rounded-md transition-colors text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                    style="padding-left: 0.75rem">
+                    1. 第一章:启程
+                </a>
+                
+                
+                
+                <a href="&#x2F;docs&#x2F;novel&#x2F;2.第二章：星辰.html"
+                    class="block px-3 py-2 text-sm rounded-md transition-colors text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                    style="padding-left: 0.75rem">
+                    2. 第二章:星辰
+                </a>
+                
+                
+                
+                <a href="&#x2F;docs&#x2F;novel&#x2F;小说创作的最低要求是什么.html"
+                    class="block px-3 py-2 text-sm rounded-md transition-colors text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                    style="padding-left: 0.75rem">
+                    小说创作的最低要求是什么
+                </a>
+                
+                
+                
+                <a href="&#x2F;docs&#x2F;novel&#x2F;如何使用Claude AI辅助创作小说.html"
+                    class="block px-3 py-2 text-sm rounded-md transition-colors bg-primary-50 text-primary-700 font-medium"
+                    style="padding-left: 0.75rem">
+                    如何使用Claude AI辅助创作小说
+                </a>
+                
+                
+            </nav>
+        </div>
+    </aside>
 
-                <!-- 文章头部 -->
-                <header class="mb-8 pb-8 border-b border-gray-200">
-                    <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-6 leading-tight">
-                        如何使用Claude AI辅助创作小说
-                    </h1>
-
-                    <div class="article-meta mb-6">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2025-02-19
-                        </span>
-                        
-                        
-                    </div>
-
-                    <!-- 标签 -->
+    <!-- 主内容区 -->
+    <main class="flex-1 min-w-0 bg-white">
+        <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+            <article class="prose prose-slate max-w-none">
+                <header class="mb-4 border-b border-gray-200 pb-4">
+                    <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight mb-2">如何使用Claude AI辅助创作小说</h1>
+                    
+                    <p class="text-sm text-gray-500">更新于 2025-02-19</p>
                     
                 </header>
 
-                <!-- 文章内容 -->
-                <div class="article-content prose prose-lg max-w-none" x-init="$nextTick(() => {
-             // 为代码块添加复制按钮
-             document.querySelectorAll('pre code').forEach((codeBlock, index) => {
-                 const pre = codeBlock.parentElement;
-                 if (!pre.querySelector('.copy-code-btn')) {
-                     const button = document.createElement('button');
-                     button.className = 'copy-code-btn';
-                     button.textContent = '复制';
-                     button.setAttribute('x-data', `{ copied: false }`);
-                     button.setAttribute('@click', `navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent).then(() => { this.copied = true; setTimeout(() => this.copied = false, 2000) })`);
-                     button.setAttribute(':class', `{ 'bg-green-600': copied }`);
-                     button.setAttribute('x-text', `copied ? '已复制' : '复制'`);
-                     
-                     pre.style.position = 'relative';
-                     pre.appendChild(button);
-                 }
-             });
-         })">
+                <div class="article-content">
                     <h1>我如何使用 GPT4 与 Claude 辅助创作小说，及两个 AI 的辅助表现</h1>
 <blockquote>
 <p>我研究了一下如何使用 Claude 辅助创作小说，总体感觉 Claude 的表现优于 GPT。GPT4 最大的缺点是急于完成指令，人类很难让它放缓节奏以增加渲染的厚度。Claude 辅助人类创建一个个片断，然后由人类自己组合，就像一张网，Claude 允许人类控制网上的节点。进一步探索与使用 Claude 是有必要的。</p>
@@ -572,706 +556,57 @@
 <p>从第一章开始，坚持“展示，而非描述”的原则，开始具体故事的创作。开头不要写“好的,我来继续创作第五章”这样的文字，直接标识一个形如1/6这样的进度分数就可以了。</p>
 </blockquote>
 <p>2023 年 7 月 20 日</p>
-<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
+
                 </div>
 
-                <!-- 版权信息 -->
-                <div class="mt-10 bg-gray-50 rounded-lg border border-gray-200 p-4"
-                    x-data="{domain: 'https:&#x2F;&#x2F;yishulun.com', link: 'https:&#x2F;&#x2F;yishulun.com' + window.location.pathname}">
-                    <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
-                    <p class="text-sm text-gray-700">
-                        本文链接：
-                        <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)"
-                            target="_blank" rel="noopener"></a>
-                    </p>
-                    <p class="text-sm text-gray-700 mt-2">
-                        许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
-                        <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener"
-                            class="text-primary-600 hover:underline">查看许可说明</a>
-                    </p>
-                </div>
+                <!-- 底部翻页导航 -->
+                <nav class="mt-12 pt-8 border-t border-gray-200 flex justify-between gap-4">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="&#x2F;docs&#x2F;novel&#x2F;小说创作的最低要求是什么.html" class="flex-1 group">
+                        <span class="text-xs text-gray-500 block mb-1">上一页</span>
+                        <span class="text-primary-600 font-medium group-hover:underline">← 小说创作的最低要求是什么</span>
+                    </a>
+                    
 
-                <!-- 分享功能 -->
-                <div class="mt-12 bg-gray-50 rounded-lg">
-                    <h4 class="text-lg font-semibold mb-4 text-gray-900 p-4 pb-0">分享这篇文章</h4>
-                    <div class="flex flex-wrap gap-3 p-4">
-                        <button onclick="shareToTwitter()" class="btn-outline inline-flex items-center">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                            </svg>
-                            Twitter
-                        </button>
-                        <button
-                            @click="navigator.clipboard.writeText(window.location.href).then(() => { copiedLink = true; setTimeout(() => copiedLink = false, 2000) })"
-                            class="btn-outline inline-flex items-center"
-                            :class="{ 'bg-green-100 text-green-800 border-green-300': copiedLink }">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            <span x-text="copiedLink ? '已复制' : '复制链接'"></span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- 评论区域（由插件注入） -->
-                
-                <section id="rp-comments" style="margin-top: 3rem;">
-    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: #111827;">评论</h4>
-
-    <!-- 评论列表 -->
-    <div id="rp-comments-list"></div>
-    <div id="rp-comments-status" style="font-size: 0.875rem; color: #6b7280; padding: 1rem 0; text-align: center;">
-        加载评论中...</div>
-
-    <!-- 评论输入区 -->
-    <div id="rp-comment-form" style="margin-top: 1.5rem; display: none;">
-        <!-- 登录用户信息 -->
-        <div id="rp-user-info"
-            style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 14px; color: #374151;">
-            <img id="rp-user-avatar" src="" alt="" style="width: 28px; height: 28px; border-radius: 50%;">
-            <span id="rp-user-name" style="font-weight: 600;"></span>
-            <a href="#" id="rp-logout-btn"
-                style="margin-left: auto; font-size: 12px; color: #9ca3af; text-decoration: underline;"
-                onclick="rpLogout(); return false;">退出</a>
-        </div>
-        <!-- 输入框 -->
-        <textarea id="rp-comment-input"
-            style="width: 100%; min-height: 100px; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; line-height: 1.6; resize: vertical; font-family: inherit; box-sizing: border-box;"
-            placeholder="写下你的评论（支持 Markdown）..."></textarea>
-        <div style="display: flex; justify-content: flex-end; margin-top: 8px;">
-            <button id="rp-submit-btn" onclick="rpSubmitComment()"
-                style="padding: 8px 20px; font-size: 0.875rem; font-weight: 500; color: #fff; background-color: #2563eb; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.2s;"
-                onmouseover="this.style.backgroundColor='#1d4ed8'" onmouseout="this.style.backgroundColor='#2563eb'">
-                发表评论
-            </button>
-        </div>
-        <div id="rp-submit-status" style="font-size: 13px; color: #6b7280; margin-top: 6px; text-align: right;">
-        </div>
-    </div>
-
-    <!-- 未登录时显示登录按钮 -->
-    <div id="rp-login-section" style="margin-top: 1.5rem; text-align: center; display: none;">
-        <p style="font-size: 14px; color: #6b7280; margin-bottom: 12px;">登录 GitHub 后即可发表评论</p>
-        <a id="rp-login-btn" href="#"
-            style="display: inline-flex; align-items: center; padding: 10px 20px; font-size: 0.875rem; font-weight: 500; color: #fff; background-color: #1f2937; border-radius: 6px; text-decoration: none; transition: background-color 0.2s;"
-            onmouseover="this.style.backgroundColor='#374151'" onmouseout="this.style.backgroundColor='#1f2937'">
-            <svg style="width: 18px; height: 18px; margin-right: 8px;" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-            </svg>
-            使用 GitHub 登录
-        </a>
-    </div>
-</section>
-
-<style>
-    .rp-comment {
-        border-bottom: 1px solid #e5e7eb;
-        padding: 16px 0;
-    }
-
-    .rp-comment:last-child {
-        border-bottom: none;
-    }
-
-    .rp-comment-header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 8px;
-    }
-
-    .rp-comment-avatar {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-    }
-
-    .rp-comment-author {
-        font-weight: 600;
-        color: #111827;
-        font-size: 14px;
-    }
-
-    .rp-comment-date {
-        color: #9ca3af;
-        font-size: 12px;
-    }
-
-    .rp-comment-body {
-        color: #374151;
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    .rp-comment-body p {
-        margin: 6px 0;
-    }
-
-    .rp-comment-body code {
-        background: #f3f4f6;
-        padding: 2px 5px;
-        border-radius: 3px;
-        font-size: 13px;
-    }
-
-    .rp-comment-body pre {
-        background: #1f2937;
-        color: #e5e7eb;
-        padding: 12px;
-        border-radius: 6px;
-        overflow-x: auto;
-        font-size: 13px;
-    }
-
-    .rp-comment-body pre code {
-        background: none;
-        padding: 0;
-        color: inherit;
-    }
-
-    .rp-comment-body blockquote {
-        border-left: 3px solid #d1d5db;
-        padding-left: 12px;
-        color: #6b7280;
-        margin: 8px 0;
-    }
-
-    .rp-comment-body img {
-        max-width: 100%;
-        border-radius: 6px;
-        margin: 8px 0;
-    }
-
-    .rp-comment-body a {
-        color: #2563eb;
-        text-decoration: underline;
-    }
-
-    .rp-no-comments {
-        text-align: center;
-        color: #9ca3af;
-        padding: 24px 0;
-    }
-
-    .rp-comment-count {
-        font-size: 14px;
-        color: #6b7280;
-        margin-bottom: 12px;
-    }
-</style>
-
-<script>
-    // ---- 全局状态 ----
-    var RP_REPO = 'rixingyike/yishulun.com_discus';
-    var RP_CLIENT_ID = '0cdfd84658051b0f7de6';
-    var rpCurrentIssueNumber = null;
-
-    // ---- 工具函数 ----
-    function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-    }
-
-    // ---- Markdown 转 HTML (Simple) ----
-    function rpMd2html(text) {
-        if (!text) return '';
-        var h = text
-            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-            .replace(/```([\s\S]*?)```/g, function (m, c) { return '<pre><code>' + c.trim() + '</code></pre>'; })
-            .replace(/`([^`]+)`/g, '<code>$1</code>')
-            .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img alt="$1" src="$2">')
-            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.+?)\*/g, '<em>$1</em>')
-            .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
-            .replace(/\n/g, '<br>');
-        h = h.replace(/<\/blockquote><br><blockquote>/g, '<br>');
-        return h;
-    }
-
-    function rpFormatDate(dateStr) {
-        var d = new Date(dateStr);
-        return d.getFullYear() + '-' +
-            String(d.getMonth() + 1).padStart(2, '0') + '-' +
-            String(d.getDate()).padStart(2, '0') + ' ' +
-            String(d.getHours()).padStart(2, '0') + ':' +
-            String(d.getMinutes()).padStart(2, '0');
-    }
-
-    // ---- 渲染评论列表 ----
-    function rpRenderComments(comments) {
-        var container = document.getElementById('rp-comments-list');
-        if (comments.length === 0) {
-            container.innerHTML = '<div class="rp-no-comments">暂无评论，成为第一个评论者吧！</div>';
-        } else {
-            container.innerHTML = '<div class="rp-comment-count">共 ' + comments.length + ' 条评论</div>' +
-                comments.map(function (c) {
-                    return '<div class="rp-comment">' +
-                        '<div class="rp-comment-header">' +
-                        '<img class="rp-comment-avatar" src="' + c.user.avatar_url + '" alt="' + c.user.login + '">' +
-                        '<span class="rp-comment-author">' + c.user.login + '</span>' +
-                        '<span class="rp-comment-date">' + rpFormatDate(c.created_at) + '</span>' +
-                        '</div>' +
-                        '<div class="rp-comment-body">' + rpMd2html(c.body) + '</div>' +
-                        '</div>';
-                }).join('');
-        }
-    }
-
-    // ---- 加载评论 ----
-    function rpLoadComments() {
-        var status = document.getElementById('rp-comments-status');
-        var pathname = window.location.pathname;
-
-        var searchUrl = 'https://api.github.com/search/issues?q=' +
-            encodeURIComponent(pathname + ' repo:' + RP_REPO + ' is:issue') +
-            '&sort=created&order=desc&per_page=1';
-
-        fetch(searchUrl, {
-            headers: { 'Accept': 'application/vnd.github.v3+json' }
-        })
-            .then(function (r) {
-                if (r.status === 403) throw new Error('rate_limit');
-                return r.json();
-            })
-            .then(function (data) {
-                if (!data.items || data.items.length === 0) {
-                    rpRenderComments([]);
-                    rpCurrentIssueNumber = null;
-                    status.style.display = 'none';
-                    return;
-                }
-                var issue = data.items[0];
-                rpCurrentIssueNumber = issue.number;
-
-                return fetch(issue.comments_url + '?per_page=100', {
-                    headers: { 'Accept': 'application/vnd.github.v3+json' }
-                })
-                    .then(function (r) { return r.json(); })
-                    .then(function (comments) {
-                        rpRenderComments(comments);
-                        status.style.display = 'none';
-                    });
-            })
-            .catch(function (err) {
-                if (err.message === 'rate_limit') {
-                    status.textContent = 'GitHub API 请求次数超限，请稍后再试';
-                } else {
-                    console.error(err);
-                    status.textContent = '评论加载失败';
-                }
-            });
-    }
-
-    // ---- 检查登录状态 (Static Method) ----
-    function rpCheckLogin() {
-        if (!RP_CLIENT_ID) return;
-
-        // Check for token in URL (from Worker redirect)
-        var urlParams = new URLSearchParams(window.location.search);
-        var tokenFromUrl = urlParams.get('gh_token') || urlParams.get('access_token');
-        if (tokenFromUrl) {
-            document.cookie = "gh_token=" + tokenFromUrl + "; path=/; max-age=2592000"; // 30 days
-            // Clean URL
-            var newUrl = window.location.pathname + window.location.hash;
-            window.history.replaceState({}, document.title, newUrl);
-        }
-
-        var token = getCookie('gh_token');
-        if (token) {
-            // Verify token by fetching user
-            fetch('https://api.github.com/user', {
-                headers: { 'Authorization': 'token ' + token }
-            })
-                .then(r => {
-                    if (r.ok) return r.json();
-                    throw new Error('Invalid token');
-                })
-                .then(data => {
-                    document.getElementById('rp-comment-form').style.display = 'block';
-                    document.getElementById('rp-login-section').style.display = 'none';
-                    document.getElementById('rp-user-avatar').src = data.avatar_url;
-                    document.getElementById('rp-user-name').textContent = data.name || data.login;
-                })
-                .catch(e => {
-                    document.cookie = 'gh_token=; path=/; max-age=0'; // Clear invalid token
-                    rpShowLoginButton();
-                });
-        } else {
-            rpShowLoginButton();
-        }
-    }
-
-    function rpShowLoginButton() {
-        document.getElementById('rp-comment-form').style.display = 'none';
-        document.getElementById('rp-login-section').style.display = 'block';
-
-        // Use Worker as redirect target
-        // The Worker will redirect back to this page (state)
-        // Note: You must updating GitHub App Callback URL to your Worker URL
-        // e.g. https://oauth.yishulun.workers.dev/callback
-
-        // We assume user configured the worker. 
-        // If not, we fallback to direct GitHub flow (which fails on static).
-        // For now we assume the user will configure the GitHub App callback 
-        // to point to the WORKER.
-        // The redirect_uri param here MUST MATCH the one registered in GitHub App.
-        // If user set GitHub App Callback = https://oauth.yishulun.workers.dev/callback
-        // Then we must use that here.
-        // But we don't know the worker URL here!
-
-        // Wait, if we use a Worker, we should link to the Worker's /login endpoint? 
-        // Or simply link to GitHub with redirect_uri = Worker URL?
-
-        // If we link to standard GitHub Authorize, we need to pass redirect_uri.
-        // If we don't pass redirect_uri, GitHub uses the default registered one.
-        // THIS IS THE KEY. We don't need to hardcode the worker URL if it's the default!
-
-        var loginUrl = 'https://github.com/login/oauth/authorize?client_id=' +
-            '&client_id=' + RP_CLIENT_ID +
-            // ⚠️ 警告：
-            // 如果您的 GitHub App 配置了 Authorization callback URL 为 Worker 地址，
-            // 那么这里建议 **不传递** redirect_uri 参数，让 GitHub 使用默认配置。
-            // 
-            // 如果由于某种原因 GitHub 报错，您可以取消下面这行的注释，并填入您的 Worker 地址：
-            // '&redirect_uri=' + encodeURIComponent('https://<您的-worker-名>.<您的-subdomain>.workers.dev/callback') +
-            '&state=' + encodeURIComponent(window.location.pathname) + // Worker uses this to redirect back
-            '&scope=public_repo';
-
-        document.getElementById('rp-login-btn').href = loginUrl;
-    }
-
-    // ---- 提交评论 (Static Method) ----
-    function rpSubmitComment() {
-        var input = document.getElementById('rp-comment-input');
-        var submitBtn = document.getElementById('rp-submit-btn');
-        var submitStatus = document.getElementById('rp-submit-status');
-        var body = input.value.trim();
-        var token = getCookie('gh_token');
-
-        if (!token) {
-            rpCheckLogin();
-            return;
-        }
-
-        if (!body) {
-            submitStatus.textContent = '请输入评论内容';
-            submitStatus.style.color = '#ef4444';
-            return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = '0.6';
-        submitStatus.textContent = '发送中...';
-        submitStatus.style.color = '#6b7280';
-
-        // Helper to post comment
-        function doPostLink(issueNumber) {
-            fetch('https://api.github.com/repos/' + RP_REPO + '/issues/' + issueNumber + '/comments', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'token ' + token,
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/vnd.github.v3+json'
-                },
-                body: JSON.stringify({ body: body })
-            })
-                .then(r => r.json())
-                .then(data => {
-                    if (data.id) {
-                        input.value = '';
-                        submitStatus.textContent = '✓ 评论已发表';
-                        submitStatus.style.color = '#16a34a';
-                        setTimeout(function () {
-                            rpLoadCommentsByIssue(issueNumber);
-                        }, 1000);
-                    } else {
-                        throw new Error(data.message || 'Failed');
-                    }
-                })
-                .catch(err => {
-                    submitStatus.textContent = '发送失败: ' + err.message;
-                    submitStatus.style.color = '#ef4444';
-                })
-                .finally(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.style.opacity = '1';
-                });
-        }
-
-        // If issue doesn't exist, create it first
-        if (!rpCurrentIssueNumber) {
-            var title = (document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : document.title);
-            fetch('https://api.github.com/repos/' + RP_REPO + '/issues', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'token ' + token,
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/vnd.github.v3+json'
-                },
-                body: JSON.stringify({
-                    title: title + ' | ' + window.location.pathname,
-                    body: 'Comment thread for ' + window.location.pathname + '\n\n' + window.location.href
-                })
-            })
-                .then(r => r.json())
-                .then(data => {
-                    if (data.number) {
-                        rpCurrentIssueNumber = data.number;
-                        doPostLink(rpCurrentIssueNumber);
-                    } else {
-                        throw new Error('无法创建 Issue: ' + (data.message || 'Unknown error'));
-                    }
-                })
-                .catch(err => {
-                    submitStatus.textContent = '初始化评论区失败: ' + err.message;
-                    submitStatus.style.color = '#ef4444';
-                    submitBtn.disabled = false;
-                });
-        } else {
-            doPostLink(rpCurrentIssueNumber);
-        }
-    }
-
-    // ---- 通过 Issue 编号直接加载评论 ----
-    function rpLoadCommentsByIssue(issueNumber) {
-        var url = 'https://api.github.com/repos/' + RP_REPO + '/issues/' + issueNumber + '/comments?per_page=100';
-        fetch(url, {
-            headers: { 'Accept': 'application/vnd.github.v3+json' }
-        })
-            .then(function (r) { return r.json(); })
-            .then(function (comments) {
-                rpRenderComments(comments);
-            })
-            .catch(function () {
-                rpLoadComments();
-            });
-    }
-
-    // ---- 退出登录 ----
-    function rpLogout() {
-        document.cookie = 'gh_token=; path=/; max-age=0';
-        window.location.reload();
-    }
-
-    // ---- 初始化 ----
-    rpLoadComments();
-    rpCheckLogin();
-</script>
-                
-
-                <!-- 返回顶部 -->
-                <div class="text-center mt-8">
-                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-                        class="btn-secondary inline-flex items-center">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-                        </svg>
-                        返回顶部
-                    </button>
-                </div>
+                    
+                    <div class="flex-1"></div>
+                    
+                    
+                    
+                    
+                </nav>
             </article>
         </div>
-
-        
-        <!-- 目录组件 -->
-<div class="toc-container fixed right-4 top-20 z-40 hidden xl:block" 
-     x-data="{ 
-         tocOpen: true, 
-         activeId: '',
-         headings: [],
-         init() {
-             this.generateToc();
-             this.observeHeadings();
-         },
-         generateToc() {
-             const content = document.querySelector('.prose, .card-body');
-             if (!content) return;
-             
-             const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
-             this.headings = Array.from(headings).map((heading, index) => {
-                 const id = heading.id || `heading-${index}`;
-                 heading.id = id;
-                 return {
-                     id: id,
-                     text: heading.textContent.trim(),
-                     level: parseInt(heading.tagName.charAt(1)),
-                     element: heading
-                 };
-             });
-         },
-         observeHeadings() {
-             if (this.headings.length === 0) return;
-             
-             const observer = new IntersectionObserver((entries) => {
-                 entries.forEach(entry => {
-                     if (entry.isIntersecting) {
-                         this.activeId = entry.target.id;
-                     }
-                 });
-             }, {
-                 rootMargin: '-20% 0px -80% 0px'
-             });
-             
-             this.headings.forEach(heading => {
-                 observer.observe(heading.element);
-             });
-         },
-         scrollToHeading(id) {
-             const element = document.getElementById(id);
-             if (element) {
-                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-             }
-         }
-     }"
-     x-init="init()">
-    
-    <!-- 目录切换按钮 -->
-    <button @click="tocOpen = !tocOpen" 
-            class="mb-2 p-2 bg-white rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-200"
-            title="目录">
-        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-    </button>
-    
-    <!-- 目录内容 -->
-    <div x-show="tocOpen" 
-         x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0 transform scale-95"
-         x-transition:enter-end="opacity-100 transform scale-100"
-         x-transition:leave="transition ease-in duration-150"
-         x-transition:leave-start="opacity-100 transform scale-100"
-         x-transition:leave-end="opacity-0 transform scale-95"
-         class="bg-white rounded-lg shadow-xl border border-gray-200 p-4 max-w-xs w-64 max-h-96 overflow-y-auto">
-        
-        <div class="flex items-center justify-between mb-3">
-            <h3 class="text-sm font-semibold text-gray-900">目录</h3>
-            <button @click="tocOpen = false" class="text-gray-400 hover:text-gray-600">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <nav class="space-y-1">
-            <template x-for="heading in headings" :key="heading.id">
-                <a @click.prevent="scrollToHeading(heading.id)" 
-                   :class="{
-                       'text-primary-600 bg-primary-50 border-l-2 border-primary-600': activeId === heading.id,
-                       'text-gray-600 hover:text-gray-900 hover:bg-gray-50': activeId !== heading.id,
-                       'pl-2': heading.level === 1,
-                       'pl-4': heading.level === 2,
-                       'pl-6': heading.level === 3,
-                       'pl-8': heading.level === 4,
-                       'pl-10': heading.level === 5,
-                       'pl-12': heading.level === 6
-                   }"
-                   class="block py-1 px-2 text-sm cursor-pointer rounded transition-colors duration-150"
-                   x-text="heading.text">
-                </a>
-            </template>
-        </nav>
-        
-        <div x-show="headings.length === 0" class="text-sm text-gray-500 text-center py-4">
-            暂无目录
-        </div>
-    </div>
+    </main>
 </div>
 
 <style>
-/* 移动端隐藏目录 */
-@media (max-width: 1279px) {
-    .toc-container {
-        display: none !important;
+    /* 为了适应侧边栏，覆盖 base.html 的默认 max-w-7xl 限制 */
+    .max-w-7xl:has(main > .flex-col.md\:flex-row) {
+        max-width: none !important;
     }
-}
 
-/* 目录滚动条样式 */
-.toc-container .max-h-96::-webkit-scrollbar {
-    width: 4px;
-}
-
-.toc-container .max-h-96::-webkit-scrollbar-track {
-    background: #f1f5f9;
-    border-radius: 2px;
-}
-
-.toc-container .max-h-96::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 2px;
-}
-
-.toc-container .max-h-96::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
-}
+    /* 解决 Image 4 中的内容显示问题：确保 prose 样式对 HTML 输出生效 */
+    .article-content {
+        word-break: break-word;
+    }
 </style>
-
-        
-    </div>
-</div>
-
-<script>
-    function shareToTwitter() {
-        const url = encodeURIComponent(window.location.href);
-        const text = encodeURIComponent(document.title);
-        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
-    }
-</script>
 
         </main>
     </div>
 
     <!-- 广告位1：底部广告（版权区上方） -->
-    
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
-            <div
-                class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div class="flex flex-col items-center p-4 text-center">
-                    <!-- 广告图片 -->
-                    <div class="mb-3">
-                        <img src="&#x2F;static&#x2F;images&#x2F;book-wegame.png" alt="微信小游戏开发"
-                            class="w-48 h-60 object-cover rounded-md mx-auto"
-                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMTkyIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiBmaWxsPSIjREJFRkZGIi8+Cjx0ZXh0IHg9Ijk2IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMzc2RkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7kuLvpopjlpLTlg488L3R4dD4KPC9zdmc+'">
-                    </div>
-
-                    <!-- 广告信息 -->
-                    <div class="max-w-sm">
-                        <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">
-                            微信小游戏开发
-                        </h2>
-                        
-                        <p class="text-gray-700 text-sm mb-3">学习微信小游戏开发技术，掌握游戏开发全流程</p>
-                        
-
-                        <!-- 查看详情按钮 -->
-                        <div
-                            class="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow-sm transition-colors text-sm">
-                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                            </svg>
-                            查看详情
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-    
     
 
     <!-- 页脚 -->

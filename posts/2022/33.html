@@ -365,7 +365,7 @@ foo().then(function(res){
 <p>Promise的胜利，更多是编程思想上的胜利，Promise的成功，也是编程思想上的成功。**所有一种语言中编程思想上的成功，在其他语言中都可以被学习和借鉴。**事实上在后端编程中，这种伪装成同步代码风格的异步编程思想也极其普遍，它们拥有一个共同的名字，叫协程。</p>
 <h2>小结</h2>
 <p>在JS中处理异步调用的结果，最佳实践就是“异步转同步”：使用Promise + async/await语法关键字。在这里async总是与await成对出现，一个async函数总是返回一个Promise，一个await关键字总是在尝试“解开”一个Promise，结局要么等到有价值的数据，要么异步出现异步，什么也没有等到。为了避免出现异常，影响主线程的正常运行，一般要用catch规避异常。</p>
-<p class="italic text-gray-500">该文由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener">rustpress</a> 编译。</p>
+
                 </div>
 
                 <!-- 版权信息 -->
