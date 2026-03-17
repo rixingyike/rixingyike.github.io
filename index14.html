@@ -917,7 +917,7 @@ Claude-instant、Claude-instant-100k 和 Claude-2-10…
 
     <!-- 相关文章 -->
     
-    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
+    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -928,70 +928,70 @@ Claude-instant、Claude-instant-100k 和 Claude-2-10…
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/28.html"
+                        <a href="posts&#x2F;2023/09.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            Vide Coding 经验总结，核心五点
+                            bun 介绍四：自动安装依赖项，bun 立志要做一个零配置的快速框架
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-03-04</p>
+                    <p class="text-xs text-gray-500">2023-09-28</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/27.html"
+                        <a href="posts&#x2F;2023/08.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            Mise 是一种好软件
+                            Python脚本：如何一键登陆或开机自动登录公共区域的 WIFI？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-28</p>
+                    <p class="text-xs text-gray-500">2023-09-27</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="projects/enyan.html"
+                        <a href="posts&#x2F;2023/07.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            恩言 - 大字有声圣经
+                            bun 介绍三：dotenv 与 nodemon 都不再需要了
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-19</p>
+                    <p class="text-xs text-gray-500">2023-09-24</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="projects/rustpress.html"
+                        <a href="posts&#x2F;2023/06.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            RustPress - 纯静态博客引擎
+                            Bun 介绍：bun 到底会吃掉多少内存？为何一个不大的博客程序就能吃掉700+MB内存?（二）
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-19</p>
+                    <p class="text-xs text-gray-500">2023-09-24</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/26.html"
+                        <a href="posts&#x2F;2023/05.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            我用 AI 写了四五个软件之后的总结
+                            Bun 1.0 发布了，以后 Node.js 项目谁还用 Webpack 与 pnpm？！是时候祭出大杀器 Bun了（一）
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-19</p>
+                    <p class="text-xs text-gray-500">2023-09-23</p>
                     
                 </div>
                 
@@ -1144,14 +1144,6 @@ Claude-instant、Claude-instant-100k 和 Claude-2-10…
             <div class="divide-y divide-gray-200">
                 
                 <div class="p-3">
-                    <a href="/posts/"
-                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
-                        <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
-                    </a>
-                </div>
-                
-                <div class="p-3">
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
@@ -1168,10 +1160,18 @@ Claude-instant、Claude-instant-100k 和 Claude-2-10…
                 </div>
                 
                 <div class="p-3">
+                    <a href="/posts/"
+                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
+                        <span class="text-sm font-medium">posts</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
+                    </a>
+                </div>
+                
+                <div class="p-3">
                     <a href="/projects/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">projects</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">3</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">2</span>
                     </a>
                 </div>
                 

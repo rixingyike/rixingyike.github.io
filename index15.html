@@ -892,7 +892,7 @@ https:&#x2F;&#x2F;twitter.com&#x2F;coderliyi&#x2F;thread&#x2F;170799785653400781
 
     <!-- 相关文章 -->
     
-    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
+    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -903,70 +903,70 @@ https:&#x2F;&#x2F;twitter.com&#x2F;coderliyi&#x2F;thread&#x2F;170799785653400781
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/28.html"
+                        <a href="posts&#x2F;2023/15.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            Vide Coding 经验总结，核心五点
+                            篆刻简易刀法总结，包括刻印面与刻边款的刀
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-03-04</p>
+                    <p class="text-xs text-gray-500">2023-10-27</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/27.html"
+                        <a href="posts&#x2F;2023/16.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            Mise 是一种好软件
+                            他的生平，及什么是克强经济学与克强指数等
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-28</p>
+                    <p class="text-xs text-gray-500">2023-10-27</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="projects/enyan.html"
+                        <a href="posts&#x2F;2023/14.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            恩言 - 大字有声圣经
+                            有感于四川崇州 2 岁小女孩被狗咬，伤重住院，以后再碰到不文明养犬的马上举报，让其付出被罚 2000 元的代价
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-19</p>
+                    <p class="text-xs text-gray-500">2023-10-24</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="projects/rustpress.html"
+                        <a href="posts&#x2F;2023/13.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            RustPress - 纯静态博客引擎
+                            使用 querySelector 查询元素时，如何使用正则进行模糊匹配查询？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-19</p>
+                    <p class="text-xs text-gray-500">2023-10-21</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/26.html"
+                        <a href="posts&#x2F;2023/12.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            我用 AI 写了四五个软件之后的总结
+                            读二胖《编程路上那些让我效率倍增的方法》，谈新人如何学习编程，只要方法对了人人都可以成为黑客高手
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-19</p>
+                    <p class="text-xs text-gray-500">2023-10-15</p>
                     
                 </div>
                 
@@ -1119,14 +1119,6 @@ https:&#x2F;&#x2F;twitter.com&#x2F;coderliyi&#x2F;thread&#x2F;170799785653400781
             <div class="divide-y divide-gray-200">
                 
                 <div class="p-3">
-                    <a href="/posts/"
-                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
-                        <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
-                    </a>
-                </div>
-                
-                <div class="p-3">
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
@@ -1143,10 +1135,18 @@ https:&#x2F;&#x2F;twitter.com&#x2F;coderliyi&#x2F;thread&#x2F;170799785653400781
                 </div>
                 
                 <div class="p-3">
+                    <a href="/posts/"
+                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
+                        <span class="text-sm font-medium">posts</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
+                    </a>
+                </div>
+                
+                <div class="p-3">
                     <a href="/projects/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">projects</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">3</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">2</span>
                     </a>
                 </div>
                 

@@ -915,7 +915,7 @@ function foo() {
 
     <!-- 相关文章 -->
     
-    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
+    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -926,70 +926,70 @@ function foo() {
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/28.html"
+                        <a href="posts&#x2F;2022/33.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            Vide Coding 经验总结，核心五点
+                            JS如何返回异步调用的结果？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-03-04</p>
+                    <p class="text-xs text-gray-500">2022-12-26</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/27.html"
+                        <a href="posts&#x2F;2022/32.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            Mise 是一种好软件
+                            32《断刀客》观后感
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-28</p>
+                    <p class="text-xs text-gray-500">2022-12-24</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="projects/enyan.html"
+                        <a href="posts&#x2F;2022/31.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            恩言 - 大字有声圣经
+                            只有一个程序员开发和运营，BuiltWith网站年入1400万美元是怎么做到的？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-19</p>
+                    <p class="text-xs text-gray-500">2022-12-23</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="projects/rustpress.html"
+                        <a href="posts&#x2F;2022/30.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            RustPress - 纯静态博客引擎
+                            解决Gibhub git push超时、无法提交的问题
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-19</p>
+                    <p class="text-xs text-gray-500">2022-12-21</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/26.html"
+                        <a href="posts&#x2F;2022/1016.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            我用 AI 写了四五个软件之后的总结
+                            使用面向过程和面向对象结合的思想开发软件
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-02-19</p>
+                    <p class="text-xs text-gray-500">2022-10-16</p>
                     
                 </div>
                 
@@ -1142,14 +1142,6 @@ function foo() {
             <div class="divide-y divide-gray-200">
                 
                 <div class="p-3">
-                    <a href="/posts/"
-                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
-                        <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
-                    </a>
-                </div>
-                
-                <div class="p-3">
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
@@ -1166,10 +1158,18 @@ function foo() {
                 </div>
                 
                 <div class="p-3">
+                    <a href="/posts/"
+                        class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
+                        <span class="text-sm font-medium">posts</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
+                    </a>
+                </div>
+                
+                <div class="p-3">
                     <a href="/projects/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">projects</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">3</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">2</span>
                     </a>
                 </div>
                 
