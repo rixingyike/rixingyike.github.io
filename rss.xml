@@ -12,6 +12,13 @@
     <pubDate>2026-05-18</pubDate>
   </item>
   <item>
+    <title>mocli，AI 时代的“数字保镖”</title>
+    <link>https://yishulun.com/blog/2026/33.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/33.html</guid>
+    <description>mocli，一名 AI 时代的“数字保镖” 在这个信息喂养的时代，我们正逐渐沦为 APP 算法的奴隶。置顶、强推、永无止境的小红点，像碎纸机一样切碎了我们的时间。 最近墨问开放了一个叫 mocli 的东西（ https://github.com/mowenxd/cli ），今天终于有时间用了一下，我突然意识到： 我们要的不是更智能的通知，而是拒绝被通知的选择。 它不是 CLI，它给 AI 提供了“入场券” 首先纠正一个误区： mocli 名字里带个 CLI，但它真不是写给人用的。看着满屏没有格式化的终端信息，即使是程序员也很难适应。 本质上它也不是开源的，它只是一套 SKILL（技能包） 。它的核心使命，是向 AI Agent 解释如何跟“墨问”这个平台打交道。初期版本它开放了五个子指令： auth （验证）、 disco （发现）、 remark （标记）、 note （笔记）、 use</description>
+    <pubDate>2026-05-18</pubDate>
+  </item>
+  <item>
     <title>Vide Coding 经验总结，核心五点</title>
     <link>https://yishulun.com/blog/2026/28.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/28.html</guid>
