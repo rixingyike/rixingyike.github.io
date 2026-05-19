@@ -5,6 +5,13 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>都 2026 年了，竟然还有人在翻我 2023 年的“保姆级”旧贴？</title>
+    <link>https://yishulun.com/blog/2026/34.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/34.html</guid>
+    <description>都 2026 年了，竟然还有人在翻我 2023 年的“保姆级”旧贴？ 说个小事，这两天我被后台的消息弹窗整懵了。 原本以为 GPT 5.5 这种“性能怪兽”横空出世，加上价格直接打到地板上，大家早该在 AI 的世界里“起飞”了。结果倒好，我那篇写于 2023 年、教大家怎么买 ChatGPT 会员的陈年旧贴，居然又被网友点赞激活了。 这感觉就像是，大家都在研究怎么开曲率引擎飞船了，结果还有一群人在打听哪儿能买到最结实的马车绳。 怎么回事？ 最近 AI 圈确实挺玄幻的。首先是 GPT 5.5 。不仅逻辑推理强得离谱，响应速度快到像是在读你的脑电波，最关键的是：它便宜得不讲道理。 自从 2023 年 OpenAI 开始将代码能力彻底融入大模型后，如今的 GPT-5.5 更是把这种原生写代码的能力推向了极境。原来在本地用 GPT 写代码，和在 Web 里聊天是两种不同花费，要花两份钱，现在 Op</description>
+    <pubDate>2026-05-19</pubDate>
+  </item>
+  <item>
     <title>串台了</title>
     <link>https://yishulun.com/blog/2026/30.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/30.html</guid>
@@ -12,7 +19,7 @@
     <pubDate>2026-05-18</pubDate>
   </item>
   <item>
-    <title>mocli，AI 时代的“数字保镖”</title>
+    <title>mocli，一名 AI 时代的“数字保镖”</title>
     <link>https://yishulun.com/blog/2026/33.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/33.html</guid>
     <description>mocli，一名 AI 时代的“数字保镖” 在这个信息喂养的时代，我们正逐渐沦为 APP 算法的奴隶。置顶、强推、永无止境的小红点，像碎纸机一样切碎了我们的时间。 最近墨问开放了一个叫 mocli 的东西（ https://github.com/mowenxd/cli ），今天终于有时间用了一下，我突然意识到： 我们要的不是更智能的通知，而是拒绝被通知的选择。 它不是 CLI，它给 AI 提供了“入场券” 首先纠正一个误区： mocli 名字里带个 CLI，但它真不是写给人用的。看着满屏没有格式化的终端信息，即使是程序员也很难适应。 本质上它也不是开源的，它只是一套 SKILL（技能包） 。它的核心使命，是向 AI Agent 解释如何跟“墨问”这个平台打交道。初期版本它开放了五个子指令： auth （验证）、 disco （发现）、 remark （标记）、 note （笔记）、 use</description>
