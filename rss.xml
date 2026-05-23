@@ -5,6 +5,20 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>第三天了，你的谷歌Antigravity还能跑吗？</title>
+    <link>https://yishulun.com/blog/2026/38.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/38.html</guid>
+    <description>第三天了，你的谷歌Antigravity还能跑吗？ Your current account is not eligible for antigravity. Try signing in with another personal google account. Learn more by visiting the faq. 这段话翻译过来大概是这个意思：你没资格用谷歌反重力软件了，麻溜换个账号吧。 不管你是在用 agy 还是 Anti 2.0，如果你突然遇到了这个报错，大概率你已经掉进了谷歌的“三天封号”陷阱。 很多时候，你刚装完 Gemini Code Assist 或者升了个级，一切正常，Antigravity 跑得飞起。第一天，相安无事。第二天，谷歌的后台幽灵般地开始在其基础设施中同步新的 IAM 策略。到了第三天，资格扫描执行，你的账号直接被标记，Antigravity 无情拒</description>
+    <pubDate>2026-05-23</pubDate>
+  </item>
+  <item>
+    <title>一天干完一百万字，谷歌 agy 这个工具简直是头不要命的洪水猛兽</title>
+    <link>https://yishulun.com/blog/2026/37.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/37.html</guid>
+    <description>一天干完一百万字，谷歌 agy 这个工具简直是头不要命的洪水猛兽 昨天我还在群里吐槽 Antigravity 2.0 更新后像个洪水猛兽，今天就有了极其切肤的痛感与爽感。 大概 agy，没错，就是那个经常被大家戏称为 gay 的命令行工具，它今天帮我干完了一百万字的工作量。一百万字是什么概念？这在以前，可能需要我起早贪黑、孜孜不倦地处理整整一年。 而现在，它只用了几个小时。 打个比方，以前处理这些数据，就像是在没有火车的年代，我蹬着破自行车从北京一路骑到上海，起步就是两周。现在？换上了高铁，两小时嗖的一下就到了。 很多人可能会懵，它到底是怎么做到的？ 核心秘密就在于它新增的两个神级指令：goal 和 grill-me。 这两个词第一眼看着有点奇怪，但你绝对不能只从字面意思去理解。 先说 goal。这个指令的本质就是授权和放权。你敲下这个指令，就相当于给 AI 签了一份军令状： 不要停，也不</description>
+    <pubDate>2026-05-22</pubDate>
+  </item>
+  <item>
     <title>提示语工程的新六条</title>
     <link>https://yishulun.com/blog/2026/36.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/36.html</guid>
