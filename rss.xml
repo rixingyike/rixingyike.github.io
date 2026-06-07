@@ -5,6 +5,13 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>摸头石头编程</title>
+    <link>https://yishulun.com/blog/2026/40.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/40.html</guid>
+    <description>摸着石头编程 最近在开发多文档协同工具 PushPen，我体验了一把爽到飞起、随后又脊梁发冷的感觉。 现在是 AI 协同编程的年代，大家写代码的姿势都变了。但就在昨天，当我看着那个在几分钟内被 AI 快速迭代出来的漂亮界面时，一种莫名的冷汗突然从后背冒了出来。这不仅是效率的狂飙，更是某种隐秘失控的开始。 事实是这样的，我需要给 PushPen 设计一个二级联动的菜单。 这个菜单逻辑有点像 WPS： 第一行是大菜单分类，紧挨着下面第二行是具体的小按钮。而且，当用户选中某些小按钮时，右侧可能还要联动弹出属性面板。 为什么设计得这么复杂？因为 PushPen 是一个针对文档类型做功能扩展的工具。不同的文档类型，适用的功能按钮完全不同。 再举个大家熟知的例子：传统办公三件套 Word、Excel、PPT。这三个软件各自有完全不同的操作按钮，这很好理解。但如果我把这三个软件的核心功能合在同一个界面里</description>
+    <pubDate>2026-06-05</pubDate>
+  </item>
+  <item>
     <title>如何在 agy 中高效管理 AI Skill？</title>
     <link>https://yishulun.com/blog/2026/42.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/42.html</guid>
