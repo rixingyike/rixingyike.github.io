@@ -2140,6 +2140,20 @@
     <pubDate></pubDate>
   </item>
   <item>
+    <title>从命令行到桌面自动化：AI辅助创作的黄金方案</title>
+    <link>https://yishulun.com/blog/2026/45.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/45.html</guid>
+    <description>从命令行到桌面自动化：AI辅助创作的黄金方案 你没有在让AI写长篇小说时，发现它总忘掉前面精心埋下的伏笔？ 更糟的是，为了让AI记住那几十万字的复杂设定，每次都得花掉巨额Token，账单让人肉疼。我在这条路上摸索了很久，从命令行敲指令，到最终封装成一个自动化桌面软件，底层架构的每一次选择，都直接决定了作品质量是封神还是扑街。 今天咱们就来聊聊，CLI 和 SDK 到底怎么选，以及让AI真正“长记性”的终极方案：RAG 和上下文缓存，到底谁才是长篇创作的救星。 日常和AI打交道无非两种姿势。 第一种是终端里敲命令行，就像你对面坐着一个真人助理，你问一句他答一句，所见即所得。这玩意儿擅长解决眼前的小麻烦：修个Bug、润色一段干瘪的文字、卡文时抛个灵感。优点是省钱，因为每次只瞄一眼你光标附近的几行字，Token消耗很低。但它的致命伤是记性太差。写到第108章时，想让它兼顾前10章的伏笔，你得手动</description>
+    <pubDate></pubDate>
+  </item>
+  <item>
+    <title>怒开 3 个 agy CLI 账号！我是怎么在老 Intel Mac 上实现顶级模型 Token 自由的？</title>
+    <link>https://yishulun.com/blog/2026/46.html</link>
+    <guid isPermaLink="true">https://yishulun.com/blog/2026/46.html</guid>
+    <description>怒开 3 个 agy CLI 账号！我是怎么在老 Intel Mac 上实现顶级模型 Token 自由的？ 写代码写得正嗨，正处于极客的 Video Coding 颅内高潮中，突然屏幕上弹出一行刺眼的“达到限额”提示——这种被强行中断的痛苦，懂的都懂。 对于高强度的开发者来说，一个 Pro 账号的额度根本不够用，两个也紧巴巴，唯有三个账号轮番上阵，才能彻底覆盖我全天的精力和并发任务。 为了实现多开，我最开始动过歪心思。我找了 Muti-Antigravity-CLI 这种软件，甚至尝试去改造过一个开源项目。这类软件无非是两个实现套路：要么创建多个 HOME 目录，要么创建多个 Antigravity 配置目录并临时切换。 但我有严重的系统洁癖，我隐约记得自己在某些地方写死了 $HOME 或 ~/ 环境变量，乱改 HOME 目录极易引发玄学 Bug。于是我硬着头皮选了第二种方案。 结果，第一</description>
+    <pubDate></pubDate>
+  </item>
+  <item>
     <title>别再当信息垃圾收集器了！我体验了 CatReader，AI 伴读确实爽，但也有几个槽点</title>
     <link>https://yishulun.com/blog/2026/43.html</link>
     <guid isPermaLink="true">https://yishulun.com/blog/2026/43.html</guid>
