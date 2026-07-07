@@ -5,13 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2021 年文章 - 一树仑</title>
+    <title>2021年03月 - 一树仑·金石碼农</title>
 
     
     <meta name="description" content="一花一世界，一树一菩提。">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="一树仑">
-    <meta property="og:title" content="一树仑">
+    <meta property="og:site_name" content="一树仑·金石碼农">
+    <meta property="og:title" content="一树仑·金石碼农">
     <meta property="og:description" content="一花一世界，一树一菩提。">
     
     <link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&amp;#x2F;">
@@ -21,10 +21,12 @@
 
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
     <link rel="stylesheet" href="/static/css/main.css">
-    <!-- Alpine.js 库 -->
+    <style>[x-cloak]{display:none!important}</style>
+    <!-- jQuery 本地库 -->
+    <script src="/static/js/jquery.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- Lunr.js 搜索库 -->
-    <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <!-- Lunr.js 本地搜索库 -->
+    <script src="/static/js/lunr.min.js"></script>
     <!-- 防止浏览器 bfcache 缓存显示旧页面 -->
     <script>
         window.addEventListener('pageshow', function (event) {
@@ -35,155 +37,66 @@
     </script>
 </head>
 
-<body class="bg-gray-50 text-gray-900 font-sans"
-    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.replace(/\/$/, '').split('/').pop() || 'index.html' }">
-    <!-- 顶部导航栏 -->
-    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+<body class="bg-air-bg text-moss-ink font-sans">
+    <!-- 简约顶部栏：仅 Logo + 搜索框 -->
+    <nav class="bg-flat-white/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo 和站点名称 -->
-                <div class="flex items-center space-x-3">
-                    <img src="&amp;#x2F;static&amp;#x2F;images&amp;#x2F;logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
-                    <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
-                        一树仑
-                    </a>
-                </div>
+                <a href="/" class="flex items-center space-x-3 group">
+                    <img src="/static/images/avatar.png" alt="一树仑·金石碼农 Logo" class="h-7 w-7 object-cover rounded-full transition-transform group-hover:scale-110">
+                    <span class="text-lg font-bold text-moss-ink">一树仑·金石碼农</span>
+                </a>
 
-                <!-- 搜索框 - 桌面版 -->
-                <div class="hidden md:flex flex-1 max-w-xs mx-8">
-                    <form action="/search.html" method="get" class="relative w-full">
-                        <input type="text" name="q"
-                            class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索内容..." id="search-input">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
+                <div class="flex-1 max-w-lg mx-4 lg:mx-8">
+                    <div class="relative" id="search-widget">
+                        <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-mist-green pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input type="text"
+                            class="w-full pl-9 pr-4 py-2 text-sm bg-air-bg border border-sage-line/20 focus:border-cyber-mint focus:ring-1 focus:ring-cyber-mint outline-none transition-colors"
+                            placeholder="搜索内容，或输入「作者」「项目」「专栏」「闲言」「博客」快速导航…"
+                            id="nav-search-input" autocomplete="off">
+                        <!-- 下拉面板：快捷导航 + 搜索结果 -->
+                        <div class="absolute top-full left-0 right-0 mt-1 bg-flat-white border border-sage-line/20 shadow-lg z-50 hidden"
+                            id="search-dropdown">
+                            <!-- Part 1: 导航快捷链接 -->
+                            <div id="search-shortcuts" class="hidden"></div>
+                            <!-- Part 2: 文章搜索结果 -->
+                            <div id="search-suggestions" class="hidden"></div>
                         </div>
-                        <button type="submit"
-                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
-                        </button>
-                    </form>
+                    </div>
                 </div>
-
-                <!-- 导航菜单 - 桌面版 -->
-                <div class="hidden md:flex items-center space-x-1">
-                    
-                    
-                    <a href="&#x2F;" class="nav-link"
-                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')) }">首页</a>
-                    
-                    <a href="&#x2F;archives.html" class="nav-link"
-                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">归档</a>
-                    
-                    <a href="&#x2F;categories.html" class="nav-link"
-                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">分类</a>
-                    
-                    <a href="&#x2F;tags.html" class="nav-link"
-                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">标签</a>
-                    
-                    <a href="&#x2F;docs.html" class="nav-link"
-                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">文档</a>
-                    
-                    <a href="&#x2F;friends.html" class="nav-link"
-                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">友链</a>
-                    
-                    <a href="&#x2F;projects.html" class="nav-link"
-                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;projects.html' || ('&#x2F;projects.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">项目</a>
-                    
-                    <a href="&#x2F;about.html" class="nav-link"
-                        :class="{ 'nav-link-active': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')) }">关于</a>
-                    
-                    
-                </div>
-
-                <!-- 移动端菜单按钮 -->
-                <button
-                    class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- 移动端菜单 -->
-        <div class="md:hidden" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0 transform -translate-y-2"
-            x-transition:enter-end="opacity-100 transform translate-y-0"
-            x-transition:leave="transition ease-in duration-200"
-            x-transition:leave-start="opacity-100 transform translate-y-0"
-            x-transition:leave-end="opacity-0 transform -translate-y-2">
-            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-                <!-- 移动端搜索框 -->
-                <div class="px-3 py-2">
-                    <form action="/search.html" method="get" class="relative">
-                        <input type="text" name="q"
-                            class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索内容..." id="mobile-search-input">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </div>
-                        <button type="submit"
-                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary-600 transition-colors">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
-                        </button>
-                    </form>
-                </div>
-                <!-- 移动端导航链接 -->
-                
-                
-                <a href="&#x2F;" class="block px-3 py-2 text-base font-medium rounded-md"
-                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;' || ('&#x2F;' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">首页</a>
-                
-                <a href="&#x2F;archives.html" class="block px-3 py-2 text-base font-medium rounded-md"
-                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;archives.html' || ('&#x2F;archives.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">归档</a>
-                
-                <a href="&#x2F;categories.html" class="block px-3 py-2 text-base font-medium rounded-md"
-                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;categories.html' || ('&#x2F;categories.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">分类</a>
-                
-                <a href="&#x2F;tags.html" class="block px-3 py-2 text-base font-medium rounded-md"
-                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;tags.html' || ('&#x2F;tags.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">标签</a>
-                
-                <a href="&#x2F;docs.html" class="block px-3 py-2 text-base font-medium rounded-md"
-                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;docs.html' || ('&#x2F;docs.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">文档</a>
-                
-                <a href="&#x2F;friends.html" class="block px-3 py-2 text-base font-medium rounded-md"
-                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;friends.html' || ('&#x2F;friends.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">友链</a>
-                
-                <a href="&#x2F;projects.html" class="block px-3 py-2 text-base font-medium rounded-md"
-                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;projects.html' || ('&#x2F;projects.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;projects.html' || ('&#x2F;projects.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">项目</a>
-                
-                <a href="&#x2F;about.html" class="block px-3 py-2 text-base font-medium rounded-md"
-                    :class="{ 'text-primary-600 bg-primary-50': window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html')), 'text-gray-700 hover:text-gray-900 hover:bg-gray-50': !(window.location.pathname === '&#x2F;about.html' || ('&#x2F;about.html' === '/' && (currentPath === '' || currentPath === 'index.html'))) }">关于</a>
-                
-                
             </div>
         </div>
     </nav>
 
     <!-- 主要内容区域 -->
-    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:64rem">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:48rem">
         <main class="min-h-screen py-8">
             
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- 页面头部 -->
-    <header class="text-center mb-12">
-        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">2021 年文章</h1>
-        <p class="text-lg text-gray-600">共 12 篇文章</p>
+    <header class="mb-8">
+        <!-- 面包屑导航 -->
+        <nav class="mb-4 text-xs text-gray-400 flex items-center space-x-1.5 select-none">
+            <a href="/archives/" class="hover:text-cyber-mint transition-colors">归档</a>
+            <span class="text-gray-300">/</span>
+            
+                <a href="/archives/2021/" class="hover:text-cyber-mint transition-colors">2021年</a>
+                <span class="text-gray-300">/</span>
+                <span class="text-gray-500">03月</span>
+            
+        </nav>
+
+        <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary-100 flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-sage-line" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold text-moss-ink">2021年03月</h1>
+        </div>
+        <p class="text-lg text-mist-green">共 12 条内容</p>
     </header>
     
     
@@ -192,782 +105,867 @@
         
             <!-- 某个月份的文章列表 -->
             <div class="mb-8">
-                <h2 class="text-2xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-200">
-                    03月
-                </h2>
-                <div class="space-y-6">
+                <div class="space-y-10">
                 
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        <a href="/posts&#x2F;2021/2.html" 
-                           class="hover:text-primary-600 transition-colors">
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
+                            
+                            
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
+                                
+                            
+                        </div>
+                        
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;2.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                插入广告的正确姿势
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-31</span>
+                            
+                        </div>
+                        
+                        <p class="text-mist-green leading-relaxed text-sm">
                             插入广告的正确姿势
-                        </a>
+突然发现，原来在某乎这样插入广告就可以。某乎的这个广告过滤机制，应该是机器操纵的，它知道人一般会怎么样去插入广告。最好的公众号的插入方式，都可以统一都改成这样的方式，单独放一个链接，在上面放上引语。不要直接写「关注公众号」这样的字词。
+
+                        </p>
                         
-                    </h3>
-                    
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-31
+                        
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
                         </div>
+                    </article>
+                    
+                
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
                             
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
                             
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
                                 
                             
                         </div>
                         
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
-                        
-                        <a href="/posts&#x2F;2021/2.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        
-                    </div>
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;4.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                关于录制视频直人更多出镜的想法
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-31</span>
+                            
                         </div>
-                    </article>
-                
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
                         
-                        <a href="/posts&#x2F;2021/4.html" 
-                           class="hover:text-primary-600 transition-colors">
+                        <p class="text-mist-green leading-relaxed text-sm">
                             关于录制视频直人更多出镜的想法
-                        </a>
+视频录制应该真人出镜，并且应该争取在大多数情况下都是真人正面全景出镜。个别的时间点，我们需要展示具体的文字或图片的时候，可以在视频剪辑的时候插入画中画。
+必须的时候，可能需要购买一个高清摄像头，放在电视机上面，并且把它作为主要的视频录制设备。
+
+                        </p>
                         
-                    </h3>
-                    
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-31
+                        
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
                         </div>
+                    </article>
+                    
+                
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
                             
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
                             
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
                                 
                             
                         </div>
                         
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
-                        
-                        <a href="/posts&#x2F;2021/4.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        
-                    </div>
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;5.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                生活如何艺术化与视频录制
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-31</span>
+                            
                         </div>
-                    </article>
-                
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
                         
-                        <a href="/posts&#x2F;2021/5.html" 
-                           class="hover:text-primary-600 transition-colors">
+                        <p class="text-mist-green leading-relaxed text-sm">
                             生活如何艺术化与视频录制
-                        </a>
+在视频号上看到这个视频，突然有了想法，主要是两点：
+
+个人视频要露脸、露人，展示自己，在这个视频中，即使是展示编曲过程，小作者也是出镜的
+关于艺术生活化，其实艺术可以渗透到生活中的每个角落，并不一定非要以目前的演唱会、博物馆这样的形式存在
+
+
+视频号无法提供二维码，也没有链接，感兴趣可以搜索一下。b站也有。这种艺术形式，可以形成高低差，有很大的传播效应。
+
+                        </p>
                         
-                    </h3>
-                    
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-31
+                        
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
                         </div>
+                    </article>
+                    
+                
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
                             
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
                             
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
                                 
                             
                         </div>
                         
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
-                        
-                        <a href="/posts&#x2F;2021/5.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        
-                    </div>
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;6.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                忽然想起一个第一人称写作技巧
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-30</span>
+                            
                         </div>
-                    </article>
-                
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
                         
-                        <a href="/posts&#x2F;2021/6.html" 
-                           class="hover:text-primary-600 transition-colors">
+                        <p class="text-mist-green leading-relaxed text-sm">
                             忽然想起一个第一人称写作技巧
-                        </a>
+为了说明问题，先引用一段余秋雨《文化苦旅》《阳关雪》中的几段话：
+
+一走出小小的县城，便是沙漠。除了茫茫一片雪白，什么也没有，连一个皱折也找不到。在别地赶路，总要每一段为自己找一个目标，盯着一棵树，赶过去，然后再盯着一块石头，赶过去。在这里，睁疼了眼也看不见一个目标，哪怕是一片枯叶，一个黑点。于是，只好抬起头来看天。从未见过这样完整的天，一点儿也没有被吞食，边沿全是挺…
+                        </p>
                         
-                    </h3>
-                    
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-30
+                        
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
                         </div>
+                    </article>
+                    
+                
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
                             
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
                             
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
                                 
                             
                         </div>
                         
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
-                        
-                        <a href="/posts&#x2F;2021/6.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        
-                    </div>
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;1.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                巴黎是如何成为时尚之都的
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-29</span>
+                            
                         </div>
-                    </article>
-                
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
                         
-                        <a href="/posts&#x2F;2021/1.html" 
-                           class="hover:text-primary-600 transition-colors">
+                        <p class="text-mist-green leading-relaxed text-sm">
                             巴黎是如何成为时尚之都的
-                        </a>
+巴黎，用100年的时间，由一个街上满是泥泞，没人愿意走路，一个夜间有野狼出没的城市，变成了今天的世界时尚之都。
+时髦，这个词的含义在法国的字典里就是外国人来到巴黎学习怎么穿衣服。这个定义太过分了。
+这个巨变是怎么产生的呢？每年很多人去巴黎旅游的，如果只是在百货商场打个卡，在博物馆打个卡，而不了解巴黎这座城市成长历史的话，根本就不会知道林荫大道、孚日广场、塞纳河老桥？圣路易…
+                        </p>
                         
-                    </h3>
-                    
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-29
+                        
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
                         </div>
+                    </article>
+                    
+                
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
                             
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
                             
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
                                 
                             
                         </div>
                         
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
-                        
-                        <a href="/posts&#x2F;2021/1.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        
-                    </div>
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;3.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                关于价值的判定
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-28</span>
+                            
                         </div>
-                    </article>
-                
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
                         
-                        <a href="/posts&#x2F;2021/3.html" 
-                           class="hover:text-primary-600 transition-colors">
+                        <p class="text-mist-green leading-relaxed text-sm">
                             关于价值的判定
-                        </a>
+我们是如何判定一件事的价值的呢？靠知识与逻辑经验？靠经验？还是靠直觉？如果没有经验，又不具备相关的知识，一般我们是很难判定一件事的价值的。所以一般人很难突破自己，主要是因为不具备价值界定与判断的能力。试想一下，如果将时光倒回10年，你会做什么事？
+有人说，我会在北京回龙观买房。但是当时，你可能也知道这个房源信息，当时没有行动，主要原因在于你当时无法界定这件事的价值。
+有的人靠直觉，…
+                        </p>
                         
-                    </h3>
-                    
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-28
+                        
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
                         </div>
+                    </article>
+                    
+                
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
                             
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
                             
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
                                 
                             
                         </div>
                         
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
-                        
-                        <a href="/posts&#x2F;2021/3.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        
-                    </div>
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;30.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                提问的艺术
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-26</span>
+                            
                         </div>
-                    </article>
-                
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
                         
-                        <a href="/posts&#x2F;2021/30.html" 
-                           class="hover:text-primary-600 transition-colors">
+                        <p class="text-mist-green leading-relaxed text-sm">
                             提问的艺术
-                        </a>
+这篇内容主要写给初学者，高手或老手可以略过了。
+初学者有两个问题很显著：
+
+不会提问
+不会搜索
+
+先说搜索
+搜索一定要选择谷歌，不要用其它的搜索引擎。如果所在地区访问不了谷歌，可以安装谷歌浏览器，然后安装一个名称为「谷歌访问助手」的插件。搜索一下，网上有。
+有了工具以后，具体查询的时候要注意用合适的关键词。基本原则是将我们自己问题中的关键字拿出来，输入进去，如果结果不理想，可以稍微变换…
+                        </p>
                         
-                    </h3>
-                    
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-26
+                        
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
                         </div>
+                    </article>
+                    
+                
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
                             
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
                             
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
                                 
                             
                         </div>
                         
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
-                        
-                        <a href="/posts&#x2F;2021/30.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        
-                    </div>
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;31.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                充电平台小程序实战专栏导读
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-25</span>
+                            
                         </div>
-                    </article>
-                
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
                         
-                        <a href="/posts&#x2F;2021/31.html" 
-                           class="hover:text-primary-600 transition-colors">
+                        <p class="text-mist-green leading-relaxed text-sm">
                             充电平台小程序实战专栏导读
-                        </a>
+| 课程介绍
+初学者为什么要学习微信小程序？
+录课结束三个月后，我再回头看这节课，感受只有四个字：“录的真好！”
+对于不知道自己应不应该学、合不合适学小程序这门技术的读者来讲，只要看了这个视频就有答案了。
+极客时间的小伙伴，若没有他们的严格把关，恐怕我只能做到60分；有他们在，把我身上的懒虫逼走了，硬是提到了80分。但就这一篇开篇词，我给90分。哈哈。
+这个视频主要讲了…
+                        </p>
                         
-                    </h3>
-                    
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-25
+                        
+                        <div class="flex flex-wrap gap-2 mt-3 select-none">
+                            
+                            <a href="/tags/笔记/" class="text-xs text-mist-green hover:text-cyber-mint">#笔记</a>
+                            
                         </div>
                         
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
                             
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
                             
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
                                 
                             
                         </div>
                         
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        
-                        <a href="/tags/笔记/" 
-                           class="inline-flex items-center px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full hover:bg-primary-100 hover:text-primary-700 transition-colors">
-                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
-                            </svg>
-                            笔记
-                        </a>
-                        
-                    </div>
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
-                        
-                        <a href="/posts&#x2F;2021/31.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        
-                    </div>
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;29.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                如何做好一场技术演讲学习笔记
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-25</span>
+                            
                         </div>
-                    </article>
-                
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
                         
-                        <a href="/posts&#x2F;2021/29.html" 
-                           class="hover:text-primary-600 transition-colors">
+                        <p class="text-mist-green leading-relaxed text-sm">
                             如何做好一场技术演讲学习笔记
-                        </a>
+| 演讲之前需要做好哪些准备？现场由听众提需求吧
+Stay hungry, Stay foolish！
+没有想到，流传已久的乔布斯斯坦福毕业演讲，却是他精心准备至少好几天的结果，尽管他当时已经是一位富有现场演讲经验的老手了。
+这篇充电平台创立之初发布的小专栏，确实非常非常有价值。题目虽然是《如何做好一篇技术演讲》，但是却也适用于写作等其它需要做内容输出的地方。
+概括来…
+                        </p>
                         
-                    </h3>
-                    
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-25
+                        
+                        <div class="flex flex-wrap gap-2 mt-3 select-none">
+                            
+                            <a href="/tags/笔记/" class="text-xs text-mist-green hover:text-cyber-mint">#笔记</a>
+                            
                         </div>
                         
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
                             
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
                             
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
                                 
                             
                         </div>
                         
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        
-                        <a href="/tags/笔记/" 
-                           class="inline-flex items-center px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full hover:bg-primary-100 hover:text-primary-700 transition-colors">
-                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
-                            </svg>
-                            笔记
-                        </a>
-                        
-                    </div>
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
-                        
-                        <a href="/posts&#x2F;2021/29.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        
-                    </div>
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;32.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                左耳听风专栏学习笔记
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-25</span>
+                            
                         </div>
-                    </article>
-                
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
                         
-                        <a href="/posts&#x2F;2021/32.html" 
-                           class="hover:text-primary-600 transition-colors">
+                        <p class="text-mist-green leading-relaxed text-sm">
                             左耳听风专栏学习笔记
-                        </a>
+
+这是我在充电平台学习《左耳听风》专栏的笔记，仅是部分。
+
+开篇词 | 洞悉技术的本质，享受科技的乐趣
+分享文章，不仅仅是为了宣传，更多是为了与他人讨论，激发更深入的深入思考。学习别人的知识，如果有真正的思考，那么可能有三个阶段：
+在第1个阶段，我们读了以后，有了自己的想法，大胆分享出来，然后遭到了批判，别人可能说我们目光狭隘，狂妄无知。
+在第2个阶段，我们预感到可能会有人批…
+                        </p>
                         
-                    </h3>
-                    
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-25
+                        
+                        <div class="flex flex-wrap gap-2 mt-3 select-none">
+                            
+                            <a href="/tags/笔记/" class="text-xs text-mist-green hover:text-cyber-mint">#笔记</a>
+                            
                         </div>
                         
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
                             
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
                             
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
                                 
                             
                         </div>
                         
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        
-                        <a href="/tags/笔记/" 
-                           class="inline-flex items-center px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full hover:bg-primary-100 hover:text-primary-700 transition-colors">
-                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
-                            </svg>
-                            笔记
-                        </a>
-                        
-                    </div>
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
-                        
-                        <a href="/posts&#x2F;2021/32.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        
-                    </div>
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;33.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                Stay hungry, Stay foolish
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-17</span>
+                            
                         </div>
-                    </article>
-                
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
                         
-                        <a href="/posts&#x2F;2021/33.html" 
-                           class="hover:text-primary-600 transition-colors">
+                        <p class="text-mist-green leading-relaxed text-sm">
                             Stay hungry, Stay foolish
-                        </a>
-                        
-                    </h3>
-                    
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-17
-                        </div>
+这仅仅是一个谦虚的态度吗？不是的；或仅仅是一句伟大而著名的格言吗？更加不是的。它是一句充满智慧的话，它可以指导我们不断超越自己。
+给大家分享一个我自己的小故事，就发生在昨天，我被这个现实世界一只看不见的手，狠狠的教育了一巴掌。我突然意识到，原来我一直都不会做事情。具体怎么被教育的，我就不说了，反正每个人一生总会有那么几个时刻，感觉自己内裤被现实他…
+                        </p>
                         
                         
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
-                            
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
-                            
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
-                                
-                            
-                        </div>
-                        
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
-                        
-                        <a href="/posts&#x2F;2021/33.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        
-                    </div>
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
                         </div>
                     </article>
+                    
                 
-                    <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                        <div class="flex flex-col">
-                    <!-- 文章标题 -->
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
-                        
-                        <a href="/posts&#x2F;2021/8.html" 
-                           class="hover:text-primary-600 transition-colors">
-                            在生产中寻找艺术痛点
-                        </a>
-                        
-                    </h3>
                     
-                    <!-- 文章摘要 -->
-                    
-                    
-                    <!-- 文章元信息 -->
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            2021-03-01
-                        </div>
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
                         
-                        
-                        
-                        
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
                             
-                    <a href="/posts/" class="hover:text-primary-600 transition-colors">posts</a>
-                                 / 
                             
-                    <a href="/2021/" class="hover:text-primary-600 transition-colors">2021</a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2021&#x2F;" class="hover:text-cyber-mint transition-colors">2021</a>
+                                        
+                                    
                                 
                             
                         </div>
                         
-                    </div>
-                    
-                    <!-- 标签 -->
-                    
-                    
-                    <!-- 阅读更多按钮 -->
-                    <div class="flex justify-end">
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2021&#x2F;8.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                在生产中寻找艺术痛点
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2021-03-01</span>
+                            
+                        </div>
                         
-                        <a href="/posts&#x2F;2021/8.html" 
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 border border-primary-200 rounded-lg hover:bg-primary-100 transition-colors">
-                            阅读全文
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
+                        <p class="text-mist-green leading-relaxed text-sm">
+                            在生产中寻找艺术痛点
+文艺要从生产中来，而不能凭空捏造。
+这个想法是在听樊登读书时产生的（当时樊登在讲《论语》），但这个想法与其没有关系。我在想，像脱口秀大会、吐槽大会这样的综艺节目，它们的笑点其实都来源于生活。它们有多好笑，就说明这个世界有多荒唐。
+所以，文艺创作，包括技术科普，从哪里寻找传播的点呢，必须从生活中、从生产中。但是这个寻找又不能因为要寻找而失了本心，还必须有一个”本心“的坚持。
+
+                        </p>
                         
-                    </div>
+                        
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
                         </div>
                     </article>
+                    
                 
                 </div>
             </div>
         
     </div>
     
-    <!-- 导航 -->
-    <div class="mt-12 text-center">
-        <a href="/archives/" 
-           class="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-            返回归档首页
-        </a>
-    </div>
+
     
 </div>
 
@@ -978,42 +976,34 @@
     
 
 
-    <!-- 返回顶部 -->
-    <div class="text-center mb-8">
-        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center px-4 py-2 text-sm border border-gray-300 hover:bg-gray-50 cursor-pointer">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
-            返回顶部
-        </button>
-    </div>
+    
+
 
     <!-- 页脚 -->
-    <footer class="bg-white border-t border-gray-200 mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="text-center space-y-2">
-                <p class="text-gray-600">
+    <footer class="bg-moss-ink mt-16 py-8 text-xs text-white/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-left space-y-2">
+                <p>
                     &copy; 2002-2026
                     
                     
-                    <a href="https:&#x2F;&#x2F;yishulun.com" target="_blank" rel="noopener"
-                        class="text-gray-700 hover:text-primary-600">LIYI</a>
+                    <a href="https:&#x2F;&#x2F;yishulun.com" target="_blank" rel="noopener" class="text-white/60 hover:text-cyber-mint transition-colors">金石碼农</a>
                     
                     
-                    
-                    &nbsp;|&nbsp;
-                    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"
-                        class="text-gray-500 hover:text-gray-700 text-sm">
+                </p>
+                
+                <p>
+                    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" class="text-white/60 hover:text-cyber-mint transition-colors">
                         京ICP备14007000号-8
                     </a>
-                    
                 </p>
-                <p class="text-gray-500 text-sm">
-                    由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener"
-                        class="text-primary-600 hover:text-primary-700">RustPress</a> 提供支持
-                </p>
-                <p class="text-gray-500 text-sm">
-                    <a href="/rss.xml" class="hover:text-primary-600">RSS</a>
+                
+                <p>
+                    由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener" class="text-white/60 hover:text-cyber-mint hover:underline transition-colors">RustPress</a> 提供支持
                     &nbsp;·&nbsp;
-                    <a href="/sitemap.xml" class="hover:text-primary-600">Sitemap</a>
+                    <a href="/rss.xml" class="text-white/60 hover:text-cyber-mint transition-colors">RSS</a>
+                    &nbsp;·&nbsp;
+                    <a href="/sitemap.xml" class="text-white/60 hover:text-cyber-mint transition-colors">Sitemap</a>
                 </p>
             </div>
         </div>
@@ -1021,15 +1011,204 @@
 
     <!-- 搜索结果容器 -->
     <div class="fixed inset-x-0 top-16 z-40 hidden" id="search-results">
-        <div class="bg-white shadow-lg border border-gray-200 rounded-lg mx-4 mt-2 max-h-96 overflow-y-auto">
+        <div class="bg-flat-white border border-sage-line/20 mx-4 mt-2 max-h-96 overflow-y-auto">
             <!-- 搜索结果将在这里显示 -->
         </div>
     </div>
 
 
 
-    <!-- 搜索功能脚本 -->
-    <script src="/static/js/search.js"></script>
+
+
+    <!-- 搜索下拉面板：快捷导航 + 搜索结果 -->
+    <script>
+    var _searchData = [];
+    async function _loadSearchIndex() {
+        try {
+            var res = await fetch('/search.json', { cache: 'no-store' });
+            if (!res.ok) return;
+            var data = await res.json();
+            var items = Array.isArray(data) ? data : (data.items || []);
+            _searchData = items.map(function(item) {
+                return {
+                    title: item.title || item.slug || '',
+                    content: item.content || item.summary || '',
+                    url: item.url || '',
+                    date: item.date || item.date_ymd || ''
+                };
+            });
+        } catch (e) {
+            console.error('加载搜索索引失败:', e);
+        }
+    }
+    _loadSearchIndex();
+
+    $(document).ready(function() {
+        var $input = $('#nav-search-input');
+        var $dropdown = $('#search-dropdown');
+        var $shortcuts = $('#search-shortcuts');
+        var $suggestions = $('#search-suggestions');
+
+        function renderDropdown(query) {
+            if (!query) {
+                $dropdown.addClass('hidden');
+                return;
+            }
+
+            var q = query.toLowerCase();
+
+            // Part 1: 导航快捷链接
+            var shortcutsHtml = '';
+            var sData = getShortcuts(query);
+            if (sData.length > 0) {
+                shortcutsHtml = '<div class="px-3 py-1.5 text-xs text-mist-green font-semibold">快速导航</div>';
+                sData.forEach(function(s) {
+                    shortcutsHtml += '<a href="' + s.url + '" class="flex items-center px-4 py-2 text-sm hover:bg-air-bg transition-colors text-moss-ink">' + s.label + '</a>';
+                });
+            }
+
+            // Part 2: 文章搜索结果
+            var resultsHtml = '';
+            if (_searchData.length > 0) {
+                var results = _searchData.filter(function(p) {
+                    var searchText = (p.title + ' ' + p.content).toLowerCase();
+                    return searchText.includes(q);
+                });
+                if (results.length > 0) {
+                    var sectionLabel = sData.length > 0 ? '文章' : '搜索结果';
+                    resultsHtml = '<div class="px-3 py-1.5 text-xs text-mist-green font-semibold">' + sectionLabel + '</div>';
+                    results.slice(0, 5).forEach(function(r) {
+                        resultsHtml += '<a href="' + r.url + '" class="flex items-center px-4 py-2 text-sm hover:bg-air-bg transition-colors text-mist-green">' +
+                            '<svg class="w-3.5 h-3.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>' +
+                            _highlight(r.title, q) + '</a>';
+                    });
+                }
+            }
+
+            if (shortcutsHtml || resultsHtml) {
+                if (shortcutsHtml && resultsHtml) {
+                    $shortcuts.html(shortcutsHtml).removeClass('hidden');
+                    $suggestions.html(resultsHtml).removeClass('hidden');
+                } else if (shortcutsHtml) {
+                    $shortcuts.html(shortcutsHtml).removeClass('hidden');
+                    $suggestions.addClass('hidden');
+                } else {
+                    $shortcuts.addClass('hidden');
+                    $suggestions.html(resultsHtml).removeClass('hidden');
+                }
+                $dropdown.removeClass('hidden');
+            } else {
+                $dropdown.addClass('hidden');
+            }
+        }
+
+        function _highlight(text, query) {
+            if (!query || !text) return text || '';
+            var safe = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            var re = new RegExp('(' + safe + ')', 'gi');
+            return text.replace(re, '<mark class="bg-yellow-200 px-0.5">$1</mark>');
+        }
+
+        $input.on('input', function() {
+            renderDropdown($(this).val().trim());
+        });
+
+        var _selectedIdx = -1;
+
+        function _selectItem(idx) {
+            var items = $dropdown.find('a');
+            items.removeClass('bg-air-bg');
+            if (idx >= 0 && idx < items.length) {
+                items.eq(idx).addClass('bg-air-bg');
+                _selectedIdx = idx;
+            } else {
+                _selectedIdx = -1;
+            }
+        }
+
+        $input.on('keydown', function(e) {
+            if (e.key === 'Escape') {
+                $dropdown.addClass('hidden');
+                $input.blur();
+                return;
+            }
+            if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                var items = $dropdown.find('a');
+                if (items.length === 0) return;
+                if (e.key === 'ArrowDown') {
+                    _selectItem(_selectedIdx < items.length - 1 ? _selectedIdx + 1 : 0);
+                } else {
+                    _selectItem(_selectedIdx > 0 ? _selectedIdx - 1 : items.length - 1);
+                }
+                return;
+            }
+            if (e.key === 'Enter') {
+                if (_selectedIdx >= 0) {
+                    var items = $dropdown.find('a');
+                    var $target = items.eq(_selectedIdx);
+                    if ($target.length && $target.attr('href')) {
+                        window.location.href = $target.attr('href');
+                        e.preventDefault();
+                    }
+                }
+                return;
+            }
+            // 输入变化时重置选中
+            _selectedIdx = -1;
+        });
+
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('#search-widget').length) {
+                $dropdown.addClass('hidden');
+            }
+        });
+    });
+
+    function getShortcuts(query) {
+        if (!query || !query.trim()) return [];
+        var q = query.trim().toLowerCase();
+        var map = {
+            '作者': '/about.html', '关于': '/about.html',
+            '项目': '/projects/',
+            '专栏': '/columns/', '系列': '/columns/',
+            '博客': '/archives/', '归档': '/archives/', '文章': '/archives/',
+            '友链': '/friends/', '友情链接': '/friends/',
+            '分类': '/categories/', '标签': '/tags/',
+            '作品': '/works/', '出版': '/works/', '图书': '/works/', '书': '/works/', '著作': '/works/',
+            '闲言': '/tweets/', '碎语': '/tweets/',
+            '搜索': '/search.html',
+            '首页': '/',
+            'home': '/', 'about': '/about.html', 'projects': '/projects/',
+            'columns': '/columns/', 'works': '/works/', 'archives': '/archives/',
+            'friends': '/friends/', 'tags': '/tags/',
+            'categories': '/categories/'
+        };
+        var exact = [];
+        var fuzzy = [];
+        for (var key in map) {
+            if (key.indexOf(q) !== -1 || q.indexOf(key) !== -1) {
+                var entry = { label: '→ ' + key + ' (' + map[key] + ')', url: map[key] };
+                if (key === q) {
+                    exact.push(entry);
+                } else {
+                    fuzzy.push(entry);
+                }
+            }
+        }
+        var results = exact.concat(fuzzy);
+        if (results.length > 0) return results.slice(0, 5);
+        var yearMatch = q.match(/^(\d{4})$/);
+        if (yearMatch) {
+            return [{ label: '→ ' + yearMatch[1] + ' 年归档 /archives/' + yearMatch[1] + '.html', url: '/archives/' + yearMatch[1] + '.html' }];
+        }
+        return [];
+    }
+    </script>
+
+    <!-- 瀑布流（无限滚动）加载 -->
+    <script src="/static/js/infinite-scroll.js"></script>
+
     <script>
         (function() {
             function checkRedirect(val) {
@@ -1046,11 +1225,7 @@
                 }
                 return false;
             }
-            document.addEventListener('input', function(e) {
-                if (e.target && (e.target.id === 'search-input' || e.target.id === 'mobile-search-input' || e.target.id === 'search-query' || e.target.id === 'search-modal-input')) {
-                    checkRedirect(e.target.value);
-                }
-            });
+            // 移除了 input 事件自动跳转，避免输入时直接跳页，只在 submit 时执行
             document.addEventListener('submit', function(e) {
                 var input = e.target.querySelector('input[name="q"]') || e.target.querySelector('input[type="text"]');
                 if (input && checkRedirect(input.value)) {
@@ -1148,20 +1323,25 @@
                 data.items.forEach(function (issue) {
                     var m = issue.body && issue.body.match(/Comment thread for (\S+)/);
                     if (m) {
-                        var pathKey = m[1];
+                        var pathKey = decodeURIComponent(m[1]);
                         if (issues[pathKey] && issues[pathKey].number > issue.number) {
                             return;
                         }
                         issues[pathKey] = issue;
+                        issues[m[1]] = issue;
                     }
                 });
 
                 articles.forEach(function (article) {
-                    var link = article.querySelector('h2 a') || article.querySelector('div.flex a');
-                    if (!link) return;
-                    var href = link.getAttribute('href');
+                    var href = article.getAttribute('data-url');
+                    if (!href) {
+                        var link = article.querySelector('h2 a') || article.querySelector('a');
+                        href = link ? link.getAttribute('href') : null;
+                    }
                     if (!href) return;
-                    var issue = issues[href];
+                    
+                    var decodedHref = decodeURIComponent(href);
+                    var issue = issues[decodedHref] || issues[href];
                     if (!issue) return;
 
                     var spans = article.querySelectorAll('button span.font-medium');
@@ -1199,15 +1379,19 @@
             }
             
             const toast = document.createElement('div');
-            toast.style.backgroundColor = '#1f2937';
-            toast.style.color = '#ffffff';
+            // Moss Ink 经典极简深色背景，搭配 Cyber Mint 高亮绿字与微弱绿边，完全直角且无阴影
+            toast.style.backgroundColor = '#182422';
+            toast.style.color = '#00f6af';
+            toast.style.border = '1px solid rgba(0, 246, 175, 0.25)';
             toast.style.padding = '12px 24px';
             toast.style.fontSize = '14px';
             toast.style.fontWeight = '500';
+            toast.style.letterSpacing = '0.05em';
             toast.style.minWidth = '280px';
             toast.style.textAlign = 'center';
             toast.style.boxSizing = 'border-box';
             
+            // 动画初状态与 transition 设定
             toast.style.opacity = '0';
             toast.style.transform = 'translateY(-8px)';
             toast.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
@@ -1216,11 +1400,13 @@
             toast.textContent = message;
             container.appendChild(toast);
             
+            // 下一帧淡入
             setTimeout(() => {
                 toast.style.opacity = '1';
                 toast.style.transform = 'translateY(0)';
             }, 10);
             
+            // 3秒后自动淡出销毁
             setTimeout(() => {
                 toast.style.opacity = '0';
                 toast.style.transform = 'translateY(-8px)';

@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<!-- 基础布局模板 -->
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一树仑·金石碼农</title>
+
+    
+<meta name="description" content="一花一世界，一树一菩提。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读《九州经》前两章，谈传统作家转行网文创作需要避免的文笔问题">
+<meta property="og:description" content="一花一世界，一树一菩提。">
+<meta property="og:site_name" content="一树仑·金石碼农">
+
+<link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;2023&#x2F;45.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;yishulun.com&#x2F;2023&#x2F;45.html">
+
+
+
+<meta property="article:published_time" content="2023-11-27">
+
+
+
+<meta property="article:tag" content="网文创作">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "读《九州经》前两章，谈传统作家转行网文创作需要避免的文笔问题",
+  "image": [
+    "https:&#x2F;&#x2F;yishulun.com/static/images/logo.png"
+   ],
+  "datePublished": "2023-11-27",
+  "author": [{
+      "@type": "Person",
+      "name": "金石碼农",
+      "url": "https:&#x2F;&#x2F;yishulun.com"
+    }]
+}
+</script>
+
+
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <style>[x-cloak]{display:none!important}</style>
+    <!-- jQuery 本地库 -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Lunr.js 本地搜索库 -->
+    <script src="/static/js/lunr.min.js"></script>
+    <!-- 防止浏览器 bfcache 缓存显示旧页面 -->
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
+</head>
+
+<body class="bg-air-bg text-moss-ink font-sans">
+    <!-- 简约顶部栏：仅 Logo + 搜索框 -->
+    <nav class="bg-flat-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center space-x-3 group">
+                    <img src="/static/images/avatar.png" alt="一树仑·金石碼农 Logo" class="h-7 w-7 object-cover rounded-full transition-transform group-hover:scale-110">
+                    <span class="text-lg font-bold text-moss-ink">一树仑·金石碼农</span>
+                </a>
+
+                <div class="flex-1 max-w-lg mx-4 lg:mx-8">
+                    <div class="relative" id="search-widget">
+                        <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-mist-green pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input type="text"
+                            class="w-full pl-9 pr-4 py-2 text-sm bg-air-bg border border-sage-line/20 focus:border-cyber-mint focus:ring-1 focus:ring-cyber-mint outline-none transition-colors"
+                            placeholder="搜索内容，或输入「作者」「项目」「专栏」「闲言」「博客」快速导航…"
+                            id="nav-search-input" autocomplete="off">
+                        <!-- 下拉面板：快捷导航 + 搜索结果 -->
+                        <div class="absolute top-full left-0 right-0 mt-1 bg-flat-white border border-sage-line/20 shadow-lg z-50 hidden"
+                            id="search-dropdown">
+                            <!-- Part 1: 导航快捷链接 -->
+                            <div id="search-shortcuts" class="hidden"></div>
+                            <!-- Part 2: 文章搜索结果 -->
+                            <div id="search-suggestions" class="hidden"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:48rem">
+        <main class="min-h-screen py-8">
+            
+<div class="max-w-4xl mx-auto relative">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- 主要内容 -->
+        <div class="flex-1">
+            
+            <article x-data="{ copiedLink: false, copiedCode: {} }">
+                <style>
+                    .article-content > h1:first-of-type {
+                        display: none !important;
+                    }
+                </style>
+                <!-- 分类面包屑 -->
+                
+                <nav class="mb-2 text-xs text-gray-400 flex items-center space-x-1.5 select-none">
+                
+                
+                
+                    
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <a href="&#x2F;2023&#x2F;" class="hover:text-cyber-mint">2023</a>
+                            
+                        
+                    
+                
+                </nav>
+                
+
+                <!-- 文章头部 -->
+                <header class="mb-8">
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-moss-ink mb-3 leading-tight">
+                        读《九州经》前两章，谈传统作家转行网文创作需要避免的文笔问题
+                    </h1>
+
+                    <div class="article-meta mb-3">
+                        
+                        <span class="inline-flex items-center text-sm text-mist-green">
+                            2023-11-27 12:46
+                        </span>
+                        
+                        
+                    </div>
+                </header>
+
+                <!-- 文章内容 -->
+                <div class="article-content prose prose-lg max-w-none" x-init="$nextTick(() => {
+             // 为代码块添加复制按钮
+             document.querySelectorAll('pre code').forEach((codeBlock, index) => {
+                 const pre = codeBlock.parentElement;
+                 if (!pre.querySelector('.copy-code-btn')) {
+                     const button = document.createElement('button');
+                     button.className = 'copy-code-btn';
+                     button.textContent = '复制';
+                     button.setAttribute('x-data', `{ copied: false }`);
+                     button.setAttribute('@click', `navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent).then(() => { this.copied = true; setTimeout(() => this.copied = false, 2000) })`);
+                     button.setAttribute(':class', `{ 'bg-green-600': copied }`);
+                     button.setAttribute('x-text', `copied ? '已复制' : '复制'`);
+                     
+                     pre.style.position = 'relative';
+                     pre.appendChild(button);
+                 }
+             });
+         })">
+                    <h1>读《九州经》前两章，谈传统作家转行网文创作需要避免的文笔问题</h1>
+<blockquote>
+<p>以下内容是卖报小郎君早期作品《九州经》的前两章。</p>
+</blockquote>
+<h2>第1章</h2>
+<p>牧野城，楚府！</p>
+<p>时值严冬，寒风凛冽，肃杀百草。一座简陋小院，纱窗内孤灯如豆，墙角几根衰草迎着冷风摇曳。</p>
+<p>“望舒，望舒......”</p>
+<p>黑暗中不知传来谁的呼唤，熟悉而陌生，却偏偏记不起在哪里听过，是前世的留恋亦或是今生的呼唤？楚望舒忽然感到一阵锥心彻骨的悲伤，猛地睁开眼，大口喘息，像个濒死的溺水之人。</p>
+<p>首先映入眼帘的是一张温柔端庄的脸盘，眉目弯弯，素面朝天，描红之后一准儿倾国倾城。</p>
+<p>楚望舒呆呆的看着这张脸，过往的时光在心中翻涌不息，他无声的笑了，泪水却夺眶而出：“娘，我来啦。您在地府等了我二十年，一定很寂寞吧。我们下辈子还做母子。”</p>
+<p>妇人刚浮起的喜色登时凝固，素手轻轻抚摸楚望舒的脸颊，低泣道：“望舒，你别吓娘亲。”</p>
+<p>楚望舒心中一颤，妇人滚烫的泪水滴在他脸，哭声像是把尖刀刺在他心口。他抬起手，握住妇人摩挲他脸颊的手，曾经温软如玉的手没了当年的光滑细腻，长期劳作的原因，指尖生了很多老茧。</p>
+<p>“娘？”</p>
+<p>“娘在这里。”</p>
+<p>“这里是哪儿？”</p>
+<p>“我们的家啊！”</p>
+<p>家？真是个遥远而陌生词。</p>
+<p>楚望舒猛地坐起身，又是一阵眩晕袭来，头痛欲裂，他强忍着疼痛打量四周，一间小小的屋子，床前的炭盆里烧着炭火，窗边一张朴实陈旧的书桌，窗台上放着一盆早已枯萎的兰花。眼前的景物是那么的熟悉，又如那个“家”字一样陌生而遥远。</p>
+<p>没错，这里是他二十年前的家，那个令他深恶痛绝的楚府！</p>
+<p>我不是死了吗？死在了人族与妖族的逐鹿之战中。</p>
+<p>莫非老天让我重生了？重生在母亲还未含恨而死之时，重生在妹子未曾香消玉殒之时，连老天也知道我的不甘吗！</p>
+<p>“娘，帮我拿镜子？”楚望舒低声说。</p>
+<p>“你要镜子做什么？放心吧，你受伤的是头部，脸蛋可没坏。”妇人说。</p>
+<p>“我就是想看看自己。”楚望舒挤出一丝苍白的微笑。</p>
+<p>妇人点点头，起身走到窗边，拿起书桌上的铜镜。</p>
+<p>楚望舒靠坐在床头，夜色已深，万籁俱寂，前尘往事潮水般涌上心头。</p>
+<p>娘亲叫水研姬，出生碧泽城水族，十六岁嫁入楚府，是楚家明媒正娶的平妻，而他楚望舒排行第七，身份高贵的嫡子，他今年应该十五岁，头上这个伤口让他记忆犹新。打伤他的人是三哥楚望生。楚望生是正妻云氏所生，在十几个兄弟姐妹中极其跋扈。倘若水研姬还是平妻，楚望舒还是嫡子，倒也不至于落到如此境地。</p>
+<p>楚望舒记得当年他被楚望生打坏了脑袋，头破血流，在床上躺了足足半个月，险些没能挺过这个严寒的冬季。而做为行凶之人，楚望生的惩罚只是禁足半月。</p>
+<p>水研姬把铜镜放在楚望舒面前，铜镜中是个形容憔悴的少年，俊秀逼人，但因为营养不良导致脸色略微蜡黄。脑袋上缠着厚厚的纱布，隐隐有干涸的黑色血迹。</p>
+<p>“想不想喝水？药还在院子里熬着，娘先给你盛碗粥。”水研姬把铜镜放在床头，柔声说。</p>
+<p>“我不饿，也没胃口。”楚望舒摇摇头：“玲珑呢？”</p>
+<p>“哭了一晚上，刚睡去。”水研姬叹了口气，满脸愁容。</p>
+<p>水研姬脸上滑落泪痕，哽咽道：“是娘没用，这些年让你受苦了。”</p>
+<p>楚望舒心里一痛，握住水研姬的手，沉声道：“娘，孩儿从没有怪过您，您生我养我，恩重如山，何曾对不起我？没用的是我这个儿子，大家都说您生了个没用的废物。我只恨自己无能，不能给您争气。”</p>
+<p>水研姬摇摇头，哭的愈发伤心。</p>
+<p>夜深人静，楚望舒躺在床上，盖着厚厚的棉被，沉沉睡去。水研姬捧着药碗，轻手轻脚走出房门。</p>
+<p>门关上后，楚望舒在黑暗中睁开眸子，眼睛亮的吓人。</p>
+<p>重生了，不是梦，不是兵解，不是夺舍。</p>
+<p>他此时此刻的心态异常复杂，既狂喜又忐忑，人生如果能重来，你会怎样改写你的人生？</p>
+<p>楚望舒轰轰烈烈的三十六年光阴，充满了忐忑和辛酸，二十年后，他成为九州风头最劲的后起之秀，名震人、妖两族，一言能定人生死，用累累白骨铺垫他的修道之路，风光无限。可他无法改变过去，无法战胜时光，即便他屹立世界之巅，他仍然是个孤家寡人。</p>
+<p>渐渐的，困意上涌，楚望舒沉沉睡去。</p>
+<p>第二日清晨，他被一阵压抑的哭声吵醒。一颗青丝盘绕的小脑袋扑在他床上，呜呜咽咽，瘦削的肩膀颤抖。</p>
+<p>楚望舒从棉被里伸出手，按在她后脑勺，低声道：“一大早跑我房里来哭，扰人清梦。”</p>
+<p>哭声顿时一滞，抬起一张泪痕交织的小脸，倔强道：“我没哭，我没哭......”</p>
+<p>楚望舒凝视眼前这张祸国殃民之姿的脸蛋，往事又浮上心头。水玲珑是楚望舒舅舅的幼女，比他小一岁，五年前来楚府做客，九岁的水玲珑已经是个美人坯子，粉雕玉琢，灵性十足。那时候母亲还没失势，正妻云氏见了水玲珑，也不得不违背本心夸一句：钟天地之灵秀。</p>
+<p>然而次年六月，水族所在的碧泽城遭到妖族部落袭击，水族上下抗敌不退，悉数殉城。此役后九州震动，神帝一怒之后，亲赴南疆，将掀起战争的赤猊金吼妖尊斩杀当场。剑锋穿透千里击破天帝宫，拂衣而去。</p>
+<p>水族覆灭后，水玲珑无依无靠，留在了楚府。楚望舒母子在楚府失去了依仗，云氏买通府里的侍卫，半夜潜入水研姬闺房，又故意被丫鬟撞见。侍卫打晕丫鬟翻墙逃走，云氏便以不守妇道，放荡之名向父亲控诉。</p>
+<p>楚长辞雷霆震怒，将水研姬贬为妾室，这还是因为没有捉奸在床，证据不足，不然光是私通外汉这条罪名，就足以杖毙水研姬了。</p>
+<p>楚望舒那时候才十一岁，为此跟父亲大闹了一通，结果被杖责二十，禁闭三月。多年以后回想起来，其实对父亲来说，不管真相如何都不重要，水族已经覆灭，母亲做平妻还是做妾，都无关紧要。</p>
+<p>水研姬美貌如花，极受父亲宠爱，即便贬为妾室，父亲也时常召母亲侍寝，云氏擅妒，以前便处处算计水研姬，母亲二人落难之后，更是百般刁难。这些年父亲已经不再召母亲侍寝，好似已经将母子二人彻底打入冷宫，妾室地位本就低下，只是高级丫鬟，这样一来，便是府上一些丫鬟佣人，也可以对楚望舒母子冷眼相加，说些阴阳怪气的话。</p>
+<p>倘若楚望舒争气到也罢，母凭子贵，将来未必没有翻身之日。可偏偏楚望舒是个无法修炼的废物，体内五行互冲，丹田无法积蓄真气。一个被打入冷宫的妾室，一个无法修炼的庶子，还能翻起什么风浪？</p>
+<p>更雪上加霜的是这些年，水玲珑出落的越发水灵，初具颠倒众生之姿。而楚家嫡子庶子也渐渐长大，血气方刚，知道了女人的好处。又怎么肯白白放过这颗水灵白菜？</p>
+<p>今日黄昏，楚望舒路过花园，恰好见到楚望生带着两名仆从对水玲珑施暴，看那生拉硬拽往凉亭而去的架势，竟是要光天化日来一场活春宫？</p>
+<p>楚望舒目呲欲裂，扑上去与楚望生扭打，奈何他体弱多病，楚望生却已是练体六重的修为，愤怒之下抽出铜棒敲破了楚望舒脑袋。</p>
+<p>“没哭？这是什么？”楚望舒抹了抹她脸上的泪痕，开玩笑道：“这是玲珑的洗脸水吗？”</p>
+<p>水玲珑小嘴一瘪，哇的一声哭了起来，“我就哭了，就哭了，呜呜呜......你都快被楚望生打死了，还，还不准我哭么，望舒哥哥要是死了，我就找他拼命去，哇哇哇......”</p>
+<p>哭着哭着，她就钻进被窝里来，抱着楚望舒继续哭。</p>
+<p>楚望舒把她搂在怀里，柔声道：“别说些丧气话，望舒哥哥福大命大，死不了。”</p>
+<p>他忽然感觉脸上滚烫，痒痒的，伸手一摸，竟然是眼泪，他流泪了。</p>
+<p>这么多年了，他始终记得那个晚上，那个彻底改变他人生的夜晚，那个天塌地陷的夜晚。那晚，水玲珑被几个畜生凌辱******，时隔多年，愧疚、遗憾、伤心、痛苦......种种情绪在心中翻涌，他不受控制的流泪。</p>
+<p>楚望舒脑袋有伤，情绪一激动，就会头晕，昨天他喝的药是很普通的外伤药，楚望舒前世医术通神，冠绝九州，喝一口就能分辨药材优劣，那点药汤，对他的伤势没多大作用。</p>
+<p>“玲珑，家里还有多少银子？”</p>
+<p>家里的银子一直都是水玲珑管着。</p>
+<p>水玲珑小脑袋在他胸口乱蹭，蹭掉鼻涕和眼泪，鼻音浓重：“六两银子，其中五两还是大夫人赔的。”</p>
+<p>楚望舒想了想，道：“玲珑，拿纸笔。”</p>
+<p>水玲珑眨巴着眼睛。</p>
+<p>“快去！”楚望舒敲了敲她脑袋。</p>
+<p>楚望舒的橱柜里就有宣纸笔墨，放着好些年了，他这几年自暴自弃，不练武不读书，光顾着提防几个哥哥。每日担惊受怕，回想起来，这段岁月当年也不知是怎么熬过来的。</p>
+<p>铺开宣纸，研好墨汁，水玲珑提着笔，回眸望来。楚望舒见她这幅模样，也就断了自己写字的念头，一口气报了十几种药材名，水玲珑一一记下。</p>
+<p>“你去帮我把这些药材买来，从后门出去，省得又碰到那几个畜生。”</p>
+<p>水玲珑小声道：“家里有药的，不用买。”</p>
+<p>“那些药没用，快去。”楚望舒催促。</p>
+<p>水玲珑抿了抿嘴，选择听从望舒哥哥的吩咐，她向来很听楚望舒的话。她和楚望舒是有婚约的，用她自己的话说，那就是夫唱妇随。</p>
+<h2>第2章</h2>
+<p>楚望舒躺在床上闭目养神，回忆着当年的点点滴滴，楚望舒一直很拒绝回忆少年时代的悲苦命运，咀嚼往事发狠是小屁孩才干的事，真正有故事的人都会把往事这种东西封印起来不去回想。但直到今天，他才发现，那些他以为遗忘的往事，一直埋藏在心里不曾忘记。</p>
+<p>他这一生起起伏伏，曾低入尘埃，也曾光芒万丈。前世他名震天下，位列九州十真之一，世人敬佩他，崇拜他，嫉妒他，仇恨他……却很少有人研究过他一生的历程。</p>
+<p>凡人安贫乐道，因此平庸。天才缺乏磨练，因此泯然众人。而楚望舒的人生是一本说不尽道不完的血泪史。除了十岁之前的童年生活，快乐和幸福就像两个与楚望舒结了死仇的人，老死不相往来。</p>
+<p>当人一生经历了太多的苦难和不幸，心境就会变成一种近乎麻木平静，以至于他踏着累累白骨走上巅峰之时，往下俯瞰，山河尽收眼底，世人顶礼膜拜，心里却没有任何喜悦和激动。只有一丝淡淡的遗憾。</p>
+<p>昆仑山上，人妖两族逐鹿天下的最终一战，楚望舒没能看到最后的结局。只是觉得无比的轻松，人死如灯灭，那些悲伤的，那些痛苦的，统统随风而散！</p>
+<p>可老天爷重新给了他一个机会，一个改写人生的机会。</p>
+<p>十五岁很好，一切都还来得及。他悲苦的一生还没开始，还有改写的机会。</p>
+<p>改写人生的第一步，就从楚府开始！</p>
+<p>阳光明媚，透过窗户照进屋里，在地面留下网格状的投影。</p>
+<p>楚望舒坐在床头，一时思绪飞扬，忽然听见院外响起水玲珑的尖叫声。他猛地看向门外，双眼通红，这些没人性的畜生，如同跗骨之蛆，非要把他们逼死才甘心。</p>
+<p>楚望舒从枕头地上摸出匕首，藏在衣袖里，不顾脑袋疼痛，跌跌撞撞冲出屋子。</p>
+<p>院子里，水玲珑正与几个少年对峙，为首的青衣少年模样周正，嘴角带着冷笑，“水玲珑，跟我们走吧，二爷还在等着呢，他今儿刚从三爷那回来，心情不大好，你识趣点，不然二爷自己过来，可就不会那么客气了。”</p>
+<p>水玲珑咬着唇，一双灵气十足的丹凤眼毫无退缩的瞪着他。</p>
+<p>青衣少年是楚望云身边的长随，楚府家生子，地位不高，也不算低，楚望云虽然是庶子，但与嫡子楚望生的关系极好。他对水玲珑亦是垂涎已久，没少怂恿楚望生找水玲珑麻烦。</p>
+<p>“水玲珑，听没听说过一句话：心比天高命比纸薄。你乖乖从了二爷三爷，以后穿金戴银的过好日子，不比什么都强。当自己还是水族嫡女呐？”青衣少年忽然挤眉弄眼：“三爷看上的女人，能逃得出他手掌心？你别不认命，人在屋檐下不得不低头，乖乖给三爷做玩物，把他伺候舒服了，说不得还能做个妾，再不识抬举，等几个爷把你玩腻了，咱们几个说不准也能尝个鲜。”</p>
+<p>身后几个少年发出淫邪笑声。</p>
+<p>水玲珑斜着眼睛看他们，眼神既不屑又鄙夷，这种鄙夷的目光明显激怒了他们。</p>
+<p>青衣少年大怒：“今天你从也得从，不从也得从。别指望那个废物来救你，他自身都难保，总有一天会被三爷打死。他也不看看自己什么身份，几次三番和二爷三爷作对，做了这么多年庶子，还认不清现实，死了都活该。”</p>
+<p>任由他们侮辱也不搭理的水玲珑忽然红了眼眶，提着药包大步上前，做了一件让人意想不到的事情。</p>
+<p>“啪！”</p>
+<p>一个巴掌抽在青衣少年脸上，势大力沉，竟打的他身子一晃，耳朵暂时失聪。</p>
+<p>水玲珑冷笑道：“凭你也配看不起他。”</p>
+<p>青衣少年错愕之后，脸色狰狞，抬手就扇了她一巴掌。</p>
+<p>水玲珑小身板后退两步，鬓发散乱，粉嫩白皙小脸蛋迅速浮现手印，她咬着唇，依然用那种高高在上、鄙夷不屑的目光看他。</p>
+<p>青衣少年在她目光中彻底陷入暴走，转头朝身边几个仆人喝道：“愣着做什么，把她给我带走，谁敢拦着，统统打死。”</p>
+<p>两个仆人上前，一左一右拖起水玲珑的手臂，就要把她带走。</p>
+<p>水玲珑尖叫起来。</p>
+<p>“住手！”</p>
+<p>楚望舒走出房门，扶着墙，脸色苍白，说话声音中气不足。</p>
+<p>众人闻声，不由转头看过来。</p>
+<p>水玲珑趁机摆脱两人的桎梏，逃向楚望舒，但青衣少年飞快追上，把她拉扯住，用力推向身后的仆人，随后，皮笑肉不笑的直视楚望舒：“呦，七爷身子骨弱，不躺在床上养伤，出来做什么。”</p>
+<p>楚望舒淡淡道：“我再不出来，你们还不得把我妹子欺负死？”</p>
+<p>咦？语气太平淡了吧。</p>
+<p>青衣少年微微一愣，心里鄙夷，这固执的废物总算是知道怕了，这回差点进了鬼门关，也该学乖了。想到这里，他脸上嘲讽的笑容愈发明显：“七爷说笑了，我们怎么敢欺负玲珑姑娘，二爷想她的紧，让我们带她过去喝茶赏景，顺便讨教一下床榻乐趣。今晚玲珑姑娘肯定回不来，七爷自己照顾着自己，明儿.....哦，明儿她估计也回不来，想她的几位爷可不会轻易放人。”</p>
+<p>楚望舒一步步走下来，仍然面色冷淡，不见恼怒。</p>
+<p>他走到青衣少年面前，语气平淡道：“二哥怎么不自己来？”</p>
+<p>青衣少年脸上的嘲讽已经不加掩饰，嗤笑道：“二爷忙着呢，这点小事也要劳他大驾？”</p>
+<p>楚望舒点了点头，“那你代替他去死吧。”</p>
+<p>话音方落，分明脚步虚弱，身子孱弱的他骤然暴起，一柄匕首突出袖子，迅雷不及掩耳之势刺入青衣少年胸口。</p>
+<p>温热的鲜血喷涌出来，溅了楚望舒一脸，苍白俊秀的脸孔始终漠然。</p>
+<p>青衣少年瞪大眼睛，下意识的推开楚望舒，他没有立刻死去，求生本能爆发，踉踉跄跄的想要逃走。</p>
+<p>楚望舒一脚踹在他后背，把他踢翻在地，抓起他脑袋，匕首在他脖子上一抹，当即喷出一股血水。手脚乱蹦了几下，彻底死了。</p>
+<p>几个仆人惊呆了，水玲珑也惊呆了。</p>
+<p>他们有想过楚望舒会暴怒，会打人，即便他服软，也只是稍稍惊讶一下，谁能想到这个看似弱不禁风，任人欺凌的七爷，竟然毫无征兆的暴起杀人，面不改色的把刀子捅入心脏，更歹毒心肠的抹脖子。</p>
+<p>仆人忽然意识到，七爷确实经常受欺凌，可那是几位爷之间的恩恩怨怨，他是庶子，是楚府的主人，对家生子有生杀予夺的权利。</p>
+<p>匹夫一怒，血溅五步！</p>
+<p>楚望舒朝着水玲珑招招手，小丫头脸色苍白，瑟瑟发抖的走过来。</p>
+<p>“别怕！”楚望舒摸了摸她脑袋，收好匕首，“你们几个把他尸体抬出去，告诉二爷，他的奴才不懂事，我帮他杀了。”</p>
+<p>我帮他杀了......</p>
+<p>几个仆人心肝欲裂，连连点头，颤巍巍的抬起青衣少年的尸体，惶恐逃走。</p>
+<p>“望舒哥哥......”水玲珑拽住他的袖口，抬起脸蛋，以一种既陌生又惊恐的眼神看他。</p>
+<p>楚望纾略作犹豫，出口解释：“你退三尺，人进一丈，人心永远不会知足的，不心狠，我怎么保护你？这么多年，我也该想明白了。”</p>
+<p>水玲珑哭了。</p>
+<p>楚望舒搂着她，目光望向墙外的天空，低声道：“今时不同往日了，妹子，我会报仇，要报仇。”</p>
+<p>午后，水研姬浆洗衣衫回来，抱着楚望舒的头一阵抽泣，在她眼里，善良听话的儿子被迫杀人，就跟养的黄花大闺女被歹人侮辱一样，是很伤心的事情。</p>
+<p>楚望舒想说自己是在立威，但水研姬就是觉得儿子受了天大委屈，手上沾血，从此不纯真不良善了。</p>
+<p>楚望舒杀人事件在府上传来，并没有掀起什么风浪，杀一个家生子而已，不算什么，云氏也不回来问责，否则楚望舒一句“奴才犯主”就能顶回去。</p>
+<p>某院落。</p>
+<p>楚望云砸碎了心爱的青瓷茶盏，门口躺着那句死透凉透的尸体。他一身倜傥白衣，面容俊朗，身材颀长，此刻咬牙切齿，怒火如沸，打狗还得看主人，何况杀狗。</p>
+<p>“真是小瞧他了，居然敢杀我的人，那就别怪我玩你的女人。还有半个月是祭祖大典，我先忍着，看你楚望舒能强硬多久。”</p>
+<p>发泄了片刻，楚望云嫌弃的看了眼门口的尸体，命令屋里的仆人：“把他给我丢出去，找个地方葬了吧。再去外面铺子看看，我订购的湘木手镯到货没有。”</p>
+<h2>分析与总结</h2>
+<p>这两章应该是作者修改之后的内容，我曾看到另一个版本，内容比这个版本还要拖沓，那个版本在开关先来了一个世界观背景设定的介绍：</p>
+<blockquote>
+<p>自宇宙初始，盘古开天，女娲造人，已经悠悠十万载。天地褪去蒙昧，雨水汇成大泽，平地化为草原，山峦拔地而起，组成了波澜壮阔的九州山河。</p>
+<p>人族起于微末，不知耕种，茹毛饮血。不事生产，兽皮裹身。时值妖族横行九州，自居天地之主，万族之首。视人族为牲畜奴隶，凶威之下，予取予夺。</p>
+<p>后有圣人造字，鬼神变色，天降气运与人族，开灵智，授天火。人族从此褪去野兽之身，磨石为刃，砌石为屋，部落于此形成。</p>
+<p>此后千年，又有道祖应运而生，传道弘法，普度众生，使得人人可修道法，开辟一条通天之路。人类天纵之才呈现井喷之势。</p>
+<p>人、妖两族自古战乱不断，争杀不休，五百年前，神帝横空出世，于昆仑山巅击败十二妖尊，同年七月，与妖族天帝决战于长江流域，七天七夜，打的洪水泛滥，天崩地裂，最后斩去天帝一臂，逼他立下五百年不战条约。自此人、妖两族划江而治，平分天下。史称为：长江之盟！</p>
+</blockquote>
+<p>小说是很忌讳这种长篇大论的背景介绍的，在修改版中已经不复存在了。</p>
+<p>前两章好了这样一个小情节：水玲珑遭到下人为难，主角楚望舒英雄救美。套路有了，但有以下问题：</p>
+<ul>
+<li>铺垫与渲染不够。在这个小情节中，主角楚望舒一刀杀死下人解决危机是情节小高潮，在此之前，没有充分铺垫这件事困难，周围人的不看好；在此之后，也没有充分渲染水玲珑对主角情感的增进。整体上的表现，是爽点不足。</li>
+<li>节奏不对。中情节大概是12章，小情节是6章，在这里却只用2章就写掉了一个小情节，有点草率了。原因就在于缺少铺垫和渲染，在现有情节篇幅的基础上，增加两章铺垫及两章渲染，貌似才是一个合理的小情节节奏。</li>
+<li>人物极少有心理活动。卖报小郎君在后来的作品《妖二代》中，已经不是这种风格了，行文更加大胆、洒脱。写一个角色的时候，往往是用一段先写他/她的心理活动，继而是言行，最后如果有必要，还要再写一写他/她的心理活动。目前在《九州经》的开篇中还没看到这种风格。</li>
+<li>过于朴实无华的情节，于情节推动又无大的作用，不如不写。例如在第1章中，主角与他母亲的对话，又找镜子又喝水，尽是一些生活中的琐事，作者在这里可能想告诉读者，主角他在这里有了振兴家族的理想，同样的目的换一种方式也能达到，且不需要这么多的文字。第1章开头，至主角楚望舒沉沉睡去之间的这一段，写不并不好。</li>
+<li>情节中的逻辑关系不够丝滑、真实，在这前两章中，企图凌辱水玲珑的下人，他们的行为看起来很幼稚。真正的情节是丝滑、真实的，内在是有充分的逻辑关系的，或者说，是有文化底蕴的内在联系的。往大了讲，是常识，是人性，是社会关系学，是历史背景，是熟悉这一切之后思考出来的自然而然的情节。（注：关于这一点，长期可以通过阅读文史类社科图书弥补，短期内也可以通过擅长推理的大语言模型弥补。）</li>
+</ul>
+<p>《九州经》本来就不是作者优秀的作品代表，作者在这部作品中突显的问题，基本上是传统作者转型网文创作都会具有的通病了。</p>
+
+                </div>
+
+                <!-- 标签 -->
+                
+                <div class="flex flex-wrap gap-x-4 gap-y-2 mt-6">
+                    
+                    <a href="/tags/网文创作/" class="text-sm text-mist-green hover:text-cyber-mint transition-colors">
+                        #网文创作
+                    </a>
+                    
+                </div>
+                
+
+                <!-- 版权信息 -->
+                <div class="mt-8 text-xs text-mist-green">
+                    <p>
+                        本文链接：
+                        <a href="https:&#x2F;&#x2F;yishulun.com&#x2F;2023&#x2F;45.html" class="text-sage-line hover:underline"
+                            target="_blank" rel="noopener">https:&#x2F;&#x2F;yishulun.com&#x2F;2023&#x2F;45.html</a>
+                    </p>
+                    <p class="mt-1">
+                        共享许可：<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener" class="text-sage-line hover:underline">署名-非商业性 4.0 国际 (CC-BY-NC-4.0)</a>
+                    </p>
+                </div>
+
+                <!-- 分享功能 -->
+                <div class="mt-6" style="margin-bottom: 4rem;">
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="shareToTwitter()" class="btn-outline inline-flex items-center text-xs py-1.5 px-3 cursor-pointer">
+                            <svg class="w-3.5 h-3.5 mr-1.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                            分享到X
+                        </button>
+                        <button
+                            @click="navigator.clipboard.writeText(window.location.href).then(() => { if (window.showToast) window.showToast('复制成功') }).catch(() => { var ta = document.createElement('textarea'); ta.value = window.location.href; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); if (window.showToast) window.showToast('复制成功') })"
+                            class="btn-outline inline-flex items-center text-xs py-1.5 px-3 cursor-pointer">
+                            <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            <span>复制链接</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                <div x-data="{ showWechat: false }">
+  <div class="bg-flat-white mb-8">
+    <div class="relative group/bio p-6">
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-8 pr-8">
+        <div class="flex-shrink-0">
+          
+          <img src="&#x2F;static&#x2F;images&#x2F;avatar.png"
+               alt="金石碼农"            class="w-24 h-24 object-cover"
+               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjY0IiBjeT0iNjQiIHI9IjY0IiBmaWxsPSIjRjNGNEY2Ii8+CjxzdmcgeD0iMzIiIHk9IjMyIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOUNBM0FGIiBzdHJva2Utd2lkdGg9IjIiPgo8cGF0aCBkPSJtMjAgMjEtMTYtMTZtMCAxM2gxM20wLTEzTDIxIDIxIi8+Cjwvc3ZnPgo8L3N2Zz4K'">
+          
+        </div>
+
+        <div class="flex-1 text-center md:text-left">
+          <h3 class="text-2xl font-bold text-moss-ink mb-2">
+            金石碼农
+          </h3>
+
+          
+          <p class="text-base text-mist-green mb-4 leading-relaxed">
+            大学计算机讲师，腾讯云最具价值专家（TVP），📚《小程序从0到1》《微信小游戏开发》作者，微信学堂讲师，极客时间荣誉讲师。公众号同名。
+          </p>
+          
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-6 justify-center md:justify-start">
+            
+            <div class="flex items-center text-mist-green text-sm">
+              <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              北京, 中国
+            </div>
+            
+
+            
+            <div class="flex items-center text-sm">
+              <svg class="w-4 h-4 mr-1.5 text-mist-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m-9 9a9 9 0 019-9"></path>
+              </svg>
+              <a href="https:&#x2F;&#x2F;yishulun.com"
+                 target="_blank"
+                 rel="noopener" class="text-sage-line hover:text-cyber-mint transition-colors">
+                yishulun.com
+              </a>
+            </div>
+            
+          </div>
+
+          
+          <div class="flex justify-center md:justify-start space-x-4">
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;rixingyike"
+               target="_blank"
+               rel="noopener" class="text-gray-400 hover:text-mist-green transition-colors"
+               title="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            
+
+            
+            <a href="https:&#x2F;&#x2F;x.com&#x2F;jinshimanong"
+               target="_blank"
+               rel="noopener" class="text-gray-400 hover:text-blue-400 transition-colors"
+               title="Twitter">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+            
+
+            
+            <a href="https:&#x2F;&#x2F;weibo.com&#x2F;ixiaochengxu"
+               target="_blank"
+               rel="noopener" class="text-gray-400 hover:text-cyber-mint transition-colors"
+               title="微博">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M10.878 1.093a4.23 4.23 0 0 1 4.031 1.305 4.22 4.22 0 0 1 .886 4.14v.001a.612.612 0 0 1-1.166-.377 3.01 3.01 0 0 0-3.495-3.873.611.611 0 1 1-.256-1.196M3.753 9.465c.548-1.11 1.972-1.74 3.233-1.411 1.304.338 1.971 1.568 1.437 2.764-.541 1.221-2.095 1.875-3.416 1.449-1.271-.411-1.812-1.67-1.254-2.802m2.658.567c.16.066.365-.009.458-.168.088-.16.03-.34-.129-.397-.156-.062-.353.013-.446.168-.09.154-.041.333.117.397m-1.607 1.314c.413.188.963.009 1.219-.4.252-.413.12-.883-.296-1.062-.41-.172-.94.005-1.194.402-.256.4-.135.874.271 1.06"/>
+                <path d="m12.014 7.238.005.001c.919.285 1.941.974 1.939 2.188 0 2.007-2.895 4.535-7.246 4.535C3.393 13.962 0 12.352 0 9.708c0-1.385.876-2.985 2.384-4.493C4.4 3.199 6.751 2.28 7.634 3.165c.39.392.427 1.065.177 1.87-.132.405.38.182.38.182 1.63-.682 3.051-.722 3.57.02.278.397.252.951-.004 1.594-.116.293.035.34.257.407m-10.4 3.101c.172 1.738 2.46 2.936 5.109 2.674 2.647-.26 4.656-1.883 4.482-3.623-.17-1.738-2.458-2.937-5.107-2.674-2.647.263-4.656 1.883-4.484 3.623m11.681-6.484a2.06 2.06 0 0 0-1.962-.634.526.526 0 1 0 .219 1.031 1.008 1.008 0 0 1 1.17 1.296.528.528 0 0 0 1.005.325 2.06 2.06 0 0 0-.432-2.018"/>
+              </svg>
+            </a>
+            
+
+            
+            <a href="https:&#x2F;&#x2F;zhihu.com&#x2F;people&#x2F;liyi2005"
+               target="_blank"
+               rel="noopener" class="text-gray-400 hover:text-blue-600 transition-colors"
+               title="知乎">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m-90.7 477.8l-0.1 1.5c-1.5 20.4-6.3 43.9-12.9 67.6l24-18.1 71 80.7c9.2 33-3.3 63.1-3.3 63.1l-95.7-111.9v-0.1c-8.9 29-20.1 57.3-33.3 84.7-22.6 45.7-55.2 54.7-89.5 57.7-34.4 3-23.3-5.3-23.3-5.3 68-55.5 78-87.8 96.8-123.1 11.9-22.3 20.4-64.3 25.3-96.8H264.1s4.8-31.2 19.2-41.7h101.6c0.6-15.3-1.3-102.8-2-131.4h-49.4c-9.2 45-41 56.7-48.1 60.1-7 3.4-23.6 7.1-21.1 0 2.6-7.1 27-46.2 43.2-110.7 16.3-64.6 63.9-62 63.9-62-12.8 22.5-22.4 73.6-22.4 73.6h159.7c10.1 0 10.6 39 10.6 39h-90.8c-0.7 22.7-2.8 83.8-5 131.4H519s12.2 15.4 12.2 41.7H421.3z m346.5 167h-87.6l-69.5 46.6-16.4-46.6h-40.1V321.5h213.6v387.3zM408.2 611s0-0.1 0 0z"></path>
+                <path d="M624.2 705.3l56.8-38.1h45.6-0.1V364.7H596.7v302.5h14.1z"></path>
+              </svg>
+            </a>
+            
+
+            
+            <button @click="showWechat = !showWechat"
+               class="text-gray-400 hover:text-green-500 transition-colors focus:outline-none"
+               :class="showWechat ? 'text-green-500' : 'text-gray-400'"
+               title="微信">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 1170 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <path d="M331.428571 263.428571q0-23.428571-14.285714-37.714285t-37.714286-14.285715q-24.571429 0-43.428571 14.571429T217.142857 263.428571q0 22.285714 18.857143 36.857143t43.428571 14.571429q23.428571 0 37.714286-14t14.285714-37.428572z m424.571429 289.714286q0-16-14.571429-28.571428t-37.428571-12.571429q-15.428571 0-28.285714 12.857143T662.857143 553.142857q0 16 12.857143 28.857143t28.285714 12.857143q22.857143 0 37.428571-12.571429t14.571429-29.142857z m-134.857143-289.714286q0-23.428571-14-37.714285T569.714286 211.428571q-24.571429 0-43.428572 14.571429T507.428571 263.428571q0 22.285714 18.857143 36.857143t43.428572 14.571429q23.428571 0 37.428571-14T621.142857 263.428571z m362.857143 289.714286q0-16-14.857143-28.571428t-37.142857-12.571429q-15.428571 0-28.285714 12.857143T890.857143 553.142857q0 16 12.857143 28.857143t28.285714 12.857143q22.285714 0 37.142857-12.571429t14.857143-29.142857z m-152-226.857143q-17.714286-2.285714-40-2.285714-96.571429 0-177.714286 44T486.571429 487.142857 440 651.428571q0 44.571429 13.142857 86.857143-20 1.714286-38.857143 1.714286-14.857143 0-28.571428-0.857143t-31.428572-3.714286-25.428571-4-31.142857-6-28.571429-6l-144.571428 72.571429 41.142857-124.571429Q0 551.428571 0 387.428571q0-96.571429 55.714286-177.714285t150.857143-127.714286T414.285714 35.428571q100.571429 0 190 37.714286t149.714286 104.285714T832 326.285714z m338.285714 320.571429q0 66.857143-39.142857 127.714286T1025.142857 885.142857l31.428572 103.428572-113.714286-62.285715q-85.714286 21.142857-124.571429 21.142857-96.571429 0-177.714285-40.285714T512.857143 797.714286 466.285714 646.857143t46.571429-150.857143T640.571429 386.571429t177.714285-40.285715q92 0 173.142857 40.285715t130 109.714285T1170.285714 646.857143z" fill="currentColor"></path>
+              </svg>
+            </button>
+            
+
+            
+            <a href="https:&#x2F;&#x2F;space.bilibili.com&#x2F;262757998"
+               target="_blank"
+               rel="noopener" class="text-gray-400 hover:text-pink-400 transition-colors"
+               title="Bilibili">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 1129 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <path d="M234.909 9.656a80.468 80.468 0 0 1 68.398 0 167.374 167.374 0 0 1 41.843 30.578l160.937 140.82h115.07l160.936-140.82a168.983 168.983 0 0 1 41.843-30.578A80.468 80.468 0 0 1 930.96 76.445a80.468 80.468 0 0 1-17.703 53.914 449.818 449.818 0 0 1-35.406 32.187 232.553 232.553 0 0 1-22.531 18.508h100.585a170.593 170.593 0 0 1 118.289 53.109 171.397 171.397 0 0 1 53.914 118.288v462.693a325.897 325.897 0 0 1-4.024 70.007 178.64 178.64 0 0 1-80.468 112.656 173.007 173.007 0 0 1-92.539 25.75h-738.7a341.186 341.186 0 0 1-72.421-4.024A177.835 177.835 0 0 1 28.91 939.065a172.202 172.202 0 0 1-27.36-92.539V388.662a360.498 360.498 0 0 1 0-66.789A177.03 177.03 0 0 1 162.487 178.64h105.414c-16.899-12.07-31.383-26.555-46.672-39.43a80.468 80.468 0 0 1-25.75-65.984 80.468 80.468 0 0 1 39.43-63.57M216.4 321.873a80.468 80.468 0 0 0-63.57 57.937 108.632 108.632 0 0 0 0 30.578v380.615a80.468 80.468 0 0 0 55.523 80.469 106.218 106.218 0 0 0 34.601 5.632h654.208a80.468 80.468 0 0 0 76.444-47.476 112.656 112.656 0 0 0 8.047-53.109v-354.06a135.187 135.187 0 0 0 0-38.625 80.468 80.468 0 0 0-52.304-54.719 129.554 129.554 0 0 0-49.89-7.242H254.22a268.764 268.764 0 0 0-37.82 0z m0 0" fill="currentColor"></path>
+                <path d="M348.369 447.404a80.468 80.468 0 0 1 55.523 18.507 80.468 80.468 0 0 1 28.164 59.547v80.468a80.468 80.468 0 0 1-16.094 51.5 80.468 80.468 0 0 1-131.968-9.656 104.609 104.609 0 0 1-10.46-54.719v-80.468a80.468 80.468 0 0 1 70.007-67.593z m416.02 0a80.468 80.468 0 0 1 86.102 75.64v80.468a94.148 94.148 0 0 1-12.07 53.11 80.468 80.468 0 0 1-132.773 0 95.757 95.757 0 0 1-12.875-57.133V519.02a80.468 80.468 0 0 1 70.007-70.812z m0 0" fill="currentColor"></path>
+              </svg>
+            </a>
+            
+
+            
+            <button @click="
+                navigator.clipboard.writeText($el.getAttribute('data-email')).then(() => {
+                    if (window.showToast) window.showToast('\u90AE\u7BB1\u5DF2\u7ECF\u62F7\u8D1D\uFF0C\u53EF\u4EE5\u524D\u5F80\u90AE\u7BB1\u5199\u4FE1\u4E86');
+                }).catch(() => {
+                    var ta = document.createElement('textarea'); ta.value = $el.getAttribute('data-email'); ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); if (window.showToast) window.showToast('\u90AE\u7BB1\u5DF2\u7ECF\u62F7\u8D1D\uFF0C\u53EF\u4EE5\u524D\u5F80\u90AE\u7BB1\u5199\u4FE1\u4E86');
+                })
+            " data-email="9830131@qq.com" class="text-gray-400 hover:text-cyber-mint transition-colors focus:outline-none"
+               title="复制邮箱：9830131@qq.com">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </button>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <a href="/about.html" class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-300 hover:text-cyber-mint transition-colors duration-300 flex items-center justify-center p-2" title="了解更多关于作者的信息">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+      
+    </div>
+  </div>
+
+  
+  
+  <div x-show="showWechat" x-cloak
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 -translate-y-3"
+       x-transition:enter-end="opacity-100 translate-y-0"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 translate-y-0"
+       x-transition:leave-end="opacity-0 -translate-y-3"
+       class="mb-8">
+    <div class="relative max-w-md mx-auto bg-white p-6 flex flex-col items-center justify-center text-center border border-sage-line/10">
+      <h3 class="text-sm font-bold text-moss-ink mb-3">扫一扫，添加作者微信</h3>
+      <div class="bg-gray-50 p-3">
+        <img src="&#x2F;static&#x2F;images&#x2F;qrcode.png" alt="微信二维码" class="w-48 h-48 object-contain">
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+                </div>
+
+                <!-- 三按钮：评论、点赞、收藏 -->
+                
+
+  
+
+<div class="flex items-center justify-center gap-6 py-6 my-8 select-none">
+  
+  <button onclick="document.getElementById('rp-comments') && document.getElementById('rp-comments').scrollIntoView({behavior:'smooth'})" class="flex items-center gap-2 px-6 py-2.5 text-sm font-medium text-mist-green hover:text-moss-ink bg-flat-white border border-sage-line/20 hover:border-cyber-mint transition-colors cursor-pointer">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+    <span>评论</span>
+    <span id="rp-comment-count" class="text-xs text-gray-400">0</span>
+  </button>
+  
+
+  <button id="rp-like-btn" onclick="rpToggleLike()" data-liked="false" class="flex items-center gap-2 px-6 py-2.5 text-sm font-medium text-mist-green border border-sage-line/20 bg-flat-white hover:text-blue-600 hover:border-blue-300 transition-colors cursor-pointer">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+    <span>点赞</span>
+    <span id="rp-like-count" class="text-xs text-gray-400">0</span>
+  </button>
+  <button onclick="rpBookmark()" class="flex items-center gap-2 px-6 py-2.5 text-sm font-medium text-mist-green border border-sage-line/20 bg-flat-white hover:text-amber-500 hover:border-amber-300 transition-colors cursor-pointer">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.252.587 1.813l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.97-2.883a1 1 0 00-1.17 0l-3.97 2.883c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118l-3.97-2.883c-.773-.56-.375-1.813.587-1.813h4.906a1 1 0 00.95-.69l1.519-4.674z"/></svg>
+    <span>收藏</span>
+  </button>
+</div>
+
+
+                <!-- 评论区域（由插件注入） -->
+                
+                <section id="rp-comments" style="margin-top: 3rem;">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+        <h4 style="font-size: 1.125rem; font-weight: 600; color: #111827;">评论</h4>
+    </div>
+
+    <!-- 评论输入区 -->
+    <div id="rp-comment-form" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+        <!-- 登录用户信息 (登录后显示) -->
+        <div id="rp-user-info"
+            style="display: none; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 14px; color: #374151;">
+            <img id="rp-user-avatar" src="" alt="" style="width: 28px; height: 28px; border-radius: 50%;">
+            <span id="rp-user-name" style="font-weight: 600;"></span>
+            <a href="#" id="rp-logout-btn"
+                style="margin-left: auto; font-size: 12px; color: #9ca3af; text-decoration: underline;"
+                onclick="rpLogout(); return false;">退出</a>
+        </div>
+        
+        <!-- 未登录时提示信息 (未登录时显示) -->
+        <div id="rp-login-tip" style="display: block; margin-bottom: 12px; font-size: 14px; color: #6b7280;">
+            登录 GitHub 后即可发表评论
+        </div>
+
+        <!-- 输入框 -->
+        <textarea id="rp-comment-input"
+            style="width: 100%; min-height: 100px; padding: 12px; border: 1px solid #d1d5db; font-size: 14px; line-height: 1.6; resize: vertical; font-family: inherit; box-sizing: border-box;"
+            placeholder="请先登录 GitHub 后发表评论..." disabled></textarea>
+            
+        <div style="display: flex; justify-content: flex-end; margin-top: 8px; gap: 10px; align-items: center;">
+            <div id="rp-submit-status" style="font-size: 13px; color: #6b7280;"></div>
+            
+            <!-- 登录按钮 (未登录时显示) -->
+            <a id="rp-login-btn" href="#"
+                style="display: inline-flex; align-items: center; padding: 8px 16px; font-size: 0.875rem; font-weight: 500; color: #fff; background-color: #1f2937; text-decoration: none; transition: background-color 0.2s;"
+                onmouseover="this.style.backgroundColor='#374151'" onmouseout="this.style.backgroundColor='#1f2937'">
+                <svg style="width: 16px; height: 16px; margin-right: 6px;" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+                使用 GitHub 登录
+            </a>
+
+            <!-- 发表评论按钮 (登录后显示) -->
+            <button id="rp-submit-btn" onclick="rpSubmitComment()"
+                style="display: none; padding: 8px 20px; font-size: 0.875rem; font-weight: 500; color: #fff; background-color: #2563eb; border: none; cursor: pointer; transition: background-color 0.2s;"
+                onmouseover="this.style.backgroundColor='#1d4ed8'" onmouseout="this.style.backgroundColor='#2563eb'">
+                发表评论
+            </button>
+        </div>
+    </div>
+
+    <!-- 评论列表 -->
+    <div id="rp-comments-list"></div>
+    <div id="rp-comments-status" style="font-size: 0.875rem; color: #6b7280; padding: 1rem 0; text-align: center;">
+        加载评论中...</div>
+</section>
+
+<style>
+    .rp-comment {
+        border-bottom: 1px solid #e5e7eb;
+        padding: 16px 0;
+    }
+
+    .rp-comment:last-child {
+        border-bottom: none;
+    }
+
+    .rp-comment-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+
+    .rp-comment-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
+
+    .rp-comment-author {
+        font-weight: 600;
+        color: #111827;
+        font-size: 14px;
+    }
+
+    .rp-comment-date {
+        color: #9ca3af;
+        font-size: 12px;
+    }
+
+    .rp-comment-body {
+        color: #374151;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .rp-comment-body p {
+        margin: 6px 0;
+    }
+
+    .rp-comment-body code {
+        background: #f3f4f6;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-size: 13px;
+    }
+
+    .rp-comment-body pre {
+        background: #1f2937;
+        color: #e5e7eb;
+        padding: 12px;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-size: 13px;
+    }
+
+    .rp-comment-body pre code {
+        background: none;
+        padding: 0;
+        color: inherit;
+    }
+
+    .rp-comment-body blockquote {
+        border-left: 3px solid #d1d5db;
+        padding-left: 12px;
+        color: #6b7280;
+        margin: 8px 0;
+    }
+
+    .rp-comment-body img {
+        max-width: 100%;
+        border-radius: 6px;
+        margin: 8px 0;
+    }
+
+    .rp-comment-body a {
+        color: #2563eb;
+        text-decoration: underline;
+    }
+
+    #rp-like-btn.liked {
+        border-color: #2563eb;
+        background: #eff6ff;
+        color: #2563eb;
+    }
+
+    #rp-like-btn.liked svg {
+        fill: #2563eb;
+        stroke: #2563eb;
+    }
+
+    .rp-no-comments {
+        text-align: center;
+        color: #9ca3af;
+        padding: 24px 0;
+    }
+
+    .rp-comment-count {
+        font-size: 14px;
+        color: #6b7280;
+        margin-bottom: 12px;
+    }
+</style>
+
+<script>
+    // ---- 全局状态 ----
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+    var RP_CLIENT_ID = '0cdfd84658051b0f7de6';
+    var rpCurrentIssueNumber = null;
+    var rpLocalComments = [];
+
+    // ---- 工具函数 ----
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // ---- Markdown 转 HTML (Simple) ----
+    function rpMd2html(text) {
+        if (!text) return '';
+        var h = text
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            .replace(/```([\s\S]*?)```/g, function (m, c) { return '<pre><code>' + c.trim() + '</code></pre>'; })
+            .replace(/`([^`]+)`/g, '<code>$1</code>')
+            .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img alt="$1" src="$2">')
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.+?)\*/g, '<em>$1</em>')
+            .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+            .replace(/\n/g, '<br>');
+        h = h.replace(/<\/blockquote><br><blockquote>/g, '<br>');
+        return h;
+    }
+
+    function rpFormatDate(dateStr) {
+        var d = new Date(dateStr);
+        return d.getFullYear() + '-' +
+            String(d.getMonth() + 1).padStart(2, '0') + '-' +
+            String(d.getDate()).padStart(2, '0') + ' ' +
+            String(d.getHours()).padStart(2, '0') + ':' +
+            String(d.getMinutes()).padStart(2, '0');
+    }
+
+    // ---- 渲染评论列表 ----
+    function rpRenderComments(comments) {
+        rpLocalComments = comments || [];
+        var container = document.getElementById('rp-comments-list');
+        if (rpLocalComments.length === 0) {
+            container.innerHTML = '<div class="rp-no-comments">暂无评论，成为第一个评论者吧！</div>';
+        } else {
+            // 倒序：最新评论在最上面
+            var sortedComments = rpLocalComments.slice().reverse();
+            container.innerHTML = '<div class="rp-comment-count">共 ' + sortedComments.length + ' 条评论</div>' +
+                sortedComments.map(function (c) {
+                    return '<div class="rp-comment">' +
+                        '<div class="rp-comment-header">' +
+                        '<img class="rp-comment-avatar" src="' + c.user.avatar_url + '" alt="' + c.user.login + '">' +
+                        '<span class="rp-comment-author">' + c.user.login + '</span>' +
+                        '<span class="rp-comment-date">' + rpFormatDate(c.created_at) + '</span>' +
+                        '</div>' +
+                        '<div class="rp-comment-body">' + rpMd2html(c.body) + '</div>' +
+                        '</div>';
+                }).join('');
+        }
+    }
+
+    // ---- 加载评论 ----
+    function rpLoadComments() {
+        var status = document.getElementById('rp-comments-status');
+        var pathname = window.location.pathname;
+
+        var searchUrl = 'https://api.github.com/search/issues?q=' +
+            encodeURIComponent(pathname + ' repo:' + RP_REPO + ' is:issue') +
+            '&sort=created&order=desc&per_page=1';
+
+        fetch(searchUrl, {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+            .then(function (r) {
+                if (r.status === 403) throw new Error('rate_limit');
+                return r.json();
+            })
+            .then(function (data) {
+                if (!data.items || data.items.length === 0) {
+                    rpRenderComments([]);
+                    rpCurrentIssueNumber = null;
+                    rpUpdateLikeButton(0);
+                    status.style.display = 'none';
+                    return;
+                }
+                var issue = data.items[0];
+                rpCurrentIssueNumber = issue.number;
+
+                var likeCount = (issue.reactions && issue.reactions['+1']) || 0;
+                rpUpdateLikeButton(likeCount);
+                rpUpdateCommentButton(issue.comments || 0);
+                rpCheckLikedState();
+
+                return fetch(issue.comments_url + '?per_page=100', {
+                    headers: { 'Accept': 'application/vnd.github.v3+json' }
+                })
+                    .then(function (r) { return r.json(); })
+                    .then(function (comments) {
+                        rpRenderComments(comments);
+                        status.style.display = 'none';
+                    });
+            })
+            .catch(function (err) {
+                if (err.message === 'rate_limit') {
+                    status.textContent = 'GitHub API 请求次数超限，请稍后再试';
+                } else {
+                    console.error(err);
+                    status.textContent = '评论加载失败';
+                }
+            });
+    }
+
+    // ---- 点赞功能 ----
+    function rpUpdateLikeButton(count) {
+        var el = document.getElementById('rp-like-count');
+        if (el) el.textContent = count || 0;
+    }
+
+    function rpUpdateCommentButton(count) {
+        var el = document.getElementById('rp-comment-count');
+        if (el) el.textContent = count || 0;
+    }
+
+    function rpCheckLikedState() {
+        var liked = localStorage.getItem('rp_liked_' + rpCurrentIssueNumber) === 'true';
+        var btn = document.getElementById('rp-like-btn');
+        if (btn) {
+            if (liked) {
+                btn.classList.add('liked');
+                btn.dataset.liked = 'true';
+            } else {
+                btn.classList.remove('liked');
+                btn.dataset.liked = 'false';
+            }
+        }
+    }
+
+    function rpDoLike(issueNumber) {
+        var btn = document.getElementById('rp-like-btn');
+        fetch('/api/comments/like', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ issue_number: issueNumber })
+        })
+            .then(function (r) {
+                var ct = r.headers.get('content-type') || '';
+                if (!r.ok) {
+                    if (ct.indexOf('application/json') !== -1) {
+                        return r.json().then(function (d) { throw new Error(d.message || 'HTTP ' + r.status); });
+                    }
+                    throw new Error('服务器错误 (HTTP ' + r.status + ')');
+                }
+                if (ct.indexOf('application/json') !== -1) return r.json();
+                throw new Error('服务器返回了非 JSON 响应');
+            })
+            .then(function (data) {
+                if (data.success) {
+                    if (data.issue_number) rpCurrentIssueNumber = data.issue_number;
+                    localStorage.setItem('rp_liked_' + issueNumber, 'true');
+                    if (btn) {
+                        btn.classList.add('liked');
+                        btn.dataset.liked = 'true';
+                    }
+                    var countEl = document.getElementById('rp-like-count');
+                    if (countEl) countEl.textContent = parseInt(countEl.textContent) + 1;
+                    if (window.showToast) window.showToast('已点赞 👍');
+                } else {
+                    throw new Error(data.message || '点赞失败');
+                }
+            })
+            .catch(function (err) {
+                if (window.showToast) window.showToast(err.message);
+            });
+    }
+
+    function rpToggleLike() {
+        var token = getCookie('gh_token');
+        if (!token) {
+            if (window.showToast) {
+                window.showToast('请先登录 GitHub 后点赞');
+            }
+            var loginBtn = document.getElementById('rp-login-btn');
+            if (loginBtn) loginBtn.click();
+            return;
+        }
+        var btn = document.getElementById('rp-like-btn');
+        var alreadyLiked = btn && btn.dataset.liked === 'true';
+
+        if (alreadyLiked) {
+            if (window.showToast) window.showToast('你已赞过');
+            return;
+        }
+
+        var body = { issue_number: rpCurrentIssueNumber || 0 };
+        if (!rpCurrentIssueNumber) {
+            var title = (document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : document.title);
+            body.title = title;
+            body.pathname = window.location.pathname;
+        }
+
+        fetch('/api/comments/like', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        })
+            .then(function (r) {
+                var ct = r.headers.get('content-type') || '';
+                if (!r.ok) {
+                    if (ct.indexOf('application/json') !== -1) {
+                        return r.json().then(function (d) { throw new Error(d.message || 'HTTP ' + r.status); });
+                    }
+                    throw new Error('服务器错误 (HTTP ' + r.status + ')');
+                }
+                if (ct.indexOf('application/json') !== -1) return r.json();
+                throw new Error('服务器返回了非 JSON 响应');
+            })
+            .then(function (data) {
+                if (data.success) {
+                    if (data.issue_number) rpCurrentIssueNumber = data.issue_number;
+                    localStorage.setItem('rp_liked_' + rpCurrentIssueNumber, 'true');
+                    if (btn) {
+                        btn.classList.add('liked');
+                        btn.dataset.liked = 'true';
+                    }
+                    var countEl = document.getElementById('rp-like-count');
+                    if (countEl) countEl.textContent = parseInt(countEl.textContent) + 1;
+                    if (window.showToast) window.showToast('已点赞 👍');
+                } else {
+                    throw new Error(data.message || '点赞失败');
+                }
+            })
+            .catch(function (err) {
+                if (window.showToast) window.showToast(err.message);
+            });
+    }
+
+    // ---- 检查登录状态 (Static Method) ----
+    function rpCheckLogin() {
+        if (!RP_CLIENT_ID) return;
+
+        // Check for token in URL (from Worker redirect)
+        var urlParams = new URLSearchParams(window.location.search);
+        var tokenFromUrl = urlParams.get('gh_token') || urlParams.get('access_token');
+        if (tokenFromUrl) {
+            document.cookie = "gh_token=" + tokenFromUrl + "; path=/; max-age=2592000"; // 30 days
+            // Clean URL
+            var newUrl = window.location.pathname + window.location.hash;
+            window.history.replaceState({}, document.title, newUrl);
+        }
+
+        var token = getCookie('gh_token');
+        if (token) {
+            // Verify token via server proxy
+            fetch('/api/comments/user')
+                .then(r => {
+                    if (r.ok) return r.json();
+                    throw new Error('Invalid token');
+                })
+                .then(data => {
+                    document.getElementById('rp-user-info').style.display = 'flex';
+                    document.getElementById('rp-login-tip').style.display = 'none';
+                    
+                    var commentInput = document.getElementById('rp-comment-input');
+                    commentInput.disabled = false;
+                    commentInput.placeholder = '写下你的评论（支持 Markdown）...';
+                    
+                    document.getElementById('rp-login-btn').style.display = 'none';
+                    document.getElementById('rp-submit-btn').style.display = 'inline-block';
+                    
+                    document.getElementById('rp-user-avatar').src = data.avatar_url;
+                    document.getElementById('rp-user-name').textContent = data.name || data.login;
+                })
+                .catch(e => {
+                    document.cookie = 'gh_token=; path=/; max-age=0'; // Clear invalid token
+                    rpShowLoginButton();
+                });
+        } else {
+            rpShowLoginButton();
+        }
+    }
+
+    function rpShowLoginButton() {
+        document.getElementById('rp-user-info').style.display = 'none';
+        document.getElementById('rp-login-tip').style.display = 'block';
+        
+        var commentInput = document.getElementById('rp-comment-input');
+        commentInput.disabled = true;
+        commentInput.placeholder = '请先登录 GitHub 后发表评论...';
+        
+        document.getElementById('rp-login-btn').style.display = 'inline-flex';
+        document.getElementById('rp-submit-btn').style.display = 'none';
+
+        var loginUrl = 'https://github.com/login/oauth/authorize?client_id=' + RP_CLIENT_ID +
+            '&state=' + encodeURIComponent(window.location.href) + // Send full URL so Worker can redirect back to localhost
+            '&scope=public_repo';
+
+        document.getElementById('rp-login-btn').href = loginUrl;
+    }
+
+    // ---- 提交评论 (Static Method) ----
+    function rpSubmitComment() {
+        var input = document.getElementById('rp-comment-input');
+        var submitBtn = document.getElementById('rp-submit-btn');
+        var submitStatus = document.getElementById('rp-submit-status');
+        var body = input.value.trim();
+        var token = getCookie('gh_token');
+
+        if (!body) {
+            submitStatus.textContent = '请输入评论内容';
+            submitStatus.style.color = '#ef4444';
+            return;
+        }
+
+        if (!token) {
+            rpCheckLogin();
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.6';
+        submitStatus.textContent = '发送中...';
+        submitStatus.style.color = '#6b7280';
+
+        // Helper to post comment
+        function doPostLink(issueNumber) {
+            fetch('/api/comments/post', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ issue_number: issueNumber, body: body })
+            })
+                .then(function (r) {
+                    var ct = r.headers.get('content-type') || '';
+                    if (!r.ok) {
+                        if (ct.indexOf('application/json') !== -1) {
+                            return r.json().then(function (d) { throw new Error(d.message || 'HTTP ' + r.status); });
+                        }
+                        throw new Error('服务器错误 (HTTP ' + r.status + ')');
+                    }
+                    if (ct.indexOf('application/json') !== -1) return r.json();
+                    throw new Error('服务器返回了非 JSON 响应');
+                })
+                .then(function (data) {
+                    if (data.success) {
+                        input.value = '';
+                        submitStatus.textContent = '✓ 评论已发表';
+                        submitStatus.style.color = '#16a34a';
+                        setTimeout(function () {
+                            rpLoadCommentsByIssue(issueNumber);
+                        }, 1000);
+                    } else {
+                        throw new Error(data.message || '发送失败');
+                    }
+                })
+                .catch(function (err) {
+                    submitStatus.textContent = err.message;
+                    submitStatus.style.color = '#ef4444';
+                })
+                .finally(function () {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                });
+        }
+
+        // If issue doesn't exist, create it first
+        if (!rpCurrentIssueNumber) {
+            var title = (document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : document.title);
+            fetch('/api/comments/post', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title: title, pathname: window.location.pathname, body: body })
+            })
+                .then(function (r) {
+                    var ct = r.headers.get('content-type') || '';
+                    if (!r.ok) {
+                        if (ct.indexOf('application/json') !== -1) {
+                            return r.json().then(function (d) { throw new Error(d.message || 'HTTP ' + r.status); });
+                        }
+                        throw new Error('服务器错误 (HTTP ' + r.status + ')');
+                    }
+                    if (ct.indexOf('application/json') !== -1) return r.json();
+                    throw new Error('服务器返回了非 JSON 响应');
+                })
+                .then(function (data) {
+                    if (data.success && data.issue_number) {
+                        rpCurrentIssueNumber = data.issue_number;
+                        input.value = '';
+                        submitStatus.textContent = '✓ 评论已发表';
+                        submitStatus.style.color = '#16a34a';
+                        setTimeout(function () {
+                            rpLoadCommentsByIssue(rpCurrentIssueNumber);
+                        }, 1000);
+                    } else {
+                        throw new Error(data.message || '发送失败');
+                    }
+                })
+                .catch(function (err) {
+                    submitStatus.textContent = err.message;
+                    submitStatus.style.color = '#ef4444';
+                    submitBtn.disabled = false;
+                });
+        } else {
+            doPostLink(rpCurrentIssueNumber);
+        }
+    }
+
+    // ---- 通过 Issue 编号直接加载评论 ----
+    function rpLoadCommentsByIssue(issueNumber) {
+        var url = 'https://api.github.com/repos/' + RP_REPO + '/issues/' + issueNumber + '/comments?per_page=100';
+        fetch(url, {
+            headers: { 'Accept': 'application/vnd.github.v3+json' }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (comments) {
+                rpRenderComments(comments);
+                rpUpdateCommentButton(comments.length);
+            })
+            .catch(function () {
+                rpLoadComments();
+            });
+    }
+
+    // ---- 退出登录 ----
+    function rpLogout() {
+        document.cookie = 'gh_token=; path=/; max-age=0';
+        window.location.reload();
+    }
+
+    // ---- 初始化 ----
+    rpLoadComments();
+    rpCheckLogin();
+</script>
+                
+
+                <!-- 返回顶部 -->
+            </article>
+            
+        </div>
+
+        
+        <!-- 目录组件 -->
+<div class="toc-container fixed right-4 top-20 z-40 hidden xl:block" 
+     x-data="{ 
+         tocOpen: true, 
+         activeId: '',
+         headings: [],
+         init() {
+             this.generateToc();
+             this.observeHeadings();
+         },
+         generateToc() {
+             const content = document.querySelector('.prose, .card-body');
+             if (!content) return;
+             
+             const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+             this.headings = Array.from(headings).map((heading, index) => {
+                 const id = heading.id || `heading-${index}`;
+                 heading.id = id;
+                 return {
+                     id: id,
+                     text: heading.textContent.trim(),
+                     level: parseInt(heading.tagName.charAt(1)),
+                     element: heading
+                 };
+             });
+         },
+         observeHeadings() {
+             if (this.headings.length === 0) return;
+             
+             const observer = new IntersectionObserver((entries) => {
+                 entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                         this.activeId = entry.target.id;
+                     }
+                 });
+             }, {
+                 rootMargin: '-20% 0px -80% 0px'
+             });
+             
+             this.headings.forEach(heading => {
+                 observer.observe(heading.element);
+             });
+         },
+         scrollToHeading(id) {
+             const element = document.getElementById(id);
+             if (element) {
+                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+             }
+         }
+     }"
+     x-init="init()">
+    
+    <!-- 目录切换按钮 -->
+    <button @click="tocOpen = !tocOpen" class="mb-2 p-2 bg-white hover: transition-all duration-200"
+            title="目录">
+        <svg class="w-5 h-5 text-mist-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+    
+    <!-- 目录内容 -->
+    <div x-show="tocOpen" 
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 transform scale-95"
+         x-transition:enter-end="opacity-100 transform scale-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 transform scale-100"
+         x-transition:leave-end="opacity-0 transform scale-95" class="bg-white p-4 max-w-xs w-64 max-h-96 overflow-y-auto">
+        
+        <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-moss-ink">目录</h3>
+            <button @click="tocOpen = false" class="text-gray-400 hover:text-mist-green">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="space-y-1">
+            <template x-for="heading in headings" :key="heading.id">
+                <a @click.prevent="scrollToHeading(heading.id)" 
+                   :class="{
+                       'text-sage-line bg-primary-50 border-l-2 border-primary-600': activeId === heading.id,
+                       'text-mist-green hover:text-moss-ink hover:bg-air-bg': activeId !== heading.id,
+                       'pl-2': heading.level === 1,
+                       'pl-4': heading.level === 2,
+                       'pl-6': heading.level === 3,
+                       'pl-8': heading.level === 4,
+                       'pl-10': heading.level === 5,
+                       'pl-12': heading.level === 6
+                   }" class="block py-1 px-2 text-sm cursor-pointer transition-colors duration-150"
+                   x-text="heading.text">
+                </a>
+            </template>
+        </nav>
+        
+        <div x-show="headings.length === 0" class="text-sm text-mist-green text-center py-4">
+            暂无目录
+        </div>
+    </div>
+</div>
+
+<style>
+/* 移动端隐藏目录 */
+@media (max-width: 1279px) {
+    .toc-container {
+        display: none !important;
+    }
+}
+
+/* 目录滚动条样式 */
+.toc-container .max-h-96::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.toc-container .max-h-96::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+</style>
+
+        
+    </div>
+</div>
+
+
+
+<script>
+    function shareToTwitter() {
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent(document.title);
+        window.open(`https://x.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+    }
+</script>
+
+
+        </main>
+    </div>
+
+    <!-- 广告位1：底部广告（版权区上方） -->
+    
+
+    
+    <!-- 返回顶部 -->
+    <div class="text-center mb-8">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="btn-secondary inline-flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            返回顶部
+        </button>
+    </div>
+    
+
+    <!-- 页脚 -->
+    <footer class="bg-moss-ink mt-16 py-8 text-xs text-white/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-left space-y-2">
+                <p>
+                    &copy; 2002-2026
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;yishulun.com" target="_blank" rel="noopener" class="text-white/60 hover:text-cyber-mint transition-colors">金石碼农</a>
+                    
+                    
+                </p>
+                
+                <p>
+                    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" class="text-white/60 hover:text-cyber-mint transition-colors">
+                        京ICP备14007000号-8
+                    </a>
+                </p>
+                
+                <p>
+                    由 <a href="https://github.com/rixingyike/rustpress" target="_blank" rel="noopener" class="text-white/60 hover:text-cyber-mint hover:underline transition-colors">RustPress</a> 提供支持
+                    &nbsp;·&nbsp;
+                    <a href="/rss.xml" class="text-white/60 hover:text-cyber-mint transition-colors">RSS</a>
+                    &nbsp;·&nbsp;
+                    <a href="/sitemap.xml" class="text-white/60 hover:text-cyber-mint transition-colors">Sitemap</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 搜索结果容器 -->
+    <div class="fixed inset-x-0 top-16 z-40 hidden" id="search-results">
+        <div class="bg-flat-white border border-sage-line/20 mx-4 mt-2 max-h-96 overflow-y-auto">
+            <!-- 搜索结果将在这里显示 -->
+        </div>
+    </div>
+
+
+
+
+
+    <!-- 搜索下拉面板：快捷导航 + 搜索结果 -->
+    <script>
+    var _searchData = [];
+    async function _loadSearchIndex() {
+        try {
+            var res = await fetch('/search.json', { cache: 'no-store' });
+            if (!res.ok) return;
+            var data = await res.json();
+            var items = Array.isArray(data) ? data : (data.items || []);
+            _searchData = items.map(function(item) {
+                return {
+                    title: item.title || item.slug || '',
+                    content: item.content || item.summary || '',
+                    url: item.url || '',
+                    date: item.date || item.date_ymd || ''
+                };
+            });
+        } catch (e) {
+            console.error('加载搜索索引失败:', e);
+        }
+    }
+    _loadSearchIndex();
+
+    $(document).ready(function() {
+        var $input = $('#nav-search-input');
+        var $dropdown = $('#search-dropdown');
+        var $shortcuts = $('#search-shortcuts');
+        var $suggestions = $('#search-suggestions');
+
+        function renderDropdown(query) {
+            if (!query) {
+                $dropdown.addClass('hidden');
+                return;
+            }
+
+            var q = query.toLowerCase();
+
+            // Part 1: 导航快捷链接
+            var shortcutsHtml = '';
+            var sData = getShortcuts(query);
+            if (sData.length > 0) {
+                shortcutsHtml = '<div class="px-3 py-1.5 text-xs text-mist-green font-semibold">快速导航</div>';
+                sData.forEach(function(s) {
+                    shortcutsHtml += '<a href="' + s.url + '" class="flex items-center px-4 py-2 text-sm hover:bg-air-bg transition-colors text-moss-ink">' + s.label + '</a>';
+                });
+            }
+
+            // Part 2: 文章搜索结果
+            var resultsHtml = '';
+            if (_searchData.length > 0) {
+                var results = _searchData.filter(function(p) {
+                    var searchText = (p.title + ' ' + p.content).toLowerCase();
+                    return searchText.includes(q);
+                });
+                if (results.length > 0) {
+                    var sectionLabel = sData.length > 0 ? '文章' : '搜索结果';
+                    resultsHtml = '<div class="px-3 py-1.5 text-xs text-mist-green font-semibold">' + sectionLabel + '</div>';
+                    results.slice(0, 5).forEach(function(r) {
+                        resultsHtml += '<a href="' + r.url + '" class="flex items-center px-4 py-2 text-sm hover:bg-air-bg transition-colors text-mist-green">' +
+                            '<svg class="w-3.5 h-3.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>' +
+                            _highlight(r.title, q) + '</a>';
+                    });
+                }
+            }
+
+            if (shortcutsHtml || resultsHtml) {
+                if (shortcutsHtml && resultsHtml) {
+                    $shortcuts.html(shortcutsHtml).removeClass('hidden');
+                    $suggestions.html(resultsHtml).removeClass('hidden');
+                } else if (shortcutsHtml) {
+                    $shortcuts.html(shortcutsHtml).removeClass('hidden');
+                    $suggestions.addClass('hidden');
+                } else {
+                    $shortcuts.addClass('hidden');
+                    $suggestions.html(resultsHtml).removeClass('hidden');
+                }
+                $dropdown.removeClass('hidden');
+            } else {
+                $dropdown.addClass('hidden');
+            }
+        }
+
+        function _highlight(text, query) {
+            if (!query || !text) return text || '';
+            var safe = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            var re = new RegExp('(' + safe + ')', 'gi');
+            return text.replace(re, '<mark class="bg-yellow-200 px-0.5">$1</mark>');
+        }
+
+        $input.on('input', function() {
+            renderDropdown($(this).val().trim());
+        });
+
+        var _selectedIdx = -1;
+
+        function _selectItem(idx) {
+            var items = $dropdown.find('a');
+            items.removeClass('bg-air-bg');
+            if (idx >= 0 && idx < items.length) {
+                items.eq(idx).addClass('bg-air-bg');
+                _selectedIdx = idx;
+            } else {
+                _selectedIdx = -1;
+            }
+        }
+
+        $input.on('keydown', function(e) {
+            if (e.key === 'Escape') {
+                $dropdown.addClass('hidden');
+                $input.blur();
+                return;
+            }
+            if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                var items = $dropdown.find('a');
+                if (items.length === 0) return;
+                if (e.key === 'ArrowDown') {
+                    _selectItem(_selectedIdx < items.length - 1 ? _selectedIdx + 1 : 0);
+                } else {
+                    _selectItem(_selectedIdx > 0 ? _selectedIdx - 1 : items.length - 1);
+                }
+                return;
+            }
+            if (e.key === 'Enter') {
+                if (_selectedIdx >= 0) {
+                    var items = $dropdown.find('a');
+                    var $target = items.eq(_selectedIdx);
+                    if ($target.length && $target.attr('href')) {
+                        window.location.href = $target.attr('href');
+                        e.preventDefault();
+                    }
+                }
+                return;
+            }
+            // 输入变化时重置选中
+            _selectedIdx = -1;
+        });
+
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('#search-widget').length) {
+                $dropdown.addClass('hidden');
+            }
+        });
+    });
+
+    function getShortcuts(query) {
+        if (!query || !query.trim()) return [];
+        var q = query.trim().toLowerCase();
+        var map = {
+            '作者': '/about.html', '关于': '/about.html',
+            '项目': '/projects/',
+            '专栏': '/columns/', '系列': '/columns/',
+            '博客': '/archives/', '归档': '/archives/', '文章': '/archives/',
+            '友链': '/friends/', '友情链接': '/friends/',
+            '分类': '/categories/', '标签': '/tags/',
+            '作品': '/works/', '出版': '/works/', '图书': '/works/', '书': '/works/', '著作': '/works/',
+            '闲言': '/tweets/', '碎语': '/tweets/',
+            '搜索': '/search.html',
+            '首页': '/',
+            'home': '/', 'about': '/about.html', 'projects': '/projects/',
+            'columns': '/columns/', 'works': '/works/', 'archives': '/archives/',
+            'friends': '/friends/', 'tags': '/tags/',
+            'categories': '/categories/'
+        };
+        var exact = [];
+        var fuzzy = [];
+        for (var key in map) {
+            if (key.indexOf(q) !== -1 || q.indexOf(key) !== -1) {
+                var entry = { label: '→ ' + key + ' (' + map[key] + ')', url: map[key] };
+                if (key === q) {
+                    exact.push(entry);
+                } else {
+                    fuzzy.push(entry);
+                }
+            }
+        }
+        var results = exact.concat(fuzzy);
+        if (results.length > 0) return results.slice(0, 5);
+        var yearMatch = q.match(/^(\d{4})$/);
+        if (yearMatch) {
+            return [{ label: '→ ' + yearMatch[1] + ' 年归档 /archives/' + yearMatch[1] + '.html', url: '/archives/' + yearMatch[1] + '.html' }];
+        }
+        return [];
+    }
+    </script>
+
+    <!-- 瀑布流（无限滚动）加载 -->
+    <script src="/static/js/infinite-scroll.js"></script>
+
+    <script>
+        (function() {
+            function checkRedirect(val) {
+                var q = val.trim();
+                if (q === '分类' || q === '分类=') {
+                    window.location.href = '/categories/';
+                    return true;
+                } else if (q === '标签' || q === '标签=') {
+                    window.location.href = '/tags/';
+                    return true;
+                } else if (q === '归档' || q === '归档=') {
+                    window.location.href = '/archives/';
+                    return true;
+                }
+                return false;
+            }
+            // 移除了 input 事件自动跳转，避免输入时直接跳页，只在 submit 时执行
+            document.addEventListener('submit', function(e) {
+                var input = e.target.querySelector('input[name="q"]') || e.target.querySelector('input[type="text"]');
+                if (input && checkRedirect(input.value)) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
+
+    
+    <!-- Google Analytics 懒加载 -->
+    <script>
+        (function () {
+            var gid = "G-8N64Q25EK9";
+            var loadGA = function () {
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = "https://www.googletagmanager.com/gtag/js?id=" + gid;
+                s.onload = function () {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); } // eslint-disable-line
+                    gtag('js', new Date());
+                    gtag('config', gid);
+                };
+                document.head.appendChild(s);
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadGA);
+            } else {
+                window.addEventListener('load', function () { setTimeout(loadGA, 1500); });
+            }
+        })();
+    </script>
+    
+
+    
+    <!-- Google Ads 懒加载 -->
+    <script>
+        (function () {
+            var clientId = "ca-pub-2139303336591479";
+            var loadAds = function () {
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + clientId;
+                s.crossOrigin = "anonymous";
+                document.head.appendChild(s);
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadAds);
+            } else {
+                window.addEventListener('load', function () { setTimeout(loadAds, 1500); });
+            }
+        })();
+    </script>
+    
+
+    <!-- 收藏按钮：桌面端提示快捷键，移动端调用 navigator.share -->
+    <script>
+    function rpBookmark() {
+        if (navigator.share && window.innerWidth <= 768) {
+            navigator.share({
+                title: document.title,
+                url: window.location.href
+            }).catch(function() {});
+        } else {
+            var isMac = navigator.platform && navigator.platform.indexOf('Mac') !== -1;
+            var hint = isMac ? '\u2318+D' : 'Ctrl+D';
+            if (window.showToast) {
+                window.showToast('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            } else {
+                alert('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            }
+        }
+    }
+    </script>
+
+    <script>
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+
+    function rpBatchLoadListingCounts() {
+        if (!RP_REPO) return;
+        var articles = document.querySelectorAll('article');
+        if (!articles.length) return;
+
+        fetch('https://api.github.com/search/issues?q=' + encodeURIComponent('repo:' + RP_REPO + ' is:issue') + '&per_page=100&sort=created&order=desc', {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.items || !data.items.length) return;
+                var issues = {};
+                data.items.forEach(function (issue) {
+                    var m = issue.body && issue.body.match(/Comment thread for (\S+)/);
+                    if (m) {
+                        var pathKey = decodeURIComponent(m[1]);
+                        if (issues[pathKey] && issues[pathKey].number > issue.number) {
+                            return;
+                        }
+                        issues[pathKey] = issue;
+                        issues[m[1]] = issue;
+                    }
+                });
+
+                articles.forEach(function (article) {
+                    var href = article.getAttribute('data-url');
+                    if (!href) {
+                        var link = article.querySelector('h2 a') || article.querySelector('a');
+                        href = link ? link.getAttribute('href') : null;
+                    }
+                    if (!href) return;
+                    
+                    var decodedHref = decodeURIComponent(href);
+                    var issue = issues[decodedHref] || issues[href];
+                    if (!issue) return;
+
+                    var spans = article.querySelectorAll('button span.font-medium');
+                    if (spans.length >= 2) {
+                        spans[0].textContent = issue.comments || 0;
+                        spans[1].textContent = (issue.reactions && issue.reactions['+1']) || 0;
+                    }
+                });
+            })
+            .catch(function () {});
+    }
+
+    setTimeout(function () {
+        if (RP_REPO) rpBatchLoadListingCounts();
+    }, 500);
+    </script>
+
+    <!-- 全局极简直角 Toast 提示 -->
+    <script>
+        window.showToast = function(message) {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.style.position = 'fixed';
+                container.style.top = '24px';
+                container.style.left = '50%';
+                container.style.transform = 'translateX(-50%)';
+                container.style.zIndex = '99999';
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '12px';
+                container.style.pointerEvents = 'none';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            // Moss Ink 经典极简深色背景，搭配 Cyber Mint 高亮绿字与微弱绿边，完全直角且无阴影
+            toast.style.backgroundColor = '#182422';
+            toast.style.color = '#00f6af';
+            toast.style.border = '1px solid rgba(0, 246, 175, 0.25)';
+            toast.style.padding = '12px 24px';
+            toast.style.fontSize = '14px';
+            toast.style.fontWeight = '500';
+            toast.style.letterSpacing = '0.05em';
+            toast.style.minWidth = '280px';
+            toast.style.textAlign = 'center';
+            toast.style.boxSizing = 'border-box';
+            
+            // 动画初状态与 transition 设定
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-8px)';
+            toast.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+            toast.style.pointerEvents = 'auto';
+            
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            // 下一帧淡入
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            // 3秒后自动淡出销毁
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    toast.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 300);
+            }, 3000);
+        };
+    </script>
+</body>
+
+</html>
