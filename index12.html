@@ -25,17 +25,25 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
     <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <!-- 防止浏览器 bfcache 缓存显示旧页面 -->
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans"
-    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.replace(/\/$/, '').split('/').pop() || 'index.html' }">
     <!-- 顶部导航栏 -->
     <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
+                    <img src="&amp;#x2F;static&amp;#x2F;images&amp;#x2F;logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树仑
                     </a>
@@ -46,7 +54,7 @@
                     <form action="/search.html" method="get" class="relative w-full">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="search-input">
+                            placeholder="搜索内容..." id="search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -119,7 +127,7 @@
                     <form action="/search.html" method="get" class="relative">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="mobile-search-input">
+                            placeholder="搜索内容..." id="mobile-search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -168,7 +176,7 @@
     </nav>
 
     <!-- 主要内容区域 -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:64rem">
         <main class="min-h-screen py-8">
             
 <!-- Hero 组件 -->
@@ -236,25 +244,26 @@
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/posts/"
                         class="hover:text-primary-600">posts</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2022/"
-                        class="hover:text-primary-600">2022</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2023/"
+                        class="hover:text-primary-600">2023</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="posts&#x2F;2022/10032.html"
+                        <a href="posts&#x2F;2023/06.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            对中小团队研发管理的一点想法
+                            Bun 介绍：bun 到底会吃掉多少内存？为何一个不大的博客程序就能吃掉700+MB内存?（二）
                         </a>
                         
                     </h2>
@@ -266,17 +275,199 @@
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2022-10-03
+                            2023-09-24
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        对中小团队研发管理的一点想法
-看一下淘宝架构体系的演进路线：1.0 PHP，2.0 单体 Java，3.0 分布式 Java，4.0 异地多活。大淘宝一开始的架构也不是光鲜与靓丽的，所以对于初创团队，开始只有几条破枪，技术架构也是修修补补，这没有什么，这都是正常的。
+                        Bun 介绍：bun 到底会吃掉多少内存？为何一个不大的博客程序就能吃掉700+MB内存?（二）
+接着上一篇关于包管理工具演进的介绍，下面开始介绍 Bun 相比于传统技术栈框架及工具，具体有哪些优势。
+初始化
+bun 的初始化简单直接，使用下列指令会直接将当前目录初始化为一个 bun 项目工程：
+bun init -y
 
-先说运维方面。当业务增长到一定程度，服务器增长到一定程度，专业的运维团队必然出现，运维与研发的矛盾也必然会凸显出来。像阿里这样的企…
+参数-y 代表静默，不需要提问，所有初始化产生的副任用产品都在当前目录下，所…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/bun/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            bun
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2023/"
+                        class="hover:text-primary-600">2023</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2023/07.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            bun 介绍三：dotenv 与 nodemon 都不再需要了
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2023-09-24
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        bun 介绍三：dotenv 与 nodemon 都不再需要了
+上一篇主要介绍了 bun 的启动模式及如何使用 jsx 语法。我在上一篇的朋友圈评论区说过，bun 与 Node.js 之争，最终可能就是内存与 CPU 之争；bun 能否推广起来，就看单用户成本中的 CPU 成本与内存成本哪个更贵。
+这个是可以测算的，对于使用云主机的团队，很容易就能计算出来哪个单位用户的成本更高。在开始测算的时候，…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/bun/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            bun
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2023/"
+                        class="hover:text-primary-600">2023</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2023/05.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            Bun 1.0 发布了，以后 Node.js 项目谁还用 Webpack 与 pnpm？！是时候祭出大杀器 Bun了（一）
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2023-09-23
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        
+Bun 1.0 发布了，以后 Node.js 项目谁还用 Webpack 与 pnpm？！是时候祭出大杀器 Bun了（一）
+
+bun 绝对值得投入时间学习一下，对程序员来说，它像 Vite 一样，可以十倍百倍提升开发体验和开发效率。
+
+Node.js 在 2009 的发布可谓石破天惊，天才程序员 Ryan Dahl 基于谷歌浏览器的 V8 引擎，一举将 JavaScript 这个客户端语言带到了…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/bun/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            bun
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2023/"
+                        class="hover:text-primary-600">2023</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2023/在手机上向github pages blog 写作.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            在手机上向github pages blog 写作
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2023-08-11
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        在手机上向github pages blog 写作
+发现一个可以用手机写作的 App，叫做 GitJournal。
+试一下贴图功能吧：
+
+
                     </div>
                     
                     
@@ -285,25 +476,26 @@
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/posts/"
                         class="hover:text-primary-600">posts</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2022/"
-                        class="hover:text-primary-600">2022</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2023/"
+                        class="hover:text-primary-600">2023</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="posts&#x2F;2022/1003.html"
+                        <a href="posts&#x2F;2023/Claude为什么片断式输出.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            为什么Google很强？
+                            Claude 为什么片断式输出？
                         </a>
                         
                     </h2>
@@ -315,18 +507,18 @@
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2022-10-03
+                            2023-07-10
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        为什么Google很强？
-资本总是想榨干员工和机器的每一点剩余价值。如果那一天服务器有了意识，一定会揭竿起义。
+                        Claude 为什么片断式输出？
+它一次性可以输出很长的内容，但事实上他每次仅输出一点。为什么会这样？下面是 Claude 自己的回答：
 
-服务器和人一样，基本白天干活晚上休息，有时候白天非高峰时期也是休息的。程序员为了榨干机器的每一点价值，发明了一种叫统一调度的东西，Google 在这方面走在了世界的前列，搞了一个 Borg。
-Google Borg 是一套资源管理系统，可用于统一管理和调度资源，目的是充分利用服务器的计…
+逐步输出可以获得您的实时反馈。创作是一个迭代的过程，如果我一次性全部输出，可能会出现较大的偏差或错误。分段输出可以让我及时得到您的指导，对下一段的创作有很好的启发和帮助。
+分段输出可以更好地模拟真实创作。现实中的创作也不是一次性完成，往往需要在灵感、梳理和修改…
                     </div>
                     
                     
@@ -335,25 +527,26 @@ Google Borg 是一套资源管理系统，可用于统一管理和调度资源�
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/posts/"
                         class="hover:text-primary-600">posts</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2022/"
-                        class="hover:text-primary-600">2022</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2023/"
+                        class="hover:text-primary-600">2023</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="posts&#x2F;2022/1002.html"
+                        <a href="posts&#x2F;2023/Claude各版本之间的差异是什么.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            为什么技术初创团队和大厂都选择开源？
+                            Claude 各版本之间的差异是什么？
                         </a>
                         
                     </h2>
@@ -365,17 +558,17 @@ Google Borg 是一套资源管理系统，可用于统一管理和调度资源�
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2022-10-02
+                            2023-07-01
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        为什么技术初创团队和大厂都选择开源？
-开源不就是把辛辛苦苦写出来的代码免费分享给所有人吗？你会不会觉得这样做的人是傻子，为什么大厂和初创团队还争相恐后去做这件事情？2022年了，国内程序员如果看不懂这个想象，就不要盲目去创业。
+                        Claude 各版本之间的差异是什么？
+在 Claude 官网上有两个版本：Claude 与 Claude Instant。在 poe 上面有三个版本：Claude-instant、Claude-instant-100k 和 Claude-2-100k，Claude2 自己对这三个版本的差异解答是：
 
-先看大厂的动机。最开始大厂是不选择开源的，当团队走到前沿，触及某个前沿问题时，最先想到的是自研。甚至外界有不错的开源产品都会忽略掉，一定要自己开发，把控制权牢牢把握在自己…
+Claude-instant、Claude-instant-100k 和 Claude-2-10…
                     </div>
                     
                     
@@ -384,25 +577,26 @@ Google Borg 是一套资源管理系统，可用于统一管理和调度资源�
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/posts/"
                         class="hover:text-primary-600">posts</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2022/"
-                        class="hover:text-primary-600">2022</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2023/"
+                        class="hover:text-primary-600">2023</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="posts&#x2F;2022/10012.html"
+                        <a href="posts&#x2F;2023/Github Pages博客如何绑定根域名.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            程序员的三个阶段与产品开发的两种哲学
+                            Github Pages 博客如何绑定根域名？
                         </a>
                         
                     </h2>
@@ -414,23 +608,16 @@ Google Borg 是一套资源管理系统，可用于统一管理和调度资源�
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2022-10-01
+                            2023-06-13
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        程序员的三个阶段与产品开发的两种哲学
-
-很多时候我们纠结，不知道如何选择，只是因为我们忘记了有当下处境这个变量。把处境考虑进去，所有问题都不会纠结。而如果没有处境，也没有产生纠结，这多半已经坏了，一定是我们看问题还不够全面。一个真正的问题，一定是充满矛盾，可以让我们说上一整天的话题。
-
-
-人生的三个境界
-汪国真说人生有三个境界：
-
-第一境界，昨夜西风凋碧树，独上高楼，望尽天涯路；
-第二境界，衣带渐…
+                        Github Pages 博客如何绑定根域名？
+Godaddy 的域名不需要域名备案，这是它方便的地方，但它不充许在根域名上直接添加 CNAME 记录，换句话说，原来在国内域名商下的域名，转移到 Godaddy 后，在 Github Pages 上绑定的根域名不再有效了。
+以我的博客为例说明一下。原来我可以直接将根域名 yishulun.com 绑定到 rixingyike.github.io，w…
                     </div>
                     
                     
@@ -439,25 +626,26 @@ Google Borg 是一套资源管理系统，可用于统一管理和调度资源�
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/posts/"
                         class="hover:text-primary-600">posts</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2022/"
-                        class="hover:text-primary-600">2022</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2023/"
+                        class="hover:text-primary-600">2023</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="posts&#x2F;2022/1001.html"
+                        <a href="posts&#x2F;2023/ChatGPT向Plus用户开放代码解析器功能.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            写博客对个人找工作有什么帮助？
+                            ChatGPT 向 Plus 用户开放了代码解析器（Code interpreter），与其说它是程序员的工具，不如说是为您工作的程序员，真的如此吗？
                         </a>
                         
                     </h2>
@@ -469,170 +657,18 @@ Google Borg 是一套资源管理系统，可用于统一管理和调度资源�
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2022-10-01
+                            2023-06-11
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        写博客对个人找工作有什么帮助？
-今天听阿里P10大佬毕玄讲找工作的经历，发现作为一名非计算机专业的生物系学生，写博客数次给他找工作带来了直接帮助。
-在他想换工作时，被满江红站长推荐给淘宝。三面下来，面试官问他这个问题，不会，问那个也不会，让他做题，也没有做出来。但最终，他还是被录用了。为啥？
+                        ChatGPT 向 Plus 用户开放了代码解析器（Code interpreter），与其说它是程序员的工具，不如说是为您工作的程序员，真的如此吗？
 
-大概有两个原因：
-（一）淘宝当时想做的分布式系统，淘宝人自己也不是很明白，还处于探索中。而毕玄通过撰写 …
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2022/"
-                        class="hover:text-primary-600">2022</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2022/10013.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            阿里P10带多少人？阿里p10是什么级别？
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2022-10-01
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        阿里P10带多少人？阿里p10是什么级别？
-P10 带多少人？
-一般来说，在阿里 P 是技术系，M 是管理系。但 P 也是带人的，例如阿里 P10 毕玄在访谈中透露，他在淘系曾带 600 人。我查了一下，其他等级例如 P9 大概带 50~100 人，P8 带 2~30 人。P7 是技术专家&#x2F;架构师，应该是不带人的。
+有人说 ChatGPT 的名字也很糟糕，与其说它是程序员的工具，不如说是为您工作的程序员。体验之后你会发现，只有你想不到，没有它干不了。但真的是这样吗？它没有缺点吗？
 
-各个技术等级是这样的：
-等级职称
-P5高级工程师校招起点
-P6资深工程师社招起点…
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2022/"
-                        class="hover:text-primary-600">2022</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2022/0930.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            为什么编程里习惯使用 i、j、k 等作为循环变量?
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2022-09-30
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        为什么编程里习惯使用 i、j、k 等作为循环变量?
-i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 的简写，这个有点牵强。早期教材中的示例都是以 i、k、j 作为循环变量，后来这样使用成为了一种习惯。
-
-但这种习惯是如何形成的呢？
-在 1957 年诞生的 Fortran 编程语言中，有一个「I—N 规则」，规定以字母 I，J，K，L，M，N 六个字母开头的变…
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2022/"
-                        class="hover:text-primary-600">2022</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2022/0926.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            为什么程序员对 Python 有这么多仇恨？
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2022-09-26
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        为什么程序员对 Python 有这么多仇恨？
-并不是所有有经验的程序员都讨厌 Python，促使人们产生这种厌恶情绪的原因可能有三个：
-1，Py 不能很好地进行 OO 编程。这是由于 Py 诞生太早而决定的，在 Py 诞生的时候，OO 编程思想还没有成熟，经典的设计模式图书 GoF 还没有出版。关于对 OO 编程的支持，Py 3 中已经有所改进，但因为又要向前做一些兼容，还不可避免地戴了「历史的脚…
+7 号 OpenAI 在官方推特上宣布，将向付费的 ChatGPT Plus…
                     </div>
                     
                     
@@ -788,7 +824,7 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                     <svg class="w-4 h-4 text-gray-600 group-hover:text-green-500" fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
-                            d="M8.691 2.5c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm6.618 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-6.618 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm6.618 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zM3.507 7.813c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm16.986 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-16.986 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm16.986 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406z" />
+                            d="M9.5 4C5.36 4 2 6.69 2 10c0 1.89 1.08 3.56 2.7 4.69l-.7 2.01 2.57-1.43c.71.22 1.46.39 2.25.47l.01.06C10.73 18.77 13.8 20 17.5 20c.68 0 1.34-.06 2-.16l3 1.66-.7-1.99C23.06 18.2 24 16.4 24 14.35 24 10.73 20.75 8 16.5 8c-.25 0-.5 0-.74.02A7.51 7.51 0 0 0 9.5 4zM7 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm4.5 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" />
                     </svg>
                 </a>
                 
@@ -874,7 +910,7 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
 
     <!-- 相关文章 -->
     
-    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
+    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -885,70 +921,70 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2022/10032.html"
+                        <a href="projects/enyan.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            对中小团队研发管理的一点想法
+                            恩言 - 大字有声圣经
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2022-10-03</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2022/1003.html"
+                        <a href="projects/rustpress.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            为什么Google很强？
+                            RustPress - 纯静态博客引擎
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2022-10-03</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2022/1002.html"
+                        <a href="blog&#x2F;2026/2.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            为什么技术初创团队和大厂都选择开源？
+                            手机和相机的区别是什么？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2022-10-02</p>
+                    <p class="text-xs text-gray-500">2026-01-03</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2022/10012.html"
+                        <a href="blog&#x2F;2025/93.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            程序员的三个阶段与产品开发的两种哲学
+                            墨问终端脚本发布独立版 2.1，支持多图片上传
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2022-10-01</p>
+                    <p class="text-xs text-gray-500">2025-12-25</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2022/1001.html"
+                        <a href="blog&#x2F;技术/rust-tag-test.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            写博客对个人找工作有什么帮助？
+                            Rust 标签功能测试
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2022-10-01</p>
+                    <p class="text-xs text-gray-500">2025-11-04</p>
                     
                 </div>
                 
@@ -966,123 +1002,123 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
         <div class="card-body">
             <div class="flex flex-wrap gap-2">
                 
-                <a href="/tags/7x24 AI 员工/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    7x24 AI 员工
-                    <span class="ml-1 text-xs text-gray-500">1</span>
-                </a>
-                
                 <a href="/tags/AI/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
                     AI
-                    <span class="ml-1 text-xs text-gray-500">15</span>
-                </a>
-                
-                <a href="/tags/AI Agent/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent 进化方向/"
+                <a href="/tags/AS3 Expert/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent 进化方向
+                    AS3 Expert
+                    <span class="ml-1 text-xs text-gray-500">6</span>
+                </a>
+                
+                <a href="/tags/Actix-web/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Actix-web
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent提示技巧/"
+                <a href="/tags/Angular/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent提示技巧
+                    Angular
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI IDE/"
+                <a href="/tags/ChatGPT/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE
-                    <span class="ml-1 text-xs text-gray-500">3</span>
-                </a>
-                
-                <a href="/tags/AI IDE生产力/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE生产力
+                    ChatGPT
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 代码失效解决方案/"
+                <a href="/tags/Composition API/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 代码失效解决方案
+                    Composition API
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 办公效率提升/"
+                <a href="/tags/DeFi/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 办公效率提升
+                    DeFi
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 文件管理安全/"
+                <a href="/tags/DevOps/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 文件管理安全
+                    DevOps
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 架构能力/"
+                <a href="/tags/Docker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 架构能力
+                    Docker
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/Flutter/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Flutter
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程协作/"
+                <a href="/tags/Git/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程协作
+                    Git
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程技巧/"
+                <a href="/tags/Go/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程技巧
+                    Go
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/HTTP/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    HTTP
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 自动化服务器/"
+                <a href="/tags/Hooks/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 自动化服务器
+                    Hooks
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI代码生成/"
+                <a href="/tags/IndieHacker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI代码生成
+                    IndieHacker
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手/"
+                <a href="/tags/JavaScript/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手
+                    JavaScript
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手自动化/"
+                <a href="/tags/MySQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手自动化
+                    MySQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI协同编程/"
+                <a href="/tags/Option/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI协同编程
+                    Option
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI学习/"
+                <a href="/tags/PostgreSQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI学习
+                    PostgreSQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI对话/"
+                <a href="/tags/Promise/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI对话
+                    Promise
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
@@ -1104,7 +1140,7 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">148</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">38</span>
                     </a>
                 </div>
                 
@@ -1112,7 +1148,7 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                     <a href="/docs/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">docs</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">25</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">18</span>
                     </a>
                 </div>
                 
@@ -1120,7 +1156,7 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
                     <a href="/posts/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">6</span>
                     </a>
                 </div>
                 
@@ -1303,7 +1339,7 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
     <!-- 广告位1：底部广告（版权区上方） -->
     
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
             <div
                 class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -1340,6 +1376,14 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
     </div>
     
     
+
+    <!-- 返回顶部 -->
+    <div class="text-center mb-8">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center px-4 py-2 text-sm border border-gray-300 hover:bg-gray-50 cursor-pointer">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            返回顶部
+        </button>
+    </div>
 
     <!-- 页脚 -->
     <footer class="bg-white border-t border-gray-200 mt-16">
@@ -1385,6 +1429,35 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
 
     <!-- 搜索功能脚本 -->
     <script src="/static/js/search.js"></script>
+    <script>
+        (function() {
+            function checkRedirect(val) {
+                var q = val.trim();
+                if (q === '分类' || q === '分类=') {
+                    window.location.href = '/categories/';
+                    return true;
+                } else if (q === '标签' || q === '标签=') {
+                    window.location.href = '/tags/';
+                    return true;
+                } else if (q === '归档' || q === '归档=') {
+                    window.location.href = '/archives/';
+                    return true;
+                }
+                return false;
+            }
+            document.addEventListener('input', function(e) {
+                if (e.target && (e.target.id === 'search-input' || e.target.id === 'mobile-search-input' || e.target.id === 'search-query' || e.target.id === 'search-modal-input')) {
+                    checkRedirect(e.target.value);
+                }
+            });
+            document.addEventListener('submit', function(e) {
+                var input = e.target.querySelector('input[name="q"]') || e.target.querySelector('input[type="text"]');
+                if (input && checkRedirect(input.value)) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
 
     
     <!-- Google Analytics 懒加载 -->
@@ -1432,6 +1505,133 @@ i 可能是 integer 的简写，或者是 int 的简写。有人说是 iterator 
         })();
     </script>
     
+
+    <!-- 收藏按钮：桌面端提示快捷键，移动端调用 navigator.share -->
+    <script>
+    function rpBookmark() {
+        if (navigator.share && window.innerWidth <= 768) {
+            navigator.share({
+                title: document.title,
+                url: window.location.href
+            }).catch(function() {});
+        } else {
+            var isMac = navigator.platform && navigator.platform.indexOf('Mac') !== -1;
+            var hint = isMac ? '\u2318+D' : 'Ctrl+D';
+            if (window.showToast) {
+                window.showToast('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            } else {
+                alert('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            }
+        }
+    }
+    </script>
+
+    <script>
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+
+    function rpBatchLoadListingCounts() {
+        if (!RP_REPO) return;
+        var articles = document.querySelectorAll('article');
+        if (!articles.length) return;
+
+        fetch('https://api.github.com/search/issues?q=' + encodeURIComponent('repo:' + RP_REPO + ' is:issue') + '&per_page=100&sort=created&order=desc', {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.items || !data.items.length) return;
+                var issues = {};
+                data.items.forEach(function (issue) {
+                    var m = issue.body && issue.body.match(/Comment thread for (\S+)/);
+                    if (m) {
+                        var pathKey = m[1];
+                        if (issues[pathKey] && issues[pathKey].number > issue.number) {
+                            return;
+                        }
+                        issues[pathKey] = issue;
+                    }
+                });
+
+                articles.forEach(function (article) {
+                    var link = article.querySelector('h2 a') || article.querySelector('div.flex a');
+                    if (!link) return;
+                    var href = link.getAttribute('href');
+                    if (!href) return;
+                    var issue = issues[href];
+                    if (!issue) return;
+
+                    var spans = article.querySelectorAll('button span.font-medium');
+                    if (spans.length >= 2) {
+                        spans[0].textContent = issue.comments || 0;
+                        spans[1].textContent = (issue.reactions && issue.reactions['+1']) || 0;
+                    }
+                });
+            })
+            .catch(function () {});
+    }
+
+    setTimeout(function () {
+        if (RP_REPO) rpBatchLoadListingCounts();
+    }, 500);
+    </script>
+
+    <!-- 全局极简直角 Toast 提示 -->
+    <script>
+        window.showToast = function(message) {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.style.position = 'fixed';
+                container.style.top = '24px';
+                container.style.left = '50%';
+                container.style.transform = 'translateX(-50%)';
+                container.style.zIndex = '99999';
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '12px';
+                container.style.pointerEvents = 'none';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.style.backgroundColor = '#1f2937';
+            toast.style.color = '#ffffff';
+            toast.style.padding = '12px 24px';
+            toast.style.fontSize = '14px';
+            toast.style.fontWeight = '500';
+            toast.style.minWidth = '280px';
+            toast.style.textAlign = 'center';
+            toast.style.boxSizing = 'border-box';
+            
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-8px)';
+            toast.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+            toast.style.pointerEvents = 'auto';
+            
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    toast.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 300);
+            }, 3000);
+        };
+    </script>
 </body>
 
 </html>

@@ -25,17 +25,25 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
     <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <!-- 防止浏览器 bfcache 缓存显示旧页面 -->
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans"
-    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.replace(/\/$/, '').split('/').pop() || 'index.html' }">
     <!-- 顶部导航栏 -->
     <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
+                    <img src="&amp;#x2F;static&amp;#x2F;images&amp;#x2F;logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树仑
                     </a>
@@ -46,7 +54,7 @@
                     <form action="/search.html" method="get" class="relative w-full">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="search-input">
+                            placeholder="搜索内容..." id="search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -119,7 +127,7 @@
                     <form action="/search.html" method="get" class="relative">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="mobile-search-input">
+                            placeholder="搜索内容..." id="mobile-search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -168,7 +176,7 @@
     </nav>
 
     <!-- 主要内容区域 -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:64rem">
         <main class="min-h-screen py-8">
             
 <!-- Hero 组件 -->
@@ -236,25 +244,26 @@
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/posts/"
                         class="hover:text-primary-600">posts</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2021/"
-                        class="hover:text-primary-600">2021</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2022/"
+                        class="hover:text-primary-600">2022</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="posts&#x2F;2021/20.html"
+                        <a href="posts&#x2F;2022/31.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            幽默逻辑学浅窥
+                            只有一个程序员开发和运营，BuiltWith网站年入1400万美元是怎么做到的？
                         </a>
                         
                     </h2>
@@ -266,20 +275,68 @@
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2021-12-21
+                            2022-12-23
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        幽默逻辑学浅窥
+                        只有一个程序员开发和运营，BuiltWith网站年入1400万美元是怎么做到的？
 
-这是一篇不完备的笔记，后续还在继续研究它。
+国外有一位程序员叫 Gary Brewer，他一人撑起了一个公司，这个公司还年入 1400 万美元，约人民币 1 亿元。
+对此，你是啥想法？先别着急说不可能，这事儿确实是真的：这名程序员名为 Gary Brewer，他创建的 BuiltWith 背后没有销售团队，没有服务团队，也没有工程师。
+啥都没有，这公司做什么…
+                    </div>
+                    
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2022/"
+                        class="hover:text-primary-600">2022</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2022/30.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            解决Gibhub git push超时、无法提交的问题
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2022-12-21
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        解决Gibhub git push超时、无法提交的问题
+最近git push指令又不能工作了，马上测了一下IP，发现github.global.ssl.fastly.net这个域名，除了台湾宝岛那里，基本都不能访问。（注：测试地址https:&#x2F;&#x2F;ping.chinaz.com&#x2F;github.global.ssl.fastly.net）
 
-什么是幽默？
-幽默是一个外来词，最早见于民国时期1924年林语堂先生关于英文“Humour”一词的翻译，这个词的音标是[ˈhjuːmə(r)]，幽默属于按音直译。但后来林语堂又给了“幽默”这两个中文字一个合理的解释：“凡善于幽默的人，其诙谐必愈幽隐，而善于鉴赏幽默的人，其欣赏尤在内心静默的领会，大有不可与外人道之滋味”。
-在作者看来，…
+这个测试仅是一家云商服务器的结果，可能换一家云商，结果就不一…
                     </div>
                     
                     
@@ -288,25 +345,26 @@
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/posts/"
                         class="hover:text-primary-600">posts</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2021/"
-                        class="hover:text-primary-600">2021</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2022/"
+                        class="hover:text-primary-600">2022</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="posts&#x2F;2021/19.html"
+                        <a href="posts&#x2F;2022/1016.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            Gitbook简易上手教程
+                            使用面向过程和面向对象结合的思想开发软件
                         </a>
                         
                     </h2>
@@ -318,333 +376,335 @@
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2021-12-21
+                            2022-10-16
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        Gitbook简易上手教程
-Gitbok是一个本地写书工具，基于md语法，使用简单，易于上手。
-1.1 如何使用gitbook
-安装使用说明
-安装：
-npm install -g gitbook-cli --force
-初始化目录：
-mkdir gitbook &amp;amp;&amp;amp; cd gitbook
-gitbook init
-开始编辑目录：
-vim summary.md
-# Summary
+                        使用面向过程和面向对象结合的思想开发软件
+两者结合起来，开发更有保障。
+什么是面向过程开发？
+面向过程开发也称结构化开发，将软件要实现的功能分解成一个个连续的流程结点，将每个节点都实现为一个函数，依次调用这些函数以完成软件功能。至于执行流程中多个函数共用的数据，则拿出来定义为共享的数据结构，实例化，在函数中使用和传递。
+什么是面向对象开发？
+面向对象开发主要指模拟人类的思维方式，将软件需求中的事物…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/面向对象/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            面向对象
+                        </a>
+                        
+                        <a href="/tags/面向过程/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            面向过程
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2022/"
+                        class="hover:text-primary-600">2022</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2022/1015.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            通过编写反派配角剧情推动主线剧情向前发展
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2022-10-15
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        通过编写反派配角剧情推动主线剧情向前发展
+这是关于故事前期设计的一点小感悟，将人物放在矛盾的关系链条上，让剧中角色相互间具有矛盾的人物标签，故事自然就容易向前推进。
+在《相亲当天》中，初期，战奶奶希望海彤与战胤好一辈子。战胤坚持要防着海彤是只为圈钱的「心机女」，海彤对此则是独立自主随缘无所谓，这时候战胤与海彤两人是对立的，如果不是有战奶奶存在，两人的感情很难升温，故事也很难继续讲下去。
+在《射雕英…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/小说/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            小说
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2022/"
+                        class="hover:text-primary-600">2022</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2022/1014.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            由鸭子测试看Go语言的接口实现
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2022-10-14
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        由鸭子测试看Go语言的接口实现
+「If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.」
+中文：「如果一只鸟它走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子。」
+这便是「鸭子测试」，它是一种判定思想。这句话据记载来源于美国的一个诗人，叫…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/语言/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            语言
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2022/"
+                        class="hover:text-primary-600">2022</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2022/1013.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            JavaScript到底是不是面向对象语言？
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2022-10-13
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        JavaScript到底是不是面向对象语言？
+当然是。
+为了讲清楚这个问题，我们需要先看一看「什么是面向对象编程」和「什么是面向对象语言」。
+什么是面向对象编程？使用面向对象语言进行的编程就是面向对象编程。
+什么是面向对象语言？在面向对象编程中使用的编程语言就是编程语言。
+好吧，是不是感觉我说了两句废话，确实，编程语言可以自举，但是概念不可以。在讨论面向对象语言的时候，一般要界定这门语言的三个面向…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/语言/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            语言
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2022/"
+                        class="hover:text-primary-600">2022</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2022/1012.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            目前国内前端哪个UI类库用的人最多？
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2022-10-12
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        目前国内前端哪个UI类库用的人最多？
+如果基于 jQuery 开发多页面响应式 Web 应用，可以使用 Bootstrap。
+如果基于 Vue3 开发单页面 Web 应用，可以使用 Ant Design Vue 3。在基于 uni-app 开发多端应用时，在 uni-app 中也可以引用 Ant Design Vue。
+如果同时开发以上两种多页面应用和单页面应用，为了减少智力负担和学习成本，可以使…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/类库/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            类库
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2022/"
+                        class="hover:text-primary-600">2022</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2022/1011.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            程序员大牛是如何编写程序的？
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2022-10-11
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        程序员大牛是如何编写程序的？
+好的程序员是怎么写代码的呢？点燃一根烟，一边吸一边进行周密的思考，待想法成熟了，一把操起键盘，一阵噼里啪啦敲击，一气呵成吗？
+或者这样，使用具有步进调试功能的 IDE，例如 Visual Studio，一边编写代码，一边调试代码，一步一调试，直到完成所有需求？
+你是哪种编写方式呢？那些计算机编程大牛们他们一般又是怎么写代码的呢？
+肯·汤普森说：
 
-…
+我只通过 print…
                     </div>
                     
                     
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2021/"
-                        class="hover:text-primary-600">2021</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                    <div class="flex flex-wrap gap-2">
                         
-                        <a href="posts&#x2F;2021/10.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            关于近期微信小程序登陆鉴权机制修改的小说明
+                        <a href="/tags/测试/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            测试
                         </a>
                         
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2021-04-21
-                        </span>
-                        
-                        
                     </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        关于近期微信小程序登陆鉴权机制修改的小说明
-最近微信小程序的登录鉴权机制又修改了，这是历史上第三次变动了，这次变动添加了新接口wx.getUserProfile，可以在用户任意单击事件后获取用户信息，并且每次都有弹窗提示。原open-type等于getUserInfo的button单击获取准备废弃了。
-有啥直接影响？
-1，如果你的代码原来是仅靠getUserInfo获取用户信息的，没有通过后端解密…
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2021/"
-                        class="hover:text-primary-600">2021</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2021/17.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            Go更了解程序员
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2021-04-18
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        Go更了解程序员
-程序员喜欢Go语言，是因为Go简单、易于上手、高效吗？不，是因为Go更了解程序员，它知道程序员喜欢什么，不喜欢什么。程序员口中的简单、易于上手，高效，那是对它的赞美。实际上如果你不是程序员，从零入门Go编程仍然是不太容易的。
-而且更有可能出现的一种情况是，因为Go语言的极致简洁，反而让初学者觉得这太难了；而真正对编程感兴趣的人，会一下子喜欢上它，觉得太棒了。Go是一门语言，也是一…
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2021/"
-                        class="hover:text-primary-600">2021</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2021/18.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            typora软件也是可以定制的
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2021-04-16
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        typora软件也是可以定制的
-最近一年的写作我基本都在使用typora软件，这个软件搞平台，干净、高效，我非常喜欢它。如果说缺点，它唯一的缺点就是不支持定制。
-但是今天发现了一个扩展：
-https:&#x2F;&#x2F;github.com&#x2F;hahaha28&#x2F;typora-extensions
-以及使用npm安装的asar工具，及使用它的指令：
-安装asar
-cnpm install -g asar
-
-用 asa…
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2021/"
-                        class="hover:text-primary-600">2021</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2021/34.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            简单的逻辑学读书笔记
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2021-04-15
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        《简单的逻辑学》读书笔记
-这本只有 150 页的小书，享誉世界，你读了之后可能觉得它不是那么的名副其实。但最好不要这样想，它毕竟只有150页，字数很少，语言又要通俗化，所以读了之后感觉有点不解渴，可能是正常现象。还有，如果你觉得它不过尔尔，可能你的逻辑能力确实不错，而这本书讲述的道理你大多都懂，同时它所鞭挞的非逻辑思维的恶习你却没有。
-我在知乎上看到有人说，译者把书名译错了，不应该叫「简单的逻辑学…
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2021/"
-                        class="hover:text-primary-600">2021</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2021/13.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            伟大的人都是在用生命吟唱
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2021-04-14
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        伟大的人都是在用生命吟唱
-昨天听完张爱玲传就有这个感觉，今天听完杜甫传，感觉更强烈了。
-不知道是所有伟大的人都在用生命在吟唱，还是所有生命都非常伟大，只是我们不了解；如果深入了解，每个生命都可敬可叹，而在历史长河中，只有少数幸运的人，才得以星光璀璨。
-可能不是这样的。
-或许每个人在历史长河中，都像那河床上的鹅卵石，虽然每个人都可能最终被磨圆了，但大部分人都是普普通通的，只有极个别的人才纯粹剔透，算…
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2021/"
-                        class="hover:text-primary-600">2021</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2021/12.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            你的顾客需要一个好故事
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2021-04-13
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        你的顾客需要一个好故事
-事实上并非只有商家的顾客才需要这样一个好故事，包括我自己，手艺人，发电员的读者，也需要一个好故事。这个故事不是常规意义上的故事，事实上它是一个让读者成为主角，充满艺术之美的故事。
-如何创造这样的一个好故事呢？有七个关键因素，书中作者称之为SB-7，这是一个很特别，但在中文环境确实又很容易记住的简称。
-SB-7:
-
-一个主角
-遇到一个麻烦
-出现一个向导
-向导手里有一个方案
-召…
-                    </div>
-                    
                     
                 </div>
             </article>
@@ -798,7 +858,7 @@ SB-7:
                     <svg class="w-4 h-4 text-gray-600 group-hover:text-green-500" fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
-                            d="M8.691 2.5c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm6.618 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-6.618 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm6.618 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zM3.507 7.813c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm16.986 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-16.986 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm16.986 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406z" />
+                            d="M9.5 4C5.36 4 2 6.69 2 10c0 1.89 1.08 3.56 2.7 4.69l-.7 2.01 2.57-1.43c.71.22 1.46.39 2.25.47l.01.06C10.73 18.77 13.8 20 17.5 20c.68 0 1.34-.06 2-.16l3 1.66-.7-1.99C23.06 18.2 24 16.4 24 14.35 24 10.73 20.75 8 16.5 8c-.25 0-.5 0-.74.02A7.51 7.51 0 0 0 9.5 4zM7 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm4.5 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" />
                     </svg>
                 </a>
                 
@@ -884,7 +944,7 @@ SB-7:
 
     <!-- 相关文章 -->
     
-    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
+    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -895,70 +955,70 @@ SB-7:
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2021/20.html"
+                        <a href="projects/enyan.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            幽默逻辑学浅窥
+                            恩言 - 大字有声圣经
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2021-12-21</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2021/19.html"
+                        <a href="projects/rustpress.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            Gitbook简易上手教程
+                            RustPress - 纯静态博客引擎
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2021-12-21</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2021/10.html"
+                        <a href="blog&#x2F;2026/2.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            关于近期微信小程序登陆鉴权机制修改的小说明
+                            手机和相机的区别是什么？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2021-04-21</p>
+                    <p class="text-xs text-gray-500">2026-01-03</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2021/17.html"
+                        <a href="blog&#x2F;2025/93.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            Go更了解程序员
+                            墨问终端脚本发布独立版 2.1，支持多图片上传
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2021-04-18</p>
+                    <p class="text-xs text-gray-500">2025-12-25</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2021/18.html"
+                        <a href="blog&#x2F;技术/rust-tag-test.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            typora软件也是可以定制的
+                            Rust 标签功能测试
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2021-04-16</p>
+                    <p class="text-xs text-gray-500">2025-11-04</p>
                     
                 </div>
                 
@@ -976,123 +1036,123 @@ SB-7:
         <div class="card-body">
             <div class="flex flex-wrap gap-2">
                 
-                <a href="/tags/7x24 AI 员工/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    7x24 AI 员工
-                    <span class="ml-1 text-xs text-gray-500">1</span>
-                </a>
-                
                 <a href="/tags/AI/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
                     AI
-                    <span class="ml-1 text-xs text-gray-500">15</span>
-                </a>
-                
-                <a href="/tags/AI Agent/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent 进化方向/"
+                <a href="/tags/AS3 Expert/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent 进化方向
+                    AS3 Expert
+                    <span class="ml-1 text-xs text-gray-500">6</span>
+                </a>
+                
+                <a href="/tags/Actix-web/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Actix-web
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent提示技巧/"
+                <a href="/tags/Angular/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent提示技巧
+                    Angular
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI IDE/"
+                <a href="/tags/ChatGPT/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE
-                    <span class="ml-1 text-xs text-gray-500">3</span>
-                </a>
-                
-                <a href="/tags/AI IDE生产力/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE生产力
+                    ChatGPT
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 代码失效解决方案/"
+                <a href="/tags/Composition API/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 代码失效解决方案
+                    Composition API
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 办公效率提升/"
+                <a href="/tags/DeFi/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 办公效率提升
+                    DeFi
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 文件管理安全/"
+                <a href="/tags/DevOps/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 文件管理安全
+                    DevOps
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 架构能力/"
+                <a href="/tags/Docker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 架构能力
+                    Docker
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/Flutter/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Flutter
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程协作/"
+                <a href="/tags/Git/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程协作
+                    Git
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程技巧/"
+                <a href="/tags/Go/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程技巧
+                    Go
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/HTTP/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    HTTP
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 自动化服务器/"
+                <a href="/tags/Hooks/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 自动化服务器
+                    Hooks
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI代码生成/"
+                <a href="/tags/IndieHacker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI代码生成
+                    IndieHacker
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手/"
+                <a href="/tags/JavaScript/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手
+                    JavaScript
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手自动化/"
+                <a href="/tags/MySQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手自动化
+                    MySQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI协同编程/"
+                <a href="/tags/Option/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI协同编程
+                    Option
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI学习/"
+                <a href="/tags/PostgreSQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI学习
+                    PostgreSQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI对话/"
+                <a href="/tags/Promise/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI对话
+                    Promise
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
@@ -1114,7 +1174,7 @@ SB-7:
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">148</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">38</span>
                     </a>
                 </div>
                 
@@ -1122,7 +1182,7 @@ SB-7:
                     <a href="/docs/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">docs</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">25</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">18</span>
                     </a>
                 </div>
                 
@@ -1130,7 +1190,7 @@ SB-7:
                     <a href="/posts/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">6</span>
                     </a>
                 </div>
                 
@@ -1313,7 +1373,7 @@ SB-7:
     <!-- 广告位1：底部广告（版权区上方） -->
     
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
             <div
                 class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -1350,6 +1410,14 @@ SB-7:
     </div>
     
     
+
+    <!-- 返回顶部 -->
+    <div class="text-center mb-8">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center px-4 py-2 text-sm border border-gray-300 hover:bg-gray-50 cursor-pointer">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            返回顶部
+        </button>
+    </div>
 
     <!-- 页脚 -->
     <footer class="bg-white border-t border-gray-200 mt-16">
@@ -1395,6 +1463,35 @@ SB-7:
 
     <!-- 搜索功能脚本 -->
     <script src="/static/js/search.js"></script>
+    <script>
+        (function() {
+            function checkRedirect(val) {
+                var q = val.trim();
+                if (q === '分类' || q === '分类=') {
+                    window.location.href = '/categories/';
+                    return true;
+                } else if (q === '标签' || q === '标签=') {
+                    window.location.href = '/tags/';
+                    return true;
+                } else if (q === '归档' || q === '归档=') {
+                    window.location.href = '/archives/';
+                    return true;
+                }
+                return false;
+            }
+            document.addEventListener('input', function(e) {
+                if (e.target && (e.target.id === 'search-input' || e.target.id === 'mobile-search-input' || e.target.id === 'search-query' || e.target.id === 'search-modal-input')) {
+                    checkRedirect(e.target.value);
+                }
+            });
+            document.addEventListener('submit', function(e) {
+                var input = e.target.querySelector('input[name="q"]') || e.target.querySelector('input[type="text"]');
+                if (input && checkRedirect(input.value)) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
 
     
     <!-- Google Analytics 懒加载 -->
@@ -1442,6 +1539,133 @@ SB-7:
         })();
     </script>
     
+
+    <!-- 收藏按钮：桌面端提示快捷键，移动端调用 navigator.share -->
+    <script>
+    function rpBookmark() {
+        if (navigator.share && window.innerWidth <= 768) {
+            navigator.share({
+                title: document.title,
+                url: window.location.href
+            }).catch(function() {});
+        } else {
+            var isMac = navigator.platform && navigator.platform.indexOf('Mac') !== -1;
+            var hint = isMac ? '\u2318+D' : 'Ctrl+D';
+            if (window.showToast) {
+                window.showToast('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            } else {
+                alert('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            }
+        }
+    }
+    </script>
+
+    <script>
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+
+    function rpBatchLoadListingCounts() {
+        if (!RP_REPO) return;
+        var articles = document.querySelectorAll('article');
+        if (!articles.length) return;
+
+        fetch('https://api.github.com/search/issues?q=' + encodeURIComponent('repo:' + RP_REPO + ' is:issue') + '&per_page=100&sort=created&order=desc', {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.items || !data.items.length) return;
+                var issues = {};
+                data.items.forEach(function (issue) {
+                    var m = issue.body && issue.body.match(/Comment thread for (\S+)/);
+                    if (m) {
+                        var pathKey = m[1];
+                        if (issues[pathKey] && issues[pathKey].number > issue.number) {
+                            return;
+                        }
+                        issues[pathKey] = issue;
+                    }
+                });
+
+                articles.forEach(function (article) {
+                    var link = article.querySelector('h2 a') || article.querySelector('div.flex a');
+                    if (!link) return;
+                    var href = link.getAttribute('href');
+                    if (!href) return;
+                    var issue = issues[href];
+                    if (!issue) return;
+
+                    var spans = article.querySelectorAll('button span.font-medium');
+                    if (spans.length >= 2) {
+                        spans[0].textContent = issue.comments || 0;
+                        spans[1].textContent = (issue.reactions && issue.reactions['+1']) || 0;
+                    }
+                });
+            })
+            .catch(function () {});
+    }
+
+    setTimeout(function () {
+        if (RP_REPO) rpBatchLoadListingCounts();
+    }, 500);
+    </script>
+
+    <!-- 全局极简直角 Toast 提示 -->
+    <script>
+        window.showToast = function(message) {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.style.position = 'fixed';
+                container.style.top = '24px';
+                container.style.left = '50%';
+                container.style.transform = 'translateX(-50%)';
+                container.style.zIndex = '99999';
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '12px';
+                container.style.pointerEvents = 'none';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.style.backgroundColor = '#1f2937';
+            toast.style.color = '#ffffff';
+            toast.style.padding = '12px 24px';
+            toast.style.fontSize = '14px';
+            toast.style.fontWeight = '500';
+            toast.style.minWidth = '280px';
+            toast.style.textAlign = 'center';
+            toast.style.boxSizing = 'border-box';
+            
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-8px)';
+            toast.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+            toast.style.pointerEvents = 'auto';
+            
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    toast.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 300);
+            }, 3000);
+        };
+    </script>
 </body>
 
 </html>

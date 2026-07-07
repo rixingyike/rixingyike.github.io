@@ -51,17 +51,25 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
     <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <!-- 防止浏览器 bfcache 缓存显示旧页面 -->
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans"
-    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.replace(/\/$/, '').split('/').pop() || 'index.html' }">
     <!-- 顶部导航栏 -->
     <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
+                    <img src="&amp;#x2F;static&amp;#x2F;images&amp;#x2F;logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树仑
                     </a>
@@ -72,7 +80,7 @@
                     <form action="/search.html" method="get" class="relative w-full">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="search-input">
+                            placeholder="搜索内容..." id="search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -145,7 +153,7 @@
                     <form action="/search.html" method="get" class="relative">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="mobile-search-input">
+                            placeholder="搜索内容..." id="mobile-search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -194,7 +202,7 @@
     </nav>
 
     <!-- 主要内容区域 -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:64rem">
         <main class="min-h-screen py-8">
             
 <div class="max-w-4xl mx-auto relative">
@@ -202,16 +210,22 @@
         <!-- 主要内容 -->
         <div class="flex-1">
             <article x-data="{ copiedLink: false, copiedCode: {} }">
+                <style>
+                    .article-content > h1:first-of-type {
+                        display: none !important;
+                    }
+                </style>
                 <!-- 分类面包屑 -->
                 
-                <nav class="mb-6 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="mb-2 text-xs text-gray-400 flex items-center space-x-1.5 select-none">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
+                    
+                    <span class="text-gray-300">/</span>
+                    
                     <a href="/blog&#x2F;2025/"
                         class="hover:text-primary-600">2025</a>
                     
@@ -219,41 +233,20 @@
                 
 
                 <!-- 文章头部 -->
-                <header class="mb-8 pb-8 border-b border-gray-200">
-                    <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-6 leading-tight">
+                <header class="mb-8">
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 leading-tight">
                         浏览器插件开发经验分享二：如何处理日期控件
                     </h1>
 
-                    <div class="article-meta mb-6">
+                    <div class="article-meta mb-3">
                         
-                        <span class="inline-flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2025-11-25
+                        <span class="inline-flex items-center text-sm text-gray-500">
+                            2025-11-25 23:36
                         </span>
                         
                         
                     </div>
-
-                    <!-- 标签 -->
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/自由控件/"
-                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
-                                </path>
-                            </svg>
-                            自由控件
-                        </a>
-                        
-                    </div>
-                    
+                    <hr class="border-gray-200">
                 </header>
 
                 <!-- 文章内容 -->
@@ -314,96 +307,247 @@
 
                 </div>
 
+                <!-- 标签 -->
+                
+                <div class="flex flex-wrap gap-x-4 gap-y-2 mt-6">
+                    
+                    <a href="/tags/自由控件/" class="text-sm text-gray-500 hover:text-primary-600 transition-colors">
+                        #自由控件
+                    </a>
+                    
+                </div>
+                
+
                 <!-- 版权信息 -->
-                <div class="mt-10 bg-gray-50 rounded-lg border border-gray-200 p-4"
-                    x-data="{domain: 'https:&#x2F;&#x2F;yishulun.com', link: 'https:&#x2F;&#x2F;yishulun.com' + window.location.pathname}">
-                    <h4 class="text-lg font-semibold mb-3 text-gray-900">版权所有</h4>
-                    <p class="text-sm text-gray-700">
+                <div class="mt-8 text-xs text-gray-500">
+                    <p>
                         本文链接：
-                        <a :href="link" class="text-primary-600 hover:underline" x-text="decodeURI(link)"
-                            target="_blank" rel="noopener"></a>
+                        <a href="https:&#x2F;&#x2F;yishulun.com&#x2F;blog&#x2F;2025&#x2F;51.html" class="text-primary-600 hover:underline"
+                            target="_blank" rel="noopener">https:&#x2F;&#x2F;yishulun.com&#x2F;blog&#x2F;2025&#x2F;51.html</a>
                     </p>
-                    <p class="text-sm text-gray-700 mt-2">
-                        许可证：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
+                    <p class="mt-1">
+                        共享许可：署名-非商业性 4.0 国际 (CC-BY-NC-4.0)
                         <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener"
                             class="text-primary-600 hover:underline">查看许可说明</a>
                     </p>
                 </div>
 
                 <!-- 分享功能 -->
-                <div class="mt-12 bg-gray-50 rounded-lg">
-                    <h4 class="text-lg font-semibold mb-4 text-gray-900 p-4 pb-0">分享这篇文章</h4>
-                    <div class="flex flex-wrap gap-3 p-4">
-                        <button onclick="shareToTwitter()" class="btn-outline inline-flex items-center">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                <div class="mt-6" style="margin-bottom: 4rem;">
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="shareToTwitter()" class="btn-outline inline-flex items-center text-xs py-1.5 px-3 rounded-none cursor-pointer">
+                            <svg class="w-3.5 h-3.5 mr-1.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                             </svg>
-                            Twitter
+                            分享到X
                         </button>
                         <button
-                            @click="navigator.clipboard.writeText(window.location.href).then(() => { copiedLink = true; setTimeout(() => copiedLink = false, 2000) })"
-                            class="btn-outline inline-flex items-center"
-                            :class="{ 'bg-green-100 text-green-800 border-green-300': copiedLink }">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            @click="navigator.clipboard.writeText(window.location.href).then(() => { if (window.showToast) window.showToast('复制成功') }).catch(() => { var ta = document.createElement('textarea'); ta.value = window.location.href; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); if (window.showToast) window.showToast('复制成功') })"
+                            class="btn-outline inline-flex items-center text-xs py-1.5 px-3 rounded-none cursor-pointer">
+                            <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            <span x-text="copiedLink ? '已复制' : '复制链接'"></span>
+                            <span>复制链接</span>
                         </button>
                     </div>
                 </div>
 
+                <div style="margin-top: 3rem;">
+                <div class="card mb-8">
+  <div class="card-body">
+    <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+      <div class="flex-shrink-0">
+        
+        <img src="&#x2F;static&#x2F;images&#x2F;avatar.png"
+             alt="LIYI"
+             class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
+             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjY0IiBjeT0iNjQiIHI9IjY0IiBmaWxsPSIjRjNGNEY2Ii8+CjxzdmcgeD0iMzIiIHk9IjMyIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOUNBM0FGIiBzdHJva2Utd2lkdGg9IjIiPgo8cGF0aCBkPSJtMjAgMjEtMTYtMTZtMCAxM2gxM20wLTEzTDIxIDIxIi8+Cjwvc3ZnPgo8L3N2Zz4K'">
+        
+      </div>
+
+      <div class="flex-1 text-center md:text-left">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">
+          LIYI
+        </h3>
+
+        
+        <p class="text-base text-gray-600 mb-4 leading-relaxed">
+          读书使人进步
+        </p>
+        
+
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-4 justify-center md:justify-start">
+          
+          <div class="flex items-center text-gray-500 text-sm">
+            <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            北京, 中国
+          </div>
+          
+
+          
+          <div class="flex items-center text-sm">
+            <svg class="w-4 h-4 mr-1.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m-9 9a9 9 0 019-9"></path>
+            </svg>
+            <a href="https:&#x2F;&#x2F;yishulun.com"
+               target="_blank"
+               rel="noopener"
+               class="text-primary-600 hover:text-primary-700 transition-colors">
+              yishulun.com
+            </a>
+          </div>
+          
+        </div>
+
+        
+        <div class="flex justify-center md:justify-start space-x-4">
+          
+          <a href="https:&#x2F;&#x2F;github.com&#x2F;rixingyike"
+             target="_blank"
+             rel="noopener"
+             class="text-gray-400 hover:text-gray-600 transition-colors"
+             title="GitHub">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          
+
+          
+          <a href="https:&#x2F;&#x2F;x.com&#x2F;jinshimanong"
+             target="_blank"
+             rel="noopener"
+             class="text-gray-400 hover:text-blue-400 transition-colors"
+             title="Twitter">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+          
+
+          
+          <a href="https:&#x2F;&#x2F;weibo.com&#x2F;ixiaochengxu"
+             target="_blank"
+             rel="noopener"
+             class="text-gray-400 hover:text-red-500 transition-colors"
+             title="微博">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M10.878 1.093a4.23 4.23 0 0 1 4.031 1.305 4.22 4.22 0 0 1 .886 4.14v.001a.612.612 0 0 1-1.166-.377 3.01 3.01 0 0 0-3.495-3.873.611.611 0 1 1-.256-1.196M3.753 9.465c.548-1.11 1.972-1.74 3.233-1.411 1.304.338 1.971 1.568 1.437 2.764-.541 1.221-2.095 1.875-3.416 1.449-1.271-.411-1.812-1.67-1.254-2.802m2.658.567c.16.066.365-.009.458-.168.088-.16.03-.34-.129-.397-.156-.062-.353.013-.446.168-.09.154-.041.333.117.397m-1.607 1.314c.413.188.963.009 1.219-.4.252-.413.12-.883-.296-1.062-.41-.172-.94.005-1.194.402-.256.4-.135.874.271 1.06"/>
+              <path d="m12.014 7.238.005.001c.919.285 1.941.974 1.939 2.188 0 2.007-2.895 4.535-7.246 4.535C3.393 13.962 0 12.352 0 9.708c0-1.385.876-2.985 2.384-4.493C4.4 3.199 6.751 2.28 7.634 3.165c.39.392.427 1.065.177 1.87-.132.405.38.182.38.182 1.63-.682 3.051-.722 3.57.02.278.397.252.951-.004 1.594-.116.293.035.34.257.407m-10.4 3.101c.172 1.738 2.46 2.936 5.109 2.674 2.647-.26 4.656-1.883 4.482-3.623-.17-1.738-2.458-2.937-5.107-2.674-2.647.263-4.656 1.883-4.484 3.623m11.681-6.484a2.06 2.06 0 0 0-1.962-.634.526.526 0 1 0 .219 1.031 1.008 1.008 0 0 1 1.17 1.296.528.528 0 0 0 1.005.325 2.06 2.06 0 0 0-.432-2.018"/>
+            </svg>
+          </a>
+          
+
+          
+          <a href="https:&#x2F;&#x2F;zhihu.com&#x2F;people&#x2F;liyi2005"
+             target="_blank"
+             rel="noopener"
+             class="text-gray-400 hover:text-blue-600 transition-colors"
+             title="知乎">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M5.721 0C2.251 0 0 2.25 0 5.719v12.562C0 21.751 2.251 24 5.721 24h12.558C21.749 24 24 21.751 24 18.281V5.719C24 2.25 21.749 0 18.279 0H5.721zM8.48 5.64c0-.427.347-.773.774-.773h5.493c.426 0 .773.346.773.773s-.347.774-.773.774H9.254c-.427 0-.774-.347-.774-.774zm0 2.4c0-.427.347-.773.774-.773h5.493c.426 0 .773.346.773.773s-.347.774-.773.774H9.254c-.427 0-.774-.347-.774-.774zm0 2.4c0-.427.347-.773.774-.773h3.493c.426 0 .773.346.773.773s-.347.774-.773.774H9.254c-.427 0-.774-.347-.774-.774z"/>
+            </svg>
+          </a>
+          
+
+          
+          <a href="mailto:9830131@qq.com"
+             class="text-gray-400 hover:text-green-500 transition-colors"
+             title="邮箱">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+                </div>
+
+                  <div class="flex items-center justify-center gap-6 py-6 my-8 select-none">
+  <button onclick="document.getElementById('rp-comments') && document.getElementById('rp-comments').scrollIntoView({ behavior: 'smooth' })" class="flex items-center gap-2 px-6 py-2.5 text-sm font-medium text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-primary-400 bg-white transition-colors cursor-pointer">
+    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+    <span>评论</span>
+    <span id="rp-comment-count" class="text-xs text-gray-400">0</span>
+  </button>
+
+  <button id="rp-like-btn" onclick="rpToggleLike()" data-liked="false" class="flex items-center gap-2 px-6 py-2.5 text-sm font-medium text-gray-600 border border-gray-200 bg-white hover:text-blue-600 hover:border-blue-300 transition-colors cursor-pointer">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+    <span>点赞</span>
+    <span id="rp-like-count" class="text-xs text-gray-400">0</span>
+  </button>
+  <button onclick="rpBookmark()" class="flex items-center gap-2 px-6 py-2.5 text-sm font-medium text-gray-600 border border-gray-200 bg-white hover:text-amber-500 hover:border-amber-300 transition-colors cursor-pointer">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.252.587 1.813l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.97-2.883a1 1 0 00-1.17 0l-3.97 2.883c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118l-3.97-2.883c-.773-.56-.375-1.813.587-1.813h4.906a1 1 0 00.95-.69l1.519-4.674z"/></svg>
+    <span>收藏</span>
+  </button>
+</div>
+
+
                 <!-- 评论区域（由插件注入） -->
                 
                 <section id="rp-comments" style="margin-top: 3rem;">
-    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: #111827;">评论</h4>
-
-    <!-- 评论列表 -->
-    <div id="rp-comments-list"></div>
-    <div id="rp-comments-status" style="font-size: 0.875rem; color: #6b7280; padding: 1rem 0; text-align: center;">
-        加载评论中...</div>
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+        <h4 style="font-size: 1.125rem; font-weight: 600; color: #111827;">评论</h4>
+    </div>
 
     <!-- 评论输入区 -->
-    <div id="rp-comment-form" style="margin-top: 1.5rem; display: none;">
-        <!-- 登录用户信息 -->
+    <div id="rp-comment-form" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+        <!-- 登录用户信息 (登录后显示) -->
         <div id="rp-user-info"
-            style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 14px; color: #374151;">
+            style="display: none; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 14px; color: #374151;">
             <img id="rp-user-avatar" src="" alt="" style="width: 28px; height: 28px; border-radius: 50%;">
             <span id="rp-user-name" style="font-weight: 600;"></span>
             <a href="#" id="rp-logout-btn"
                 style="margin-left: auto; font-size: 12px; color: #9ca3af; text-decoration: underline;"
                 onclick="rpLogout(); return false;">退出</a>
         </div>
+        
+        <!-- 未登录时提示信息 (未登录时显示) -->
+        <div id="rp-login-tip" style="display: block; margin-bottom: 12px; font-size: 14px; color: #6b7280;">
+            登录 GitHub 后即可发表评论
+        </div>
+
         <!-- 输入框 -->
         <textarea id="rp-comment-input"
-            style="width: 100%; min-height: 100px; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; line-height: 1.6; resize: vertical; font-family: inherit; box-sizing: border-box;"
-            placeholder="写下你的评论（支持 Markdown）..."></textarea>
-        <div style="display: flex; justify-content: flex-end; margin-top: 8px;">
+            style="width: 100%; min-height: 100px; padding: 12px; border: 1px solid #d1d5db; font-size: 14px; line-height: 1.6; resize: vertical; font-family: inherit; box-sizing: border-box;"
+            placeholder="请先登录 GitHub 后发表评论..." disabled></textarea>
+            
+        <div style="display: flex; justify-content: flex-end; margin-top: 8px; gap: 10px; align-items: center;">
+            <div id="rp-submit-status" style="font-size: 13px; color: #6b7280;"></div>
+            
+            <!-- 登录按钮 (未登录时显示) -->
+            <a id="rp-login-btn" href="#"
+                style="display: inline-flex; align-items: center; padding: 8px 16px; font-size: 0.875rem; font-weight: 500; color: #fff; background-color: #1f2937; text-decoration: none; transition: background-color 0.2s;"
+                onmouseover="this.style.backgroundColor='#374151'" onmouseout="this.style.backgroundColor='#1f2937'">
+                <svg style="width: 16px; height: 16px; margin-right: 6px;" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+                使用 GitHub 登录
+            </a>
+
+            <!-- 发表评论按钮 (登录后显示) -->
             <button id="rp-submit-btn" onclick="rpSubmitComment()"
-                style="padding: 8px 20px; font-size: 0.875rem; font-weight: 500; color: #fff; background-color: #2563eb; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.2s;"
+                style="display: none; padding: 8px 20px; font-size: 0.875rem; font-weight: 500; color: #fff; background-color: #2563eb; border: none; cursor: pointer; transition: background-color 0.2s;"
                 onmouseover="this.style.backgroundColor='#1d4ed8'" onmouseout="this.style.backgroundColor='#2563eb'">
                 发表评论
             </button>
         </div>
-        <div id="rp-submit-status" style="font-size: 13px; color: #6b7280; margin-top: 6px; text-align: right;">
-        </div>
     </div>
 
-    <!-- 未登录时显示登录按钮 -->
-    <div id="rp-login-section" style="margin-top: 1.5rem; text-align: center; display: none;">
-        <p style="font-size: 14px; color: #6b7280; margin-bottom: 12px;">登录 GitHub 后即可发表评论</p>
-        <a id="rp-login-btn" href="#"
-            style="display: inline-flex; align-items: center; padding: 10px 20px; font-size: 0.875rem; font-weight: 500; color: #fff; background-color: #1f2937; border-radius: 6px; text-decoration: none; transition: background-color 0.2s;"
-            onmouseover="this.style.backgroundColor='#374151'" onmouseout="this.style.backgroundColor='#1f2937'">
-            <svg style="width: 18px; height: 18px; margin-right: 8px;" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-            </svg>
-            使用 GitHub 登录
-        </a>
-    </div>
+    <!-- 评论列表 -->
+    <div id="rp-comments-list"></div>
+    <div id="rp-comments-status" style="font-size: 0.875rem; color: #6b7280; padding: 1rem 0; text-align: center;">
+        加载评论中...</div>
 </section>
 
 <style>
@@ -490,6 +634,17 @@
         text-decoration: underline;
     }
 
+    #rp-like-btn.liked {
+        border-color: #2563eb;
+        background: #eff6ff;
+        color: #2563eb;
+    }
+
+    #rp-like-btn.liked svg {
+        fill: #2563eb;
+        stroke: #2563eb;
+    }
+
     .rp-no-comments {
         text-align: center;
         color: #9ca3af;
@@ -508,6 +663,7 @@
     var RP_REPO = 'rixingyike/yishulun.com_discus';
     var RP_CLIENT_ID = '0cdfd84658051b0f7de6';
     var rpCurrentIssueNumber = null;
+    var rpLocalComments = [];
 
     // ---- 工具函数 ----
     function getCookie(name) {
@@ -549,12 +705,15 @@
 
     // ---- 渲染评论列表 ----
     function rpRenderComments(comments) {
+        rpLocalComments = comments || [];
         var container = document.getElementById('rp-comments-list');
-        if (comments.length === 0) {
+        if (rpLocalComments.length === 0) {
             container.innerHTML = '<div class="rp-no-comments">暂无评论，成为第一个评论者吧！</div>';
         } else {
-            container.innerHTML = '<div class="rp-comment-count">共 ' + comments.length + ' 条评论</div>' +
-                comments.map(function (c) {
+            // 倒序：最新评论在最上面
+            var sortedComments = rpLocalComments.slice().reverse();
+            container.innerHTML = '<div class="rp-comment-count">共 ' + sortedComments.length + ' 条评论</div>' +
+                sortedComments.map(function (c) {
                     return '<div class="rp-comment">' +
                         '<div class="rp-comment-header">' +
                         '<img class="rp-comment-avatar" src="' + c.user.avatar_url + '" alt="' + c.user.login + '">' +
@@ -577,7 +736,10 @@
             '&sort=created&order=desc&per_page=1';
 
         fetch(searchUrl, {
-            headers: { 'Accept': 'application/vnd.github.v3+json' }
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
         })
             .then(function (r) {
                 if (r.status === 403) throw new Error('rate_limit');
@@ -587,11 +749,17 @@
                 if (!data.items || data.items.length === 0) {
                     rpRenderComments([]);
                     rpCurrentIssueNumber = null;
+                    rpUpdateLikeButton(0);
                     status.style.display = 'none';
                     return;
                 }
                 var issue = data.items[0];
                 rpCurrentIssueNumber = issue.number;
+
+                var likeCount = (issue.reactions && issue.reactions['+1']) || 0;
+                rpUpdateLikeButton(likeCount);
+                rpUpdateCommentButton(issue.comments || 0);
+                rpCheckLikedState();
 
                 return fetch(issue.comments_url + '?per_page=100', {
                     headers: { 'Accept': 'application/vnd.github.v3+json' }
@@ -612,6 +780,130 @@
             });
     }
 
+    // ---- 点赞功能 ----
+    function rpUpdateLikeButton(count) {
+        var el = document.getElementById('rp-like-count');
+        if (el) el.textContent = count || 0;
+    }
+
+    function rpUpdateCommentButton(count) {
+        var el = document.getElementById('rp-comment-count');
+        if (el) el.textContent = count || 0;
+    }
+
+    function rpCheckLikedState() {
+        var liked = localStorage.getItem('rp_liked_' + rpCurrentIssueNumber) === 'true';
+        var btn = document.getElementById('rp-like-btn');
+        if (btn) {
+            if (liked) {
+                btn.classList.add('liked');
+                btn.dataset.liked = 'true';
+            } else {
+                btn.classList.remove('liked');
+                btn.dataset.liked = 'false';
+            }
+        }
+    }
+
+    function rpDoLike(issueNumber) {
+        var btn = document.getElementById('rp-like-btn');
+        fetch('/api/comments/like', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ issue_number: issueNumber })
+        })
+            .then(function (r) {
+                var ct = r.headers.get('content-type') || '';
+                if (!r.ok) {
+                    if (ct.indexOf('application/json') !== -1) {
+                        return r.json().then(function (d) { throw new Error(d.message || 'HTTP ' + r.status); });
+                    }
+                    throw new Error('服务器错误 (HTTP ' + r.status + ')');
+                }
+                if (ct.indexOf('application/json') !== -1) return r.json();
+                throw new Error('服务器返回了非 JSON 响应');
+            })
+            .then(function (data) {
+                if (data.success) {
+                    if (data.issue_number) rpCurrentIssueNumber = data.issue_number;
+                    localStorage.setItem('rp_liked_' + issueNumber, 'true');
+                    if (btn) {
+                        btn.classList.add('liked');
+                        btn.dataset.liked = 'true';
+                    }
+                    var countEl = document.getElementById('rp-like-count');
+                    if (countEl) countEl.textContent = parseInt(countEl.textContent) + 1;
+                    if (window.showToast) window.showToast('已点赞 👍');
+                } else {
+                    throw new Error(data.message || '点赞失败');
+                }
+            })
+            .catch(function (err) {
+                if (window.showToast) window.showToast(err.message);
+            });
+    }
+
+    function rpToggleLike() {
+        var token = getCookie('gh_token');
+        if (!token) {
+            if (window.showToast) {
+                window.showToast('请先登录 GitHub 后点赞');
+            }
+            var loginBtn = document.getElementById('rp-login-btn');
+            if (loginBtn) loginBtn.click();
+            return;
+        }
+        var btn = document.getElementById('rp-like-btn');
+        var alreadyLiked = btn && btn.dataset.liked === 'true';
+
+        if (alreadyLiked) {
+            if (window.showToast) window.showToast('你已赞过');
+            return;
+        }
+
+        var body = { issue_number: rpCurrentIssueNumber || 0 };
+        if (!rpCurrentIssueNumber) {
+            var title = (document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : document.title);
+            body.title = title;
+            body.pathname = window.location.pathname;
+        }
+
+        fetch('/api/comments/like', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        })
+            .then(function (r) {
+                var ct = r.headers.get('content-type') || '';
+                if (!r.ok) {
+                    if (ct.indexOf('application/json') !== -1) {
+                        return r.json().then(function (d) { throw new Error(d.message || 'HTTP ' + r.status); });
+                    }
+                    throw new Error('服务器错误 (HTTP ' + r.status + ')');
+                }
+                if (ct.indexOf('application/json') !== -1) return r.json();
+                throw new Error('服务器返回了非 JSON 响应');
+            })
+            .then(function (data) {
+                if (data.success) {
+                    if (data.issue_number) rpCurrentIssueNumber = data.issue_number;
+                    localStorage.setItem('rp_liked_' + rpCurrentIssueNumber, 'true');
+                    if (btn) {
+                        btn.classList.add('liked');
+                        btn.dataset.liked = 'true';
+                    }
+                    var countEl = document.getElementById('rp-like-count');
+                    if (countEl) countEl.textContent = parseInt(countEl.textContent) + 1;
+                    if (window.showToast) window.showToast('已点赞 👍');
+                } else {
+                    throw new Error(data.message || '点赞失败');
+                }
+            })
+            .catch(function (err) {
+                if (window.showToast) window.showToast(err.message);
+            });
+    }
+
     // ---- 检查登录状态 (Static Method) ----
     function rpCheckLogin() {
         if (!RP_CLIENT_ID) return;
@@ -628,17 +920,23 @@
 
         var token = getCookie('gh_token');
         if (token) {
-            // Verify token by fetching user
-            fetch('https://api.github.com/user', {
-                headers: { 'Authorization': 'token ' + token }
-            })
+            // Verify token via server proxy
+            fetch('/api/comments/user')
                 .then(r => {
                     if (r.ok) return r.json();
                     throw new Error('Invalid token');
                 })
                 .then(data => {
-                    document.getElementById('rp-comment-form').style.display = 'block';
-                    document.getElementById('rp-login-section').style.display = 'none';
+                    document.getElementById('rp-user-info').style.display = 'flex';
+                    document.getElementById('rp-login-tip').style.display = 'none';
+                    
+                    var commentInput = document.getElementById('rp-comment-input');
+                    commentInput.disabled = false;
+                    commentInput.placeholder = '写下你的评论（支持 Markdown）...';
+                    
+                    document.getElementById('rp-login-btn').style.display = 'none';
+                    document.getElementById('rp-submit-btn').style.display = 'inline-block';
+                    
                     document.getElementById('rp-user-avatar').src = data.avatar_url;
                     document.getElementById('rp-user-name').textContent = data.name || data.login;
                 })
@@ -652,39 +950,18 @@
     }
 
     function rpShowLoginButton() {
-        document.getElementById('rp-comment-form').style.display = 'none';
-        document.getElementById('rp-login-section').style.display = 'block';
+        document.getElementById('rp-user-info').style.display = 'none';
+        document.getElementById('rp-login-tip').style.display = 'block';
+        
+        var commentInput = document.getElementById('rp-comment-input');
+        commentInput.disabled = true;
+        commentInput.placeholder = '请先登录 GitHub 后发表评论...';
+        
+        document.getElementById('rp-login-btn').style.display = 'inline-flex';
+        document.getElementById('rp-submit-btn').style.display = 'none';
 
-        // Use Worker as redirect target
-        // The Worker will redirect back to this page (state)
-        // Note: You must updating GitHub App Callback URL to your Worker URL
-        // e.g. https://oauth.yishulun.workers.dev/callback
-
-        // We assume user configured the worker. 
-        // If not, we fallback to direct GitHub flow (which fails on static).
-        // For now we assume the user will configure the GitHub App callback 
-        // to point to the WORKER.
-        // The redirect_uri param here MUST MATCH the one registered in GitHub App.
-        // If user set GitHub App Callback = https://oauth.yishulun.workers.dev/callback
-        // Then we must use that here.
-        // But we don't know the worker URL here!
-
-        // Wait, if we use a Worker, we should link to the Worker's /login endpoint? 
-        // Or simply link to GitHub with redirect_uri = Worker URL?
-
-        // If we link to standard GitHub Authorize, we need to pass redirect_uri.
-        // If we don't pass redirect_uri, GitHub uses the default registered one.
-        // THIS IS THE KEY. We don't need to hardcode the worker URL if it's the default!
-
-        var loginUrl = 'https://github.com/login/oauth/authorize?client_id=' +
-            '&client_id=' + RP_CLIENT_ID +
-            // ⚠️ 警告：
-            // 如果您的 GitHub App 配置了 Authorization callback URL 为 Worker 地址，
-            // 那么这里建议 **不传递** redirect_uri 参数，让 GitHub 使用默认配置。
-            // 
-            // 如果由于某种原因 GitHub 报错，您可以取消下面这行的注释，并填入您的 Worker 地址：
-            // '&redirect_uri=' + encodeURIComponent('https://<您的-worker-名>.<您的-subdomain>.workers.dev/callback') +
-            '&state=' + encodeURIComponent(window.location.pathname) + // Worker uses this to redirect back
+        var loginUrl = 'https://github.com/login/oauth/authorize?client_id=' + RP_CLIENT_ID +
+            '&state=' + encodeURIComponent(window.location.href) + // Send full URL so Worker can redirect back to localhost
             '&scope=public_repo';
 
         document.getElementById('rp-login-btn').href = loginUrl;
@@ -698,14 +975,14 @@
         var body = input.value.trim();
         var token = getCookie('gh_token');
 
-        if (!token) {
-            rpCheckLogin();
-            return;
-        }
-
         if (!body) {
             submitStatus.textContent = '请输入评论内容';
             submitStatus.style.color = '#ef4444';
+            return;
+        }
+
+        if (!token) {
+            rpCheckLogin();
             return;
         }
 
@@ -716,18 +993,24 @@
 
         // Helper to post comment
         function doPostLink(issueNumber) {
-            fetch('https://api.github.com/repos/' + RP_REPO + '/issues/' + issueNumber + '/comments', {
+            fetch('/api/comments/post', {
                 method: 'POST',
-                headers: {
-                    'Authorization': 'token ' + token,
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/vnd.github.v3+json'
-                },
-                body: JSON.stringify({ body: body })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ issue_number: issueNumber, body: body })
             })
-                .then(r => r.json())
-                .then(data => {
-                    if (data.id) {
+                .then(function (r) {
+                    var ct = r.headers.get('content-type') || '';
+                    if (!r.ok) {
+                        if (ct.indexOf('application/json') !== -1) {
+                            return r.json().then(function (d) { throw new Error(d.message || 'HTTP ' + r.status); });
+                        }
+                        throw new Error('服务器错误 (HTTP ' + r.status + ')');
+                    }
+                    if (ct.indexOf('application/json') !== -1) return r.json();
+                    throw new Error('服务器返回了非 JSON 响应');
+                })
+                .then(function (data) {
+                    if (data.success) {
                         input.value = '';
                         submitStatus.textContent = '✓ 评论已发表';
                         submitStatus.style.color = '#16a34a';
@@ -735,14 +1018,14 @@
                             rpLoadCommentsByIssue(issueNumber);
                         }, 1000);
                     } else {
-                        throw new Error(data.message || 'Failed');
+                        throw new Error(data.message || '发送失败');
                     }
                 })
-                .catch(err => {
-                    submitStatus.textContent = '发送失败: ' + err.message;
+                .catch(function (err) {
+                    submitStatus.textContent = err.message;
                     submitStatus.style.color = '#ef4444';
                 })
-                .finally(() => {
+                .finally(function () {
                     submitBtn.disabled = false;
                     submitBtn.style.opacity = '1';
                 });
@@ -751,29 +1034,37 @@
         // If issue doesn't exist, create it first
         if (!rpCurrentIssueNumber) {
             var title = (document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : document.title);
-            fetch('https://api.github.com/repos/' + RP_REPO + '/issues', {
+            fetch('/api/comments/post', {
                 method: 'POST',
-                headers: {
-                    'Authorization': 'token ' + token,
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/vnd.github.v3+json'
-                },
-                body: JSON.stringify({
-                    title: title + ' | ' + window.location.pathname,
-                    body: 'Comment thread for ' + window.location.pathname + '\n\n' + window.location.href
-                })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title: title, pathname: window.location.pathname, body: body })
             })
-                .then(r => r.json())
-                .then(data => {
-                    if (data.number) {
-                        rpCurrentIssueNumber = data.number;
-                        doPostLink(rpCurrentIssueNumber);
+                .then(function (r) {
+                    var ct = r.headers.get('content-type') || '';
+                    if (!r.ok) {
+                        if (ct.indexOf('application/json') !== -1) {
+                            return r.json().then(function (d) { throw new Error(d.message || 'HTTP ' + r.status); });
+                        }
+                        throw new Error('服务器错误 (HTTP ' + r.status + ')');
+                    }
+                    if (ct.indexOf('application/json') !== -1) return r.json();
+                    throw new Error('服务器返回了非 JSON 响应');
+                })
+                .then(function (data) {
+                    if (data.success && data.issue_number) {
+                        rpCurrentIssueNumber = data.issue_number;
+                        input.value = '';
+                        submitStatus.textContent = '✓ 评论已发表';
+                        submitStatus.style.color = '#16a34a';
+                        setTimeout(function () {
+                            rpLoadCommentsByIssue(rpCurrentIssueNumber);
+                        }, 1000);
                     } else {
-                        throw new Error('无法创建 Issue: ' + (data.message || 'Unknown error'));
+                        throw new Error(data.message || '发送失败');
                     }
                 })
-                .catch(err => {
-                    submitStatus.textContent = '初始化评论区失败: ' + err.message;
+                .catch(function (err) {
+                    submitStatus.textContent = err.message;
                     submitStatus.style.color = '#ef4444';
                     submitBtn.disabled = false;
                 });
@@ -791,6 +1082,7 @@
             .then(function (r) { return r.json(); })
             .then(function (comments) {
                 rpRenderComments(comments);
+                rpUpdateCommentButton(comments.length);
             })
             .catch(function () {
                 rpLoadComments();
@@ -809,17 +1101,6 @@
 </script>
                 
 
-                <!-- 返回顶部 -->
-                <div class="text-center mt-8">
-                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-                        class="btn-secondary inline-flex items-center">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-                        </svg>
-                        返回顶部
-                    </button>
-                </div>
             </article>
         </div>
 
@@ -965,53 +1246,24 @@
     function shareToTwitter() {
         const url = encodeURIComponent(window.location.href);
         const text = encodeURIComponent(document.title);
-        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+        window.open(`https://x.com/intent/tweet?url=${url}&text=${text}`, '_blank');
     }
 </script>
+
 
         </main>
     </div>
 
     <!-- 广告位1：底部广告（版权区上方） -->
     
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
-            <div
-                class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div class="flex flex-col items-center p-4 text-center">
-                    <!-- 广告图片 -->
-                    <div class="mb-3">
-                        <img src="&#x2F;static&#x2F;images&#x2F;book-wegame.png" alt="微信小游戏开发"
-                            class="w-48 h-60 object-cover rounded-md mx-auto"
-                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMTkyIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9Ijk2IiBmaWxsPSIjREJFRkZGIi8+Cjx0ZXh0IHg9Ijk2IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMzc2RkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7kuLvpopjlpLTlg488L3R4dD4KPC9zdmc+'">
-                    </div>
 
-                    <!-- 广告信息 -->
-                    <div class="max-w-sm">
-                        <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">
-                            微信小游戏开发
-                        </h2>
-                        
-                        <p class="text-gray-700 text-sm mb-3">学习微信小游戏开发技术，掌握游戏开发全流程</p>
-                        
-
-                        <!-- 查看详情按钮 -->
-                        <div
-                            class="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow-sm transition-colors text-sm">
-                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                            </svg>
-                            查看详情
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
+    <!-- 返回顶部 -->
+    <div class="text-center mb-8">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center px-4 py-2 text-sm border border-gray-300 hover:bg-gray-50 cursor-pointer">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            返回顶部
+        </button>
     </div>
-    
-    
 
     <!-- 页脚 -->
     <footer class="bg-white border-t border-gray-200 mt-16">
@@ -1057,6 +1309,35 @@
 
     <!-- 搜索功能脚本 -->
     <script src="/static/js/search.js"></script>
+    <script>
+        (function() {
+            function checkRedirect(val) {
+                var q = val.trim();
+                if (q === '分类' || q === '分类=') {
+                    window.location.href = '/categories/';
+                    return true;
+                } else if (q === '标签' || q === '标签=') {
+                    window.location.href = '/tags/';
+                    return true;
+                } else if (q === '归档' || q === '归档=') {
+                    window.location.href = '/archives/';
+                    return true;
+                }
+                return false;
+            }
+            document.addEventListener('input', function(e) {
+                if (e.target && (e.target.id === 'search-input' || e.target.id === 'mobile-search-input' || e.target.id === 'search-query' || e.target.id === 'search-modal-input')) {
+                    checkRedirect(e.target.value);
+                }
+            });
+            document.addEventListener('submit', function(e) {
+                var input = e.target.querySelector('input[name="q"]') || e.target.querySelector('input[type="text"]');
+                if (input && checkRedirect(input.value)) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
 
     
     <!-- Google Analytics 懒加载 -->
@@ -1104,6 +1385,133 @@
         })();
     </script>
     
+
+    <!-- 收藏按钮：桌面端提示快捷键，移动端调用 navigator.share -->
+    <script>
+    function rpBookmark() {
+        if (navigator.share && window.innerWidth <= 768) {
+            navigator.share({
+                title: document.title,
+                url: window.location.href
+            }).catch(function() {});
+        } else {
+            var isMac = navigator.platform && navigator.platform.indexOf('Mac') !== -1;
+            var hint = isMac ? '\u2318+D' : 'Ctrl+D';
+            if (window.showToast) {
+                window.showToast('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            } else {
+                alert('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            }
+        }
+    }
+    </script>
+
+    <script>
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+
+    function rpBatchLoadListingCounts() {
+        if (!RP_REPO) return;
+        var articles = document.querySelectorAll('article');
+        if (!articles.length) return;
+
+        fetch('https://api.github.com/search/issues?q=' + encodeURIComponent('repo:' + RP_REPO + ' is:issue') + '&per_page=100&sort=created&order=desc', {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.items || !data.items.length) return;
+                var issues = {};
+                data.items.forEach(function (issue) {
+                    var m = issue.body && issue.body.match(/Comment thread for (\S+)/);
+                    if (m) {
+                        var pathKey = m[1];
+                        if (issues[pathKey] && issues[pathKey].number > issue.number) {
+                            return;
+                        }
+                        issues[pathKey] = issue;
+                    }
+                });
+
+                articles.forEach(function (article) {
+                    var link = article.querySelector('h2 a') || article.querySelector('div.flex a');
+                    if (!link) return;
+                    var href = link.getAttribute('href');
+                    if (!href) return;
+                    var issue = issues[href];
+                    if (!issue) return;
+
+                    var spans = article.querySelectorAll('button span.font-medium');
+                    if (spans.length >= 2) {
+                        spans[0].textContent = issue.comments || 0;
+                        spans[1].textContent = (issue.reactions && issue.reactions['+1']) || 0;
+                    }
+                });
+            })
+            .catch(function () {});
+    }
+
+    setTimeout(function () {
+        if (RP_REPO) rpBatchLoadListingCounts();
+    }, 500);
+    </script>
+
+    <!-- 全局极简直角 Toast 提示 -->
+    <script>
+        window.showToast = function(message) {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.style.position = 'fixed';
+                container.style.top = '24px';
+                container.style.left = '50%';
+                container.style.transform = 'translateX(-50%)';
+                container.style.zIndex = '99999';
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '12px';
+                container.style.pointerEvents = 'none';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.style.backgroundColor = '#1f2937';
+            toast.style.color = '#ffffff';
+            toast.style.padding = '12px 24px';
+            toast.style.fontSize = '14px';
+            toast.style.fontWeight = '500';
+            toast.style.minWidth = '280px';
+            toast.style.textAlign = 'center';
+            toast.style.boxSizing = 'border-box';
+            
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-8px)';
+            toast.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+            toast.style.pointerEvents = 'auto';
+            
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    toast.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 300);
+            }, 3000);
+        };
+    </script>
 </body>
 
 </html>

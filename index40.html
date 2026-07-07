@@ -25,17 +25,25 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
     <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <!-- 防止浏览器 bfcache 缓存显示旧页面 -->
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans"
-    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.replace(/\/$/, '').split('/').pop() || 'index.html' }">
     <!-- 顶部导航栏 -->
     <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
+                    <img src="&amp;#x2F;static&amp;#x2F;images&amp;#x2F;logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树仑
                     </a>
@@ -46,7 +54,7 @@
                     <form action="/search.html" method="get" class="relative w-full">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="search-input">
+                            placeholder="搜索内容..." id="search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -119,7 +127,7 @@
                     <form action="/search.html" method="get" class="relative">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="mobile-search-input">
+                            placeholder="搜索内容..." id="mobile-search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -168,7 +176,7 @@
     </nav>
 
     <!-- 主要内容区域 -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:64rem">
         <main class="min-h-screen py-8">
             
 <!-- Hero 组件 -->
@@ -236,25 +244,26 @@
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
+                    <a href="/docs/"
+                        class="hover:text-primary-600">docs</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/docs&#x2F;guide/"
+                        class="hover:text-primary-600">guide</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2026/41.html"
+                        <a href="docs&#x2F;guide/1.2.配置文件说明.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            折腾谷歌最新 SDK 两天后，我发现开源软件已经没必要写给人类看了
+                            1.2. 配置文件说明
                         </a>
                         
                     </h2>
@@ -266,197 +275,43 @@
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2026-05-31
+                            2026-07-07
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        我在 macOS Monterey 系统上想跑跑最新的谷歌 antigravity-sdk-rust，结果一上来就踩了个大坑。
-虽然 Antigravity 无论是 CLI 还是 IDE 都支持老款 Intel 芯片的 Mac，但是独立的 Rust SDK 却不支持。更具体地说，在 PyPI 上的 google-antigravity 包里，SDK 依赖的一个叫 localharness 的执行文…
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/面向AI编程/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            面向AI编程
-                        </a>
-                        
-                        <a href="/tags/开源软件趋势/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            开源软件趋势
-                        </a>
-                        
-                        <a href="/tags/谷歌SDK/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            谷歌SDK
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="blog&#x2F;2026/39.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            我反对全民 Vibe Coding
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2026-05-24
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        我反对全民 Vibe Coding
-最近 Vibe Coding 这个词火得一塌糊涂。
-这个概念最早是前 OpenAI 科学家 Andrej Karpathy 带火的，意思是开发者以后不用亲自手敲每一行代码每一个字母了，主要靠自然语言写 Prompt，顺着所谓“直觉”让大模型去生成代码。
-说实话，为什么不叫逻辑编程，非得叫直觉编程？我觉得造出这个词的作者，心里多少是对它带着三分鄙视的。但不曾想，现…
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/Vibe Coding 批判/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            Vibe Coding 批判
-                        </a>
-                        
-                        <a href="/tags/AI 编程协作/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI 编程协作
-                        </a>
-                        
-                        <a href="/tags/Cmd Coding 指令编程/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            Cmd Coding 指令编程
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="blog&#x2F;2026/38.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            第三天了，你的谷歌Antigravity还能跑吗？
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2026-05-23
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        第三天了，你的谷歌Antigravity还能跑吗？
-Your current account is not eligible for antigravity. Try signing in with another personal google account. Learn more by visiting the faq.
+                        详细介绍 config.toml 内容。
 
-这段话翻译过来大概是这个意思：你没资格用谷歌反重力软件了，麻溜换个账…
                     </div>
                     
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/谷歌Antigravity报错/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            谷歌Antigravity报错
-                        </a>
-                        
-                        <a href="/tags/三天封号陷阱/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            三天封号陷阱
-                        </a>
-                        
-                        <a href="/tags/Gemini Code Assist权限/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            Gemini Code Assist权限
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
+                    <a href="/docs/"
+                        class="hover:text-primary-600">docs</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/docs&#x2F;guide/"
+                        class="hover:text-primary-600">guide</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2026/37.html"
+                        <a href="docs&#x2F;guide/1.安装与配置.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            一天干完一百万字，谷歌 agy 这个工具简直是头不要命的洪水猛兽
+                            1. 安装与配置
                         </a>
                         
                     </h2>
@@ -468,65 +323,43 @@ Your current account is not eligible for antigravity. Try signing in with anothe
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2026-05-22
+                            2026-07-07
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        一天干完一百万字，谷歌 agy 这个工具简直是头不要命的洪水猛兽
-昨天我还在群里吐槽 Antigravity 2.0 更新后像个洪水猛兽，今天就有了极其切肤的痛感与爽感。
-大概 agy，没错，就是那个经常被大家戏称为 gay 的命令行工具，它今天帮我干完了一百万字的工作量。一百万字是什么概念？这在以前，可能需要我起早贪黑、孜孜不倦地处理整整一年。
+                        这是专栏的第一个章节。
 
-而现在，它只用了几个小时。
-打个比方，以前处理这…
                     </div>
                     
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/agy 工具/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            agy 工具
-                        </a>
-                        
-                        <a href="/tags/goal 指令/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            goal 指令
-                        </a>
-                        
-                        <a href="/tags/grill-me 指令/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            grill-me 指令
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
+                    <a href="/docs/"
+                        class="hover:text-primary-600">docs</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/docs&#x2F;guide/"
+                        class="hover:text-primary-600">guide</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2026/36.html"
+                        <a href="docs&#x2F;guide/1.1.快速开始.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            提示语工程的新六条
+                            1.1. 快速开始
                         </a>
                         
                     </h2>
@@ -538,65 +371,43 @@ Your current account is not eligible for antigravity. Try signing in with anothe
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2026-05-21
+                            2026-07-07
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        那些教你写提示词的“黄金准则”，可能正在毁掉你的 AI Agent
+                        这是二级章节示例。
 
-现在的程序员，做的事并没有变简单，只是内容变深了、变复杂了。当你觉得 AI 很强时，可能只是任务太简单。真正复杂的任务，永远需要你付出足够的精力和时间去打磨那些属于你自己的 SKILL。
-
-我最近看那些所谓的“提示语工程黄金准则”越来越不爽了。是的，前两天我刚分享过一次，但我发现大家理解得不太对，或者说我当时没有讲明白。
-满大街…
                     </div>
                     
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/提示语工程新六条/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            提示语工程新六条
-                        </a>
-                        
-                        <a href="/tags/AI提示词优化/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI提示词优化
-                        </a>
-                        
-                        <a href="/tags/AI Agent提示技巧/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI Agent提示技巧
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
+                    <a href="/docs/"
+                        class="hover:text-primary-600">docs</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/docs&#x2F;guide/"
+                        class="hover:text-primary-600">guide</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2026/35.html"
+                        <a href="docs&#x2F;guide/1.2.1.站点信息配置.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            谷歌发布 Antigravity 2.0:界面干净了，但我怎么感觉又被“白嫖”了？
+                            1.2.1. 站点信息配置
                         </a>
                         
                     </h2>
@@ -608,67 +419,43 @@ Your current account is not eligible for antigravity. Try signing in with anothe
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2026-05-20
+                            2026-07-07
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        谷歌发布 Antigravity 2.0：界面干净了，但我怎么感觉又被“白嫖”了？
-我最近对 AI 编程工具有点倦怠了。
-今天 520，谷歌发布了它被称为“洪水猛兽”的 Antigravity 2.0 及其配套的 CLI 工具 Antigravity CLI，缩写叫 agy。
-这是Antigravity 2.0：
+                        这是三级章节展示缩进。
 
-这是Antigravity CLI：
-
-看到 agy 这个启动命令时，我第一反应是…
                     </div>
                     
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/Antigravity 2.0/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            Antigravity 2.0
-                        </a>
-                        
-                        <a href="/tags/AI编程工具/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI编程工具
-                        </a>
-                        
-                        <a href="/tags/自动化Agent指令/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            自动化Agent指令
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
+                    <a href="/docs/"
+                        class="hover:text-primary-600">docs</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/docs&#x2F;novel/"
+                        class="hover:text-primary-600">novel</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2026/34.html"
+                        <a href="docs&#x2F;novel/2.第二章：星辰.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            都 2026 年了，竟然还有人在翻我 2023 年的“保姆级”旧贴？
+                            2. 第二章:星辰
                         </a>
                         
                     </h2>
@@ -680,63 +467,43 @@ Your current account is not eligible for antigravity. Try signing in with anothe
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2026-05-19
+                            2026-07-07
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        都 2026 年了，竟然还有人在翻我 2023 年的“保姆级”旧贴？
-说个小事，这两天我被后台的消息弹窗整懵了。
-原本以为 GPT 5.5 这种“性能怪兽”横空出世，加上价格直接打到地板上，大家早该在 AI 的世界里“起飞”了。结果倒好，我那篇写于 2023 年、教大家怎么买 ChatGPT 会员的陈年旧贴，居然又被网友点赞激活了。
-这感觉就像是，大家都在研究怎么开曲率引擎飞船了，结果还有一群人在…
+                        茫茫宇宙中...
+
                     </div>
                     
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/GPT 5.5 会员购买/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            GPT 5.5 会员购买
-                        </a>
-                        
-                        <a href="/tags/Codex 全平台一体化/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            Codex 全平台一体化
-                        </a>
-                        
-                        <a href="/tags/AI Agent 进化方向/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI Agent 进化方向
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
+                    <a href="/docs/"
+                        class="hover:text-primary-600">docs</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/docs&#x2F;novel/"
+                        class="hover:text-primary-600">novel</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2026/33.html"
+                        <a href="docs&#x2F;novel/index.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            mocli，一名 AI 时代的“数字保镖”
+                            科幻小说集
                         </a>
                         
                     </h2>
@@ -748,38 +515,121 @@ Your current account is not eligible for antigravity. Try signing in with anothe
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2026-05-18
+                            2026-07-07
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        mocli，一名 AI 时代的“数字保镖”
-在这个信息喂养的时代，我们正逐渐沦为 APP 算法的奴隶。置顶、强推、永无止境的小红点，像碎纸机一样切碎了我们的时间。
-最近墨问开放了一个叫 mocli 的东西（https:&#x2F;&#x2F;github.com&#x2F;mowenxd&#x2F;cli），今天终于有时间用了一下，我突然意识到：我们要的不是更智能的通知，而是拒绝被通知的选择。
-它不是 CLI，它给 AI 提供了“入场券…
+                        这是另一个文档专栏的示例。
+
                     </div>
                     
                     
-                    <div class="flex flex-wrap gap-2">
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/docs/"
+                        class="hover:text-primary-600">docs</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/docs&#x2F;novel/"
+                        class="hover:text-primary-600">novel</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="/tags/mocli/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            mocli
+                        <a href="docs&#x2F;novel/1.第一章：启程.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            1. 第一章:启程
                         </a>
                         
-                        <a href="/tags/AI Agent/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI Agent
-                        </a>
+                    </h2>
+                    <div class="article-meta mb-4">
                         
-                        <a href="/tags/信息降噪/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            信息降噪
-                        </a>
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-07-07
+                        </span>
+                        
                         
                     </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        小说开篇内容...
+
+                    </div>
+                    
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/docs/"
+                        class="hover:text-primary-600">docs</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/docs&#x2F;claude/"
+                        class="hover:text-primary-600">claude</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="docs&#x2F;claude/index.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            Claude使用教程
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2026-07-07
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        
+1.Claude 简介
+2.Claude 提示的初步编写与优化
+3.Claude 提示实用编写技巧
+4.Claude 的具体提示实例
+5.Claude 提示故障排查规则
+6.创作一篇科幻故事的实践
+
+
+ --&gt;
+                    </div>
+                    
                     
                 </div>
             </article>
@@ -933,7 +783,7 @@ Your current account is not eligible for antigravity. Try signing in with anothe
                     <svg class="w-4 h-4 text-gray-600 group-hover:text-green-500" fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
-                            d="M8.691 2.5c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm6.618 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-6.618 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm6.618 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zM3.507 7.813c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm16.986 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-16.986 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm16.986 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406z" />
+                            d="M9.5 4C5.36 4 2 6.69 2 10c0 1.89 1.08 3.56 2.7 4.69l-.7 2.01 2.57-1.43c.71.22 1.46.39 2.25.47l.01.06C10.73 18.77 13.8 20 17.5 20c.68 0 1.34-.06 2-.16l3 1.66-.7-1.99C23.06 18.2 24 16.4 24 14.35 24 10.73 20.75 8 16.5 8c-.25 0-.5 0-.74.02A7.51 7.51 0 0 0 9.5 4zM7 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm4.5 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" />
                     </svg>
                 </a>
                 
@@ -1019,7 +869,7 @@ Your current account is not eligible for antigravity. Try signing in with anothe
 
     <!-- 相关文章 -->
     
-    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
+    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -1030,70 +880,70 @@ Your current account is not eligible for antigravity. Try signing in with anothe
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/41.html"
+                        <a href="projects/enyan.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            折腾谷歌最新 SDK 两天后，我发现开源软件已经没必要写给人类看了
+                            恩言 - 大字有声圣经
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-05-31</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/39.html"
+                        <a href="projects/rustpress.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            我反对全民 Vibe Coding
+                            RustPress - 纯静态博客引擎
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-05-24</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/38.html"
+                        <a href="blog&#x2F;2026/2.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            第三天了，你的谷歌Antigravity还能跑吗？
+                            手机和相机的区别是什么？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-05-23</p>
+                    <p class="text-xs text-gray-500">2026-01-03</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/37.html"
+                        <a href="blog&#x2F;2025/93.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            一天干完一百万字，谷歌 agy 这个工具简直是头不要命的洪水猛兽
+                            墨问终端脚本发布独立版 2.1，支持多图片上传
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-05-22</p>
+                    <p class="text-xs text-gray-500">2025-12-25</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/36.html"
+                        <a href="blog&#x2F;技术/rust-tag-test.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            提示语工程的新六条
+                            Rust 标签功能测试
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2026-05-21</p>
+                    <p class="text-xs text-gray-500">2025-11-04</p>
                     
                 </div>
                 
@@ -1111,123 +961,123 @@ Your current account is not eligible for antigravity. Try signing in with anothe
         <div class="card-body">
             <div class="flex flex-wrap gap-2">
                 
-                <a href="/tags/7x24 AI 员工/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    7x24 AI 员工
-                    <span class="ml-1 text-xs text-gray-500">1</span>
-                </a>
-                
                 <a href="/tags/AI/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
                     AI
-                    <span class="ml-1 text-xs text-gray-500">15</span>
-                </a>
-                
-                <a href="/tags/AI Agent/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent 进化方向/"
+                <a href="/tags/AS3 Expert/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent 进化方向
+                    AS3 Expert
+                    <span class="ml-1 text-xs text-gray-500">6</span>
+                </a>
+                
+                <a href="/tags/Actix-web/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Actix-web
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent提示技巧/"
+                <a href="/tags/Angular/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent提示技巧
+                    Angular
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI IDE/"
+                <a href="/tags/ChatGPT/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE
-                    <span class="ml-1 text-xs text-gray-500">3</span>
-                </a>
-                
-                <a href="/tags/AI IDE生产力/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE生产力
+                    ChatGPT
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 代码失效解决方案/"
+                <a href="/tags/Composition API/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 代码失效解决方案
+                    Composition API
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 办公效率提升/"
+                <a href="/tags/DeFi/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 办公效率提升
+                    DeFi
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 文件管理安全/"
+                <a href="/tags/DevOps/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 文件管理安全
+                    DevOps
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 架构能力/"
+                <a href="/tags/Docker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 架构能力
+                    Docker
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/Flutter/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Flutter
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程协作/"
+                <a href="/tags/Git/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程协作
+                    Git
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程技巧/"
+                <a href="/tags/Go/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程技巧
+                    Go
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/HTTP/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    HTTP
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 自动化服务器/"
+                <a href="/tags/Hooks/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 自动化服务器
+                    Hooks
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI代码生成/"
+                <a href="/tags/IndieHacker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI代码生成
+                    IndieHacker
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手/"
+                <a href="/tags/JavaScript/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手
+                    JavaScript
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手自动化/"
+                <a href="/tags/MySQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手自动化
+                    MySQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI协同编程/"
+                <a href="/tags/Option/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI协同编程
+                    Option
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI学习/"
+                <a href="/tags/PostgreSQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI学习
+                    PostgreSQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI对话/"
+                <a href="/tags/Promise/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI对话
+                    Promise
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
@@ -1249,7 +1099,7 @@ Your current account is not eligible for antigravity. Try signing in with anothe
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">148</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">38</span>
                     </a>
                 </div>
                 
@@ -1257,7 +1107,7 @@ Your current account is not eligible for antigravity. Try signing in with anothe
                     <a href="/docs/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">docs</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">25</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">18</span>
                     </a>
                 </div>
                 
@@ -1265,7 +1115,7 @@ Your current account is not eligible for antigravity. Try signing in with anothe
                     <a href="/posts/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">6</span>
                     </a>
                 </div>
                 
@@ -1448,7 +1298,7 @@ Your current account is not eligible for antigravity. Try signing in with anothe
     <!-- 广告位1：底部广告（版权区上方） -->
     
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
             <div
                 class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -1485,6 +1335,14 @@ Your current account is not eligible for antigravity. Try signing in with anothe
     </div>
     
     
+
+    <!-- 返回顶部 -->
+    <div class="text-center mb-8">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center px-4 py-2 text-sm border border-gray-300 hover:bg-gray-50 cursor-pointer">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            返回顶部
+        </button>
+    </div>
 
     <!-- 页脚 -->
     <footer class="bg-white border-t border-gray-200 mt-16">
@@ -1530,6 +1388,35 @@ Your current account is not eligible for antigravity. Try signing in with anothe
 
     <!-- 搜索功能脚本 -->
     <script src="/static/js/search.js"></script>
+    <script>
+        (function() {
+            function checkRedirect(val) {
+                var q = val.trim();
+                if (q === '分类' || q === '分类=') {
+                    window.location.href = '/categories/';
+                    return true;
+                } else if (q === '标签' || q === '标签=') {
+                    window.location.href = '/tags/';
+                    return true;
+                } else if (q === '归档' || q === '归档=') {
+                    window.location.href = '/archives/';
+                    return true;
+                }
+                return false;
+            }
+            document.addEventListener('input', function(e) {
+                if (e.target && (e.target.id === 'search-input' || e.target.id === 'mobile-search-input' || e.target.id === 'search-query' || e.target.id === 'search-modal-input')) {
+                    checkRedirect(e.target.value);
+                }
+            });
+            document.addEventListener('submit', function(e) {
+                var input = e.target.querySelector('input[name="q"]') || e.target.querySelector('input[type="text"]');
+                if (input && checkRedirect(input.value)) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
 
     
     <!-- Google Analytics 懒加载 -->
@@ -1577,6 +1464,133 @@ Your current account is not eligible for antigravity. Try signing in with anothe
         })();
     </script>
     
+
+    <!-- 收藏按钮：桌面端提示快捷键，移动端调用 navigator.share -->
+    <script>
+    function rpBookmark() {
+        if (navigator.share && window.innerWidth <= 768) {
+            navigator.share({
+                title: document.title,
+                url: window.location.href
+            }).catch(function() {});
+        } else {
+            var isMac = navigator.platform && navigator.platform.indexOf('Mac') !== -1;
+            var hint = isMac ? '\u2318+D' : 'Ctrl+D';
+            if (window.showToast) {
+                window.showToast('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            } else {
+                alert('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            }
+        }
+    }
+    </script>
+
+    <script>
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+
+    function rpBatchLoadListingCounts() {
+        if (!RP_REPO) return;
+        var articles = document.querySelectorAll('article');
+        if (!articles.length) return;
+
+        fetch('https://api.github.com/search/issues?q=' + encodeURIComponent('repo:' + RP_REPO + ' is:issue') + '&per_page=100&sort=created&order=desc', {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.items || !data.items.length) return;
+                var issues = {};
+                data.items.forEach(function (issue) {
+                    var m = issue.body && issue.body.match(/Comment thread for (\S+)/);
+                    if (m) {
+                        var pathKey = m[1];
+                        if (issues[pathKey] && issues[pathKey].number > issue.number) {
+                            return;
+                        }
+                        issues[pathKey] = issue;
+                    }
+                });
+
+                articles.forEach(function (article) {
+                    var link = article.querySelector('h2 a') || article.querySelector('div.flex a');
+                    if (!link) return;
+                    var href = link.getAttribute('href');
+                    if (!href) return;
+                    var issue = issues[href];
+                    if (!issue) return;
+
+                    var spans = article.querySelectorAll('button span.font-medium');
+                    if (spans.length >= 2) {
+                        spans[0].textContent = issue.comments || 0;
+                        spans[1].textContent = (issue.reactions && issue.reactions['+1']) || 0;
+                    }
+                });
+            })
+            .catch(function () {});
+    }
+
+    setTimeout(function () {
+        if (RP_REPO) rpBatchLoadListingCounts();
+    }, 500);
+    </script>
+
+    <!-- 全局极简直角 Toast 提示 -->
+    <script>
+        window.showToast = function(message) {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.style.position = 'fixed';
+                container.style.top = '24px';
+                container.style.left = '50%';
+                container.style.transform = 'translateX(-50%)';
+                container.style.zIndex = '99999';
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '12px';
+                container.style.pointerEvents = 'none';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.style.backgroundColor = '#1f2937';
+            toast.style.color = '#ffffff';
+            toast.style.padding = '12px 24px';
+            toast.style.fontSize = '14px';
+            toast.style.fontWeight = '500';
+            toast.style.minWidth = '280px';
+            toast.style.textAlign = 'center';
+            toast.style.boxSizing = 'border-box';
+            
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-8px)';
+            toast.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+            toast.style.pointerEvents = 'auto';
+            
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    toast.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 300);
+            }, 3000);
+        };
+    </script>
 </body>
 
 </html>

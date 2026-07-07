@@ -25,17 +25,25 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
     <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <!-- 防止浏览器 bfcache 缓存显示旧页面 -->
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans"
-    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.replace(/\/$/, '').split('/').pop() || 'index.html' }">
     <!-- 顶部导航栏 -->
     <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
+                    <img src="&amp;#x2F;static&amp;#x2F;images&amp;#x2F;logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树仑
                     </a>
@@ -46,7 +54,7 @@
                     <form action="/search.html" method="get" class="relative w-full">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="search-input">
+                            placeholder="搜索内容..." id="search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -119,7 +127,7 @@
                     <form action="/search.html" method="get" class="relative">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="mobile-search-input">
+                            placeholder="搜索内容..." id="mobile-search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -168,7 +176,7 @@
     </nav>
 
     <!-- 主要内容区域 -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:64rem">
         <main class="min-h-screen py-8">
             
 <!-- Hero 组件 -->
@@ -236,25 +244,26 @@
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2023/"
-                        class="hover:text-primary-600">2023</a>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2025/"
+                        class="hover:text-primary-600">2025</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="posts&#x2F;2023/47.html"
+                        <a href="blog&#x2F;2025/9.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            耳根仙侠小说《一念永恒》大纲、地图及武力等级
+                            电视剧《凡人歌》观后感
                         </a>
                         
                     </h2>
@@ -266,24 +275,27 @@
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2023-11-28
+                            2025-03-10
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        耳根仙侠小说《一念永恒》大纲、地图及武力等级
-大纲
-主角白小纯十几岁上灵溪宗，十碑第一，偷鸡狂魔。落星山脉舍己为人救同门，成为荣耀第子，南北两岸天骄大战第一。陨剑深渊天道筑基。化身夜葬，潜入血溪宗。一战成为夜魔，成为宋君婉心腹。成为中峰血子，成为血祖。成功阻止灵溪、血溪两宗大战，合并通天河下游四宗。攻打中游空河院，组建逆河宗，成为逆河宗少祖。作为逆河宗质子前往星空道极宗，闯入星空道极榜前十。再前往…
+                        电视剧《凡人歌》观后感
+给我个人印象最深的角色是李晓悦，这也是我在这部剧中最喜欢的角色。
+1，沈琳（殷桃饰）
+沈琳是那伟的妻子，她是女主角，这个角色是一个典型80后的贤妻良母式的精英角色。她是秀外惠中的，她既能进职场担任高级白领，也能下厨房，甚至为了养家糊口，她都能当月嫂去伺候自己曾经的下属。
+2，那伟（王骁饰）
+那伟是沈琳的丈夫，是男主角，是一个典型的80后丈夫的精英角色。他重江湖道义，对公司忠…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/网文创作/"
+                        <a href="/tags/影视/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            网文创作
+                            影视
                         </a>
                         
                     </div>
@@ -293,25 +305,26 @@
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2023/"
-                        class="hover:text-primary-600">2023</a>
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2025/"
+                        class="hover:text-primary-600">2025</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="posts&#x2F;2023/45.html"
+                        <a href="blog&#x2F;2025/8.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            读《九州经》前两章，谈传统作家转行网文创作需要避免的文笔问题
+                            Rust学习笔记2：for循环与迭代器、类型等
                         </a>
                         
                     </h2>
@@ -323,384 +336,411 @@
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2023-11-27
+                            2025-03-08
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        读《九州经》前两章，谈传统作家转行网文创作需要避免的文笔问题
+                        Rust学习笔记2：for循环与迭代器、类型等
+for循环与迭代器特征⭐
+在Rust中，for循环适用于数组、切片、向量、范围、字符串、字典：
+use std::collections::HashMap;
+fn main() {
+    &#x2F;&#x2F; 数组
+    let arr = [1, 2, 3];
+    for v in arr {
+        println!(&amp;quot;{}&amp;quot;…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/Rust/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Rust
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2025/"
+                        class="hover:text-primary-600">2025</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2025/7.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            Manus vs Coze，Trae vs Copilot
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2025-03-07
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        Manus vs Coze，Trae vs Copilot
+最近AI的风暴很大，有点应接不暇的感觉。我还没有拿到Manus的注册码，但我看到它的介绍及作品，已经深为震撼。
+什么是Manus？它与之前的AI产品最大的区别是“知行合一”，它可以独立进行逻辑思考、独立规划和执行复杂任务，并直接交付最终结果。官方放出的一个“活体”示例是“容器与虚拟机发展传记小说”：
+https:&#x2F;&#x2F;manus.im&#x2F;sh…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/AI IDE/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            AI IDE
+                        </a>
+                        
+                        <a href="/tags/Copilot/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Copilot
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2025/"
+                        class="hover:text-primary-600">2025</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2025/5.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            普通人该怎么用好DeepSeek呢，除搜索以外？
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2025-03-02
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        普通人该怎么用好DeepSeek呢，除搜索以外？
+昨天参加了腾讯的DeepSeek北京研讨会，回来之后写了一篇总结，核心意思说：今年DeepSeek将持续一直是最大热门，目前它已经取得的成绩并不是它最好的成绩，今年大概率它还会带给我们更多更大的惊喜。
+换个角度讲，DeepSeek的热度还会持续升高加强。今年DeepSeek就是风口，今年我们普通人在它上面投入多少时间和精力，将直接影响我们每个人有多…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/DeepSeek/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            DeepSeek
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2025/"
+                        class="hover:text-primary-600">2025</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2025/6.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            Rust学习笔记1：闭包
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2025-03-01
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        Rust学习笔记1：闭包
+什么是闭包？
+闭包是一种可以捕获调用者作用域变量的匿名函数。它既可以作为值赋值给变量，又可以作为实参传递给函数，它让函数变成了一种数据类型存在。还有，由于闭包不需要进行参数和返回值的类型标注，这可以省却我们不少事情。
+下面这是一个好例子，cat的值是一个闭包，它捕捉了变量x。它的参数和返回值都没有类型标注，又没有fn、花括号，代码显得十分简洁。
+fn main() {
+ …
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/Rust/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Rust
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2025/"
+                        class="hover:text-primary-600">2025</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2025/4.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            今天参加 DeepSeek 北京研讨会的收获
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2025-03-01
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        今天参加 DeepSeek 北京研讨会的收获
+::: card-masonry
 
-以下内容是卖报小郎君早期作品《九州经》的前两章。
 
-第1章
-牧野城，楚府！
-时值严冬，寒风凛冽，肃杀百草。一座简陋小院，纱窗内孤灯如豆，墙角几根衰草迎着冷风摇曳。
-“望舒，望舒......”
-黑暗中不知传来谁的呼唤，熟悉而陌生，却偏偏记不起在哪里听过，是前世的留恋亦或是今生的呼唤？楚望舒忽然感到一阵锥心彻骨的悲伤，猛地睁开眼，大口喘息…
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/网文创作/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            网文创作
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2023/"
-                        class="hover:text-primary-600">2023</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2023/44.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            宫斗剧杀青，Sam Altman 又回到了 OpenAI
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2023-11-23
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        宫斗剧杀青，Sam Altman 又回到了 OpenAI
-你好，今天继续聊一下 OpenAI 的宫斗剧后续。
 
-继 Altman 被董事会开除，他与好兄弟 Greg 双双从 OpenAI 离职，同时宣布将加入微软，负责新的高级人工智能项目之后，事情再起涟漪。昨天，也就是 11 月 22 日，Greg 再次宣布，他和 Sam 已经回到了 Open AI。
-OpenAI 的官宣是这样的：
 
-我们原则上…
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/ChatGPT/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            ChatGPT
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2023/"
-                        class="hover:text-primary-600">2023</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2023/42.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            是被对手间谍策反，还是强大的 AI 操纵了人类意识，OpenAI 掌门 Sam Altman 被自己的公司扫地出门了
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2023-11-20
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        
-是被对手间谍策反，还是强大的 AI 操纵了人类意识，OpenAI 掌门 Sam Altman 被自己的公司扫地出门了
-你好，今天聊一下 ChatGPT 的八卦。
-对，不是聊它的技术，而是聊它的八卦——人事方面的八卦。具有相同鬼畜风格的事情，在 1985 年 4 月也发生过一次，那一次乔布斯被自己亲手创建的苹果公司赶出去了。不过，当时人们并没有意识到苹果公司开除乔布斯是多么荒谬；这一次，人们似乎对…
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/ChatGPT/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            ChatGPT
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2023/"
-                        class="hover:text-primary-600">2023</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2023/41.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            50 行 Python 代码调用私有 GPTs
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2023-11-15
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        50 行 Python 代码调用私有 GPTs
-今天聊一下 ChatGPT 的 GPTs。
-以下内容首发于腾讯云开发者，是一篇应邀写的约稿，大概前后用了半个小时，仓促之下代码示例及行文措词都非常朴素。现实中真实的项目是绝不会如此简单的，但越简单的示例，越容易让读者抓住重点，这是我一直坚持的教程撰写风格。
-我通过这个小示例想表达的是，通过 playwright + GPTs，我们可以做出许多有意思的…
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/ChatGPT/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            ChatGPT
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2023/"
-                        class="hover:text-primary-600">2023</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2023/43.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            悬念题材小说中的心理活动
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2023-11-12
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        悬念题材小说中的心理活动
-我们先看一段《妖二代》的情节内容：
 
-老吴同志开自己的车回奉天，李羡鱼坐博士蛇姐姐的警车回县城，再过几个小时，祖奶奶她们的航班会抵达奉天的桃仙国际机场，李羡鱼担心冰渣子的安危，不敢在离开她半步，拜托了吴部长派人接待。
-“我今天值班缺勤，这个月的全勤奖肯定没了，明儿还得写报告给领导解释。”柳谣嘀嘀咕咕的感慨。
-“不好意思啊。”李羡鱼歉声道。
-原本以为是一场谈判，谁知是个坑，…
-                    </div>
-                    
-                    
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <a href="/tags/网文创作/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            网文创作
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2023/"
-                        class="hover:text-primary-600">2023</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2023/40.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            警惕潜伏在生活环境中的假酒，谈日常如何选择安全又便宜的粮食酒？
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2023-11-12
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        
-警惕潜伏在生活环境中的假酒，谈日常如何选择安全又便宜的粮食酒？
-[TOC]
-你好，今天聊一下酒。
-二三十年前，你在报纸上经常能看到这样的消息，某某地方举办婚宴或寿宴，客人喝了假酒，导致数人不幸身亡、多人双目失明之类的新闻。原因在于宴请所用的酒不是纯粮食酿造的，是工业酒精勾兑的，含有甲醇、吡啶等违害人类健身的物质。最近这方面的新闻少了，但随着直播卖酒的兴起，这类事情又有所抬头，我们必须谨慎对待。
-…
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts/"
-                        class="hover:text-primary-600">posts</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/posts&#x2F;2023/"
-                        class="hover:text-primary-600">2023</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="posts&#x2F;2023/38.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            一个成人网文语言风格：隐晦春光笔触
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        <span class="inline-flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            2023-11-11
-                        </span>
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        一个成人网文语言风格：隐晦春光笔触
-你好，今天聊一下卖报的网文语言风格。
-先看一个《妖二代》中的网文情节内容：
 
-“战姬没事吧？”他皱着眉头，声音关切。
-雷霆战姬摇摇头。
-“伤口太深了，不处理的话，会留下疤的。”李羡鱼咬破指尖，把手指递到战姬的小嘴边：“给你吮一口。”
-雷霆战姬：“.....”
-长腿美人看着面前的手指，脑补了自己吮李羡鱼指头的画面....
-臣妾做不到啊。
-“矫情什么呢，我都不在意，…
+:::
+好，照片秀完了，接下来开始说收获。收获很多，总之一言难尽。大佬们的分享，各个暗藏机理，很难用一两句话说明白。
+有 20 年荣誉的烤串在桌上堆成山了，百威纯生不错，对我来说就是个饮料，我一个人大概喝了 10 瓶。肖哥的芙蓉王被我抽掉了半盒，感觉比我的黄金叶好抽。肖哥说：艺哥，抽就抽芙蓉王！
+这个凡尔赛…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/网文创作/"
+                        <a href="/tags/DeepSeek/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            网文创作
+                            DeepSeek
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2025/"
+                        class="hover:text-primary-600">2025</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2025/3.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            杯中倒悬的山河
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2025-02-25
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        杯中倒悬的山河
+杯中倒悬的山河，乃我眼中凝眸的烈焰
+拉格拉开的刹那，叫醒了我喉咙的闸门
+五岳燃成灰烬，仿佛还要轻些
+我甩开屁股下面的椅子
+跳舞，开始跳舞
+影子狂草零乱，似要撞碎墙壁
+月光把地砖敲成战鼓，当当响
+酒瓶滚过街道，掩过整座城市的叹息
+长江
+如同我体内的血管，在涨潮——
+浪头汹汹拍打在我的胸膛
+黄河
+咆哮着，被我倒进了酒杯
+我凝视着酒杯，这，一眸万年
+仰头饮下这杯泥沙与雷鸣————
+要吼就…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/诗歌/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            诗歌
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/blog/"
+                        class="hover:text-primary-600">blog</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2025/"
+                        class="hover:text-primary-600">2025</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="blog&#x2F;2025/2.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            在Rust中{:?}与{:#?}有什么异同？
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2025-02-23
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        在Rust中{:?}与{:#?}有什么异同？
+Rust 的格式化系统（std::fmt）是一个非常强大且灵活的工具，主要用于生成格式化的输出。在 Rust 的格式化输出中，{:?} 和 {:#?} 是两种常见的占位符，分别用于调试输出和美化调试输出。它们的设计和命名是基于 Rust 的格式化系统（std::fmt）的灵活性和扩展性考虑的。
+1. 为什么有 {:?} 和 {:#?} 这样的定义？
+(…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/Rust/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            Rust
                         </a>
                         
                     </div>
@@ -857,7 +897,7 @@ OpenAI 的官宣是这样的：
                     <svg class="w-4 h-4 text-gray-600 group-hover:text-green-500" fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
-                            d="M8.691 2.5c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm6.618 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-6.618 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm6.618 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zM3.507 7.813c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm16.986 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-16.986 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm16.986 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406z" />
+                            d="M9.5 4C5.36 4 2 6.69 2 10c0 1.89 1.08 3.56 2.7 4.69l-.7 2.01 2.57-1.43c.71.22 1.46.39 2.25.47l.01.06C10.73 18.77 13.8 20 17.5 20c.68 0 1.34-.06 2-.16l3 1.66-.7-1.99C23.06 18.2 24 16.4 24 14.35 24 10.73 20.75 8 16.5 8c-.25 0-.5 0-.74.02A7.51 7.51 0 0 0 9.5 4zM7 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm4.5 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" />
                     </svg>
                 </a>
                 
@@ -943,7 +983,7 @@ OpenAI 的官宣是这样的：
 
     <!-- 相关文章 -->
     
-    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
+    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -954,70 +994,70 @@ OpenAI 的官宣是这样的：
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2023/47.html"
+                        <a href="projects/enyan.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            耳根仙侠小说《一念永恒》大纲、地图及武力等级
+                            恩言 - 大字有声圣经
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2023-11-28</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2023/45.html"
+                        <a href="projects/rustpress.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            读《九州经》前两章，谈传统作家转行网文创作需要避免的文笔问题
+                            RustPress - 纯静态博客引擎
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2023-11-27</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2023/44.html"
+                        <a href="blog&#x2F;2026/2.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            宫斗剧杀青，Sam Altman 又回到了 OpenAI
+                            手机和相机的区别是什么？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2023-11-23</p>
+                    <p class="text-xs text-gray-500">2026-01-03</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2023/42.html"
+                        <a href="blog&#x2F;2025/93.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            是被对手间谍策反，还是强大的 AI 操纵了人类意识，OpenAI 掌门 Sam Altman 被自己的公司扫地出门了
+                            墨问终端脚本发布独立版 2.1，支持多图片上传
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2023-11-20</p>
+                    <p class="text-xs text-gray-500">2025-12-25</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="posts&#x2F;2023/41.html"
+                        <a href="blog&#x2F;技术/rust-tag-test.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            50 行 Python 代码调用私有 GPTs
+                            Rust 标签功能测试
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2023-11-15</p>
+                    <p class="text-xs text-gray-500">2025-11-04</p>
                     
                 </div>
                 
@@ -1035,123 +1075,123 @@ OpenAI 的官宣是这样的：
         <div class="card-body">
             <div class="flex flex-wrap gap-2">
                 
-                <a href="/tags/7x24 AI 员工/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    7x24 AI 员工
-                    <span class="ml-1 text-xs text-gray-500">1</span>
-                </a>
-                
                 <a href="/tags/AI/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
                     AI
-                    <span class="ml-1 text-xs text-gray-500">15</span>
-                </a>
-                
-                <a href="/tags/AI Agent/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent 进化方向/"
+                <a href="/tags/AS3 Expert/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent 进化方向
+                    AS3 Expert
+                    <span class="ml-1 text-xs text-gray-500">6</span>
+                </a>
+                
+                <a href="/tags/Actix-web/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Actix-web
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent提示技巧/"
+                <a href="/tags/Angular/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent提示技巧
+                    Angular
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI IDE/"
+                <a href="/tags/ChatGPT/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE
-                    <span class="ml-1 text-xs text-gray-500">3</span>
-                </a>
-                
-                <a href="/tags/AI IDE生产力/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE生产力
+                    ChatGPT
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 代码失效解决方案/"
+                <a href="/tags/Composition API/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 代码失效解决方案
+                    Composition API
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 办公效率提升/"
+                <a href="/tags/DeFi/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 办公效率提升
+                    DeFi
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 文件管理安全/"
+                <a href="/tags/DevOps/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 文件管理安全
+                    DevOps
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 架构能力/"
+                <a href="/tags/Docker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 架构能力
+                    Docker
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/Flutter/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Flutter
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程协作/"
+                <a href="/tags/Git/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程协作
+                    Git
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程技巧/"
+                <a href="/tags/Go/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程技巧
+                    Go
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/HTTP/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    HTTP
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 自动化服务器/"
+                <a href="/tags/Hooks/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 自动化服务器
+                    Hooks
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI代码生成/"
+                <a href="/tags/IndieHacker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI代码生成
+                    IndieHacker
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手/"
+                <a href="/tags/JavaScript/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手
+                    JavaScript
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手自动化/"
+                <a href="/tags/MySQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手自动化
+                    MySQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI协同编程/"
+                <a href="/tags/Option/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI协同编程
+                    Option
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI学习/"
+                <a href="/tags/PostgreSQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI学习
+                    PostgreSQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI对话/"
+                <a href="/tags/Promise/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI对话
+                    Promise
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
@@ -1173,7 +1213,7 @@ OpenAI 的官宣是这样的：
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">148</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">38</span>
                     </a>
                 </div>
                 
@@ -1181,7 +1221,7 @@ OpenAI 的官宣是这样的：
                     <a href="/docs/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">docs</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">25</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">18</span>
                     </a>
                 </div>
                 
@@ -1189,7 +1229,7 @@ OpenAI 的官宣是这样的：
                     <a href="/posts/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">6</span>
                     </a>
                 </div>
                 
@@ -1372,7 +1412,7 @@ OpenAI 的官宣是这样的：
     <!-- 广告位1：底部广告（版权区上方） -->
     
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
             <div
                 class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -1409,6 +1449,14 @@ OpenAI 的官宣是这样的：
     </div>
     
     
+
+    <!-- 返回顶部 -->
+    <div class="text-center mb-8">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center px-4 py-2 text-sm border border-gray-300 hover:bg-gray-50 cursor-pointer">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            返回顶部
+        </button>
+    </div>
 
     <!-- 页脚 -->
     <footer class="bg-white border-t border-gray-200 mt-16">
@@ -1454,6 +1502,35 @@ OpenAI 的官宣是这样的：
 
     <!-- 搜索功能脚本 -->
     <script src="/static/js/search.js"></script>
+    <script>
+        (function() {
+            function checkRedirect(val) {
+                var q = val.trim();
+                if (q === '分类' || q === '分类=') {
+                    window.location.href = '/categories/';
+                    return true;
+                } else if (q === '标签' || q === '标签=') {
+                    window.location.href = '/tags/';
+                    return true;
+                } else if (q === '归档' || q === '归档=') {
+                    window.location.href = '/archives/';
+                    return true;
+                }
+                return false;
+            }
+            document.addEventListener('input', function(e) {
+                if (e.target && (e.target.id === 'search-input' || e.target.id === 'mobile-search-input' || e.target.id === 'search-query' || e.target.id === 'search-modal-input')) {
+                    checkRedirect(e.target.value);
+                }
+            });
+            document.addEventListener('submit', function(e) {
+                var input = e.target.querySelector('input[name="q"]') || e.target.querySelector('input[type="text"]');
+                if (input && checkRedirect(input.value)) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
 
     
     <!-- Google Analytics 懒加载 -->
@@ -1501,6 +1578,133 @@ OpenAI 的官宣是这样的：
         })();
     </script>
     
+
+    <!-- 收藏按钮：桌面端提示快捷键，移动端调用 navigator.share -->
+    <script>
+    function rpBookmark() {
+        if (navigator.share && window.innerWidth <= 768) {
+            navigator.share({
+                title: document.title,
+                url: window.location.href
+            }).catch(function() {});
+        } else {
+            var isMac = navigator.platform && navigator.platform.indexOf('Mac') !== -1;
+            var hint = isMac ? '\u2318+D' : 'Ctrl+D';
+            if (window.showToast) {
+                window.showToast('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            } else {
+                alert('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            }
+        }
+    }
+    </script>
+
+    <script>
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+
+    function rpBatchLoadListingCounts() {
+        if (!RP_REPO) return;
+        var articles = document.querySelectorAll('article');
+        if (!articles.length) return;
+
+        fetch('https://api.github.com/search/issues?q=' + encodeURIComponent('repo:' + RP_REPO + ' is:issue') + '&per_page=100&sort=created&order=desc', {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.items || !data.items.length) return;
+                var issues = {};
+                data.items.forEach(function (issue) {
+                    var m = issue.body && issue.body.match(/Comment thread for (\S+)/);
+                    if (m) {
+                        var pathKey = m[1];
+                        if (issues[pathKey] && issues[pathKey].number > issue.number) {
+                            return;
+                        }
+                        issues[pathKey] = issue;
+                    }
+                });
+
+                articles.forEach(function (article) {
+                    var link = article.querySelector('h2 a') || article.querySelector('div.flex a');
+                    if (!link) return;
+                    var href = link.getAttribute('href');
+                    if (!href) return;
+                    var issue = issues[href];
+                    if (!issue) return;
+
+                    var spans = article.querySelectorAll('button span.font-medium');
+                    if (spans.length >= 2) {
+                        spans[0].textContent = issue.comments || 0;
+                        spans[1].textContent = (issue.reactions && issue.reactions['+1']) || 0;
+                    }
+                });
+            })
+            .catch(function () {});
+    }
+
+    setTimeout(function () {
+        if (RP_REPO) rpBatchLoadListingCounts();
+    }, 500);
+    </script>
+
+    <!-- 全局极简直角 Toast 提示 -->
+    <script>
+        window.showToast = function(message) {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.style.position = 'fixed';
+                container.style.top = '24px';
+                container.style.left = '50%';
+                container.style.transform = 'translateX(-50%)';
+                container.style.zIndex = '99999';
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '12px';
+                container.style.pointerEvents = 'none';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.style.backgroundColor = '#1f2937';
+            toast.style.color = '#ffffff';
+            toast.style.padding = '12px 24px';
+            toast.style.fontSize = '14px';
+            toast.style.fontWeight = '500';
+            toast.style.minWidth = '280px';
+            toast.style.textAlign = 'center';
+            toast.style.boxSizing = 'border-box';
+            
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-8px)';
+            toast.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+            toast.style.pointerEvents = 'auto';
+            
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    toast.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 300);
+            }, 3000);
+        };
+    </script>
 </body>
 
 </html>

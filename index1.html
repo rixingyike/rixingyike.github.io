@@ -25,17 +25,25 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
     <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <!-- 防止浏览器 bfcache 缓存显示旧页面 -->
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans"
-    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.replace(/\/$/, '').split('/').pop() || 'index.html' }">
     <!-- 顶部导航栏 -->
     <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
+                    <img src="&amp;#x2F;static&amp;#x2F;images&amp;#x2F;logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树仑
                     </a>
@@ -46,7 +54,7 @@
                     <form action="/search.html" method="get" class="relative w-full">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="search-input">
+                            placeholder="搜索内容..." id="search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -119,7 +127,7 @@
                     <form action="/search.html" method="get" class="relative">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="mobile-search-input">
+                            placeholder="搜索内容..." id="mobile-search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -168,7 +176,7 @@
     </nav>
 
     <!-- 主要内容区域 -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:64rem">
         <main class="min-h-screen py-8">
             
 <!-- Hero 组件 -->
@@ -236,177 +244,56 @@
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="blog&#x2F;2026/55.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            让他走吧，现在骑自动车的都不好惹
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        让他走吧，现在骑自动车的都不好惹
-气消了，把昨天的小事撰文以记之。
-昨天我骑单车路过一个高速岔路口，转过路口进入高速桥下，我看见几个穿绿色上衣的执法小哥迎面挡住了我。一个胖哥伸手示意我停下，我将车头往左偏转，几乎要偏到机动车道上了，他还在挡我，我只好停下来。
-当我停下来的时候，我发现左后面一辆黄色外卖小哥也停了下来。噢，原来不是拦我。小哥穿黄色外卖圣衣，头戴黄色头盔，所骑工具也是平台标配，很标准，…
-                    </div>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
                     
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2010/"
+                        class="hover:text-primary-600">2010</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2026/48.html"
+                        <a href="posts&#x2F;2010/01.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            我有个秘密憋了二十年
+                            命名空间：如何控制未知方法的调用
                         </a>
                         
                     </h2>
                     <div class="article-meta mb-4">
                         
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        我有个秘密憋了二十年
-你有没有怀疑过自己？说实话，我第一次认真问自己这个问题，是因为邓安庆老师。
-今天他在公众号里扔出一篇《忽然有一天感到写字很恶心》，劈头盖脸就写自己“资质极为平庸，写东西像小学生作文……”一个成名作家，把笔一摔，愣是停了一年没写。2024年4月到2025年2月，整整十个月，邓老师就那么生生地把自己摁在自我否定里。
-我看完心里咯噔一下。不仅是心疼，还有熟悉。
-你有没有那样一个时刻…
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="blog&#x2F;2026/61.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            我并不完全相信 AI
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2010-05-01
+                        </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        我并不完全相信 AI
-RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，支持增量编译，首页是比较少见的倒分页，它的实现我一直还算满意。它也是我最后一个“纯手写”的程序，之后 2026 就被叫成 AI 编程元年了，我很少再一行行纯手工敲过代码。
-今天我挖出这个老博客程序重构。开发时我用 mise run dev启动热编译，每次改一个小地方，整个程序都要重新生成一遍，这个过程虽…
-                    </div>
-                    
-                    
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="blog&#x2F;2026/31.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            六条 Prompt 的核心法则
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        六条 Prompt 的核心法则
-最近朋友圈刷到太多这种东西了——什么「收藏！100 个万能提示词模板」「某某大神整理的 SKILL 合集，拿走不谢」，充满了对 SKILL 的崇拜。更离谱的是，很多人把「提示词工程」当成玄学，什么「跟 AI 说话要温柔」「要多夸它」「威胁它不配合就扣工资」。
-其实这些都是末节，真正的底层法则，Anthropic 官方早就亮出来了。下面我一个一个拆给你看。
-
-1. 用…
+                        命名空间：如何控制未知方法的调用
+命名空间对于程序员来讲，应当不会陌生，几乎每写一行代码，就要用到一止一个命名空间。AS3默认大约打开了6个命名空间。
+1，AS3提供的常用的7个命名空间
+internal,private,protected,public,static,as3，前5个命名空间作为类属性访问控制说明，在AS3中 是默认打开的。最后一个命名空间as3，默认也是被打开的，一般很少显式用到…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/Prompt工程核心法则/"
+                        <a href="/tags/AS3 Expert/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            Prompt工程核心法则
-                        </a>
-                        
-                        <a href="/tags/提示词技巧/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            提示词技巧
-                        </a>
-                        
-                        <a href="/tags/AI输出质量控制/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI输出质量控制
+                            AS3 Expert
                         </a>
                         
                     </div>
@@ -416,115 +303,420 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
-                    
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2026/"
-                        class="hover:text-primary-600">2026</a>
-                    
-                </nav>
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        
-                        <a href="blog&#x2F;2026/58.html"
-                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            只用了 3 分钟，我把那个按钮钉在了主页上
-                        </a>
-                        
-                    </h2>
-                    <div class="article-meta mb-4">
-                        
-                        
-                    </div>
-                    
-                    <div class="text-gray-600 leading-relaxed mb-4">
-                        只用了 3 分钟，我把那个按钮钉在了主页上
-之前分享某位大佬的社交媒体账号运营秘籍时，提到过要把“对此帖子不感兴趣”这个按钮，从三个点（…）菜单里拿出来，以方便点击，现在做到了：
-
-并且，在有 AI 的时代，做到这件事只用了不到 3 分钟的时间。
-所有常用的功能按钮，都应该放在容易触摸到的地方。现在点一下小笑脸，X 就明白了我的喜好。
-
-还有，并不是所有用户都有同样的观念和使用习惯，这也就是说，为…
-                    </div>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
                     
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                    <span class="mx-2">›</span>
                     <a href="/posts/"
                         class="hover:text-primary-600">posts</a>
                     
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2009/"
+                        class="hover:text-primary-600">2009</a>
+                    
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="posts/index.html"
+                        <a href="posts&#x2F;2009/01.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            博客
+                            AS3事件机制概述
                         </a>
                         
                     </h2>
                     <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2008-05-01
+                        </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        
+                        AS3事件机制概述
+目录
+[TOC]
+事件机制是AS3的核心功能之一，没有充分掌握事件机制的方方面面，就不能算是精通AS3语言。
+1，AS3事件机制的主要成员
 
+IEventDispatcher：事件派发对象接口，定义了添加、派发、移除、是否监听指定事件、是否触发指定事件接口
+EventDispatcher：事件派发对象接口的实现者，用户无法撇开EventDispatcher而自行实现IEvent…
                     </div>
                     
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/AS3 Expert/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            AS3 Expert
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2008/"
+                        class="hover:text-primary-600">2008</a>
+                    
+                </nav>
+                
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="projects.html" class="text-gray-900 hover:text-primary-600 transition-colors">
-                            项目展示
+                        <a href="posts&#x2F;2008/05.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            E4X用法简要
                         </a>
                         
                     </h2>
                     <div class="article-meta mb-4">
                         
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2008-05-01
+                        </span>
+                        
                         
                     </div>
                     
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        E4X用法简要
+E4X语法是AS3对ECMAScript标准最前卫的实现，也是目前所有高级编程语言中操作XML最为方便的方式之一。仅仅因为AS3实现了E4X，作为程序员至少也应该了解它一下，因为它是那样的简洁、优雅。
+因为AS3实现的是ECMAScript 357 for XML标准（ECMAScript对XML的扩展标准），简称为E4X。自有E4X以来，AS2程序员应该忘掉以前惯用的XMLDoc…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/AS3 Expert/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            AS3 Expert
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </article>
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2008/"
+                        class="hover:text-primary-600">2008</a>
+                    
+                </nav>
+                
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="docs.html" class="text-gray-900 hover:text-primary-600 transition-colors">
-                            电子文档
+                        <a href="posts&#x2F;2008/04.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            AS3中的一些基本定义，Function与Method的区别
                         </a>
                         
                     </h2>
                     <div class="article-meta mb-4">
                         
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2008-05-01
+                        </span>
+                        
                         
                     </div>
                     
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        AS3中的一些基本定义，Function与Method的区别
+Adobe在官方英文文档中，并未专意对一些基本作区别说明；多数自动翻译或中文翻译，又存在翻译不当之处，古人有云，差之毫厘，缪以千里。且先试问一句，Function与Method有何区别？
+Function与Method翻译成中文，不知如何翻译，使用英文更好。function在AS3中，是定义函数的关键字，但它定义的不一定是Functio…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/AS3 Expert/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            AS3 Expert
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2008/"
+                        class="hover:text-primary-600">2008</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2008/01.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            动态语言的基石之函数闭包
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2008-05-01
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        动态语言的基石之函数闭包
+闭包(Closure)是函数(或方法)及其执行环境的组合体，它不仅包括函数(或方法)本身，也包括函数(或方法)运行时的上下文词汇环境。闭包是所有动态语言的基石，闭包实现了函数(或方法)可以作为参数传递给函数(或方法)。
+1，用一个代码实验例示闭包概念
+在AS3中，共种三种闭包：
+1）函数闭包(Function Closure)
+2）方法闭包(Method Closure)…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/AS3 Expert/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            AS3 Expert
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2008/"
+                        class="hover:text-primary-600">2008</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2008/03.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            AS3中的八种基元类型
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2008-05-01
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        AS3中的八种基元类型
+一，八种基元类型
+何谓基元类型？即是一门语言中最基本基本的数据类型，其它数据类型均是以此为基础定义的，并且可以作为变量注释类型或函数返回类型。在AS3中，共有八种基元类型：
+[此有图，但已被岁月冲走]
+1）Boolean
+布尔类型，仅有true与false两个值。默认值为false。特殊值NaN,undefined,null,字符串空值(”),0转换为Boolean后均为f…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/AS3 Expert/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            AS3 Expert
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2008/"
+                        class="hover:text-primary-600">2008</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2008/02.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            像Ruby一样简易行码：使用Prototype扩展原生对象
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2008-05-01
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        像Ruby一样简易行码：使用Prototype扩展原生对象
+AS3是基于ECMAScript标准的语言，Adobe团队在遵从此标准的同时，使其向Java靠拢具有Class-Base的特征，因此，AS3是一门很奇特的语言，它既像Javascript，又像Java（Java与Javascript是两门完全不同的语言）。
+1，Ruby的collect方法
+Ruiby的行码简易，让很多程序员爱不释手。
+#…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/AS3 Expert/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            AS3 Expert
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                    
+                    <a href="/posts/"
+                        class="hover:text-primary-600">posts</a>
+                    
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/posts&#x2F;2008/"
+                        class="hover:text-primary-600">2008</a>
+                    
+                </nav>
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        
+                        <a href="posts&#x2F;2008/06.html"
+                            class="text-gray-900 hover:text-primary-600 transition-colors">
+                            Flash Player的垃圾内存回收机制：能否强制回收？
+                        </a>
+                        
+                    </h2>
+                    <div class="article-meta mb-4">
+                        
+                        <span class="inline-flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            2008-05-01
+                        </span>
+                        
+                        
+                    </div>
+                    
+                    <div class="text-gray-600 leading-relaxed mb-4">
+                        Flash Player的垃圾内存回收机制：能否强制回收？
+在Adobe Flash Player 10中，AS3的内部垃圾回收机制是怎样的？程序员可以强制FP回收内存吗？答案是否定的，但有方法。 
+1. 毛主席请猫吃辣椒的故事
+建国初期，国家正在对资本主义工商业进行社会主义改造，毛泽东问周恩来、刘少奇等，如何才能让猫吃辣椒？刘少奇说，把猫逮住，用筷子捅下去。周总理说，先把猫饿上三天，然后把辣椒裹…
+                    </div>
+                    
+                    
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <a href="/tags/AS3 Expert/"
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+                            AS3 Expert
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </article>
@@ -677,7 +869,7 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
                     <svg class="w-4 h-4 text-gray-600 group-hover:text-green-500" fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
-                            d="M8.691 2.5c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm6.618 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-6.618 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm6.618 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zM3.507 7.813c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm16.986 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-16.986 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm16.986 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406z" />
+                            d="M9.5 4C5.36 4 2 6.69 2 10c0 1.89 1.08 3.56 2.7 4.69l-.7 2.01 2.57-1.43c.71.22 1.46.39 2.25.47l.01.06C10.73 18.77 13.8 20 17.5 20c.68 0 1.34-.06 2-.16l3 1.66-.7-1.99C23.06 18.2 24 16.4 24 14.35 24 10.73 20.75 8 16.5 8c-.25 0-.5 0-.74.02A7.51 7.51 0 0 0 9.5 4zM7 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm4.5 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" />
                     </svg>
                 </a>
                 
@@ -763,7 +955,7 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
 
     <!-- 相关文章 -->
     
-    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
+    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -774,60 +966,70 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/55.html"
+                        <a href="projects/enyan.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            让他走吧，现在骑自动车的都不好惹
+                            恩言 - 大字有声圣经
                         </a>
                         
                     </h4>
+                    
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/48.html"
+                        <a href="projects/rustpress.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            我有个秘密憋了二十年
+                            RustPress - 纯静态博客引擎
                         </a>
                         
                     </h4>
+                    
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/61.html"
+                        <a href="blog&#x2F;2026/2.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            我并不完全相信 AI
+                            手机和相机的区别是什么？
                         </a>
                         
                     </h4>
+                    
+                    <p class="text-xs text-gray-500">2026-01-03</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/31.html"
+                        <a href="blog&#x2F;2025/93.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            六条 Prompt 的核心法则
+                            墨问终端脚本发布独立版 2.1，支持多图片上传
                         </a>
                         
                     </h4>
+                    
+                    <p class="text-xs text-gray-500">2025-12-25</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2026/58.html"
+                        <a href="blog&#x2F;技术/rust-tag-test.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            只用了 3 分钟，我把那个按钮钉在了主页上
+                            Rust 标签功能测试
                         </a>
                         
                     </h4>
+                    
+                    <p class="text-xs text-gray-500">2025-11-04</p>
                     
                 </div>
                 
@@ -845,123 +1047,123 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
         <div class="card-body">
             <div class="flex flex-wrap gap-2">
                 
-                <a href="/tags/7x24 AI 员工/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    7x24 AI 员工
-                    <span class="ml-1 text-xs text-gray-500">1</span>
-                </a>
-                
                 <a href="/tags/AI/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
                     AI
-                    <span class="ml-1 text-xs text-gray-500">15</span>
-                </a>
-                
-                <a href="/tags/AI Agent/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent 进化方向/"
+                <a href="/tags/AS3 Expert/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent 进化方向
+                    AS3 Expert
+                    <span class="ml-1 text-xs text-gray-500">6</span>
+                </a>
+                
+                <a href="/tags/Actix-web/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Actix-web
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent提示技巧/"
+                <a href="/tags/Angular/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent提示技巧
+                    Angular
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI IDE/"
+                <a href="/tags/ChatGPT/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE
-                    <span class="ml-1 text-xs text-gray-500">3</span>
-                </a>
-                
-                <a href="/tags/AI IDE生产力/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE生产力
+                    ChatGPT
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 代码失效解决方案/"
+                <a href="/tags/Composition API/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 代码失效解决方案
+                    Composition API
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 办公效率提升/"
+                <a href="/tags/DeFi/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 办公效率提升
+                    DeFi
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 文件管理安全/"
+                <a href="/tags/DevOps/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 文件管理安全
+                    DevOps
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 架构能力/"
+                <a href="/tags/Docker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 架构能力
+                    Docker
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/Flutter/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Flutter
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程协作/"
+                <a href="/tags/Git/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程协作
+                    Git
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程技巧/"
+                <a href="/tags/Go/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程技巧
+                    Go
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/HTTP/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    HTTP
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 自动化服务器/"
+                <a href="/tags/Hooks/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 自动化服务器
+                    Hooks
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI代码生成/"
+                <a href="/tags/IndieHacker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI代码生成
+                    IndieHacker
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手/"
+                <a href="/tags/JavaScript/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手
+                    JavaScript
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手自动化/"
+                <a href="/tags/MySQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手自动化
+                    MySQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI协同编程/"
+                <a href="/tags/Option/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI协同编程
+                    Option
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI学习/"
+                <a href="/tags/PostgreSQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI学习
+                    PostgreSQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI对话/"
+                <a href="/tags/Promise/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI对话
+                    Promise
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
@@ -983,7 +1185,7 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">148</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">38</span>
                     </a>
                 </div>
                 
@@ -991,7 +1193,7 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
                     <a href="/docs/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">docs</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">25</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">18</span>
                     </a>
                 </div>
                 
@@ -999,7 +1201,7 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
                     <a href="/posts/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">6</span>
                     </a>
                 </div>
                 
@@ -1182,7 +1384,7 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
     <!-- 广告位1：底部广告（版权区上方） -->
     
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
             <div
                 class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -1219,6 +1421,14 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
     </div>
     
     
+
+    <!-- 返回顶部 -->
+    <div class="text-center mb-8">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center px-4 py-2 text-sm border border-gray-300 hover:bg-gray-50 cursor-pointer">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            返回顶部
+        </button>
+    </div>
 
     <!-- 页脚 -->
     <footer class="bg-white border-t border-gray-200 mt-16">
@@ -1264,6 +1474,35 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
 
     <!-- 搜索功能脚本 -->
     <script src="/static/js/search.js"></script>
+    <script>
+        (function() {
+            function checkRedirect(val) {
+                var q = val.trim();
+                if (q === '分类' || q === '分类=') {
+                    window.location.href = '/categories/';
+                    return true;
+                } else if (q === '标签' || q === '标签=') {
+                    window.location.href = '/tags/';
+                    return true;
+                } else if (q === '归档' || q === '归档=') {
+                    window.location.href = '/archives/';
+                    return true;
+                }
+                return false;
+            }
+            document.addEventListener('input', function(e) {
+                if (e.target && (e.target.id === 'search-input' || e.target.id === 'mobile-search-input' || e.target.id === 'search-query' || e.target.id === 'search-modal-input')) {
+                    checkRedirect(e.target.value);
+                }
+            });
+            document.addEventListener('submit', function(e) {
+                var input = e.target.querySelector('input[name="q"]') || e.target.querySelector('input[type="text"]');
+                if (input && checkRedirect(input.value)) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
 
     
     <!-- Google Analytics 懒加载 -->
@@ -1311,6 +1550,133 @@ RustPress 是我的第一个 Rust 程序，它是一个静态编译型博客，�
         })();
     </script>
     
+
+    <!-- 收藏按钮：桌面端提示快捷键，移动端调用 navigator.share -->
+    <script>
+    function rpBookmark() {
+        if (navigator.share && window.innerWidth <= 768) {
+            navigator.share({
+                title: document.title,
+                url: window.location.href
+            }).catch(function() {});
+        } else {
+            var isMac = navigator.platform && navigator.platform.indexOf('Mac') !== -1;
+            var hint = isMac ? '\u2318+D' : 'Ctrl+D';
+            if (window.showToast) {
+                window.showToast('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            } else {
+                alert('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            }
+        }
+    }
+    </script>
+
+    <script>
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+
+    function rpBatchLoadListingCounts() {
+        if (!RP_REPO) return;
+        var articles = document.querySelectorAll('article');
+        if (!articles.length) return;
+
+        fetch('https://api.github.com/search/issues?q=' + encodeURIComponent('repo:' + RP_REPO + ' is:issue') + '&per_page=100&sort=created&order=desc', {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.items || !data.items.length) return;
+                var issues = {};
+                data.items.forEach(function (issue) {
+                    var m = issue.body && issue.body.match(/Comment thread for (\S+)/);
+                    if (m) {
+                        var pathKey = m[1];
+                        if (issues[pathKey] && issues[pathKey].number > issue.number) {
+                            return;
+                        }
+                        issues[pathKey] = issue;
+                    }
+                });
+
+                articles.forEach(function (article) {
+                    var link = article.querySelector('h2 a') || article.querySelector('div.flex a');
+                    if (!link) return;
+                    var href = link.getAttribute('href');
+                    if (!href) return;
+                    var issue = issues[href];
+                    if (!issue) return;
+
+                    var spans = article.querySelectorAll('button span.font-medium');
+                    if (spans.length >= 2) {
+                        spans[0].textContent = issue.comments || 0;
+                        spans[1].textContent = (issue.reactions && issue.reactions['+1']) || 0;
+                    }
+                });
+            })
+            .catch(function () {});
+    }
+
+    setTimeout(function () {
+        if (RP_REPO) rpBatchLoadListingCounts();
+    }, 500);
+    </script>
+
+    <!-- 全局极简直角 Toast 提示 -->
+    <script>
+        window.showToast = function(message) {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.style.position = 'fixed';
+                container.style.top = '24px';
+                container.style.left = '50%';
+                container.style.transform = 'translateX(-50%)';
+                container.style.zIndex = '99999';
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '12px';
+                container.style.pointerEvents = 'none';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.style.backgroundColor = '#1f2937';
+            toast.style.color = '#ffffff';
+            toast.style.padding = '12px 24px';
+            toast.style.fontSize = '14px';
+            toast.style.fontWeight = '500';
+            toast.style.minWidth = '280px';
+            toast.style.textAlign = 'center';
+            toast.style.boxSizing = 'border-box';
+            
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-8px)';
+            toast.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+            toast.style.pointerEvents = 'auto';
+            
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    toast.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 300);
+            }, 3000);
+        };
+    </script>
 </body>
 
 </html>

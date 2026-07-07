@@ -25,17 +25,25 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
     <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <!-- 防止浏览器 bfcache 缓存显示旧页面 -->
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans"
-    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.replace(/\/$/, '').split('/').pop() || 'index.html' }">
     <!-- 顶部导航栏 -->
     <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
+                    <img src="&amp;#x2F;static&amp;#x2F;images&amp;#x2F;logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树仑
                     </a>
@@ -46,7 +54,7 @@
                     <form action="/search.html" method="get" class="relative w-full">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="search-input">
+                            placeholder="搜索内容..." id="search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -119,7 +127,7 @@
                     <form action="/search.html" method="get" class="relative">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="mobile-search-input">
+                            placeholder="搜索内容..." id="mobile-search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -168,7 +176,7 @@
     </nav>
 
     <!-- 主要内容区域 -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:64rem">
         <main class="min-h-screen py-8">
             
 <!-- Hero 组件 -->
@@ -236,25 +244,26 @@
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/90.html"
+                        <a href="blog&#x2F;2026/33.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            # 君子不立危墙之下，别让代码成为呈堂证供
+                            mocli，一名 AI 时代的“数字保镖”
                         </a>
                         
                     </h2>
@@ -266,47 +275,35 @@
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-23
+                            2026-05-18
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        君子不立危墙之下，别让代码成为呈堂证供
-GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”。
-01 Clowwindy 与 Shadowsocks
-时间：2015 年 8 月
-如果你入行较早，一定听过 Shadowsocks (SS) 的名字，它是后世无数代理工具的鼻祖。甚至 SS 现在已经成为一种事实协议的名称。
-2015 年 8 月 22 日，Shadowsocks 的作者 Cl…
+                        mocli，一名 AI 时代的“数字保镖”
+在这个信息喂养的时代，我们正逐渐沦为 APP 算法的奴隶。置顶、强推、永无止境的小红点，像碎纸机一样切碎了我们的时间。
+最近墨问开放了一个叫 mocli 的东西（https:&#x2F;&#x2F;github.com&#x2F;mowenxd&#x2F;cli），今天终于有时间用了一下，我突然意识到：我们要的不是更智能的通知，而是拒绝被通知的选择。
+它不是 CLI，它给 AI 提供了“入场券…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/GitHub/"
+                        <a href="/tags/mocli/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            GitHub
+                            mocli
                         </a>
                         
-                        <a href="/tags/网络安全/"
+                        <a href="/tags/AI Agent/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            网络安全
+                            AI Agent
                         </a>
                         
-                        <a href="/tags/法律风险/"
+                        <a href="/tags/信息降噪/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            法律风险
-                        </a>
-                        
-                        <a href="/tags/开发者/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            开发者
-                        </a>
-                        
-                        <a href="/tags/翻墙软件/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            翻墙软件
+                            信息降噪
                         </a>
                         
                     </div>
@@ -316,25 +313,26 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/91.html"
+                        <a href="blog&#x2F;2026/30.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            满足！豆角鸡蛋西红柿捞面
+                            串台了
                         </a>
                         
                     </h2>
@@ -346,51 +344,37 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-23
+                            2026-05-18
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        满足！豆角鸡蛋西红柿捞面
-原料 手擀面、豆角、西红柿、鸡蛋、螺丝椒、大蒜、葱花
-调料 菜籽油、盐、味精
-步骤
+                        串台了
+我不小心将发给 Tab2 的提示语，发给了 Tab1。AI说：您提到的“发布面板”、“黑线”、“UI”这些东西我这里没有啊？你是不是串台了？
+哈，我确实串台了。赶紧复制一下提示语，再发到另一边。
 
-豆角洗净切段焯水；西红柿切碎，螺丝椒斜切块，鸡蛋打散；大蒜捣成蒜泥备用。
-锅中倒入菜籽油，油热后下入蛋液，炒至定型后盛出。
-锅内留底油，下葱花爆香，再放入焯好的豆角和西红柿翻炒。
-炒至西红柿出沙但仍保留部分块状时，加入螺丝椒和炒好的鸡蛋，翻炒两下，加盐和味精调味，菜卤做好。
-平底锅烧水煮…
+📅 2026年05月18日
+
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/食谱/"
+                        <a href="/tags/AI对话/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            食谱
+                            AI对话
                         </a>
                         
-                        <a href="/tags/捞面/"
+                        <a href="/tags/串台/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            捞面
+                            串台
                         </a>
                         
-                        <a href="/tags/家常菜/"
+                        <a href="/tags/提示语错误/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            家常菜
-                        </a>
-                        
-                        <a href="/tags/烹饪/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            烹饪
-                        </a>
-                        
-                        <a href="/tags/美食分享/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            美食分享
+                            提示语错误
                         </a>
                         
                     </div>
@@ -400,25 +384,26 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/89.html"
+                        <a href="blog&#x2F;2026/28.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            要不咱也整个长枪短炮？
+                            Vide Coding 经验总结，核心五点
                         </a>
                         
                     </h2>
@@ -430,45 +415,45 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-22
+                            2026-03-04
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        要不咱也整个长枪短炮？
-看到董事长周末冬至去王府井大街走拍，甚是羡慕。说实话，扛个长镜头，在闹市里抓拍偶尔不经意的瞬间，还是很幸福的。看董事长的笔记，我大概有两点小认知改变了：
-1，没想到现在北京大街上长枪短炮这种设备现在像手机一样普遍了！要知道这玩意可不便宜！
-2，没想到王府井大街还是这么热闹！有可能它是王府井东单地界，永远都是这般热闹吧。不过我隐约感觉到，经济和消费好像复苏了。那个王府井书店，…
+                        Vide Coding 经验总结，核心五点
+以下内容都是我进行 Vide Coding 后的亲自经验总结，欢迎批判或补充。相信真正使用过 Vide Coding 的人都会会心一笑或拍掌叫好。真正做到这六点，编码效率将像开火箭一样又快又稳！
+1，目录化。
+不依赖于环境，不依赖于系统常量，目录化的代码、配置、资源、类库实现自足，可以实现从一个系统转到另一个系统完全可以在一键 setup 后就可以运行。…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/摄影/"
+                        <a href="/tags/Vide Coding 经验/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            摄影
+                            Vide Coding 经验
                         </a>
                         
-                        <a href="/tags/生活感悟/"
+                        <a href="/tags/AI 编程技巧/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            生活感悟
+                            AI 编程技巧
                         </a>
                         
-                        <a href="/tags/北京/"
+                        <a href="/tags/Agent 开发最佳实践/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            北京
+                            Agent 开发最佳实践
                         </a>
                         
-                        <a href="/tags/消费/"
+                        <a href="/tags/模块化编程/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            消费
+                            模块化编程
                         </a>
                         
-                        <a href="/tags/周末/"
+                        <a href="/tags/可测试代码/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            周末
+                            可测试代码
                         </a>
                         
                     </div>
@@ -478,25 +463,26 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/88.html"
+                        <a href="blog&#x2F;2026/27.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            # 主播:250 美金特斯拉手机，上网不要我，直接干翻三大运营商？兹是流量收割，别被骗了！
+                            Mise 是一种好软件
                         </a>
                         
                     </h2>
@@ -508,47 +494,39 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-22
+                            2026-02-28
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        主播：250 美金特斯拉手机，上网不要钱，直接干翻三大运营商？这是流量收割，别被骗了！
-最近打开短视频平台，总能刷到一些主播声嘶力竭地在喊：“变天了！马斯克带着特斯拉手机来了！已经通过内部测试，马上要量产了，来年就上市！不用插卡、全球免费上网、直连星链、速度吊打 5G！”
-评论区里更是热闹得很：
-刚买的华为、苹果是不是马上要变砖头？
-太棒了再也不用交话费了！
-还有人神神秘秘：“这下好了，那堵墙终于…
+                        Mise 是一种好软件
+Mise 是一个环境管理器，可以在一个地方管理多个编程语言的版本，例如 Node、Python、Rust、Go 等。
+例如安装 LTS 版本的 Node.js：
+mise use --global node@lts
+安装最新版本的 Python：
+mise use --global python@latest
+安装 Github GH：
+mise use --global …
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/特斯拉手机/"
+                        <a href="/tags/mise环境管理器/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            特斯拉手机
+                            mise环境管理器
                         </a>
                         
-                        <a href="/tags/星链/"
+                        <a href="/tags/多语言版本管理/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            星链
+                            多语言版本管理
                         </a>
                         
-                        <a href="/tags/网络谣言/"
+                        <a href="/tags/mise.toml配置/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            网络谣言
-                        </a>
-                        
-                        <a href="/tags/科技分析/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            科技分析
-                        </a>
-                        
-                        <a href="/tags/通信技术/"
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            通信技术
+                            mise.toml配置
                         </a>
                         
                     </div>
@@ -558,25 +536,26 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/87.html"
+                        <a href="blog&#x2F;2026/26.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            为什么我每次和 AI 对话都这样？
+                            我用 AI 写了四五个软件之后的总结
                         </a>
                         
                     </h2>
@@ -588,55 +567,44 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-21
+                            2026-02-19
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        为什么我每次和 AI 对话都这样？
-“嗨，可以帮我看看这段代码为什么没取到值吗”
-“用中文回答我”
-“别乱改变量名？”
-“我不是说了别乱改变量名吗？”
-“你怎么又把我的函数偷偷改了？”
-“我再说一次，不要乱改”
-“你是不是脑袋瓦特了？”
-“你怎么开始胡言乱语了，你在说啥？”
-“艹，你是不是傻x啊”
-“去你奶奶的”
-“为什么你只写了个空函数名却没有实现？”
-“啊哈，被你发现了！对不住。”
-“你是真正…
+                        我用 AI 写了四五个软件之后的总结
+我是一名老程序员，广泛学习和使用过多种编程语言，编写过许多示例、项目，也出版过计算机相关的图书若干。自去年 2025 年 11 月以来，我狠狠地用 AI 写了一些软件，有时候我睡觉了，AI 还在帮助我检查、修正问题。以下是我总结的使用 AI 的经验，通过这些经验你会发现，我在扮演一名 AI 或多台 AI 的架构师或领导者。
+经验的解构与重构：Skills 的本…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/AI/"
+                        <a href="/tags/AI编程经验/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI
+                            AI编程经验
                         </a>
                         
-                        <a href="/tags/对话/"
+                        <a href="/tags/AI软件架构/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            对话
+                            AI软件架构
                         </a>
                         
-                        <a href="/tags/编程/"
+                        <a href="/tags/Claude Skills/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            编程
+                            Claude Skills
                         </a>
                         
-                        <a href="/tags/用户体验/"
+                        <a href="/tags/AI项目管理/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            用户体验
+                            AI项目管理
                         </a>
                         
-                        <a href="/tags/反思/"
+                        <a href="/tags/AI代码生成/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            反思
+                            AI代码生成
                         </a>
                         
                     </div>
@@ -646,25 +614,26 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/85.html"
+                        <a href="blog&#x2F;2026/25.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            AI 富有四海，但却没有品味
+                            恩言-大字有声圣经发布了
                         </a>
                         
                     </h2>
@@ -676,46 +645,48 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-19
+                            2026-02-19
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        AI 富有四海，但却没有品味
-如图所示，是 drill 的系统栏托盘图标。默认的托管图标，只能通过 tray.set_title 设置一个 title，只有一行，要显示两行，没有这个接口。
-但 ClashX 明明实现了两行网速展示，它是怎么实现的？
-本质上，ClashX 是在不停地重绘托盘图标，它的图标是动态生成的。
-既然 ClashX 可以这么干，我也可以，没有理由我用了 Rust 语言开发，对…
+                        恩言-大字有声圣经发布了
+“众人都称赞他，并希奇他口中所出的恩言……”
+这句话出自圣经新约路加福音第 4 章第 22 节。
+
+这就是我的离线圣经 App，已经发布了，可以从下面这个网址查看详细和下载：
+https:&#x2F;&#x2F;yishulun.com&#x2F;enyan.html
+Android 主流版本只有 40MB，安装包体积不大。安装后，可以在有 Wifi 的情况下下载安装繁体语言包（如果需要）和真人朗读语…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/AI/"
+                        <a href="/tags/离线圣经App/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI
+                            离线圣经App
                         </a>
                         
-                        <a href="/tags/编程/"
+                        <a href="/tags/大字有声圣经/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            编程
+                            大字有声圣经
                         </a>
                         
-                        <a href="/tags/Rust/"
+                        <a href="/tags/Rust静态博客/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            Rust
+                            Rust静态博客
                         </a>
                         
-                        <a href="/tags/图标设计/"
+                        <a href="/tags/rustpress评论插件/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            图标设计
+                            rustpress评论插件
                         </a>
                         
-                        <a href="/tags/技术博客/"
+                        <a href="/tags/恩言圣经下载/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            技术博客
+                            恩言圣经下载
                         </a>
                         
                     </div>
@@ -725,25 +696,20 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    <a href="/projects/"
+                        class="hover:text-primary-600">projects</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/86.html"
+                        <a href="projects/rustpress.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            现在我如何使用 Google Antigravity
+                            RustPress - 纯静态博客引擎
                         </a>
                         
                     </h2>
@@ -755,44 +721,49 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-19
+                            2026-02-19
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        现在我如何使用 Google Antigravity
-废话一箩筐，真传一句话。现在我使用 Anti 就是一句话：建项目时用 Plan 模式，建成后用 Fast 模式！
-为什么？用 Plan 是为了进行全面、宏观建制，随后使用 Fast 是为了精准控制。我让 AI 把要做的事情列出来，然后一个一个功能攻克。在这个过程中，AI 写的每一行代码我都是知道的，每个函数我都是明白干什么用的。只是我没有动手，…
+                        功能特性
+
+🚀 纯静态生成 — 零后端依赖，生成纯 HTML&#x2F;CSS&#x2F;JS 静态站点
+⚡ 增量编译 — 仅重新编译变更文件，毫秒级构建
+📄 Markdown 写作 — 完整的 Markdown + frontmatter 支持
+🔄 倒分页 — 独创倒序分页方案，新文章永远在首页
+🎨 主题系统 — Tailwind CSS 主题，支持自定义模板
+🔌 插件系统 — 基于 linkme 自动注册的插件架…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/Google Antigravity/"
+                        <a href="/tags/rust/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            Google Antigravity
+                            rust
                         </a>
                         
-                        <a href="/tags/AI编程/"
+                        <a href="/tags/blog/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI编程
+                            blog
                         </a>
                         
-                        <a href="/tags/项目开发/"
+                        <a href="/tags/static-site/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            项目开发
+                            static-site
                         </a>
                         
-                        <a href="/tags/代码生成/"
+                        <a href="/tags/ssg/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            代码生成
+                            ssg
                         </a>
                         
-                        <a href="/tags/自动化工具/"
+                        <a href="/tags/开源/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            自动化工具
+                            开源
                         </a>
                         
                     </div>
@@ -802,25 +773,20 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog/"
-                        class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    <a href="/projects/"
+                        class="hover:text-primary-600">projects</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/84.html"
+                        <a href="projects/enyan.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            我准备写一个梯子软件，主要自用
+                            恩言 - 大字有声圣经
                         </a>
                         
                     </h2>
@@ -832,44 +798,52 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-18
+                            2026-02-19
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        我准备写一个梯子软件，主要自用
-今天在微信群里，墨友们热烈讨论了关于梯子的问题。大家明显感受到，最近在使用 Cursor、Windsurf 等 AI IDE 的时候，点击 Retry 或 Resume 的频率明显变高了。而出错时最常见的提示往往是：区域不匹配（Region not supported）。
-为什么会区域不匹配？因为谷歌等大厂的服务器是看人下菜碟的。台湾、香港、日本的服务都正常，唯独中…
+                        功能特性
+
+📖 新约旧约全书 — 涵盖圣经全部 66 卷书，繁体中文和合本
+🔤 大字显示 — 专为阅读优化的大字排版，清晰易读
+🔊 有声朗读 — 内置离线语音引擎，支持逐章逐节朗读
+🎯 逐节跟读 — 播放时自动高亮当前朗读的经节
+📴 完全离线 — 全部内容与语音离线可用，无需网络
+📱 多平台支持 — 同时支持 macOS 和 Android 平台
+
+技术架构
+本应用使用 Flutter 作为跨平台…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/梯子软件/"
+                        <a href="/tags/app/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            梯子软件
+                            app
                         </a>
                         
-                        <a href="/tags/指纹识别/"
+                        <a href="/tags/flutter/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            指纹识别
+                            flutter
                         </a>
                         
-                        <a href="/tags/网络隐私/"
+                        <a href="/tags/rust/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            网络隐私
+                            rust
                         </a>
                         
-                        <a href="/tags/VPN/"
+                        <a href="/tags/tts/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            VPN
+                            tts
                         </a>
                         
-                        <a href="/tags/技术开发/"
+                        <a href="/tags/圣经/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            技术开发
+                            圣经
                         </a>
                         
                     </div>
@@ -1026,7 +1000,7 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                     <svg class="w-4 h-4 text-gray-600 group-hover:text-green-500" fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
-                            d="M8.691 2.5c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm6.618 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-6.618 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm6.618 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zM3.507 7.813c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm16.986 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-16.986 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm16.986 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406z" />
+                            d="M9.5 4C5.36 4 2 6.69 2 10c0 1.89 1.08 3.56 2.7 4.69l-.7 2.01 2.57-1.43c.71.22 1.46.39 2.25.47l.01.06C10.73 18.77 13.8 20 17.5 20c.68 0 1.34-.06 2-.16l3 1.66-.7-1.99C23.06 18.2 24 16.4 24 14.35 24 10.73 20.75 8 16.5 8c-.25 0-.5 0-.74.02A7.51 7.51 0 0 0 9.5 4zM7 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm4.5 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" />
                     </svg>
                 </a>
                 
@@ -1112,7 +1086,7 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
 
     <!-- 相关文章 -->
     
-    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
+    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -1123,70 +1097,70 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/90.html"
+                        <a href="projects/enyan.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            # 君子不立危墙之下，别让代码成为呈堂证供
+                            恩言 - 大字有声圣经
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-12-23</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/91.html"
+                        <a href="projects/rustpress.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            满足！豆角鸡蛋西红柿捞面
+                            RustPress - 纯静态博客引擎
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-12-23</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/89.html"
+                        <a href="blog&#x2F;2026/2.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            要不咱也整个长枪短炮？
+                            手机和相机的区别是什么？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-12-22</p>
+                    <p class="text-xs text-gray-500">2026-01-03</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/88.html"
+                        <a href="blog&#x2F;2025/93.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            # 主播:250 美金特斯拉手机，上网不要我，直接干翻三大运营商？兹是流量收割，别被骗了！
+                            墨问终端脚本发布独立版 2.1，支持多图片上传
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-12-22</p>
+                    <p class="text-xs text-gray-500">2025-12-25</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/87.html"
+                        <a href="blog&#x2F;技术/rust-tag-test.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            为什么我每次和 AI 对话都这样？
+                            Rust 标签功能测试
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-12-21</p>
+                    <p class="text-xs text-gray-500">2025-11-04</p>
                     
                 </div>
                 
@@ -1204,123 +1178,123 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
         <div class="card-body">
             <div class="flex flex-wrap gap-2">
                 
-                <a href="/tags/7x24 AI 员工/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    7x24 AI 员工
-                    <span class="ml-1 text-xs text-gray-500">1</span>
-                </a>
-                
                 <a href="/tags/AI/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
                     AI
-                    <span class="ml-1 text-xs text-gray-500">15</span>
-                </a>
-                
-                <a href="/tags/AI Agent/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent 进化方向/"
+                <a href="/tags/AS3 Expert/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent 进化方向
+                    AS3 Expert
+                    <span class="ml-1 text-xs text-gray-500">6</span>
+                </a>
+                
+                <a href="/tags/Actix-web/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Actix-web
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent提示技巧/"
+                <a href="/tags/Angular/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent提示技巧
+                    Angular
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI IDE/"
+                <a href="/tags/ChatGPT/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE
-                    <span class="ml-1 text-xs text-gray-500">3</span>
-                </a>
-                
-                <a href="/tags/AI IDE生产力/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE生产力
+                    ChatGPT
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 代码失效解决方案/"
+                <a href="/tags/Composition API/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 代码失效解决方案
+                    Composition API
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 办公效率提升/"
+                <a href="/tags/DeFi/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 办公效率提升
+                    DeFi
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 文件管理安全/"
+                <a href="/tags/DevOps/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 文件管理安全
+                    DevOps
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 架构能力/"
+                <a href="/tags/Docker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 架构能力
+                    Docker
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/Flutter/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Flutter
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程协作/"
+                <a href="/tags/Git/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程协作
+                    Git
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程技巧/"
+                <a href="/tags/Go/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程技巧
+                    Go
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/HTTP/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    HTTP
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 自动化服务器/"
+                <a href="/tags/Hooks/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 自动化服务器
+                    Hooks
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI代码生成/"
+                <a href="/tags/IndieHacker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI代码生成
+                    IndieHacker
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手/"
+                <a href="/tags/JavaScript/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手
+                    JavaScript
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手自动化/"
+                <a href="/tags/MySQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手自动化
+                    MySQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI协同编程/"
+                <a href="/tags/Option/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI协同编程
+                    Option
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI学习/"
+                <a href="/tags/PostgreSQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI学习
+                    PostgreSQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI对话/"
+                <a href="/tags/Promise/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI对话
+                    Promise
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
@@ -1342,7 +1316,7 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">148</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">38</span>
                     </a>
                 </div>
                 
@@ -1350,7 +1324,7 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                     <a href="/docs/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">docs</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">25</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">18</span>
                     </a>
                 </div>
                 
@@ -1358,7 +1332,7 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
                     <a href="/posts/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">6</span>
                     </a>
                 </div>
                 
@@ -1541,7 +1515,7 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
     <!-- 广告位1：底部广告（版权区上方） -->
     
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
             <div
                 class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -1578,6 +1552,14 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
     </div>
     
     
+
+    <!-- 返回顶部 -->
+    <div class="text-center mb-8">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center px-4 py-2 text-sm border border-gray-300 hover:bg-gray-50 cursor-pointer">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            返回顶部
+        </button>
+    </div>
 
     <!-- 页脚 -->
     <footer class="bg-white border-t border-gray-200 mt-16">
@@ -1623,6 +1605,35 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
 
     <!-- 搜索功能脚本 -->
     <script src="/static/js/search.js"></script>
+    <script>
+        (function() {
+            function checkRedirect(val) {
+                var q = val.trim();
+                if (q === '分类' || q === '分类=') {
+                    window.location.href = '/categories/';
+                    return true;
+                } else if (q === '标签' || q === '标签=') {
+                    window.location.href = '/tags/';
+                    return true;
+                } else if (q === '归档' || q === '归档=') {
+                    window.location.href = '/archives/';
+                    return true;
+                }
+                return false;
+            }
+            document.addEventListener('input', function(e) {
+                if (e.target && (e.target.id === 'search-input' || e.target.id === 'mobile-search-input' || e.target.id === 'search-query' || e.target.id === 'search-modal-input')) {
+                    checkRedirect(e.target.value);
+                }
+            });
+            document.addEventListener('submit', function(e) {
+                var input = e.target.querySelector('input[name="q"]') || e.target.querySelector('input[type="text"]');
+                if (input && checkRedirect(input.value)) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
 
     
     <!-- Google Analytics 懒加载 -->
@@ -1670,6 +1681,133 @@ GitHub 是存放代码的圣地，但也可能是职业生涯的 “修罗场”
         })();
     </script>
     
+
+    <!-- 收藏按钮：桌面端提示快捷键，移动端调用 navigator.share -->
+    <script>
+    function rpBookmark() {
+        if (navigator.share && window.innerWidth <= 768) {
+            navigator.share({
+                title: document.title,
+                url: window.location.href
+            }).catch(function() {});
+        } else {
+            var isMac = navigator.platform && navigator.platform.indexOf('Mac') !== -1;
+            var hint = isMac ? '\u2318+D' : 'Ctrl+D';
+            if (window.showToast) {
+                window.showToast('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            } else {
+                alert('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            }
+        }
+    }
+    </script>
+
+    <script>
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+
+    function rpBatchLoadListingCounts() {
+        if (!RP_REPO) return;
+        var articles = document.querySelectorAll('article');
+        if (!articles.length) return;
+
+        fetch('https://api.github.com/search/issues?q=' + encodeURIComponent('repo:' + RP_REPO + ' is:issue') + '&per_page=100&sort=created&order=desc', {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.items || !data.items.length) return;
+                var issues = {};
+                data.items.forEach(function (issue) {
+                    var m = issue.body && issue.body.match(/Comment thread for (\S+)/);
+                    if (m) {
+                        var pathKey = m[1];
+                        if (issues[pathKey] && issues[pathKey].number > issue.number) {
+                            return;
+                        }
+                        issues[pathKey] = issue;
+                    }
+                });
+
+                articles.forEach(function (article) {
+                    var link = article.querySelector('h2 a') || article.querySelector('div.flex a');
+                    if (!link) return;
+                    var href = link.getAttribute('href');
+                    if (!href) return;
+                    var issue = issues[href];
+                    if (!issue) return;
+
+                    var spans = article.querySelectorAll('button span.font-medium');
+                    if (spans.length >= 2) {
+                        spans[0].textContent = issue.comments || 0;
+                        spans[1].textContent = (issue.reactions && issue.reactions['+1']) || 0;
+                    }
+                });
+            })
+            .catch(function () {});
+    }
+
+    setTimeout(function () {
+        if (RP_REPO) rpBatchLoadListingCounts();
+    }, 500);
+    </script>
+
+    <!-- 全局极简直角 Toast 提示 -->
+    <script>
+        window.showToast = function(message) {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.style.position = 'fixed';
+                container.style.top = '24px';
+                container.style.left = '50%';
+                container.style.transform = 'translateX(-50%)';
+                container.style.zIndex = '99999';
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '12px';
+                container.style.pointerEvents = 'none';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.style.backgroundColor = '#1f2937';
+            toast.style.color = '#ffffff';
+            toast.style.padding = '12px 24px';
+            toast.style.fontSize = '14px';
+            toast.style.fontWeight = '500';
+            toast.style.minWidth = '280px';
+            toast.style.textAlign = 'center';
+            toast.style.boxSizing = 'border-box';
+            
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-8px)';
+            toast.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+            toast.style.pointerEvents = 'auto';
+            
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    toast.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 300);
+            }, 3000);
+        };
+    </script>
 </body>
 
 </html>

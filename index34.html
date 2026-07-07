@@ -25,17 +25,25 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
     <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <!-- 防止浏览器 bfcache 缓存显示旧页面 -->
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans"
-    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.replace(/\/$/, '').split('/').pop() || 'index.html' }">
     <!-- 顶部导航栏 -->
     <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
+                    <img src="&amp;#x2F;static&amp;#x2F;images&amp;#x2F;logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树仑
                     </a>
@@ -46,7 +54,7 @@
                     <form action="/search.html" method="get" class="relative w-full">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="search-input">
+                            placeholder="搜索内容..." id="search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -119,7 +127,7 @@
                     <form action="/search.html" method="get" class="relative">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="mobile-search-input">
+                            placeholder="搜索内容..." id="mobile-search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -168,7 +176,7 @@
     </nav>
 
     <!-- 主要内容区域 -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:64rem">
         <main class="min-h-screen py-8">
             
 <!-- Hero 组件 -->
@@ -236,25 +244,26 @@
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/83.html"
+                        <a href="blog&#x2F;2026/23.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            AI 时代顶极人才的五力能力
+                            板栗是人是狗？
                         </a>
                         
                     </h2>
@@ -266,46 +275,45 @@
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-18
+                            2026-02-18
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        AI 时代顶级人才的五大能力
-https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
-哲哥分享了一篇笔记，提出了 AI 时代单纯的技术不值钱，真正值钱的是五大特质，我觉得很有道理。
-一、好奇心。现在答案不付钱，问题反而更稀缺。要善于提出好问题，尤其是那种洞察核心矛盾的问题，那种引导 AI 突破幻觉的问题。
-二、商业洞察力。单一的技术不值钱，沉迷于单纯的…
+                        板栗是人是狗？
+很久没有写东西了，写点小情绪吧。在我看来，能写的无非就是两种：大内容与小情绪。大内容是经过深思熟虑，认为自成体系了，拿出来示人；小情绪就是心里突然有了写的冲动，抒发为人的平时感慨。
+板栗不是坚果，是一条狗，因为它的颜色是栗色，所以取了这个名字。板栗是有人送给小舅子的，小舅子又转送给了老丈人，近期丈母娘生病住院，我随领导去了老丈人家，与板栗也才有了密切接触。
+第一件值得写的事，是板栗…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/AI时代/"
+                        <a href="/tags/板栗是人是狗/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI时代
+                            板栗是人是狗
                         </a>
                         
-                        <a href="/tags/人才能力/"
+                        <a href="/tags/宠物狗日常/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            人才能力
+                            宠物狗日常
                         </a>
                         
-                        <a href="/tags/商业洞察/"
+                        <a href="/tags/狗遛人趣事/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            商业洞察
+                            狗遛人趣事
                         </a>
                         
-                        <a href="/tags/跨领域整合/"
+                        <a href="/tags/板栗的生存哲学/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            跨领域整合
+                            板栗的生存哲学
                         </a>
                         
-                        <a href="/tags/墨问社区/"
+                        <a href="/tags/老丈人与狗/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            墨问社区
+                            老丈人与狗
                         </a>
                         
                     </div>
@@ -315,25 +323,26 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/82.html"
+                        <a href="blog&#x2F;2026/22.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            一个关于 RAG 的小商机，赚个几百万应该没有问题
+                            写福字
                         </a>
                         
                     </h2>
@@ -345,44 +354,49 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-18
+                            2026-02-15
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        一个关于 RAG 的小商机，赚个几百万应该没有问题
-2010 年左右，无锡有一个个体商人，他的行为震撼到了我！他手拿 pad，上面安装了一个用我们当时的产品打造的一个 1GB 大小的 ios App，这个 App 不能公开下载安装，只能在他的本本上看，他一对一找人给别人看，如果有人感兴趣，他把拷贝再卖给别人。
-就这样一个看似笨拙的小生意，让他赚了几百万。我当时负责开发公司的产品，听到这个案例都震撼…
+                        写福字
+今天写福字，我写了一幅，领导写了一幅，最后一致认为第二张领导写的最好！
+
+
+
+#生活·随笔·日常
+📅 2026&#x2F;02&#x2F;15 周日 23:42
+
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/RAG/"
+                        <a href="/tags/写福字技巧/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            RAG
+                            写福字技巧
                         </a>
                         
-                        <a href="/tags/AI/"
+                        <a href="/tags/领导写福字/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI
+                            领导写福字
                         </a>
                         
-                        <a href="/tags/创业/"
+                        <a href="/tags/福字书法/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            创业
+                            福字书法
                         </a>
                         
-                        <a href="/tags/向量数据库/"
+                        <a href="/tags/生活随笔/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            向量数据库
+                            生活随笔
                         </a>
                         
-                        <a href="/tags/企业应用/"
+                        <a href="/tags/日常记录/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            企业应用
+                            日常记录
                         </a>
                         
                     </div>
@@ -392,25 +406,26 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/79.html"
+                        <a href="blog&#x2F;2026/21.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            如何突破信息差诅咒
+                            那个把代码当拖拉机修的小镇青年，活成了王阳明眼中最好的状态
                         </a>
                         
                     </h2>
@@ -422,45 +437,44 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-17
+                            2026-02-14
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        如何突破信息差诅咒
-在上一篇我分享了自己使用 Antigravity 的体验，我意识到信息差在我们周围随处存在，但我们大多数人在大多数时候都是视而不见的，怎么办，怎么突破这种糟糕的情况？
-互联网虽然是开放的，但网上的信息差也是随处存在的，一个人，无论他精力多么充沛、无论他多么勤奋、无论他多么博闻强记，他都无法避开信息差的伤害，何况是我们天资一般、又有些懒惰的普通人呢？
-怎么办，如何破局呢？时代发展…
+                        那个把代码当拖拉机修的小镇青年，活成了王阳明眼中最好的状态
+我们要讲的故事，发生在一个世纪之交的节点。那时候，互联网的泡沫刚要在东方的大地上泛起五彩斑斓的光，而在这个大时代的背景板角落里，站着一个刚毕业的小镇青年。他没有什么显赫的家世，口袋里也没有多少盘缠，但他拥有这个时代最宝贵的兴趣：他一看到电脑就会两眼发光。
+这种光芒是极其纯粹的。对于这个青年来说，屏幕背后那个由 0 和 1 构成的世界，并不…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/信息差/"
+                        <a href="/tags/小镇青年编程故事/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            信息差
+                            小镇青年编程故事
                         </a>
                         
-                        <a href="/tags/学习方法/"
+                        <a href="/tags/行大于知/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            学习方法
+                            行大于知
                         </a>
                         
-                        <a href="/tags/AI/"
+                        <a href="/tags/王阳明知行合一/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI
+                            王阳明知行合一
                         </a>
                         
-                        <a href="/tags/个人成长/"
+                        <a href="/tags/代码拖拉机修理工/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            个人成长
+                            代码拖拉机修理工
                         </a>
                         
-                        <a href="/tags/技术社区/"
+                        <a href="/tags/AI时代行动力/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            技术社区
+                            AI时代行动力
                         </a>
                         
                     </div>
@@ -470,25 +484,26 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/81.html"
+                        <a href="blog&#x2F;2026/20.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            看到一则 AI 消息，笑得我捶床
+                            如梦令·雪后
                         </a>
                         
                     </h2>
@@ -500,43 +515,56 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-17
+                            2026-02-07
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        我在媒体平台上看到一则消息，说一个做企业服务的朋友，公司老板交给他一项伟大的任务，让他砸了几百万搞 AI，结果搞出来的东西全是垃圾！
-另一位朋友宽慰他，说不要难过，告诉你的老板，全球 800 个 AI 高管，只有 16 个人从 AI 上获得了好的结果，这个比例只有 2%，希望你的老板听到这个消息能好受些。另外，Workday CIO 有过分享，他说如果不把数据治理好，盲目跑 AI，跟出烂结果真不是…
+                        如梦令·雪后
+想起之前雪后，河道里南北两岸呈现一黄一白的景象，涂了一首小词。
+
+《如梦令·雪后》
+——金石碼农
+昨夜大雪飞到，今上小桥已逮。
+冰河向东来，恰似一剑劈开。
+妙哉，妙哉，北岸黄、南堤白。
+
+
+111
+
+#生活·随笔·日常
+📅 2026&#x2F;02&#x2F;07 周六 22:50
+
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/AI/"
+                        <a href="/tags/如梦令雪后赏析/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI
+                            如梦令雪后赏析
                         </a>
                         
-                        <a href="/tags/企业服务/"
+                        <a href="/tags/雪后诗词创作/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            企业服务
+                            雪后诗词创作
                         </a>
                         
-                        <a href="/tags/数据治理/"
+                        <a href="/tags/冰河景象描写/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            数据治理
+                            冰河景象描写
                         </a>
                         
-                        <a href="/tags/概念验证/"
+                        <a href="/tags/生活随笔记录/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            概念验证
+                            生活随笔记录
                         </a>
                         
-                        <a href="/tags/失败经验/"
+                        <a href="/tags/金石碼农作品/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            失败经验
+                            金石碼农作品
                         </a>
                         
                     </div>
@@ -546,25 +574,26 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/80.html"
+                        <a href="blog&#x2F;2026/19.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            使用 Google Antigravity 在大地上码代码码...
+                            论狂
                         </a>
                         
                     </h2>
@@ -576,45 +605,45 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-17
+                            2026-02-07
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        使用 Google Antigravity 在大地上码代码码...
-使用 Google Antigravity 在大地上码代码码文字。
-我刚从 Cursor 切换到 Google Antigravity，编程体验直接上了一个台阶，如果没有其他变化，我想我不会再切回去使用 Cursor 了。下面我介绍一下我如何使用这个编码怪兽。
-首先，Anti（Antigravity 简写，以下同）的工作方式是分空…
+                        论狂
+人往往在年轻时意识不到自己狂，年纪大了却要故意展现出狂的一面。我年纪还没有大，只是精力感觉不如从前，但也时常故意展示出狂的一面。
+孔子说，少年戒之在斗；苏轼说，老夫聊发少年狂，这两种状态其实是狂字的一体两面，今天我想和朋友们聊一聊这个字。
+在金庸的武侠世界里，杨过被冠以“狂侠”之名。若是细究这个“狂”字，颇值得玩味。杨过的狂，带着几分凄凉与悲愤，是娶师父为妻的离经叛道，是在英雄大会上对峙天下…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/Google Antigravity/"
+                        <a href="/tags/狂的两种境界/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            Google Antigravity
+                            狂的两种境界
                         </a>
                         
-                        <a href="/tags/AI编程/"
+                        <a href="/tags/年轻时的狂与老年的狂/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI编程
+                            年轻时的狂与老年的狂
                         </a>
                         
-                        <a href="/tags/IDE/"
+                        <a href="/tags/人生修行节奏/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            IDE
+                            人生修行节奏
                         </a>
                         
-                        <a href="/tags/编程工具/"
+                        <a href="/tags/谦卦六爻大吉/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            编程工具
+                            谦卦六爻大吉
                         </a>
                         
-                        <a href="/tags/AI助手/"
+                        <a href="/tags/苏轼老夫聊发少年狂/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI助手
+                            苏轼老夫聊发少年狂
                         </a>
                         
                     </div>
@@ -624,25 +653,26 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/76.html"
+                        <a href="blog&#x2F;2026/18.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            《狙击蝴蝶》是现代版的《杨过与小龙女》
+                            有一个家伙说 Vide Coding 上瘾
                         </a>
                         
                     </h2>
@@ -654,44 +684,45 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-15
+                            2026-02-07
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        《狙击蝴蝶》是现代版的《杨过与小龙女》
-剧情当然没有杨过与小龙女天残地缺那么惨，但同样是男女主相互救赎。在《神雕侠侣》中，孙婆婆将不谙世事的小龙女托付给杨过照顾，并在临死前让小龙女答应收杨过为弟子，这就是双向救赎的开始。
-在《狙击蝴蝶》中，李雾在乡下不得奋发上进的机会，姐姐解救了他；姐姐在物欲横流的城市里过得也不甚如意，她被小三挖走了丈夫，李雾讨厌伤害岑矜的人，所有。他从小立志就要保护姐姐，长大了…
+                        有一个家伙说 Video Coding 上瘾
+
+我丝毫不怀疑这个家伙说的，我还看到另一个家伙说，要 AI 厂家限制每天 token 只能用 8 小时，目的就是为了让上瘾的人休息！
+这与我在社区，以及一些群中看到的情况完全不同。社区里有些人反对，我不明白为什么反对。明明社区里大部分都是程序员，他们理应像我一样上瘾才对。难道他们看到 AI IDE 突然有了如此强大的生产力不手痒吗？难道他们不想夜夜指挥…
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/狙击蝴蝶/"
+                        <a href="/tags/AI编程上瘾/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            狙击蝴蝶
+                            AI编程上瘾
                         </a>
                         
-                        <a href="/tags/电视剧评论/"
+                        <a href="/tags/多Agent协作/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            电视剧评论
+                            多Agent协作
                         </a>
                         
-                        <a href="/tags/情感救赎/"
+                        <a href="/tags/AI IDE生产力/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            情感救赎
+                            AI IDE生产力
                         </a>
                         
-                        <a href="/tags/社会现象/"
+                        <a href="/tags/Anthropic实验/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            社会现象
+                            Anthropic实验
                         </a>
                         
-                        <a href="/tags/个人体验/"
+                        <a href="/tags/AI编程工具/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            个人体验
+                            AI编程工具
                         </a>
                         
                     </div>
@@ -701,25 +732,26 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/75.html"
+                        <a href="blog&#x2F;2026/17.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            我是怎么填词的
+                            龙骨
                         </a>
                         
                     </h2>
@@ -731,43 +763,47 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-15
+                            2026-02-06
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        我是怎么填词的
-基本上每年腾讯云 TVP 庆祝，喝上两杯酒，我就会填词一首。AI 诞生之前，我都是手工填词，首先心中有一股劲，大概想写一个什么情感，接着化为文字，将这个情感用文字描述出来，此时还不要求用什么词牌。然后带着自己的文字，去翻词牌，看看哪个词牌可能与自己的文字合拍，就开始试着填词，因为填词要讲究押韵和平仄，到了这一步，基本上就是拿脚试鞋子的阶段，运气好，一下就填好了，运气不好，左填右填总…
+                        龙骨
+
+昨天那条黄河大鲤鱼吃完了，剩下了一条干净漂亮的鱼龙骨。
+#生活·随笔·日常
+📅 2026&#x2F;02&#x2F;06 周五 14:02
+
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/填词/"
+                        <a href="/tags/鱼龙骨/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            填词
+                            鱼龙骨
                         </a>
                         
-                        <a href="/tags/AI辅助/"
+                        <a href="/tags/黄河大鲤鱼/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            AI辅助
+                            黄河大鲤鱼
                         </a>
                         
-                        <a href="/tags/诗词创作/"
+                        <a href="/tags/生活随笔/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            诗词创作
+                            生活随笔
                         </a>
                         
-                        <a href="/tags/腾讯云TVP/"
+                        <a href="/tags/日常记录/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            腾讯云TVP
+                            日常记录
                         </a>
                         
-                        <a href="/tags/传统文化/"
+                        <a href="/tags/美食分享/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            传统文化
+                            美食分享
                         </a>
                         
                     </div>
@@ -777,25 +813,26 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
             
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                    <span class="mx-2">›</span>
+                    
                     <a href="/blog/"
                         class="hover:text-primary-600">blog</a>
                     
-                    <span class="mx-2">›</span>
-                    <a href="/blog&#x2F;2025/"
-                        class="hover:text-primary-600">2025</a>
+                    
+                    <span class="text-gray-300">/</span>
+                    
+                    <a href="/blog&#x2F;2026/"
+                        class="hover:text-primary-600">2026</a>
                     
                 </nav>
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
                         
-                        <a href="blog&#x2F;2025/77.html"
+                        <a href="blog&#x2F;2026/16.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors">
-                            聊一下董事长和猩爷
+                            openclaw 能干多少事，取决于我们给它多少权限
                         </a>
                         
                     </h2>
@@ -807,45 +844,48 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            2025-12-15
+                            2026-02-06
                         </span>
                         
                         
                     </div>
                     
                     <div class="text-gray-600 leading-relaxed mb-4">
-                        聊一下董事长和猩爷
-我在笔记中看到猩爷自己写的 Profile 竟然是 “幼稚、较真”，较真或许有，但幼稚实在看不出来。这可能是猩爷对他人对他评价的一个警示，没错，就是把他人打出的负面评价贴在主页上以警示自己。我看到后，特别想聊一聊董事长和猩爷这两个人。仅从客观层面评价。因为我阅读这两人的笔记已经足够多，我觉得我有足够的评论材料。
-猩爷
-我认识猩爷是从他幽默风趣的评论中开始的，开始感觉他是一位擅长…
+                        openclaw 能干多少事，取决于我们给它多少权限
+
+一台服务器安装一个 openclaw，上面再安装 Anti 和 Cursor，这样，一台服务器就相当于一名 7x24 员工。
+这样的员工能干多少事，取决于我们授予它多少权限，以及我们有多少 AI 架构与领导能力。
+#技术·求真·AI
+📅 2026&#x2F;02&#x2F;06 周五 11:27w
+
                     </div>
                     
                     
                     <div class="flex flex-wrap gap-2">
                         
-                        <a href="/tags/人物评价/"
+                        <a href="/tags/openclaw 权限管理/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            人物评价
+                            openclaw 权限管理
                         </a>
                         
-                        <a href="/tags/职场智慧/"
+                        <a href="/tags/AI 自动化服务器/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            职场智慧
+                            AI 自动化服务器
                         </a>
                         
-                        <a href="/tags/幽默风格/"
+                        <a href="/tags/7x24 AI 员工/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            幽默风格
+                            7x24 AI 员工
                         </a>
                         
-                        <a href="/tags/领导力/"
+                        <a href="/tags/AI 架构能力/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            领导力
+                            AI 架构能力
                         </a>
                         
-                        <a href="/tags/个人成长/"
+                        <a href="/tags/Anti Cursor 集成/"
                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
-                            个人成长
+                            Anti Cursor 集成
                         </a>
                         
                     </div>
@@ -1002,7 +1042,7 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                     <svg class="w-4 h-4 text-gray-600 group-hover:text-green-500" fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
-                            d="M8.691 2.5c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm6.618 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-6.618 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm6.618 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zM3.507 7.813c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm16.986 0c-1.747 0-3.184 1.262-3.184 2.813 0 1.551 1.437 2.813 3.184 2.813s3.184-1.262 3.184-2.813c0-1.551-1.437-2.813-3.184-2.813zm-16.986 1.406c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406zm16.986 0c.982 0 1.778.71 1.778 1.406 0 .697-.796 1.406-1.778 1.406s-1.778-.709-1.778-1.406c0-.697.796-1.406 1.778-1.406z" />
+                            d="M9.5 4C5.36 4 2 6.69 2 10c0 1.89 1.08 3.56 2.7 4.69l-.7 2.01 2.57-1.43c.71.22 1.46.39 2.25.47l.01.06C10.73 18.77 13.8 20 17.5 20c.68 0 1.34-.06 2-.16l3 1.66-.7-1.99C23.06 18.2 24 16.4 24 14.35 24 10.73 20.75 8 16.5 8c-.25 0-.5 0-.74.02A7.51 7.51 0 0 0 9.5 4zM7 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm4.5 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" />
                     </svg>
                 </a>
                 
@@ -1088,7 +1128,7 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
 
     <!-- 相关文章 -->
     
-    <!-- 如果 build.toml 未配置热门文章，则回退到最新文章列表 -->
+    <!-- 如果没有相关文章，则显示 build.toml 配置的热门文章 -->
     <div class="card">
         <div class="card-header">
             <h3 class="text-lg font-semibold text-gray-900">热门文章</h3>
@@ -1099,70 +1139,70 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/83.html"
+                        <a href="projects/enyan.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            AI 时代顶极人才的五力能力
+                            恩言 - 大字有声圣经
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-12-18</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/82.html"
+                        <a href="projects/rustpress.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            一个关于 RAG 的小商机，赚个几百万应该没有问题
+                            RustPress - 纯静态博客引擎
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-12-18</p>
+                    <p class="text-xs text-gray-500">2026-02-19</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/79.html"
+                        <a href="blog&#x2F;2026/2.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            如何突破信息差诅咒
+                            手机和相机的区别是什么？
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-12-17</p>
+                    <p class="text-xs text-gray-500">2026-01-03</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/81.html"
+                        <a href="blog&#x2F;2025/93.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            看到一则 AI 消息，笑得我捶床
+                            墨问终端脚本发布独立版 2.1，支持多图片上传
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-12-17</p>
+                    <p class="text-xs text-gray-500">2025-12-25</p>
                     
                 </div>
                 
                 <div class="p-4 hover:bg-gray-50 transition-colors">
                     <h4 class="text-sm font-medium mb-1">
                         
-                        <a href="blog&#x2F;2025/80.html"
+                        <a href="blog&#x2F;技术/rust-tag-test.html"
                             class="text-gray-900 hover:text-primary-600 transition-colors line-clamp-2">
-                            使用 Google Antigravity 在大地上码代码码...
+                            Rust 标签功能测试
                         </a>
                         
                     </h4>
                     
-                    <p class="text-xs text-gray-500">2025-12-17</p>
+                    <p class="text-xs text-gray-500">2025-11-04</p>
                     
                 </div>
                 
@@ -1180,123 +1220,123 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
         <div class="card-body">
             <div class="flex flex-wrap gap-2">
                 
-                <a href="/tags/7x24 AI 员工/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    7x24 AI 员工
-                    <span class="ml-1 text-xs text-gray-500">1</span>
-                </a>
-                
                 <a href="/tags/AI/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
                     AI
-                    <span class="ml-1 text-xs text-gray-500">15</span>
-                </a>
-                
-                <a href="/tags/AI Agent/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent 进化方向/"
+                <a href="/tags/AS3 Expert/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent 进化方向
+                    AS3 Expert
+                    <span class="ml-1 text-xs text-gray-500">6</span>
+                </a>
+                
+                <a href="/tags/Actix-web/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Actix-web
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI Agent提示技巧/"
+                <a href="/tags/Angular/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI Agent提示技巧
+                    Angular
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI IDE/"
+                <a href="/tags/ChatGPT/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE
-                    <span class="ml-1 text-xs text-gray-500">3</span>
-                </a>
-                
-                <a href="/tags/AI IDE生产力/"
-                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI IDE生产力
+                    ChatGPT
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 代码失效解决方案/"
+                <a href="/tags/Composition API/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 代码失效解决方案
+                    Composition API
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 办公效率提升/"
+                <a href="/tags/DeFi/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 办公效率提升
+                    DeFi
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 文件管理安全/"
+                <a href="/tags/DevOps/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 文件管理安全
+                    DevOps
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 架构能力/"
+                <a href="/tags/Docker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 架构能力
+                    Docker
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/Flutter/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    Flutter
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程协作/"
+                <a href="/tags/Git/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程协作
+                    Git
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 编程技巧/"
+                <a href="/tags/Go/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 编程技巧
+                    Go
+                    <span class="ml-1 text-xs text-gray-500">2</span>
+                </a>
+                
+                <a href="/tags/HTTP/"
+                    class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
+                    HTTP
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI 自动化服务器/"
+                <a href="/tags/Hooks/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI 自动化服务器
+                    Hooks
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI代码生成/"
+                <a href="/tags/IndieHacker/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI代码生成
+                    IndieHacker
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手/"
+                <a href="/tags/JavaScript/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手
+                    JavaScript
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI助手自动化/"
+                <a href="/tags/MySQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI助手自动化
+                    MySQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI协同编程/"
+                <a href="/tags/Option/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI协同编程
+                    Option
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI学习/"
+                <a href="/tags/PostgreSQL/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI学习
+                    PostgreSQL
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
-                <a href="/tags/AI对话/"
+                <a href="/tags/Promise/"
                     class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800 transition-colors">
-                    AI对话
+                    Promise
                     <span class="ml-1 text-xs text-gray-500">1</span>
                 </a>
                 
@@ -1318,7 +1358,7 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                     <a href="/blog/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">blog</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">148</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">38</span>
                     </a>
                 </div>
                 
@@ -1326,7 +1366,7 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                     <a href="/docs/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">docs</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">25</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">18</span>
                     </a>
                 </div>
                 
@@ -1334,7 +1374,7 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
                     <a href="/posts/"
                         class="flex items-center justify-between text-gray-700 hover:text-primary-600 transition-colors">
                         <span class="text-sm font-medium">posts</span>
-                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">143</span>
+                        <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">6</span>
                     </a>
                 </div>
                 
@@ -1517,7 +1557,7 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
     <!-- 广告位1：底部广告（版权区上方） -->
     
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <a href="https:&#x2F;&#x2F;item.jd.com&#x2F;13630053.html" target="_blank" rel="noopener" class="block">
             <div
                 class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -1554,6 +1594,14 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
     </div>
     
     
+
+    <!-- 返回顶部 -->
+    <div class="text-center mb-8">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center px-4 py-2 text-sm border border-gray-300 hover:bg-gray-50 cursor-pointer">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            返回顶部
+        </button>
+    </div>
 
     <!-- 页脚 -->
     <footer class="bg-white border-t border-gray-200 mt-16">
@@ -1599,6 +1647,35 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
 
     <!-- 搜索功能脚本 -->
     <script src="/static/js/search.js"></script>
+    <script>
+        (function() {
+            function checkRedirect(val) {
+                var q = val.trim();
+                if (q === '分类' || q === '分类=') {
+                    window.location.href = '/categories/';
+                    return true;
+                } else if (q === '标签' || q === '标签=') {
+                    window.location.href = '/tags/';
+                    return true;
+                } else if (q === '归档' || q === '归档=') {
+                    window.location.href = '/archives/';
+                    return true;
+                }
+                return false;
+            }
+            document.addEventListener('input', function(e) {
+                if (e.target && (e.target.id === 'search-input' || e.target.id === 'mobile-search-input' || e.target.id === 'search-query' || e.target.id === 'search-modal-input')) {
+                    checkRedirect(e.target.value);
+                }
+            });
+            document.addEventListener('submit', function(e) {
+                var input = e.target.querySelector('input[name="q"]') || e.target.querySelector('input[type="text"]');
+                if (input && checkRedirect(input.value)) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
 
     
     <!-- Google Analytics 懒加载 -->
@@ -1646,6 +1723,133 @@ https:&#x2F;&#x2F;note.mowen.cn&#x2F;detail&#x2F;clGVgl-oCbccz2SiuKtv5
         })();
     </script>
     
+
+    <!-- 收藏按钮：桌面端提示快捷键，移动端调用 navigator.share -->
+    <script>
+    function rpBookmark() {
+        if (navigator.share && window.innerWidth <= 768) {
+            navigator.share({
+                title: document.title,
+                url: window.location.href
+            }).catch(function() {});
+        } else {
+            var isMac = navigator.platform && navigator.platform.indexOf('Mac') !== -1;
+            var hint = isMac ? '\u2318+D' : 'Ctrl+D';
+            if (window.showToast) {
+                window.showToast('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            } else {
+                alert('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            }
+        }
+    }
+    </script>
+
+    <script>
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+
+    function rpBatchLoadListingCounts() {
+        if (!RP_REPO) return;
+        var articles = document.querySelectorAll('article');
+        if (!articles.length) return;
+
+        fetch('https://api.github.com/search/issues?q=' + encodeURIComponent('repo:' + RP_REPO + ' is:issue') + '&per_page=100&sort=created&order=desc', {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.items || !data.items.length) return;
+                var issues = {};
+                data.items.forEach(function (issue) {
+                    var m = issue.body && issue.body.match(/Comment thread for (\S+)/);
+                    if (m) {
+                        var pathKey = m[1];
+                        if (issues[pathKey] && issues[pathKey].number > issue.number) {
+                            return;
+                        }
+                        issues[pathKey] = issue;
+                    }
+                });
+
+                articles.forEach(function (article) {
+                    var link = article.querySelector('h2 a') || article.querySelector('div.flex a');
+                    if (!link) return;
+                    var href = link.getAttribute('href');
+                    if (!href) return;
+                    var issue = issues[href];
+                    if (!issue) return;
+
+                    var spans = article.querySelectorAll('button span.font-medium');
+                    if (spans.length >= 2) {
+                        spans[0].textContent = issue.comments || 0;
+                        spans[1].textContent = (issue.reactions && issue.reactions['+1']) || 0;
+                    }
+                });
+            })
+            .catch(function () {});
+    }
+
+    setTimeout(function () {
+        if (RP_REPO) rpBatchLoadListingCounts();
+    }, 500);
+    </script>
+
+    <!-- 全局极简直角 Toast 提示 -->
+    <script>
+        window.showToast = function(message) {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.style.position = 'fixed';
+                container.style.top = '24px';
+                container.style.left = '50%';
+                container.style.transform = 'translateX(-50%)';
+                container.style.zIndex = '99999';
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '12px';
+                container.style.pointerEvents = 'none';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.style.backgroundColor = '#1f2937';
+            toast.style.color = '#ffffff';
+            toast.style.padding = '12px 24px';
+            toast.style.fontSize = '14px';
+            toast.style.fontWeight = '500';
+            toast.style.minWidth = '280px';
+            toast.style.textAlign = 'center';
+            toast.style.boxSizing = 'border-box';
+            
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-8px)';
+            toast.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+            toast.style.pointerEvents = 'auto';
+            
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    toast.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 300);
+            }, 3000);
+        };
+    </script>
 </body>
 
 </html>

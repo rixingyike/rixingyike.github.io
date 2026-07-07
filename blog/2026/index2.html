@@ -25,17 +25,25 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Lunr.js 搜索库 -->
     <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <!-- 防止浏览器 bfcache 缓存显示旧页面 -->
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans"
-    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.split('/').pop() || 'index.html' }">
+    x-data="{ mobileMenuOpen: false, searchOpen: false, currentPath: window.location.pathname.replace(/\/$/, '').split('/').pop() || 'index.html' }">
     <!-- 顶部导航栏 -->
     <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo 和站点名称 -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
+                    <img src="&amp;#x2F;static&amp;#x2F;images&amp;#x2F;logo.png" alt="一树仑 Logo" class="h-8 w-8 rounded-full">
                     <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
                         一树仑
                     </a>
@@ -46,7 +54,7 @@
                     <form action="/search.html" method="get" class="relative w-full">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="search-input">
+                            placeholder="搜索内容..." id="search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -119,7 +127,7 @@
                     <form action="/search.html" method="get" class="relative">
                         <input type="text" name="q"
                             class="form-input w-full pl-10 pr-12 py-2 text-sm rounded-lg border-gray-300 focus:border-primary-500 focus:ring-primary-500"
-                            placeholder="搜索文章..." id="mobile-search-input">
+                            placeholder="搜索内容..." id="mobile-search-input">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -168,14 +176,39 @@
     </nav>
 
     <!-- 主要内容区域 -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" data-content-wrap style="max-width:64rem">
         <main class="min-h-screen py-8">
             
 <div class="max-w-4xl mx-auto">
     <!-- 页面头部 -->
-    <header class="text-center mb-12">
-        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">2026</h1>
-        <p class="text-lg text-gray-600">该分类下的所有文章 (8)</p>
+    <header class="mb-8">
+        <!-- 面包屑导航 -->
+        
+        <nav class="mb-6 text-xs text-gray-400 flex items-center space-x-1.5">
+            <a href="/categories/" class="hover:text-primary-600">分类</a>
+            
+            <span class="text-gray-300">/</span>
+            
+            <a href="&#x2F;blog&#x2F;" class="hover:text-primary-600">blog</a>
+            
+            
+            <span class="text-gray-300">/</span>
+            
+            <span class="text-gray-500">2026</span>
+            
+            
+        </nav>
+        
+
+        <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012 2v2M7 7h10"></path>
+                </svg>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">2026</h1>
+        </div>
+        <p class="text-lg text-gray-600">共 58 条相关内容</p>
     </header>
     
     <!-- 文章列表 -->
@@ -185,13 +218,14 @@
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 <!-- 分类面包屑 -->
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                        <span class="mx-2">›</span>
+                        
                         <a href="/blog/" class="hover:text-primary-600">blog</a>
                     
-                        <span class="mx-2">›</span>
+                        
+                        <span class="text-gray-300">/</span>
+                        
                         <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
                     
                 </nav>
@@ -199,28 +233,32 @@
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2026/35.html" 
+                        <a href="/blog&#x2F;2026/16.html" 
                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            谷歌发布 Antigravity 2.0:界面干净了，但我怎么感觉又被“白嫖”了？
+                            openclaw 能干多少事，取决于我们给它多少权限
                         </a>
                     </h2>
                     
-                    <p class="text-gray-600 mb-4">谷歌发布Antigravity 2.0，界面更简洁但用户感到被“白嫖”。本文详解&#x2F;goal、&#x2F;grill-me、&#x2F;schedule、&#x2F;browser四个核心指令，助你从聊天IDE升级为自动化Agent，提升开发效率。</p>
+                    <p class="text-gray-600 mb-4">本文探讨 openclaw 在服务器上的应用潜力，强调其作为 7x24 AI 员工的能力取决于权限授予和 AI 架构领导力，结合 Anti 和 Cursor 实现自动化。</p>
                     
                     <div class="flex flex-wrap items-center text-sm text-gray-500">
                         
-                        <time datetime="2026-05-20" class="mr-4">2026-05-20</time>
+                        <time datetime="2026-02-06" class="mr-4">2026-02-06</time>
                         
                         
                         
                         <div class="flex flex-wrap items-center">
                             <span class="mr-2">标签:</span>
                             
-                                <a href="/tags/Antigravity 2.0/" class="tag mr-2">Antigravity 2.0</a>
+                                <a href="/tags/openclaw 权限管理/" class="tag mr-2">openclaw 权限管理</a>
                             
-                                <a href="/tags/AI编程工具/" class="tag mr-2">AI编程工具</a>
+                                <a href="/tags/AI 自动化服务器/" class="tag mr-2">AI 自动化服务器</a>
                             
-                                <a href="/tags/自动化Agent指令/" class="tag mr-2">自动化Agent指令</a>
+                                <a href="/tags/7x24 AI 员工/" class="tag mr-2">7x24 AI 员工</a>
+                            
+                                <a href="/tags/AI 架构能力/" class="tag mr-2">AI 架构能力</a>
+                            
+                                <a href="/tags/Anti Cursor 集成/" class="tag mr-2">Anti Cursor 集成</a>
                             
                         </div>
                         
@@ -231,13 +269,14 @@
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 <!-- 分类面包屑 -->
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                        <span class="mx-2">›</span>
+                        
                         <a href="/blog/" class="hover:text-primary-600">blog</a>
                     
-                        <span class="mx-2">›</span>
+                        
+                        <span class="text-gray-300">/</span>
+                        
                         <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
                     
                 </nav>
@@ -245,28 +284,32 @@
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2026/34.html" 
+                        <a href="/blog&#x2F;2026/15.html" 
                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            都 2026 年了，竟然还有人在翻我 2023 年的“保姆级”旧贴？
+                            我的第一个 openclaw 机器人
                         </a>
                     </h2>
                     
-                    <p class="text-gray-600 mb-4">2026年GPT 5.5性能怪兽降价，Codex与ChatGPT合二为一，全平台一体化提升生产力。本文解析AI Agent进化方向，教你如何高效使用GPT 5.5会员，告别繁琐交互。</p>
+                    <p class="text-gray-600 mb-4">本文分享了作者配置 openclaw 机器人的经历，从网络问题导致的失败到成功部署，包括修改软件源、飞书集成和 Git 权限配置。探讨了如何利用 AI 助手自动化任务，避免将其当作苦力，提升工作效率。</p>
                     
                     <div class="flex flex-wrap items-center text-sm text-gray-500">
                         
-                        <time datetime="2026-05-19" class="mr-4">2026-05-19</time>
+                        <time datetime="2026-02-05" class="mr-4">2026-02-05</time>
                         
                         
                         
                         <div class="flex flex-wrap items-center">
                             <span class="mr-2">标签:</span>
                             
-                                <a href="/tags/GPT 5.5 会员购买/" class="tag mr-2">GPT 5.5 会员购买</a>
+                                <a href="/tags/openclaw机器人配置/" class="tag mr-2">openclaw机器人配置</a>
                             
-                                <a href="/tags/Codex 全平台一体化/" class="tag mr-2">Codex 全平台一体化</a>
+                                <a href="/tags/云服务器网络问题/" class="tag mr-2">云服务器网络问题</a>
                             
-                                <a href="/tags/AI Agent 进化方向/" class="tag mr-2">AI Agent 进化方向</a>
+                                <a href="/tags/飞书机器人开发/" class="tag mr-2">飞书机器人开发</a>
+                            
+                                <a href="/tags/AI助手自动化/" class="tag mr-2">AI助手自动化</a>
+                            
+                                <a href="/tags/Git权限配置/" class="tag mr-2">Git权限配置</a>
                             
                         </div>
                         
@@ -277,13 +320,14 @@
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 <!-- 分类面包屑 -->
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                        <span class="mx-2">›</span>
+                        
                         <a href="/blog/" class="hover:text-primary-600">blog</a>
                     
-                        <span class="mx-2">›</span>
+                        
+                        <span class="text-gray-300">/</span>
+                        
                         <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
                     
                 </nav>
@@ -291,28 +335,32 @@
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2026/33.html" 
+                        <a href="/blog&#x2F;2026/14.html" 
                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            mocli，一名 AI 时代的“数字保镖”
+                            国宴级陈氏红烧黄河鲤鱼
                         </a>
                     </h2>
                     
-                    <p class="text-gray-600 mb-4">mocli 是墨问推出的 AI 技能包，让 AI Agent 帮你过滤信息流，实现主动查阅而非被动接收。了解 mocli 如何成为你的数字保镖，重塑信息世界。</p>
+                    <p class="text-gray-600 mb-4">本文分享了国宴级陈氏红烧黄河鲤鱼的烹饪过程，包括煎和炖的技巧，并介绍了 84 岁豫菜大师陈进长的拿手好菜。适合对红烧鲤鱼、豫菜或业余烹饪感兴趣的读者，提供实用指导和美食灵感。</p>
                     
                     <div class="flex flex-wrap items-center text-sm text-gray-500">
                         
-                        <time datetime="2026-05-18" class="mr-4">2026-05-18</time>
+                        <time datetime="2026-02-05" class="mr-4">2026-02-05</time>
                         
                         
                         
                         <div class="flex flex-wrap items-center">
                             <span class="mr-2">标签:</span>
                             
-                                <a href="/tags/mocli/" class="tag mr-2">mocli</a>
+                                <a href="/tags/陈氏红烧黄河鲤鱼做法/" class="tag mr-2">陈氏红烧黄河鲤鱼做法</a>
                             
-                                <a href="/tags/AI Agent/" class="tag mr-2">AI Agent</a>
+                                <a href="/tags/国宴级红烧鲤鱼/" class="tag mr-2">国宴级红烧鲤鱼</a>
                             
-                                <a href="/tags/信息降噪/" class="tag mr-2">信息降噪</a>
+                                <a href="/tags/陈进长豫菜大师/" class="tag mr-2">陈进长豫菜大师</a>
+                            
+                                <a href="/tags/黄河鲤鱼烹饪技巧/" class="tag mr-2">黄河鲤鱼烹饪技巧</a>
+                            
+                                <a href="/tags/业余厨师煎鱼/" class="tag mr-2">业余厨师煎鱼</a>
                             
                         </div>
                         
@@ -323,13 +371,14 @@
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 <!-- 分类面包屑 -->
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                        <span class="mx-2">›</span>
+                        
                         <a href="/blog/" class="hover:text-primary-600">blog</a>
                     
-                        <span class="mx-2">›</span>
+                        
+                        <span class="text-gray-300">/</span>
+                        
                         <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
                     
                 </nav>
@@ -337,28 +386,68 @@
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2026/30.html" 
+                        <a href="/blog&#x2F;2026/13.html" 
                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            串台了
+                            今天是切芒果的李师傅
                         </a>
                     </h2>
                     
-                    <p class="text-gray-600 mb-4">不小心将提示语发错给AI，导致AI困惑。本文分享了一次有趣的“串台”经历，提醒用户注意对话窗口的正确切换。</p>
+                    <p class="text-gray-600 mb-4"></p>
                     
                     <div class="flex flex-wrap items-center text-sm text-gray-500">
                         
-                        <time datetime="2026-05-18" class="mr-4">2026-05-18</time>
+                        <time datetime="2026-02-05" class="mr-4">2026-02-05</time>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </article>
+            
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                <!-- 分类面包屑 -->
+                
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
+                    
+                        
+                        <a href="/blog/" class="hover:text-primary-600">blog</a>
+                    
+                        
+                        <span class="text-gray-300">/</span>
+                        
+                        <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
+                    
+                </nav>
+                
+                
+                <div class="card-body">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
+                        <a href="/blog&#x2F;2026/12.html" 
+                           class="text-gray-900 hover:text-primary-600 transition-colors">
+                            无敌脚本批量删除私有笔记
+                        </a>
+                    </h2>
+                    
+                    <p class="text-gray-600 mb-4">本文分享一个无敌脚本，用于批量删除私有笔记，避免占用服务器空间。脚本基于 JavaScript，在浏览器控制台运行，支持设置停止条件如“黄宗义规律”以防止误删，适合测试后清理笔记的用户。</p>
+                    
+                    <div class="flex flex-wrap items-center text-sm text-gray-500">
+                        
+                        <time datetime="2026-01-20" class="mr-4">2026-01-20</time>
                         
                         
                         
                         <div class="flex flex-wrap items-center">
                             <span class="mr-2">标签:</span>
                             
-                                <a href="/tags/AI对话/" class="tag mr-2">AI对话</a>
+                                <a href="/tags/批量删除私有笔记脚本/" class="tag mr-2">批量删除私有笔记脚本</a>
                             
-                                <a href="/tags/串台/" class="tag mr-2">串台</a>
+                                <a href="/tags/JavaScript自动化删除/" class="tag mr-2">JavaScript自动化删除</a>
                             
-                                <a href="/tags/提示语错误/" class="tag mr-2">提示语错误</a>
+                                <a href="/tags/浏览器控制台脚本/" class="tag mr-2">浏览器控制台脚本</a>
+                            
+                                <a href="/tags/笔记管理工具/" class="tag mr-2">笔记管理工具</a>
+                            
+                                <a href="/tags/防止误删脚本/" class="tag mr-2">防止误删脚本</a>
                             
                         </div>
                         
@@ -369,13 +458,14 @@
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 <!-- 分类面包屑 -->
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                        <span class="mx-2">›</span>
+                        
                         <a href="/blog/" class="hover:text-primary-600">blog</a>
                     
-                        <span class="mx-2">›</span>
+                        
+                        <span class="text-gray-300">/</span>
+                        
                         <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
                     
                 </nav>
@@ -383,32 +473,32 @@
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2026/28.html" 
+                        <a href="/blog&#x2F;2026/11.html" 
                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            Vide Coding 经验总结，核心五点
+                            社区终端软件支持 brew 安装了
                         </a>
                     </h2>
                     
-                    <p class="text-gray-600 mb-4">本文总结了 Vide Coding 的六大核心经验，包括目录化、结构化、模块化、可测试、文档化和原子化，旨在提升 AI Agent 编程效率，减少错误，实现稳定开发。</p>
+                    <p class="text-gray-600 mb-4">本文介绍了社区终端软件 setalias 新增的 brew 安装方式，包括老方法下载和新方法指令，并整合了 Python3 依赖项。同时，展望了未来计划，如添加 UI 界面、支持 Windows&#x2F;Linux、精简依赖项，以及 Rust+Bash 的开发前景。</p>
                     
                     <div class="flex flex-wrap items-center text-sm text-gray-500">
                         
-                        <time datetime="2026-03-04" class="mr-4">2026-03-04</time>
+                        <time datetime="2026-01-20" class="mr-4">2026-01-20</time>
                         
                         
                         
                         <div class="flex flex-wrap items-center">
                             <span class="mr-2">标签:</span>
                             
-                                <a href="/tags/Vide Coding 经验/" class="tag mr-2">Vide Coding 经验</a>
+                                <a href="/tags/brew 安装 setalias/" class="tag mr-2">brew 安装 setalias</a>
                             
-                                <a href="/tags/AI 编程技巧/" class="tag mr-2">AI 编程技巧</a>
+                                <a href="/tags/跨平台脚本软件/" class="tag mr-2">跨平台脚本软件</a>
                             
-                                <a href="/tags/Agent 开发最佳实践/" class="tag mr-2">Agent 开发最佳实践</a>
+                                <a href="/tags/社区终端软件/" class="tag mr-2">社区终端软件</a>
                             
-                                <a href="/tags/模块化编程/" class="tag mr-2">模块化编程</a>
+                                <a href="/tags/Rust Bash 开发/" class="tag mr-2">Rust Bash 开发</a>
                             
-                                <a href="/tags/可测试代码/" class="tag mr-2">可测试代码</a>
+                                <a href="/tags/环境变量设置 UI/" class="tag mr-2">环境变量设置 UI</a>
                             
                         </div>
                         
@@ -419,13 +509,14 @@
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 <!-- 分类面包屑 -->
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                        <span class="mx-2">›</span>
+                        
                         <a href="/blog/" class="hover:text-primary-600">blog</a>
                     
-                        <span class="mx-2">›</span>
+                        
+                        <span class="text-gray-300">/</span>
+                        
                         <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
                     
                 </nav>
@@ -433,28 +524,32 @@
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2026/27.html" 
+                        <a href="/blog&#x2F;2026/10.html" 
                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            Mise 是一种好软件
+                            社区终端发布新版，进一步去掉枷锁，让使用更简单
                         </a>
                     </h2>
                     
-                    <p class="text-gray-600 mb-4">Mise是一个强大的环境管理器，统一管理Node、Python、Rust等多语言版本，还能管理环境变量和复合任务。本文介绍mise的三大核心功能，助你简化开发环境配置。</p>
+                    <p class="text-gray-600 mb-4">社区终端发布 v2.3.1 版本，去除博客园强制发布流程，支持任意浏览器发表周总结，新增参数控制公开性，修正墨问笔记问题。下载链接已提供，欢迎提出宝贵意见，让使用更简单！</p>
                     
                     <div class="flex flex-wrap items-center text-sm text-gray-500">
                         
-                        <time datetime="2026-02-28" class="mr-4">2026-02-28</time>
+                        <time datetime="2026-01-19" class="mr-4">2026-01-19</time>
                         
                         
                         
                         <div class="flex flex-wrap items-center">
                             <span class="mr-2">标签:</span>
                             
-                                <a href="/tags/mise环境管理器/" class="tag mr-2">mise环境管理器</a>
+                                <a href="/tags/社区终端新版发布/" class="tag mr-2">社区终端新版发布</a>
                             
-                                <a href="/tags/多语言版本管理/" class="tag mr-2">多语言版本管理</a>
+                                <a href="/tags/墨问笔记更新/" class="tag mr-2">墨问笔记更新</a>
                             
-                                <a href="/tags/mise.toml配置/" class="tag mr-2">mise.toml配置</a>
+                                <a href="/tags/博客园发布流程优化/" class="tag mr-2">博客园发布流程优化</a>
+                            
+                                <a href="/tags/命令行工具下载/" class="tag mr-2">命令行工具下载</a>
+                            
+                                <a href="/tags/代码简洁原则/" class="tag mr-2">代码简洁原则</a>
                             
                         </div>
                         
@@ -465,13 +560,14 @@
             <article class="card hover:shadow-lg transition-shadow duration-300">
                 <!-- 分类面包屑 -->
                 
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
+                <nav class="px-6 pt-4 text-xs text-gray-400 flex items-center space-x-1.5">
                     
-                        <span class="mx-2">›</span>
+                        
                         <a href="/blog/" class="hover:text-primary-600">blog</a>
                     
-                        <span class="mx-2">›</span>
+                        
+                        <span class="text-gray-300">/</span>
+                        
                         <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
                     
                 </nav>
@@ -479,82 +575,32 @@
                 
                 <div class="card-body">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2026/25.html" 
+                        <a href="/blog&#x2F;2026/9.html" 
                            class="text-gray-900 hover:text-primary-600 transition-colors">
-                            恩言-大字有声圣经发布了
+                            继 Claude Code 之后，Anthropic 又推出了 Cowork，为非程序员服务
                         </a>
                     </h2>
                     
-                    <p class="text-gray-600 mb-4">恩言-大字有声圣经 App 已发布，提供 40MB 轻量 Android 版本，支持离线使用、繁体语言包和真人朗读语音。同时介绍 rustpress 静态博客的更新，包括自有评论插件和配置指南，助力用户轻松搭建个性化博客。</p>
+                    <p class="text-gray-600 mb-4">Anthropic 推出 Cowork，将 Claude Code 能力扩展到非编程领域，帮助用户处理文件、发票、账务等繁琐工作。本文介绍 Cowork 的功能、工作原理、安全注意事项及如何申请试用，适合关注 AI 办公工具的用户。</p>
                     
                     <div class="flex flex-wrap items-center text-sm text-gray-500">
                         
-                        <time datetime="2026-02-19" class="mr-4">2026-02-19</time>
+                        <time datetime="2026-01-18" class="mr-4">2026-01-18</time>
                         
                         
                         
                         <div class="flex flex-wrap items-center">
                             <span class="mr-2">标签:</span>
                             
-                                <a href="/tags/离线圣经App/" class="tag mr-2">离线圣经App</a>
+                                <a href="/tags/Anthropic Cowork/" class="tag mr-2">Anthropic Cowork</a>
                             
-                                <a href="/tags/大字有声圣经/" class="tag mr-2">大字有声圣经</a>
+                                <a href="/tags/Claude AI 非程序员工具/" class="tag mr-2">Claude AI 非程序员工具</a>
                             
-                                <a href="/tags/Rust静态博客/" class="tag mr-2">Rust静态博客</a>
+                                <a href="/tags/AI 文件管理安全/" class="tag mr-2">AI 文件管理安全</a>
                             
-                                <a href="/tags/rustpress评论插件/" class="tag mr-2">rustpress评论插件</a>
+                                <a href="/tags/Cowork 试用申请/" class="tag mr-2">Cowork 试用申请</a>
                             
-                                <a href="/tags/恩言圣经下载/" class="tag mr-2">恩言圣经下载</a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-            
-            <article class="card hover:shadow-lg transition-shadow duration-300">
-                <!-- 分类面包屑 -->
-                
-                <nav class="px-6 pt-4 text-sm text-gray-600">
-                    <a href="/" class="hover:text-primary-600">首页</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog/" class="hover:text-primary-600">blog</a>
-                    
-                        <span class="mx-2">›</span>
-                        <a href="/blog&#x2F;2026/" class="hover:text-primary-600">2026</a>
-                    
-                </nav>
-                
-                
-                <div class="card-body">
-                    <h2 class="text-xl sm:text-2xl font-semibold mb-3">
-                        <a href="/blog&#x2F;2026/26.html" 
-                           class="text-gray-900 hover:text-primary-600 transition-colors">
-                            我用 AI 写了四五个软件之后的总结
-                        </a>
-                    </h2>
-                    
-                    <p class="text-gray-600 mb-4">本文分享了一位老程序员使用 AI 编写多个软件后的实战总结，涵盖 Skills 本质、需求界定、模块化设计等核心经验。学习如何扮演 AI 架构师，利用 AI 提升效率，同时避免依赖，打造有竞争力的项目。</p>
-                    
-                    <div class="flex flex-wrap items-center text-sm text-gray-500">
-                        
-                        <time datetime="2026-02-19" class="mr-4">2026-02-19</time>
-                        
-                        
-                        
-                        <div class="flex flex-wrap items-center">
-                            <span class="mr-2">标签:</span>
-                            
-                                <a href="/tags/AI编程经验/" class="tag mr-2">AI编程经验</a>
-                            
-                                <a href="/tags/AI软件架构/" class="tag mr-2">AI软件架构</a>
-                            
-                                <a href="/tags/Claude Skills/" class="tag mr-2">Claude Skills</a>
-                            
-                                <a href="/tags/AI项目管理/" class="tag mr-2">AI项目管理</a>
-                            
-                                <a href="/tags/AI代码生成/" class="tag mr-2">AI代码生成</a>
+                                <a href="/tags/AI 办公效率提升/" class="tag mr-2">AI 办公效率提升</a>
                             
                         </div>
                         
@@ -569,7 +615,7 @@
     
     <div class="mt-12">
         <p class="text-sm text-gray-700 text-center">
-            第 <span class="font-medium">9</span> 到 <span class="font-medium">16</span> 条
+            第 <span class="font-medium">42</span> 到 <span class="font-medium">50</span> 条
         </p>
         <nav class="mt-4 flex justify-center gap-3" aria-label="Pagination">
             
@@ -593,6 +639,14 @@
 
     <!-- 广告位1：底部广告（版权区上方） -->
     
+
+    <!-- 返回顶部 -->
+    <div class="text-center mb-8">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center px-4 py-2 text-sm border border-gray-300 hover:bg-gray-50 cursor-pointer">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            返回顶部
+        </button>
+    </div>
 
     <!-- 页脚 -->
     <footer class="bg-white border-t border-gray-200 mt-16">
@@ -638,6 +692,35 @@
 
     <!-- 搜索功能脚本 -->
     <script src="/static/js/search.js"></script>
+    <script>
+        (function() {
+            function checkRedirect(val) {
+                var q = val.trim();
+                if (q === '分类' || q === '分类=') {
+                    window.location.href = '/categories/';
+                    return true;
+                } else if (q === '标签' || q === '标签=') {
+                    window.location.href = '/tags/';
+                    return true;
+                } else if (q === '归档' || q === '归档=') {
+                    window.location.href = '/archives/';
+                    return true;
+                }
+                return false;
+            }
+            document.addEventListener('input', function(e) {
+                if (e.target && (e.target.id === 'search-input' || e.target.id === 'mobile-search-input' || e.target.id === 'search-query' || e.target.id === 'search-modal-input')) {
+                    checkRedirect(e.target.value);
+                }
+            });
+            document.addEventListener('submit', function(e) {
+                var input = e.target.querySelector('input[name="q"]') || e.target.querySelector('input[type="text"]');
+                if (input && checkRedirect(input.value)) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
 
     
     <!-- Google Analytics 懒加载 -->
@@ -685,6 +768,133 @@
         })();
     </script>
     
+
+    <!-- 收藏按钮：桌面端提示快捷键，移动端调用 navigator.share -->
+    <script>
+    function rpBookmark() {
+        if (navigator.share && window.innerWidth <= 768) {
+            navigator.share({
+                title: document.title,
+                url: window.location.href
+            }).catch(function() {});
+        } else {
+            var isMac = navigator.platform && navigator.platform.indexOf('Mac') !== -1;
+            var hint = isMac ? '\u2318+D' : 'Ctrl+D';
+            if (window.showToast) {
+                window.showToast('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            } else {
+                alert('\u6309\u4E0B ' + hint + ' \u5373\u53EF\u6536\u85CF\u672C\u9875');
+            }
+        }
+    }
+    </script>
+
+    <script>
+    var RP_REPO = 'rixingyike/yishulun.com_discus';
+
+    function rpBatchLoadListingCounts() {
+        if (!RP_REPO) return;
+        var articles = document.querySelectorAll('article');
+        if (!articles.length) return;
+
+        fetch('https://api.github.com/search/issues?q=' + encodeURIComponent('repo:' + RP_REPO + ' is:issue') + '&per_page=100&sort=created&order=desc', {
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.items || !data.items.length) return;
+                var issues = {};
+                data.items.forEach(function (issue) {
+                    var m = issue.body && issue.body.match(/Comment thread for (\S+)/);
+                    if (m) {
+                        var pathKey = m[1];
+                        if (issues[pathKey] && issues[pathKey].number > issue.number) {
+                            return;
+                        }
+                        issues[pathKey] = issue;
+                    }
+                });
+
+                articles.forEach(function (article) {
+                    var link = article.querySelector('h2 a') || article.querySelector('div.flex a');
+                    if (!link) return;
+                    var href = link.getAttribute('href');
+                    if (!href) return;
+                    var issue = issues[href];
+                    if (!issue) return;
+
+                    var spans = article.querySelectorAll('button span.font-medium');
+                    if (spans.length >= 2) {
+                        spans[0].textContent = issue.comments || 0;
+                        spans[1].textContent = (issue.reactions && issue.reactions['+1']) || 0;
+                    }
+                });
+            })
+            .catch(function () {});
+    }
+
+    setTimeout(function () {
+        if (RP_REPO) rpBatchLoadListingCounts();
+    }, 500);
+    </script>
+
+    <!-- 全局极简直角 Toast 提示 -->
+    <script>
+        window.showToast = function(message) {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.style.position = 'fixed';
+                container.style.top = '24px';
+                container.style.left = '50%';
+                container.style.transform = 'translateX(-50%)';
+                container.style.zIndex = '99999';
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '12px';
+                container.style.pointerEvents = 'none';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.style.backgroundColor = '#1f2937';
+            toast.style.color = '#ffffff';
+            toast.style.padding = '12px 24px';
+            toast.style.fontSize = '14px';
+            toast.style.fontWeight = '500';
+            toast.style.minWidth = '280px';
+            toast.style.textAlign = 'center';
+            toast.style.boxSizing = 'border-box';
+            
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-8px)';
+            toast.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+            toast.style.pointerEvents = 'auto';
+            
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    toast.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 300);
+            }, 3000);
+        };
+    </script>
 </body>
 
 </html>
