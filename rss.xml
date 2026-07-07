@@ -5,6 +5,13 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>RustPress 零成本博客，它承载了我的软件开发思想</title>
+    <link>https://yishulun.com/2026/63.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2026/63.html</guid>
+    <description>RustPress 零成本博客，它承载了我的软件开发思想 我写了个叫 RustPress 的静态博客，最近重新整了整。这事本身没什么好说的，但过程中有个细节让我特别想说一下——倒分页。 有人听到“倒分页”第一反应是：这也算特色？很复杂吗，有必要吗？ 我在第一次做 RustPress 的时候也犹豫过。后来我意识到一个很实际的问题：如果你的博客列表第 1 页永远是最新内容，那你每次发新文章，第 1 页都得重新编译一遍。文章越写越多，编译时间会慢慢变大。这不合理。 所以我反过来干：让数字最大的页装最新内容，旧的、第 1 页，就永远不动了。加上 RustPress 已经做到了增量编译，意思是，理论上你写多少内容，速度都不会变慢——旧的页面早编译好了，不需要重新编译。 倒分页，就这么一个简单的想法，但它直接定下了这个博客的性格：轻便、快，不为不必要的计算买单。 为什么坚持做成静态博客呢？因为我要把它</description>
+    <pubDate>2026-07-07</pubDate>
+  </item>
+  <item>
     <title>礼让行人，竟然成了“高贵的品质”</title>
     <link>https://yishulun.com/2026/62.html</link>
     <guid isPermaLink="true">https://yishulun.com/2026/62.html</guid>
