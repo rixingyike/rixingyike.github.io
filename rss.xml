@@ -5,6 +5,83 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>20260714122922</title>
+    <link>https://yishulun.com/tweets/2026/07/20260714122922.html</link>
+    <guid isPermaLink="true">https://yishulun.com/tweets/2026/07/20260714122922.html</guid>
+    <description>昨天涂的一篇小文，在微信平台爆了，平台给推了二万的量。每一篇平台喜欢的文，都不是平台喜欢，都是平台背后的读者喜欢。</description>
+    <pubDate>2026-07-14</pubDate>
+  </item>
+  <item>
+    <title>不是1M上下文的不用，不是免费大模型不用，全面实现 token 自由</title>
+    <link>https://yishulun.com/2026/67.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2026/67.html</guid>
+    <description>不是1M上下文的不用，不是免费大模型不用，全面实现 token 自由 昨天我照着网上的教程给 Claude Code 配 Nvidia 的免费模型，CC Switch 配来配去，怎么都启动不了。真让我火大。为什么？我就是一步步照教程来的。又请谷歌 AI 帮忙，给出的指导中规中矩，配完还是不行。 为什么？ 其实就是想白嫖几个质量不错的国产大模型。 免费大模型的三种现状 现在大模型已经迈入 1M 上下文时代，一次可以吞吐百万 token，一本 PDF 直接丢进去都没问题。爽是真的爽，贵也是真的贵—— 200 块的会员费，用不了几次就见底。但如果 token 免费呢？是不是就可以放开了搞？ 目前免费大致分三种情况： 第一种是过时的旧模型。 别说什么 glm-4.7，现在 glm-5.1 都算旧模型了，因为 glm-5.2 已经出来了。听说华为的 DevEco Code 里有免费的 glm-5.1</description>
+    <pubDate>2026-07-14</pubDate>
+  </item>
+  <item>
+    <title>1.2. 配置文件说明</title>
+    <link>https://yishulun.com/columns/7/1.2.配置文件说明.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/7/1.2.配置文件说明.html</guid>
+    <description>详细介绍 config.toml 内容。</description>
+    <pubDate>2026-07-14</pubDate>
+  </item>
+  <item>
+    <title>1. 安装与配置</title>
+    <link>https://yishulun.com/columns/7/1.安装与配置.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/7/1.安装与配置.html</guid>
+    <description>这是专栏的第一个章节。</description>
+    <pubDate>2026-07-14</pubDate>
+  </item>
+  <item>
+    <title>1.1. 快速开始</title>
+    <link>https://yishulun.com/columns/7/1.1.快速开始.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/7/1.1.快速开始.html</guid>
+    <description>这是二级章节示例。</description>
+    <pubDate>2026-07-14</pubDate>
+  </item>
+  <item>
+    <title>1.2.1. 站点信息配置</title>
+    <link>https://yishulun.com/columns/7/1.2.1.站点信息配置.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/7/1.2.1.站点信息配置.html</guid>
+    <description>这是三级章节展示缩进。</description>
+    <pubDate>2026-07-14</pubDate>
+  </item>
+  <item>
+    <title>2. 第二章:星辰</title>
+    <link>https://yishulun.com/columns/6/2.第二章：星辰.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/6/2.第二章：星辰.html</guid>
+    <description>茫茫宇宙中...</description>
+    <pubDate>2026-07-14</pubDate>
+  </item>
+  <item>
+    <title>1. 第一章:启程</title>
+    <link>https://yishulun.com/columns/6/1.第一章：启程.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/6/1.第一章：启程.html</guid>
+    <description>小说开篇内容...</description>
+    <pubDate>2026-07-14</pubDate>
+  </item>
+  <item>
+    <title>AI 时代，站在针尖上的人越来越珍贵</title>
+    <link>https://yishulun.com/2026/66.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2026/66.html</guid>
+    <description>AI 时代，站在针尖上的人越来越珍贵 去年做过的一个小浏览器插件功能，今天重新拾起来，我硬是拖了一天一夜才动手。 不是不会写，是心静不下来了。 去年做这个功能的时候，我基本上是半手写半 AI 协助，那时候心境主要还在编码上，能耐下心一点一点扣代码。今天不同了，这一年我大部分时间在搞文学创作，心境整个变了。 我自己琢磨，写代码是稳、是心静如水；搞创作是快，是天马行空。天马行空惯了，想静下心来一点一点扣代码，很难不到。 于是这项「不是新功能的功能」，被我拖了一天一夜。 今天我终于忍不住主动查了资料，想看看在 agy 指挥浏览器操作网页 DOM 这件事上，有什么趁手的工具或类库。不查不知道，一查还真有。耐心看了资料、简单学习一下上手之后，小小的新功能在一小时内搞定了，而且只用了 DS 4.0 Flash Free 模型，不花钱就办成了事。 怎么做到的呢？也算一个小经验，我简述一下。 一）Brow</description>
+    <pubDate>2026-07-13</pubDate>
+  </item>
+  <item>
+    <title>二千年了，人并没有变聪明</title>
+    <link>https://yishulun.com/2026/65.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2026/65.html</guid>
+    <description>二千年了，人并没有变聪明 北京周边有个镇，镇上有人建了个小区，依山傍水，风水不错。这几天北京下大雨，昨天小区居民群里有人说：「感谢物业，在山与小区之间挖了一条沟，山上冲下来的雨水全顺着沟流进河里去了，小区没遭灾。」 另一个居民马上纠正：「错了，不是物业挖的，是县政府派人来挖的。昨天物业在小区靠山那面彻了一堵强，县里抗洪专业队的人过来了，说彻墙不行，连夜挖了条沟，这才真把水患解了。」 上面是示意图，大致就是这么个意思。 彻墙是堵，挖沟是疏。你彻了墙，地势有高有低，水往低处聚，越积越多，最后照样能把墙冲倒，洪水还是会灌进小区。挖沟疏导，才是聪明办法。可问题是，这么简单的道理，为什么那么多人就是转不过弯来？为什么在生命财产面前实际应用的还是错方法？ 两千多年前，李冰父子在岷江上修都江堰，四六分洪，二八排沙，旱涝两用。两千年了，今天都江堰还在正常运转。说大巧不工，都江堰就是了。传说鲧治水，用的是堵</description>
+    <pubDate>2026-07-12</pubDate>
+  </item>
+  <item>
+    <title>48个音标元素</title>
+    <link>https://yishulun.com/2026/64.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2026/64.html</guid>
+    <description>48个音标元素 单词 sheep，注音 /ʃi:p/ ，这个叫音标，有多少单词就有多少音标，所以一般我们说 48 个音标，其实是不对的，音标里的组成部分叫元素，应该叫 48 个音标元素。 我看过不少音标视频，以张俊杰老师讲得最好。以下音标是国际音标，也称英式音标，是国内教材书上的默认音标。有意思的是，国内教材选的音标是英式，但考试播放的录音据说用的却是美式。大概英式、美式发音区别不大吧，区别主要是美式发音在有 r 的单词中会多一些儿化音，像京片子那样。不要看字典上两者标注的发音许多时候写法都不一样，据说那只是文本标识不同，发音区别其实不大。 张俊杰的视频，用的是英式音标，以下的音标也是英式。 英语发言，按照发音部位、气流急缓、舌头翘直、嘴巴开闭的组合不同，有 48 个音标元素，元音 20 个，辅音 28 个。不管无音、辅音，英语不讲声调，汉语有四声，英语没有，所有音标元素的读法只有二声，所</description>
+    <pubDate>2026-07-09</pubDate>
+  </item>
+  <item>
     <title>20260707222523</title>
     <link>https://yishulun.com/tweets/2026/07/20260707222523.html</link>
     <guid isPermaLink="true">https://yishulun.com/tweets/2026/07/20260707222523.html</guid>
@@ -250,6 +327,13 @@
     <pubDate>2026-05-17</pubDate>
   </item>
   <item>
+    <title>AI 开发时代的简要重构范式，一个指令完成重构，始终保证项目可验证性和稳定性</title>
+    <link>https://yishulun.com/2026/29.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2026/29.html</guid>
+    <description>AI 开发时代的简要重构范式，一个指令完成重构，始终保证项目可验证性和稳定性 在 AI 辅助编程（Vide Coding）快速普及的今天，很多开发者产生了一个错觉：既然 AI 能帮我写代码，那我的代码结构是否乱一点也无所谓？反正 AI 能读懂。 事实恰恰相反。 在 AI 协作时代，项目代码的模块化和可验证性，不仅没有过时，反而成为了决定开发效率和系统稳定性的核心准则。 本文将结合我们在 PushPen 项目中的重构实践，深入探讨这一话题。 1. 重构：从“能跑就行”到“可持续演进” 重构不是为了追求某种代码美学，而是为了扩展的稳定。 随着功能不断叠加，系统会不可避免地产生“技术熵增”。如果不对代码进行周期性的重构，系统最终会进入“技术破产”状态：开发者不敢动代码，AI 也会因为上下文过于混乱而给出错误的建议和操作。 通过重构，我们将混乱的单体逻辑拆解为清晰的模块架构，保证可验证性、可测试性</description>
+    <pubDate>2026-03-17</pubDate>
+  </item>
+  <item>
     <title>Vide Coding 经验总结，核心五点</title>
     <link>https://yishulun.com/2026/28.html</link>
     <guid isPermaLink="true">https://yishulun.com/2026/28.html</guid>
@@ -290,6 +374,13 @@
     <guid isPermaLink="true">https://yishulun.com/projects/1/index.html</guid>
     <description>功能特性 📖 新约旧约全书 — 涵盖圣经全部 66 卷书，繁体中文和合本 🔤 大字显示 — 专为阅读优化的大字排版，清晰易读 🔊 有声朗读 — 内置离线语音引擎，支持逐章逐节朗读 🎯 逐节跟读 — 播放时自动高亮当前朗读的经节 📴 完全离线 — 全部内容与语音离线可用，无需网络 📱 多平台支持 — 同时支持 macOS 和 Android 平台 技术架构 本应用使用 Flutter 作为跨平台 UI 框架， Rust 处理核心 TTS 引擎： TTS 语音引擎基于 Rust 实现，通过 FFI 桥接 Flutter 语音资源包支持按需下载，首次使用自动解压 支持 6kHz 与 8kHz 两种语音质量可选 资源包说明 应用内置默认内容可直接使用。在有网络的情况下，App 会自动引导下载以下可选资源包以获得更佳体验： 资源包 说明 繁体中文语言包 繁体中文经文显示 6kHz 语音包 基础语音朗</description>
     <pubDate>2026-02-19</pubDate>
+  </item>
+  <item>
+    <title>板栗是人是狗？</title>
+    <link>https://yishulun.com/2026/24.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2026/24.html</guid>
+    <description>板栗是人是狗？ 很久没有写东西了，写点小情绪吧。在我看来，能写的无非就是两种：大内容与小情绪。大内容是经过深思熟虑，认为自成体系了，拿出来示人；小情绪就是心里突然有了写的冲动，抒发为人的平时感慨。 板栗不是坚果，是一条狗，因为它的颜色是栗色，所以取了这个名字。板栗是有人送给小舅子的，小舅子又转送给了老丈人，近期丈母娘生病住院，我随领导去了老丈人家，与板栗也才有了密切接触。 第一件值得写的事，是板栗遛我。平常都是老丈人负责遛它，有一天老丈人赶早去医院了，这一天遛板栗的任务就落在了我身上。板栗很讲卫生，每天早上要定时出去排泄，它从不在家里或院里大小便。这天大概八九点钟，它等得不耐烦了，一直用前爪划拉窗户。我给孩子们做完早餐，就立马带它出去。把绳子给它套上。板栗的绳子像马鞍一样是套在肚子上的，不像小时候我家的田园犬是套在脖子上的。它过于热情，可能是觉察到我要带它出去玩了，左跳右跳一直动个不停，害</description>
+    <pubDate>2026-02-18</pubDate>
   </item>
   <item>
     <title>板栗是人是狗？</title>
@@ -915,6 +1006,13 @@
     <pubDate>2025-09-22</pubDate>
   </item>
   <item>
+    <title>冷切与喝酒</title>
+    <link>https://yishulun.com/2025/37.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2025/37.html</guid>
+    <description>冷切与喝酒 这两天吃了一道特殊的菜，想起了小时候的一桩旧事。这道菜我给它起名字叫葱段羊肉——有一道热菜叫葱爆羊肉，不是那个。新鲜的羊腿肉用凉水洗一洗，不用焯水，加五香料包，加盐，加清水炖。炖好后在冰箱里放凉，吃的时候拿出来放在盘子里，将剥了皮的大葱切成一段一段也放在盘子里，用小刀切一块羊肉送进嘴里，再送一段大葱，就这样吃。有的羊肉块比较肥，上面附有很多白油，没关系，照吃不误——貌似没有脂肪就不香了似的。这个吃法辛辣油腻，全国怕是没有几人喜欢——我猜的，我觉得又凉、又油、又辣，没有人会喜欢。 旧事与肉有关，且也是比较肥的，不然也想不起它。 1994 年，我大概 11 岁，过新年，我和一个小伙伴随村里的一个叔去很远的外县拜年。我们三人骑自行车去，到的时候就吃午饭了。吃了饭就走，还没有回到家，天就已经黑了。可见这个地有多远。 在路过一个村庄的时候，叔想起了这个村里有一个亲戚，就拐了进去。我推测应</description>
+    <pubDate>2025-09-10</pubDate>
+  </item>
+  <item>
     <title>能搞大故事策划，但不一定能把小故事写好</title>
     <link>https://yishulun.com/2025/36.html</link>
     <guid isPermaLink="true">https://yishulun.com/2025/36.html</guid>
@@ -941,6 +1039,13 @@
     <guid isPermaLink="true">https://yishulun.com/2025/33.html</guid>
     <description>女权主义不利于提高婚育率 最近读了一本书，书名叫《完美婚姻，女人说了算》，是一本英文翻译书，作者劳拉·道尔是一位美国女性。这算是一本从实践出发，总结优秀经验而写成的书。很有指导意义，经验之谈的图书总是值得阅读。书的内容总的来讲，在告诫女性读者在家庭中不要企图拿控一切、评论一切，要学会示弱，学会尊重、赞美和感激丈夫，要多看开一些、少一点较真，只有这样才能建立一个和谐、亲密和充满激情的婚姻关系。 具体讲是六原则： 1，学会爱自己，每天做一件让自己放松的事情。 2，男人需要的是尊重，请给他们。 3，对丈夫少一点控制，多一点亲密。 4，坦然接受来自丈夫的好意。 5，示弱，让妻子更具女人味。 6，感激是最有力的亲密技巧之一，请多使用。 女权独立主义讲究思想独立、经济独立、情感独立，仔细对比上面的亲密关系六原则，发现女权主义与这些让婚姻幸福的技巧竟然是相悖的。怪不得经济越发达，离婚率越高。这不是经济发</description>
     <pubDate>2025-09-02</pubDate>
+  </item>
+  <item>
+    <title>nu、nong，这两个拼音有很么不同，如何分辨，各有什么汉字？</title>
+    <link>https://yishulun.com/2025/32.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2025/32.html</guid>
+    <description>nu、nong，这两个拼音有很么不同，如何分辨，各有什么汉字？ 一、拼音本身的区别 音节结构不同 nu ：声母 n + 单韵母 u （发音为/u/），属于开口度较小的音节 。 nong ：声母 n + 复合韵母 ong （发音为/ʊŋ/），带有后鼻音韵尾，发音时口腔需张开更大 。 方言与变体 部分方言（如越南Nùng语）中可能出现 nong 写作 nung 的情况 。 二、对应汉字的差异 （一） 拼音 nong 的汉字 常见字 ：农（nóng）、弄（nòng）、浓（nóng）、脓（nóng）、侬（nóng）等 。 完整列表（共28字）： 农、弄、浓、脓、哝、侬、秾、挊、挵、儂、噥、濃、癑、穠、襛、辳、醲、蕽、燶、檂、禯、膿、譨、欁、鬞、齈、䵜、䢉。 注：部分生僻字如&amp;quot;齈&amp;quot;（鼻病）、&amp;quot;鬞&amp;quot;（毛发乱）等较少使用 。 （二） 拼音 nu 的汉字 按声调分类</description>
+    <pubDate>2025-08-26</pubDate>
   </item>
   <item>
     <title>人的情绪是怎么产生的？</title>
@@ -1083,6 +1188,13 @@
     <pubDate>2025-03-19</pubDate>
   </item>
   <item>
+    <title>Rust学习笔记4：智能指针、引用和并发</title>
+    <link>https://yishulun.com/2025/11.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2025/11.html</guid>
+    <description>Rust学习笔记4：智能指针、引用和并发 Drop特征 使用drop方法可以回收所有权，释放内存。drop方法不需要程序员手动调用，编译器会为我们自动插入drop代码并在变量退出作用域时调用之。调用顺序是： 先声明的后调用，后声明的先调用； 在结构体内，结构体的drop先调用，继而按照字段的定义顺序调用字段的drop方法。 对于下面这个示例： // 定义一个简单的结构体 struct Resource { name: String, } // 为 Resource 实现 Drop trait impl Drop for Resource { fn drop(&amp;amp;mut self) { println!(&amp;quot;Dropping resource: {}&amp;quot;, self.name); } } fn main() { // 创建两个 Resource 实例 let resou</description>
+    <pubDate>2025-03-11</pubDate>
+  </item>
+  <item>
     <title>Rust学习笔记3：类型、智能指针</title>
     <link>https://yishulun.com/2025/10.html</link>
     <guid isPermaLink="true">https://yishulun.com/2025/10.html</guid>
@@ -1167,6 +1279,13 @@
     <pubDate>2025-02-19</pubDate>
   </item>
   <item>
+    <title>RustPress 用户指南</title>
+    <link>https://yishulun.com/columns/7/index.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/7/index.html</guid>
+    <description>RustPress 用户指南 RustPress 静态博客系统的官方使用文档，帮助你快速上手并深入掌握各项功能配置。</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
     <title>2.Claude提示的初步编写与优化</title>
     <link>https://yishulun.com/columns/1/2.Claude提示的初步编写与优化.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/1/2.Claude提示的初步编写与优化.html</guid>
@@ -1248,6 +1367,27 @@
     <link>https://yishulun.com/columns/2/4.高效提示的5个方式.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/2/4.高效提示的5个方式.html</guid>
     <description>4. 高效提示的 5 个方式 提问的质量决定了 AI 回答的质量。以下是五个高效提问的方式技巧： 1，在两点之间让 AI 明确自己的需求 两点决定一条线段。如果只告诉 AI 一点信息，它会 360 度发散，是很难输出有效信息的。 例如，如果我们想了解某软件 A 的使用技巧，我们不应该笼统地问：“软件 A 怎么用？”而应该更明确地问：“我该如何用软件 A 达到我的某某需求？” 2，提供尽可能详细的上下文信息 GPT 的 token 是经过推演返回的，限制越多，推演的结果越精准。例如，我们想向 AI 询问一些建筑建议，简单的问法是：“我想采用现代简约风格进行建筑设计，你有什么建议？”更为合理、高效的问法是：“建筑面积为 1000 平方米，预算在 100 万以内，采用现代简约风格设计，你有什么建议？” GPT 在工作的时候存在上下文窗口的概念，足够的背景信息、上下文信息更有利于 AI 返回有价值</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>小说创作的最低要求是什么</title>
+    <link>https://yishulun.com/columns/6/小说创作的最低要求是什么.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/6/小说创作的最低要求是什么.html</guid>
+    <description>小说创作的最低要求是什么？ 对于程序而言，代码没有异常，可以正常运行，这是最低的要求。软件正常运行以后，才是用户体验上的考虑，考虑如何让用户用得更舒服。 在长篇小说创作上，达到什么程度，写出的文字算是达到了最低要求呢？ 确保内容流畅和通顺，具体涉及以下这些方面： 语法和拼写无误 ：没有明显的语法错误和拼写错误是使文章流畅的基础。 文本连贯性 ：从段落到段落，从章节到章节，文本应当流畅且连贯。每个部分都应当有一个清晰的开始和结尾，让读者可以顺畅地阅读。 叙事顺序自然合理 ：叙事应当清晰且条理清楚，不会让读者感到迷惑或困扰。即便你使用非线性或者倒叙的叙事手法，读者也应当能理解故事的发展和事件的顺序。 故事逻辑性 ：故事需要在逻辑上是连贯的。情节的发展应当符合因果关系，角色的行为应当与他们的性格和动机一致。 角色连贯性 ：角色的行为和动机应当在整个故事中保持一致。如果角色的性格或行为发生变化，应</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>科幻小说集</title>
+    <link>https://yishulun.com/columns/6/index.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/6/index.html</guid>
+    <description>科幻小说集 AI 辅助创作的科幻小说集，探索人与 AI 协同创作的边界与可能。</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>如何使用Claude AI辅助创作小说</title>
+    <link>https://yishulun.com/columns/6/如何使用Claude AI辅助创作小说.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/6/如何使用Claude AI辅助创作小说.html</guid>
+    <description>我如何使用 GPT4 与 Claude 辅助创作小说，及两个 AI 的辅助表现 我研究了一下如何使用 Claude 辅助创作小说，总体感觉 Claude 的表现优于 GPT。GPT4 最大的缺点是急于完成指令，人类很难让它放缓节奏以增加渲染的厚度。Claude 辅助人类创建一个个片断，然后由人类自己组合，就像一张网，Claude 允许人类控制网上的节点。进一步探索与使用 Claude 是有必要的。 Claude 是 Anthropic 发布的人工智能工具，能够为我的小说创建提供很大帮助，许多作者发现 Claude 帮助作者创建的文本比 ChatGPT 更好。接下来我准备试用它们，对比研究一下它们的辅助创作表现。 从许多用户使用这些工具的经验来看，人们看到 AI 为小说创造了极其有趣和引人入胜的想法，而个体作者独自一人永远无法想出这些想法。对 AI 的这一作用，人们普遍没有异议，无论是 Cl</description>
     <pubDate>2025-02-19</pubDate>
   </item>
   <item>

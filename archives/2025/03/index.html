@@ -96,7 +96,7 @@
             </div>
             <h1 class="text-3xl sm:text-4xl font-bold text-moss-ink">2025年03月</h1>
         </div>
-        <p class="text-lg text-mist-green">共 8 条内容</p>
+        <p class="text-lg text-mist-green">共 9 条内容</p>
     </header>
     
     
@@ -229,6 +229,86 @@ fn main() {
 
 fn clac(n:i32) -&amp;gt; i32 {
     match n…
+                        </p>
+                        
+                        
+                        <div class="flex flex-wrap gap-2 mt-3 select-none">
+                            
+                            <a href="/tags/Rust/" class="text-xs text-mist-green hover:text-cyber-mint">#Rust</a>
+                            
+                        </div>
+                        
+                        <!-- 评论/点赞/收藏 交互按钮 -->
+                        <div class="flex items-center mt-2 select-none">
+                            <div class="flex items-center space-x-8 text-xs text-mist-green/80">
+                                <button class="flex items-center space-x-2 hover:text-cyber-mint hover:bg-air-bg/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-cyber-mint transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742h.008v.008h-.008v-.008zM12 10.742h.008v.008H12v-.008zm3.308 0h.008v.008h-.008v-.008zM21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-moss-ink transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-rose-500 hover:bg-rose-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-rose-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-rose-600 transition-colors">0</span>
+                                </button>
+                                <button class="flex items-center space-x-2 hover:text-amber-500 hover:bg-amber-50/50 px-3 py-1.5 rounded-full transition-all group duration-300">
+                                    <svg class="w-4 h-4 text-sage-line/50 group-hover:text-amber-500 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                    </svg>
+                                    <span class="font-medium group-hover:text-amber-600 transition-colors">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                
+                    
+                    <!-- 博客文章样式 -->
+                    <article class="pb-10">
+                        
+                        <div class="breadcrumb text-[11px] text-gray-400 mb-1 select-none flex items-center space-x-1">
+                            
+                            
+                            
+                                
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                        
+                                            <a href="&#x2F;2025&#x2F;" class="hover:text-cyber-mint transition-colors">2025</a>
+                                        
+                                    
+                                
+                            
+                        </div>
+                        
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="&#x2F;2025&#x2F;11.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                Rust学习笔记4：智能指针、引用和并发
+                            </a>
+                        </h2>
+                        <div class="text-[12px] text-mist-green mb-3">
+                            
+                            <span>2025-03-11</span>
+                            
+                        </div>
+                        
+                        <p class="text-mist-green leading-relaxed text-sm">
+                            Rust学习笔记4：智能指针、引用和并发
+Drop特征
+使用drop方法可以回收所有权，释放内存。drop方法不需要程序员手动调用，编译器会为我们自动插入drop代码并在变量退出作用域时调用之。调用顺序是：
+
+先声明的后调用，后声明的先调用；
+在结构体内，结构体的drop先调用，继而按照字段的定义顺序调用字段的drop方法。
+
+对于下面这个示例：
+&#x2F;&#x2F; 定义一个简单的结构体
+struct Reso…
                         </p>
                         
                         
