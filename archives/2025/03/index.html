@@ -208,8 +208,8 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
                         </div>
                         
                         <h2 class="text-xl font-semibold mb-2">
-                            <a href="&#x2F;2025&#x2F;10.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
-                                Rust学习笔记3：类型、智能指针
+                            <a href="&#x2F;2025&#x2F;11.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                Rust学习笔记4：智能指针、引用和并发
                             </a>
                         </h2>
                         <div class="text-[12px] text-mist-green mb-3">
@@ -219,16 +219,16 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
                         </div>
                         
                         <p class="text-mist-green leading-relaxed text-sm">
-                            Rust学习笔记3：类型、智能指针
-空类型或称永远不返回类型
-感叹号写在返回值的地方，返回该函数“永远不返回类型”，在函数内部，panic可以“返回”此类型。
-fn main() {
-    let i = clac(5);
-    println!(&amp;quot;i = {}&amp;quot;, i); &#x2F;&#x2F; i = 1
-}
+                            Rust学习笔记4：智能指针、引用和并发
+Drop特征
+使用drop方法可以回收所有权，释放内存。drop方法不需要程序员手动调用，编译器会为我们自动插入drop代码并在变量退出作用域时调用之。调用顺序是：
 
-fn clac(n:i32) -&amp;gt; i32 {
-    match n…
+先声明的后调用，后声明的先调用；
+在结构体内，结构体的drop先调用，继而按照字段的定义顺序调用字段的drop方法。
+
+对于下面这个示例：
+&#x2F;&#x2F; 定义一个简单的结构体
+struct Reso…
                         </p>
                         
                         
@@ -288,8 +288,8 @@ fn clac(n:i32) -&amp;gt; i32 {
                         </div>
                         
                         <h2 class="text-xl font-semibold mb-2">
-                            <a href="&#x2F;2025&#x2F;11.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
-                                Rust学习笔记4：智能指针、引用和并发
+                            <a href="&#x2F;2025&#x2F;10.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                Rust学习笔记3：类型、智能指针
                             </a>
                         </h2>
                         <div class="text-[12px] text-mist-green mb-3">
@@ -299,16 +299,16 @@ fn clac(n:i32) -&amp;gt; i32 {
                         </div>
                         
                         <p class="text-mist-green leading-relaxed text-sm">
-                            Rust学习笔记4：智能指针、引用和并发
-Drop特征
-使用drop方法可以回收所有权，释放内存。drop方法不需要程序员手动调用，编译器会为我们自动插入drop代码并在变量退出作用域时调用之。调用顺序是：
+                            Rust学习笔记3：类型、智能指针
+空类型或称永远不返回类型
+感叹号写在返回值的地方，返回该函数“永远不返回类型”，在函数内部，panic可以“返回”此类型。
+fn main() {
+    let i = clac(5);
+    println!(&amp;quot;i = {}&amp;quot;, i); &#x2F;&#x2F; i = 1
+}
 
-先声明的后调用，后声明的先调用；
-在结构体内，结构体的drop先调用，继而按照字段的定义顺序调用字段的drop方法。
-
-对于下面这个示例：
-&#x2F;&#x2F; 定义一个简单的结构体
-struct Reso…
+fn clac(n:i32) -&amp;gt; i32 {
+    match n…
                         </p>
                         
                         
@@ -672,8 +672,8 @@ https:&#x2F;&#x2F;manus.im&#x2F;sh…
                         </div>
                         
                         <h2 class="text-xl font-semibold mb-2">
-                            <a href="&#x2F;2025&#x2F;4.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
-                                今天参加 DeepSeek 北京研讨会的收获
+                            <a href="&#x2F;2025&#x2F;6.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                Rust学习笔记1：闭包
                             </a>
                         </h2>
                         <div class="text-[12px] text-mist-green mb-3">
@@ -683,24 +683,18 @@ https:&#x2F;&#x2F;manus.im&#x2F;sh…
                         </div>
                         
                         <p class="text-mist-green leading-relaxed text-sm">
-                            今天参加 DeepSeek 北京研讨会的收获
-::: card-masonry
-
-
-
-
-
-
-:::
-好，照片秀完了，接下来开始说收获。收获很多，总之一言难尽。大佬们的分享，各个暗藏机理，很难用一两句话说明白。
-有 20 年荣誉的烤串在桌上堆成山了，百威纯生不错，对我来说就是个饮料，我一个人大概喝了 10 瓶。肖哥的芙蓉王被我抽掉了半盒，感觉比我的黄金叶好抽。肖哥说：艺哥，抽就抽芙蓉王！
-这个凡尔赛…
+                            Rust学习笔记1：闭包
+什么是闭包？
+闭包是一种可以捕获调用者作用域变量的匿名函数。它既可以作为值赋值给变量，又可以作为实参传递给函数，它让函数变成了一种数据类型存在。还有，由于闭包不需要进行参数和返回值的类型标注，这可以省却我们不少事情。
+下面这是一个好例子，cat的值是一个闭包，它捕捉了变量x。它的参数和返回值都没有类型标注，又没有fn、花括号，代码显得十分简洁。
+fn main() {
+ …
                         </p>
                         
                         
                         <div class="flex flex-wrap gap-2 mt-3 select-none">
                             
-                            <a href="/tags/DeepSeek/" class="text-xs text-mist-green hover:text-cyber-mint">#DeepSeek</a>
+                            <a href="/tags/Rust/" class="text-xs text-mist-green hover:text-cyber-mint">#Rust</a>
                             
                         </div>
                         
@@ -754,8 +748,8 @@ https:&#x2F;&#x2F;manus.im&#x2F;sh…
                         </div>
                         
                         <h2 class="text-xl font-semibold mb-2">
-                            <a href="&#x2F;2025&#x2F;6.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
-                                Rust学习笔记1：闭包
+                            <a href="&#x2F;2025&#x2F;4.html" class="text-moss-ink hover:text-cyber-mint transition-colors">
+                                今天参加 DeepSeek 北京研讨会的收获
                             </a>
                         </h2>
                         <div class="text-[12px] text-mist-green mb-3">
@@ -765,18 +759,24 @@ https:&#x2F;&#x2F;manus.im&#x2F;sh…
                         </div>
                         
                         <p class="text-mist-green leading-relaxed text-sm">
-                            Rust学习笔记1：闭包
-什么是闭包？
-闭包是一种可以捕获调用者作用域变量的匿名函数。它既可以作为值赋值给变量，又可以作为实参传递给函数，它让函数变成了一种数据类型存在。还有，由于闭包不需要进行参数和返回值的类型标注，这可以省却我们不少事情。
-下面这是一个好例子，cat的值是一个闭包，它捕捉了变量x。它的参数和返回值都没有类型标注，又没有fn、花括号，代码显得十分简洁。
-fn main() {
- …
+                            今天参加 DeepSeek 北京研讨会的收获
+::: card-masonry
+
+
+
+
+
+
+:::
+好，照片秀完了，接下来开始说收获。收获很多，总之一言难尽。大佬们的分享，各个暗藏机理，很难用一两句话说明白。
+有 20 年荣誉的烤串在桌上堆成山了，百威纯生不错，对我来说就是个饮料，我一个人大概喝了 10 瓶。肖哥的芙蓉王被我抽掉了半盒，感觉比我的黄金叶好抽。肖哥说：艺哥，抽就抽芙蓉王！
+这个凡尔赛…
                         </p>
                         
                         
                         <div class="flex flex-wrap gap-2 mt-3 select-none">
                             
-                            <a href="/tags/Rust/" class="text-xs text-mist-green hover:text-cyber-mint">#Rust</a>
+                            <a href="/tags/DeepSeek/" class="text-xs text-mist-green hover:text-cyber-mint">#DeepSeek</a>
                             
                         </div>
                         
