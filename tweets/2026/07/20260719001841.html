@@ -10,24 +10,16 @@
     
 <meta name="description" content="一花一世界，一树一菩提。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对比Copilot与AI代码助手的使用体验">
+<meta property="og:title" content="20260719001841">
 <meta property="og:description" content="一花一世界，一树一菩提。">
 <meta property="og:site_name" content="一树仑·金石碼农">
 
-<link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;2025&#x2F;1.html">
-<meta property="og:url" content="https:&#x2F;&#x2F;yishulun.com&#x2F;2025&#x2F;1.html">
+<link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;tweets&#x2F;2026&#x2F;07&#x2F;20260719001841.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;yishulun.com&#x2F;tweets&#x2F;2026&#x2F;07&#x2F;20260719001841.html">
 
 
 
-<meta property="article:published_time" content="2025-02-21">
-
-
-
-<meta property="article:tag" content="DeepSeek">
-
-<meta property="article:tag" content="AI">
-
-<meta property="article:tag" content="Copilot">
+<meta property="article:published_time" content="2026-07-19">
 
 
 
@@ -35,11 +27,11 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "对比Copilot与AI代码助手的使用体验",
+  "headline": "20260719001841",
   "image": [
     "https:&#x2F;&#x2F;yishulun.com/static/images/logo.png"
    ],
-  "datePublished": "2025-02-21",
+  "datePublished": "2026-07-19",
   "author": [{
       "@type": "Person",
       "name": "金石碼农",
@@ -109,15 +101,10 @@
         <!-- 主要内容 -->
         <div class="flex-1">
             
-            <article x-data="{ copiedLink: false, copiedCode: {} }">
-                <style>
-                    .article-content > h1:first-of-type {
-                        display: none !important;
-                    }
-                </style>
+            <article>
                 <!-- 分类面包屑 -->
                 
-                <nav class="mb-2 text-xs text-gray-400 flex items-center space-x-1.5 select-none">
+                <nav class="mb-4 text-xs text-gray-400 flex items-center space-x-1.5 select-none">
                 
                 
                 
@@ -125,11 +112,39 @@
                     
                     
                     
+                        
+                        
+                        
+                            <a href="/tweets/" class="hover:text-cyber-mint">闲言</a>
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                        <span class="text-gray-300">/</span>
                         
                         
                         
                             
-                                <a href="&#x2F;2025&#x2F;" class="hover:text-cyber-mint">2025</a>
+                                <a href="&#x2F;tweets&#x2F;2026&#x2F;" class="hover:text-cyber-mint">2026</a>
+                            
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                        <span class="text-gray-300">/</span>
+                        
+                        
+                        
+                            
+                                <a href="&#x2F;tweets&#x2F;2026&#x2F;07&#x2F;" class="hover:text-cyber-mint">07</a>
                             
                         
                     
@@ -137,125 +152,46 @@
                 </nav>
                 
 
-                <!-- 文章头部 -->
-                <header class="mb-8">
-                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-moss-ink mb-3 leading-tight">
-                        对比Copilot与AI代码助手的使用体验
-                    </h1>
-
-                    <div class="article-meta mb-3">
-                        
-                        <span class="inline-flex items-center text-sm text-mist-green">
-                            2025-02-21 00:00
-                        </span>
-                        
-                        
+                <div class="flex items-center space-x-3 mb-6">
+                    <img src="/static/images/avatar.png" class="w-12 h-12 object-cover" alt="Avatar">
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="font-bold text-moss-ink text-base">金石碼农</span>
+                            <span class="text-sm text-mist-green">@金石碼农</span>
+                        </div>
+                        <div class="text-xs text-gray-400 mt-0.5">2026-07-19 00:18</div>
                     </div>
-                </header>
-
-                <!-- 文章内容 -->
-                <div class="article-content prose prose-lg max-w-none" x-init="$nextTick(() => {
-             // 为代码块添加复制按钮
-             document.querySelectorAll('pre code').forEach((codeBlock, index) => {
-                 const pre = codeBlock.parentElement;
-                 if (!pre.querySelector('.copy-code-btn')) {
-                     const button = document.createElement('button');
-                     button.className = 'copy-code-btn';
-                     button.textContent = '复制';
-                     button.setAttribute('x-data', `{ copied: false }`);
-                     button.setAttribute('@click', `navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent).then(() => { this.copied = true; setTimeout(() => this.copied = false, 2000) })`);
-                     button.setAttribute(':class', `{ 'bg-green-600': copied }`);
-                     button.setAttribute('x-text', `copied ? '已复制' : '复制'`);
-                     
-                     pre.style.position = 'relative';
-                     pre.appendChild(button);
-                 }
-             });
-         })">
-                    <h1>对比Copilot与AI代码助手的使用体验</h1>
-<p>前两天我在vscode中安装了腾讯云的AI代码助手，它的官网地址是：</p>
-<p>https://copilot.tencent.com/</p>
-<p>它支持DeepSeek R1和ChatGPT 4o-mini，是一个很不错的代码辅助编写工具。文章发出之后，有读者朋友问，现在国内都有哪些Coplilot工具了？</p>
-<p>阿里有通义灵码、字节有Trae和MarsCode，百度有Comate。</p>
-<p>有读者朋友又问：这些工具哪个最好用呢？我不关心每家都有什么工具，我只关心哪个最好用！</p>
-<p>这个问题我不知道啊。</p>
-<p>因为我使用的还不多。字节与百度的我都没有下载，我使用过的仅有腾讯的AI代码助手和微软的Copilot。就是后面这两者，因为使用的时间短，我也很难说它们哪个更好。工具都是快速进化的，今天不太完善的功能，过一阵子可能就十分完善了。微信输入法刚推出的时候，也有人说它不好用，但人家开发者根据用户反馈积极迭代，现在不也变得好用了。我已经几个月没有听到身边有抱怨微信输入法不好的声音了。</p>
-<p>对比腾讯的AI代码助手，和微软的Copilot，下面从三方面说一下我的使用感受。</p>
-<h2>一</h2>
-<p>第一个感受，无论是使用哪个工具，在表达开发诉求时，一定要尽量携带足够清晰、明确的附加信息。最直接的操作就是：将当前相关的文件添加到本次请求的列表中。如果没有这一步，你可能会埋怨：这智能工具怎么一点都不智能？</p>
-<p>真的不是它们不智能，而是咱们的使用方法不太智能。</p>
-<p>鉴于这个操作很重要，我举两个例子吧。在Copilot中，对于当前打开的文件，如下所示，会自动出现在工作集下方，并呈现一个“+”号按钮，我们只需要点它一下，这个文件就被加入到工作集当中了。在Copilot中，工作集是我们每次和AI请求、互动的上下文窗口中的一部分，十分十分重要。</p>
-<p><img src="./assets/image-20250221180110786.png" alt="image-20250221180110786" /></p>
-<p>反观腾讯的AI代码助手，它和Web窗口中用了同样的“#”号操作，如下所示，我们需要点开这个“#引用”列表，然后从一个长长的列表中选择我们有意向操作的文件。即使这个文件已经作为当前文件，被列在了聊天框里，我们也没有办法一键将它拽进来。</p>
-<p><img src="./assets/image-20250221180400496.png" alt="image-20250221180400496" /></p>
-<p>但我不能说这种操作方式不好，这种“#”号操作它还有另外一种骚气的形式，当我们在输入框中输入“#”+文件名时，一个文件列表就自动展开了，如下所示，神奇不？我们可以用键盘方向键选择，也可以用鼠标选择。</p>
-<p><img src="./assets/image-20250221180647260.png" alt="image-20250221180647260" /></p>
-<p>说实话，这个“#”号的设计，是有一点酷的，虽然我不太喜欢用它。从使用Vim编程过来的DOS程序员，可能更喜欢这第二种方式。但我更喜欢Copilot的方式，更直白，更具交互性，更简洁，更容易一些。</p>
-<h2>二</h2>
-<p>接下来说第二个关于应用修改的感受。</p>
-<p>仍然是Copilot的方式更具有交互性，当我们在编辑窗口提出修改需求时，Copilot会从上向下刷新代码编辑区，并将新旧代码标识出来。我们提出一遍修改意见，它就刷新一遍。直到我们接受或反对所有修改，完成本次修改操作。</p>
-<p><img src="./assets/image-20250221175510391.png" alt="image-20250221175510391" /></p>
-<p>相比之下，腾讯的AI代码助手把修改全部放在了小互动窗口中，需要我们单击一次“Apply”按钮才能应用修改。</p>
-<p><img src="./assets/image-20250221181300416.png" alt="image-20250221181300416" /></p>
-<p>当然这种操作也有好处，好处就是我们的代码看起来很安全，它至始至终都没有受到一点“污染”。</p>
-<h2>三</h2>
-<p>最后说一下两个工具的能力。</p>
-<p>由于两个工具都采用了相对强大的大语言模型，在能力方面是旗鼓相当的，基本没有差异。如果有读者朋友发现了明显的差异，可能是对国产软件产品存有偏见，或者使用不当。Copilot选择GPT 4o，AI代码助手选择DS R1或GPT 4o-mini，在效果上几乎没有差别。当然了，前提是你得会用，至少要记得添加明确的操作对象，要把提示语写清楚。</p>
-<p>最后总结一下，这两个工具一左一右，在vscode中其实是可以共存的，同时安装也没有关系。</p>
-<p>在使用体验上，我的感受是，<mark>它们是辅助程序员编码的工具，但不是代替程序员思考的工具</mark>；个别风马牛不相及的奇怪Bug，它们仍然是无力的，还需要老程序员的经验保驾护航；在软件的业务架构这个层面，仍然需要架构师领航，不能完全由它自主，不然你可能被它领到茄地里去了。</p>
-<p>所有Copilot工具都还只是工具，但它们确实可以提高程序员的工作效率，这是真的。它们值得用，不用纠结用哪个，只要有一个顺手、合用，用就是了。还有一点，除了学习如何使用之外，对编程语言和相关技术的思想，还是要学习和掌握的。</p>
-<p>2025年02月21日</p>
+                </div>
+                <div class="prose prose-base text-moss-ink leading-relaxed break-words mb-6">
+                    <p>我开始喜欢 Kitty。
+它有一个 remote 模式，它在本地打开的终端 Tab，还可以在其他程序中（例如 Rust）进行调用。今天我在 dir-serve 中加入了这个功能，好用极了，我可以在手机上输入 AI 提示语，远程发给电脑执行；在手机上也可以查看电脑上终端的执行结果。dir-serve本来就是查看撰写结果的，现在用它还可以搞生产了，没想到当时一时兴起搞的一个小项目，修修补补用了这么久，现在基本天天在用了。在手机上输入文字，还可以语音输入，组合起来使用十分方便。kitty+dir-serve，把碎片时间充分利用起来了。让创作灵感进一步发挥。</p>
 
                 </div>
-
-                <!-- 标签 -->
                 
-                <div class="flex flex-wrap gap-x-4 gap-y-2 mt-6">
+                <div class="grid grid-cols-1 gap-2 mb-6">
                     
-                    <a href="/tags/DeepSeek/" class="text-sm text-mist-green hover:text-cyber-mint transition-colors">
-                        #DeepSeek
-                    </a>
-                    
-                    <a href="/tags/AI/" class="text-sm text-mist-green hover:text-cyber-mint transition-colors">
-                        #AI
-                    </a>
-                    
-                    <a href="/tags/Copilot/" class="text-sm text-mist-green hover:text-cyber-mint transition-colors">
-                        #Copilot
-                    </a>
+                    <img src="/tweets/2026/07/assets/20260719001841_0.png" class="max-h-96 w object-cover" alt="Tweet Image">
                     
                 </div>
+                
+                <!-- 标签 -->
                 
 
                 <!-- 版权信息 -->
                 <div class="mt-8 text-xs text-mist-green">
-                    <p>
-                        本文链接：
-                        <a href="https:&#x2F;&#x2F;yishulun.com&#x2F;2025&#x2F;1.html" class="text-sage-line hover:underline"
-                            target="_blank" rel="noopener">https:&#x2F;&#x2F;yishulun.com&#x2F;2025&#x2F;1.html</a>
-                    </p>
-                    <p class="mt-1">
-                        共享许可：<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener" class="text-sage-line hover:underline">署名-非商业性 4.0 国际 (CC-BY-NC-4.0)</a>
-                    </p>
+                    <p>本文链接：<a href="https:&#x2F;&#x2F;yishulun.com&#x2F;tweets&#x2F;2026&#x2F;07&#x2F;20260719001841.html" class="text-sage-line hover:underline" target="_blank" rel="noopener">https:&#x2F;&#x2F;yishulun.com&#x2F;tweets&#x2F;2026&#x2F;07&#x2F;20260719001841.html</a></p>
+                    <p class="mt-1">共享许可：<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener" class="text-sage-line hover:underline">署名-非商业性 4.0 国际 (CC-BY-NC-4.0)</a></p>
                 </div>
 
                 <!-- 分享功能 -->
                 <div class="mt-6" style="margin-bottom: 4rem;">
                     <div class="flex flex-wrap gap-3">
                         <button onclick="shareToTwitter()" class="btn-outline inline-flex items-center text-xs py-1.5 px-3 cursor-pointer">
-                            <svg class="w-3.5 h-3.5 mr-1.5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                            </svg>
+                            <svg class="w-3.5 h-3.5 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                             分享到X
                         </button>
-                        <button
-                            @click="navigator.clipboard.writeText(window.location.href).then(() => { if (window.showToast) window.showToast('复制成功') }).catch(() => { var ta = document.createElement('textarea'); ta.value = window.location.href; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); if (window.showToast) window.showToast('复制成功') })"
-                            class="btn-outline inline-flex items-center text-xs py-1.5 px-3 cursor-pointer">
-                            <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
-                                </path>
-                            </svg>
+                        <button onclick="navigator.clipboard.writeText(window.location.href).then(() => { window.showToast && window.showToast('复制成功') }).catch(() => { var ta=document.createElement('textarea'); ta.value=window.location.href; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); window.showToast && window.showToast('复制成功') })" class="btn-outline inline-flex items-center text-xs py-1.5 px-3 cursor-pointer">
+                            <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                             <span>复制链接</span>
                         </button>
                     </div>
@@ -431,7 +367,6 @@
 
                 </div>
 
-                <!-- 三按钮：评论、点赞、收藏 -->
                 
 
   
@@ -457,7 +392,7 @@
 </div>
 
 
-                <!-- 评论区域（由插件注入） -->
+                <!-- 评论区域 -->
                 
                 <section id="rp-comments" style="margin-top: 3rem;">
     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
@@ -1066,141 +1001,9 @@
 </script>
                 
 
-                <!-- 返回顶部 -->
             </article>
             
         </div>
-
-        
-        <!-- 目录组件 -->
-<div class="toc-container fixed right-4 top-20 z-40 hidden xl:block" 
-     x-data="{ 
-         tocOpen: true, 
-         activeId: '',
-         headings: [],
-         init() {
-             this.generateToc();
-             this.observeHeadings();
-         },
-         generateToc() {
-             const content = document.querySelector('.prose, .card-body');
-             if (!content) return;
-             
-             const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
-             this.headings = Array.from(headings).map((heading, index) => {
-                 const id = heading.id || `heading-${index}`;
-                 heading.id = id;
-                 return {
-                     id: id,
-                     text: heading.textContent.trim(),
-                     level: parseInt(heading.tagName.charAt(1)),
-                     element: heading
-                 };
-             });
-         },
-         observeHeadings() {
-             if (this.headings.length === 0) return;
-             
-             const observer = new IntersectionObserver((entries) => {
-                 entries.forEach(entry => {
-                     if (entry.isIntersecting) {
-                         this.activeId = entry.target.id;
-                     }
-                 });
-             }, {
-                 rootMargin: '-20% 0px -80% 0px'
-             });
-             
-             this.headings.forEach(heading => {
-                 observer.observe(heading.element);
-             });
-         },
-         scrollToHeading(id) {
-             const element = document.getElementById(id);
-             if (element) {
-                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-             }
-         }
-     }"
-     x-init="init()">
-    
-    <!-- 目录切换按钮 -->
-    <button @click="tocOpen = !tocOpen" class="mb-2 p-2 bg-white hover: transition-all duration-200"
-            title="目录">
-        <svg class="w-5 h-5 text-mist-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-    </button>
-    
-    <!-- 目录内容 -->
-    <div x-show="tocOpen" 
-         x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0 transform scale-95"
-         x-transition:enter-end="opacity-100 transform scale-100"
-         x-transition:leave="transition ease-in duration-150"
-         x-transition:leave-start="opacity-100 transform scale-100"
-         x-transition:leave-end="opacity-0 transform scale-95" class="bg-white p-4 max-w-xs w-64 max-h-96 overflow-y-auto">
-        
-        <div class="flex items-center justify-between mb-3">
-            <h3 class="text-sm font-semibold text-moss-ink">目录</h3>
-            <button @click="tocOpen = false" class="text-gray-400 hover:text-mist-green">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <nav class="space-y-1">
-            <template x-for="heading in headings" :key="heading.id">
-                <a @click.prevent="scrollToHeading(heading.id)" 
-                   :class="{
-                       'text-sage-line bg-primary-50 border-l-2 border-primary-600': activeId === heading.id,
-                       'text-mist-green hover:text-moss-ink hover:bg-air-bg': activeId !== heading.id,
-                       'pl-2': heading.level === 1,
-                       'pl-4': heading.level === 2,
-                       'pl-6': heading.level === 3,
-                       'pl-8': heading.level === 4,
-                       'pl-10': heading.level === 5,
-                       'pl-12': heading.level === 6
-                   }" class="block py-1 px-2 text-sm cursor-pointer transition-colors duration-150"
-                   x-text="heading.text">
-                </a>
-            </template>
-        </nav>
-        
-        <div x-show="headings.length === 0" class="text-sm text-mist-green text-center py-4">
-            暂无目录
-        </div>
-    </div>
-</div>
-
-<style>
-/* 移动端隐藏目录 */
-@media (max-width: 1279px) {
-    .toc-container {
-        display: none !important;
-    }
-}
-
-/* 目录滚动条样式 */
-.toc-container .max-h-96::-webkit-scrollbar {
-    width: 4px;
-}
-
-.toc-container .max-h-96::-webkit-scrollbar-track {
-    background: #f1f5f9;
-    border-radius: 2px;
-}
-
-.toc-container .max-h-96::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 2px;
-}
-
-.toc-container .max-h-96::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
-}
-</style>
 
         
     </div>

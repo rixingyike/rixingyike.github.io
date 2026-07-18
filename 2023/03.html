@@ -199,7 +199,7 @@ int main()
 }
 </code></pre>
 <p>在这个示例中，obj.data 是一个字符数组，obj.ref 是指向这块字符数组数据的指针，它们同时位于一个结构体内，满足了问题假设。</p>
-<p>==将一个值，和对该值的引用，同时存储于一个结构体内，这在 C、C++等可操作指针的编程语言中没有任何问题。==</p>
+<p><mark>将一个值，和对该值的引用，同时存储于一个结构体内，这在 C、C++等可操作指针的编程语言中没有任何问题。</mark></p>
 <p>然而，这在 Rust 中却成了问题。</p>
 <h3>Rust 问题示例</h3>
 <p>看<a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=1618cf952506506cc2584feb8a539566" title="示例代码 1">示例代码 1</a>：</p>
@@ -380,7 +380,7 @@ fn main() {
 <li>第 8 行，在实例前加了&amp;符号，代表取引用。</li>
 </ul>
 <p>然后，代码就编译通过了！</p>
-<p>==为什么这样就可以了？==</p>
+<p><mark>为什么这样就可以了？</mark></p>
 <p>感谢几位知友指出问题，上面的描述是不恰当的。关于堆栈内存的分配，摘录一段选自《The Rust Programming Language》的文字：</p>
 <pre><code>All values in Rust are stack allocated by default. Values can be boxed (allocated on the heap) by creating a Box&lt;T&gt;. A box is a smart pointer to a heap allocated value of type T.
 </code></pre>

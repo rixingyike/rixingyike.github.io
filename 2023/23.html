@@ -206,20 +206,94 @@
 <li><strong>HumanEval</strong>：Python 代码完成任务（Chen 等人，2021），针对 pass@1 进行零样本评估。</li>
 <li><strong>MATH 数学</strong>：用 LaTeX 编写的初中和高中数学问题（Hendrycks 等人，2021），以固定的 4 次提示进行提示。</li>
 </ul>
-<table><thead><tr><th style="text-align: left">Benchmark</th><th style="text-align: right">Grok-0 (33B)</th><th style="text-align: right">LLaMa 2 70B</th><th style="text-align: right">Inflection-1</th><th style="text-align: right">GPT-3.5</th><th style="text-align: right"><strong>Grok-1</strong></th><th style="text-align: right">Palm 2</th><th style="text-align: right">Claude 2</th><th style="text-align: right">GPT-4</th></tr></thead><tbody>
-<tr><td style="text-align: left">GSM8k</td><td style="text-align: right">56.8%</td><td style="text-align: right">56.8%</td><td style="text-align: right">62.9%</td><td style="text-align: right">57.1%</td><td style="text-align: right">62.9%</td><td style="text-align: right">80.7%</td><td style="text-align: right">88.0%</td><td style="text-align: right">92.0%</td></tr>
-<tr><td style="text-align: left">MMLU</td><td style="text-align: right">65.7%</td><td style="text-align: right">68.9%</td><td style="text-align: right">72.7%</td><td style="text-align: right">70.0%</td><td style="text-align: right">73.0%</td><td style="text-align: right">78.0%</td><td style="text-align: right">75.0%</td><td style="text-align: right">86.4%</td></tr>
-<tr><td style="text-align: left">HumanEval</td><td style="text-align: right">39.7%</td><td style="text-align: right">29.9%</td><td style="text-align: right">35.4%</td><td style="text-align: right">48.1%</td><td style="text-align: right">63.2%</td><td style="text-align: right">-</td><td style="text-align: right">70%</td><td style="text-align: right">67%</td></tr>
-<tr><td style="text-align: left">MATH</td><td style="text-align: right">15.7%</td><td style="text-align: right">13.5%</td><td style="text-align: right">16.0%</td><td style="text-align: right">23.5%</td><td style="text-align: right">23.9%</td><td style="text-align: right">34.6%</td><td style="text-align: right">-</td><td style="text-align: right">42.5%</td></tr>
-</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Benchmark</th>
+<th align="right">Grok-0 (33B)</th>
+<th align="right">LLaMa 2 70B</th>
+<th align="right">Inflection-1</th>
+<th align="right">GPT-3.5</th>
+<th align="right"><strong>Grok-1</strong></th>
+<th align="right">Palm 2</th>
+<th align="right">Claude 2</th>
+<th align="right">GPT-4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GSM8k</td>
+<td align="right">56.8%</td>
+<td align="right">56.8%</td>
+<td align="right">62.9%</td>
+<td align="right">57.1%</td>
+<td align="right">62.9%</td>
+<td align="right">80.7%</td>
+<td align="right">88.0%</td>
+<td align="right">92.0%</td>
+</tr>
+<tr>
+<td align="left">MMLU</td>
+<td align="right">65.7%</td>
+<td align="right">68.9%</td>
+<td align="right">72.7%</td>
+<td align="right">70.0%</td>
+<td align="right">73.0%</td>
+<td align="right">78.0%</td>
+<td align="right">75.0%</td>
+<td align="right">86.4%</td>
+</tr>
+<tr>
+<td align="left">HumanEval</td>
+<td align="right">39.7%</td>
+<td align="right">29.9%</td>
+<td align="right">35.4%</td>
+<td align="right">48.1%</td>
+<td align="right">63.2%</td>
+<td align="right">-</td>
+<td align="right">70%</td>
+<td align="right">67%</td>
+</tr>
+<tr>
+<td align="left">MATH</td>
+<td align="right">15.7%</td>
+<td align="right">13.5%</td>
+<td align="right">16.0%</td>
+<td align="right">23.5%</td>
+<td align="right">23.9%</td>
+<td align="right">34.6%</td>
+<td align="right">-</td>
+<td align="right">42.5%</td>
+</tr>
+</tbody>
+</table>
 <p>在这些基准测试中，Grok-1 显示了强劲的结果，超过了其计算类别中的所有其他模型，包括 ChatGPT-3.5 和 Inflection-1。只有使用大量训练数据和计算资源（例如 GPT-4）进行训练的模型才能超越它。这展示了我们 xAI 在以卓越的效率培训大语言模型方面取得的快速进展。</p>
 <blockquote>
 <p>Inflection-1 是 AI 公司 Inflection 的大语言模型。</p>
 </blockquote>
 <p>由于这些基准可以在网络上找到，并且我们不能排除我们的模型无意中接受了这些基准的训练，因此我们在 2023 年匈牙利全国高中决赛中对我们的模型（以及 Claude-2 和 GPT-4）进行了手工评分在数学中，该文章于五月底在我们收集数据集后发布。Grok 以 C (59%) 的成绩通过了考试，而 Claude-2 也取得了相同的成绩 (55%)，GPT-4 以 68% 的成绩获得了 B。所有模型均在温度 0.1 和相同的提示下进行评估。必须指出的是，我们没有努力针对此评估进行调整。这个实验是对我们的模型从未明确调整过的数据集的“现实生活”测试。</p>
-<table><thead><tr><th style="text-align: left">人工分级评估</th><th style="text-align: right">Grok-0</th><th style="text-align: right">GPT-3.5</th><th style="text-align: right">Claude 2</th><th style="text-align: right"><strong>Grok-1</strong></th><th style="text-align: right">GPT-4</th></tr></thead><tbody>
-<tr><td style="text-align: left">匈牙利全国高中数学考试（2023 年 5 月）</td><td style="text-align: right">37%</td><td style="text-align: right">41%</td><td style="text-align: right">55%</td><td style="text-align: right">59%</td><td style="text-align: right">68%</td></tr>
-</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">人工分级评估</th>
+<th align="right">Grok-0</th>
+<th align="right">GPT-3.5</th>
+<th align="right">Claude 2</th>
+<th align="right"><strong>Grok-1</strong></th>
+<th align="right">GPT-4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">匈牙利全国高中数学考试（2023 年 5 月）</td>
+<td align="right">37%</td>
+<td align="right">41%</td>
+<td align="right">55%</td>
+<td align="right">59%</td>
+<td align="right">68%</td>
+</tr>
+</tbody>
+</table>
 <p>我们在模型卡中总结了 Grok-1 的重要技术细节。</p>
 <blockquote>
 <p>对于以上结果，貌似 Grok1 已经移居世界第三，大多数情况下它的测试表现都是稍稍落后于 Claude2，甚至在高中数学考试中还比 Claude2 强。但是一直不比 GPT-4 强，GPT-4 仍然是目前公认的 AI 强者。另外，我们还应该看到，GPT-3.5 与 GPT-4 的差距不是一点半点，简直是两倍的差距。<strong>对于试用 ChatGPT 感觉世界最强人工智能不过尔尔的人，不要着急下结论，结果不炸裂，可能是你不会写 Prompt，或者你使用的只是 GPT-3.5。</strong></p>

@@ -5,6 +5,55 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
+    <title>20260719001841</title>
+    <link>https://yishulun.com/tweets/2026/07/20260719001841.html</link>
+    <guid isPermaLink="true">https://yishulun.com/tweets/2026/07/20260719001841.html</guid>
+    <description>我开始喜欢 Kitty。 它有一个 remote 模式，它在本地打开的终端 Tab，还可以在其他程序中（例如 Rust）进行调用。今天我在 dir-serve 中加入了这个功能，好用极了，我可以在手机上输入 AI 提示语，远程发给电脑执行；在手机上也可以查看电脑上终端的执行结果。dir-serve本来就是查看撰写结果的，现在用它还可以搞生产了，没想到当时一时兴起搞的一个小项目，修修补补用了这么久，现在基本天天在用了。在手机上输入文字，还可以语音输入，组合起来使用十分方便。kitty+dir-serve，把碎片时间充分利用起来了。让创作灵感进一步发挥。</description>
+    <pubDate>2026-07-19</pubDate>
+  </item>
+  <item>
+    <title>1. 第一章:启程</title>
+    <link>https://yishulun.com/columns/6/1.第一章：启程.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/6/1.第一章：启程.html</guid>
+    <description>小说开篇内容...</description>
+    <pubDate>2026-07-18</pubDate>
+  </item>
+  <item>
+    <title>2. 第二章:星辰</title>
+    <link>https://yishulun.com/columns/6/2.第二章：星辰.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/6/2.第二章：星辰.html</guid>
+    <description>茫茫宇宙中...</description>
+    <pubDate>2026-07-18</pubDate>
+  </item>
+  <item>
+    <title>1.1. 快速开始</title>
+    <link>https://yishulun.com/columns/7/1.1.快速开始.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/7/1.1.快速开始.html</guid>
+    <description>这是二级章节示例。</description>
+    <pubDate>2026-07-18</pubDate>
+  </item>
+  <item>
+    <title>1.2. 配置文件说明</title>
+    <link>https://yishulun.com/columns/7/1.2.配置文件说明.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/7/1.2.配置文件说明.html</guid>
+    <description>详细介绍 config.toml 内容。</description>
+    <pubDate>2026-07-18</pubDate>
+  </item>
+  <item>
+    <title>1. 安装与配置</title>
+    <link>https://yishulun.com/columns/7/1.安装与配置.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/7/1.安装与配置.html</guid>
+    <description>这是专栏的第一个章节。</description>
+    <pubDate>2026-07-18</pubDate>
+  </item>
+  <item>
+    <title>1.2.1. 站点信息配置</title>
+    <link>https://yishulun.com/columns/7/1.2.1.站点信息配置.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/7/1.2.1.站点信息配置.html</guid>
+    <description>这是三级章节展示缩进。</description>
+    <pubDate>2026-07-18</pubDate>
+  </item>
+  <item>
     <title>20260716212802</title>
     <link>https://yishulun.com/tweets/2026/07/20260716212802.html</link>
     <guid isPermaLink="true">https://yishulun.com/tweets/2026/07/20260716212802.html</guid>
@@ -16,48 +65,6 @@
     <link>https://yishulun.com/2026/69.html</link>
     <guid isPermaLink="true">https://yishulun.com/2026/69.html</guid>
     <description>邓安庆的贴地叙事：最简单的东西，往往最复杂 之前我写过一篇关于邓老师的文章，有些朋友不以为然，奇怪他的文字读起来毫不费力，但后劲十足，好奇这种反差到底是怎么来的。 老实说，这世界上最简单的东西，往往是最复杂的。你看太阳只是一个球，没有任何辅助设施，就能不停地进行核聚变；而人类建一个核电站，却需要堆砌无数辅助设施，极其复杂。再看马斯克的猛禽 3 发动机，单从外观看比前两代简单得多，但爆发出的推力却更为强大。还有 SpaceX 火箭回收，用一根筷子就把火箭夹住，不知道的还以为火箭很轻，这都是极简却又极其精准的方案。 邓安庆的文章，就是这种最简单的复杂。 今天，我们抛开文学那种玄乎的语感，纯粹从逻辑和结构的角度来分析一下，邓老师的文为什么好。这种让读者毫不费力读完、后劲十足的贴地质感，绝非偶然，而是建立在十条（至少十条）极其克制、堪称文学工程级精确的写作规则之上。 （以下内容主要基于邓安庆老师以</description>
-    <pubDate>2026-07-16</pubDate>
-  </item>
-  <item>
-    <title>1. 第一章:启程</title>
-    <link>https://yishulun.com/columns/6/1.第一章：启程.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/6/1.第一章：启程.html</guid>
-    <description>小说开篇内容...</description>
-    <pubDate>2026-07-16</pubDate>
-  </item>
-  <item>
-    <title>2. 第二章:星辰</title>
-    <link>https://yishulun.com/columns/6/2.第二章：星辰.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/6/2.第二章：星辰.html</guid>
-    <description>茫茫宇宙中...</description>
-    <pubDate>2026-07-16</pubDate>
-  </item>
-  <item>
-    <title>1.1. 快速开始</title>
-    <link>https://yishulun.com/columns/7/1.1.快速开始.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/7/1.1.快速开始.html</guid>
-    <description>这是二级章节示例。</description>
-    <pubDate>2026-07-16</pubDate>
-  </item>
-  <item>
-    <title>1.2. 配置文件说明</title>
-    <link>https://yishulun.com/columns/7/1.2.配置文件说明.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/7/1.2.配置文件说明.html</guid>
-    <description>详细介绍 config.toml 内容。</description>
-    <pubDate>2026-07-16</pubDate>
-  </item>
-  <item>
-    <title>1. 安装与配置</title>
-    <link>https://yishulun.com/columns/7/1.安装与配置.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/7/1.安装与配置.html</guid>
-    <description>这是专栏的第一个章节。</description>
-    <pubDate>2026-07-16</pubDate>
-  </item>
-  <item>
-    <title>1.2.1. 站点信息配置</title>
-    <link>https://yishulun.com/columns/7/1.2.1.站点信息配置.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/7/1.2.1.站点信息配置.html</guid>
-    <description>这是三级章节展示缩进。</description>
     <pubDate>2026-07-16</pubDate>
   </item>
   <item>
@@ -85,7 +92,7 @@
     <title>AI 时代，站在针尖上的人越来越珍贵</title>
     <link>https://yishulun.com/2026/66.html</link>
     <guid isPermaLink="true">https://yishulun.com/2026/66.html</guid>
-    <description>AI 时代，站在针尖上的人越来越珍贵 去年做过的一个小浏览器插件功能，今天重新拾起来，我硬是拖了一天一夜才动手。 不是不会写，是心静不下来了。 去年做这个功能的时候，我基本上是半手写半 AI 协助，那时候心境主要还在编码上，能耐下心一点一点扣代码。今天不同了，这一年我大部分时间在搞文学创作，心境整个变了。 我自己琢磨，写代码是稳、是心静如水；搞创作是快，是天马行空。天马行空惯了，想静下心来一点一点扣代码，很难不到。 于是这项「不是新功能的功能」，被我拖了一天一夜。 今天我终于忍不住主动查了资料，想看看在 agy 指挥浏览器操作网页 ==DOM== 这件事上，有什么趁手的工具或类库。不查不知道，一查还真有。耐心看了资料、简单学习一下上手之后，小小的新功能在一小时内搞定了，而且只用了 DS 4.0 Flash Free 模型，不花钱就办成了事。 怎么做到的呢？也算一个小经验，我简述一下。 一）</description>
+    <description>AI 时代，站在针尖上的人越来越珍贵 去年做过的一个小浏览器插件功能，今天重新拾起来，我硬是拖了一天一夜才动手。 不是不会写，是心静不下来了。 去年做这个功能的时候，我基本上是半手写半 AI 协助，那时候心境主要还在编码上，能耐下心一点一点扣代码。今天不同了，这一年我大部分时间在搞文学创作，心境整个变了。 我自己琢磨，写代码是稳、是心静如水；搞创作是快，是天马行空。天马行空惯了，想静下心来一点一点扣代码，很难不到。 于是这项「不是新功能的功能」，被我拖了一天一夜。 今天我终于忍不住主动查了资料，想看看在 agy 指挥浏览器操作网页 DOM 这件事上，有什么趁手的工具或类库。不查不知道，一查还真有。耐心看了资料、简单学习一下上手之后，小小的新功能在一小时内搞定了，而且只用了 DS 4.0 Flash Free 模型，不花钱就办成了事。 怎么做到的呢？也算一个小经验，我简述一下。 一）Brow</description>
     <pubDate>2026-07-13</pubDate>
   </item>
   <item>
@@ -2038,7 +2045,7 @@
     <title>阿里P10带多少人？阿里p10是什么级别？</title>
     <link>https://yishulun.com/2022/10013.html</link>
     <guid isPermaLink="true">https://yishulun.com/2022/10013.html</guid>
-    <description>阿里P10带多少人？阿里p10是什么级别？ P10 带多少人？ 一般来说，在阿里 P 是技术系，M 是管理系。但 P 也是带人的，例如阿里 P10 毕玄在 访谈 中透露，他在淘系曾带 600 人。我查了一下，其他等级例如 P9 大概带 50~100 人，P8 带 2~30 人。P7 是技术专家/架构师，应该是不带人的。 各个技术等级是这样的： 等级 职称 P5 高级工程师 校招起点 P6 资深工程师 社招起点，1~3 年工作经验，代码主力 P7 技术专家/架构师 5~7 年工作经验，代码主力 P8 高级技术专家 一线最高级别，带 2~30 人 P9 资深技术专家 有行业影响力，带 50~100 人，可以权衡架构方案利弊 P10 研究员/科学家 有行业影响力+有影响力的成果，带 100~1000 人 行业影响力一般指有粉丝多的博客/公众号/视频号，出版过技术图书，在维护知名的开源项目等。在这</description>
+    <description>阿里P10带多少人？阿里p10是什么级别？ P10 带多少人？ 一般来说，在阿里 P 是技术系，M 是管理系。但 P 也是带人的，例如阿里 P10 毕玄在 访谈 中透露，他在淘系曾带 600 人。我查了一下，其他等级例如 P9 大概带 50 100 人，P8 带 2 30 人。P7 是技术专家/架构师，应该是不带人的。 各个技术等级是这样的： 等级 职称 P5 高级工程师 校招起点 P6 资深工程师 社招起点，1~3 年工作经验，代码主力 P7 技术专家/架构师 5~7 年工作经验，代码主力 P8 高级技术专家 一线最高级别，带 2~30 人 P9 资深技术专家 有行业影响力，带 50~100 人，可以权衡架构方案利弊 P10 研究员/科学家 有行业影响力+有影响力的成果，带 100~1000 人 行业影响力一般指有粉丝多的博客/公众号/视频号，出版过技术图书，在维护知名的开源项目等。在这</description>
     <pubDate>2022-10-01</pubDate>
   </item>
   <item>

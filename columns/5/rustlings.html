@@ -323,7 +323,6 @@ cargo install --force --path .
     number = 3; // don't rename this variable
     println!(&quot;Number plus two is : {}&quot;, number + 2);
 }
-
 </code></pre>
 <p>error[E0308]: mismatched types。变量的类型必须匹配。</p>
 <p>error[E0369]: cannot add <code>{integer}</code> to <code>&amp;str</code>。第4行，将整型值赋值给字符串变量是非法的。</p>
@@ -345,7 +344,6 @@ func main() {
 	var number = 3
 	fmt.Println(&quot;Hello, 世界,%d&quot;, number)
 }
-
 </code></pre>
 <p>第7行会报出一个“number redeclared in this block”的异常。</p>
 <h3>常量在声明时必须有明确的类型</h3>
@@ -448,7 +446,6 @@ fn sale_price(price: i32) -&gt; {
 fn is_even(num: i32) -&gt; bool {
     num % 2 == 0
 }
-
 </code></pre>
 <p>error: expected type, found *。</p>
 <p>函数需要合适的返回值类型，找到的类型与预期不匹配。</p>
@@ -514,7 +511,6 @@ mod tests {
       b
     }
 }
-
 </code></pre>
 <p>这里用到了if条件控制语句。在Rust中，if条件语句是逻辑控制语句——分支控制的一种，和Go语言一样，条件不需要使用小括号括住，代码块用花括号即可，花括号与if之间的部分，及花括号之间的部分自然就是条件语句。</p>
 <p>为了加深印象，我们可以同时看一下C/C++语言的if语句写法：</p>
