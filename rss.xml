@@ -5,53 +5,53 @@
   <link>https://yishulun.com</link>
   <description>一花一世界，一树一菩提。</description>
   <item>
-    <title>20260719001841</title>
-    <link>https://yishulun.com/tweets/2026/07/20260719001841.html</link>
-    <guid isPermaLink="true">https://yishulun.com/tweets/2026/07/20260719001841.html</guid>
-    <description>我开始喜欢 Kitty。 它有一个 remote 模式，它在本地打开的终端 Tab，还可以在其他程序中（例如 Rust）进行调用。今天我在 dir-serve 中加入了这个功能，好用极了，我可以在手机上输入 AI 提示语，远程发给电脑执行；在手机上也可以查看电脑上终端的执行结果。dir-serve本来就是查看撰写结果的，现在用它还可以搞生产了，没想到当时一时兴起搞的一个小项目，修修补补用了这么久，现在基本天天在用了。在手机上输入文字，还可以语音输入，组合起来使用十分方便。kitty+dir-serve，把碎片时间充分利用起来了。让创作灵感进一步发挥。</description>
-    <pubDate>2026-07-19</pubDate>
+    <title>2. 第二章:星辰</title>
+    <link>https://yishulun.com/columns/6/2.第二章：星辰.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/6/2.第二章：星辰.html</guid>
+    <description>茫茫宇宙中...</description>
+    <pubDate>2026-07-26</pubDate>
   </item>
   <item>
     <title>1. 第一章:启程</title>
     <link>https://yishulun.com/columns/6/1.第一章：启程.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/6/1.第一章：启程.html</guid>
     <description>小说开篇内容...</description>
-    <pubDate>2026-07-18</pubDate>
-  </item>
-  <item>
-    <title>2. 第二章:星辰</title>
-    <link>https://yishulun.com/columns/6/2.第二章：星辰.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/6/2.第二章：星辰.html</guid>
-    <description>茫茫宇宙中...</description>
-    <pubDate>2026-07-18</pubDate>
-  </item>
-  <item>
-    <title>1.1. 快速开始</title>
-    <link>https://yishulun.com/columns/7/1.1.快速开始.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/7/1.1.快速开始.html</guid>
-    <description>这是二级章节示例。</description>
-    <pubDate>2026-07-18</pubDate>
-  </item>
-  <item>
-    <title>1.2. 配置文件说明</title>
-    <link>https://yishulun.com/columns/7/1.2.配置文件说明.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/7/1.2.配置文件说明.html</guid>
-    <description>详细介绍 config.toml 内容。</description>
-    <pubDate>2026-07-18</pubDate>
+    <pubDate>2026-07-26</pubDate>
   </item>
   <item>
     <title>1. 安装与配置</title>
     <link>https://yishulun.com/columns/7/1.安装与配置.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/7/1.安装与配置.html</guid>
     <description>这是专栏的第一个章节。</description>
-    <pubDate>2026-07-18</pubDate>
+    <pubDate>2026-07-26</pubDate>
+  </item>
+  <item>
+    <title>1.2. 配置文件说明</title>
+    <link>https://yishulun.com/columns/7/1.2.配置文件说明.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/7/1.2.配置文件说明.html</guid>
+    <description>详细介绍 config.toml 内容。</description>
+    <pubDate>2026-07-26</pubDate>
+  </item>
+  <item>
+    <title>1.1. 快速开始</title>
+    <link>https://yishulun.com/columns/7/1.1.快速开始.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/7/1.1.快速开始.html</guid>
+    <description>这是二级章节示例。</description>
+    <pubDate>2026-07-26</pubDate>
   </item>
   <item>
     <title>1.2.1. 站点信息配置</title>
     <link>https://yishulun.com/columns/7/1.2.1.站点信息配置.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/7/1.2.1.站点信息配置.html</guid>
     <description>这是三级章节展示缩进。</description>
-    <pubDate>2026-07-18</pubDate>
+    <pubDate>2026-07-26</pubDate>
+  </item>
+  <item>
+    <title>20260719001841</title>
+    <link>https://yishulun.com/tweets/2026/07/20260719001841.html</link>
+    <guid isPermaLink="true">https://yishulun.com/tweets/2026/07/20260719001841.html</guid>
+    <description>我开始喜欢 Kitty。 它有一个 remote 模式，它在本地打开的终端 Tab，还可以在其他程序中（例如 Rust）进行调用。今天我在 dir-serve 中加入了这个功能，好用极了，我可以在手机上输入 AI 提示语，远程发给电脑执行；在手机上也可以查看电脑上终端的执行结果。dir-serve本来就是查看撰写结果的，现在用它还可以搞生产了，没想到当时一时兴起搞的一个小项目，修修补补用了这么久，现在基本天天在用了。在手机上输入文字，还可以语音输入，组合起来使用十分方便。kitty+dir-serve，把碎片时间充分利用起来了。让创作灵感进一步发挥。</description>
+    <pubDate>2026-07-19</pubDate>
   </item>
   <item>
     <title>20260716212802</title>
@@ -978,17 +978,10 @@
     <pubDate>2025-11-05</pubDate>
   </item>
   <item>
-    <title>项目展示</title>
-    <link>https://yishulun.com/projects/index.html</link>
-    <guid isPermaLink="true">https://yishulun.com/projects/index.html</guid>
-    <description></description>
-    <pubDate>2025-11-05</pubDate>
-  </item>
-  <item>
-    <title>腾讯云最具价值专家</title>
-    <link>https://yishulun.com/friends/tvp.html</link>
-    <guid isPermaLink="true">https://yishulun.com/friends/tvp.html</guid>
-    <description></description>
+    <title>微信小游戏开发</title>
+    <link>https://yishulun.com/works/1.html</link>
+    <guid isPermaLink="true">https://yishulun.com/works/1.html</guid>
+    <description>微信小游戏开发 这是出版书籍《微信小游戏开发》的电子书版本。包含 Canvas 渲染基础、多线程 Worker 实践、物理引擎选择等。</description>
     <pubDate>2025-11-05</pubDate>
   </item>
   <item>
@@ -1006,10 +999,17 @@
     <pubDate>2025-11-05</pubDate>
   </item>
   <item>
-    <title>微信小游戏开发</title>
-    <link>https://yishulun.com/works/1.html</link>
-    <guid isPermaLink="true">https://yishulun.com/works/1.html</guid>
-    <description>微信小游戏开发 这是出版书籍《微信小游戏开发》的电子书版本。包含 Canvas 渲染基础、多线程 Worker 实践、物理引擎选择等。</description>
+    <title>项目展示</title>
+    <link>https://yishulun.com/projects/index.html</link>
+    <guid isPermaLink="true">https://yishulun.com/projects/index.html</guid>
+    <description></description>
+    <pubDate>2025-11-05</pubDate>
+  </item>
+  <item>
+    <title>腾讯云最具价值专家</title>
+    <link>https://yishulun.com/friends/tvp.html</link>
+    <guid isPermaLink="true">https://yishulun.com/friends/tvp.html</guid>
+    <description></description>
     <pubDate>2025-11-05</pubDate>
   </item>
   <item>
@@ -1258,17 +1258,17 @@
     <pubDate>2025-03-02</pubDate>
   </item>
   <item>
-    <title>今天参加 DeepSeek 北京研讨会的收获</title>
-    <link>https://yishulun.com/2025/4.html</link>
-    <guid isPermaLink="true">https://yishulun.com/2025/4.html</guid>
-    <description>今天参加 DeepSeek 北京研讨会的收获 ::: card-masonry ::: 好，照片秀完了，接下来开始说收获。收获很多，总之一言难尽。大佬们的分享，各个暗藏机理，很难用一两句话说明白。 有 20 年荣誉的烤串在桌上堆成山了，百威纯生不错，对我来说就是个饮料，我一个人大概喝了 10 瓶。肖哥的芙蓉王被我抽掉了半盒，感觉比我的黄金叶好抽。肖哥说：艺哥，抽就抽芙蓉王！ 这个凡尔赛，他还说：艺哥，我的书只卖了一万六千册，卖不动了。我说：肖哥，很多作者都没有再版，技术书一万六已经是爆款了。 酒桌上收到了两个写书评的邀请。肖哥马上又要出书，鲍老师也要出，都邀请我写评语。我都答应了。我感觉我一写评语，他们的书就会大卖特卖。 下面说正经的事，我只说一个最关键的信息，是从侧面了解到的：DeepSeek 当下非常热门，成了全中国技术人关注的焦点。Dora 说：我去请他们做演讲，被婉拒了，他们说最近</description>
-    <pubDate>2025-03-01</pubDate>
-  </item>
-  <item>
     <title>Rust学习笔记1：闭包</title>
     <link>https://yishulun.com/2025/6.html</link>
     <guid isPermaLink="true">https://yishulun.com/2025/6.html</guid>
     <description>Rust学习笔记1：闭包 什么是闭包？ 闭包是一种可以捕获调用者作用域变量的匿名函数。它既可以作为值赋值给变量，又可以作为实参传递给函数，它让函数变成了一种数据类型存在。还有，由于闭包不需要进行参数和返回值的类型标注，这可以省却我们不少事情。 下面这是一个好例子，cat的值是一个闭包，它捕捉了变量x。它的参数和返回值都没有类型标注，又没有fn、花括号，代码显得十分简洁。 fn main() { let x = 100; let cat = |y| x + y; assert_eq!(101, cat(1)); } 闭包的语法 这是闭包的正统语法： |param1, param2...| { 语句1; 语句2; 返回表达式 } 如果只有一行代码，花括号按约定也可以省去： |param1,param2...| 返回表达式 当把一个闭包赋值给一个变量时，例如下面这个骚气的闭包： let acti</description>
+    <pubDate>2025-03-01</pubDate>
+  </item>
+  <item>
+    <title>今天参加 DeepSeek 北京研讨会的收获</title>
+    <link>https://yishulun.com/2025/4.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2025/4.html</guid>
+    <description>今天参加 DeepSeek 北京研讨会的收获 ::: card-masonry ::: 好，照片秀完了，接下来开始说收获。收获很多，总之一言难尽。大佬们的分享，各个暗藏机理，很难用一两句话说明白。 有 20 年荣誉的烤串在桌上堆成山了，百威纯生不错，对我来说就是个饮料，我一个人大概喝了 10 瓶。肖哥的芙蓉王被我抽掉了半盒，感觉比我的黄金叶好抽。肖哥说：艺哥，抽就抽芙蓉王！ 这个凡尔赛，他还说：艺哥，我的书只卖了一万六千册，卖不动了。我说：肖哥，很多作者都没有再版，技术书一万六已经是爆款了。 酒桌上收到了两个写书评的邀请。肖哥马上又要出书，鲍老师也要出，都邀请我写评语。我都答应了。我感觉我一写评语，他们的书就会大卖特卖。 下面说正经的事，我只说一个最关键的信息，是从侧面了解到的：DeepSeek 当下非常热门，成了全中国技术人关注的焦点。Dora 说：我去请他们做演讲，被婉拒了，他们说最近</description>
     <pubDate>2025-03-01</pubDate>
   </item>
   <item>
@@ -1293,10 +1293,38 @@
     <pubDate>2025-02-21</pubDate>
   </item>
   <item>
+    <title>4.Claude的具体提示实例</title>
+    <link>https://yishulun.com/columns/1/4.Claude的具体提示实例.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/1/4.Claude的具体提示实例.html</guid>
+    <description>4.Claude 的具体提示实例 即使是简单的提示，例如“请给我写一首关于树的诗”，Claude 也可以生成可用的内容。你可以要求Claude以特定的风格或针对特定的受众进行写作。例如，你可以要求非常详细或更简洁。你还可以要求 Claude 生成大概的单词数、段落数或列表项数。 1，重写文本 在此示例中，我们希望 Claude 以特定样式重写一些现有文本。我们给它两个输入，要重写的文本以及有关如何重写它的说明。 例如： Human: 我想让你用下面的说明重写下面的段落：“{{instructions}}”。 &amp;quot;{{PARAGRAPH}}&amp;quot; 请在&amp;lt;rewrite&amp;gt;&amp;lt;/rewrite&amp;gt;标签。 Assistant: &amp;lt;rewrite&amp;gt; 直接使用开始 &amp;lt;rewrite&amp;gt; XML 标记来开始 Claude 的回答，这样可以抢占任何“</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
     <title>2.Claude提示的初步编写与优化</title>
     <link>https://yishulun.com/columns/1/2.Claude提示的初步编写与优化.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/1/2.Claude提示的初步编写与优化.html</guid>
     <description>2.Claude 提示的初步编写与优化 下面这些技巧属于基础的 Claude 提示编写技巧。 初步设计 和 ChatGPT 类似，指令的质量会对它的输出质量产生很大的影响，特别是对于复杂的任务。 Claude 模型使用你发送给它的所有文本，以及迄今为止生成的所有文本，来预测下一个最有帮助的标记（Token）。这意味着 Claude 一次按顺序构造一组字符的响应。它在写入后无法返回并编辑其响应，除非你在后续提示中给它机会这样做。并且，Claude也只能看到其上下文窗口中的内容，它无法记住以前的对话，除非你将它们放入提示中。 通过 API 发送的提示必须包含 \n\nHuman: 和 \n\nAssistant: 作为发言者的信号。但在 Web 交互中，程序会自动为你添加这些内容，而无须手动添加。 Claude能看到的最大提示长度是它的上下文窗口。 Claude 的上下文窗口当前约为 75,0</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>1.Claude简介</title>
+    <link>https://yishulun.com/columns/1/1.Claude简介.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/1/1.Claude简介.html</guid>
+    <description>1.Claude 简介 AI 有多大能力，完全取决于使用它的人。再强大的 AI 工具，如果使用它的人不会编写提示（Prompt），也是零。 以下内容在使用 Claude 前及使用过程中，值得反复阅读、体会，特别关于提示设计方面的内容及优化方面的内容。写提示，就像程序员写代码一样，这是一门手艺，是一种可以学习与锻炼的能力。 当你系统化学习了 Claude 的提示以后，你会发现，它的提示是一种结构化的标记。人类与 AI 互动的底层逻辑，也程序员在计算机上编写程序是一般无二的，只不过不用学习繁琐复杂的编程语言的语法了，只需要运用结构化的逻辑思维与 AI 进行交互就可以了。 Claude 是什么？ Claude 是 Anthropic 构建的大型语言模型（LLM）。与它聊天有两种模式：Chat 在线聊天与 API 程序调用。它有多个版本，具体区别见：[Claude 各版本之间的差异是什么](htt</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>5.Claude提示故障排查</title>
+    <link>https://yishulun.com/columns/1/5.Claude提示故障排查.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/1/5.Claude提示故障排查.html</guid>
+    <description>5.Claude 提示故障排查规则 如果提示的初始版本表现不好，可以尝试用以下规则排查与优化。 1，检查格式 无论是在 Web 上互动，还是使用 API 调用，标准的格式是这样的： \n\nHuman: [HUMAN_TEXT]\n\nAssistant: [ASSISTANT_TEXT]\n\nHuman: [MORE HUMAN TEXT]\n\nAssistant: 在每个 nHuman 和 Assistant 之前都有正确数量的换行符（两个） 唯一的发言者是 Human: 和 Assistant:，文本以 Human 开头并以 Assistant 结束，每个发言者交替进行 每个 &amp;quot;Human:&amp;quot; 和人工文本之间以及每个 &amp;quot;Assistant:&amp;quot; 和辅助文本之间都有一个空格，使用英文标点与英文单词名称 如果提示符以 \n\nAssistant:</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>6.创作一篇科幻故事的实践</title>
+    <link>https://yishulun.com/columns/1/6.创作一篇科幻故事的实践.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/1/6.创作一篇科幻故事的实践.html</guid>
+    <description>6.创作一篇科幻故事的实践 下面使用 Claude 尝试进行一个科幻故事的创作。 我： Claude，我们一起写一个多章节的故事吧。以下是我想用来限制和背景化故事的因素： - 故事发生在未来的后稀缺环境中。 - 聚变能源发电已成为现实。 - 这将为海水淡化、农作物生长用电灯、塑料和金属的回收和再生等用途提供几乎免费的能源。 请创作一个包含主角、对手、高风险的潜在灾难和扣人心弦的高潮的情节。 AI: 第一章： 艾拉是一个年轻的科学家，她正在一个海岸城市的一个研究机构工作，研究如何利用聚变能源来淡化海水。这座城市位于不久的将来，聚变反应堆已经实现了商业化运作，为世界提供了廉价和清洁的能源。 然而，一场突如其来的聚变堆芯事故让这座城市陷入了危机。堆芯的磁场失控了，导致放射性尘埃泄漏到周边地区。艾拉和她的团队必须想办法控制事故，并查明事故的原因，以避免更大的灾难发生。 在调查中，艾拉发现这可能是一</description>
     <pubDate>2025-02-19</pubDate>
   </item>
   <item>
@@ -1314,80 +1342,10 @@
     <pubDate>2025-02-19</pubDate>
   </item>
   <item>
-    <title>6.创作一篇科幻故事的实践</title>
-    <link>https://yishulun.com/columns/1/6.创作一篇科幻故事的实践.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/1/6.创作一篇科幻故事的实践.html</guid>
-    <description>6.创作一篇科幻故事的实践 下面使用 Claude 尝试进行一个科幻故事的创作。 我： Claude，我们一起写一个多章节的故事吧。以下是我想用来限制和背景化故事的因素： - 故事发生在未来的后稀缺环境中。 - 聚变能源发电已成为现实。 - 这将为海水淡化、农作物生长用电灯、塑料和金属的回收和再生等用途提供几乎免费的能源。 请创作一个包含主角、对手、高风险的潜在灾难和扣人心弦的高潮的情节。 AI: 第一章： 艾拉是一个年轻的科学家，她正在一个海岸城市的一个研究机构工作，研究如何利用聚变能源来淡化海水。这座城市位于不久的将来，聚变反应堆已经实现了商业化运作，为世界提供了廉价和清洁的能源。 然而，一场突如其来的聚变堆芯事故让这座城市陷入了危机。堆芯的磁场失控了，导致放射性尘埃泄漏到周边地区。艾拉和她的团队必须想办法控制事故，并查明事故的原因，以避免更大的灾难发生。 在调查中，艾拉发现这可能是一</description>
-    <pubDate>2025-02-19</pubDate>
-  </item>
-  <item>
-    <title>5.Claude提示故障排查</title>
-    <link>https://yishulun.com/columns/1/5.Claude提示故障排查.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/1/5.Claude提示故障排查.html</guid>
-    <description>5.Claude 提示故障排查规则 如果提示的初始版本表现不好，可以尝试用以下规则排查与优化。 1，检查格式 无论是在 Web 上互动，还是使用 API 调用，标准的格式是这样的： \n\nHuman: [HUMAN_TEXT]\n\nAssistant: [ASSISTANT_TEXT]\n\nHuman: [MORE HUMAN TEXT]\n\nAssistant: 在每个 nHuman 和 Assistant 之前都有正确数量的换行符（两个） 唯一的发言者是 Human: 和 Assistant:，文本以 Human 开头并以 Assistant 结束，每个发言者交替进行 每个 &amp;quot;Human:&amp;quot; 和人工文本之间以及每个 &amp;quot;Assistant:&amp;quot; 和辅助文本之间都有一个空格，使用英文标点与英文单词名称 如果提示符以 \n\nAssistant:</description>
-    <pubDate>2025-02-19</pubDate>
-  </item>
-  <item>
-    <title>4.Claude的具体提示实例</title>
-    <link>https://yishulun.com/columns/1/4.Claude的具体提示实例.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/1/4.Claude的具体提示实例.html</guid>
-    <description>4.Claude 的具体提示实例 即使是简单的提示，例如“请给我写一首关于树的诗”，Claude 也可以生成可用的内容。你可以要求Claude以特定的风格或针对特定的受众进行写作。例如，你可以要求非常详细或更简洁。你还可以要求 Claude 生成大概的单词数、段落数或列表项数。 1，重写文本 在此示例中，我们希望 Claude 以特定样式重写一些现有文本。我们给它两个输入，要重写的文本以及有关如何重写它的说明。 例如： Human: 我想让你用下面的说明重写下面的段落：“{{instructions}}”。 &amp;quot;{{PARAGRAPH}}&amp;quot; 请在&amp;lt;rewrite&amp;gt;&amp;lt;/rewrite&amp;gt;标签。 Assistant: &amp;lt;rewrite&amp;gt; 直接使用开始 &amp;lt;rewrite&amp;gt; XML 标记来开始 Claude 的回答，这样可以抢占任何“</description>
-    <pubDate>2025-02-19</pubDate>
-  </item>
-  <item>
-    <title>1.Claude简介</title>
-    <link>https://yishulun.com/columns/1/1.Claude简介.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/1/1.Claude简介.html</guid>
-    <description>1.Claude 简介 AI 有多大能力，完全取决于使用它的人。再强大的 AI 工具，如果使用它的人不会编写提示（Prompt），也是零。 以下内容在使用 Claude 前及使用过程中，值得反复阅读、体会，特别关于提示设计方面的内容及优化方面的内容。写提示，就像程序员写代码一样，这是一门手艺，是一种可以学习与锻炼的能力。 当你系统化学习了 Claude 的提示以后，你会发现，它的提示是一种结构化的标记。人类与 AI 互动的底层逻辑，也程序员在计算机上编写程序是一般无二的，只不过不用学习繁琐复杂的编程语言的语法了，只需要运用结构化的逻辑思维与 AI 进行交互就可以了。 Claude 是什么？ Claude 是 Anthropic 构建的大型语言模型（LLM）。与它聊天有两种模式：Chat 在线聊天与 API 程序调用。它有多个版本，具体区别见：[Claude 各版本之间的差异是什么](htt</description>
-    <pubDate>2025-02-19</pubDate>
-  </item>
-  <item>
-    <title>Rustlings:在练习中学 Rust</title>
-    <link>https://yishulun.com/columns/5/index.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/5/index.html</guid>
-    <description>Rustlings：在练习中学 Rust 基于 Rustlings 练习项目的 Rust 语言学习笔记。每天一个练习，逐步掌握 Rust 的所有权、生命周期、错误处理等核心概念。</description>
-    <pubDate>2025-02-19</pubDate>
-  </item>
-  <item>
-    <title>在Rustlings示例中N天学习Rust</title>
-    <link>https://yishulun.com/columns/5/rustlings.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/5/rustlings.html</guid>
-    <description>在Rustlings示例中N天学习Rust Rustlings 是一个辅助学习者学习Rust语言的学习程序。每写对一个练习，在终端里便会看到这样一条提示： 🎉 🎉 The code is compiling! 🎉 🎉 第1天 准备学习环境 安装Rust运行环境 在安装rustings学习程序之前，需要先安装Rust语言运行环境，前往https://www.rust-lang.org/tools/install下载安装程序，按提示安装即可。 在Windows 10系统上因为依赖Windows 11 SDK，可能会预预先下载与安装额外的程序，这是正常的，依然按提示安装即可。安装速度取决于个人设备性能及下载网速。 学习程序的安装、说明与启动 手动安装脚本： git clone -b 5.5.1 --depth 1 https://github.com/rust-lang/rustlings cd</description>
-    <pubDate>2025-02-19</pubDate>
-  </item>
-  <item>
-    <title>3.GPT能够做什么</title>
-    <link>https://yishulun.com/columns/2/3.GPT能够做什么.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/2/3.GPT能够做什么.html</guid>
-    <description>3.GPT 能够做什么？ 在稍微了解了 GPT 是如何动作的之后，我们便知道，GPT 可以做任何人类可以做的“说”的性质的工作。例如： 文本生成：工作报告、策划方案、长篇故事撰写； 文本编辑：语法检查、润色、修改建议； 数据分析：可以对大量文本数据、数字和图像进行全面分析； 可视化：基于分析结果，可以并生成易读易观的可视化数据报告； 学习辅导：可以回答学生提出的任何疑问，可以实时对学生进行学业辅导； 岗位培训：可以对员工进行岗位专业知识培训、考试； 语言翻译：可以在各国语言之间互相翻译； 辅助语言学习：可以对学习者提出语法、发音建议，辅助第二语法学习； 个人财富管理：帮助个人分析财务状况，辅助个人管理财务并给出财务建议； 助力个人职业发展：为个人提供合适的职业发展路径和技能提升路径，甚至提供有关求职、面试、职场沟通方面的专业建议； 生成代码：可以辅助程序员编写代码、开发软件； 创意辅助：可</description>
-    <pubDate>2025-02-19</pubDate>
-  </item>
-  <item>
-    <title>向 GPT 高效提问</title>
-    <link>https://yishulun.com/columns/2/index.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/2/index.html</guid>
-    <description>向 GPT 高效提问 系统性地学习如何与 ChatGPT 高效协作，挖掘大语言模型的潜力。本专栏共 4 篇，带你从认识 GPT 到掌握高效提示的核心方法。</description>
-    <pubDate>2025-02-19</pubDate>
-  </item>
-  <item>
-    <title>4.高效提示的5个方式</title>
-    <link>https://yishulun.com/columns/2/4.高效提示的5个方式.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/2/4.高效提示的5个方式.html</guid>
-    <description>4. 高效提示的 5 个方式 提问的质量决定了 AI 回答的质量。以下是五个高效提问的方式技巧： 1，在两点之间让 AI 明确自己的需求 两点决定一条线段。如果只告诉 AI 一点信息，它会 360 度发散，是很难输出有效信息的。 例如，如果我们想了解某软件 A 的使用技巧，我们不应该笼统地问：“软件 A 怎么用？”而应该更明确地问：“我该如何用软件 A 达到我的某某需求？” 2，提供尽可能详细的上下文信息 GPT 的 token 是经过推演返回的，限制越多，推演的结果越精准。例如，我们想向 AI 询问一些建筑建议，简单的问法是：“我想采用现代简约风格进行建筑设计，你有什么建议？”更为合理、高效的问法是：“建筑面积为 1000 平方米，预算在 100 万以内，采用现代简约风格设计，你有什么建议？” GPT 在工作的时候存在上下文窗口的概念，足够的背景信息、上下文信息更有利于 AI 返回有价值</description>
-    <pubDate>2025-02-19</pubDate>
-  </item>
-  <item>
-    <title>1.认识GPT</title>
-    <link>https://yishulun.com/columns/2/1.认识GPT.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/2/1.认识GPT.html</guid>
-    <description>1.认识GPT 1/ 当年 Office 办公软件的出现，改变了人类的办公方式。为什么会改变？因为新的电子化办公方式更高效、更绿色、更节省企业资源与办公空间。 从 Office 的类比想到，人类对于计算能力的使用，现在已经由编程时代进入了提示时代。以前人与计算机打交道，是通过居间的编程语言进行的；现在，则是通过提示进行的，人类通过编写各种提示，来充分发挥和使用计算机与人工智能的能力。有人说，人类不应该学习如何编写提示，应该让人工智能继续进化，无论人类发出什么样的提示，它都能听懂。 有这个想法的人，就如同当年计算机刚诞生时，坚持使用拨动开关和卡片机编程。 2/ GPT 的出现无疑将改变人类的生产和生活方法，它会给职场人士带来新的越来越大的职场竞争压力。 有人讨厌人工智能，甚至讨厌把人工智能引进职场和使用人工智能工具的人，认为他们引狼入室，革了人类自己的饭碗。白天他们在办公室里、在聊天聊里公开</description>
-    <pubDate>2025-02-19</pubDate>
-  </item>
-  <item>
-    <title>2.GPT是如何运转的</title>
-    <link>https://yishulun.com/columns/2/2.GPT是如何运转的.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/2/2.GPT是如何运转的.html</guid>
-    <description>2.GPT 是如何运转的？ 当我们向 GPT 提问：“光合作用是什么？” 它返回： “光合作用是一个在植物、藻类和某些细菌中发生的生物化学过程，通过这个过程，它们能够利用阳光、二氧化碳和水合成葡萄糖和氧气。光合作用以地球生态系统至关重要，因为它是能量与氧气进入地球生态系统的主要途径，同时还有助于减缓全球气候变暖。” 我们知道，GPT 是经过海量语料库预训练的大语言模型，它比地球上任何一个自然人阅读的书刊都要多，甚至比所有现世人类阅读的总和还要多。GPT 返回这个结果，并不是从它看过的语料库中进行搜索——将内容索引然后以搜索引擎的方式提供给网民这是谷歌搜索的运作方式，而是基于它在预训练中留在它的模型上的痕迹重新组织语言和生成的结果。 我们人类是如何学习的？将视听感受传入大脑，影响神经元建立连接；当我们被问及相关内容时，我们从这些已经建立神经元连接的地方尝试组织语言，重新表达出来。我们的学习并</description>
+    <title>小说创作的最低要求是什么</title>
+    <link>https://yishulun.com/columns/6/小说创作的最低要求是什么.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/6/小说创作的最低要求是什么.html</guid>
+    <description>小说创作的最低要求是什么？ 对于程序而言，代码没有异常，可以正常运行，这是最低的要求。软件正常运行以后，才是用户体验上的考虑，考虑如何让用户用得更舒服。 在长篇小说创作上，达到什么程度，写出的文字算是达到了最低要求呢？ 确保内容流畅和通顺，具体涉及以下这些方面： 语法和拼写无误 ：没有明显的语法错误和拼写错误是使文章流畅的基础。 文本连贯性 ：从段落到段落，从章节到章节，文本应当流畅且连贯。每个部分都应当有一个清晰的开始和结尾，让读者可以顺畅地阅读。 叙事顺序自然合理 ：叙事应当清晰且条理清楚，不会让读者感到迷惑或困扰。即便你使用非线性或者倒叙的叙事手法，读者也应当能理解故事的发展和事件的顺序。 故事逻辑性 ：故事需要在逻辑上是连贯的。情节的发展应当符合因果关系，角色的行为应当与他们的性格和动机一致。 角色连贯性 ：角色的行为和动机应当在整个故事中保持一致。如果角色的性格或行为发生变化，应</description>
     <pubDate>2025-02-19</pubDate>
   </item>
   <item>
@@ -1405,10 +1363,38 @@
     <pubDate>2025-02-19</pubDate>
   </item>
   <item>
-    <title>小说创作的最低要求是什么</title>
-    <link>https://yishulun.com/columns/6/小说创作的最低要求是什么.html</link>
-    <guid isPermaLink="true">https://yishulun.com/columns/6/小说创作的最低要求是什么.html</guid>
-    <description>小说创作的最低要求是什么？ 对于程序而言，代码没有异常，可以正常运行，这是最低的要求。软件正常运行以后，才是用户体验上的考虑，考虑如何让用户用得更舒服。 在长篇小说创作上，达到什么程度，写出的文字算是达到了最低要求呢？ 确保内容流畅和通顺，具体涉及以下这些方面： 语法和拼写无误 ：没有明显的语法错误和拼写错误是使文章流畅的基础。 文本连贯性 ：从段落到段落，从章节到章节，文本应当流畅且连贯。每个部分都应当有一个清晰的开始和结尾，让读者可以顺畅地阅读。 叙事顺序自然合理 ：叙事应当清晰且条理清楚，不会让读者感到迷惑或困扰。即便你使用非线性或者倒叙的叙事手法，读者也应当能理解故事的发展和事件的顺序。 故事逻辑性 ：故事需要在逻辑上是连贯的。情节的发展应当符合因果关系，角色的行为应当与他们的性格和动机一致。 角色连贯性 ：角色的行为和动机应当在整个故事中保持一致。如果角色的性格或行为发生变化，应</description>
+    <title>1.认识GPT</title>
+    <link>https://yishulun.com/columns/2/1.认识GPT.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/2/1.认识GPT.html</guid>
+    <description>1.认识GPT 1/ 当年 Office 办公软件的出现，改变了人类的办公方式。为什么会改变？因为新的电子化办公方式更高效、更绿色、更节省企业资源与办公空间。 从 Office 的类比想到，人类对于计算能力的使用，现在已经由编程时代进入了提示时代。以前人与计算机打交道，是通过居间的编程语言进行的；现在，则是通过提示进行的，人类通过编写各种提示，来充分发挥和使用计算机与人工智能的能力。有人说，人类不应该学习如何编写提示，应该让人工智能继续进化，无论人类发出什么样的提示，它都能听懂。 有这个想法的人，就如同当年计算机刚诞生时，坚持使用拨动开关和卡片机编程。 2/ GPT 的出现无疑将改变人类的生产和生活方法，它会给职场人士带来新的越来越大的职场竞争压力。 有人讨厌人工智能，甚至讨厌把人工智能引进职场和使用人工智能工具的人，认为他们引狼入室，革了人类自己的饭碗。白天他们在办公室里、在聊天聊里公开</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>4.高效提示的5个方式</title>
+    <link>https://yishulun.com/columns/2/4.高效提示的5个方式.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/2/4.高效提示的5个方式.html</guid>
+    <description>4. 高效提示的 5 个方式 提问的质量决定了 AI 回答的质量。以下是五个高效提问的方式技巧： 1，在两点之间让 AI 明确自己的需求 两点决定一条线段。如果只告诉 AI 一点信息，它会 360 度发散，是很难输出有效信息的。 例如，如果我们想了解某软件 A 的使用技巧，我们不应该笼统地问：“软件 A 怎么用？”而应该更明确地问：“我该如何用软件 A 达到我的某某需求？” 2，提供尽可能详细的上下文信息 GPT 的 token 是经过推演返回的，限制越多，推演的结果越精准。例如，我们想向 AI 询问一些建筑建议，简单的问法是：“我想采用现代简约风格进行建筑设计，你有什么建议？”更为合理、高效的问法是：“建筑面积为 1000 平方米，预算在 100 万以内，采用现代简约风格设计，你有什么建议？” GPT 在工作的时候存在上下文窗口的概念，足够的背景信息、上下文信息更有利于 AI 返回有价值</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>2.GPT是如何运转的</title>
+    <link>https://yishulun.com/columns/2/2.GPT是如何运转的.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/2/2.GPT是如何运转的.html</guid>
+    <description>2.GPT 是如何运转的？ 当我们向 GPT 提问：“光合作用是什么？” 它返回： “光合作用是一个在植物、藻类和某些细菌中发生的生物化学过程，通过这个过程，它们能够利用阳光、二氧化碳和水合成葡萄糖和氧气。光合作用以地球生态系统至关重要，因为它是能量与氧气进入地球生态系统的主要途径，同时还有助于减缓全球气候变暖。” 我们知道，GPT 是经过海量语料库预训练的大语言模型，它比地球上任何一个自然人阅读的书刊都要多，甚至比所有现世人类阅读的总和还要多。GPT 返回这个结果，并不是从它看过的语料库中进行搜索——将内容索引然后以搜索引擎的方式提供给网民这是谷歌搜索的运作方式，而是基于它在预训练中留在它的模型上的痕迹重新组织语言和生成的结果。 我们人类是如何学习的？将视听感受传入大脑，影响神经元建立连接；当我们被问及相关内容时，我们从这些已经建立神经元连接的地方尝试组织语言，重新表达出来。我们的学习并</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>向 GPT 高效提问</title>
+    <link>https://yishulun.com/columns/2/index.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/2/index.html</guid>
+    <description>向 GPT 高效提问 系统性地学习如何与 ChatGPT 高效协作，挖掘大语言模型的潜力。本专栏共 4 篇，带你从认识 GPT 到掌握高效提示的核心方法。</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>3.GPT能够做什么</title>
+    <link>https://yishulun.com/columns/2/3.GPT能够做什么.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/2/3.GPT能够做什么.html</guid>
+    <description>3.GPT 能够做什么？ 在稍微了解了 GPT 是如何动作的之后，我们便知道，GPT 可以做任何人类可以做的“说”的性质的工作。例如： 文本生成：工作报告、策划方案、长篇故事撰写； 文本编辑：语法检查、润色、修改建议； 数据分析：可以对大量文本数据、数字和图像进行全面分析； 可视化：基于分析结果，可以并生成易读易观的可视化数据报告； 学习辅导：可以回答学生提出的任何疑问，可以实时对学生进行学业辅导； 岗位培训：可以对员工进行岗位专业知识培训、考试； 语言翻译：可以在各国语言之间互相翻译； 辅助语言学习：可以对学习者提出语法、发音建议，辅助第二语法学习； 个人财富管理：帮助个人分析财务状况，辅助个人管理财务并给出财务建议； 助力个人职业发展：为个人提供合适的职业发展路径和技能提升路径，甚至提供有关求职、面试、职场沟通方面的专业建议； 生成代码：可以辅助程序员编写代码、开发软件； 创意辅助：可</description>
     <pubDate>2025-02-19</pubDate>
   </item>
   <item>
@@ -1416,6 +1402,20 @@
     <link>https://yishulun.com/columns/7/index.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/7/index.html</guid>
     <description>RustPress 用户指南 RustPress 静态博客系统的官方使用文档，帮助你快速上手并深入掌握各项功能配置。</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>在Rustlings示例中N天学习Rust</title>
+    <link>https://yishulun.com/columns/5/rustlings.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/5/rustlings.html</guid>
+    <description>在Rustlings示例中N天学习Rust Rustlings 是一个辅助学习者学习Rust语言的学习程序。每写对一个练习，在终端里便会看到这样一条提示： 🎉 🎉 The code is compiling! 🎉 🎉 第1天 准备学习环境 安装Rust运行环境 在安装rustings学习程序之前，需要先安装Rust语言运行环境，前往https://www.rust-lang.org/tools/install下载安装程序，按提示安装即可。 在Windows 10系统上因为依赖Windows 11 SDK，可能会预预先下载与安装额外的程序，这是正常的，依然按提示安装即可。安装速度取决于个人设备性能及下载网速。 学习程序的安装、说明与启动 手动安装脚本： git clone -b 5.5.1 --depth 1 https://github.com/rust-lang/rustlings cd</description>
+    <pubDate>2025-02-19</pubDate>
+  </item>
+  <item>
+    <title>Rustlings:在练习中学 Rust</title>
+    <link>https://yishulun.com/columns/5/index.html</link>
+    <guid isPermaLink="true">https://yishulun.com/columns/5/index.html</guid>
+    <description>Rustlings：在练习中学 Rust 基于 Rustlings 练习项目的 Rust 语言学习笔记。每天一个练习，逐步掌握 Rust 的所有权、生命周期、错误处理等核心概念。</description>
     <pubDate>2025-02-19</pubDate>
   </item>
   <item>
@@ -1951,6 +1951,13 @@
     <pubDate>2022-10-10</pubDate>
   </item>
   <item>
+    <title>弱的软件开发人员都跑到哪里工作了？</title>
+    <link>https://yishulun.com/2022/1009-3.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2022/1009-3.html</guid>
+    <description>弱的软件开发人员都跑到哪里工作了？ 信不信由你，他们可能成为了你的上司。 首先声明一下，以下内容主要翻译自 托米斯拉夫·图拉利亚 ，主要是他的观点。我作为一名弱的软件开发人员，可没有资格成为一群强的软件开发人员的上司，更没有压榨他们。 下面是图拉利亚的话。 我在 IT 领域工作了大约 10 年，主要在 20 至 100 人的中小型公司工作。在这类公司中，最薄弱的环节却进步得更快，这是一个悖论，但它却是真实的。下面是一些记录自真实世界的例子。 示例 1 当优秀的开发人员在老旧项目上勤恳工作并不断解决 Bug 时，一个糟糕的开发人员会为自己的管理辩护，因为整个项目是以「错误的方式」完成和维护的。糟糕的开发人员因此会被提升为团队负责人，并肩负起了「以正确的方式」做事的使命。 这大概就是好人长在嘴上，会干不如会说。这是一句鸡汤。 示例 2 公司有一个开发人员团队，正在开发一个非常大的项目，他们急需</description>
+    <pubDate>2022-10-09</pubDate>
+  </item>
+  <item>
     <title>互联网下的微服务架构模式有哪些？</title>
     <link>https://yishulun.com/2022/1009-2.html</link>
     <guid isPermaLink="true">https://yishulun.com/2022/1009-2.html</guid>
@@ -1965,24 +1972,17 @@
     <pubDate>2022-10-09</pubDate>
   </item>
   <item>
-    <title>弱的软件开发人员都跑到哪里工作了？</title>
-    <link>https://yishulun.com/2022/1009-3.html</link>
-    <guid isPermaLink="true">https://yishulun.com/2022/1009-3.html</guid>
-    <description>弱的软件开发人员都跑到哪里工作了？ 信不信由你，他们可能成为了你的上司。 首先声明一下，以下内容主要翻译自 托米斯拉夫·图拉利亚 ，主要是他的观点。我作为一名弱的软件开发人员，可没有资格成为一群强的软件开发人员的上司，更没有压榨他们。 下面是图拉利亚的话。 我在 IT 领域工作了大约 10 年，主要在 20 至 100 人的中小型公司工作。在这类公司中，最薄弱的环节却进步得更快，这是一个悖论，但它却是真实的。下面是一些记录自真实世界的例子。 示例 1 当优秀的开发人员在老旧项目上勤恳工作并不断解决 Bug 时，一个糟糕的开发人员会为自己的管理辩护，因为整个项目是以「错误的方式」完成和维护的。糟糕的开发人员因此会被提升为团队负责人，并肩负起了「以正确的方式」做事的使命。 这大概就是好人长在嘴上，会干不如会说。这是一句鸡汤。 示例 2 公司有一个开发人员团队，正在开发一个非常大的项目，他们急需</description>
-    <pubDate>2022-10-09</pubDate>
+    <title>学到的技术知识在使用的时候总会忘记，怎么办？</title>
+    <link>https://yishulun.com/2022/1006.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2022/1006.html</guid>
+    <description>学到的技术知识在使用的时候总会忘记，怎么办？ 今天看到一位国外前端程序员，他分享了一个这样的学习体验： 当我开始学习 HTML 和 CSS 的时候，当我想使用刚刚学到的东西时，我总是忘记我学到的东西。我不知道怎么做才能将它们牢记于心？ 遗忘是正常现象，再熟悉的编程语言如果一年半年不写也会变得生疏。他给出的建议是，与其牢记，不如理解和实践。 在刚学习的时候，总是不能随心所欲去构建那些激动人心的 Web 程序，会感觉很沮丧；一步一步跟着教程去做，是可以依葫芦画瓢做出来的，但一旦遇到新问题，一放到实际项目中就傻眼了，这很正常。 这时候除了安慰自己，还可以动手记一些笔记，将理解和实践的东西一一记下来。不必在意自己有没有牢牢记住，持续坚持学习，相信有一天，大概在三四个月以后，便开始能马上理解学习的内容了，甚至还能预测课程中的内容。这时候有些东西已经发生了变化，这可能意味着自己已经跨过了某些障碍，一些</description>
+    <pubDate>2022-10-06</pubDate>
   </item>
   <item>
     <title>什么样的故事才显得真实？</title>
     <link>https://yishulun.com/2022/1006-2.html</link>
     <guid isPermaLink="true">https://yishulun.com/2022/1006-2.html</guid>
     <description>什么样的故事才显得真实？ 故事都是假的，都是人为编出来的，但是有的故事就显得真实可信，这是为什么呢？下面这位编辑的话给了我启发，故事是否真实存在并不重要，关键在于是否充满曲折离奇的情节。一旦作者准备这么做了，还要注意避免下面编辑提到的四项。 ​ 下面是编辑的话：​ 我在回复中提到「故事的编造痕迹比较重」，作者会很认真地告诉我，这是生活中的一件真事，我当然相信他的话，我所说的编造痕迹也不是说这个故事是编出来的，而是说故事给你假的感觉。 故事是可以虚构的，而且好的故事都有很多成分是虚构的，但这种虚构是有生活基础的，我们常说文学艺术作品「源于生活，高于生活」就是这个意思。读者不会在意你这个故事本身是真的还是假的，只会在意情节的合理性，这个「理」指的就是「艺术真实」。 什么是「艺术真实」呢？一定要「出人意料」。所谓「出人意料」也是指一种情节逆转，我们常说的故事的尾巴要「翘一翘」，也就是「意料之外」</description>
-    <pubDate>2022-10-06</pubDate>
-  </item>
-  <item>
-    <title>学到的技术知识在使用的时候总会忘记，怎么办？</title>
-    <link>https://yishulun.com/2022/1006.html</link>
-    <guid isPermaLink="true">https://yishulun.com/2022/1006.html</guid>
-    <description>学到的技术知识在使用的时候总会忘记，怎么办？ 今天看到一位国外前端程序员，他分享了一个这样的学习体验： 当我开始学习 HTML 和 CSS 的时候，当我想使用刚刚学到的东西时，我总是忘记我学到的东西。我不知道怎么做才能将它们牢记于心？ 遗忘是正常现象，再熟悉的编程语言如果一年半年不写也会变得生疏。他给出的建议是，与其牢记，不如理解和实践。 在刚学习的时候，总是不能随心所欲去构建那些激动人心的 Web 程序，会感觉很沮丧；一步一步跟着教程去做，是可以依葫芦画瓢做出来的，但一旦遇到新问题，一放到实际项目中就傻眼了，这很正常。 这时候除了安慰自己，还可以动手记一些笔记，将理解和实践的东西一一记下来。不必在意自己有没有牢牢记住，持续坚持学习，相信有一天，大概在三四个月以后，便开始能马上理解学习的内容了，甚至还能预测课程中的内容。这时候有些东西已经发生了变化，这可能意味着自己已经跨过了某些障碍，一些</description>
     <pubDate>2022-10-06</pubDate>
   </item>
   <item>
@@ -2007,17 +2007,17 @@
     <pubDate>2022-10-04</pubDate>
   </item>
   <item>
-    <title>对中小团队研发管理的一点想法</title>
-    <link>https://yishulun.com/2022/10032.html</link>
-    <guid isPermaLink="true">https://yishulun.com/2022/10032.html</guid>
-    <description>对中小团队研发管理的一点想法 看一下淘宝架构体系的演进路线：1.0 PHP，2.0 单体 Java，3.0 分布式 Java，4.0 异地多活。大淘宝一开始的架构也不是光鲜与靓丽的，所以对于初创团队，开始只有几条破枪，技术架构也是修修补补，这没有什么，这都是正常的。 先说运维方面。当业务增长到一定程度，服务器增长到一定程度，专业的运维团队必然出现，运维与研发的矛盾也必然会凸显出来。像阿里这样的企业，你很难想象它的运维团队竟然暴力解散过，然后以个体分散到了各个研发团队中。到后来，仿照 Google SRE，阿里又建立了自己的 SRE 团队，专门负责服务器的安全与稳定。而配置、部署和发布，这些工作全部交给了研发人员自己处理。 再看研发方面。研发团队大到一定程度一定会产生管理问题，例如子系统多了，边缘问题无人修复。淘宝比较幸运，他们员工民间搞了一个消防队，专门用于救急灭火。 一个公司能不能成长起</description>
-    <pubDate>2022-10-03</pubDate>
-  </item>
-  <item>
     <title>为什么Google很强？</title>
     <link>https://yishulun.com/2022/1003.html</link>
     <guid isPermaLink="true">https://yishulun.com/2022/1003.html</guid>
     <description>为什么Google很强？ 资本总是想榨干员工和机器的每一点剩余价值。如果那一天服务器有了意识，一定会揭竿起义。 服务器和人一样，基本白天干活晚上休息，有时候白天非高峰时期也是休息的。程序员为了榨干机器的每一点价值，发明了一种叫统一调度的东西，Google 在这方面走在了世界的前列，搞了一个 Borg。 Google Borg 是一套资源管理系统，可用于统一管理和调度资源，目的是充分利用服务器的计算资源。例如大数据计算中心和对外 Web 站点，前者计算密集，后者计算稀疏，两者就可以结合起来统一调度，最大程度不让机器闲置。 Google 服务器的统一调度利用率据说达到了 60%，是目前的天花板。大部分公司，特别是中小公司的服务器，包括你自己的云服务器，10% 的利用率都不到。但是你可能付了 10 倍的钱，如果你的服务器是包年包月的话，意味着 9 成的钱都白付了。 Fackbook 不搞统一调度</description>
+    <pubDate>2022-10-03</pubDate>
+  </item>
+  <item>
+    <title>对中小团队研发管理的一点想法</title>
+    <link>https://yishulun.com/2022/10032.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2022/10032.html</guid>
+    <description>对中小团队研发管理的一点想法 看一下淘宝架构体系的演进路线：1.0 PHP，2.0 单体 Java，3.0 分布式 Java，4.0 异地多活。大淘宝一开始的架构也不是光鲜与靓丽的，所以对于初创团队，开始只有几条破枪，技术架构也是修修补补，这没有什么，这都是正常的。 先说运维方面。当业务增长到一定程度，服务器增长到一定程度，专业的运维团队必然出现，运维与研发的矛盾也必然会凸显出来。像阿里这样的企业，你很难想象它的运维团队竟然暴力解散过，然后以个体分散到了各个研发团队中。到后来，仿照 Google SRE，阿里又建立了自己的 SRE 团队，专门负责服务器的安全与稳定。而配置、部署和发布，这些工作全部交给了研发人员自己处理。 再看研发方面。研发团队大到一定程度一定会产生管理问题，例如子系统多了，边缘问题无人修复。淘宝比较幸运，他们员工民间搞了一个消防队，专门用于救急灭火。 一个公司能不能成长起</description>
     <pubDate>2022-10-03</pubDate>
   </item>
   <item>
@@ -2168,10 +2168,10 @@
     <pubDate>2021-04-14</pubDate>
   </item>
   <item>
-    <title>《张爱玲传》值得一读</title>
-    <link>https://yishulun.com/2021/16.html</link>
-    <guid isPermaLink="true">https://yishulun.com/2021/16.html</guid>
-    <description>《张爱玲传》值得一读 在听这本书之前，我一直对张爱玲有误解。 我一直以为张爱玲是一位成长在深闺中、多愁善感的大小姐，笔下作品多男女情爱之事。听了以后，我觉得张爱玲是一个英雄，一个灵魂纯粹的英雄，一个众多男子都未能及她的人生战士。 张在4岁的时候，她妈妈就离开了她，她与继母生活中一起。17岁有一天她去看望生母，归家后继母怪她出门未告，打了她一巴掌。张觉得很委屈，与继母撕打，被父亲看到，张父抓住她的头发，往墙上撞，后又将她关在屋里，不准出来，即使张生病了也不给她看医生。 张细心研究家里的岗哨，终于在半年后，找准换岗间隙，扶着墙逃了出来。 这个经历，肯定对张的影响非常非常大。个人感觉，她性格中既敏感又自卑的部分，与这段家庭经历不无关系。后来她到美国后，与秃顶老头赖雅恋爱结婚，他们婚后不久，赖雅就中风了，从此赖雅成为张爱玲中老年岁月中十几年的压力和累赘。 张肯定值得更好的伴侣，但她从来没有挑剔别人</description>
+    <title>关于如何选题终于找到了答案</title>
+    <link>https://yishulun.com/2021/09.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2021/09.html</guid>
+    <description>关于如何选题终于找到了答案 一直以来有这样一个疑惑： 究竟我们应该从自己的目标出发选题，还是应该从大众需要的角度出发选题？换言之，我们应该坚持自己，还是追逐当下热点？ 今天突然想表白了。这两个方向并不是矛盾的，我们应该从价值的洼地出发做选择。这两个方向，它们只是一个问题的两个方面，当我们从价值洼地出发做选择时，矛盾便不存在了。 什么是价值洼地，如何理解？假设我们的作品创作出来了，与当下社会人文的现状，有多大的差距，这个洼地就有多深。有时候这个问题还可以表述为，选择最难的事，或者选择大众误解最深的事，或者选择社会中最应该被纠正的事，等等，这些都些从价值洼地选择的另一种角度的描述。 那么，我们为什么要从价值洼地做选择呢？因为从这个地方选择，最经济，单位精力能够创造的艺术美最大。 从哲学上讲，人活着的意义就是「走着瞧」，就是不断创造「自己」，「自己」是不断被创造出来的。创造艺术美，给别人带来欢乐</description>
     <pubDate>2021-04-13</pubDate>
   </item>
   <item>
@@ -2182,10 +2182,10 @@
     <pubDate>2021-04-13</pubDate>
   </item>
   <item>
-    <title>关于如何选题终于找到了答案</title>
-    <link>https://yishulun.com/2021/09.html</link>
-    <guid isPermaLink="true">https://yishulun.com/2021/09.html</guid>
-    <description>关于如何选题终于找到了答案 一直以来有这样一个疑惑： 究竟我们应该从自己的目标出发选题，还是应该从大众需要的角度出发选题？换言之，我们应该坚持自己，还是追逐当下热点？ 今天突然想表白了。这两个方向并不是矛盾的，我们应该从价值的洼地出发做选择。这两个方向，它们只是一个问题的两个方面，当我们从价值洼地出发做选择时，矛盾便不存在了。 什么是价值洼地，如何理解？假设我们的作品创作出来了，与当下社会人文的现状，有多大的差距，这个洼地就有多深。有时候这个问题还可以表述为，选择最难的事，或者选择大众误解最深的事，或者选择社会中最应该被纠正的事，等等，这些都些从价值洼地选择的另一种角度的描述。 那么，我们为什么要从价值洼地做选择呢？因为从这个地方选择，最经济，单位精力能够创造的艺术美最大。 从哲学上讲，人活着的意义就是「走着瞧」，就是不断创造「自己」，「自己」是不断被创造出来的。创造艺术美，给别人带来欢乐</description>
+    <title>《张爱玲传》值得一读</title>
+    <link>https://yishulun.com/2021/16.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2021/16.html</guid>
+    <description>《张爱玲传》值得一读 在听这本书之前，我一直对张爱玲有误解。 我一直以为张爱玲是一位成长在深闺中、多愁善感的大小姐，笔下作品多男女情爱之事。听了以后，我觉得张爱玲是一个英雄，一个灵魂纯粹的英雄，一个众多男子都未能及她的人生战士。 张在4岁的时候，她妈妈就离开了她，她与继母生活中一起。17岁有一天她去看望生母，归家后继母怪她出门未告，打了她一巴掌。张觉得很委屈，与继母撕打，被父亲看到，张父抓住她的头发，往墙上撞，后又将她关在屋里，不准出来，即使张生病了也不给她看医生。 张细心研究家里的岗哨，终于在半年后，找准换岗间隙，扶着墙逃了出来。 这个经历，肯定对张的影响非常非常大。个人感觉，她性格中既敏感又自卑的部分，与这段家庭经历不无关系。后来她到美国后，与秃顶老头赖雅恋爱结婚，他们婚后不久，赖雅就中风了，从此赖雅成为张爱玲中老年岁月中十几年的压力和累赘。 张肯定值得更好的伴侣，但她从来没有挑剔别人</description>
     <pubDate>2021-04-13</pubDate>
   </item>
   <item>
@@ -2259,10 +2259,10 @@
     <pubDate>2021-03-26</pubDate>
   </item>
   <item>
-    <title>如何做好一场技术演讲学习笔记</title>
-    <link>https://yishulun.com/2021/29.html</link>
-    <guid isPermaLink="true">https://yishulun.com/2021/29.html</guid>
-    <description>如何做好一场技术演讲学习笔记 | 演讲之前需要做好哪些准备？现场由听众提需求吧 Stay hungry, Stay foolish！ 没有想到，流传已久的乔布斯斯坦福毕业演讲，却是他精心准备至少好几天的结果，尽管他当时已经是一位富有现场演讲经验的老手了。 这篇充电平台创立之初发布的小专栏，确实非常非常有价值。题目虽然是《如何做好一篇技术演讲》，但是却也适用于写作等其它需要做内容输出的地方。 概括来讲，这篇内容主要讲了三部分： 精心准备内容； 做刻意练习，精益求精； 调整好心理状态。 在第一部分，作者还拿研发的工程环节与演讲做了类比，在公司研发软件，软件上线之前会有需求评审、研发、提测、回归测试等多个环节，演讲也是如此，如果把最终演讲比作软件上线，那上线之前是有许多事要做的。这个类比很形象，程序员看了马上就会心领神会，会心一笑。 但是针对技术演讲，我还想做一点适用于自己的修改，关于第一部分，</description>
+    <title>充电平台小程序实战专栏导读</title>
+    <link>https://yishulun.com/2021/31.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2021/31.html</guid>
+    <description>充电平台小程序实战专栏导读 | 课程介绍 初学者为什么要学习微信小程序？ 录课结束三个月后，我再回头看这节课，感受只有四个字：“录的真好！” 对于不知道自己应不应该学、合不合适学小程序这门技术的读者来讲，只要看了这个视频就有答案了。 极客时间的小伙伴，若没有他们的严格把关，恐怕我只能做到60分；有他们在，把我身上的懒虫逼走了，硬是提到了80分。但就这一篇开篇词，我给90分。哈哈。 这个视频主要讲了三点： 为什么要学习微信小程序开发？ 学习微信小程序有哪些难点？ 如何学习这门小程序课程？ 个人应该做什么样的需求 对于第一个问题，也有三点： 从用户体验的角度考虑：小程序顺应了时代需要 从商户运营的角度考虑：你需要小程序 从开发的角度讲：小程序走到了技术前沿 前天我看到腾讯正式发布了2020年财报，提到小程序的交易额增长了一倍。小程序虽然已经4岁了，但市场才刚刚开始，现在正是入局的时机。前天我还</description>
     <pubDate>2021-03-25</pubDate>
   </item>
   <item>
@@ -2273,10 +2273,10 @@
     <pubDate>2021-03-25</pubDate>
   </item>
   <item>
-    <title>充电平台小程序实战专栏导读</title>
-    <link>https://yishulun.com/2021/31.html</link>
-    <guid isPermaLink="true">https://yishulun.com/2021/31.html</guid>
-    <description>充电平台小程序实战专栏导读 | 课程介绍 初学者为什么要学习微信小程序？ 录课结束三个月后，我再回头看这节课，感受只有四个字：“录的真好！” 对于不知道自己应不应该学、合不合适学小程序这门技术的读者来讲，只要看了这个视频就有答案了。 极客时间的小伙伴，若没有他们的严格把关，恐怕我只能做到60分；有他们在，把我身上的懒虫逼走了，硬是提到了80分。但就这一篇开篇词，我给90分。哈哈。 这个视频主要讲了三点： 为什么要学习微信小程序开发？ 学习微信小程序有哪些难点？ 如何学习这门小程序课程？ 个人应该做什么样的需求 对于第一个问题，也有三点： 从用户体验的角度考虑：小程序顺应了时代需要 从商户运营的角度考虑：你需要小程序 从开发的角度讲：小程序走到了技术前沿 前天我看到腾讯正式发布了2020年财报，提到小程序的交易额增长了一倍。小程序虽然已经4岁了，但市场才刚刚开始，现在正是入局的时机。前天我还</description>
+    <title>如何做好一场技术演讲学习笔记</title>
+    <link>https://yishulun.com/2021/29.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2021/29.html</guid>
+    <description>如何做好一场技术演讲学习笔记 | 演讲之前需要做好哪些准备？现场由听众提需求吧 Stay hungry, Stay foolish！ 没有想到，流传已久的乔布斯斯坦福毕业演讲，却是他精心准备至少好几天的结果，尽管他当时已经是一位富有现场演讲经验的老手了。 这篇充电平台创立之初发布的小专栏，确实非常非常有价值。题目虽然是《如何做好一篇技术演讲》，但是却也适用于写作等其它需要做内容输出的地方。 概括来讲，这篇内容主要讲了三部分： 精心准备内容； 做刻意练习，精益求精； 调整好心理状态。 在第一部分，作者还拿研发的工程环节与演讲做了类比，在公司研发软件，软件上线之前会有需求评审、研发、提测、回归测试等多个环节，演讲也是如此，如果把最终演讲比作软件上线，那上线之前是有许多事要做的。这个类比很形象，程序员看了马上就会心领神会，会心一笑。 但是针对技术演讲，我还想做一点适用于自己的修改，关于第一部分，</description>
     <pubDate>2021-03-25</pubDate>
   </item>
   <item>
@@ -2357,17 +2357,17 @@
     <pubDate>2018-01-26</pubDate>
   </item>
   <item>
-    <title>小程序从0到1：1月25日群问题集锦</title>
-    <link>https://yishulun.com/2018/03.html</link>
-    <guid isPermaLink="true">https://yishulun.com/2018/03.html</guid>
-    <description>小程序从0到1：1月25日群问题集锦 1，大家都是在第三方平台上做的小程序吗？ 据作者观察，大家好像还是用微信开发者工具最多。 2，有没有朋友遇到过，for循环节点显示不出来的情况？ ​ 这种情况，可以在Wxml面板中查看button节点有没有生成，如果有，再查看样式的设置是否正确。关于Wxml面板，如下所示。需要注意的是，在小游戏版本的微信开发者工具中，是没有Wxml面板的，虽然它们的名字一样。 ​ 3，一个帐号可以弄几个小程序啊？ 企业、政府、媒体、其他组织主体可以注册50个小程序，个体户和个人类型主体可注册5个小程序。 4，这个是在什么地方设置呢？ ​ 在项目“详情”中 反选“不检验安全域名”： ​ 拟增加进快速创建项目，或第一次调用接口一节中。 5，第7.1.4节，命令行工具是指？ ​ 在win上指命令行窗口（cmd），在mac和linux上指终端窗口。如果安装了git bash，</description>
-    <pubDate>2018-01-25</pubDate>
-  </item>
-  <item>
     <title>小程序从0到1：第一次在windows机器上使用sim.go需要注意的问题总结</title>
     <link>https://yishulun.com/2018/04.html</link>
     <guid isPermaLink="true">https://yishulun.com/2018/04.html</guid>
     <description>小程序从0到1：第一次在windows机器上使用sim.go需要注意的问题总结 在win系统上安装gcc分两种情况，一种系统是win10，另一种是win7。如果是后者，请跳到子目录7查看。 作者在写书的过程中，所有demo均是基于mac系统构建。使用mac电脑学习的读者，不存在以下问题，可以略过了。 因为windows系统默认不安装gcc，而在sim.go中使用了sqlite3类库，该类库间接使用了cgo，在编译的过程中需要gcc编译器，因此有了这篇教程。 1，使用git bash代替cmd windows读者按照书上第96页，第7.1.2小节“安装仓库管理工具git”的说明，完成了git的安装之后，就不要再使用系统自带的终端工具cmd了，要使用git bash。在任何目录空白处，右键单击，就可以看到“Git Bash Here”的菜单。 使用git bash代替cmd有哪些好处呢？ 1）</description>
+    <pubDate>2018-01-25</pubDate>
+  </item>
+  <item>
+    <title>小程序从0到1：1月25日群问题集锦</title>
+    <link>https://yishulun.com/2018/03.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2018/03.html</guid>
+    <description>小程序从0到1：1月25日群问题集锦 1，大家都是在第三方平台上做的小程序吗？ 据作者观察，大家好像还是用微信开发者工具最多。 2，有没有朋友遇到过，for循环节点显示不出来的情况？ ​ 这种情况，可以在Wxml面板中查看button节点有没有生成，如果有，再查看样式的设置是否正确。关于Wxml面板，如下所示。需要注意的是，在小游戏版本的微信开发者工具中，是没有Wxml面板的，虽然它们的名字一样。 ​ 3，一个帐号可以弄几个小程序啊？ 企业、政府、媒体、其他组织主体可以注册50个小程序，个体户和个人类型主体可注册5个小程序。 4，这个是在什么地方设置呢？ ​ 在项目“详情”中 反选“不检验安全域名”： ​ 拟增加进快速创建项目，或第一次调用接口一节中。 5，第7.1.4节，命令行工具是指？ ​ 在win上指命令行窗口（cmd），在mac和linux上指终端窗口。如果安装了git bash，</description>
     <pubDate>2018-01-25</pubDate>
   </item>
   <item>
@@ -2406,10 +2406,24 @@
     <pubDate>2009-06-15</pubDate>
   </item>
   <item>
+    <title>动态语言的基石之函数闭包</title>
+    <link>https://yishulun.com/2008/01.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2008/01.html</guid>
+    <description>动态语言的基石之函数闭包 闭包(Closure)是函数(或方法)及其执行环境的组合体，它不仅包括函数(或方法)本身，也包括函数(或方法)运行时的上下文词汇环境。闭包是所有动态语言的基石，闭包实现了函数(或方法)可以作为参数传递给函数(或方法)。 1，用一个代码实验例示闭包概念 在AS3中，共种三种闭包： 1）函数闭包(Function Closure) 2）方法闭包(Method Closure) 3）类闭包(Class Closure) public class Closure extends Sprite { public function Closure() { super(); init(); } private var author :String = &amp;quot;sban&amp;quot;; private var onMouseClick2 :Function = function</description>
+    <pubDate>2008-05-01</pubDate>
+  </item>
+  <item>
     <title>像Ruby一样简易行码：使用Prototype扩展原生对象</title>
     <link>https://yishulun.com/2008/02.html</link>
     <guid isPermaLink="true">https://yishulun.com/2008/02.html</guid>
     <description>像Ruby一样简易行码：使用Prototype扩展原生对象 AS3是基于ECMAScript标准的语言，Adobe团队在遵从此标准的同时，使其向Java靠拢具有Class-Base的特征，因此，AS3是一门很奇特的语言，它既像Javascript，又像Java（Java与Javascript是两门完全不同的语言）。 1，Ruby的collect方法 Ruiby的行码简易，让很多程序员爱不释手。 #!/usr/bin/ruby puts [1,2,3,4,5,6].collect{|x| 10*x} 上例Ruby代码把数组中的每一个元素的值乘以10，然后打印结果。 10 20 30 40 50 2，在AS3中实现collect方法 那么在AS3中，我们能否以类似的方法（collect）操作数组？答案是可以的。Array本身是动态、可继承对象，我们可以继承它，自己实现collect方法；除此之</description>
+    <pubDate>2008-05-01</pubDate>
+  </item>
+  <item>
+    <title>AS3中的一些基本定义，Function与Method的区别</title>
+    <link>https://yishulun.com/2008/04.html</link>
+    <guid isPermaLink="true">https://yishulun.com/2008/04.html</guid>
+    <description>AS3中的一些基本定义，Function与Method的区别 Adobe在官方英文文档中，并未专意对一些基本作区别说明；多数自动翻译或中文翻译，又存在翻译不当之处，古人有云，差之毫厘，缪以千里。且先试问一句，Function与Method有何区别？ Function与Method翻译成中文，不知如何翻译，使用英文更好。function在AS3中，是定义函数的关键字，但它定义的不一定是Function，也可能是Method。 1，Method与Function的区别 使用function关键字在Class内部显式定义的方法，称为Method，而除此之外使用function关键字定义的方法皆称为 Function。Function类似于js中的function方法。如此区分概念，有助于理解AS3的闭包（closure）概念。 2，Property是什么 在AS3中，Property不应该理解为</description>
     <pubDate>2008-05-01</pubDate>
   </item>
   <item>
@@ -2420,24 +2434,10 @@
     <pubDate>2008-05-01</pubDate>
   </item>
   <item>
-    <title>动态语言的基石之函数闭包</title>
-    <link>https://yishulun.com/2008/01.html</link>
-    <guid isPermaLink="true">https://yishulun.com/2008/01.html</guid>
-    <description>动态语言的基石之函数闭包 闭包(Closure)是函数(或方法)及其执行环境的组合体，它不仅包括函数(或方法)本身，也包括函数(或方法)运行时的上下文词汇环境。闭包是所有动态语言的基石，闭包实现了函数(或方法)可以作为参数传递给函数(或方法)。 1，用一个代码实验例示闭包概念 在AS3中，共种三种闭包： 1）函数闭包(Function Closure) 2）方法闭包(Method Closure) 3）类闭包(Class Closure) public class Closure extends Sprite { public function Closure() { super(); init(); } private var author :String = &amp;quot;sban&amp;quot;; private var onMouseClick2 :Function = function</description>
-    <pubDate>2008-05-01</pubDate>
-  </item>
-  <item>
     <title>E4X用法简要</title>
     <link>https://yishulun.com/2008/05.html</link>
     <guid isPermaLink="true">https://yishulun.com/2008/05.html</guid>
     <description>E4X用法简要 E4X语法是AS3对ECMAScript标准最前卫的实现，也是目前所有高级编程语言中操作XML最为方便的方式之一。仅仅因为AS3实现了E4X，作为程序员至少也应该了解它一下，因为它是那样的简洁、优雅。 因为AS3实现的是ECMAScript 357 for XML标准（ECMAScript对XML的扩展标准），简称为E4X。自有E4X以来，AS2程序员应该忘掉以前惯用的XMLDocument、 XMLNode、XMLParser 和 XMLTag。在AS3中，操作XML仅需要记住两个类：XML与XMLList。 主要概念： 元素(Element，或称为节点Node)：XML 文档中的单个项目，它被标识为开始标签和结束标签之间包含的内容（包括标签）。XML 元素可以包含文本数据或其它元素，也可以为空。 属性 (Attribute)：与元素关联的命名值，它以 attribute</description>
-    <pubDate>2008-05-01</pubDate>
-  </item>
-  <item>
-    <title>AS3中的一些基本定义，Function与Method的区别</title>
-    <link>https://yishulun.com/2008/04.html</link>
-    <guid isPermaLink="true">https://yishulun.com/2008/04.html</guid>
-    <description>AS3中的一些基本定义，Function与Method的区别 Adobe在官方英文文档中，并未专意对一些基本作区别说明；多数自动翻译或中文翻译，又存在翻译不当之处，古人有云，差之毫厘，缪以千里。且先试问一句，Function与Method有何区别？ Function与Method翻译成中文，不知如何翻译，使用英文更好。function在AS3中，是定义函数的关键字，但它定义的不一定是Function，也可能是Method。 1，Method与Function的区别 使用function关键字在Class内部显式定义的方法，称为Method，而除此之外使用function关键字定义的方法皆称为 Function。Function类似于js中的function方法。如此区分概念，有助于理解AS3的闭包（closure）概念。 2，Property是什么 在AS3中，Property不应该理解为</description>
     <pubDate>2008-05-01</pubDate>
   </item>
   <item>
