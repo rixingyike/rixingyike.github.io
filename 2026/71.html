@@ -10,12 +10,12 @@
     
 <meta name="description" content="一花一世界，一树一菩提。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2. 第二章:星辰">
+<meta property="og:title" content="用 Git Submodule + Hook 让 skills 仓库自动同步，再也不用手动拉取了">
 <meta property="og:description" content="一花一世界，一树一菩提。">
 <meta property="og:site_name" content="一树仑·金石碼农">
 
-<link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;columns&#x2F;6&#x2F;2.第二章：星辰.html">
-<meta property="og:url" content="https:&#x2F;&#x2F;yishulun.com&#x2F;columns&#x2F;6&#x2F;2.第二章：星辰.html">
+<link rel="canonical" href="https:&#x2F;&#x2F;yishulun.com&#x2F;2026&#x2F;71.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;yishulun.com&#x2F;2026&#x2F;71.html">
 
 
 
@@ -27,7 +27,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "2. 第二章:星辰",
+  "headline": "用 Git Submodule + Hook 让 skills 仓库自动同步，再也不用手动拉取了",
   "image": [
     "https:&#x2F;&#x2F;yishulun.com/static/images/logo.png"
    ],
@@ -120,23 +120,8 @@
                         
                         
                         
-                            <a href="/columns/" class="hover:text-cyber-mint">专栏</a>
-                        
-                    
-                
-                    
-                    
-                    
-                    
-                        
-                        <span class="text-gray-300">/</span>
-                        
-                        
-                        
                             
-                                
-                                    <a href="/columns/6/" class="hover:text-cyber-mint">科幻小说集</a>
-                                
+                                <a href="&#x2F;2026&#x2F;" class="hover:text-cyber-mint">2026</a>
                             
                         
                     
@@ -147,13 +132,13 @@
                 <!-- 文章头部 -->
                 <header class="mb-8">
                     <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-moss-ink mb-3 leading-tight">
-                        2. 第二章:星辰
+                        用 Git Submodule + Hook 让 skills 仓库自动同步，再也不用手动拉取了
                     </h1>
 
                     <div class="article-meta mb-3">
                         
                         <span class="inline-flex items-center text-sm text-mist-green">
-                            2026-07-27 13:50
+                            2026-07-27 04:36
                         </span>
                         
                         
@@ -179,7 +164,118 @@
                  }
              });
          })">
-                    <p>茫茫宇宙中...</p>
+                    <h1>用 Git Submodule + Hook 让 skills 仓库自动同步，再也不用手动拉取了</h1>
+<p>（这是篇技术笔记，不喜欢可以跳过）</p>
+<p>在多项目并行开发时，你是不是也经常碰到这种事：中央 skills 仓库一改，好几个业务项目都得挨个手动 <code>git pull</code>；或者在某个子项目里改了一个 SKILL，中央库毫不知情，其他项目更是纹丝不动。</p>
+<p>能不能只正常写代码、正常 commit，剩下的同步活儿全部自动搞定？</p>
+<p>我试过软链接。把不同项目的 skills 目录直接 <code>ln -s</code> 指向同一个真实的 skills 文件夹，本地用起来没问题，可一进 Docker 就有问题了——容器里只挂了一个项目目录，跨项目的软链接直接失效。这条道有瑕疵。</p>
+<p>折腾一圈，最后落回到 Git 本身的能力上：<strong>Submodule + post-commit Hook</strong>。</p>
+<p>这套组合让同步彻底不用再操心，改代码、提交，后面的推送、广播、指针更新、文件落地全由 Hook 自动完成。下面把整个方案拆开说一下。</p>
+<h2>一、基本结构与目录</h2>
+<p>整个自动广播体系就这几样东西：</p>
+<ul>
+<li><strong>中央元仓库 (Central Repo)</strong>：<code>/Users/jsmn/workspace/skills-shared</code></li>
+<li><strong>业务项目 (Parent Projs)</strong>，例如：<code>/Users/jsmn/workspace/novel3</code></li>
+<li><strong>各业务项目里的子模块 (Submodule)</strong>：<code>&lt;业务项目&gt;/skills-shared</code></li>
+<li><strong>全局注册表 <code>projects.txt</code></strong>：放在中央元仓库根目录，写明所有业务项目的绝对路径，避免硬编码。</li>
+<li><strong>几个脚本</strong>：
+<ul>
+<li><code>deploy/central_repo_post_commit_hook.sh</code>（中央仓库的 post-commit 模板）</li>
+<li><code>deploy/submodule_post_commit_hook.sh</code>（子模块的 post-commit 模板）</li>
+<li><code>deploy/update_skills.sh</code>（拉取更新并重置子模块指针）</li>
+<li><code>update.sh</code>（用来在中央仓和子模块之间自动区分上下文拉取内容）</li>
+</ul>
+</li>
+</ul>
+<h2>二、子模块改了，自动推到中央仓库、再同步给所有项目</h2>
+<h3>场景</h3>
+<p>在 <code>/Users/jsmn/workspace/novel3/skills-shared</code> 里改了一个 SKILL，然后执行 <code>git commit</code>。</p>
+<h3>发生了什么</h3>
+<p>子模块的 commit 会触发它自己的 <code>post-commit</code> Hook（实际位置在 <code>&lt;业务项目&gt;/.git/modules/skills-shared/hooks/post-commit</code>）。Hook 被唤醒后，自动做完下面几件事：</p>
+<p><img src="assets/image-20260727150827048.png" alt="image-20260727150827048" /></p>
+<h3>脚本做了什么 (<code>submodule_post_commit_hook.sh</code>)</h3>
+<p><strong>第一步，先把这次的 commit 推到远程。</strong></p>
+<pre><code class="language-bash"># 自动推送到远程 GitHub，这样其他项目要去远端拉取时能找到这个 commit
+git push origin main
+</code></pre>
+<p><strong>第二步，更新“当前这个业务项目”的子模块指针。</strong></p>
+<p>子模块版本变了，父项目的 <code>git add skills-shared</code> 如果不做，指针就会一直处在未提交的脏状态。Hook 会顺着路径找到父项目根目录，替你把指针提交掉：</p>
+<pre><code class="language-bash">cd &quot;$PARENT_DIR&quot;
+if ! git diff --quiet skills-shared; then
+    git add skills-shared
+    git commit -m &quot;chore: 自动同步 skills-shared 的最新 Hash 指针&quot;
+fi
+</code></pre>
+<p>这步相当于告诉父项目：“子模块现在该指向这个新版本了”。不更新指针的话，其他同事 pull 父项目时子模块代码还是旧的。</p>
+<p><strong>第三步，照着 <code>projects.txt</code> 里记的业务项目列表，把更新广播到中央元仓库以及其他所有项目。</strong></p>
+<p>这里有个细节：Hook 里默认会带上父 Git 进程的 <code>GIT_DIR</code>、<code>GIT_WORK_TREE</code> 等环境变量，如果直接切到别的仓库做 git 操作，会报 <code>index.lock: Not a directory</code> 的错。所以广播前必须把那些环境变量清掉：</p>
+<pre><code class="language-bash">unset GIT_DIR GIT_WORK_TREE GIT_PREFIX
+</code></pre>
+<p>然后遍历 <code>projects.txt</code>，跳过当前项目自己，对中央仓库和其他项目逐个拉取最新并重置指针。（完整代码见脚本。）</p>
+<h2>三、中央仓库改了，自动推送给所有业务项目的子模块</h2>
+<h3>场景</h3>
+<p>直接在中央元仓库 <code>/Users/jsmn/workspace/skills-shared</code> 里改某个 SKILL，然后 <code>git commit</code>。</p>
+<h3>发生了什么</h3>
+<p>中央仓库的 post-commit Hook（<code>.git/hooks/post-commit</code>）被触发：</p>
+<p><img src="assets/image-20260727151046951.png" alt="image-20260727151046951" /></p>
+<h3>脚本做了什么 (<code>central_repo_post_commit_hook.sh</code>)</h3>
+<p><strong>第一步，先推到远程。</strong></p>
+<pre><code class="language-bash">git push origin main
+</code></pre>
+<p><strong>第二步，遍历 <code>projects.txt</code>，挨个业务项目执行一遍本地的 <code>update_skills.sh</code>。</strong></p>
+<pre><code class="language-bash">while IFS= read -r proj || [ -n &quot;$proj&quot; ]; do
+    if [ -f &quot;$proj/skills-shared/deploy/update_skills.sh&quot; ]; then
+        (unset GIT_DIR GIT_WORK_TREE GIT_PREFIX &amp;&amp; cd &quot;$proj&quot; &amp;&amp; ./skills-shared/deploy/update_skills.sh)
+    fi
+done &lt; &quot;$PROJECTS_FILE&quot;
+</code></pre>
+<p>这里的 <code>unset xxx</code> 同样是为了防止跨仓库操作时环境变量污染。</p>
+<p><strong>第三步，业务项目那边的 <code>update_skills.sh</code> 做硬重置，保证能干净落盘。</strong></p>
+<p>因为可能会碰到 macOS 生成的 <code>.DS_Store</code> 或者其他未追踪文件导致合并冲突，脚本在拉取前会先强制对齐远端的 main 分支：</p>
+<pre><code class="language-bash"># 进入到子模块目录，强制重置到远程 main
+cd &quot;$SUBMODULE_DIR&quot; &amp;&amp; git fetch origin main &amp;&amp; git reset --hard origin/main
+
+# 回到父项目，如果子模块指针变了就自动提交
+cd &quot;$PARENT_DIR&quot;
+if ! git diff --quiet $SUBMODULE_DIR; then
+    git add $SUBMODULE_DIR
+    git commit -m &quot;chore: auto-update skills submodule to latest&quot;
+fi
+</code></pre>
+<h2>四、踩过的两个坑</h2>
+<p>全自动广播听着爽，但跨仓库 Hook 调起来确实有小坑，下面两个稍微留意一下就行。</p>
+<ol>
+<li>
+<p><strong>环境变量 <code>GIT_DIR</code> / <code>GIT_WORK_TREE</code> 污染</strong></p>
+<ul>
+<li><strong>现象</strong>：你在 Hook 脚本里 <code>cd</code> 到另一个 Git 仓库做操作，Git 突然报 <code>fatal: Unable to create '.../skills-shared/.git/index.lock': Not a directory</code>。</li>
+<li><strong>原因</strong>：当前 Hook 进程继承了上层 Git 命令的 <code>GIT_DIR</code> 等变量，导致 Git 误以为子模块的 <code>.git</code> 文本文件是个目录。</li>
+<li><strong>处理</strong>：所有跨仓库 <code>cd</code> 后执行的子 Shell 里，必须 <code>unset GIT_DIR GIT_WORK_TREE GIT_PREFIX</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>post-commit 死循环</strong></p>
+<ul>
+<li><strong>现象</strong>：A 项目的 Hook 自动提交了 B 项目的指针，B 项目的 Hook 又被触发，再跑回来改 A 项目，没完没了。</li>
+<li><strong>处理</strong>：遍历 <code>projects.txt</code> 时，加一条判断跳过当前项目自己 <code>if [ &quot;$proj&quot; = &quot;$PARENT_DIR&quot; ]; then continue; fi</code>。</li>
+</ul>
+</li>
+</ol>
+<h2>五、收尾</h2>
+<p>整个方案就靠一张注册表 <code>projects.txt</code>、一对初始化脚本，加上中央与子模块的双向 post-commit Hook，日常维护中你只需要正常 commit，其他的推送、广播、指针更新全在几秒内自动跑完。</p>
+<p>如果你也想用这套，只需要把我仓库的 setup 脚本克隆过去，把下面两行改成你自己的本地中央仓库路径和远程地址：</p>
+<pre><code class="language-bash">CENTRAL_REPO=&quot;/Users/jsmn/workspace/skills-shared&quot;
+SUBMODULE_URL=&quot;[https://github.com/rixingyike/skills-shared.git](https://github.com/rixingyike/skills-shared.git)&quot;
+</code></pre>
+<p>然后一行命令安装自己的 skills 子模块：</p>
+<pre><code class="language-bash">curl -sSL [https://raw.githubusercontent.com/rixingyike/skills-shared/main/deploy/setup_submodule.sh](https://raw.githubusercontent.com/rixingyike/skills-shared/main/deploy/setup_submodule.sh) | bash
+</code></pre>
+<p>如果仓库不能访问，所有脚本可以从这里取：</p>
+<blockquote>
+<p>skills-shared_deploy
+https://www.alipan.com/s/vVWjh6U7LTu 提取码: n39q</p>
+</blockquote>
+<p><em>2026年07月27日</em></p>
 
                 </div>
 
@@ -190,8 +286,8 @@
                 <div class="mt-8 text-xs text-mist-green">
                     <p>
                         本文链接：
-                        <a href="https:&#x2F;&#x2F;yishulun.com&#x2F;columns&#x2F;6&#x2F;2.第二章：星辰.html" class="text-sage-line hover:underline"
-                            target="_blank" rel="noopener">https:&#x2F;&#x2F;yishulun.com&#x2F;columns&#x2F;6&#x2F;2.第二章：星辰.html</a>
+                        <a href="https:&#x2F;&#x2F;yishulun.com&#x2F;2026&#x2F;71.html" class="text-sage-line hover:underline"
+                            target="_blank" rel="noopener">https:&#x2F;&#x2F;yishulun.com&#x2F;2026&#x2F;71.html</a>
                     </p>
                     <p class="mt-1">
                         共享许可：<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener" class="text-sage-line hover:underline">署名-非商业性 4.0 国际 (CC-BY-NC-4.0)</a>
