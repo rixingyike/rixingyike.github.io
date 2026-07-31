@@ -9,42 +9,42 @@
     <link>https://yishulun.com/columns/6/2.第二章：星辰.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/6/2.第二章：星辰.html</guid>
     <description>茫茫宇宙中...</description>
-    <pubDate>2026-07-27</pubDate>
+    <pubDate>2026-07-31</pubDate>
   </item>
   <item>
     <title>1. 第一章:启程</title>
     <link>https://yishulun.com/columns/6/1.第一章：启程.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/6/1.第一章：启程.html</guid>
     <description>小说开篇内容...</description>
-    <pubDate>2026-07-27</pubDate>
+    <pubDate>2026-07-31</pubDate>
   </item>
   <item>
     <title>1. 安装与配置</title>
     <link>https://yishulun.com/columns/7/1.安装与配置.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/7/1.安装与配置.html</guid>
     <description>这是专栏的第一个章节。</description>
-    <pubDate>2026-07-27</pubDate>
+    <pubDate>2026-07-31</pubDate>
   </item>
   <item>
     <title>1.2. 配置文件说明</title>
     <link>https://yishulun.com/columns/7/1.2.配置文件说明.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/7/1.2.配置文件说明.html</guid>
     <description>详细介绍 config.toml 内容。</description>
-    <pubDate>2026-07-27</pubDate>
+    <pubDate>2026-07-31</pubDate>
   </item>
   <item>
     <title>1.1. 快速开始</title>
     <link>https://yishulun.com/columns/7/1.1.快速开始.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/7/1.1.快速开始.html</guid>
     <description>这是二级章节示例。</description>
-    <pubDate>2026-07-27</pubDate>
+    <pubDate>2026-07-31</pubDate>
   </item>
   <item>
     <title>1.2.1. 站点信息配置</title>
     <link>https://yishulun.com/columns/7/1.2.1.站点信息配置.html</link>
     <guid isPermaLink="true">https://yishulun.com/columns/7/1.2.1.站点信息配置.html</guid>
     <description>这是三级章节展示缩进。</description>
-    <pubDate>2026-07-27</pubDate>
+    <pubDate>2026-07-31</pubDate>
   </item>
   <item>
     <title>用 Git Submodule + Hook 让 skills 仓库自动同步，再也不用手动拉取了</title>
